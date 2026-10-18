@@ -1,27 +1,13 @@
 # VocaMind
 
-Initial Android foundation for VocaMind.
+Android foundation for VocaMind, using Java 17 and XML/ViewBinding with a
+Clean MVVM architecture baseline. The application currently starts with a blank
+screen; business features are not implemented yet.
 
-## Open in Android Studio
+## Documentation
 
-1. Checkout `feature/foundation-architecture`.
-2. Open the repository root in Android Studio.
-3. Use JDK 17 for Gradle.
-4. Let Gradle Sync finish.
-5. Run the `app` configuration on an Android API 26+ emulator/device.
-
-The application intentionally starts with a blank screen. Business features are not implemented in this foundation branch.
-
-## Foundation
-
-- Android application module: `app`
-- Language: Java
-- UI baseline: Android XML/View system
-- Minimum SDK: 26
-- Architecture placeholders:
-  - `core/`
-  - `domain/`
-  - `data/`
-  - `feature/`
-
-Empty architecture packages are kept with `.gitkeep` until implementation begins.
+- [Documentation index](docs/README.md)
+- [Android setup and build commands](docs/android-setup.md)
+- [Android foundation and dependency baseline](docs/android-foundation.md)
+- [ARC-01 implementation plan](docs/plans/arc-01-android-foundation.md)
+- [ARC-01 validation results](docs/arc-01-validation.md)
