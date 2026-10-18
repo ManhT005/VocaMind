@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="@dimen/shell_screen_padding">
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextAppearance.VocaMind.Body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/shell_accent"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/home_title"
+            style="@style/TextAppearance.VocaMind.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/shell_item_spacing"
+            android:text="@string/home" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextAppearance.VocaMind.Body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/shell_item_spacing"
+            android:text="@string/home_description" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/shell_section_spacing"
+            android:orientation="vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/open_packs"
+                style="@style/Widget.VocaMind.NavigationButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/packs" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/open_vocabulary"
+                style="@style/Widget.VocaMind.NavigationButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/vocabulary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/open_today"
+                style="@style/Widget.VocaMind.NavigationButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/today" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/open_quiz"
+                style="@style/Widget.VocaMind.NavigationButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/quiz" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/open_progress"
+                style="@style/Widget.VocaMind.NavigationButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/progress" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
