@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VocaMind</string>
+    <string name="home">Trang chủ</string>
+    <string name="packs">Gói học</string>
+    <string name="vocabulary">Từ vựng</string>
+    <string name="today">Ôn tập hôm nay</string>
+    <string name="quiz">Kiểm tra</string>
+    <string name="progress">Tiến độ</string>
+    <string name="home_description">Chọn nội dung bạn muốn khám phá.</string>
+    <string name="placeholder_description">Nội dung đang được chuẩn bị.</string>
+</resources>
