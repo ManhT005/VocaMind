@@ -14,14 +14,15 @@ distribution checksum. No system Gradle installation is needed.
 
 ## Open in Android Studio
 
-1. Checkout `develop` or your feature branch based on `develop`.
+1. Checkout the branch you want to build. The navigation shell currently lives
+   on `feature/arc-02-navigation-shell`, based on ARC-01 until it is merged.
 2. Open the repository root in Android Studio.
 3. Use JDK 17 for Gradle.
 4. Let Gradle Sync finish.
 5. Run the `app` configuration on an Android API 26+ emulator/device.
 
-The application currently starts with a blank screen. Business features are
-not implemented yet.
+The application opens Home with buttons for Packs, Vocabulary, Today, Quiz and
+Progress. Each route is a placeholder; business features are not implemented yet.
 
 ## Build and inspect dependencies
 
@@ -32,6 +33,7 @@ java -version
 .\gradlew.bat --version
 .\gradlew.bat clean assembleDebug
 .\gradlew.bat :app:compileDebugJavaWithJavac testDebugUnitTest
+.\gradlew.bat lintDebug
 .\gradlew.bat :app:dependencies --configuration debugRuntimeClasspath
 .\gradlew.bat :app:dependencies --configuration debugUnitTestRuntimeClasspath
 ```
@@ -41,6 +43,7 @@ Both Java and the Gradle JVM must report version 17. Unit tests may report
 `NO-SOURCE` until test classes are added. The debug APK is generated at
 `app/build/outputs/apk/debug/app-debug.apk` and is ignored by Git.
 
-See [ARC-01 validation](arc-01-validation.md) for recorded results.
+See [ARC-01 validation](arc-01-validation.md) and
+[ARC-02 validation](arc-02-validation.md) for recorded results.
 
 [Documentation index](README.md)
