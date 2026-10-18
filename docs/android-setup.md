@@ -14,8 +14,8 @@ distribution checksum. No system Gradle installation is needed.
 
 ## Open in Android Studio
 
-1. Checkout the branch you want to build. The navigation shell currently lives
-   on `feature/arc-02-navigation-shell`, based on ARC-01 until it is merged.
+1. Checkout `develop` or the feature branch you want to build. ARC-01 and the
+   ARC-02 navigation shell are merged into `develop`.
 2. Open the repository root in Android Studio.
 3. Use JDK 17 for Gradle.
 4. Let Gradle Sync finish.
