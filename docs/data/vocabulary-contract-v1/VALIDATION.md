@@ -4,7 +4,7 @@ Ngày thực hiện: 23/10/2026. Phạm vi: tài liệu và tooling VOC-DATA-02,
 
 ## Đã thực hiện
 
-- `python3 -m unittest discover -s docs/data/vocabulary-contract-v1 -p test_contract.py -v`: **36 tests, tất cả PASS**, có 12 invalid fixtures và các vector ID/casefold chạy dưới subtests. Không phải 36 yêu cầu SRS hay 36 test Android.
+- `python3 -m unittest discover -s docs/data/vocabulary-contract-v1 -p test_contract.py -v`: **39 tests, tất cả PASS**, có 12 invalid fixtures và các vector ID/casefold chạy dưới subtests. Không phải 39 yêu cầu SRS hay 39 test Android.
 - JSON Schema: `Draft202012Validator.check_schema`: **PASS**.
 - Validator CLI trên `fixtures/valid/catalog.json`: **exit 0**, 4 ID duy nhất, 4 gói, 16 memberships.
 - Cùng fixture với `--release`: **exit 1 như mong đợi**; chặn fixture flag, thiếu 150 từ, quota 40/40/40/30 và source chưa approved. Không coi rejection này là release đã đạt.
@@ -21,4 +21,8 @@ Reference tooling dùng `jsonschema 4.26.0`, Python Unicode data `15.0.0`. Requi
 - Dữ liệu đủ 150 từ thật và đạt content QA.
 - Java implementation tương thích test vector; Android project, Room schema/asset/FTS, migration, UI và performance chạy được.
 
-Repository hiện chỉ có README/.gitignore trước thay đổi này, chưa có Android project để thực hiện các kiểm tra cuối. Bộ file nằm riêng dưới docs/data/vocabulary-contract-v1; bản ghi kiểm chứng này không xác nhận việc push lên remote.
+Nhánh contract được tạo từ main khi main chỉ có README/.gitignore. Lần rà soát bổ sung đã đọc develop tại commit 4df8d979f395d646d220bb420f50c35cbf124340: có foundation Java 17, minSdk 26, compile/target SDK 35 và dependency Room; các package data/domain vẫn là placeholder, chưa có Room entities/DAO. Chưa ghép hoặc build Android foundation cùng contract. Bộ file nằm riêng dưới docs/data/vocabulary-contract-v1; bản ghi kiểm chứng này không xác nhận việc push lên remote.
+
+## Rà soát bổ sung
+
+Hai trường hợp biên được tái hiện và sửa: numeric token `1.0`/`1e0` ở field integer trả INTEGER_REPRESENTATION; Unicode surrogate đơn lẻ trả lỗi contract trước khi UTF-8 hashing. Có 3 test bổ sung, bao gồm CLI exit 1 không traceback. Các field/quy tắc stableId và schemaVersion không thay đổi.

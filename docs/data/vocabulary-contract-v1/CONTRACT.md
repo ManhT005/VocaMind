@@ -24,7 +24,7 @@ Contract bao phủ dữ liệu đầu vào chuẩn của ETL và mapping catalog
 
 ## 2. Định dạng trao đổi duy nhất
 
-File chuẩn: `canonical-catalog.json`, UTF-8 không BOM, JSON nghiêm ngặt, không comment, không property trùng. JSON Schema Draft 2020-12 trong `catalog.schema.json` là chuẩn cấu trúc có thể kiểm tra bằng máy. Không tự thêm field; field mới đi qua version/review.
+File chuẩn: `canonical-catalog.json`, UTF-8 không BOM, JSON nghiêm ngặt, không comment, không property trùng. JSON Schema Draft 2020-12 trong `catalog.schema.json` là chuẩn cấu trúc có thể kiểm tra bằng máy. Các field integer phải được ghi bằng token nguyên (`1`, không `1.0` hoặc `1e0`); đây là kiểm tra canonical bổ sung của validator vì JSON Schema coi số có phần thập phân bằng 0 là integer về mặt toán học. Không tự thêm field; field mới đi qua version/review.
 
 Envelope có đúng các trường:
 
@@ -182,7 +182,7 @@ Nhân triển khai entity/DAO đúng tên nghiệp vụ SRS; không coi schema J
 | source approvals/hash; entry.senseIndex/provenance; identityRegistry | ETL/versioned build artifacts | Không bắt buộc thêm cột vào Room để chạy UI. Phải giữ ngoài DB để nhập lại và audit. |
 | packs/packWords | LearningPack/PackWord | Mapping trực tiếp; orderNo INTEGER; unique/index đúng ràng buộc |
 
-Domain Vocabulary có thể dùng các field nghiệp vụ tương ứng id/lemma/pos/meaning/examples/ipa/sourceId. Không truyền DAO/Room entity thẳng ra UI; mapper bỏ metadata chỉ dành build-time. Đây là định nghĩa canonical DTO qua JSON Schema; DTO Java/Room implementation được dựng theo schema này ở DATA-01/04 khi có Android project. Chưa có bằng chứng build Android/Java trong task hiện tại.
+Domain Vocabulary có thể dùng các field nghiệp vụ tương ứng id/lemma/pos/meaning/examples/ipa/sourceId. Không truyền DAO/Room entity thẳng ra UI; mapper bỏ metadata chỉ dành build-time. Đây là định nghĩa canonical DTO qua JSON Schema; DTO Java/Room implementation được dựng theo schema này ở DATA-01/04 khi tích hợp vào Android foundation. Chưa có bằng chứng build Android/Java trong task hiện tại.
 
 FTS4 index lemma/normalizedLemma/meaningVi; `VocabularyFts.rowid = VocabularyEntry.rowid` INTEGER, rồi trả `VocabularyEntry.id` TEXT ra ngoài. Không ghi rowid vào userdata. Chú ý Room FTS external-content/schema identity theo implementation thực tế; dùng schema export thật và integration test asset ở DATA-01/05/VOC-DATA-06. Không hard-code Room identity_hash minh họa, không biến bảng VocabularyEntry thành WITHOUT ROWID.
 

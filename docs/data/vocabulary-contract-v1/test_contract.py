@@ -70,6 +70,37 @@ class ContractTests(unittest.TestCase):
             with self.subTest(value=value), self.assertRaises(ValueError):
                 vc.stable_id('book', 'noun', value)
 
+    def test_decimal_integer_tokens_return_contract_error(self):
+        for collection, field in [('entries', 'senseIndex'), ('identityRegistry', 'senseIndex'),
+                                   ('packs', 'orderNo'), ('packWords', 'orderNo')]:
+            with self.subTest(collection=collection):
+                data = copy.deepcopy(self.data)
+                data[collection][0][field] = float(data[collection][0][field])
+                self.assertIn('INTEGER_REPRESENTATION', self.codes(data))
+
+    def test_unpaired_surrogate_returns_contract_error(self):
+        for collection, field in [('identityRegistry', 'identityLemma'), ('entries', 'lemma')]:
+            with self.subTest(collection=collection):
+                data = copy.deepcopy(self.data)
+                data[collection][0][field] = '\ud800'
+                self.assertIn('CONTROL_CHARACTER', self.codes(data))
+
+    def test_cli_malformed_canonical_values_are_exit_one(self):
+        with tempfile.TemporaryDirectory() as directory:
+            for kind in ['decimal', 'surrogate']:
+                with self.subTest(kind=kind):
+                    data = copy.deepcopy(self.data)
+                    if kind == 'decimal':
+                        data['identityRegistry'][0]['senseIndex'] = 1.0
+                    else:
+                        data['identityRegistry'][0]['identityLemma'] = '\ud800'
+                    path = Path(directory) / (kind + '.json')
+                    path.write_text(json.dumps(data), encoding='utf-8')
+                    result = subprocess.run([sys.executable, str(vc.ROOT / 'validate_contract.py'),
+                                             str(path)], capture_output=True, text=True)
+                    self.assertEqual(1, result.returncode, result.stderr)
+                    self.assertNotIn('Traceback', result.stderr)
+
     def test_display_capitalization_preserves_identity(self):
         self.data['entries'][0]['lemma'] = 'Book'
         self.assertEqual([], vc.validate(self.data))

@@ -81,6 +81,16 @@ def validate(data: dict, *, release: bool = False, previous: dict | None = None)
     if errors:
         return errors
 
+    # JSON Schema considers 1.0 an integer mathematically; canonical exports
+    # require integer JSON tokens for stable decimal serialization/Java mapping.
+    for collection, field in (('entries', 'senseIndex'), ('identityRegistry', 'senseIndex'),
+                              ('packs', 'orderNo'), ('packWords', 'orderNo')):
+        for i, item in enumerate(data[collection]):
+            if type(item[field]) is not int:
+                errors.append(f'INTEGER_REPRESENTATION: /{collection}/{i}/{field} must use an integer token')
+    if errors:
+        return errors
+
     def error(code, message):
         errors.append(f'{code}: {message}')
 
@@ -113,6 +123,10 @@ def validate(data: dict, *, release: bool = False, previous: dict | None = None)
             for key, child in value.items():
                 scan(child, f'{path}/{key}')
     scan(data)
+    # Reject malformed Unicode before UTF-8 hashing, rather than raising an
+    # encoding exception. Canonical text violations are data errors (exit 1).
+    if errors:
+        return errors
 
     identity_keys = set()
     for item in registry.values():
