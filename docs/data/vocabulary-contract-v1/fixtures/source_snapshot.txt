@@ -1,0 +1,5 @@
+Synthetic VocaMind contract fixture; not an approved release source.
+book|noun|1|cuốn sách
+book|verb|1|đặt trước
+bank|noun|1|ngân hàng
+airport|noun|1|sân bay

@@ -1,0 +1,400 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/vocamind/vocabulary-contract/1.0.0/catalog.schema.json",
+  "title": "VocaMind canonical catalog interchange v1",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "contentVersion": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+    },
+    "fixtureOnly": {
+      "type": "boolean"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/entry"
+      }
+    },
+    "identityRegistry": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/identity"
+      }
+    },
+    "packs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/pack"
+      }
+    },
+    "packWords": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/packWord"
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "contentVersion",
+    "fixtureOnly",
+    "sources",
+    "entries",
+    "identityRegistry",
+    "packs",
+    "packWords"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "source": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "licenseCode": {
+          "type": "string",
+          "minLength": 1
+        },
+        "licenseUrl": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "snapshotDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "snapshotSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "attributionText": {
+          "type": "string",
+          "minLength": 1
+        },
+        "approvalStatus": {
+          "enum": [
+            "pending",
+            "approved",
+            "fixture_only"
+          ]
+        },
+        "approvedBy": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "evidenceRef": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "url",
+        "licenseCode",
+        "licenseUrl",
+        "snapshotDate",
+        "snapshotSha256",
+        "attributionText",
+        "approvalStatus",
+        "approvedBy",
+        "evidenceRef"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "approvalStatus": {
+                "const": "approved"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "approvedBy": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidenceRef": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "component": {
+          "enum": [
+            "lexical",
+            "meaningVi",
+            "examplePair",
+            "ipa"
+          ]
+        },
+        "sourceId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "component",
+        "sourceId",
+        "locator"
+      ],
+      "additionalProperties": false
+    },
+    "entry": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{16}$"
+        },
+        "lemma": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalizedLemma": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pos": {
+          "type": "string",
+          "enum": [
+            "noun",
+            "verb",
+            "adjective",
+            "adverb",
+            "pronoun",
+            "determiner",
+            "preposition",
+            "conjunction",
+            "interjection",
+            "numeral",
+            "particle",
+            "other"
+          ]
+        },
+        "senseIndex": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        },
+        "meaningVi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exampleEn": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exampleVi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ipa": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "sourceId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "contentVersion": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+        },
+        "provenance": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/provenance"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "lemma",
+        "normalizedLemma",
+        "pos",
+        "senseIndex",
+        "meaningVi",
+        "exampleEn",
+        "exampleVi",
+        "ipa",
+        "sourceId",
+        "contentVersion",
+        "provenance"
+      ],
+      "additionalProperties": false
+    },
+    "identity": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{16}$"
+        },
+        "identityLemma": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pos": {
+          "type": "string",
+          "enum": [
+            "noun",
+            "verb",
+            "adjective",
+            "adverb",
+            "pronoun",
+            "determiner",
+            "preposition",
+            "conjunction",
+            "interjection",
+            "numeral",
+            "particle",
+            "other"
+          ]
+        },
+        "senseIndex": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        },
+        "fullSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "senseDefinition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "active",
+            "retired"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "identityLemma",
+        "pos",
+        "senseIndex",
+        "fullSha256",
+        "senseDefinition",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "pack": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "category": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "orderNo": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "category",
+        "orderNo",
+        "version"
+      ],
+      "additionalProperties": false
+    },
+    "packWord": {
+      "type": "object",
+      "properties": {
+        "packId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "vocabularyId": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{16}$"
+        },
+        "orderNo": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        }
+      },
+      "required": [
+        "packId",
+        "vocabularyId",
+        "orderNo"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

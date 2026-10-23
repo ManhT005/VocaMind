@@ -1,0 +1,326 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "1.0.0",
+  "fixtureOnly": true,
+  "sources": [
+    {
+      "id": "fixture-authored-20261023",
+      "title": "Học liệu tổng hợp chỉ dùng test contract",
+      "url": "https://example.invalid/vocamind/fixtures",
+      "licenseCode": "FIXTURE-ONLY",
+      "licenseUrl": "https://example.invalid/vocamind/fixtures/license",
+      "snapshotDate": "2026-10-23",
+      "snapshotSha256": "a3a763885773c3d01776c6f3eaaaa94234becbed184c07527688111fead57b1d",
+      "attributionText": "Synthetic fixture authored for contract validation; not a verified source dataset.",
+      "approvalStatus": "fixture_only",
+      "approvedBy": null,
+      "evidenceRef": null
+    }
+  ],
+  "entries": [
+    {
+      "id": "90562a98e8686267",
+      "lemma": "book",
+      "normalizedLemma": "book",
+      "pos": "noun",
+      "senseIndex": 1,
+      "meaningVi": "cuốn sách",
+      "exampleEn": "I put the book on the desk.",
+      "exampleVi": "Tôi đặt cuốn sách lên bàn.",
+      "ipa": null,
+      "sourceId": "fixture-authored-20261023",
+      "contentVersion": "1.0.0",
+      "provenance": [
+        {
+          "component": "lexical",
+          "sourceId": "fixture-authored-20261023",
+          "locator": "book/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "fixture-authored-20261023",
+          "locator": "book/noun/1"
+        },
+        {
+          "component": "examplePair",
+          "sourceId": "fixture-authored-20261023",
+          "locator": "book/noun/1"
+        }
+      ]
+    },
+    {
+      "id": "d17314a48504e2ac",
+      "lemma": "book",
+      "normalizedLemma": "book",
+      "pos": "verb",
+      "senseIndex": 1,
+      "meaningVi": "đặt trước",
+      "exampleEn": "We will book a room tomorrow.",
+      "exampleVi": "Chúng tôi sẽ đặt phòng vào ngày mai.",
+      "ipa": null,
+      "sourceId": "fixture-authored-20261023",
+      "contentVersion": "1.0.0",
+      "provenance": [
+        {
+          "component": "lexical",
+          "sourceId": "fixture-authored-20261023",
+          "locator": "book/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "fixture-authored-20261023",
+          "locator": "book/verb/1"
+        },
+        {
+          "component": "examplePair",
+          "sourceId": "fixture-authored-20261023",
+          "locator": "book/verb/1"
+        }
+      ]
+    },
+    {
+      "id": "5aecfbf5b9a23aee",
+      "lemma": "bank",
+      "normalizedLemma": "bank",
+      "pos": "noun",
+      "senseIndex": 1,
+      "meaningVi": "ngân hàng",
+      "exampleEn": "She works at a local bank.",
+      "exampleVi": "Cô ấy làm việc tại một ngân hàng địa phương.",
+      "ipa": null,
+      "sourceId": "fixture-authored-20261023",
+      "contentVersion": "1.0.0",
+      "provenance": [
+        {
+          "component": "lexical",
+          "sourceId": "fixture-authored-20261023",
+          "locator": "bank/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "fixture-authored-20261023",
+          "locator": "bank/noun/1"
+        },
+        {
+          "component": "examplePair",
+          "sourceId": "fixture-authored-20261023",
+          "locator": "bank/noun/1"
+        }
+      ]
+    },
+    {
+      "id": "923d45253cc2c67c",
+      "lemma": "airport",
+      "normalizedLemma": "airport",
+      "pos": "noun",
+      "senseIndex": 1,
+      "meaningVi": "sân bay",
+      "exampleEn": "They arrived at the airport early.",
+      "exampleVi": "Họ đến sân bay sớm.",
+      "ipa": null,
+      "sourceId": "fixture-authored-20261023",
+      "contentVersion": "1.0.0",
+      "provenance": [
+        {
+          "component": "lexical",
+          "sourceId": "fixture-authored-20261023",
+          "locator": "airport/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "fixture-authored-20261023",
+          "locator": "airport/noun/1"
+        },
+        {
+          "component": "examplePair",
+          "sourceId": "fixture-authored-20261023",
+          "locator": "airport/noun/1"
+        }
+      ]
+    },
+    {
+      "id": "90562a98e8686267",
+      "lemma": "book",
+      "normalizedLemma": "book",
+      "pos": "noun",
+      "senseIndex": 1,
+      "meaningVi": "cuốn sách",
+      "exampleEn": "I put the book on the desk.",
+      "exampleVi": "Tôi đặt cuốn sách lên bàn.",
+      "ipa": null,
+      "sourceId": "fixture-authored-20261023",
+      "contentVersion": "1.0.0",
+      "provenance": [
+        {
+          "component": "lexical",
+          "sourceId": "fixture-authored-20261023",
+          "locator": "book/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "fixture-authored-20261023",
+          "locator": "book/noun/1"
+        },
+        {
+          "component": "examplePair",
+          "sourceId": "fixture-authored-20261023",
+          "locator": "book/noun/1"
+        }
+      ]
+    }
+  ],
+  "identityRegistry": [
+    {
+      "id": "90562a98e8686267",
+      "identityLemma": "book",
+      "pos": "noun",
+      "senseIndex": 1,
+      "fullSha256": "90562a98e8686267026a16f0ddf842d7010766216a4aaa6a07f9bf0db491eab7",
+      "senseDefinition": "cuốn sách",
+      "status": "active"
+    },
+    {
+      "id": "d17314a48504e2ac",
+      "identityLemma": "book",
+      "pos": "verb",
+      "senseIndex": 1,
+      "fullSha256": "d17314a48504e2ace19ab2bec5b77cd0d046c8ecc8618e0ebf5249c82736fcc7",
+      "senseDefinition": "đặt trước",
+      "status": "active"
+    },
+    {
+      "id": "5aecfbf5b9a23aee",
+      "identityLemma": "bank",
+      "pos": "noun",
+      "senseIndex": 1,
+      "fullSha256": "5aecfbf5b9a23aee26dbe4bcdd25f93efe4aa57ac2fd9773ff5239d9643ace9b",
+      "senseDefinition": "ngân hàng",
+      "status": "active"
+    },
+    {
+      "id": "923d45253cc2c67c",
+      "identityLemma": "airport",
+      "pos": "noun",
+      "senseIndex": 1,
+      "fullSha256": "923d45253cc2c67c03182b2251edbd35eeb0d8b082655369ece86216251f7e6f",
+      "senseDefinition": "sân bay",
+      "status": "active"
+    }
+  ],
+  "packs": [
+    {
+      "id": "toeic-basic",
+      "title": "TOEIC Căn bản",
+      "description": "Gói fixture nhỏ chỉ dùng kiểm tra contract.",
+      "category": "toeic",
+      "orderNo": 0,
+      "version": "1.0.0"
+    },
+    {
+      "id": "toeic-office",
+      "title": "TOEIC Công sở & Giao dịch",
+      "description": "Gói fixture nhỏ chỉ dùng kiểm tra contract.",
+      "category": "toeic",
+      "orderNo": 1,
+      "version": "1.0.0"
+    },
+    {
+      "id": "everyday-english",
+      "title": "Tiếng Anh Đời sống Hàng ngày",
+      "description": "Gói fixture nhỏ chỉ dùng kiểm tra contract.",
+      "category": "general",
+      "orderNo": 2,
+      "version": "1.0.0"
+    },
+    {
+      "id": "essential-academic",
+      "title": "Từ vựng Học thuật Thiết yếu",
+      "description": "Gói fixture nhỏ chỉ dùng kiểm tra contract.",
+      "category": "academic",
+      "orderNo": 3,
+      "version": "1.0.0"
+    }
+  ],
+  "packWords": [
+    {
+      "packId": "toeic-basic",
+      "vocabularyId": "90562a98e8686267",
+      "orderNo": 0
+    },
+    {
+      "packId": "toeic-basic",
+      "vocabularyId": "d17314a48504e2ac",
+      "orderNo": 1
+    },
+    {
+      "packId": "toeic-basic",
+      "vocabularyId": "5aecfbf5b9a23aee",
+      "orderNo": 2
+    },
+    {
+      "packId": "toeic-basic",
+      "vocabularyId": "923d45253cc2c67c",
+      "orderNo": 3
+    },
+    {
+      "packId": "toeic-office",
+      "vocabularyId": "90562a98e8686267",
+      "orderNo": 0
+    },
+    {
+      "packId": "toeic-office",
+      "vocabularyId": "d17314a48504e2ac",
+      "orderNo": 1
+    },
+    {
+      "packId": "toeic-office",
+      "vocabularyId": "5aecfbf5b9a23aee",
+      "orderNo": 2
+    },
+    {
+      "packId": "toeic-office",
+      "vocabularyId": "923d45253cc2c67c",
+      "orderNo": 3
+    },
+    {
+      "packId": "everyday-english",
+      "vocabularyId": "90562a98e8686267",
+      "orderNo": 0
+    },
+    {
+      "packId": "everyday-english",
+      "vocabularyId": "d17314a48504e2ac",
+      "orderNo": 1
+    },
+    {
+      "packId": "everyday-english",
+      "vocabularyId": "5aecfbf5b9a23aee",
+      "orderNo": 2
+    },
+    {
+      "packId": "everyday-english",
+      "vocabularyId": "923d45253cc2c67c",
+      "orderNo": 3
+    },
+    {
+      "packId": "essential-academic",
+      "vocabularyId": "90562a98e8686267",
+      "orderNo": 0
+    },
+    {
+      "packId": "essential-academic",
+      "vocabularyId": "d17314a48504e2ac",
+      "orderNo": 1
+    },
+    {
+      "packId": "essential-academic",
+      "vocabularyId": "5aecfbf5b9a23aee",
+      "orderNo": 2
+    },
+    {
+      "packId": "essential-academic",
+      "vocabularyId": "923d45253cc2c67c",
+      "orderNo": 3
+    }
+  ]
+}

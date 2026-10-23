@@ -1,0 +1,50 @@
+{
+  "missing-meaning": {
+    "file": "missing-meaning.json",
+    "expectedCode": "SCHEMA"
+  },
+  "empty-example": {
+    "file": "empty-example.json",
+    "expectedCode": "SCHEMA"
+  },
+  "blank-meaning": {
+    "file": "blank-meaning.json",
+    "expectedCode": "TEXT_NOT_CANONICAL"
+  },
+  "duplicate-id": {
+    "file": "duplicate-id.json",
+    "expectedCode": "DUPLICATE_ID"
+  },
+  "wrong-id": {
+    "file": "wrong-id.json",
+    "expectedCode": "MISSING_IDENTITY"
+  },
+  "unknown-source": {
+    "file": "unknown-source.json",
+    "expectedCode": "UNKNOWN_SOURCE"
+  },
+  "unknown-pack": {
+    "file": "unknown-pack.json",
+    "expectedCode": "UNKNOWN_PACK"
+  },
+  "duplicate-membership": {
+    "file": "duplicate-membership.json",
+    "expectedCode": "DUPLICATE_MEMBERSHIP"
+  },
+  "duplicate-order": {
+    "file": "duplicate-order.json",
+    "expectedCode": "DUPLICATE_ORDER"
+  },
+  "incomplete-provenance": {
+    "file": "incomplete-provenance.json",
+    "expectedCode": "PROVENANCE_COVERAGE"
+  },
+  "wrong-normalized-lemma": {
+    "file": "wrong-normalized-lemma.json",
+    "expectedCode": "NORMALIZED_LEMMA"
+  },
+  "unrecognized-field": {
+    "file": "unrecognized-field.json",
+    "expectedCode": "SCHEMA"
+  }
+}
