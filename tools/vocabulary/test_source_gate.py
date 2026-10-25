@@ -5,7 +5,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from source_gate import ROOT, audit_eligible, authorize, validate_registry
+from source_gate import ROOT, audit_eligible, authorize, validate_registry, snapshot_content_digest
 
 
 class SourceGateTest(unittest.TestCase):
@@ -33,6 +33,7 @@ class SourceGateTest(unittest.TestCase):
                                   sha256=hashlib.sha256(content).hexdigest()))
         source['snapshot'] = dict(id='test-only', upstreamVersion='test', upstreamDate='2026-10-25',
                                   retrievedAt='2026-10-25T00:00:00Z', artifacts=artifacts)
+        source['review']['snapshotSha256'] = snapshot_content_digest(source['snapshot'])
         return source
 
     def test_registry_structure(self):

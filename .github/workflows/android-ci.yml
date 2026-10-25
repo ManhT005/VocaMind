@@ -40,8 +40,7 @@ jobs:
 
       - name: Validate vocabulary source registry and gate
         run: |
-          python tools/vocabulary/source_gate.py
-          python tools/vocabulary/gate_sources.py --snapshot docs/data/snapshot.json
+          python tools/vocabulary/gate_sources.py --snapshot docs/data/snapshot.json --json
           python -m unittest discover -s tools/vocabulary -p 'test_*.py' -v
 
       - name: Validate Gradle Wrapper

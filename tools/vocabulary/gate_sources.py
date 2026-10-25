@@ -5,7 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from source_gate import ROOT, audit_eligible, authorize, require, verified_artifact
+from source_gate import ROOT, audit_eligible, authorize, require, verified_artifact, status_report
 
 
 def registry_digest(document):
@@ -14,8 +14,8 @@ def registry_digest(document):
     return hashlib.sha256(content.encode('utf-8')).hexdigest()
 
 
-def freeze(document, destination, root=ROOT):
-    sources = audit_eligible(document, root)
+def freeze(document, destination, root=ROOT, hash_cache=None):
+    sources = audit_eligible(document, root, hash_cache)
     inventory = {s['id']: s.get('researchArtifacts', []) +
                  (s.get('snapshot') or {}).get('artifacts', []) for s in sources}
     snapshot = {'schemaVersion': 1, 'purpose': 'research-inventory',
@@ -27,7 +27,8 @@ def freeze(document, destination, root=ROOT):
     return snapshot
 
 
-def verify_snapshot(snapshot, document=None, root=ROOT):
+def verify_snapshot(snapshot, document=None, root=ROOT, hash_cache=None):
+    require(isinstance(snapshot, dict), 'Frozen snapshot must be an object')
     require(snapshot.get('schemaVersion') == 1 and snapshot.get('purpose') == 'research-inventory',
             'Unsupported frozen inventory')
     require(snapshot.get('errors') == [], 'Capture has unresolved errors')
@@ -43,7 +44,7 @@ def verify_snapshot(snapshot, document=None, root=ROOT):
     for artifacts in sources.values():
         require(isinstance(artifacts, list), 'Source artifacts must be an array')
         for artifact in artifacts:
-            verified_artifact(artifact, root)
+            verified_artifact(artifact, root, hash_cache)
     return snapshot
 
 
@@ -51,19 +52,24 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--registry', type=Path, default=ROOT / 'docs/data/source-registry.json')
     parser.add_argument('--source', help='Authorize source for import; hold/candidate/exclude are blocked')
+    parser.add_argument('--json', action='store_true', help='Print audited status and blockers as JSON')
     group = parser.add_mutually_exclusive_group()
     group.add_argument('--freeze', type=Path, help='Create a new immutable snapshot.json; never overwrite')
     group.add_argument('--snapshot', type=Path, help='Verify a frozen research inventory')
     args = parser.parse_args()
     try:
         document = json.loads(args.registry.read_text('utf-8'))
-        audit_eligible(document)
+        hash_cache = {}
+        audit_eligible(document, hash_cache=hash_cache)
         if args.freeze:
-            freeze(document, args.freeze)
+            freeze(document, args.freeze, hash_cache=hash_cache)
         if args.snapshot:
-            verify_snapshot(json.loads(args.snapshot.read_text('utf-8')), document)
+            verify_snapshot(json.loads(args.snapshot.read_text('utf-8')), document, hash_cache=hash_cache)
         if args.source:
-            authorize(document, args.source)
+            authorize(document, args.source, hash_cache=hash_cache)
+        if args.json:
+            print(json.dumps(status_report(document), indent=2))
+        elif args.source:
             print(f'PASS: {args.source} approved snapshot; downstream content QA still required')
         else:
             print('PASS: research inventory only; no source import or release authorized')

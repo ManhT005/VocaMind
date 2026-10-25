@@ -68,3 +68,21 @@ The registry adds Commons as research only and retains ngsl/tsl IDs with aliases
 ngsl-12/tsl-12. See [handoff](../../docs/voc-data-01-handoff.md) for provenance,
 review and versioned freeze procedures. No live corpus download is part of this
 handoff update; existing captures remain unchanged.
+
+## Optimized audit and status
+
+```powershell
+py -3 tools/vocabulary/gate_sources.py --snapshot docs/data/snapshot.json --json
+```
+
+The JSON report lists raw row counts, actual eligibility and blockers separately.
+Counts describe raw input, not QA-approved vocabulary. Each local artifact is
+hashed once per command, shared across registry and frozen-inventory checks.
+The cache lives only within that invocation; file identity/size/timestamps are
+checked on reuse and each declared checksum is still compared. Files changed
+during hashing are rejected. No persistent checksum cache is used.
+
+Source approval now requires `review.snapshotSha256` matching the report's
+`snapshotContentSha256`, in addition to snapshot ID and the actual approval
+artifact. This prevents reusing approval after changing content under the same
+ID. The content digest excludes the approval artifact to avoid a circular hash.

@@ -35,7 +35,7 @@ VOC-DATA-02/03. Không thay app/Room/catalog asset/userdata.
 
 | Lệnh | Kết quả |
 | --- | --- |
-| `py -3 -W error::ResourceWarning -m unittest discover -s tools/vocabulary -p 'test_*.py' -v` | 29 tests pass |
+| `py -3 -W error::ResourceWarning -m unittest discover -s tools/vocabulary -p 'test_*.py' -v` | 35 tests pass |
 | `py -3 tools/vocabulary/source_gate.py` | Exit 0; inventory và checksum hợp lệ |
 | `py -3 tools/vocabulary/gate_sources.py --snapshot docs/data/snapshot.json` | Exit 0; inventory đã đóng băng khớp registry và byte hash |
 | `py -3 tools/vocabulary/gate_sources.py --snapshot docs/data/snapshot.json --source ngsl-12` | Exit 1 đúng kỳ vọng, nguồn candidate/hold không được import |
@@ -66,3 +66,21 @@ kiểm tra encoding TSL và actual license từng câu Tatoeba. UI attribution o
 QA tối thiểu 150 vocabulary IDs và release sign-off cần kiểm chứng ở task tích hợp.
 Chưa chạy Android build (không đổi app), chưa chứng minh CI chạy trên GitHub
 cho lần cập nhật này. Không sửa các file Word/Excel gốc.
+
+## 4. Tối ưu gate và báo cáo
+
+- Audit và frozen check dùng chung cache hash trong một lần chạy: 14 artifact
+  được hash 14 lần thay vì 28 lần. Test đếm trực tiếp lời gọi `file_digest`;
+  đây là giảm I/O lặp, chưa phải benchmark thời gian xử lý corpus.
+- CI bỏ lệnh audit độc lập bị trùng; một lệnh kiểm tra đầy đủ và xuất JSON.
+- Cache không ghi xuống đĩa; recheck file identity/size/mtime/ctime, so sánh lại
+  expected hash. Thay byte cùng kích thước hoặc sửa checksum đều bị phát hiện.
+- Approval buộc khớp content digest ngoài snapshot ID, tránh dùng lại review
+  cho nội dung đã thay dù ID giữ nguyên. Không tạo hoặc giả lập sign-off thật.
+- Validate kiểu dữ liệu và URL HTTPS trước khi xử lý artifact/evidence để lỗi
+  manifest có thông báo BLOCKED thay vì lỗi thuộc tính chưa được kiểm soát.
+- `--json` báo 7 nguồn, 4.059 dòng raw theo registry, 0 nguồn eligible và blocker
+  từng nguồn. Không đồng nhất số dòng raw với số từ MVP được QA.
+
+Không đổi registry, frozen snapshot hay raw evidence ở đợt tối ưu này. Trạng thái
+hold/exclude và yêu cầu duyệt vẫn giữ nguyên.
