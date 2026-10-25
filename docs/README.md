@@ -5,6 +5,7 @@ project entry point; generated build outputs stay in ignored build directories.
 
 | Document | Purpose |
 | --- | --- |
+| [DATA-03 DAO foundation plan](plans/data-03-dao-foundation.md) | Query contracts, active due/new selection, transaction boundaries, fixtures and 7-hour implementation plan |
 | [DATA-02 plan](plans/data-02-user-database.md) | UserDatabase scope and acceptance criteria |
 | [DATA-02 validation](data-02-validation.md) | Schema decisions, persistence tests and remaining acceptance checks |
 | [Android setup](android-setup.md) | Environment requirements, Android Studio setup and build commands |

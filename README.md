@@ -12,6 +12,7 @@ the remaining GitHub merge-gate setup.
 
 ## Documentation
 
+- [DATA-03 DAO foundation plan](docs/plans/data-03-dao-foundation.md)
 - [DATA-02 UserDatabase plan](docs/plans/data-02-user-database.md)
 - [DATA-02 implementation and validation](docs/data-02-validation.md)
 
