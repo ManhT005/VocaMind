@@ -85,3 +85,20 @@ settings and publish when desired.
 
 The debug APK was also inspected as a ZIP: assets/database/catalog.db exactly
 matches the checked-in asset and its metadata SHA-256.
+
+## DATA-01 review fixes
+
+- Explicitly close the SQLite builder connection before os.replace and temporary
+  cleanup. Python's connection context manager alone only controls transactions.
+- Added two Python regressions for closed handles, repeatability and replacement
+  failure preserving the existing output. Android CI includes these tests.
+- Moved deterministic catalog assertions to a separate test-only fixture loaded
+  through createFromInputStream. It is not bundled in the application APK.
+- Added four shared production-asset checks through createFromAsset without
+  assumptions about fixture word names, exact counts, number of sources or IPA.
+- Validation: 40 Android/JVM test executions passed: 22 fixed fixture + 8 actual
+  asset + 10 existing Quiz; 0 failed/skipped. Two Python regressions passed.
+  Both app APK and instrumentation APK assembly succeeded.
+- Connected instrumentation remains unexecuted. The fixed-fixture API change
+  does not establish device evidence; the actual shipped asset still has only
+  4 unique vocabulary entries and is not the full release catalog.

@@ -8,4 +8,10 @@ import org.robolectric.annotation.SQLiteMode;
 @RunWith(RobolectricTestRunner.class)
 @Config(sdk = {26, 35})
 @SQLiteMode(SQLiteMode.Mode.NATIVE)
-public class CatalogAssetTest extends CatalogAssetContract { }
+public class CatalogAssetTest extends CatalogAssetContract {
+    @Override protected java.io.InputStream fixtureStream() throws java.io.IOException {
+        java.io.InputStream stream = getClass().getResourceAsStream("/fixtures/catalog.db");
+        if (stream == null) throw new java.io.FileNotFoundException("fixtures/catalog.db");
+        return stream;
+    }
+}

@@ -46,6 +46,9 @@ jobs:
           java -version
           ./gradlew --version
 
+      - name: Test catalog asset tooling
+        run: python3 -m unittest discover -s tools/catalog -p 'test_*.py' -v
+
       - name: Run unit tests
         run: ./gradlew testDebugUnitTest
 

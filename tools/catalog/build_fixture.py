@@ -2,6 +2,7 @@
 """Build DATA-01's synthetic test catalog from the actual exported Room schema.
 Not the production vocabulary ETL: no external data or license claims are imported.
 """
+from contextlib import closing
 import hashlib
 import json
 import os
@@ -31,7 +32,7 @@ def build():
     fd, tmp = tempfile.mkstemp(dir=ASSET.parent, suffix='.db')
     os.close(fd)
     try:
-        with sqlite3.connect(tmp) as db:
+        with closing(sqlite3.connect(tmp)) as db:
             db.execute('PRAGMA foreign_keys=ON')
             db.execute('PRAGMA page_size=4096')
             for entity in schema['entities']:

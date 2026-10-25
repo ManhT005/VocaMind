@@ -22,7 +22,9 @@ android {
 
     sourceSets {
         test.java.srcDir "src/catalogTest/java"
+        test.resources.srcDir "src/catalogTest/assets"
         androidTest.java.srcDir "src/catalogTest/java"
+        androidTest.assets.srcDir "src/catalogTest/assets"
     }
 
     testOptions {

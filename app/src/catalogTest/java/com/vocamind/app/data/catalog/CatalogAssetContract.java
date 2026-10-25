@@ -8,17 +8,22 @@ import java.util.*;
 import java.util.concurrent.*;
 import static org.junit.Assert.*;
 
-/** Same real-asset contract runs on a device and on Robolectric native SQLite. */
+/** Fixed fixture contract; independent of the replaceable production catalog asset. */
 public abstract class CatalogAssetContract {
     private Context context;
     private CatalogDatabase db;
     private CatalogRepository repository;
     private final String name = "catalog-data01-test.db";
     private ExecutorService worker;
+    protected abstract java.io.InputStream fixtureStream() throws java.io.IOException;
+    private CatalogDatabase openFixture() {
+        return androidx.room.Room.databaseBuilder(context, CatalogDatabase.class, name)
+                .createFromInputStream(this::fixtureStream).build();
+    }
     @Before public void setUp() {
         context = ApplicationProvider.getApplicationContext();
         context.deleteDatabase(name);
-        db = CatalogDatabase.open(context, name);
+        db = openFixture();
         repository = new RoomCatalogRepository(db.catalogDao());
         worker = Executors.newSingleThreadExecutor();
     }
@@ -97,7 +102,7 @@ public abstract class CatalogAssetContract {
     @Test public void reopeningExistingCopyWorks() throws Exception {
         read(repository::getPacks);
         db.close();
-        db = CatalogDatabase.open(context, name);
+        db = openFixture();
         repository = new RoomCatalogRepository(db.catalogDao());
         assertEquals(4, read(repository::getPacks).size());
     }
@@ -108,7 +113,7 @@ public abstract class CatalogAssetContract {
             return null;
         });
         db.close();
-        db = CatalogDatabase.open(context, name);
+        db = openFixture();
         repository = new RoomCatalogRepository(db.catalogDao());
         read(() -> {
             CatalogReadException failure = assertThrows(CatalogReadException.class, repository::getPacks);
