@@ -12,6 +12,28 @@ android {
         targetSdk 35
         versionCode 1
         versionName "0.1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    sourceSets {
+        test.java.srcDir "src/catalogTest/java"
+        androidTest.java.srcDir "src/catalogTest/java"
+    }
+
+    testOptions {
+        unitTests.includeAndroidResources = true
+        unitTests.all {
+            // Keep Robolectric's Maven lock/cache in a writable, project-local location.
+            def testHome = layout.buildDirectory.dir("robolectric-home").get().asFile
+            testHome.mkdirs()
+            systemProperty "user.home", testHome.absolutePath
+            systemProperty "robolectric.dependency.repo.url", "https://repo.maven.apache.org/maven2"
+        }
     }
 
     buildFeatures {
@@ -42,4 +64,8 @@ dependencies {
     annotationProcessor "androidx.room:room-compiler:$room_version"
 
     testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.robolectric:robolectric:4.16.1'
+    testImplementation 'androidx.test:core:1.7.0'
+    androidTestImplementation 'androidx.test:runner:1.7.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.3.0'
 }
