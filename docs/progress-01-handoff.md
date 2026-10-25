@@ -9,10 +9,11 @@ Lê Mạnh Trường; phối hợp DATA-07: Bùi Vĩ Nhân.
   người dùng cung cấp; trạng thái “chỉ lập kế hoạch” trong file là thông tin lịch sử.
 - [Bảng phân công VocaMind](https://docs.google.com/spreadsheets/d/1Zx4QWaSalYk2-KWoaRRxwL6Hd-vv-sa2Lv9dBDxzQFg/edit):
   đã đọc các dòng PROGRESS-01, DATA-07 và PROGRESS-02 qua Google Drive.
-- SRS baseline v1.1 chưa có trong checkout/Downloads hoặc kết quả tìm Drive.
-  Các mã FR-VM-041..044, BR-09, UC-07, AC-11, DEC-15 dưới đây truy vết theo
-  kế hoạch và bảng phân công, chưa tuyên bố đối chiếu độc lập toàn văn baseline.
-  Tài liệu “Đặc Tả SRS Cho VocaMind” trên Drive là bản khác, không dùng thay baseline.
+- Sau triển khai, đã đọc trực tiếp hai DOCX SRS người dùng cung cấp trên ổ G:,
+  lấy `VocaMind_SRS_Baseline_v1.1.docx` làm baseline hiện hành; SRS Android v1.0
+  chỉ dùng đối chiếu lịch sử. Đã đọc lại ba dòng task trong XLSX phân công local.
+  [Audit SRS](progress-01-srs-audit.md) ghi ma trận yêu cầu → code/test → giới hạn
+  nghiệm thu; không phát hiện điểm lệch cần sửa source trong phạm vi PROGRESS-01.
 
 Chỉ thêm domain Java, presentation contract, test và tài liệu. Không thay
 schema/DAO, Quiz, scheduler, Fragment/navigation hoặc Gradle/dependency.

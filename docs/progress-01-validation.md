@@ -4,8 +4,10 @@ Ngày: 25/10/2026. Nhánh: `feature/progress-01-contract`.
 Base develop: `37f14ca3cdb9086e9960fef988290c0839d5aa3e`.
 
 Đã triển khai model/contract/view state và local tests theo
-[kế hoạch](plans/progress-01-contract.md). Chi tiết API, nguồn tài liệu, giới hạn
-đối chiếu SRS và mapping nằm trong [handoff](progress-01-handoff.md).
+[kế hoạch](plans/progress-01-contract.md). Chi tiết API, nguồn tài liệu và mapping
+nằm trong [handoff](progress-01-handoff.md). Sau triển khai đã đối chiếu trực tiếp
+hai file SRS người dùng cung cấp với code/test, XLSX phân công và plan; xem
+[audit SRS](progress-01-srs-audit.md). Không phát hiện điểm lệch cần sửa source.
 
 ## Môi trường thực thi
 
@@ -67,7 +69,7 @@ Coverage hành vi đã kiểm chứng:
 - [x] Focused tests, full regression và debug build thành công bằng Android Gradle.
 - [x] Không sửa schema/DAO/Quiz/Leitner/UI/Gradle và không thêm filter learnedAt/pack.
 - [x] Handoff rõ trách nhiệm DATA-07 / PROGRESS-02 và saved-only semantics.
-- [ ] Đối chiếu trực tiếp SRS baseline v1.1 khi có file/link đúng phiên bản.
+- [x] Đối chiếu trực tiếp SRS baseline v1.1 và SRS Android v1.0; ma trận audit phân biệt contract với DB/UI acceptance.
 - [ ] Nhân xác nhận mapping/aggregation và policy saved-only row; Trường review.
 - [ ] PR vào develop và xử lý phản hồi review.
 

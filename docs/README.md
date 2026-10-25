@@ -18,6 +18,7 @@ project entry point; generated build outputs stay in ignored build directories.
 | [PROGRESS-01 plan](plans/progress-01-contract.md) | Progress summary, Quiz history, use case/view-state contracts and planned validation |
 | [PROGRESS-01 handoff](progress-01-handoff.md) | Progress models, repository/use case/view state contracts and integration responsibilities |
 | [PROGRESS-01 validation](progress-01-validation.md) | Executed checks, test counts and remaining delivery steps |
+| [PROGRESS-01 SRS audit](progress-01-srs-audit.md) | Direct comparison of both supplied SRS documents, assignment, plan and implemented contracts |
 | [UI sketch](sketchs.png) | Visual reference for future feature screens |
 
 Use lowercase kebab-case filenames for new documentation. Put task plans in
