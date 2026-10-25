@@ -1,0 +1,15 @@
+{
+  "kind": "synthetic-test-fixture-not-production",
+  "schemaVersion": 1,
+  "identityHash": "efa191d9c5460acbfe5be9835e39cfaa",
+  "contentVersion": "1.0.0",
+  "sha256": "e88f46f4a10e835d97ab03a87a534ca345321d7cf7738569f49524abda1d4104",
+  "uniqueVocabularyCount": 4,
+  "membershipCount": 16,
+  "packCounts": {
+    "pack_toeic_basic": 4,
+    "pack_toeic_office": 4,
+    "pack_daily_life": 4,
+    "pack_academic": 4
+  }
+}
