@@ -39,10 +39,11 @@ artifacts and never modify the app catalog or userdata.
 py -3 tools/vocabulary/capture_sources.py --id unique-research-capture-id
 ```
 
-This downloads fixed official NGSL/TSL CSVs and source/license pages; for Kaikki
+By default this prints a dry-run only. Add `--execute` to download fixed official
+NGSL/TSL CSVs and source/license pages; for Kaikki
 and Tatoeba it captures only research pages. It refuses an existing destination,
 records final URL, exact bytes, UTC timestamp and SHA-256, reports unavailable
-inputs in capture.json, and never changes registry approval. Review capture.json
+inputs in snapshot.json, and never changes registry approval. Review snapshot.json
 before registering new artifacts. CI runs offline and never calls this command.
 Archived bytes have Git text conversion disabled to preserve hashes on all OSes.
 
@@ -50,3 +51,20 @@ The checked-in capture contains 12 downloads and two generated attribution
 notices. Raw TSL is decoded with cp1252 for inspection, without modifying bytes.
 See the [approval template](../../docs/data/source-approval-template.md) and
 [requirements traceability](../../docs/voc-data-01-requirements-traceability.md).
+
+## Revised handoff
+
+```powershell
+py -3 tools/vocabulary/gate_sources.py --snapshot docs/data/snapshot.json
+py -3 tools/vocabulary/gate_sources.py --snapshot docs/data/snapshot.json --source ngsl-12
+py -3 tools/vocabulary/commons_audio_metadata.py --title 'File:Example.ogg'
+```
+
+The first command verifies frozen inventory, not release permission. The second
+must fail for a candidate/hold source. The third prints the planned metadata API
+query; `--execute --output new-file.json` explicitly captures metadata only, never
+the media URL. The result stays hold even when license fields are present.
+The registry adds Commons as research only and retains ngsl/tsl IDs with aliases
+ngsl-12/tsl-12. See [handoff](../../docs/voc-data-01-handoff.md) for provenance,
+review and versioned freeze procedures. No live corpus download is part of this
+handoff update; existing captures remain unchanged.

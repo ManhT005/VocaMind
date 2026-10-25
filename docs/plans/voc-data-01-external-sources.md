@@ -1,5 +1,10 @@
 # Kế hoạch VOC-DATA-01 — Research external vocabulary sources
 
+Plan này là nền triển khai ban đầu. Đợt cập nhật hiện tại áp dụng
+[plan ledger/handoff mới](voc-data-01-source-ledger-and-handoff.md): nguồn
+candidate giữ audit decision hold, Commons audio chỉ nghiên cứu metadata,
+không tải thêm corpus và không tự nghiệm thu. Xem [handoff](../voc-data-01-handoff.md).
+
 ## 1. Thông tin task
 
 | Hạng mục | Nội dung |
@@ -82,6 +87,8 @@ phê duyệt nguồn thật. Không chạy Android build vì không đổi app/G
 - [x] Thu nhận raw snapshot NGSL/TSL, legal evidence và checksum thực tế.
 - [x] Lưu research evidence Kaikki/Tatoeba, ghi blocker trước pipeline.
 - [x] Đối chiếu SRS/Excel gốc; bổ sung phiếu PO/Content Lead và ràng buộc gate.
+- [x] Áp dụng plan handoff mới: candidate/hold, Commons metadata-only,
+  frozen inventory và acquisition mặc định dry-run; 29 tests pass.
 - [ ] Chốt license route Kaikki, attribution cấp record và review của Trường.
 - [ ] ETL tương lai gọi gate và kiểm tra provenance từng record trước import.
 

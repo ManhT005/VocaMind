@@ -7,7 +7,7 @@
       "scope": "lemmas and frequency ranks",
       "packagingStatus": "pending",
       "licenseCode": "CC-BY-SA-4.0",
-      "decision": "include",
+      "decision": "hold",
       "evidence": [
         {
           "checkedOn": "2026-10-25",
@@ -21,7 +21,7 @@
         "ShareAlike for adapted data"
       ],
       "title": "New General Service List 1.2",
-      "reason": "Selected for MVP subject to all ledger gates; not approved for ingestion",
+      "reason": "Candidate source for review; audit decision hold until evidence-backed include/exclude is accepted",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "blockers": [
         "PO/Content Lead snapshot sign-off pending",
@@ -76,7 +76,12 @@
         "recordCount": 2809,
         "textEncoding": "utf-8-sig"
       },
-      "pipelineEligible": false
+      "pipelineEligible": false,
+      "researchStatus": "candidate",
+      "redistribution": "not-approved",
+      "aliases": [
+        "ngsl-12"
+      ]
     },
     {
       "url": "https://www.newgeneralservicelist.com/toeic-service-list",
@@ -84,7 +89,7 @@
       "scope": "lemmas and frequency ranks",
       "packagingStatus": "pending",
       "licenseCode": "CC-BY-SA-4.0",
-      "decision": "include",
+      "decision": "hold",
       "evidence": [
         {
           "checkedOn": "2026-10-25",
@@ -98,7 +103,7 @@
         "ShareAlike for adapted data"
       ],
       "title": "TOEIC Service List 1.2",
-      "reason": "Selected for MVP subject to all ledger gates; not approved for ingestion",
+      "reason": "Candidate source for review; audit decision hold until evidence-backed include/exclude is accepted",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "blockers": [
         "PO/Content Lead snapshot sign-off pending",
@@ -153,7 +158,12 @@
         "recordCount": 1250,
         "textEncoding": "cp1252"
       },
-      "pipelineEligible": false
+      "pipelineEligible": false,
+      "researchStatus": "candidate",
+      "redistribution": "not-approved",
+      "aliases": [
+        "tsl-12"
+      ]
     },
     {
       "url": "https://kaikki.org/viwiktionary/",
@@ -161,7 +171,7 @@
       "scope": "raw English entries with Vietnamese glosses, POS and optional IPA",
       "packagingStatus": "pending",
       "licenseCode": null,
-      "decision": "include",
+      "decision": "hold",
       "evidence": [
         {
           "checkedOn": "2026-10-25",
@@ -175,7 +185,7 @@
         "Record Kaikki and Wiktextract provenance; avoid merged postprocessed data"
       ],
       "title": "Kaikki Vietnamese Wiktionary edition",
-      "reason": "Selected for MVP subject to all ledger gates; not approved for ingestion",
+      "reason": "Candidate source for review; audit decision hold until evidence-backed include/exclude is accepted",
       "licenseUrl": null,
       "blockers": [
         "Exact viwiktionary snapshot license route and exceptions unresolved",
@@ -215,7 +225,9 @@
           "contentType": "text/html",
           "retrievedAt": "2026-10-25T10:02:20.345399+00:00"
         }
-      ]
+      ],
+      "researchStatus": "candidate",
+      "redistribution": "not-approved"
     },
     {
       "url": "https://tatoeba.org/en/downloads",
@@ -223,7 +235,7 @@
       "scope": "directly linked English and Vietnamese text sentences",
       "packagingStatus": "pending",
       "licenseCode": "CC-BY-2.0-FR",
-      "decision": "include",
+      "decision": "hold",
       "evidence": [
         {
           "checkedOn": "2026-10-25",
@@ -237,7 +249,7 @@
         "Retain licenses and indicate adaptations; no audio"
       ],
       "title": "Tatoeba text EN-VI",
-      "reason": "Selected for MVP subject to all ledger gates; not approved for ingestion",
+      "reason": "Candidate source for review; audit decision hold until evidence-backed include/exclude is accepted",
       "licenseUrl": "https://creativecommons.org/licenses/by/2.0/fr/",
       "blockers": [
         "Text export snapshot and per-sentence authors/licenses/links not acquired",
@@ -277,7 +289,14 @@
           "retrievedAt": "2026-10-25T10:02:26.392570+00:00"
         }
       ],
-      "exportResearchStatus": "Downloads page successfully archived; previous timeout resolved"
+      "exportResearchStatus": "Downloads page successfully archived; previous timeout resolved",
+      "researchStatus": "candidate",
+      "redistribution": "not-approved",
+      "exportIndexes": [
+        "https://downloads.tatoeba.org/exports/per_language/eng/",
+        "https://downloads.tatoeba.org/exports/per_language/vie/",
+        "https://downloads.tatoeba.org/exports/"
+      ]
     },
     {
       "url": null,
@@ -303,7 +322,9 @@
         "Excluded from MVP by backlog"
       ],
       "snapshot": null,
-      "pipelineEligible": false
+      "pipelineEligible": false,
+      "researchStatus": "excluded",
+      "redistribution": "forbidden-in-mvp"
     },
     {
       "url": "https://tatoeba.org/en/terms_of_use",
@@ -330,7 +351,45 @@
         "Audio licenses vary by contributor"
       ],
       "snapshot": null,
-      "pipelineEligible": false
+      "pipelineEligible": false,
+      "researchStatus": "excluded",
+      "redistribution": "forbidden-in-mvp"
+    },
+    {
+      "id": "commons-audio",
+      "title": "Wikimedia Commons audio metadata research",
+      "url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "scope": "Per-file metadata queries only; no media download or MVP audio asset",
+      "decision": "hold",
+      "researchStatus": "research-only",
+      "redistribution": "not-approved",
+      "packagingStatus": "pending",
+      "pipelineEligible": false,
+      "licenseCode": null,
+      "licenseUrl": null,
+      "snapshot": null,
+      "reason": "New handoff plan permits metadata-only research; file-specific rights and future ADR required",
+      "blockers": [
+        "Research only; no media ingestion route",
+        "Per-file license, creator, attribution and content review absent"
+      ],
+      "obligations": [
+        "Retain Commons file description URL and revision metadata",
+        "Verify license and author for every file; metadata is not permission",
+        "No audio entity, media download or asset bundling in this task"
+      ],
+      "evidence": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+          "checkedOn": "2026-10-25",
+          "note": "Official licensing policy; per-file rights still need review"
+        },
+        {
+          "url": "https://www.mediawiki.org/wiki/API:Imageinfo",
+          "checkedOn": "2026-10-25",
+          "note": "Official imageinfo/extmetadata API; script never fetches media"
+        }
+      ]
     }
   ],
   "snapshotContract": "docs/voc-data-01-source-ledger.md",
@@ -346,5 +405,19 @@
     "scope": "per source snapshot",
     "requiredArtifactRole": "approval",
     "status": "pending"
+  },
+  "handoffPolicy": {
+    "candidateIsInclude": false,
+    "auditDecisions": [
+      "include",
+      "exclude",
+      "hold"
+    ],
+    "sourceAliases": {
+      "ngsl-12": "ngsl",
+      "tsl-12": "tsl"
+    },
+    "humanAcceptance": "pending",
+    "newLiveCorpusDownloads": false
   }
 }

@@ -7,11 +7,18 @@ Nhánh: `feature/voc-data-01-external-sources`, nền `89225c2`.
 
 Đã đối chiếu SRS cũ, baseline v1.1, Excel Phân công và plan; xem
 [traceability](voc-data-01-requirements-traceability.md) với hash tài liệu gốc.
-Dòng VOC-DATA-01 yêu cầu source governance; canonical schema và ingestion thuộc
+Dòng VOC-DATA-01 yêu cầu source governance; đợt hiện tại thực hiện thêm
+[plan ledger/handoff mới](plans/voc-data-01-source-ledger-and-handoff.md).
+Canonical schema và ingestion thuộc
 VOC-DATA-02/03. Không thay app/Room/catalog asset/userdata.
 
-- Sáu nguồn có decision/evidence/license/obligations trong [ledger](voc-data-01-source-ledger.md)
+- Bảy nguồn (sáu nguồn gốc và Commons research-only) có decision/evidence/license/obligations trong [ledger](voc-data-01-source-ledger.md)
   và [registry](data/source-registry.json). FVDP và Tatoeba audio luôn exclude.
+- Bốn nguồn text là candidate với audit decision hold; chưa có accepted include.
+  `ngsl-12`/`tsl-12` là alias của source ID cũ, giữ nguyên provenance.
+- Frozen [snapshot.json](data/snapshot.json) kiểm tra registry digest và artifact
+  hash. Capture mặc định dry-run; Commons chỉ hỏi API metadata khi có `--execute`,
+  không fetch media. Đợt này không tải thêm corpus hoặc metadata live.
 - Thu nhận raw NGSL 1.2 (2.809 dòng) và TSL 1.2 (1.250 dòng); URL redirect,
   timestamp UTC, byte count và SHA-256 thực tế lưu trong registry.
 - Lưu 12 artifact tải từ upstream: CSV, source pages, legal code, Kaikki raw
@@ -28,21 +35,25 @@ VOC-DATA-02/03. Không thay app/Room/catalog asset/userdata.
 
 | Lệnh | Kết quả |
 | --- | --- |
-| `py -3 -W error::ResourceWarning -m unittest discover -s tools/vocabulary -p 'test_*.py' -v` | 18 tests pass |
+| `py -3 -W error::ResourceWarning -m unittest discover -s tools/vocabulary -p 'test_*.py' -v` | 29 tests pass |
 | `py -3 tools/vocabulary/source_gate.py` | Exit 0; inventory và checksum hợp lệ |
-| `py -3 tools/vocabulary/source_gate.py --source ngsl` | Exit 1 đúng kỳ vọng, chờ PO/Content Lead và review kỹ thuật |
+| `py -3 tools/vocabulary/gate_sources.py --snapshot docs/data/snapshot.json` | Exit 0; inventory đã đóng băng khớp registry và byte hash |
+| `py -3 tools/vocabulary/gate_sources.py --snapshot docs/data/snapshot.json --source ngsl-12` | Exit 1 đúng kỳ vọng, nguồn candidate/hold không được import |
 | `git diff --check` | Pass |
 
 Tests: registry/exclusion, unknown/pending license, valid synthetic snapshot,
 corrupt/missing artifacts, dates, path confinement, technical review không thay
 PO/Content Lead, approval gắn snapshot, metadata Tatoeba, toàn bộ inventory thật,
-count CSV và sáu nguồn thật vẫn bị chặn. Positive fixture không duyệt nguồn thật.
+count CSV và bảy nguồn thật vẫn bị chặn. Bổ sung acquisition bằng mock response,
+lỗi tải, stale/tampered frozen inventory, alias ID và Commons chỉ gọi API một lần,
+không theo media URL. Positive fixture không duyệt nguồn thật.
 
 ## 3. Trạng thái bàn giao
 
 Phần nghiên cứu, ledger, source registry, snapshot/checksum contract, evidence,
 quyết định include/exclude và gate của VOC-DATA-01 đã triển khai. Hồ sơ sẵn sàng
-review; **chưa có sign-off thật, không đánh dấu AC-12 sản phẩm đã đạt**.
+review; **chưa có accepted include/exclude và sign-off thật, chưa Done theo plan
+mới và không đánh dấu AC-12 sản phẩm đã đạt**. Chi tiết ở [handoff](voc-data-01-handoff.md).
 
 PO/Content Lead cần ký [phiếu duyệt từng snapshot](data/source-approval-template.md).
 Trường review kỹ thuật. Kaikki chưa chốt license route theo edition/snapshot;

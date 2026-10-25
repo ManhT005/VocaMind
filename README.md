@@ -12,6 +12,8 @@ the remaining GitHub merge-gate setup.
 
 ## Documentation
 
+- [VOC-DATA-01 revised source ledger / handoff plan](docs/plans/voc-data-01-source-ledger-and-handoff.md)
+- [VOC-DATA-01 handoff implementation](docs/voc-data-01-handoff.md)
 - [VOC-DATA-01 implementation plan](docs/plans/voc-data-01-external-sources.md)
 - [VOC-DATA-01 implementation and validation](docs/voc-data-01-validation.md)
 - [VOC-DATA-01 external vocabulary source/license ledger](docs/voc-data-01-source-ledger.md)

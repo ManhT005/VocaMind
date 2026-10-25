@@ -62,18 +62,28 @@ def capture(destination, inputs=INPUTS):
             except (OSError, ValueError) as error:
                 manifest['errors'].append({'sourceId': sid, 'url': url, 'error': str(error)})
                 print(f'Unavailable {sid}/{name}: {error}', flush=True)
-    (destination / 'capture.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
+    manifest['schemaVersion'] = 1
+    manifest['purpose'] = 'research-inventory'
+    (destination / 'snapshot.json').write_bytes((json.dumps(manifest, indent=2) + '\n').encode('utf-8'))
     return manifest
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--id', default=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ'))
+    parser.add_argument('--source', choices=sorted(INPUTS), action='append', help='Restrict research inputs')
+    parser.add_argument('--execute', action='store_true', help='Explicitly perform the planned downloads')
     args = parser.parse_args()
     if not args.id or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_' for c in args.id):
         parser.error('Capture ID must contain only letters, digits, hyphen or underscore')
-    manifest = capture(ROOT / 'docs/data/evidence' / args.id)
+    inputs = {sid: INPUTS[sid] for sid in args.source} if args.source else INPUTS
+    if not args.execute:
+        print(json.dumps({'mode': 'dry-run', 'inputs': inputs}, indent=2))
+        return
+    manifest = capture(ROOT / 'docs/data/evidence' / args.id, inputs)
     print(f"Captured evidence; {len(manifest['errors'])} unavailable inputs. No source approval changed.")
+    if manifest['errors']:
+        parser.exit(1, 'Incomplete capture; inspect snapshot.json errors before use\n')
 
 
 if __name__ == '__main__':

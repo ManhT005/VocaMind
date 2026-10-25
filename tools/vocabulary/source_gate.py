@@ -7,8 +7,10 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parents[2]
-EXPECTED = {'ngsl', 'tsl', 'kaikki-viwiktionary', 'tatoeba-text', 'fvdp', 'tatoeba-audio'}
+EXPECTED = {'ngsl', 'tsl', 'kaikki-viwiktionary', 'tatoeba-text', 'fvdp', 'tatoeba-audio', 'commons-audio'}
 EXCLUDED = {'fvdp', 'tatoeba-audio'}
+RESEARCH_ONLY = {'commons-audio'}
+ALIASES = {'ngsl-12': 'ngsl', 'tsl-12': 'tsl'}
 LICENSES = {
     'CC-BY-SA-4.0': 'https://creativecommons.org/licenses/by-sa/4.0/',
     'CC-BY-2.0-FR': 'https://creativecommons.org/licenses/by/2.0/fr/',
@@ -26,13 +28,13 @@ def validate_registry(document):
     sources = document.get('sources', [])
     require(isinstance(sources, list) and all(isinstance(s, dict) for s in sources),
             'Sources must be an array of objects')
-    require(len(sources) == 6 and {s['id'] for s in sources} == EXPECTED,
-            'Registry must contain exactly the six researched sources')
+    require(len(sources) == len(EXPECTED) and {s['id'] for s in sources} == EXPECTED,
+            'Registry must contain exactly the seven registered sources')
     for source in sources:
         sid = source['id']
         for field in ('title', 'scope', 'reason', 'obligations', 'evidence'):
             require(bool(source.get(field)), f'{sid}: missing {field}')
-        require(source.get('decision') in ('include', 'exclude'), f'{sid}: invalid decision')
+        require(source.get('decision') in ('include', 'exclude', 'hold'), f'{sid}: invalid decision')
         require(source.get('packagingStatus') in ('pending', 'approved', 'excluded'),
                 f'{sid}: invalid packaging status')
         require(isinstance(source.get('blockers'), list), f'{sid}: missing blockers')
@@ -45,6 +47,9 @@ def validate_registry(document):
         if sid in EXCLUDED:
             require(source['decision'] == 'exclude' and source['packagingStatus'] == 'excluded'
                     and source['pipelineEligible'] is False, f'{sid}: MVP exclusion violated')
+        if sid in RESEARCH_ONLY:
+            require(source['decision'] == 'hold' and source['pipelineEligible'] is False,
+                    f'{sid}: metadata research only; media import forbidden')
         if source['pipelineEligible']:
             require(source['decision'] == 'include' and not source['blockers']
                     and source['packagingStatus'] == 'approved' and source.get('snapshot')
@@ -70,10 +75,12 @@ def verified_artifact(artifact, root):
 
 
 def authorize(document, source_id, root=ROOT):
+    source_id = ALIASES.get(source_id, source_id)
     sources = validate_registry(document)
     source = next((s for s in sources if s['id'] == source_id), None)
     require(source is not None, 'Unknown source')
-    require(source_id not in EXCLUDED and source['decision'] == 'include', 'Source excluded')
+    require(source_id not in EXCLUDED | RESEARCH_ONLY and source['decision'] == 'include',
+            'Source on hold or excluded; candidate is not include')
     require(source['pipelineEligible'] and source['packagingStatus'] == 'approved'
             and not source['blockers'], 'Source not approved: ' + '; '.join(source['blockers']))
     require(source.get('licenseCode') in LICENSES, 'Unsupported or unresolved license route')

@@ -21,7 +21,7 @@ class SourceGateTest(unittest.TestCase):
 
     def approved(self):
         source = self.document['sources'][0]
-        source.update(pipelineEligible=True, packagingStatus='approved', blockers=[],
+        source.update(decision='include', pipelineEligible=True, packagingStatus='approved', blockers=[],
                       review={'reviewer': 'synthetic-test-reviewer', 'reviewedAt': '2026-10-25',
                               'role': 'Content Lead', 'decision': 'approved', 'snapshotId': 'test-only'})
         artifacts = []
@@ -36,7 +36,7 @@ class SourceGateTest(unittest.TestCase):
         return source
 
     def test_registry_structure(self):
-        self.assertEqual(6, len(validate_registry(self.document)))
+        self.assertEqual(7, len(validate_registry(self.document)))
 
     def test_all_live_sources_blocked(self):
         for source in self.document['sources']:
@@ -119,7 +119,7 @@ class SourceGateTest(unittest.TestCase):
         self.approved()
         source = self.document['sources'][0]
         target = next(s for s in self.document['sources'] if s['id'] == 'tatoeba-text')
-        for field in ('pipelineEligible', 'packagingStatus', 'blockers', 'review', 'snapshot'):
+        for field in ('decision', 'pipelineEligible', 'packagingStatus', 'blockers', 'review', 'snapshot'):
             target[field] = copy.deepcopy(source[field])
         with self.assertRaisesRegex(ValueError, 'Missing artifact roles'):
             authorize(self.document, 'tatoeba-text', self.root)
@@ -128,6 +128,21 @@ class SourceGateTest(unittest.TestCase):
         for document in ([], {'schemaVersion': 1, 'sources': [None]}):
             with self.subTest(document=document), self.assertRaises(ValueError):
                 validate_registry(document)
+
+    def test_candidate_cannot_be_used_as_audit_decision(self):
+        self.document['sources'][0]['decision'] = 'candidate'
+        with self.assertRaisesRegex(ValueError, 'invalid decision'):
+            validate_registry(self.document)
+
+    def test_commons_cannot_be_promoted_to_media_import(self):
+        source = next(s for s in self.document['sources'] if s['id'] == 'commons-audio')
+        source['decision'] = 'include'
+        with self.assertRaisesRegex(ValueError, 'metadata research only'):
+            validate_registry(self.document)
+
+    def test_plan_source_id_alias(self):
+        self.approved()
+        self.assertEqual('ngsl', authorize(self.document, 'ngsl-12', self.root)['id'])
 
 
 if __name__ == '__main__':

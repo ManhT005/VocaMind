@@ -9,20 +9,23 @@ Task này khác DATA-01 CatalogDatabase trong `plans/PlanDATA01.md`.
 
 ## Quyết định nguồn
 
-`include` là lựa chọn nguồn cho MVP với điều kiện bên dưới, không phải quyền
-đưa ngay một bản tải bất kỳ vào catalog. Registry máy đọc ở
+Theo [plan bàn giao mới](plans/voc-data-01-source-ledger-and-handoff.md), nguồn
+chưa được duyệt có `researchStatus=candidate`, audit `decision=hold`.
+`candidate` không phải `include`; chỉ quyết định include đã được chấp nhận mới
+có thể xét mở gate. Registry máy đọc ở
 [source-registry.json](data/source-registry.json). Đã lưu raw NGSL/TSL, notice
 offline, legal evidence và SHA-256 thực tế. Chưa có PO/Content Lead sign-off nên
 chưa nguồn nào được phép nhập. Kaikki/Tatoeba mới lưu research evidence.
 
 | Source ID | Nội dung sử dụng | Quyết định | Giấy phép và evidence | Quyền đóng gói / điều kiện |
 | --- | --- | --- | --- | --- |
-| ngsl | NGSL 1.2, lemma và thứ hạng, không lấy định nghĩa từ công cụ liên kết | include, chờ sign-off | [Trang NGSL, mục Creative Commons License](https://www.newgeneralservicelist.com/new-general-service-list): CC BY-SA 4.0; Browne, Culligan, Phillips | Cho phép sao chép, sửa đổi, thương mại theo giấy phép; giữ credit, URL, license và ghi thay đổi; phần dữ liệu phái sinh áp dụng ShareAlike |
-| tsl | TOEIC Service List 1.2, lemma và thứ hạng | include, chờ sign-off | [Trang TSL, mục Creative Commons License](https://www.newgeneralservicelist.com/toeic-service-list): CC BY-SA 4.0; Browne, Culligan | Điều kiện như NGSL; không suy giấy phép này cho đề thi, audio hoặc dịch vụ liên kết |
-| kaikki-viwiktionary | Mục từ tiếng Anh, gloss tiếng Việt, POS và IPA nếu có | include, blocked về quyền cụ thể | [Kaikki Vietnamese edition, Copyright and license](https://kaikki.org/viwiktionary/): CC-BY-SA và GFDL, không nêu phiên bản ở đoạn này | Chưa duyệt đóng gói. Phải chốt phiên bản/license route áp dụng cho snapshot và provenance từng mục trước ETL |
-| tatoeba-text | Câu EN và bản dịch VI có liên kết trực tiếp | include, chờ snapshot và attribution từng câu | [Terms §6.2–6.5](https://tatoeba.org/en/terms_of_use): mặc định CC BY 2.0 FR, có giấy phép từng câu | Cho phép tái sử dụng theo license thực tế; giữ sentence ID, tác giả, URL và license của cả hai câu; chặn câu thiếu evidence |
+| ngsl | NGSL 1.2, lemma và thứ hạng, không lấy định nghĩa từ công cụ liên kết | hold, chờ sign-off | [Trang NGSL, mục Creative Commons License](https://www.newgeneralservicelist.com/new-general-service-list): CC BY-SA 4.0; Browne, Culligan, Phillips | Cho phép sao chép, sửa đổi, thương mại theo giấy phép; giữ credit, URL, license và ghi thay đổi; phần dữ liệu phái sinh áp dụng ShareAlike |
+| tsl | TOEIC Service List 1.2, lemma và thứ hạng | hold, chờ sign-off | [Trang TSL, mục Creative Commons License](https://www.newgeneralservicelist.com/toeic-service-list): CC BY-SA 4.0; Browne, Culligan | Điều kiện như NGSL; không suy giấy phép này cho đề thi, audio hoặc dịch vụ liên kết |
+| kaikki-viwiktionary | Mục từ tiếng Anh, gloss tiếng Việt, POS và IPA nếu có | hold, blocked về quyền cụ thể | [Kaikki Vietnamese edition, Copyright and license](https://kaikki.org/viwiktionary/): CC-BY-SA và GFDL, không nêu phiên bản ở đoạn này | Chưa duyệt đóng gói. Phải chốt phiên bản/license route áp dụng cho snapshot và provenance từng mục trước ETL |
+| tatoeba-text | Câu EN và bản dịch VI có liên kết trực tiếp | hold, chờ snapshot và attribution từng câu | [Terms §6.2–6.5](https://tatoeba.org/en/terms_of_use): mặc định CC BY 2.0 FR, có giấy phép từng câu | Cho phép tái sử dụng theo license thực tế; giữ sentence ID, tác giả, URL và license của cả hai câu; chặn câu thiếu evidence |
 | fvdp | Free Vietnamese Dictionary Project | exclude | Quyết định phạm vi MVP trong backlog VOC-DATA-01 ngày 2026-10-25 | Không tải, nhập hay đóng gói. Chưa khảo sát quyền; exclude không có nghĩa là kết luận nguồn không hợp pháp |
 | tatoeba-audio | Mọi file ghi âm Tatoeba | exclude | Backlog và [Terms §6.2](https://tatoeba.org/en/terms_of_use): quyền audio khác text, phụ thuộc contributor | Không tải, nhập, cache hay đóng gói audio trong MVP; quyền text không cấp quyền audio |
+| commons-audio | Chỉ metadata của một Commons File title | hold, research-only | [Commons Licensing](https://commons.wikimedia.org/wiki/Commons:Licensing), quyền theo từng file | Chưa tải media, không có entity/asset audio; chỉ nghiên cứu metadata, phải review quyền từng file và ADR riêng |
 
 ## Evidence và giới hạn khảo sát
 
@@ -108,7 +111,8 @@ Thi/Nhân thu nhận snapshot, evidence và checksum; Trường review kỹ thu�
 PO/Content Lead duyệt ledger từng snapshot theo BR-12/DATA-06/DEC-09 trước khi
 bỏ blocker. [Phiếu duyệt](data/source-approval-template.md) hiện chưa có người ký.
 
-Kết quả nghiên cứu: đủ sáu source records và quyết định; FVDP/audio bị loại.
+Kết quả nghiên cứu: sáu nguồn gốc và một nguồn Commons research-only; FVDP/audio
+Tatoeba bị loại. Bốn nguồn text đang hold, không phải include được nghiệm thu.
 Chưa hoàn tất acquisition Kaikki/Tatoeba, license route Kaikki, attribution cấp
 record, tích hợp ETL hay nghiệm thu AC-12 cấp sản phẩm. Các mục này
 phải hoàn tất trước import/release; không nâng trạng thái thành Ready chỉ vì
