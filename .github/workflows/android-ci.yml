@@ -33,6 +33,16 @@ jobs:
           distribution: temurin
           java-version: '17'
 
+      - name: Set up Python for vocabulary source checks
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Validate vocabulary source registry and gate
+        run: |
+          python tools/vocabulary/source_gate.py
+          python -m unittest discover -s tools/vocabulary -p 'test_*.py' -v
+
       - name: Validate Gradle Wrapper
         uses: gradle/actions/wrapper-validation@v4
 

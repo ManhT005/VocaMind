@@ -5,6 +5,10 @@ project entry point; generated build outputs stay in ignored build directories.
 
 | Document | Purpose |
 | --- | --- |
+| [VOC-DATA-01 plan](plans/voc-data-01-external-sources.md) | Research scope, registry/snapshot gate design, tests and DoD |
+| [VOC-DATA-01 validation](voc-data-01-validation.md) | Implemented gate, local results and remaining acquisition/review blockers |
+| [VOC-DATA-01 source/license ledger](voc-data-01-source-ledger.md) | Source evidence, MVP include/exclude decisions, attribution and ingestion gates |
+| [Vocabulary source registry](data/source-registry.json) | Machine-readable source decisions and pending snapshot/license blockers |
 | [DATA-02 plan](plans/data-02-user-database.md) | UserDatabase scope and acceptance criteria |
 | [DATA-02 validation](data-02-validation.md) | Schema decisions, persistence tests and remaining acceptance checks |
 | [Android setup](android-setup.md) | Environment requirements, Android Studio setup and build commands |
