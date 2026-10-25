@@ -14,7 +14,8 @@
 ## 2. Căn cứ và nguyên tắc
 
 Backlog người dùng: SRS §7.3 DATA-01/06; BR-12; AC-12; NFR-VM-12; DEC-09.
-Không có toàn văn SRS trong checkout; không khẳng định đã đối chiếu toàn bộ.
+Đã đối chiếu SRS cũ, baseline v1.1 và Excel ở thư mục cha; xem
+[traceability](../voc-data-01-requirements-traceability.md).
 Phân biệt VOC-DATA-01 nghiên cứu nguồn với DATA-01 CatalogDatabase.
 Giữ định dạng tài liệu lowercase kebab-case, plan trong `docs/plans/`, báo cáo
 xác minh riêng, liên kết từ README và documentation index.
@@ -53,7 +54,10 @@ eligible; không chấp nhận chỉ đổi cờ rồi bỏ qua kiểm tra file/
 
 Snapshot có id, upstreamVersion, upstreamDate, retrievedAt UTC, artifacts.
 Mỗi artifact có role, URL HTTPS, path tương đối, bytes và sha256. Các role bắt
-buộc: data, license-evidence, attribution; Tatoeba thêm sentence-metadata, links.
+buộc: data, license-evidence, license-text, attribution, approval; Tatoeba thêm
+sentence-metadata, links. Sign-off phải do PO/Content Lead thực hiện và gắn đúng
+snapshot ID. Ngày upstream có thể chính xác đến tháng hoặc null kèm lý do;
+không lấy thời điểm tải làm ngày phát hành.
 Các file này cần nội dung thực được review; role và hash không tự chứng minh
 ngữ nghĩa metadata đúng. Thêm license route mới phải sửa allowlist và review.
 
@@ -75,7 +79,9 @@ phê duyệt nguồn thật. Không chạy Android build vì không đổi app/G
 - [x] Ledger, registry, evidence URL và quyết định cho sáu nguồn.
 - [x] Định nghĩa snapshot/checksum/quyền đóng gói/attribution.
 - [x] CLI fail closed và kiểm thử; thêm bước kiểm tra vào cấu hình CI.
-- [ ] Thu nhận raw snapshot, lưu legal evidence bất biến và checksum thực tế.
+- [x] Thu nhận raw snapshot NGSL/TSL, legal evidence và checksum thực tế.
+- [x] Lưu research evidence Kaikki/Tatoeba, ghi blocker trước pipeline.
+- [x] Đối chiếu SRS/Excel gốc; bổ sung phiếu PO/Content Lead và ràng buộc gate.
 - [ ] Chốt license route Kaikki, attribution cấp record và review của Trường.
 - [ ] ETL tương lai gọi gate và kiểm tra provenance từng record trước import.
 

@@ -12,6 +12,7 @@ On Linux/macOS use `python3` instead of `py -3`. The first command validates
 ledger structure and verifies artifacts of any source declared eligible.
 Pending sources may remain in the research ledger. The last command exits 1
 for the current registry, intentionally: no actual snapshot has been approved.
+Every saved research artifact and pending snapshot is also checksum-verified.
 The future ETL must stop on any nonzero status before reading source records.
 
 After downloading authorized raw data and evidence, compute each artifact:
@@ -31,3 +32,21 @@ audio remain excluded even if somebody changes the eligibility flag.
 
 No fixture grants rights to external content. Tests create temporary synthetic
 artifacts and never modify the app catalog or userdata.
+
+## Research capture
+
+```powershell
+py -3 tools/vocabulary/capture_sources.py --id unique-research-capture-id
+```
+
+This downloads fixed official NGSL/TSL CSVs and source/license pages; for Kaikki
+and Tatoeba it captures only research pages. It refuses an existing destination,
+records final URL, exact bytes, UTC timestamp and SHA-256, reports unavailable
+inputs in capture.json, and never changes registry approval. Review capture.json
+before registering new artifacts. CI runs offline and never calls this command.
+Archived bytes have Git text conversion disabled to preserve hashes on all OSes.
+
+The checked-in capture contains 12 downloads and two generated attribution
+notices. Raw TSL is decoded with cp1252 for inspection, without modifying bytes.
+See the [approval template](../../docs/data/source-approval-template.md) and
+[requirements traceability](../../docs/voc-data-01-requirements-traceability.md).

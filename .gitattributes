@@ -1,2 +1,4 @@
 gradlew text eol=lf
 gradlew.bat text eol=crlf
+# Upstream byte archives: preserve hashes and avoid text whitespace rewrites.
+docs/data/evidence/** binary

@@ -2,21 +2,23 @@
 
 Ngày khảo sát: 2026-10-25. Phạm vi: nghiên cứu nguồn bên ngoài cho MVP VocaMind.
 Người thực hiện theo backlog: Thi, Nhân; reviewer: Trường. Chưa có xác nhận review.
-Tham chiếu yêu cầu do backlog cung cấp: SRS §7.3 DATA-01/06; BR-12; AC-12;
-NFR-VM-12; DEC-09. Checkout không có toàn văn SRS để xác minh các điều khoản.
+Tham chiếu SRS §7.3 DATA-01/06; BR-12; AC-12; NFR-VM-12; DEC-09.
+Đã đối chiếu SRS cũ, baseline và Excel gốc; xem
+[traceability](voc-data-01-requirements-traceability.md).
 Task này khác DATA-01 CatalogDatabase trong `plans/PlanDATA01.md`.
 
 ## Quyết định nguồn
 
 `include` là lựa chọn nguồn cho MVP với điều kiện bên dưới, không phải quyền
 đưa ngay một bản tải bất kỳ vào catalog. Registry máy đọc ở
-[source-registry.json](data/source-registry.json). Tất cả snapshot hiện chưa tải,
-nên checksum để null có chủ đích, pipeline chưa được phép nhập nguồn nào.
+[source-registry.json](data/source-registry.json). Đã lưu raw NGSL/TSL, notice
+offline, legal evidence và SHA-256 thực tế. Chưa có PO/Content Lead sign-off nên
+chưa nguồn nào được phép nhập. Kaikki/Tatoeba mới lưu research evidence.
 
 | Source ID | Nội dung sử dụng | Quyết định | Giấy phép và evidence | Quyền đóng gói / điều kiện |
 | --- | --- | --- | --- | --- |
-| ngsl | NGSL 1.2, lemma và thứ hạng, không lấy định nghĩa từ công cụ liên kết | include, chờ snapshot | [Trang NGSL, mục Creative Commons License](https://www.newgeneralservicelist.com/new-general-service-list): CC BY-SA 4.0; Browne, Culligan, Phillips | Cho phép sao chép, sửa đổi, thương mại theo giấy phép; giữ credit, URL, license và ghi thay đổi; phần dữ liệu phái sinh áp dụng ShareAlike |
-| tsl | TOEIC Service List 1.2, lemma và thứ hạng | include, chờ snapshot | [Trang TSL, mục Creative Commons License](https://www.newgeneralservicelist.com/toeic-service-list): CC BY-SA 4.0; Browne, Culligan | Điều kiện như NGSL; không suy giấy phép này cho đề thi, audio hoặc dịch vụ liên kết |
+| ngsl | NGSL 1.2, lemma và thứ hạng, không lấy định nghĩa từ công cụ liên kết | include, chờ sign-off | [Trang NGSL, mục Creative Commons License](https://www.newgeneralservicelist.com/new-general-service-list): CC BY-SA 4.0; Browne, Culligan, Phillips | Cho phép sao chép, sửa đổi, thương mại theo giấy phép; giữ credit, URL, license và ghi thay đổi; phần dữ liệu phái sinh áp dụng ShareAlike |
+| tsl | TOEIC Service List 1.2, lemma và thứ hạng | include, chờ sign-off | [Trang TSL, mục Creative Commons License](https://www.newgeneralservicelist.com/toeic-service-list): CC BY-SA 4.0; Browne, Culligan | Điều kiện như NGSL; không suy giấy phép này cho đề thi, audio hoặc dịch vụ liên kết |
 | kaikki-viwiktionary | Mục từ tiếng Anh, gloss tiếng Việt, POS và IPA nếu có | include, blocked về quyền cụ thể | [Kaikki Vietnamese edition, Copyright and license](https://kaikki.org/viwiktionary/): CC-BY-SA và GFDL, không nêu phiên bản ở đoạn này | Chưa duyệt đóng gói. Phải chốt phiên bản/license route áp dụng cho snapshot và provenance từng mục trước ETL |
 | tatoeba-text | Câu EN và bản dịch VI có liên kết trực tiếp | include, chờ snapshot và attribution từng câu | [Terms §6.2–6.5](https://tatoeba.org/en/terms_of_use): mặc định CC BY 2.0 FR, có giấy phép từng câu | Cho phép tái sử dụng theo license thực tế; giữ sentence ID, tác giả, URL và license của cả hai câu; chặn câu thiếu evidence |
 | fvdp | Free Vietnamese Dictionary Project | exclude | Quyết định phạm vi MVP trong backlog VOC-DATA-01 ngày 2026-10-25 | Không tải, nhập hay đóng gói. Chưa khảo sát quyền; exclude không có nghĩa là kết luận nguồn không hợp pháp |
@@ -40,8 +42,9 @@ nên checksum để null có chủ đích, pipeline chưa được phép nhập 
 - Tatoeba: Terms hiện hành ghi mặc định CC BY 2.0 FR; không đổi thành BY 4.0.
   [Hướng dẫn CC0](https://en.wiki.tatoeba.org/articles/show/cc0-contributions)
   cho biết có câu CC0. Giữ license thực tế, không gán toàn corpus là CC0.
-  Endpoint [downloads](https://tatoeba.org/en/downloads) timeout khi khảo sát;
-  chưa xác nhận tên file/schema export, ngày dump hay checksum. Khi thu nhận,
+  Endpoint [downloads](https://tatoeba.org/en/downloads) từng timeout, hiện đã
+  tải thành công và lưu HTML. Chưa thu nhận corpus hay xác minh schema thực tế.
+  Khi thu nhận,
   chọn export có attribution và license, cùng bảng links; thiếu metadata thì chặn.
 - Điều kiện đóng gói tham chiếu [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
   và [CC BY 2.0 FR](https://creativecommons.org/licenses/by/2.0/fr/).
@@ -51,8 +54,9 @@ nên checksum để null có chủ đích, pipeline chưa được phép nhập 
 
 Mỗi source có ID ổn định, title, URL gốc, content scope, quyết định, lý do,
 license code/URL (null khi chưa rõ), evidence URL và ngày kiểm tra,
-packaging/attribution obligations, cùng snapshot và blockers. Evidence hiện là
-URL và ghi nhận khảo sát trong tài liệu này; chưa phải bản lưu bất biến upstream.
+packaging/attribution obligations, cùng snapshot và blockers. Evidence đã lưu
+nguyên byte, URL sau redirect, retrievedAt và SHA-256 trong
+[capture manifest](data/evidence/voc-data-01-research-20261025/capture.json).
 
 Snapshot sau thu nhận phải chứa `upstreamVersion`, `upstreamDate`,
 `retrievedAt` (UTC ISO-8601), `artifacts[]`. Mỗi artifact phải có `url`
@@ -100,11 +104,25 @@ riêng. Kaikki cần credit Wiktionary contributors, URL bài nguồn/history v�
 Kaikki/Wiktextract theo route giấy phép đã xác minh. UI attribution phải đọc
 được offline; không chỉ trỏ link web và không chỉ ghi “nguồn Internet”.
 
-Thi/Nhân thu nhận snapshot, lưu evidence và checksum; Trường review ledger và
-attribution trước khi bỏ blocker. Không ghi nhận review đã diễn ra.
+Thi/Nhân thu nhận snapshot, evidence và checksum; Trường review kỹ thuật.
+PO/Content Lead duyệt ledger từng snapshot theo BR-12/DATA-06/DEC-09 trước khi
+bỏ blocker. [Phiếu duyệt](data/source-approval-template.md) hiện chưa có người ký.
 
 Kết quả nghiên cứu: đủ sáu source records và quyết định; FVDP/audio bị loại.
-Chưa hoàn tất acquisition, xác minh license Kaikki, attribution cấp record,
-snapshot/hash, tích hợp vào ETL hay nghiệm thu AC-12 cấp sản phẩm. Các mục này
+Chưa hoàn tất acquisition Kaikki/Tatoeba, license route Kaikki, attribution cấp
+record, tích hợp ETL hay nghiệm thu AC-12 cấp sản phẩm. Các mục này
 phải hoàn tất trước import/release; không nâng trạng thái thành Ready chỉ vì
 có tài liệu này.
+
+## Snapshot đã thu nhận
+
+NGSL: 2.809 dòng; TSL: 1.250 dòng. SHA-256 raw CSV:
+
+- NGSL: `2098bab8955a120a9766c6282a51d7d578c6cb0a7d946600d2ffb73ba25a0b44`.
+- TSL: `2259df25a1077b04067ef0c0e9e4c98b46c91e4d539741dfaceba88651ff486d`.
+
+NGSL giải mã UTF-8. TSL không phải UTF-8, đọc được với cp1252 (résumé, café,
+entrée); giữ nguyên byte gốc và bàn giao giả định encoding cho ETL xác minh.
+Số dòng nguồn không phải số vocabulary stableId đã QA. Kaikki/Tatoeba không
+được dùng evidence HTML thay raw snapshot. Nghiên cứu sẵn sàng review; release
+approval vẫn pending. NGSL/TSL đã có snapshot, đang chờ sign-off thay vì chờ tải.

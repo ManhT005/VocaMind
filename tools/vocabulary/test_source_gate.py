@@ -11,6 +11,10 @@ from source_gate import ROOT, audit_eligible, authorize, validate_registry
 class SourceGateTest(unittest.TestCase):
     def setUp(self):
         self.document = json.loads((ROOT / 'docs/data/source-registry.json').read_text('utf-8'))
+        # Unit fixtures are isolated from checked-in research artifacts.
+        for source in self.document['sources']:
+            source.pop('researchArtifacts', None)
+            source['snapshot'] = None
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
@@ -18,9 +22,10 @@ class SourceGateTest(unittest.TestCase):
     def approved(self):
         source = self.document['sources'][0]
         source.update(pipelineEligible=True, packagingStatus='approved', blockers=[],
-                      review={'reviewer': 'synthetic-test-reviewer', 'reviewedAt': '2026-10-25'})
+                      review={'reviewer': 'synthetic-test-reviewer', 'reviewedAt': '2026-10-25',
+                              'role': 'Content Lead', 'decision': 'approved', 'snapshotId': 'test-only'})
         artifacts = []
-        for role in ('data', 'license-evidence', 'attribution'):
+        for role in ('data', 'license-evidence', 'attribution', 'license-text', 'approval'):
             content = f'Synthetic test {role}'.encode()
             (self.root / role).write_bytes(content)
             artifacts.append(dict(role=role, path=role, bytes=len(content),
@@ -86,6 +91,18 @@ class SourceGateTest(unittest.TestCase):
         (self.root / 'data').unlink()
         with self.assertRaisesRegex(ValueError, 'Missing artifact'):
             audit_eligible(self.document, self.root)
+
+    def test_technical_review_does_not_replace_content_approval(self):
+        source = self.approved()
+        source['review']['role'] = 'Technical reviewer'
+        with self.assertRaisesRegex(ValueError, 'PO/Content Lead'):
+            authorize(self.document, 'ngsl', self.root)
+
+    def test_approval_is_bound_to_snapshot(self):
+        source = self.approved()
+        source['review']['snapshotId'] = 'another-snapshot'
+        with self.assertRaisesRegex(ValueError, 'match snapshot'):
+            authorize(self.document, 'ngsl', self.root)
 
     def test_invalid_dates(self):
         source = self.approved()

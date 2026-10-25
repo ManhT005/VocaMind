@@ -1,44 +1,57 @@
 # VOC-DATA-01 — Implementation and validation
 
-Ngày xác minh: 2026-10-25, Windows PowerShell, Python 3.13.5 (`py -3`).
-Nhánh triển khai: `feature/voc-data-01-external-sources`, tạo từ
-`feature/data-02-user-database` tại `89225c2`. Giữ nguyên nền checkout hiện có;
-không merge hoặc đổi lịch sử nhánh DATA-02.
+Ngày xác minh: 2026-10-25. Windows PowerShell, Python 3.13.5 (`py -3`).
+Nhánh: `feature/voc-data-01-external-sources`, nền `89225c2`.
 
-## 1. Kết quả triển khai
+## 1. Căn cứ và phạm vi đã hoàn thành
 
-- [Plan](plans/voc-data-01-external-sources.md) theo cấu trúc các plan hiện có:
-  thông tin task, căn cứ, phạm vi, bước làm, thiết kế, kiểm thử và DoD.
-- [Ledger](voc-data-01-source-ledger.md) và [registry](data/source-registry.json):
-  sáu nguồn có evidence/decision; quyền chưa rõ và snapshot chưa tải được ghi rõ.
-- [Gate](../tools/vocabulary/source_gate.py): kiểm tra registry; chế độ `--source`
-  kiểm tra approval, supported license route, review, snapshot UTC, artifact roles,
-  path confinement, bytes và SHA-256. Không tải hay đóng gói nguồn ngoài.
-- Android CI được bổ sung Python, registry validation và unit tests. Chưa có
-  bằng chứng chạy workflow trên GitHub; đây là kết quả local.
+Đã đối chiếu SRS cũ, baseline v1.1, Excel Phân công và plan; xem
+[traceability](voc-data-01-requirements-traceability.md) với hash tài liệu gốc.
+Dòng VOC-DATA-01 yêu cầu source governance; canonical schema và ingestion thuộc
+VOC-DATA-02/03. Không thay app/Room/catalog asset/userdata.
 
-## 2. Kiểm chứng thực tế
+- Sáu nguồn có decision/evidence/license/obligations trong [ledger](voc-data-01-source-ledger.md)
+  và [registry](data/source-registry.json). FVDP và Tatoeba audio luôn exclude.
+- Thu nhận raw NGSL 1.2 (2.809 dòng) và TSL 1.2 (1.250 dòng); URL redirect,
+  timestamp UTC, byte count và SHA-256 thực tế lưu trong registry.
+- Lưu 12 artifact tải từ upstream: CSV, source pages, legal code, Kaikki raw
+  index/Wikimedia terms, Tatoeba terms/license/download index. Thêm hai notice
+  attribution offline NGSL/TSL. [Capture manifest](data/evidence/voc-data-01-research-20261025/capture.json)
+  không có lỗi tải. Evidence HTML không thay raw corpus.
+- Công cụ capture chạy riêng, không ghi đè capture cũ hay tự duyệt nguồn.
+- Gate xác minh byte/hash cả research evidence và pending snapshots; import chỉ
+  được phép khi có PO/Content Lead sign-off đúng snapshot, role approval,
+  legal code, attribution và dữ liệu. Tatoeba cần metadata câu và links.
+- Git giữ nguyên byte evidence bằng `-text`; CI audit và tests không gọi mạng.
+
+## 2. Kết quả kiểm chứng
 
 | Lệnh | Kết quả |
 | --- | --- |
-| `py -3 -W error::ResourceWarning -m unittest discover -s tools/vocabulary -p 'test_*.py' -v` | 13 tests pass, không có ResourceWarning |
-| `py -3 tools/vocabulary/source_gate.py` | Exit 0, audit đủ 6 sources; nguồn eligible phải qua kiểm tra snapshot |
-| `py -3 tools/vocabulary/source_gate.py --source ngsl` | Exit 1 đúng kỳ vọng, thiếu snapshot/checksum và offline attribution/evidence |
+| `py -3 -W error::ResourceWarning -m unittest discover -s tools/vocabulary -p 'test_*.py' -v` | 18 tests pass |
+| `py -3 tools/vocabulary/source_gate.py` | Exit 0; inventory và checksum hợp lệ |
+| `py -3 tools/vocabulary/source_gate.py --source ngsl` | Exit 1 đúng kỳ vọng, chờ PO/Content Lead và review kỹ thuật |
+| `git diff --check` | Pass |
 
-Tests bao gồm: mọi nguồn hiện tại bị chặn, không override exclusion, ID trùng,
-snapshot tổng hợp hợp lệ, sửa byte cùng kích thước gây hash sai, thiếu evidence,
-path vượt repo, thiếu review và license chưa hỗ trợ. Bổ sung kiểm tra cấu trúc
-registry sai, ngày sai, CI phát hiện file eligible bị mất và Tatoeba thiếu metadata/links.
-Dữ liệu positive test là
-tổng hợp trong thư mục tạm, không chứng minh quyền sử dụng dữ liệu thực.
+Tests: registry/exclusion, unknown/pending license, valid synthetic snapshot,
+corrupt/missing artifacts, dates, path confinement, technical review không thay
+PO/Content Lead, approval gắn snapshot, metadata Tatoeba, toàn bộ inventory thật,
+count CSV và sáu nguồn thật vẫn bị chặn. Positive fixture không duyệt nguồn thật.
 
-## 3. Giới hạn và bàn giao
+## 3. Trạng thái bàn giao
 
-Chưa thu nhận raw snapshot hoặc lưu bản điều khoản upstream bất biến. Không có
-checksum giả. Kaikki còn chờ chốt license route; Tatoeba còn chờ metadata license,
-authors và links ở cấp câu. Chưa có review của Trường. Gate mới kiểm tra manifest
-và byte integrity, chưa kiểm tra ngữ nghĩa license/provenance từng record.
-Production ETL chưa có nên chưa thể chứng minh mọi đường import đều gọi gate.
+Phần nghiên cứu, ledger, source registry, snapshot/checksum contract, evidence,
+quyết định include/exclude và gate của VOC-DATA-01 đã triển khai. Hồ sơ sẵn sàng
+review; **chưa có sign-off thật, không đánh dấu AC-12 sản phẩm đã đạt**.
 
-Không thay app code, Room schema, database asset hoặc userdata; không chạy lại
-Android build cho thay đổi tài liệu/tool Python. Chưa nghiệm thu AC-12 cấp sản phẩm.
+PO/Content Lead cần ký [phiếu duyệt từng snapshot](data/source-approval-template.md).
+Trường review kỹ thuật. Kaikki chưa chốt license route theo edition/snapshot;
+Tatoeba chưa thu nhận corpus có author/license/link metadata. Các nguồn đó bị
+chặn, không tự đi tiếp pipeline. Không thu nhận raw corpus chưa đủ hồ sơ chỉ để
+tăng số nguồn. Thông tin quyền không rõ được ghi blocker và chưa dùng đóng gói.
+
+Bàn giao VOC-DATA-03: gọi gate trước import, giữ provenance cấp field/record,
+kiểm tra encoding TSL và actual license từng câu Tatoeba. UI attribution offline,
+QA tối thiểu 150 vocabulary IDs và release sign-off cần kiểm chứng ở task tích hợp.
+Chưa chạy Android build (không đổi app), chưa chứng minh CI chạy trên GitHub
+cho lần cập nhật này. Không sửa các file Word/Excel gốc.

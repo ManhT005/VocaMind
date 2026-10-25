@@ -80,18 +80,25 @@ def authorize(document, source_id, root=ROOT):
     require(source.get('licenseUrl') == LICENSES[source['licenseCode']], 'License URL mismatch')
     review = source.get('review', {})
     require(bool(review.get('reviewer')) and bool(review.get('reviewedAt')), 'Review required')
+    require(review.get('role') in ('PO', 'Content Lead') and review.get('decision') == 'approved',
+            'PO/Content Lead approval required by BR-12 and DEC-09')
     datetime.strptime(review['reviewedAt'], '%Y-%m-%d')
     snapshot = source.get('snapshot') or {}
-    for field in ('id', 'upstreamVersion', 'upstreamDate', 'retrievedAt'):
+    require(review.get('snapshotId') == snapshot.get('id'), 'Approval must match snapshot ID')
+    for field in ('id', 'upstreamVersion', 'retrievedAt'):
         require(bool(snapshot.get(field)), f'Missing snapshot {field}')
-    datetime.strptime(snapshot['upstreamDate'], '%Y-%m-%d')
+    if snapshot.get('upstreamDate'):
+        value = snapshot['upstreamDate']
+        datetime.strptime(value, '%Y-%m' if len(value) == 7 else '%Y-%m-%d')
+    else:
+        require(bool(snapshot.get('upstreamDateUnknownReason')), 'Explain unknown upstream date')
     retrieved = datetime.fromisoformat(snapshot['retrievedAt'].replace('Z', '+00:00'))
     require(retrieved.utcoffset() is not None and retrieved.utcoffset().total_seconds() == 0,
             'retrievedAt must be UTC')
     artifacts = snapshot.get('artifacts', [])
     require(bool(artifacts), 'Snapshot artifacts required')
     roles = {artifact.get('role') for artifact in artifacts}
-    required = {'data', 'license-evidence', 'attribution'}
+    required = {'data', 'license-evidence', 'license-text', 'attribution', 'approval'}
     if source_id == 'tatoeba-text':
         required |= {'sentence-metadata', 'links'}
     require(required <= roles, 'Missing artifact roles: ' + ', '.join(sorted(required - roles)))
@@ -105,6 +112,10 @@ def audit_eligible(document, root=ROOT):
     """CI must verify actual bytes for every source declared eligible."""
     sources = validate_registry(document)
     for source in sources:
+        for artifact in source.get('researchArtifacts', []):
+            verified_artifact(artifact, root)
+        for artifact in (source.get('snapshot') or {}).get('artifacts', []):
+            verified_artifact(artifact, root)
         if source['pipelineEligible']:
             authorize(document, source['id'], root)
     return sources

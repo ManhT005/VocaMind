@@ -5,6 +5,8 @@ project entry point; generated build outputs stay in ignored build directories.
 
 | Document | Purpose |
 | --- | --- |
+| [VOC-DATA-01 requirements traceability](voc-data-01-requirements-traceability.md) | SRS and assignment evidence, task boundaries and approval responsibilities |
+| [Source approval template](data/source-approval-template.md) | Per-snapshot PO/Content Lead sign-off, pending real approval |
 | [VOC-DATA-01 plan](plans/voc-data-01-external-sources.md) | Research scope, registry/snapshot gate design, tests and DoD |
 | [VOC-DATA-01 validation](voc-data-01-validation.md) | Implemented gate, local results and remaining acquisition/review blockers |
 | [VOC-DATA-01 source/license ledger](voc-data-01-source-ledger.md) | Source evidence, MVP include/exclude decisions, attribution and ingestion gates |

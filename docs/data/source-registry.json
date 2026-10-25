@@ -1,180 +1,350 @@
 {
-    "reviewStatus":  "pending",
-    "sources":  [
-                    {
-                        "url":  "https://www.newgeneralservicelist.com/new-general-service-list",
-                        "id":  "ngsl",
-                        "scope":  "lemmas and frequency ranks",
-                        "packagingStatus":  "pending",
-                        "licenseCode":  "CC-BY-SA-4.0",
-                        "decision":  "include",
-                        "evidence":  [
-                                         {
-                                             "checkedOn":  "2026-10-25",
-                                             "url":  "https://www.newgeneralservicelist.com/new-general-service-list",
-                                             "note":  "See docs/voc-data-01-source-ledger.md for section and limitations"
-                                         }
-                                     ],
-                        "obligations":  [
-                                            "Credit Browne, Culligan, Phillips",
-                                            "Retain source and license notices; indicate changes",
-                                            "ShareAlike for adapted data"
-                                        ],
-                        "title":  "New General Service List 1.2",
-                        "reason":  "Selected for MVP subject to all ledger gates; not approved for ingestion",
-                        "licenseUrl":  "https://creativecommons.org/licenses/by-sa/4.0/",
-                        "blockers":  [
-                                         "Snapshot and checksum missing",
-                                         "Offline attribution and evidence archive pending"
-                                     ],
-                        "snapshot":  null,
-                        "pipelineEligible":  false
-                    },
-                    {
-                        "url":  "https://www.newgeneralservicelist.com/toeic-service-list",
-                        "id":  "tsl",
-                        "scope":  "lemmas and frequency ranks",
-                        "packagingStatus":  "pending",
-                        "licenseCode":  "CC-BY-SA-4.0",
-                        "decision":  "include",
-                        "evidence":  [
-                                         {
-                                             "checkedOn":  "2026-10-25",
-                                             "url":  "https://www.newgeneralservicelist.com/toeic-service-list",
-                                             "note":  "See docs/voc-data-01-source-ledger.md for section and limitations"
-                                         }
-                                     ],
-                        "obligations":  [
-                                            "Credit Browne and Culligan",
-                                            "Retain source and license notices; indicate changes",
-                                            "ShareAlike for adapted data"
-                                        ],
-                        "title":  "TOEIC Service List 1.2",
-                        "reason":  "Selected for MVP subject to all ledger gates; not approved for ingestion",
-                        "licenseUrl":  "https://creativecommons.org/licenses/by-sa/4.0/",
-                        "blockers":  [
-                                         "Snapshot and checksum missing",
-                                         "Offline attribution and evidence archive pending"
-                                     ],
-                        "snapshot":  null,
-                        "pipelineEligible":  false
-                    },
-                    {
-                        "url":  "https://kaikki.org/viwiktionary/",
-                        "id":  "kaikki-viwiktionary",
-                        "scope":  "raw English entries with Vietnamese glosses, POS and optional IPA",
-                        "packagingStatus":  "pending",
-                        "licenseCode":  null,
-                        "decision":  "include",
-                        "evidence":  [
-                                         {
-                                             "checkedOn":  "2026-10-25",
-                                             "url":  "https://kaikki.org/viwiktionary/",
-                                             "note":  "See docs/voc-data-01-source-ledger.md for section and limitations"
-                                         }
-                                     ],
-                        "obligations":  [
-                                            "Verify applicable Wikimedia and viwiktionary terms",
-                                            "Credit Wiktionary contributors and retain page/history provenance",
-                                            "Record Kaikki and Wiktextract provenance; avoid merged postprocessed data"
-                                        ],
-                        "title":  "Kaikki Vietnamese Wiktionary edition",
-                        "reason":  "Selected for MVP subject to all ledger gates; not approved for ingestion",
-                        "licenseUrl":  null,
-                        "blockers":  [
-                                         "Exact content license version and route unresolved; upstream says CC-BY-SA and GFDL",
-                                         "Snapshot and checksum missing",
-                                         "Per-entry provenance and offline attribution pending"
-                                     ],
-                        "snapshot":  null,
-                        "pipelineEligible":  false
-                    },
-                    {
-                        "url":  "https://tatoeba.org/en/downloads",
-                        "id":  "tatoeba-text",
-                        "scope":  "directly linked English and Vietnamese text sentences",
-                        "packagingStatus":  "pending",
-                        "licenseCode":  "CC-BY-2.0-FR",
-                        "decision":  "include",
-                        "evidence":  [
-                                         {
-                                             "checkedOn":  "2026-10-25",
-                                             "url":  "https://tatoeba.org/en/terms_of_use",
-                                             "note":  "See docs/voc-data-01-source-ledger.md for section and limitations"
-                                         }
-                                     ],
-                        "obligations":  [
-                                            "Default license only; verify actual license on each sentence",
-                                            "Credit authors and preserve sentence URLs for both EN and VI",
-                                            "Retain licenses and indicate adaptations; no audio"
-                                        ],
-                        "title":  "Tatoeba text EN-VI",
-                        "reason":  "Selected for MVP subject to all ledger gates; not approved for ingestion",
-                        "licenseUrl":  "https://creativecommons.org/licenses/by/2.0/fr/",
-                        "blockers":  [
-                                         "Downloads endpoint timed out; export schema not verified",
-                                         "Snapshot and checksum missing",
-                                         "Per-sentence author and actual license evidence pending"
-                                     ],
-                        "snapshot":  null,
-                        "pipelineEligible":  false
-                    },
-                    {
-                        "url":  null,
-                        "id":  "fvdp",
-                        "scope":  "all FVDP content",
-                        "packagingStatus":  "excluded",
-                        "licenseCode":  null,
-                        "decision":  "exclude",
-                        "evidence":  [
-                                         {
-                                             "checkedOn":  "2026-10-25",
-                                             "url":  null,
-                                             "note":  "User-supplied backlog is exclusion evidence; upstream rights not researched"
-                                         }
-                                     ],
-                        "obligations":  [
-                                            "Do not acquire, import or package; no license conclusion claimed"
-                                        ],
-                        "title":  "Free Vietnamese Dictionary Project",
-                        "reason":  "MVP scope exclusion requested in VOC-DATA-01 backlog",
-                        "licenseUrl":  null,
-                        "blockers":  [
-                                         "Excluded from MVP by backlog"
-                                     ],
-                        "snapshot":  null,
-                        "pipelineEligible":  false
-                    },
-                    {
-                        "url":  "https://tatoeba.org/en/terms_of_use",
-                        "id":  "tatoeba-audio",
-                        "scope":  "all Tatoeba recordings",
-                        "packagingStatus":  "excluded",
-                        "licenseCode":  null,
-                        "decision":  "exclude",
-                        "evidence":  [
-                                         {
-                                             "checkedOn":  "2026-10-25",
-                                             "url":  "https://tatoeba.org/en/terms_of_use",
-                                             "note":  "See docs/voc-data-01-source-ledger.md for section and limitations"
-                                         }
-                                     ],
-                        "obligations":  [
-                                            "Do not acquire, cache, import or package audio"
-                                        ],
-                        "title":  "Tatoeba audio",
-                        "reason":  "MVP scope exclusion requested in VOC-DATA-01 backlog",
-                        "licenseUrl":  null,
-                        "blockers":  [
-                                         "Excluded from MVP by backlog",
-                                         "Audio licenses vary by contributor"
-                                     ],
-                        "snapshot":  null,
-                        "pipelineEligible":  false
-                    }
-                ],
-    "snapshotContract":  "docs/voc-data-01-source-ledger.md",
-    "schemaVersion":  1,
-    "researchedOn":  "2026-10-25",
-    "task":  "VOC-DATA-01"
+  "reviewStatus": "pending",
+  "sources": [
+    {
+      "url": "https://www.newgeneralservicelist.com/new-general-service-list",
+      "id": "ngsl",
+      "scope": "lemmas and frequency ranks",
+      "packagingStatus": "pending",
+      "licenseCode": "CC-BY-SA-4.0",
+      "decision": "include",
+      "evidence": [
+        {
+          "checkedOn": "2026-10-25",
+          "url": "https://www.newgeneralservicelist.com/new-general-service-list",
+          "note": "See docs/voc-data-01-source-ledger.md for section and limitations"
+        }
+      ],
+      "obligations": [
+        "Credit Browne, Culligan, Phillips",
+        "Retain source and license notices; indicate changes",
+        "ShareAlike for adapted data"
+      ],
+      "title": "New General Service List 1.2",
+      "reason": "Selected for MVP subject to all ledger gates; not approved for ingestion",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "blockers": [
+        "PO/Content Lead snapshot sign-off pending",
+        "Technical review by Truong pending"
+      ],
+      "snapshot": {
+        "id": "ngsl-1.2-retrieved-20261025",
+        "upstreamVersion": "1.2",
+        "upstreamDate": "2023-04",
+        "upstreamDateUnknownReason": null,
+        "retrievedAt": "2026-10-25T10:02:15.230965+00:00",
+        "artifacts": [
+          {
+            "role": "data",
+            "requestedUrl": "https://www.newgeneralservicelist.com/s/NGSL_12_stats.csv",
+            "url": "https://static1.squarespace.com/static/64336926d7c6bb38965fdf3b/t/644e0be4ad7bae3d45b9e62a/1682836452194/NGSL_1.2_stats.csv",
+            "path": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv",
+            "bytes": 62566,
+            "sha256": "2098bab8955a120a9766c6282a51d7d578c6cb0a7d946600d2ffb73ba25a0b44",
+            "contentType": "text/csv",
+            "retrievedAt": "2026-10-25T10:02:15.230965+00:00"
+          },
+          {
+            "role": "license-evidence",
+            "requestedUrl": "https://www.newgeneralservicelist.com/new-general-service-list",
+            "url": "https://www.newgeneralservicelist.com/new-general-service-list",
+            "path": "docs/data/evidence/voc-data-01-research-20261025/ngsl/source.html",
+            "bytes": 159449,
+            "sha256": "7b608b4a65cd2178fe8381cf52107b7b00d0deb4a582e3a1c44bf69e794e40e5",
+            "contentType": "text/html",
+            "retrievedAt": "2026-10-25T10:02:15.753374+00:00"
+          },
+          {
+            "role": "license-text",
+            "requestedUrl": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.en",
+            "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.en",
+            "path": "docs/data/evidence/voc-data-01-research-20261025/ngsl/license.html",
+            "bytes": 51645,
+            "sha256": "47c0a954c88d793bdefe92fb007ae3c038fb3807f1a27083433d01aa7542c0d8",
+            "contentType": "text/html",
+            "retrievedAt": "2026-10-25T10:02:15.891619+00:00"
+          },
+          {
+            "role": "attribution",
+            "url": "https://www.newgeneralservicelist.com/new-general-service-list",
+            "path": "docs/data/evidence/voc-data-01-research-20261025/ngsl/attribution.md",
+            "bytes": 594,
+            "sha256": "6eefa9269dcf96b9873d4331fb71187ad3c7e5511564bbda779983f06ae86543",
+            "generated": true
+          }
+        ],
+        "recordCount": 2809,
+        "textEncoding": "utf-8-sig"
+      },
+      "pipelineEligible": false
+    },
+    {
+      "url": "https://www.newgeneralservicelist.com/toeic-service-list",
+      "id": "tsl",
+      "scope": "lemmas and frequency ranks",
+      "packagingStatus": "pending",
+      "licenseCode": "CC-BY-SA-4.0",
+      "decision": "include",
+      "evidence": [
+        {
+          "checkedOn": "2026-10-25",
+          "url": "https://www.newgeneralservicelist.com/toeic-service-list",
+          "note": "See docs/voc-data-01-source-ledger.md for section and limitations"
+        }
+      ],
+      "obligations": [
+        "Credit Browne and Culligan",
+        "Retain source and license notices; indicate changes",
+        "ShareAlike for adapted data"
+      ],
+      "title": "TOEIC Service List 1.2",
+      "reason": "Selected for MVP subject to all ledger gates; not approved for ingestion",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "blockers": [
+        "PO/Content Lead snapshot sign-off pending",
+        "Technical review by Truong pending"
+      ],
+      "snapshot": {
+        "id": "tsl-1.2-retrieved-20261025",
+        "upstreamVersion": "1.2",
+        "upstreamDate": null,
+        "upstreamDateUnknownReason": "Official TSL page names version 1.2 but does not state an exact release date",
+        "retrievedAt": "2026-10-25T10:02:16.500495+00:00",
+        "artifacts": [
+          {
+            "role": "data",
+            "requestedUrl": "https://www.newgeneralservicelist.com/s/TSL_12_stats.csv",
+            "url": "https://static1.squarespace.com/static/64336926d7c6bb38965fdf3b/t/643c876e097db81d6db2722c/1681688430425/TSL_1.2_stats.csv",
+            "path": "docs/data/evidence/voc-data-01-research-20261025/tsl/words.csv",
+            "bytes": 32010,
+            "sha256": "2259df25a1077b04067ef0c0e9e4c98b46c91e4d539741dfaceba88651ff486d",
+            "contentType": "text/csv",
+            "retrievedAt": "2026-10-25T10:02:16.500495+00:00"
+          },
+          {
+            "role": "license-evidence",
+            "requestedUrl": "https://www.newgeneralservicelist.com/toeic-service-list",
+            "url": "https://www.newgeneralservicelist.com/toeic-service-list",
+            "path": "docs/data/evidence/voc-data-01-research-20261025/tsl/source.html",
+            "bytes": 154366,
+            "sha256": "95037fbf663669ce679edf71448fff5af9308977679f6c6ff7ed9f72f1277ddc",
+            "contentType": "text/html",
+            "retrievedAt": "2026-10-25T10:02:16.903514+00:00"
+          },
+          {
+            "role": "license-text",
+            "requestedUrl": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.en",
+            "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.en",
+            "path": "docs/data/evidence/voc-data-01-research-20261025/tsl/license.html",
+            "bytes": 51645,
+            "sha256": "47c0a954c88d793bdefe92fb007ae3c038fb3807f1a27083433d01aa7542c0d8",
+            "contentType": "text/html",
+            "retrievedAt": "2026-10-25T10:02:17.049669+00:00"
+          },
+          {
+            "role": "attribution",
+            "url": "https://www.newgeneralservicelist.com/toeic-service-list",
+            "path": "docs/data/evidence/voc-data-01-research-20261025/tsl/attribution.md",
+            "bytes": 568,
+            "sha256": "f1c17e64d87ce8674a6809cfc4e444f0cda3809e0cddc0bd188a1151bd8de980",
+            "generated": true
+          }
+        ],
+        "recordCount": 1250,
+        "textEncoding": "cp1252"
+      },
+      "pipelineEligible": false
+    },
+    {
+      "url": "https://kaikki.org/viwiktionary/",
+      "id": "kaikki-viwiktionary",
+      "scope": "raw English entries with Vietnamese glosses, POS and optional IPA",
+      "packagingStatus": "pending",
+      "licenseCode": null,
+      "decision": "include",
+      "evidence": [
+        {
+          "checkedOn": "2026-10-25",
+          "url": "https://kaikki.org/viwiktionary/",
+          "note": "See docs/voc-data-01-source-ledger.md for section and limitations"
+        }
+      ],
+      "obligations": [
+        "Verify applicable Wikimedia and viwiktionary terms",
+        "Credit Wiktionary contributors and retain page/history provenance",
+        "Record Kaikki and Wiktextract provenance; avoid merged postprocessed data"
+      ],
+      "title": "Kaikki Vietnamese Wiktionary edition",
+      "reason": "Selected for MVP subject to all ledger gates; not approved for ingestion",
+      "licenseUrl": null,
+      "blockers": [
+        "Exact viwiktionary snapshot license route and exceptions unresolved",
+        "Raw data snapshot not acquired; no ingestion permitted",
+        "PO/Content Lead sign-off and record attribution pending"
+      ],
+      "snapshot": null,
+      "pipelineEligible": false,
+      "researchArtifacts": [
+        {
+          "role": "license-evidence",
+          "requestedUrl": "https://kaikki.org/viwiktionary/",
+          "url": "https://kaikki.org/viwiktionary/",
+          "path": "docs/data/evidence/voc-data-01-research-20261025/kaikki-viwiktionary/source.html",
+          "bytes": 20455,
+          "sha256": "d47b44582d5e9ae3fc0c0b12c377e2951ce5633e73455e1f3f038d05259886a5",
+          "contentType": "text/html",
+          "retrievedAt": "2026-10-25T10:02:18.751598+00:00"
+        },
+        {
+          "role": "download-index",
+          "requestedUrl": "https://kaikki.org/viwiktionary/rawdata.html",
+          "url": "https://kaikki.org/viwiktionary/rawdata.html",
+          "path": "docs/data/evidence/voc-data-01-research-20261025/kaikki-viwiktionary/rawdata.html",
+          "bytes": 15295,
+          "sha256": "67767ad3cf4321144cfd2300a9de5390cecff50fcdc6578c37a2236ea06b5528",
+          "contentType": "text/html",
+          "retrievedAt": "2026-10-25T10:02:19.938934+00:00"
+        },
+        {
+          "role": "license-evidence",
+          "requestedUrl": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+          "url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+          "path": "docs/data/evidence/voc-data-01-research-20261025/kaikki-viwiktionary/wikimedia-terms.html",
+          "bytes": 152845,
+          "sha256": "0c52bc0e1b7c68bc2464b2b3f65bc2f2de0a0449eb9ce06f95533ee81ed8ea1e",
+          "contentType": "text/html",
+          "retrievedAt": "2026-10-25T10:02:20.345399+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://tatoeba.org/en/downloads",
+      "id": "tatoeba-text",
+      "scope": "directly linked English and Vietnamese text sentences",
+      "packagingStatus": "pending",
+      "licenseCode": "CC-BY-2.0-FR",
+      "decision": "include",
+      "evidence": [
+        {
+          "checkedOn": "2026-10-25",
+          "url": "https://tatoeba.org/en/terms_of_use",
+          "note": "See docs/voc-data-01-source-ledger.md for section and limitations"
+        }
+      ],
+      "obligations": [
+        "Default license only; verify actual license on each sentence",
+        "Credit authors and preserve sentence URLs for both EN and VI",
+        "Retain licenses and indicate adaptations; no audio"
+      ],
+      "title": "Tatoeba text EN-VI",
+      "reason": "Selected for MVP subject to all ledger gates; not approved for ingestion",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/fr/",
+      "blockers": [
+        "Text export snapshot and per-sentence authors/licenses/links not acquired",
+        "PO/Content Lead snapshot sign-off pending"
+      ],
+      "snapshot": null,
+      "pipelineEligible": false,
+      "researchArtifacts": [
+        {
+          "role": "license-evidence",
+          "requestedUrl": "https://tatoeba.org/en/terms_of_use",
+          "url": "https://tatoeba.org/en/terms_of_use",
+          "path": "docs/data/evidence/voc-data-01-research-20261025/tatoeba-text/terms.html",
+          "bytes": 88171,
+          "sha256": "f3e46eaac2d25bfacaab4e3cb834bd5252bb3df6367dd9da932bf46ec5ca2c22",
+          "contentType": "text/html",
+          "retrievedAt": "2026-10-25T10:02:22.434628+00:00"
+        },
+        {
+          "role": "license-text",
+          "requestedUrl": "https://creativecommons.org/licenses/by/2.0/fr/legalcode.fr",
+          "url": "https://creativecommons.org/licenses/by/2.0/fr/legalcode.fr",
+          "path": "docs/data/evidence/voc-data-01-research-20261025/tatoeba-text/license.html",
+          "bytes": 39479,
+          "sha256": "597d4c64f6606c64da65ba6c079e5cc87e4cce2b5187eda908c939b538e7ab9b",
+          "contentType": "text/html",
+          "retrievedAt": "2026-10-25T10:02:23.332030+00:00"
+        },
+        {
+          "role": "download-index",
+          "requestedUrl": "https://tatoeba.org/en/downloads",
+          "url": "https://tatoeba.org/en/downloads",
+          "path": "docs/data/evidence/voc-data-01-research-20261025/tatoeba-text/downloads.html",
+          "bytes": 316138,
+          "sha256": "91f1467b65cb57d3a82c956932077c72c43c98fa8e47eca3233166c51ab7c5ff",
+          "contentType": "text/html",
+          "retrievedAt": "2026-10-25T10:02:26.392570+00:00"
+        }
+      ],
+      "exportResearchStatus": "Downloads page successfully archived; previous timeout resolved"
+    },
+    {
+      "url": null,
+      "id": "fvdp",
+      "scope": "all FVDP content",
+      "packagingStatus": "excluded",
+      "licenseCode": null,
+      "decision": "exclude",
+      "evidence": [
+        {
+          "checkedOn": "2026-10-25",
+          "url": null,
+          "note": "User-supplied backlog is exclusion evidence; upstream rights not researched"
+        }
+      ],
+      "obligations": [
+        "Do not acquire, import or package; no license conclusion claimed"
+      ],
+      "title": "Free Vietnamese Dictionary Project",
+      "reason": "MVP scope exclusion requested in VOC-DATA-01 backlog",
+      "licenseUrl": null,
+      "blockers": [
+        "Excluded from MVP by backlog"
+      ],
+      "snapshot": null,
+      "pipelineEligible": false
+    },
+    {
+      "url": "https://tatoeba.org/en/terms_of_use",
+      "id": "tatoeba-audio",
+      "scope": "all Tatoeba recordings",
+      "packagingStatus": "excluded",
+      "licenseCode": null,
+      "decision": "exclude",
+      "evidence": [
+        {
+          "checkedOn": "2026-10-25",
+          "url": "https://tatoeba.org/en/terms_of_use",
+          "note": "See docs/voc-data-01-source-ledger.md for section and limitations"
+        }
+      ],
+      "obligations": [
+        "Do not acquire, cache, import or package audio"
+      ],
+      "title": "Tatoeba audio",
+      "reason": "MVP scope exclusion requested in VOC-DATA-01 backlog",
+      "licenseUrl": null,
+      "blockers": [
+        "Excluded from MVP by backlog",
+        "Audio licenses vary by contributor"
+      ],
+      "snapshot": null,
+      "pipelineEligible": false
+    }
+  ],
+  "snapshotContract": "docs/voc-data-01-source-ledger.md",
+  "schemaVersion": 1,
+  "researchedOn": "2026-10-25",
+  "task": "VOC-DATA-01",
+  "evidenceCapture": "docs/data/evidence/voc-data-01-research-20261025/capture.json",
+  "approvalPolicy": {
+    "roles": [
+      "PO",
+      "Content Lead"
+    ],
+    "scope": "per source snapshot",
+    "requiredArtifactRole": "approval",
+    "status": "pending"
+  }
 }
