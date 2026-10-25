@@ -16,6 +16,8 @@ project entry point; generated build outputs stay in ignored build directories.
 | [QUIZ-01 plan](plans/quiz-01-domain-model.md) | Pure Java Quiz models, generator contract, state invariants and planned validation |
 | [QUIZ-01 validation](quiz-01-validation.md) | Implemented domain contract, test evidence, limitations and integration handoff |
 | [PROGRESS-01 plan](plans/progress-01-contract.md) | Progress summary, Quiz history, use case/view-state contracts and planned validation |
+| [PROGRESS-01 handoff](progress-01-handoff.md) | Progress models, repository/use case/view state contracts and integration responsibilities |
+| [PROGRESS-01 validation](progress-01-validation.md) | Executed checks, test counts and remaining delivery steps |
 | [UI sketch](sketchs.png) | Visual reference for future feature screens |
 
 Use lowercase kebab-case filenames for new documentation. Put task plans in
