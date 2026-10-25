@@ -203,7 +203,8 @@ Nhánh plan: `feature/data-03-dao-foundation`, tạo từ
 UserDao. Đây là nhánh stack trên DATA-02, chưa khẳng định foundation đã merge vào
 develop. Khi mở PR, dùng DATA-02 làm base trước khi dependency được tích hợp;
 nếu chuyển base sang develop cần kiểm tra lại diff. Không mang commit VOC-DATA-01
-vào DATA-03. Hiện chỉ có plan, chưa triển khai DAO mới hoặc chạy baseline build.
+vào DATA-03. Phần triển khai đã được bổ sung trong phiên tiếp theo; xem
+[DATA-03 validation](../data-03-validation.md) cho API thực tế, kết quả và giới hạn.
 
 ## 9. Fixture và kế hoạch kiểm thử
 
@@ -264,17 +265,17 @@ cấp sản phẩm ở DATA-08. Các lệnh trên chưa được chạy trong ph
 
 ## 11. Definition of Done và bàn giao
 
-- [ ] DATA-01/02 có trong base, trạng thái dependency và baseline đã xác minh.
+- [x] DATA-01/02 có trong base, baseline đã xác minh; chưa tự suy đã merge develop.
 - [ ] Đạo review contract, đặc biệt multi-pack order, new/quota và saved-only;
   phần chưa chốt ghi rõ blocker, không âm thầm tạo semantics mới.
-- [ ] Catalog read/User read-write primitive đủ use case; query input/empty/error rõ.
-- [ ] Due/new active-only, stableId unique đúng cấp; history không bị dedup sai.
-- [ ] dueAt/orderNo/box có test biên và tie-breaker; không limit trước filter/dedup.
-- [ ] Review transaction có success/forced failure, không tồn tại trạng thái nửa vời.
-- [ ] UI/domain không phụ thuộc DAO/Entity/Room; queries chạy worker thread.
-- [ ] Không cross-DB transaction/FK, không destructive fallback và không đổi userdata ngoài phạm vi.
-- [ ] Build/test có evidence thật; schema/index thay đổi nếu có được review/migrate đúng.
-- [ ] Báo cáo `docs/data-03-validation.md` ghi implementation, report và giới hạn khi triển khai.
+- [x] Catalog read/User read-write primitive đủ use case; query input/empty/error rõ.
+- [x] Primitive và composition fixture kiểm chứng active-only/unique; caller DATA-04 tiếp tục wiring.
+- [x] dueAt/orderNo/box có test biên và tie-breaker; không limit trước filter/dedup.
+- [x] Review transaction có success/forced SQL failure, không tồn tại trạng thái nửa vời.
+- [x] UI/domain không phụ thuộc DAO/Entity/Room; tests chạy worker thread, production DAO ghi contract worker.
+- [x] Không cross-DB transaction/FK, không destructive fallback và không đổi userdata ngoài phạm vi.
+- [x] Build/test có evidence thật; không đổi schema/index/asset.
+- [x] Báo cáo `docs/data-03-validation.md` ghi implementation, report và giới hạn.
 - [ ] Đạo review; bàn giao contracts/projections/transaction và test fixture cho DATA-04/06/07.
 
 Đầu ra PR khi triển khai: problem/behavior, contract đã chốt, query mới, quyết định
