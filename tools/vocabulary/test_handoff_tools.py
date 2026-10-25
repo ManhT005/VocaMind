@@ -10,7 +10,7 @@ from unittest.mock import patch
 
 import capture_sources
 from commons_audio_metadata import fetch_metadata, metadata_url
-from gate_sources import freeze, verify_snapshot
+from gate_sources import freeze, verify_snapshot, verify_capture_snapshot
 from source_gate import ROOT
 
 
@@ -50,6 +50,25 @@ class HandoffToolsTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'differs from registry'):
             verify_snapshot(snapshot, self.document)
 
+    def test_frozen_inventory_cannot_drop_registry_binding(self):
+        snapshot = freeze(self.document, self.root / 'snapshot.json')
+        snapshot.pop('registrySha256')
+        snapshot['sources'] = {'one-file-only': [snapshot['sources']['ngsl'][0]]}
+        self.document['sources'][0]['reason'] = 'Changed since freeze'
+        with self.assertRaisesRegex(ValueError, 'registrySha256 required'):
+            verify_snapshot(snapshot, self.document)
+
+    def test_capture_cannot_masquerade_as_frozen_inventory(self):
+        snapshot = freeze(self.document, self.root / 'snapshot.json')
+        snapshot.pop('registrySha256')
+        snapshot['purpose'] = 'source-capture'
+        verify_capture_snapshot(snapshot)
+        with self.assertRaisesRegex(ValueError, 'Unsupported frozen inventory'):
+            verify_snapshot(snapshot, self.document)
+        snapshot['purpose'] = 'research-inventory'
+        with self.assertRaisesRegex(ValueError, 'registrySha256 required'):
+            verify_snapshot(snapshot, self.document)
+
     def test_acquisition_preserves_bytes_and_records_hash(self):
         data = b'word,rank\r\ncaf\xe9,1\r\n'
         with patch.object(capture_sources, 'ROOT', self.root), patch(
@@ -60,7 +79,9 @@ class HandoffToolsTest(unittest.TestCase):
         artifact = snapshot['sources']['tsl'][0]
         self.assertEqual(data, (self.root / artifact['path']).read_bytes())
         self.assertEqual(hashlib.sha256(data).hexdigest(), artifact['sha256'])
-        verify_snapshot(snapshot, root=self.root)
+        verify_capture_snapshot(snapshot, root=self.root)
+        with self.assertRaisesRegex(ValueError, 'Unsupported frozen inventory'):
+            verify_snapshot(snapshot, self.document, root=self.root)
 
     def test_incomplete_acquisition_cannot_verify(self):
         with patch.object(capture_sources, 'ROOT', self.root), patch(
@@ -68,7 +89,7 @@ class HandoffToolsTest(unittest.TestCase):
             snapshot = capture_sources.capture(self.root / 'capture', {
                 'tsl': [('data', 'words.csv', 'https://example.invalid/words.csv')]})
         with self.assertRaisesRegex(ValueError, 'unresolved errors'):
-            verify_snapshot(snapshot, root=self.root)
+            verify_capture_snapshot(snapshot, root=self.root)
 
     def test_metadata_queries_only_api_and_keeps_hold(self):
         payload = {'query': {'pages': [{'imageinfo': [{

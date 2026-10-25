@@ -63,7 +63,7 @@ def capture(destination, inputs=INPUTS):
                 manifest['errors'].append({'sourceId': sid, 'url': url, 'error': str(error)})
                 print(f'Unavailable {sid}/{name}: {error}', flush=True)
     manifest['schemaVersion'] = 1
-    manifest['purpose'] = 'research-inventory'
+    manifest['purpose'] = 'source-capture'
     (destination / 'snapshot.json').write_bytes((json.dumps(manifest, indent=2) + '\n').encode('utf-8'))
     return manifest
 

@@ -35,7 +35,7 @@ VOC-DATA-02/03. Không thay app/Room/catalog asset/userdata.
 
 | Lệnh | Kết quả |
 | --- | --- |
-| `py -3 -W error::ResourceWarning -m unittest discover -s tools/vocabulary -p 'test_*.py' -v` | 35 tests pass |
+| `py -3 -W error::ResourceWarning -m unittest discover -s tools/vocabulary -p 'test_*.py' -v` | 41 tests pass |
 | `py -3 tools/vocabulary/source_gate.py` | Exit 0; inventory và checksum hợp lệ |
 | `py -3 tools/vocabulary/gate_sources.py --snapshot docs/data/snapshot.json` | Exit 0; inventory đã đóng băng khớp registry và byte hash |
 | `py -3 tools/vocabulary/gate_sources.py --snapshot docs/data/snapshot.json --source ngsl-12` | Exit 1 đúng kỳ vọng, nguồn candidate/hold không được import |
@@ -84,3 +84,18 @@ cho lần cập nhật này. Không sửa các file Word/Excel gốc.
 
 Không đổi registry, frozen snapshot hay raw evidence ở đợt tối ưu này. Trạng thái
 hold/exclude và yêu cầu duyệt vẫn giữ nguyên.
+
+## 5. Sửa hai lỗi review
+
+- P1: digest approval phiên bản 2 ràng buộc cả thông tin nguồn (license code/URL,
+  scope, obligations, evidence, redistribution và identity) cùng snapshot.
+  Test thay license bằng license khác trong allowlist, thay scope, thay nghĩa vụ
+  attribution đều bị chặn với approval cũ. Digest chỉ bao snapshot ở phiên bản
+  trước không còn được chấp nhận; không tự tạo sign-off thay người duyệt.
+- P2: frozen inventory bắt buộc có `registrySha256` và đầy đủ artifact khớp
+  registry. Test xóa digest, rút inventory còn một file, đổi registry bị chặn.
+  Acquisition manifest dùng purpose riêng `source-capture` và verifier riêng;
+  không thể đổi purpose để vượt frozen check, không kết hợp với import approval.
+- Tổng cộng 41 tests pass. Inventory hiện có vẫn xác minh thành công; cache vẫn
+  hash đúng 14 file một lần mỗi invocation. Registry/raw data không đổi, không
+  tải thêm corpus. Nguồn thật vẫn hold/exclude, chờ con người review.

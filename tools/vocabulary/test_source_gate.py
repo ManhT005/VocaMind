@@ -33,7 +33,7 @@ class SourceGateTest(unittest.TestCase):
                                   sha256=hashlib.sha256(content).hexdigest()))
         source['snapshot'] = dict(id='test-only', upstreamVersion='test', upstreamDate='2026-10-25',
                                   retrievedAt='2026-10-25T00:00:00Z', artifacts=artifacts)
-        source['review']['snapshotSha256'] = snapshot_content_digest(source['snapshot'])
+        source['review']['snapshotSha256'] = snapshot_content_digest(source['snapshot'], source)
         return source
 
     def test_registry_structure(self):
@@ -144,6 +144,35 @@ class SourceGateTest(unittest.TestCase):
     def test_plan_source_id_alias(self):
         self.approved()
         self.assertEqual('ngsl', authorize(self.document, 'ngsl-12', self.root)['id'])
+
+    def test_license_change_requires_new_approval(self):
+        source = self.approved()
+        source['licenseCode'] = 'CC-BY-2.0-FR'
+        source['licenseUrl'] = 'https://creativecommons.org/licenses/by/2.0/fr/'
+        with self.assertRaisesRegex(ValueError, 'Approval content digest mismatch'):
+            authorize(self.document, 'ngsl', self.root)
+
+    def test_scope_change_requires_new_approval(self):
+        source = self.approved()
+        source['scope'] = 'Expanded scope never approved'
+        with self.assertRaisesRegex(ValueError, 'Approval content digest mismatch'):
+            authorize(self.document, 'ngsl', self.root)
+
+    def test_attribution_obligations_change_requires_new_approval(self):
+        source = self.approved()
+        source['obligations'] = ['Different attribution requirements']
+        with self.assertRaisesRegex(ValueError, 'Approval content digest mismatch'):
+            authorize(self.document, 'ngsl', self.root)
+
+    def test_legacy_snapshot_only_digest_is_not_accepted(self):
+        source = self.approved()
+        snapshot = source['snapshot']
+        content = {key: value for key, value in snapshot.items() if key != 'artifacts'}
+        content['artifacts'] = [a for a in snapshot['artifacts'] if a['role'] != 'approval']
+        source['review']['snapshotSha256'] = hashlib.sha256(json.dumps(
+            content, sort_keys=True, separators=(',', ':'), ensure_ascii=True).encode()).hexdigest()
+        with self.assertRaisesRegex(ValueError, 'Approval content digest mismatch'):
+            authorize(self.document, 'ngsl', self.root)
 
 
 if __name__ == '__main__':

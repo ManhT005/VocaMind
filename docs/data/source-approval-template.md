@@ -23,8 +23,10 @@ Sau xác nhận thực: lưu phiếu hoàn chỉnh, thêm artifact role `approva
 URL biên bản HTTPS, path, bytes và SHA-256. Điền `review.reviewer`, `role`
 (`PO` hoặc `Content Lead`), `decision=approved`, `reviewedAt`, `snapshotId`.
 Điền thêm `review.snapshotSha256` bằng `snapshotContentSha256` từ báo cáo audit
-JSON sau khi người duyệt kiểm tra đúng nội dung. Digest bao gồm metadata snapshot
-và artifact, trừ phiếu approval để tránh hash vòng. Nếu thay dữ liệu dù giữ nguyên
+JSON sau khi người duyệt kiểm tra đúng nội dung. Digest phiên bản 2 bao gồm source
+identity, giấy phép, scope, evidence, obligations, redistribution và metadata/artifact
+snapshot, trừ phiếu approval và cờ workflow để tránh hash vòng. Nếu thay quyền hoặc
+dữ liệu dù giữ nguyên
 snapshot ID, cần phê duyệt lại; không tự cập nhật digest để bỏ qua review.
 Chỉ bỏ blockers, đặt `packagingStatus=approved`, `pipelineEligible=true` khi
 mọi điều kiện đạt. Gate kiểm tra metadata và byte integrity; nhóm xác thực

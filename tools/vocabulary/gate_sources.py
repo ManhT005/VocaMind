@@ -35,12 +35,28 @@ def verify_snapshot(snapshot, document=None, root=ROOT, hash_cache=None):
     sources = snapshot.get('sources')
     require(isinstance(sources, dict) and bool(sources), 'Snapshot sources required')
     require(any(sources.values()), 'Snapshot contains no artifacts')
-    if 'registrySha256' in snapshot:
-        require(document is not None and snapshot['registrySha256'] == registry_digest(document),
-                'Frozen snapshot registry digest mismatch; review and freeze a new version')
-        expected = {s['id']: s.get('researchArtifacts', []) +
-                    (s.get('snapshot') or {}).get('artifacts', []) for s in document['sources']}
-        require(sources == expected, 'Frozen inventory differs from registry artifacts')
+    require(isinstance(snapshot.get('registrySha256'), str), 'Frozen inventory registrySha256 required')
+    require(document is not None and snapshot['registrySha256'] == registry_digest(document),
+            'Frozen snapshot registry digest mismatch; review and freeze a new version')
+    expected = {s['id']: s.get('researchArtifacts', []) +
+                (s.get('snapshot') or {}).get('artifacts', []) for s in document['sources']}
+    require(sources == expected, 'Frozen inventory differs from registry artifacts')
+    for artifacts in sources.values():
+        require(isinstance(artifacts, list), 'Source artifacts must be an array')
+        for artifact in artifacts:
+            verified_artifact(artifact, root, hash_cache)
+    return snapshot
+
+
+def verify_capture_snapshot(snapshot, root=ROOT, hash_cache=None):
+    """Check acquisition bytes only; never treat a capture as a frozen registry."""
+    require(isinstance(snapshot, dict) and snapshot.get('schemaVersion') == 1 and
+            snapshot.get('purpose') == 'source-capture', 'Unsupported acquisition manifest')
+    require('registrySha256' not in snapshot, 'Acquisition manifest cannot claim registry binding')
+    require(snapshot.get('errors') == [], 'Capture has unresolved errors')
+    sources = snapshot.get('sources')
+    require(isinstance(sources, dict) and bool(sources) and any(sources.values()),
+            'Capture artifacts required')
     for artifacts in sources.values():
         require(isinstance(artifacts, list), 'Source artifacts must be an array')
         for artifact in artifacts:
@@ -56,7 +72,10 @@ def main():
     group = parser.add_mutually_exclusive_group()
     group.add_argument('--freeze', type=Path, help='Create a new immutable snapshot.json; never overwrite')
     group.add_argument('--snapshot', type=Path, help='Verify a frozen research inventory')
+    group.add_argument('--capture-snapshot', type=Path, help='Verify acquisition bytes only, not registry binding')
     args = parser.parse_args()
+    if args.capture_snapshot and args.source:
+        parser.error('--capture-snapshot cannot authorize a source; use a frozen --snapshot')
     try:
         document = json.loads(args.registry.read_text('utf-8'))
         hash_cache = {}
@@ -65,6 +84,8 @@ def main():
             freeze(document, args.freeze, hash_cache=hash_cache)
         if args.snapshot:
             verify_snapshot(json.loads(args.snapshot.read_text('utf-8')), document, hash_cache=hash_cache)
+        if args.capture_snapshot:
+            verify_capture_snapshot(json.loads(args.capture_snapshot.read_text('utf-8')), hash_cache=hash_cache)
         if args.source:
             authorize(document, args.source, hash_cache=hash_cache)
         if args.json:

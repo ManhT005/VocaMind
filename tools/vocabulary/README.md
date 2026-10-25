@@ -85,4 +85,19 @@ during hashing are rejected. No persistent checksum cache is used.
 Source approval now requires `review.snapshotSha256` matching the report's
 `snapshotContentSha256`, in addition to snapshot ID and the actual approval
 artifact. This prevents reusing approval after changing content under the same
-ID. The content digest excludes the approval artifact to avoid a circular hash.
+ID. Digest version 2 also binds source identity, license code/URL, scope,
+evidence, obligations and redistribution terms. Snapshot-only approval digests
+from the previous version are rejected and require actual review again. The
+digest excludes the approval artifact and workflow flags to avoid a circular hash.
+
+Frozen inventories must contain `registrySha256` and match the complete registry
+artifact listing. Removing the digest is an error, not a fallback mode. Newly
+captured acquisition manifests use `purpose=source-capture`; verify them with:
+
+```powershell
+py -3 tools/vocabulary/gate_sources.py --capture-snapshot path/to/new-capture/snapshot.json
+```
+
+This only verifies acquisition bytes. It cannot be combined with `--source` and
+cannot replace the frozen `--snapshot` inventory used by CI. Register/review
+captured artifacts and freeze a separate inventory before source handoff.

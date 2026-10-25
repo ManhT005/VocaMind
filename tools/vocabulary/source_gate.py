@@ -30,11 +30,15 @@ def https_url(value):
     return parsed.scheme == 'https' and bool(parsed.hostname) and not parsed.username and not parsed.password
 
 
-def snapshot_content_digest(snapshot):
-    """Bind approval to snapshot content, excluding its own approval document."""
+def snapshot_content_digest(snapshot, source):
+    """Bind approval to source rights and snapshot bytes, excluding approval state."""
     content = {key: value for key, value in snapshot.items() if key != 'artifacts'}
     content['artifacts'] = [a for a in snapshot.get('artifacts', []) if a.get('role') != 'approval']
-    encoded = json.dumps(content, sort_keys=True, separators=(',', ':'), ensure_ascii=True).encode('utf-8')
+    operational = {'snapshot', 'review', 'decision', 'packagingStatus', 'pipelineEligible',
+                   'blockers', 'researchStatus'}
+    rights = {key: value for key, value in source.items() if key not in operational}
+    payload = {'approvalDigestVersion': 2, 'source': rights, 'snapshot': content}
+    encoded = json.dumps(payload, sort_keys=True, separators=(',', ':'), ensure_ascii=True).encode('utf-8')
     return hashlib.sha256(encoded).hexdigest()
 
 
@@ -152,8 +156,8 @@ def authorize(document, source_id, root=ROOT, hash_cache=None):
     require(len({a.get('path') for a in artifacts}) == len(artifacts), 'Duplicate artifact paths')
     for artifact in artifacts:
         verified_artifact(artifact, root, hash_cache)
-    require(review.get('snapshotSha256') == snapshot_content_digest(snapshot),
-            'Approval content digest mismatch; snapshot changes require new review')
+    require(review.get('snapshotSha256') == snapshot_content_digest(snapshot, source),
+            'Approval content digest mismatch; source rights or snapshot changes require new review')
     return source
 
 
@@ -182,7 +186,8 @@ def status_report(document):
         'sources': [{
             'id': s['id'], 'decision': s['decision'], 'pipelineEligible': s['pipelineEligible'],
             'snapshotId': (s.get('snapshot') or {}).get('id'),
-            'snapshotContentSha256': snapshot_content_digest(s['snapshot']) if s.get('snapshot') else None,
+            'snapshotContentSha256': snapshot_content_digest(s['snapshot'], s) if s.get('snapshot') else None,
+            'approvalDigestVersion': 2,
             'declaredRawRows': (s.get('snapshot') or {}).get('recordCount', 0),
             'blockers': s['blockers'],
         } for s in sources],
