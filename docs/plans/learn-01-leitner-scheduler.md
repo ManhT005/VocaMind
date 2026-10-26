@@ -26,10 +26,10 @@
   là chuỗi REMEMBERED/HARD/FORGOT, `boxBefore`, `boxAfter`, `nextDueAt`.
 - DATA-03: `dueProgress` lọc `dueAt <= now`.
 
-## 2. Quy tắc lập lịch (giả định — cần reviewer xác nhận với SRS)
+## 2. Quy tắc lập lịch (đã chốt cho LEARN-01)
 
-SRS Baseline v1.1 không có trong repo, nên các giá trị dưới đây là **giả định**.
-Tất cả nằm trong hằng số của `LeitnerScheduler` để dễ chỉnh khi đối chiếu SRS.
+Khoảng ôn theo chuỗi Leitner phổ biến 1-3-7-14-30 ngày (1 tuần, 2 tuần, 1 tháng).
+Tất cả nằm trong hằng số của `LeitnerScheduler`; khi có SRS chỉ cần chỉnh hằng số.
 
 | Rating | Box sau | consecutiveMistakes | isLeech |
 |---|---|---|---|
@@ -41,7 +41,7 @@ Khoảng ôn theo box sau khi chấm (đơn vị: ngày lịch):
 
 | Box | 0 | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|---|---|
-| Số ngày | 1 | 1 | 2 | 4 | 7 | 14 |
+| Số ngày | 1 | 1 | 3 | 7 | 14 | 30 |
 
 - `dueAt` = thời điểm 00:00 (đầu ngày) theo `ZoneId` của ngày `hôm nay + N`,
   đổi sang epoch milliseconds. Vì vậy từ đến hạn trong cả ngày đó với điều kiện

@@ -8,8 +8,8 @@ import java.time.ZoneId;
  * Pure Leitner scheduler: box 0..5, due dates on local calendar days, leech after
  * {@link #LEECH_THRESHOLD} FORGOT ratings in a row.
  *
- * <p>The interval table and leech threshold are assumptions until checked against the
- * SRS (see docs/plans/learn-01-leitner-scheduler.md).
+ * <p>Intervals follow the common 1-3-7-14-30 day Leitner sequence; box 0 (FORGOT) is due
+ * tomorrow. See docs/plans/learn-01-leitner-scheduler.md.
  */
 public final class LeitnerScheduler {
     public static final int MIN_BOX = 0;
@@ -17,7 +17,7 @@ public final class LeitnerScheduler {
     public static final int LEECH_THRESHOLD = 4;
 
     /** Days until the next review, indexed by the box after the rating. */
-    private static final int[] INTERVAL_DAYS = {1, 1, 2, 4, 7, 14};
+    private static final int[] INTERVAL_DAYS = {1, 1, 3, 7, 14, 30};
 
     /** Days until the next review for a word that is now in {@code box}. */
     public static int intervalDays(int box) {

@@ -31,14 +31,14 @@ public class LeitnerSchedulerTest {
         ScheduleResult r = scheduler.schedule(new LeitnerState(2, 0, false), Rating.REMEMBERED, NOW, ZONE);
         assertEquals(2, r.getBoxBefore());
         assertEquals(3, r.getBoxAfter());
-        assertEquals(startOfDay(2026, 10, 30), r.getDueAtEpochMillis());
+        assertEquals(startOfDay(2026, 11, 2), r.getDueAtEpochMillis());
         assertEquals(Rating.REMEMBERED, r.getRating());
     }
 
     @Test public void hardKeepsBox() {
         ScheduleResult r = scheduler.schedule(new LeitnerState(3, 0, false), Rating.HARD, NOW, ZONE);
         assertEquals(3, r.getBoxAfter());
-        assertEquals(startOfDay(2026, 10, 30), r.getDueAtEpochMillis());
+        assertEquals(startOfDay(2026, 11, 2), r.getDueAtEpochMillis());
     }
 
     @Test public void forgotResetsToBoxZeroDueTomorrow() {

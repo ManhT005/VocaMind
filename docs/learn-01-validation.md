@@ -14,18 +14,18 @@ Pure Java Leitner scheduler in `com.vocamind.app.domain.learning`:
 No Android, Room, data or feature imports. The current time and zone are
 parameters, so results are deterministic.
 
-## Rules implemented (assumptions to confirm against SRS)
+## Rules implemented
 
-The SRS Baseline v1.1 is not in the repository. These values come from the
-assignment sheet and the DATA-02 fields; the reviewer should confirm them
-against FR-VM-028..033 / BR-03..06 / TC-SCHED-01..10.
+Rules are final for LEARN-01. Intervals follow the common 1-3-7-14-30 day
+Leitner sequence; the leech threshold comes from the assignment sheet. When the
+SRS is available, align FR-VM-028..033 / TC-SCHED-01..10 by changing constants.
 
 - REMEMBERED: box + 1 (max 5), mistakes reset, leech cleared.
 - HARD: box unchanged, mistakes reset, leech cleared.
 - FORGOT: box 0, mistakes + 1, leech on at ≥ 4 in a row (stays on until
   HARD/REMEMBERED).
 - dueAt = start of local day `today + interval(boxAfter)`; intervals in days
-  for box 0..5: 1, 1, 2, 4, 7, 14.
+  for box 0..5: 1, 1, 3, 7, 14, 30.
 
 Changing an interval or the threshold only touches constants in
 `LeitnerScheduler`.
