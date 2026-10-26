@@ -17,6 +17,7 @@ project entry point; generated build outputs stay in ignored build directories.
 | [QUIZ-01 validation](quiz-01-validation.md) | Implemented domain contract, test evidence, limitations and integration handoff |
 | [LEARN-01 plan](plans/learn-01-leitner-scheduler.md) | Pure Java Leitner scheduler rules, design and task boundaries |
 | [LEARN-01 validation](learn-01-validation.md) | Implemented scheduler rules, test evidence and handoff |
+| [LEARN-02 validation](learn-02-validation.md) | TC-SCHED-01..10 and boundary test coverage for the Leitner scheduler |
 | [UI sketch](sketchs.png) | Visual reference for future feature screens |
 
 Use lowercase kebab-case filenames for new documentation. Put task plans in
