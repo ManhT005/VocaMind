@@ -8,14 +8,14 @@ dependency. Branch `feature/learn-02-leitner-tests` is stacked on
 
 ## TC-SCHED cases (`LeitnerSchedulerSrsTest`)
 
-The case names come from the assignment sheet. Expected values follow the
-assumed rules in [LEARN-01 plan](plans/learn-01-leitner-scheduler.md), so they
-must be checked against SRS TC-SCHED-01..10 in review.
+The case names come from the assignment sheet. Expected values follow the final
+rules in [LEARN-01 plan](plans/learn-01-leitner-scheduler.md) (1-3-7-14-30 days,
+leech ≥ 4). Align with SRS TC-SCHED-01..10 when the SRS is available.
 
 | Case | Checks |
 | --- | --- |
 | TC-SCHED-01 | New word + REMEMBERED → box 1, due tomorrow |
-| TC-SCHED-02 | REMEMBERED from box 0..4 → box + 1 with interval 1/2/4/7/14 days |
+| TC-SCHED-02 | REMEMBERED from box 0..4 → box + 1 with interval 1/3/7/14/30 days |
 | TC-SCHED-03 | REMEMBERED at box 5 stays at box 5 |
 | TC-SCHED-04 | HARD keeps every box and uses that box's interval |
 | TC-SCHED-05 | HARD at box 0 stays at box 0, due tomorrow |

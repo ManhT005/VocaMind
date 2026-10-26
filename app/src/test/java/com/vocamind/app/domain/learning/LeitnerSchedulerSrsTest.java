@@ -32,7 +32,7 @@ public class LeitnerSchedulerSrsTest {
     }
 
     @Test public void tcSched02_rememberedStepsThroughEveryBoxWithItsInterval() {
-        int[] expectedDays = {1, 2, 4, 7, 14};
+        int[] expectedDays = {1, 3, 7, 14, 30};
         for (int box = 0; box < 5; box++) {
             ScheduleResult r = rate(box, 0, false, Rating.REMEMBERED);
             assertEquals(box + 1, r.getBoxAfter());
@@ -43,11 +43,11 @@ public class LeitnerSchedulerSrsTest {
     @Test public void tcSched03_rememberedAtBox5StaysAtBox5() {
         ScheduleResult r = rate(5, 0, false, Rating.REMEMBERED);
         assertEquals(5, r.getBoxAfter());
-        assertEquals(dueInDays(14), r.getDueAtEpochMillis());
+        assertEquals(dueInDays(30), r.getDueAtEpochMillis());
     }
 
     @Test public void tcSched04_hardKeepsBoxAndUsesSameBoxInterval() {
-        int[] expectedDays = {1, 1, 2, 4, 7, 14};
+        int[] expectedDays = {1, 1, 3, 7, 14, 30};
         for (int box = 0; box <= 5; box++) {
             ScheduleResult r = rate(box, 0, false, Rating.HARD);
             assertEquals(box, r.getBoxAfter());

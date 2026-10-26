@@ -54,7 +54,7 @@ public class LeitnerSchedulerBoundaryTest {
         // DST starts 2026-03-08 in New York; that day has 23 hours.
         long now = at(LocalDateTime.of(2026, 3, 7, 22, 0), NEW_YORK);
         ScheduleResult r = scheduler.schedule(new LeitnerState(1, 0, false), Rating.REMEMBERED, now, NEW_YORK);
-        assertEquals(LocalDate.of(2026, 3, 9), due(r, NEW_YORK).toLocalDate());
+        assertEquals(LocalDate.of(2026, 3, 10), due(r, NEW_YORK).toLocalDate());
         assertEquals(LocalTime.MIDNIGHT, due(r, NEW_YORK).toLocalTime());
     }
 
@@ -82,7 +82,7 @@ public class LeitnerSchedulerBoundaryTest {
     }
 
     @Test public void intervalTableMatchesPlanAndRejectsInvalidBox() {
-        int[] expected = {1, 1, 2, 4, 7, 14};
+        int[] expected = {1, 1, 3, 7, 14, 30};
         for (int box = 0; box <= 5; box++) assertEquals(expected[box], LeitnerScheduler.intervalDays(box));
         assertThrows(IllegalArgumentException.class, () -> LeitnerScheduler.intervalDays(-1));
         assertThrows(IllegalArgumentException.class, () -> LeitnerScheduler.intervalDays(6));
