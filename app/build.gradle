@@ -28,8 +28,11 @@ android {
     testOptions {
         unitTests.includeAndroidResources = true
         unitTests.all {
-            // Keep Robolectric's Maven lock/cache in a writable, project-local location.
-            def testHome = layout.buildDirectory.dir("robolectric-home").get().asFile
+            // Robolectric's native loader treats URL-encoded spaces as literal paths.
+            // Use the OS temp directory when the checkout path contains spaces.
+            def testHome = projectDir.absolutePath.contains(' ')
+                    ? new File(System.getProperty('java.io.tmpdir'), 'vocamind-robolectric-home')
+                    : layout.buildDirectory.dir("robolectric-home").get().asFile
             testHome.mkdirs()
             systemProperty "user.home", testHome.absolutePath
             systemProperty "robolectric.dependency.repo.url", "https://repo.maven.apache.org/maven2"

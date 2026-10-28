@@ -12,6 +12,9 @@ the remaining GitHub merge-gate setup.
 
 ## Documentation
 
+- [DATA-02 UserDatabase plan](docs/plans/data-02-user-database.md)
+- [DATA-02 implementation and validation](docs/data-02-validation.md)
+
 - [Documentation index](docs/README.md)
 - [Android setup and build commands](docs/android-setup.md)
 - [Android foundation and dependency baseline](docs/android-foundation.md)
