@@ -1,5 +1,12 @@
 # DATA-03 — DAO foundation: implementation and validation
 
+**Cập nhật 01/11/2026:** đã merge develop `fff3801` vào feature bằng `77bf900`.
+Xem [checklist hiện hành](data-03-acceptance-checklist.md) để theo dõi lần kiểm tra
+sau tích hợp, G-01…G-13 và contract/handoff R-01…R-07. **Lượt mới: 105/105 JUnit
+PASS, 46/46 Python PASS, app và instrumentation APK build thành công.** Kết quả
+77 tests bên dưới là lịch sử ngày 25/10. Chưa có Đạo sign-off hoặc
+CI trên commit local mới.
+
 Ngày xác minh: 2026-10-25. Nhánh `feature/data-03-dao-foundation`, nền DATA-02
 `89225c2`, plan commit `b87a4b4`. Thực hiện theo
 [plan](plans/data-03-dao-foundation.md), hai SRS và dòng DATA-03 trong Excel đã
@@ -110,3 +117,39 @@ integration. DATA-06 xử lý scheduler, stale/concurrent progress, idempotency 
 double-submit; @Transaction hiện tại chỉ bảo đảm all-or-nothing. DATA-07 xây
 ProgressSummary/QuizHistory aggregate. DATA-05 chịu search hoàn chỉnh. Không
 công bố đã hoàn thành toàn bộ FR-VM-005..046 hoặc AC-08/09/10/11 cấp sản phẩm.
+
+## 5. Hoàn thiện sau tích hợp develop — 01/11/2026
+
+- Giữ lịch sử DATA-03 và tích hợp Learn/Quiz/VOC-DATA từ develop; giải quyết hai
+  conflict mục lục bằng cách giữ liên kết cả hai nhánh.
+- Bổ sung fixture kiểm tra pack ưu tiên nằm ở batch sau, word-order ties,
+  dedup vocabulary sau global sort và batch vocabulary có kết quả ở cả hai chunk.
+- Bổ sung SQL-trigger failure cho first-review INSERT progress; xác minh event,
+  progress và learned count rollback cùng nhau, rồi retry thành công sau bỏ trigger.
+- Mở rộng kiểm tra invalid input sau vị trí đã đủ limit và progressByBox trên
+  1.005 IDs có duplicate; không giảm coverage API 26/35.
+- Chuẩn bị SDK jars bằng Gradle cache với hai configurations tách biệt, dùng
+  Robolectric offline trong JUnit. Không đổi Robolectric version, SDK/minSdk,
+  production dependency hoặc Room schema/asset.
+- CI build thêm AndroidTest APK, upload XML/HTML/APK với SHA kể cả khi test lỗi;
+  bật full exception logging để phân biệt download failure với SQL/assertion failure.
+
+Thiết kế SDK resolution dựa trên [Robolectric configuration](https://robolectric.org/configuring/)
+và [DefaultSdkProvider của 4.16.1](https://github.com/robolectric/robolectric/blob/robolectric-4.16.1/robolectric/src/main/java/org/robolectric/plugins/DefaultSdkProvider.java).
+API 26 dùng `8.0.0_r4-robolectric-r1-i7`, API 35 dùng
+`15-robolectric-13954326-i7`. Pin phải được review lại nếu nâng Robolectric hoặc
+thay SDK test. Gradle vẫn cần mạng cho lượt resolve đầu; offline ở đây chỉ tắt
+runtime Maven fetch trong test process, không khẳng định cold build không cần mạng.
+
+Kết quả lần chạy mới: **BUILD SUCCESSFUL** trên Windows, Temurin 17.0.20.1+1,
+Gradle 8.9. JUnit XML: **105 executed, 105 passed, 0 failures/errors/skipped**.
+DaoFoundationTest có 16 cases × API 26/35 = 32 executions; DATA-01: 22,
+DATA-02: 16, boundary: 1, Learn: 24, Quiz: 10. Hai APK debug/instrumentation
+đã build. Python vocabulary regressions: 46/46 PASS; frozen inventory/checksum
+PASS. Diff schema/asset từ develop rỗng; `git diff --check` PASS.
+
+[Evidence JSON](data-03-acceptance-evidence.json) ghi counts từ XML, SHA-256 của
+report/APK và input digest để đối chiếu nội dung đã test với commit bàn giao.
+Log tại `app/build/data-03-acceptance.log`; HTML/XML/APK ở các đường dẫn §3.
+`adb devices` rỗng; chưa chạy connected tests. CI config mới đã bổ sung nhưng
+chưa push nên không công bố CI hoặc PR đã xanh. Đạo review vẫn pending.

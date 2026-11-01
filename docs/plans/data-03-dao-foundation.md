@@ -201,9 +201,10 @@ Nếu đổi catalog schema, phải regenerate/validate asset theo DATA-01, khô
 Nhánh plan: `feature/data-03-dao-foundation`, tạo từ
 `feature/data-02-user-database` tại commit `89225c2`, đã kiểm tra có CatalogDao và
 UserDao. Đây là nhánh stack trên DATA-02, chưa khẳng định foundation đã merge vào
-develop. Khi mở PR, dùng DATA-02 làm base trước khi dependency được tích hợp;
-nếu chuyển base sang develop cần kiểm tra lại diff. Không mang commit VOC-DATA-01
-vào DATA-03. Phần triển khai đã được bổ sung trong phiên tiếp theo; xem
+develop ở thời điểm lập plan. Cập nhật 01/11/2026: DATA-01/02 đã merge develop;
+feature đã merge `origin/develop` tại `fff3801` bằng commit `77bf900`.
+Các commit VOC-DATA-01 hiện được kế thừa từ develop, không phải delta DATA-03.
+PR tiếp theo target develop và kiểm tra diff từ base mới. Phần triển khai đã được bổ sung; xem
 [DATA-03 validation](../data-03-validation.md) cho API thực tế, kết quả và giới hạn.
 
 ## 9. Fixture và kế hoạch kiểm thử
@@ -265,7 +266,7 @@ cấp sản phẩm ở DATA-08. Các lệnh trên chưa được chạy trong ph
 
 ## 11. Definition of Done và bàn giao
 
-- [x] DATA-01/02 có trong base, baseline đã xác minh; chưa tự suy đã merge develop.
+- [x] DATA-01/02 có trong develop; feature đồng bộ develop `fff3801` bằng `77bf900`.
 - [ ] Đạo review contract, đặc biệt multi-pack order, new/quota và saved-only;
   phần chưa chốt ghi rõ blocker, không âm thầm tạo semantics mới.
 - [x] Catalog read/User read-write primitive đủ use case; query input/empty/error rõ.
@@ -276,6 +277,8 @@ cấp sản phẩm ở DATA-08. Các lệnh trên chưa được chạy trong ph
 - [x] Không cross-DB transaction/FK, không destructive fallback và không đổi userdata ngoài phạm vi.
 - [x] Build/test có evidence thật; không đổi schema/index/asset.
 - [x] Báo cáo `docs/data-03-validation.md` ghi implementation, report và giới hạn.
+- [x] [Checklist nghiệm thu hiện hành](../data-03-acceptance-checklist.md) lưu ngoài build,
+  ghi test matrix và owner/acceptance cho các phần handoff chưa triển khai.
 - [ ] Đạo review; bàn giao contracts/projections/transaction và test fixture cho DATA-04/06/07.
 
 Đầu ra PR khi triển khai: problem/behavior, contract đã chốt, query mới, quyết định

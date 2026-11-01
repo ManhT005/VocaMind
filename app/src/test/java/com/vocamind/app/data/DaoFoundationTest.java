@@ -125,6 +125,31 @@ public class DaoFoundationTest {
                 .stream().map(v -> v.id).collect(Collectors.toList()));
     }
 
+    @Test public void catalogMergesBatchesBeforeOrderingAndDeduplicatingCandidates() {
+        catalog.getOpenHelper().getWritableDatabase().execSQL(
+                "INSERT INTO LearningPack (id,title,description,category,orderNo,version) "
+                        + "VALUES ('Z-first','First','test','test',0,'1')");
+        membership("Z-first", "shared", 0); membership("Z-first", "a", 0);
+        assertEquals(Arrays.asList("a", "shared"), cd.words("Z-first").stream()
+                .map(v -> v.id).collect(Collectors.toList()));
+
+        List<String> packs = new ArrayList<>(); packs.add("A");
+        List<String> words = new ArrayList<>(); words.add("shared");
+        for (int i = 1; i < 900; i++) {
+            packs.add("missing-pack-" + i); words.add("missing-word-" + i);
+        }
+        packs.addAll(Arrays.asList("Z-first", "B", "A"));
+        words.addAll(Arrays.asList("a", "shared"));
+        List<PackMembership> memberships = cd.membershipsForPacks(packs);
+        assertEquals(10, memberships.size());
+        assertEquals("Z-first", memberships.get(0).packId);
+        assertEquals("a", memberships.get(0).vocabularyId);
+        assertEquals(Arrays.asList("a", "shared", "new-a", "new-b", "new-c", "b"),
+                cd.uniqueVocabularyIdsForPacks(packs));
+        assertEquals(Arrays.asList("a", "shared"), cd.vocabulariesByIds(words).stream()
+                .map(v -> v.id).collect(Collectors.toList()));
+    }
+
     @Test public void dueFiltersActiveAndOrphanBeforeGlobalLimit() {
         ud.activatePack("A", 1); ud.activatePack("B", 2);
         progress("shared", 0, 10, 1L); progress("a", 1, 100, 1L);
@@ -188,6 +213,11 @@ public class DaoFoundationTest {
         assertThrows(IllegalArgumentException.class, () -> cd.vocabulariesByIds(Arrays.asList("a",null)));
         assertThrows(IllegalArgumentException.class, () -> ud.progressByIds(null));
         assertThrows(IllegalArgumentException.class, () -> ud.newVocabularyIds(Arrays.asList("a"), 0));
+        assertThrows(IllegalArgumentException.class,
+                () -> ud.newVocabularyIds(Arrays.asList("fresh", null), 1));
+        assertThrows(IllegalArgumentException.class,
+                () -> ud.dueProgress(Arrays.asList("a", " "), 100, 1));
+        assertTrue(ud.progressByBox(Collections.emptyList(), 0).isEmpty());
         assertThrows(IllegalArgumentException.class, () -> ud.progressByBox(Arrays.asList("a"), 6));
         assertThrows(IllegalArgumentException.class, () -> ud.dueProgress(Arrays.asList("a"), 100, 0));
         assertThrows(IllegalArgumentException.class, () -> ud.learnedCount(100,100));
@@ -243,6 +273,23 @@ public class DaoFoundationTest {
         assertEquals(1, ud.quizHistory(0,100,10).size()); assertEquals(1, ud.reviewHistory("a",0,100,10).size());
     }
 
+    @Test public void firstReviewRollsBackEventWhenNewProgressInsertFails() {
+        user.getOpenHelper().getWritableDatabase().execSQL(
+                "CREATE TRIGGER fail_new_progress BEFORE INSERT ON UserWordProgress "
+                        + "BEGIN SELECT RAISE(ABORT, 'test injected insert failure'); END");
+        UserWordProgress first = new UserWordProgress();
+        first.vocabularyId = "new-a"; first.box = 1; first.dueAt = 99;
+        first.learnedAt = 20L; first.reviewCount = 1;
+        assertThrows(RuntimeException.class,
+                () -> ud.recordReview(event("new-a", 20, 1, 99), first));
+        assertTrue(ud.reviews().isEmpty()); assertNull(ud.progress("new-a"));
+        assertEquals(0, ud.learnedCount(0, 100));
+        user.getOpenHelper().getWritableDatabase().execSQL("DROP TRIGGER fail_new_progress");
+        ud.recordReview(event("new-a", 20, 1, 99), first);
+        assertEquals(1, ud.reviews().size()); assertEquals(99, ud.progress("new-a").dueAt);
+        assertEquals(1, ud.learnedCount(0, 100));
+    }
+
     @Test public void largeIdBatchesMergeBeforeLimitAndStayUnique() {
         List<String> keys = new ArrayList<>();
         user.runInTransaction(() -> {
@@ -258,6 +305,11 @@ public class DaoFoundationTest {
         newCandidates.addAll(Arrays.asList("fresh-1", "fresh-1", "fresh-2", "fresh-3"));
         assertEquals(Arrays.asList("fresh-1","fresh-2"), ud.newVocabularyIds(newCandidates, 2));
         assertEquals(Arrays.asList("batch-1004","batch-1003"), ids(ud.dueProgress(duplicated,3000,2)));
+        List<String> boxZero = ids(ud.progressByBox(duplicated, 0));
+        assertEquals(168, boxZero.size());
+        assertEquals(168, new HashSet<>(boxZero).size());
+        assertEquals("batch-1002", boxZero.get(0));
+        assertEquals("batch-0000", boxZero.get(boxZero.size() - 1));
         List<String> packs = new ArrayList<>();
         for (int i=0;i<1005;i++) packs.add("unknown-pack-"+i);
         packs.add("A"); packs.add("B"); packs.add("A");
