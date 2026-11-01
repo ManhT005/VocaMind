@@ -5,6 +5,8 @@ project entry point; generated build outputs stay in ignored build directories.
 
 | Document | Purpose |
 | --- | --- |
+| [DATA-02 plan](plans/data-02-user-database.md) | UserDatabase scope and acceptance criteria |
+| [DATA-02 validation](data-02-validation.md) | Schema decisions, persistence tests and remaining acceptance checks |
 | [Android setup](android-setup.md) | Environment requirements, Android Studio setup and build commands |
 | [Android foundation](android-foundation.md) | SDK, dependency and architecture baseline |
 | [ARC-01 plan](plans/arc-01-android-foundation.md) | Original implementation plan and acceptance criteria |
