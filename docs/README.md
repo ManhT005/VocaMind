@@ -7,6 +7,14 @@ project entry point; generated build outputs stay in ignored build directories.
 | --- | --- |
 | [DATA-03 DAO foundation plan](plans/data-03-dao-foundation.md) | Query contracts, active due/new selection, transaction boundaries, fixtures and 7-hour implementation plan |
 | [DATA-03 validation](data-03-validation.md) | DAO contracts, batch/transaction semantics, fixture results and repository handoff |
+| [VOC-DATA-01 revised handoff plan](plans/voc-data-01-source-ledger-and-handoff.md) | User-provided candidate/hold semantics, metadata-only audio research and sequential handoff |
+| [VOC-DATA-01 handoff](voc-data-01-handoff.md) | Frozen inventory commands, ID aliases, component provenance and human acceptance blockers |
+| [VOC-DATA-01 requirements traceability](voc-data-01-requirements-traceability.md) | SRS and assignment evidence, task boundaries and approval responsibilities |
+| [Source approval template](data/source-approval-template.md) | Per-snapshot PO/Content Lead sign-off, pending real approval |
+| [VOC-DATA-01 plan](plans/voc-data-01-external-sources.md) | Research scope, registry/snapshot gate design, tests and DoD |
+| [VOC-DATA-01 validation](voc-data-01-validation.md) | Implemented gate, local results and remaining acquisition/review blockers |
+| [VOC-DATA-01 source/license ledger](voc-data-01-source-ledger.md) | Source evidence, MVP include/exclude decisions, attribution and ingestion gates |
+| [Vocabulary source registry](data/source-registry.json) | Machine-readable source decisions and pending snapshot/license blockers |
 | [DATA-02 plan](plans/data-02-user-database.md) | UserDatabase scope and acceptance criteria |
 | [DATA-02 validation](data-02-validation.md) | Schema decisions, persistence tests and remaining acceptance checks |
 | [Android setup](android-setup.md) | Environment requirements, Android Studio setup and build commands |
@@ -19,6 +27,9 @@ project entry point; generated build outputs stay in ignored build directories.
 | [ARC-03 validation](arc-03-validation.md) | Local checks, CI verification and pending branch protection setup |
 | [QUIZ-01 plan](plans/quiz-01-domain-model.md) | Pure Java Quiz models, generator contract, state invariants and planned validation |
 | [QUIZ-01 validation](quiz-01-validation.md) | Implemented domain contract, test evidence, limitations and integration handoff |
+| [LEARN-01 plan](plans/learn-01-leitner-scheduler.md) | Pure Java Leitner scheduler rules, design and task boundaries |
+| [LEARN-01 validation](learn-01-validation.md) | Implemented scheduler rules, test evidence and handoff |
+| [LEARN-02 validation](learn-02-validation.md) | TC-SCHED-01..10 and boundary test coverage for the Leitner scheduler |
 | [UI sketch](sketchs.png) | Visual reference for future feature screens |
 
 Use lowercase kebab-case filenames for new documentation. Put task plans in
