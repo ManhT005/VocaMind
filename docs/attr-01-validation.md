@@ -1,8 +1,76 @@
 # ATTR-01 — Offline attribution validation
 
-Technical implementation is ready for review. AC-12 and release remain blocked
-by source/snapshot approval and the synthetic catalog. This document does not
-change assignment status, approve licenses, or authorize merging/releasing.
+Current review status: **R1 fixed locally; R2 awaits DATA-01 owner/reviewer
+confirmation of the author/credit storage contract**. Full UC-09 technical
+readiness is not established until R2 is implemented and validated. AC-12 and
+release remain BLOCKED by source/snapshot approval and the synthetic catalog.
+This document does not change assignment status, approve licenses or authorize
+merging/releasing. The original baseline results below remain historical evidence
+for `4271ed7`; new review results are recorded separately.
+
+## Review fixes, 2026-11-02
+
+Read the entire supplied FIX_PLAN_ATTR01_PR15.md, including the replacement
+conclusion in section 8. Fetched PR branch/develop and checked PR head through
+GitHub: still `0955c9b`, with a clean working tree before edits.
+
+R1 code commit: `c800ebd8192dd4a914788c0a63e3f82eb5f3c22d`.
+`ExternalLinks.open()` now normalizes only the scheme before dispatch.
+Regression `normalizesSchemeForBrowserFilterWithoutChangingCaseSensitiveComponents`
+dispatches uppercase/mixed-case HTTP/HTTPS and lowercase HTTPS, matches a lowercase
+browser IntentFilter and asserts preserved path/query/fragment. It **failed on old
+code at filter matching** for `HTTPS://example.com/License?Key=AbC#Terms`, then
+passed after the fix. Existing invalid URL and simulated handler failure tests
+remain included. New evidence lives under `evidence/attr-01-review-r1/`; old
+logs/screenshots under `evidence/attr-01/` are not reassigned to this commit.
+
+R2 has no existing authors/credit field in storage, domain or mapping. The
+[concrete contract proposal](plans/attr-01-fix-plan.md) recommends a local
+versioned companion asset keyed by `(sourceId, snapshotDate)`, authors plus
+optional creditText, enriched through the current repository. It specifies
+existing-install compatibility, missing/mismatched metadata behavior and tests.
+**Proposal only: not implemented or approved.** Await Nhân/Thành confirmation
+and evidence-backed credit; do not infer authors or change DB/schema/assets.
+
+Publication is pending the user's requested preview. No push, PR update or
+re-review request has been made for these local changes. CI for the new local
+head has therefore **NOT RUN**. Both R1 and R2 require reviewer reassessment.
+
+R1 checks executed with Temurin JDK 17 and Gradle wrapper 8.9:
+
+```powershell
+.\gradlew.bat :app:testDebugUnitTest --tests 'com.vocamind.app.feature.attribution.ExternalLinksTest.normalizesSchemeForBrowserFilterWithoutChangingCaseSensitiveComponents' --console=plain
+.\gradlew.bat :app:testDebugUnitTest --tests 'com.vocamind.app.feature.attribution.*' --console=plain
+.\gradlew.bat testDebugUnitTest assembleDebug assembleDebugAndroidTest lintDebug --console=plain
+.\gradlew.bat connectedDebugAndroidTest --console=plain
+```
+
+- The first command ran before the one-line production fix, using baseline
+  `0955c9b` plus the new regression: expected **1 test failed** at filter match.
+  See [red log](evidence/attr-01-review-r1/r1-before.txt) and
+  [failure XML](evidence/attr-01-review-r1/r1-before.xml).
+- After fixing R1, the filtered Attribution suite passed. The subsequent full
+  run on `c800ebd` passed **86 host executions**, including 14 attribution
+  executions on Robolectric API 26/35. See [suite counts](evidence/attr-01-review-r1/unit-results.json)
+  and [build log](evidence/attr-01-review-r1/r1-full.txt).
+- Debug APK and test APK built successfully. Lint succeeded with the same two
+  existing warnings (dependency update, application icon) and no errors.
+- Connected run on Small_Phone API 30 passed **12 tests** (11 catalog, one
+  attribution/navigation/recreation) with airplane/Wi-Fi/mobile-data state
+  `1/0/0` before the run. See [connected log](evidence/attr-01-review-r1/r1-device.txt),
+  [JUnit XML](evidence/attr-01-review-r1/instrumentation-results.xml) and
+  [device state](evidence/attr-01-review-r1/device.txt). This is a new run on
+  `c800ebd`, distinct from the original PR evidence.
+- Debug APK SHA-256:
+  `901e23dc5b4467ea6af0242d85f288a940b9b445194eda78a7703b7df9e0d254`.
+- API 26 **device** smoke: NOT RUN; installed system images are API 30, 37.0,
+  37.2, and the only configured AVD is Small_Phone API 30. Robolectric API 26
+  results are host tests, not device evidence. No new SDK image was installed.
+- R2 authors/credit, mismatch and legacy-upgrade tests: NOT RUN, pending contract
+  confirmation and implementation. New R1 browser filter checks run on the host;
+  no new device test of uppercase URLs or online page loading is claimed.
+- Python source governance tests were not rerun: no source governance, asset,
+  schema or Python code changed. Prior results remain bound to the original run.
 
 ## Baseline and requirements
 
