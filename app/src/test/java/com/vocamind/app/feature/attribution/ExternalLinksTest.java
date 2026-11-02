@@ -4,6 +4,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.IntentFilter;
 import androidx.test.core.app.ApplicationProvider;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,6 +16,34 @@ import static org.junit.Assert.*;
 
 @RunWith(RobolectricTestRunner.class) @Config(sdk = {26, 35})
 public class ExternalLinksTest {
+    @Test public void normalizesSchemeForBrowserFilterWithoutChangingCaseSensitiveComponents() {
+        Context base = ApplicationProvider.getApplicationContext();
+        Intent[] launched = {null};
+        Context capture = new ContextWrapper(base) {
+            @Override public void startActivity(Intent intent) { launched[0] = intent; }
+        };
+        for (String address : new String[]{
+                "HTTPS://example.com/License?Key=AbC#Terms",
+                "hTtPs://example.com/License?Key=AbC#Terms",
+                "HTTP://example.com/License?Key=AbC#Terms",
+                "hTtP://example.com/License?Key=AbC#Terms",
+                "https://example.com/License?Key=AbC#Terms"}) {
+            launched[0] = null;
+            ExternalLinks.open(capture, address);
+            assertNotNull(address, launched[0]);
+            String scheme = address.substring(0, address.indexOf(':')).toLowerCase(java.util.Locale.ROOT);
+            IntentFilter browser = new IntentFilter(Intent.ACTION_VIEW);
+            browser.addCategory(Intent.CATEGORY_BROWSABLE);
+            browser.addDataScheme(scheme);
+            // Android scheme matching is case-sensitive. This fails on the old dispatch code.
+            assertTrue(address, browser.match(base.getContentResolver(), launched[0], false, "ATTR-R1") >= 0);
+            assertEquals(scheme, launched[0].getScheme());
+            assertEquals("/License", launched[0].getData().getEncodedPath());
+            assertEquals("Key=AbC", launched[0].getData().getEncodedQuery());
+            assertEquals("Terms", launched[0].getData().getEncodedFragment());
+        }
+    }
+
     @Test public void onlyValidWebAddressesAreAccepted() {
         for (String value : new String[]{null, "", " ", "https://", "https://bad host/", "https:///path",
                 "javascript:alert(1)", "file:///sdcard/a", "intent://example", "mailto:a@b.com",

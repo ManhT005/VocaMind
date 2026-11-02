@@ -32,7 +32,7 @@ public final class ExternalLinks {
             return;
         }
         try {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(value));
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(value).normalizeScheme());
             intent.addCategory(Intent.CATEGORY_BROWSABLE);
             context.startActivity(intent);
         } catch (RuntimeException failure) {
