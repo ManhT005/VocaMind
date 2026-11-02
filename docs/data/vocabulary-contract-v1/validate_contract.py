@@ -19,10 +19,10 @@ WHITE_SPACE = frozenset(chr(n) for n in (
 ))
 ASCII_LOWER = str.maketrans('ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')
 PACK_MINIMUMS = {
-    'toeic-basic': 40,
-    'toeic-office': 40,
-    'everyday-english': 40,
-    'essential-academic': 30,
+    'pack_toeic_basic': 40,
+    'pack_toeic_office': 40,
+    'pack_daily_life': 40,
+    'pack_academic': 30,
 }
 
 

@@ -178,7 +178,7 @@
   ],
   "packs": [
     {
-      "id": "toeic-basic",
+      "id": "pack_toeic_basic",
       "title": "TOEIC Căn bản",
       "description": "Gói fixture nhỏ chỉ dùng kiểm tra contract.",
       "category": "toeic",
@@ -186,7 +186,7 @@
       "version": "1.0.0"
     },
     {
-      "id": "toeic-office",
+      "id": "pack_toeic_office",
       "title": "TOEIC Công sở & Giao dịch",
       "description": "Gói fixture nhỏ chỉ dùng kiểm tra contract.",
       "category": "toeic",
@@ -194,7 +194,7 @@
       "version": "1.0.0"
     },
     {
-      "id": "everyday-english",
+      "id": "pack_daily_life",
       "title": "Tiếng Anh Đời sống Hàng ngày",
       "description": "Gói fixture nhỏ chỉ dùng kiểm tra contract.",
       "category": "general",
@@ -202,7 +202,7 @@
       "version": "1.0.0"
     },
     {
-      "id": "essential-academic",
+      "id": "pack_academic",
       "title": "Từ vựng Học thuật Thiết yếu",
       "description": "Gói fixture nhỏ chỉ dùng kiểm tra contract.",
       "category": "academic",
@@ -212,82 +212,82 @@
   ],
   "packWords": [
     {
-      "packId": "toeic-basic",
+      "packId": "pack_toeic_basic",
       "vocabularyId": "90562a98e8686267",
       "orderNo": 0
     },
     {
-      "packId": "toeic-basic",
+      "packId": "pack_toeic_basic",
       "vocabularyId": "d17314a48504e2ac",
       "orderNo": 1
     },
     {
-      "packId": "toeic-basic",
+      "packId": "pack_toeic_basic",
       "vocabularyId": "5aecfbf5b9a23aee",
       "orderNo": 2
     },
     {
-      "packId": "toeic-basic",
+      "packId": "pack_toeic_basic",
       "vocabularyId": "923d45253cc2c67c",
       "orderNo": 3
     },
     {
-      "packId": "toeic-office",
+      "packId": "pack_toeic_office",
       "vocabularyId": "90562a98e8686267",
       "orderNo": 0
     },
     {
-      "packId": "toeic-office",
+      "packId": "pack_toeic_office",
       "vocabularyId": "d17314a48504e2ac",
       "orderNo": 1
     },
     {
-      "packId": "toeic-office",
+      "packId": "pack_toeic_office",
       "vocabularyId": "5aecfbf5b9a23aee",
       "orderNo": 2
     },
     {
-      "packId": "toeic-office",
+      "packId": "pack_toeic_office",
       "vocabularyId": "923d45253cc2c67c",
       "orderNo": 3
     },
     {
-      "packId": "everyday-english",
+      "packId": "pack_daily_life",
       "vocabularyId": "90562a98e8686267",
       "orderNo": 0
     },
     {
-      "packId": "everyday-english",
+      "packId": "pack_daily_life",
       "vocabularyId": "d17314a48504e2ac",
       "orderNo": 1
     },
     {
-      "packId": "everyday-english",
+      "packId": "pack_daily_life",
       "vocabularyId": "5aecfbf5b9a23aee",
       "orderNo": 2
     },
     {
-      "packId": "everyday-english",
+      "packId": "pack_daily_life",
       "vocabularyId": "923d45253cc2c67c",
       "orderNo": 3
     },
     {
-      "packId": "essential-academic",
+      "packId": "pack_academic",
       "vocabularyId": "90562a98e8686267",
       "orderNo": 0
     },
     {
-      "packId": "essential-academic",
+      "packId": "pack_academic",
       "vocabularyId": "d17314a48504e2ac",
       "orderNo": 1
     },
     {
-      "packId": "essential-academic",
+      "packId": "pack_academic",
       "vocabularyId": "5aecfbf5b9a23aee",
       "orderNo": 2
     },
     {
-      "packId": "essential-academic",
+      "packId": "pack_academic",
       "vocabularyId": "923d45253cc2c67c",
       "orderNo": 3
     }

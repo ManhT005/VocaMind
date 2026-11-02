@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.VocaMind" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/shell_accent</item>
+        <item name="colorOnPrimary">@color/shell_on_accent</item>
+        <item name="colorSecondary">@color/shell_accent</item>
+        <item name="colorOnSecondary">@color/shell_on_accent</item>
+        <item name="colorSurface">@color/shell_background</item>
+        <item name="colorOnSurface">@color/shell_text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/shell_text_secondary</item>
+        <item name="android:windowBackground">@color/shell_background</item>
+        <item name="android:colorBackground">@color/shell_background</item>
+        <item name="android:textColorPrimary">@color/shell_text_primary</item>
+        <item name="android:textColorSecondary">@color/shell_text_secondary</item>
+        <item name="android:windowLightStatusBar">@bool/shell_light_system_bars</item>
+    </style>
+
+    <style name="TextAppearance.VocaMind.Title" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:textColor">@color/shell_text_primary</item>
+    </style>
+
+    <style name="TextAppearance.VocaMind.Body" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">@color/shell_text_secondary</item>
+    </style>
+
+    <style name="Widget.VocaMind.NavigationButton" parent="Widget.Material3.Button">
+        <item name="android:minHeight">@dimen/shell_button_height</item>
+        <item name="android:paddingTop">@dimen/shell_button_padding</item>
+        <item name="android:paddingBottom">@dimen/shell_button_padding</item>
+        <item name="android:layout_marginTop">@dimen/shell_item_spacing</item>
+    </style>
+</resources>

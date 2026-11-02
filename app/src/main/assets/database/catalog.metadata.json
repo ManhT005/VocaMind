@@ -1,0 +1,17 @@
+{
+  "kind": "synthetic-test-fixture-not-production",
+  "sqliteVersion": "3.50.4",
+  "schemaVersion": 2,
+  "identityHash": "6704c4cc4f3db1ef916af009d7de4b98",
+  "contentVersion": "1.0.0",
+  "canonicalSha256": "c2b7c643c4b61c865f4b34bbc9d875d2661a33739ef7efd5b1f4e1ac221636a8",
+  "sha256": "7f90d0b11b14ce73932231dc7c4506bdf30af3788b66d0fde536d08fa7f753e9",
+  "uniqueVocabularyCount": 4,
+  "membershipCount": 16,
+  "packCounts": {
+    "pack_toeic_basic": 4,
+    "pack_toeic_office": 4,
+    "pack_daily_life": 4,
+    "pack_academic": 4
+  }
+}

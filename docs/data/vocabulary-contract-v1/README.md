@@ -1,6 +1,6 @@
 # VOC-DATA-02 — Bộ bàn giao contract v1.0.0
 
-Đọc [CONTRACT.md](CONTRACT.md) để hiểu quy định và [REVIEW.md](REVIEW.md) để review. Đây là implementation candidate cho Nhân/Trường triển khai; chưa ghi nhận review của con người, chưa xác nhận nguồn thực hoặc build Android.
+Đọc [CONTRACT.md](CONTRACT.md) để hiểu quy định và [REVIEW.md](REVIEW.md) để review. Đây là implementation candidate đã ghép develop và bổ sung integration tests theo review; chưa ghi nhận ký duyệt liên nhóm hoặc xác nhận nguồn thực. Xem VALIDATION.md cho kết quả chạy hiện tại.
 
 ## Thành phần
 
@@ -16,7 +16,7 @@
 
 ## Chạy từ checkout hiện có
 
-Không cần tạo worktree. Từ `/workspace/VocaMind`:
+Chạy từ root repository:
 
 ```sh
 # Nếu Python chưa có jsonschema, dùng virtualenv của tooling:
@@ -26,7 +26,7 @@ python3 -m venv /tmp/vocamind-contract-venv
 /tmp/vocamind-contract-venv/bin/python docs/data/vocabulary-contract-v1/validate_contract.py docs/data/vocabulary-contract-v1/fixtures/valid/catalog.json
 ```
 
-Trong máy hiện tại jsonschema đã có, các lệnh `python3` test/validate trực tiếp đã được chạy. Nếu máy khác dùng venv khác, thay executable tương ứng. Chưa thực thi lại bước tạo venv/cài pip vì dependency đã có; phiên bản reference được ghi trong VALIDATION.md.
+Dùng Python có jsonschema theo requirements trên; thay executable theo môi trường. Phiên bản và kết quả chạy được ghi trong VALIDATION.md.
 
 Đầu ra validator fixture phải là `PASS_CONTRACT_CHECKS`, development mode, uniqueWords=4, memberships=16, packs=4. Chạy `--release` trên fixture phải exit 1; đó là rejection mong đợi, không phải học liệu đã sẵn sàng.
 
@@ -42,9 +42,23 @@ Exit code: 0 = contract checks qua; 1 = vi phạm; 2 = lỗi đọc/parse input.
 ## Cách dùng cho từng thành viên
 
 - **Thành:** làm chuẩn VOC-DATA-02; bổ sung review; dùng error/fixture làm đầu vào VOC-DATA-04.
-- **Nhân:** triển khai Room theo mapping; kiểm tra asset/schema/FTS bằng tests Android sau khi có project.
+- **Nhân:** review Room mapping và các test asset/schema/FTS hiện có.
 - **Trường:** viết adapter ETL xuất canonical-catalog.json, giữ registry, map POS rõ và ghi provenance; dùng validator trước bàn giao.
 - **Thi:** xây catalog asset từ canonical output, giữ source/attribution metadata và baseline/checksum artifacts.
 - **Đạo:** dùng stableId và domain model qua repository, không dùng FTS rowid hoặc metadata ETL làm ID nghiệp vụ.
 
 Không tự commit fixtures là học liệu production. Không đổi source fixture thành approved để vượt gate. Các test synthetic chỉ kiểm tra hành vi code, không xác minh nguồn/giấy phép hay ngữ nghĩa.
+
+## Pipeline canonical → catalog
+
+```sh
+./gradlew :app:compileDebugJavaWithJavac
+python3 tools/catalog/build_fixture.py
+python3 -m unittest discover -s tools/catalog -p 'test_*.py' -v
+./gradlew testDebugUnitTest assembleDebug assembleDebugAndroidTest
+```
+
+[Hướng dẫn catalog](../../../tools/catalog/README.md) mô tả schema 2, checksum,
+FTS và giới hạn nâng cấp. Canonical `packId` dùng namespace `pack_*` của DATA-01.
+Không dùng fixture làm baseline production hoặc coi build test APK là đã chạy
+instrumentation. Các mục cần người xác nhận được giữ trong REVIEW.md.

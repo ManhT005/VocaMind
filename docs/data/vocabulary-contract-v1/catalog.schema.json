@@ -338,7 +338,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^[a-z][a-z0-9-]*$"
+          "pattern": "^pack_[a-z0-9]+(?:_[a-z0-9]+)*$"
         },
         "title": {
           "type": "string",
@@ -377,7 +377,7 @@
       "properties": {
         "packId": {
           "type": "string",
-          "pattern": "^[a-z][a-z0-9-]*$"
+          "pattern": "^pack_[a-z0-9]+(?:_[a-z0-9]+)*$"
         },
         "vocabularyId": {
           "type": "string",

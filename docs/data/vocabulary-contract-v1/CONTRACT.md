@@ -150,7 +150,7 @@ Source registry + provenance chỉ cung cấp truy vết. Hồ sơ snapshot/lice
 
 | Thực thể | Field |
 |---|---|
-| LearningPack | id (slug ổn định), title, description, category (slug), orderNo (int ≥0 duy nhất giữa packs), version = contentVersion |
+| LearningPack | id (namespace `pack_`, regex `^pack_[a-z0-9]+(?:_[a-z0-9]+)*$`, ổn định), title, description, category (slug), orderNo (int ≥0 duy nhất giữa packs), version = contentVersion |
 | PackWord | packId, vocabularyId = stableId, orderNo (int ≥0 duy nhất trong pack) |
 
 Thứ tự tăng dần theo orderNo, không đòi liên tục. Khóa ghép `(packId, vocabularyId)` duy nhất. Cùng từ có thể ở nhiều gói; không tạo lại entry/ID theo pack. Entry phải thuộc ít nhất một pack của export này.
@@ -159,10 +159,10 @@ Mã gói đề xuất cố định:
 
 | id | Tên | Minimum membership release |
 |---|---|---|
-| toeic-basic | TOEIC Căn bản | 40 |
-| toeic-office | TOEIC Công sở & Giao dịch | 40 |
-| everyday-english | Tiếng Anh Đời sống Hàng ngày | 40 |
-| essential-academic | Từ vựng Học thuật Thiết yếu | 30 |
+| pack_toeic_basic | TOEIC Căn bản | 40 |
+| pack_toeic_office | TOEIC Công sở & Giao dịch | 40 |
+| pack_daily_life | Tiếng Anh Đời sống Hàng ngày | 40 |
+| pack_academic | Từ vựng Học thuật Thiết yếu | 30 |
 
 Toàn catalog cần ≥150 ID duy nhất, không cộng membership để thay cho distinct. Bốn gói có tổng 150 membership nhưng có từ chồng nhau sẽ chưa đạt nếu distinct <150. Mỗi pack có ≥4 meaningKey khác nhau.
 
@@ -233,3 +233,29 @@ Chưa cần có 150 từ thật để review contract; nhưng fixture không đ�
 ## 13. Thay đổi sau khi chốt
 
 Ghi yêu cầu thay đổi → đánh giá tác động ETL/Room/domain/fixtures → reviewer xác nhận → tăng schema/content version phù hợp → chạy tests → thông báo các bên. Không chỉnh ID/schema rồi yêu cầu bên còn lại tự đoán. Đổi schemaVersion không tự nâng cấp các Android database đã cài.
+
+## Integration candidate after review (2026-11-02)
+
+- Canonical MVP pack IDs use DATA-01's existing `pack_toeic_basic`,
+  `pack_toeic_office`, `pack_daily_life`, `pack_academic` namespace. Earlier
+  hyphenated contract IDs were fixture candidates, not a published baseline.
+  No userdata ID rewrite is performed. Other pack IDs must follow the same regex.
+- `ContentSource.attributionText` is required in Room and domain snapshots.
+  Approval/evidence/snapshot hash/provenance remain canonical/ETL metadata;
+  database inclusion does not imply source approval.
+- Room catalog schema is version **2**; canonical schema/content versions remain
+  **1.0.0**. Version 1 export is preserved for comparison. No destructive
+  fallback or guessed attribution migration is enabled. Existing version 1
+  installed catalogs fail closed until a reviewed upgrade path exists.
+- Release history is not established by this change. Before shipping to existing
+  installations, integration owners must confirm the published baseline, stage
+  replacement/rollback and test preservation of UserPack and vocabulary progress.
+  New test databases use version 2. Never delete userdata to repair a catalog.
+- Identity policy is unchanged: NFC plus ASCII-only fold for lemma IDs, registered
+  senseIndex (never derived from row order), full Unicode casefold for meaningKey.
+  The build adapter copies validated canonical values and does not reimplement
+  normalization in Java. StableId is TEXT; FTS rowid is internal INTEGER only.
+- Proposed registry custody: content/ETL owner allocates and retires senseIndex;
+  contract owner reviews changes, integration owner archives published canonical
+  exports with hashes. Named owners and actual baseline location require team
+  confirmation; no sign-off is inferred from tests.
