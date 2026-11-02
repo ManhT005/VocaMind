@@ -1,5 +1,11 @@
 # PROGRESS-01: đồng bộ develop và xác minh lại contract
 
+Đã publish title/body tại [PR #13](https://github.com/ManhT005/VocaMind/pull/13)
+ngày 02/11/2026. Các đoạn “bản nháp/chưa push” bên dưới là bản chuẩn bị trước
+publish, không phải trạng thái hiện tại. Evidence CI head a7bcf25 và merge ref
+dd08e5d đã cập nhật trong validation; URL/SHA/checks của head cuối và yêu cầu
+review được cập nhật trực tiếp trên PR để tránh vòng lặp commit evidence.
+
 PR #13 bị conflict ở `docs/README.md` với develop. Đã tích hợp develop
 `fff380127b0808b203165e649e22eaf714027afb` vào feature bằng merge commit local
 `e21cb0577fbe980c6c285c0c31ee7b68f141e1bf`, giữ đầy đủ các liên kết của hai phía.

@@ -2,6 +2,13 @@
 
 ## Recheck sau tích hợp — 02/11/2026
 
+Bổ sung khi publish: đã đọc lại [bảng phân công native Google Sheets](https://docs.google.com/spreadsheets/d/1Zx4QWaSalYk2-KWoaRRxwL6Hd-vv-sa2Lv9dBDxzQFg/edit),
+các dòng PROGRESS-01/DATA-07/PROGRESS-02 khớp phạm vi ghi dưới đây.
+Đã fetch tài liệu Drive “Đặc Tả SRS Cho VocaMind”; tài liệu này là đặc tả/kiến trúc
+dạng văn bản, không có các mã FR-VM-041..044 hoặc DEC-15, không dùng thay DOCX
+baseline v1.1. Tìm lại local và Drive theo tên VocaMind/Baseline vẫn chưa có
+đúng bản baseline; giới hạn xác minh trực tiếp SRS dưới đây vẫn áp dụng.
+
 Source tích hợp: `e21cb0577fbe980c6c285c0c31ee7b68f141e1bf`, develop
 `fff380127b0808b203165e649e22eaf714027afb`. Đọc lại 7 file production contract,
 2 lớp Progress test, Fragment placeholder, QuizResult, entity QuizAttempt,

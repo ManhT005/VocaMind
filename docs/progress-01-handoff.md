@@ -27,7 +27,9 @@ Develop `fff380127b0808b203165e649e22eaf714027afb` đã được merge local t�
 | Saved-only | Save có tạo progress chưa học không; row tồn tại vẫn được đếm theo literal baseline, không lọc learnedAt | PENDING | Chưa nhận / — | develop fff3801, UserDatabase v1 | setSaved chỉ UPDATE; policy toàn feature chưa được xác nhận |
 
 Nội dung bàn giao để Nhân trả lời là bốn dòng trên, kèm commit adapter/schema
-và link xác nhận thực tế. Chưa gửi tin nhắn hoặc tự xác nhận thay Nhân.
+và link xác nhận thực tế. Đã gửi yêu cầu cho @nhandanghoc qua
+[comment PR #13](https://github.com/ManhT005/VocaMind/pull/13#issuecomment-6578401482)
+ngày 02/11/2026; chưa có phản hồi, không tự xác nhận thay Nhân.
 DB DISTINCT/transaction fixtures thuộc DATA-07; UI/timezone/lifecycle và AC-11
 end-to-end thuộc PROGRESS-02. Chưa đánh dấu task Done.
 

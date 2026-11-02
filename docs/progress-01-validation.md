@@ -1,5 +1,46 @@
 # PROGRESS-01 — Kết quả kiểm chứng
 
+## Publish và CI — 02/11/2026, Asia/Saigon (UTC+07)
+
+Người dùng đã yêu cầu thực hiện toàn bộ phần còn lại. Đã push nhánh feature,
+cập nhật title/body [PR #13](https://github.com/ManhT005/VocaMind/pull/13).
+GitHub xác nhận head `a7bcf2576e33382ef6ae5a737c381592cfba7cad`, base
+`fff380127b0808b203165e649e22eaf714027afb`, OPEN, mergeable=true, chưa merged.
+
+| Event | Run / job | Kết quả |
+| --- | --- | --- |
+| pull_request | [41452870632](https://github.com/ManhT005/VocaMind/actions/runs/41452870632), job 125302115036 | Build & Test SUCCESS |
+| push | [41452860074](https://github.com/ManhT005/VocaMind/actions/runs/41452860074), job 125302080385 | Build & Test SUCCESS |
+
+Hai run gắn PR head a7bcf25. Log Checkout của PR run xác nhận thực thi merge ref
+`refs/pull/13/merge` tại `dd08e5d8546be0a3c6701232260b7548eb211867`, không nhầm
+với head feature. PR run dùng Ubuntu26.04, Temurin17.0.21; Python 46 tests OK,
+registry gate, wrapper validation, toolchain verification, unit tests và assembleDebug
+đều SUCCESS. Đã đọc jobs/steps và check-runs của head: hai Build & Test checks;
+check-runs query trực tiếp merge SHA rỗng dù checkout log chứng minh merge ref.
+Không suy ra tổng Android tests từ job status: số 90 là XML local ở phần dưới.
+
+Đã đọc [ruleset 25062147](https://github.com/ManhT005/VocaMind/rules/25062147):
+active, áp dụng main/develop/default, yêu cầu qua PR và chặn non-fast-forward,
+cho phép merge/squash/rebase; không có required_status_checks hoặc linear_history
+trong ruleset đọc được. Endpoint legacy branch protection develop trả 403
+Resource not accessible by integration; không tuyên bố đã xác minh phần đó.
+
+Đã gửi [yêu cầu xác nhận DATA-07](https://github.com/ManhT005/VocaMind/pull/13#issuecomment-6578401482)
+cho @nhandanghoc (author PR DATA-02 #10), với bốn mục và schema/commit áp dụng.
+Chưa có phản hồi xác nhận; tất cả vẫn PENDING. Đã đọc lại bảng phân công native
+Drive: PROGRESS-01 Review (70%), DATA-07 và PROGRESS-02 Chưa bắt đầu; không tự
+sửa trạng thái người phụ trách hoặc triển khai task ngoài phạm vi để đóng task này.
+
+Bổ sung evidence sau a7bcf25 chỉ sửa docs; source/config/test vẫn là e21cb05.
+Sau push commit docs, cần xác minh CI tại head cuối và cập nhật URL/SHA trên PR,
+không dùng hai run trên thay cho checks của head mới. Request review Trường
+sẽ thực hiện sau khi checks head cuối đạt; kết quả yêu cầu được ghi trên PR.
+Không tự Approve/merge hoặc đánh dấu Done thay reviewer/Nhân.
+
+Các mục “chưa push/chưa gửi” trong hồ sơ local dưới đây là trạng thái trước
+lượt publish này, giữ nguyên để bảo toàn lịch sử, không phải trạng thái hiện tại.
+
 ## Sau tích hợp develop — 02/11/2026, Asia/Saigon (UTC+07)
 
 | Mốc | SHA / kết quả |
