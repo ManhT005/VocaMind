@@ -1,7 +1,7 @@
 # ATTR-01 — Offline attribution validation
 
-Current review status: **R1 and R2 implemented and tested locally; user preview
-and Nhân/Thành review pending**. The user authorized implementation of the
+Current review status: **R1 and R2 implemented and tested; user authorized push
+and update of PR #15 after preview; Nhân/Thành review pending**. The user authorized implementation of the
 companion proposal on 2026-11-02. This is not team or source approval. The app
 supports offline authors/credit; the bundled fixture still lacks verified authors.
 AC-12 and release remain BLOCKED by missing metadata, source/snapshot approval
@@ -56,9 +56,11 @@ Existing 46 vocabulary Python tests were not rerun because those inputs/code did
 not change. GitHub CI for local R1/R2 commits has NOT RUN because user preview
 is required before push. Prior evidence directories remain bound to prior SHAs.
 
-Preview scope: `ExternalLinks` regression/fix, companion storage/domain/UI,
-new validator/CI steps/tests, documentation/evidence. After the user's approval,
-push this feature branch to the existing PR #15 and request Thành review again.
+Reviewed publication scope: `ExternalLinks` regression/fix, companion storage/domain/UI,
+new validator/CI steps/tests, documentation/evidence. The user has now authorized
+pushing this feature branch to existing PR #15 and requesting Thành review again.
+GitHub CI results at the published head will be reported in the PR description;
+the local evidence above stays bound to its tested code commit.
 Do not merge or mark the task complete. **AC-12/release stays BLOCKED.**
 
 ## R1 review-fix record (before R2 authorization)
