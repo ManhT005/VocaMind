@@ -5,6 +5,16 @@ project entry point; generated build outputs stay in ignored build directories.
 
 | Document | Purpose |
 | --- | --- |
+| [VOC-DATA-01 revised handoff plan](plans/voc-data-01-source-ledger-and-handoff.md) | User-provided candidate/hold semantics, metadata-only audio research and sequential handoff |
+| [VOC-DATA-01 handoff](voc-data-01-handoff.md) | Frozen inventory commands, ID aliases, component provenance and human acceptance blockers |
+| [VOC-DATA-01 requirements traceability](voc-data-01-requirements-traceability.md) | SRS and assignment evidence, task boundaries and approval responsibilities |
+| [Source approval template](data/source-approval-template.md) | Per-snapshot PO/Content Lead sign-off, pending real approval |
+| [VOC-DATA-01 plan](plans/voc-data-01-external-sources.md) | Research scope, registry/snapshot gate design, tests and DoD |
+| [VOC-DATA-01 validation](voc-data-01-validation.md) | Implemented gate, local results and remaining acquisition/review blockers |
+| [VOC-DATA-01 source/license ledger](voc-data-01-source-ledger.md) | Source evidence, MVP include/exclude decisions, attribution and ingestion gates |
+| [Vocabulary source registry](data/source-registry.json) | Machine-readable source decisions and pending snapshot/license blockers |
+| [DATA-02 plan](plans/data-02-user-database.md) | UserDatabase scope and acceptance criteria |
+| [DATA-02 validation](data-02-validation.md) | Schema decisions, persistence tests and remaining acceptance checks |
 | [Android setup](android-setup.md) | Environment requirements, Android Studio setup and build commands |
 | [Android foundation](android-foundation.md) | SDK, dependency and architecture baseline |
 | [ARC-01 plan](plans/arc-01-android-foundation.md) | Original implementation plan and acceptance criteria |
@@ -19,6 +29,9 @@ project entry point; generated build outputs stay in ignored build directories.
 | [PROGRESS-01 handoff](progress-01-handoff.md) | Progress models, repository/use case/view state contracts and integration responsibilities |
 | [PROGRESS-01 validation](progress-01-validation.md) | Executed checks, test counts and remaining delivery steps |
 | [PROGRESS-01 SRS audit](progress-01-srs-audit.md) | Direct comparison of both supplied SRS documents, assignment, plan and implemented contracts |
+| [LEARN-01 plan](plans/learn-01-leitner-scheduler.md) | Pure Java Leitner scheduler rules, design and task boundaries |
+| [LEARN-01 validation](learn-01-validation.md) | Implemented scheduler rules, test evidence and handoff |
+| [LEARN-02 validation](learn-02-validation.md) | TC-SCHED-01..10 and boundary test coverage for the Leitner scheduler |
 | [UI sketch](sketchs.png) | Visual reference for future feature screens |
 
 Use lowercase kebab-case filenames for new documentation. Put task plans in
