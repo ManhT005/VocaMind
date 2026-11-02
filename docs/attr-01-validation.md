@@ -1,14 +1,67 @@
 # ATTR-01 — Offline attribution validation
 
-Current review status: **R1 fixed locally; R2 awaits DATA-01 owner/reviewer
-confirmation of the author/credit storage contract**. Full UC-09 technical
-readiness is not established until R2 is implemented and validated. AC-12 and
-release remain BLOCKED by source/snapshot approval and the synthetic catalog.
+Current review status: **R1 and R2 implemented and tested locally; user preview
+and Nhân/Thành review pending**. The user authorized implementation of the
+companion proposal on 2026-11-02. This is not team or source approval. The app
+supports offline authors/credit; the bundled fixture still lacks verified authors.
+AC-12 and release remain BLOCKED by missing metadata, source/snapshot approval
+and the synthetic catalog.
 This document does not change assignment status, approve licenses or authorize
 merging/releasing. The original baseline results below remain historical evidence
 for `4271ed7`; new review results are recorded separately.
 
-## Review fixes, 2026-11-02
+## R2 implementation and preview, 2026-11-02
+
+Tested code commit: `da6881fcd42f36f030251e933af90bf1da22d598`. R1 commits
+remain included. Working tree was clean before implementation; remote PR still
+pointed at `0955c9b`, with two local commits ahead before R2 work. The user's
+instruction to implement the proposal is recorded as authorization; no statement
+that Nhân/Thành has already approved it is made.
+
+[Contract v1](data/content-credits-contract.md): ContentCredits parses the local
+versioned companion asset on the worker and joins exact source/snapshot pairs
+inside the existing repository, for both query paths. Immutable domain authors
+and optional notice reach the existing use case/ViewModel and wrapping UI fields.
+Missing metadata stays visibly missing; malformed/read errors remain retryable.
+No Room schema, catalog.db, ledger, SRS, assignment or userdata code changed.
+
+The production companion contains only the actual `project_fixture` pair with
+an empty authors array and null notice. No authors were guessed. Synthetic
+authors and notices appear only in tests, never as release-approved material.
+
+| New checks executed | Result / evidence |
+| --- | --- |
+| `gradlew.bat testDebugUnitTest assembleDebug assembleDebugAndroidTest lintDebug --console=plain` | PASS: **96 host executions**, no failures/errors/skips; debug and test APK built. [Log](evidence/attr-01-review-r2/host-final.txt), [suite counts](evidence/attr-01-review-r2/unit-results.json). |
+| Lint | PASS, 0 errors, same 2 existing warnings. [XML](evidence/attr-01-review-r2/lint-results.xml). |
+| `gradlew.bat connectedDebugAndroidTest --console=plain` | PASS: **15 device tests**, Small_Phone API 30 (13 data, 1 rendering, 1 navigation/lifecycle). [Log](evidence/attr-01-review-r2/device-final.txt), [JUnit](evidence/attr-01-review-r2/instrumentation.xml). |
+| Offline state before install/run | Airplane=1, Wi-Fi=0, data=0. [Device state](evidence/attr-01-review-r2/device.txt), [UI screenshot](evidence/attr-01-review-r2/screen.png). |
+| Existing v1 DB compatibility | Shared host/device test copies catalog with legacy repository, closes/reopens it, enriches via both APIs and asserts database bytes identical after close. No schema upgrade/reset required. |
+| Credit correctness/resilience | Exact-pair and multi-source parser tests; wrong source/date, duplicate pair, malformed fields/version; immutable authors. Host/device rendering test checks two independently expected synthetic author/notice values, including long text. Data test covers read-error/retry. Shared navigation test checks missing author transparency across recreation/orientation/Back. |
+| `python tools/catalog/check_credits.py` | PASS for pair consistency, explicitly reports missing authors and no license approval. [Output](evidence/attr-01-review-r2/credits-check.txt). Added to CI. |
+| `python -m unittest discover -s tools/catalog -p 'test_*.py' -v` | PASS: **2 tests** for validator, duplicate/unknown/stale pair and missing authors. [Output](evidence/attr-01-review-r2/python-tests.txt). Added to CI. |
+| `python tools/catalog/check_credits.py --release` | Expected failure, exit 1: fixture lacks verified authors. [Output](evidence/attr-01-review-r2/release-blocked.txt). This is not a failed debug build and does not approve licensing. |
+
+New debug APK SHA-256:
+`370e05a19e48ece80ef145311deec60738a205ded900a9f4ce37b21fc21b6f6e`.
+Companion SHA-256:
+`5cc8429f101e1da80848418cc0ab1ac0cea04f78d85d67a8c41a60242c53161c`.
+Catalog.db remains `e88f46f4a10e835d97ab03a87a534ca345321d7cf7738569f49524abda1d4104`.
+
+Limits: API 26 device smoke NOT RUN (no installed image); API 26/35 host tests
+are not device execution. No physical device, TalkBack/font scaling or real
+approved multi-source catalog tested. Multi-author device UI uses a fake repository;
+data enrichment is tested separately against a reopened isolated v1 DB. Source
+approval, real credit metadata and >=150 eligible words remain outstanding.
+Existing 46 vocabulary Python tests were not rerun because those inputs/code did
+not change. GitHub CI for local R1/R2 commits has NOT RUN because user preview
+is required before push. Prior evidence directories remain bound to prior SHAs.
+
+Preview scope: `ExternalLinks` regression/fix, companion storage/domain/UI,
+new validator/CI steps/tests, documentation/evidence. After the user's approval,
+push this feature branch to the existing PR #15 and request Thành review again.
+Do not merge or mark the task complete. **AC-12/release stays BLOCKED.**
+
+## R1 review-fix record (before R2 authorization)
 
 Read the entire supplied FIX_PLAN_ATTR01_PR15.md, including the replacement
 conclusion in section 8. Fetched PR branch/develop and checked PR head through

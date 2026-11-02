@@ -1,8 +1,8 @@
 # ATTR-01 PR #15 review fixes and R2 contract proposal
 
-Status: **R2 proposal awaiting confirmation by Nhân (DATA-01) and Thành
-(reviewer / VOC-DATA-02)**. This is not an accepted storage contract or license
-approval. R1 is independent and can be implemented while R2 is pending.
+Status: **User authorized implementation of this proposal on 2026-11-02.** R2
+is implemented locally in `da6881f`; Nhân/Thành review is still required and no
+license approval is implied. The proposal below records the chosen design.
 
 Read the complete supplied `FIX_PLAN_ATTR01_PR15.md`, including section 8 which
 replaces the earlier R1-only conclusion. Baseline is SRS v1.1, including UC-09's
@@ -18,7 +18,7 @@ and fragment. Regression dispatches uppercase and mixed-case HTTP/HTTPS through
 case-sensitive URI components. Run it against old code to record failure before
 applying the fix. Existing invalid URL and handler failure tests must still pass.
 
-## R2 contract for Nhân/Thành to confirm
+## R2 contract implemented for Nhân/Thành review
 
 Current `ContentSource` entity and exported Room schema v1 have six fields:
 id, title, url, licenseCode, licenseUrl, snapshotDate. `CatalogSource` and
