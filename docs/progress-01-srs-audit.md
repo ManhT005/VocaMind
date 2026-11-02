@@ -1,5 +1,38 @@
 # PROGRESS-01 — Đối chiếu trực tiếp SRS, phân công và kế hoạch
 
+## Recheck sau tích hợp — 02/11/2026
+
+Source tích hợp: `e21cb0577fbe980c6c285c0c31ee7b68f141e1bf`, develop
+`fff380127b0808b203165e649e22eaf714027afb`. Đọc lại 7 file production contract,
+2 lớp Progress test, Fragment placeholder, QuizResult, entity QuizAttempt,
+UserWordProgress và UserDao. Không phát hiện lỗi contract tái hiện được;
+không sửa source/test hoặc mở rộng sang UI/Room production.
+
+Nguồn thực đọc lần này: `PROGRESS-01_FIX_PLAN.md` người dùng cung cấp,
+plan/handoff/audit trong repo và
+[review Trường tại d23e6a0](https://github.com/ManhT005/VocaMind/pull/13#issuecomment-6573314874).
+Không tìm thấy DOCX baseline v1.1 gốc tại Downloads, các vị trí G:/D: được
+ghi trong hồ sơ cũ hoặc kết quả tìm Drive theo tên baseline. Vì vậy lần này
+đối chiếu quy tắc SRS được ghi trong các nguồn trên, không tuyên bố đã đọc lại
+DOCX v1.1 hoặc XLSX phân công gốc. Hồ sơ trực tiếp ngày 25/10 bên dưới giữ nguyên
+với ngày/commit cũ, không chuyển thành evidence mới.
+
+| Yêu cầu theo fix plan/baseline v1.1 | File/test đã đọc và chạy lại | Kết luận lần này |
+| --- | --- | --- |
+| FR-VM-041/042; DEC-15 | ProgressSummary; allSixBoxesContributeToTheCorrectGroups, longCountsDoNotNarrowOrOverflow, summaryDefensivelyCopiesBothInputAndOutput | Đủ 6 box, total/group invariant; Java long/copy hợp lệ; SQL DISTINCT vẫn cần DATA-07 |
+| FR-VM-043; UC-07; FR-VM-037..039 | QuizHistoryItem/ProgressSnapshot; history validation, rounding, ordering, duplicate/copy tests | 4..10 câu, score round, history time/ID DESC và >10 records; persisted completed-only cần writer/adapter |
+| FR-VM-044; BR-09 v1.1 | ProgressViewState; labelsExplainEveryBoxGroupMasteredAndRecovery | Nhãn/disclaimer đúng contract; chưa xác nhận render UI |
+| DEC-13; UC-07 | ProgressReadResult/GetProgressUseCase/ProgressRepository; 7 ProgressViewStateTest | Loading/empty/content/error, retry và từng section rỗng hợp lệ; IO vẫn ngoài main thread |
+| DATA-07 mapping | QuizAttempt/UserWordProgress/UserDao trong develop fff3801 | Field types khớp; quizzes() còn ORDER BY id; chưa có Progress adapter/aggregation |
+| AC-11 baseline v1.1 | 18 Progress tests đạt; full Android suite 90 tests đạt | Chỉ contract/regression; chưa nghiệm thu DB/UI/E2E |
+
+Saved-only vẫn PENDING, không thêm WHERE learnedAt IS NOT NULL. Không dùng
+BR-09/AC-11 v1.0 thay nghĩa baseline v1.1. Xem bảng xác nhận trong
+[handoff](progress-01-handoff.md) và provenance mới trong
+[validation](progress-01-validation.md).
+
+## Hồ sơ audit lịch sử — 25/10/2026
+
 Ngày đối chiếu: 25/10/2026. Implementation được kiểm tra: commit `4b882ad`
 trên `feature/progress-01-contract`.
 

@@ -1,5 +1,38 @@
 # PROGRESS-01 — Contract và bàn giao
 
+## Recheck tích hợp — 02/11/2026
+
+Develop `fff380127b0808b203165e649e22eaf714027afb` đã được merge local tại
+`e21cb0577fbe980c6c285c0c31ee7b68f141e1bf`. Contract Progress không đổi.
+Đã đọc entity/DAO thực tế của develop, không còn chỉ tham khảo nhánh DATA-02:
+
+- `data/user/entity/QuizAttempt`: `long id/completedAt`,
+  `int questionCount/correctCount/scorePercent`; mapping khớp contract.
+  Không có cột completion status: writer QUIZ-03 phải chỉ persist bài hoàn tất.
+  Epoch milliseconds là quy ước boundary; kiểu `long` tự nó không chứng minh đơn vị.
+- `data/user/entity/UserWordProgress`: PK `String vocabularyId`, `int box`,
+  nullable `Long learnedAt`, `boolean isSaved`; không thêm filter vào Progress.
+- `UserDao.quizzes()` hiện `ORDER BY id` (tăng dần), chưa phải query DATA-07.
+  DATA-07 cần completedAt DESC, id DESC và aggregation/transaction cùng snapshot.
+  `setSaved` chỉ UPDATE row có sẵn; không chứng minh toàn bộ save feature
+  không tạo saved-only row. DAO hiện chưa có adapter `ProgressRepository`.
+
+### Xác nhận DATA-07 cần nhận
+
+| Điểm | Nội dung cần Nhân xác nhận | Trạng thái | Người xác nhận / ngày | Commit/schema áp dụng | Bằng chứng |
+| --- | --- | --- | --- | --- | --- |
+| Aggregation | DISTINCT vocabularyId toàn userdata; đủ box0..5; total/boxes/history cùng snapshot | PENDING | Chưa nhận / — | develop fff3801, UserDatabase v1 | Chưa có xác nhận DATA-07 |
+| Quiz mapping | id → attemptId; completedAt epoch millis; giữ count/score; persisted completed-only; time/ID DESC | PENDING | Chưa nhận / — | develop fff3801, UserDatabase v1 | Đã đọc entity/DAO; chưa có xác nhận của Nhân |
+| Error mapping | Storage → READ_FAILED; invalid model/invariant → INVALID_DATA; không biến lỗi thành empty | PENDING | Chưa nhận / — | Contract d23e6a0, tích hợp e21cb05 | Chưa có adapter/xác nhận DATA-07 |
+| Saved-only | Save có tạo progress chưa học không; row tồn tại vẫn được đếm theo literal baseline, không lọc learnedAt | PENDING | Chưa nhận / — | develop fff3801, UserDatabase v1 | setSaved chỉ UPDATE; policy toàn feature chưa được xác nhận |
+
+Nội dung bàn giao để Nhân trả lời là bốn dòng trên, kèm commit adapter/schema
+và link xác nhận thực tế. Chưa gửi tin nhắn hoặc tự xác nhận thay Nhân.
+DB DISTINCT/transaction fixtures thuộc DATA-07; UI/timezone/lifecycle và AC-11
+end-to-end thuộc PROGRESS-02. Chưa đánh dấu task Done.
+
+Phần dưới giữ nguyên hồ sơ triển khai ngày 25/10/2026.
+
 Ngày triển khai: 25/10/2026. Owner: Vương Quang Thành; reviewer theo phân công:
 Lê Mạnh Trường; phối hợp DATA-07: Bùi Vĩ Nhân.
 

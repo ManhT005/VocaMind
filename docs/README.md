@@ -29,6 +29,7 @@ project entry point; generated build outputs stay in ignored build directories.
 | [PROGRESS-01 handoff](progress-01-handoff.md) | Progress models, repository/use case/view state contracts and integration responsibilities |
 | [PROGRESS-01 validation](progress-01-validation.md) | Executed checks, test counts and remaining delivery steps |
 | [PROGRESS-01 SRS audit](progress-01-srs-audit.md) | Direct comparison of both supplied SRS documents, assignment, plan and implemented contracts |
+| [PROGRESS-01 PR description draft](progress-01-pr-description.md) | Integration results, tested source and pending CI/data/review for PR #13 |
 | [LEARN-01 plan](plans/learn-01-leitner-scheduler.md) | Pure Java Leitner scheduler rules, design and task boundaries |
 | [LEARN-01 validation](learn-01-validation.md) | Implemented scheduler rules, test evidence and handoff |
 | [LEARN-02 validation](learn-02-validation.md) | TC-SCHED-01..10 and boundary test coverage for the Leitner scheduler |
