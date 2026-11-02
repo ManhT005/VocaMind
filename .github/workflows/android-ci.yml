@@ -43,6 +43,13 @@ jobs:
           python tools/vocabulary/gate_sources.py --snapshot docs/data/snapshot.json --json
           python -m unittest discover -s tools/vocabulary -p 'test_*.py' -v
 
+      - name: Validate local credit consistency
+        # Companion consistency does not replace ledger/PO approval.
+        run: python tools/catalog/check_credits.py
+
+      - name: Test credit consistency validator
+        run: python -m unittest discover -s tools/catalog -p 'test_*.py' -v
+
       - name: Validate Gradle Wrapper
         uses: gradle/actions/wrapper-validation@v4
 

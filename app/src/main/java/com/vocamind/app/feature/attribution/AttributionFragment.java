@@ -37,6 +37,11 @@ public final class AttributionFragment extends Fragment {
                 ItemAttributionSourceBinding row = ItemAttributionSourceBinding.inflate(
                         getLayoutInflater(), binding.sources, false);
                 row.title.setText(display(source.title));
+                row.authors.setText(getString(R.string.attribution_authors, source.authors.isEmpty()
+                        ? getString(R.string.attribution_authors_missing) : String.join("; ", source.authors)));
+                row.credit.setVisibility(source.creditText == null || source.creditText.isBlank()
+                        ? View.GONE : View.VISIBLE);
+                row.credit.setText(source.creditText);
                 ViewCompat.setAccessibilityHeading(row.title, true);
                 row.sourceUrl.setText(getString(R.string.attribution_source_url, display(source.url)));
                 row.license.setText(getString(R.string.attribution_license, display(source.licenseCode)));

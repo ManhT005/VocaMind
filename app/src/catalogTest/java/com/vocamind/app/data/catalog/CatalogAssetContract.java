@@ -30,6 +30,41 @@ public abstract class CatalogAssetContract {
     private <T> T read(Callable<T> call) throws Exception {
         return worker.submit(call).get(30, TimeUnit.SECONDS);
     }
+    @Test public void creditsEnrichExistingV1CopyAndBothRepositoryQueriesWithoutChangingDatabase() throws Exception {
+        read(repository::getSources); // Simulate catalog already copied by an older app.
+        db.close();
+        byte[] before = java.nio.file.Files.readAllBytes(context.getDatabasePath(name).toPath());
+        db = CatalogDatabase.open(context, name);
+        ContentCredits credits = ContentCredits.parse("""
+                {"schemaVersion":1,"sources":[
+                  {"sourceId":"project_fixture","snapshotDate":"2026-10-25",
+                   "authors":["Synthetic test author A","Synthetic test author B"],"creditText":"Test notice only"},
+                  {"sourceId":"not-in-db","snapshotDate":"2026-10-25","authors":["Do not list"],"creditText":null}
+                ]}
+                """);
+        repository = new RoomCatalogRepository(db.catalogDao(), () -> credits);
+        List<CatalogSource> sources = read(repository::getSources);
+        assertEquals(1, sources.size());
+        assertEquals(List.of("Synthetic test author A", "Synthetic test author B"), sources.get(0).authors);
+        String word = read(() -> repository.getWords("pack_toeic_basic")).get(0).stableId;
+        assertEquals(sources.get(0).authors, read(() -> repository.getSourceForVocabulary(word)).get().authors);
+        assertEquals("Test notice only", read(() -> repository.getSourceForVocabulary(word)).get().creditText);
+        assertThrows(UnsupportedOperationException.class, () -> sources.get(0).authors.clear());
+        db.close();
+        assertArrayEquals(before, java.nio.file.Files.readAllBytes(context.getDatabasePath(name).toPath()));
+    }
+
+    @Test public void creditReadFailureIsAnErrorAndCanBeRetried() throws Exception {
+        boolean[] broken = {true};
+        repository = new RoomCatalogRepository(db.catalogDao(), () -> {
+            if (broken[0]) throw new IllegalStateException("Simulated credit read error");
+            return ContentCredits.empty();
+        });
+        read(() -> { assertThrows(CatalogReadException.class, repository::getSources); return null; });
+        broken[0] = false;
+        assertEquals(1, read(repository::getSources).size());
+        assertTrue(read(repository::getSources).get(0).authors.isEmpty());
+    }
     @Test public void opensAssetAndReadsFourPacks() throws Exception {
         List<CatalogPack> packs = read(repository::getPacks);
         assertEquals(4, packs.size());

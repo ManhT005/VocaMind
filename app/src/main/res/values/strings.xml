@@ -25,4 +25,6 @@
     <string name="attribution_open_license">Mở trang giấy phép</string>
     <string name="attribution_invalid_link">Liên kết trống hoặc không hợp lệ.</string>
     <string name="attribution_link_failed">Không mở được liên kết. Bạn vẫn có thể đọc thông tin tại đây.</string>
+    <string name="attribution_authors">Tác giả: %1$s</string>
+    <string name="attribution_authors_missing">Chưa có thông tin tác giả</string>
 </resources>

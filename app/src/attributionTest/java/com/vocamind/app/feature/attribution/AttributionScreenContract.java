@@ -46,6 +46,9 @@ public abstract class AttributionScreenContract {
             assertTrue(((TextView) row.findViewById(R.id.license_url)).getText().toString()
                     .contains("tools/catalog/README.md"));
             assertTrue(((TextView) row.findViewById(R.id.snapshot)).getText().toString().contains("2026-10-25"));
+            assertEquals(activity.getString(R.string.attribution_authors,
+                    activity.getString(R.string.attribution_authors_missing)),
+                    ((TextView) row.findViewById(R.id.authors)).getText().toString());
             assertEquals(View.GONE, activity.findViewById(R.id.loading).getVisibility());
         });
     }
