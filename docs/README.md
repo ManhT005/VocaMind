@@ -24,6 +24,7 @@ project entry point; generated build outputs stay in ignored build directories.
 | [ARC-03 plan](plans/arc-03-ci-foundation.md) | CI build and local unit test gate scope and acceptance criteria |
 | [ARC-03 validation](arc-03-validation.md) | Local checks, CI verification and pending branch protection setup |
 | [QUIZ-01 plan](plans/quiz-01-domain-model.md) | Pure Java Quiz models, generator contract, state invariants and planned validation |
+| [QUIZ-01 generator fix plan](plans/quiz-01-fix-plan.md) | Repeated-meaning fake regression, REG-01..07 and verification scope |
 | [QUIZ-01 validation](quiz-01-validation.md) | Implemented domain contract, test evidence, limitations and integration handoff |
 | [LEARN-01 plan](plans/learn-01-leitner-scheduler.md) | Pure Java Leitner scheduler rules, design and task boundaries |
 | [LEARN-01 validation](learn-01-validation.md) | Implemented scheduler rules, test evidence and handoff |

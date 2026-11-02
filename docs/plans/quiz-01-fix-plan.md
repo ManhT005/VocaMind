@@ -128,3 +128,14 @@ Test fake không chứng minh generator production đáp ứng những điều n
 - [ ] Validation/docs index được cập nhật.
 - [ ] CI head fix xanh và Trường review.
 - [ ] Chỉ kết luận phạm vi QUIZ-01 fix; không đóng AC-10 toàn Quiz khi chưa tích hợp.
+
+## 6. Nhật ký thực hiện — 02/11/2026
+
+Đã thực hiện bản sửa tại code commit
+[`a204841`](https://github.com/ManhT005/VocaMind/commit/a2048412cbab7d3ef611f22d92d7372d9516de7d).
+Trạng thái đầu tài liệu và checklist gốc ở trên là kế hoạch tại thời điểm soạn;
+xem [validation cập nhật](../quiz-01-validation.md#generator-test-fix--2026-11-02)
+cho bằng chứng fail trước sửa và pass sau sửa. REG-01..07 đã được thêm; focused
+Quiz tests mới chạy 15/15 PASS bằng JDK 17; full unit tests 77/77 PASS và
+assembleDebug thành công. CI head và reviewer cần đối chiếu tại PR #16;
+không đánh dấu Done thay Trường.
