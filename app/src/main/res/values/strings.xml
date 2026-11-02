@@ -9,4 +9,20 @@
     <string name="progress">Tiến độ</string>
     <string name="home_description">Chọn nội dung bạn muốn khám phá.</string>
     <string name="placeholder_description">Nội dung đang được chuẩn bị.</string>
+    <string name="attribution">Ghi công nguồn học liệu</string>
+    <string name="attribution_back">Quay lại</string>
+    <string name="attribution_description">Thông tin dưới đây lấy từ catalog trên thiết bị và có thể đọc khi ngoại tuyến. Liên kết mở bằng ứng dụng bên ngoài. Việc liệt kê nguồn không xác nhận quyền phát hành học liệu.</string>
+    <string name="attribution_loading">Đang đọc nguồn học liệu</string>
+    <string name="attribution_empty">Catalog chưa có thông tin nguồn. Chưa thể xác nhận hồ sơ bản quyền.</string>
+    <string name="attribution_error">Không đọc được catalog cục bộ. Vui lòng thử lại.</string>
+    <string name="attribution_retry">Thử lại</string>
+    <string name="attribution_missing">Chưa có thông tin</string>
+    <string name="attribution_source_url">URL nguồn: %1$s</string>
+    <string name="attribution_license">Giấy phép: %1$s</string>
+    <string name="attribution_license_url">URL giấy phép: %1$s</string>
+    <string name="attribution_snapshot">Ngày snapshot: %1$s</string>
+    <string name="attribution_open_source">Mở trang nguồn</string>
+    <string name="attribution_open_license">Mở trang giấy phép</string>
+    <string name="attribution_invalid_link">Liên kết trống hoặc không hợp lệ.</string>
+    <string name="attribution_link_failed">Không mở được liên kết. Bạn vẫn có thể đọc thông tin tại đây.</string>
 </resources>
