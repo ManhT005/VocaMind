@@ -5,6 +5,9 @@ project entry point; generated build outputs stay in ignored build directories.
 
 | Document | Purpose |
 | --- | --- |
+| [Local credit metadata contract](data/content-credits-contract.md) | Companion JSON, exact snapshot matching, existing-install compatibility and release limits |
+| [ATTR-01 review fix plan](plans/attr-01-fix-plan.md) | R1 regression and proposed R2 offline author/credit contract awaiting owner/reviewer confirmation |
+| [ATTR-01 validation](attr-01-validation.md) | Offline attribution UI, executed tests, screenshots and separate AC-12 release blocker |
 | [VOC-DATA-01 revised handoff plan](plans/voc-data-01-source-ledger-and-handoff.md) | User-provided candidate/hold semantics, metadata-only audio research and sequential handoff |
 | [VOC-DATA-01 handoff](voc-data-01-handoff.md) | Frozen inventory commands, ID aliases, component provenance and human acceptance blockers |
 | [VOC-DATA-01 requirements traceability](voc-data-01-requirements-traceability.md) | SRS and assignment evidence, task boundaries and approval responsibilities |

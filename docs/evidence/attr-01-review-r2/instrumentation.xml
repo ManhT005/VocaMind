@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" tests="15" failures="0" errors="0" skipped="0" time="6.325" timestamp="2026-11-02T08:06:59" hostname="localhost">
+  <properties>
+    <property name="device" value="Small_Phone(AVD) - 11" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="ftsEnglishAndVietnameseReturnTextStableId" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.085" />
+  <testcase name="reopeningExistingCopyWorks" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.02" />
+  <testcase name="opensAssetAndReadsFourPacks" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.029" />
+  <testcase name="creditReadFailureIsAnErrorAndCanBeRetried" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.031" />
+  <testcase name="wordsRespectMembershipOrderAndStableIds" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.029" />
+  <testcase name="examplesAndNullableIpaSurviveMapping" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.029" />
+  <testcase name="domainListsAreImmutable" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.004" />
+  <testcase name="everyFtsRowMapsToCorrectEntry" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.029" />
+  <testcase name="sourceAttributionIsAvailableOffline" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.03" />
+  <testcase name="missingIdsReturnEmpty" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.029" />
+  <testcase name="creditsEnrichExistingV1CopyAndBothRepositoryQueriesWithoutChangingDatabase" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.03" />
+  <testcase name="databaseIsConsistent" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.03" />
+  <testcase name="invalidIdentityHashFailsWithoutDeletingCopy" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.538" />
+  <testcase name="rendersLoadingEmptyErrorRetryAndMultipleLongSources" classname="com.vocamind.app.feature.attribution.AttributionRenderingInstrumentedTest" time="1.353" />
+  <testcase name="attributionAvailableBeforeLearningSurvivesRecreationAndBack" classname="com.vocamind.app.feature.attribution.AttributionScreenInstrumentedTest" time="2.415" />
+</testsuite>

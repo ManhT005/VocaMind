@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_marginTop="24dp" android:orientation="vertical">
+    <com.google.android.material.textview.MaterialTextView android:id="@+id/title"
+        style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:textStyle="bold" />
+    <com.google.android.material.textview.MaterialTextView android:id="@+id/authors"
+        style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textIsSelectable="true" />
+    <com.google.android.material.textview.MaterialTextView android:id="@+id/credit"
+        style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textIsSelectable="true" />
+    <com.google.android.material.textview.MaterialTextView android:id="@+id/source_url"
+        style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textIsSelectable="true" />
+    <com.google.android.material.textview.MaterialTextView android:id="@+id/license"
+        style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textIsSelectable="true" />
+    <com.google.android.material.textview.MaterialTextView android:id="@+id/license_url"
+        style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textIsSelectable="true" />
+    <com.google.android.material.textview.MaterialTextView android:id="@+id/snapshot"
+        style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textIsSelectable="true" />
+    <com.google.android.material.button.MaterialButton android:id="@+id/open_source"
+        style="@style/Widget.VocaMind.NavigationButton" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:text="@string/attribution_open_source" />
+    <com.google.android.material.button.MaterialButton android:id="@+id/open_license"
+        style="@style/Widget.VocaMind.NavigationButton" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:text="@string/attribution_open_license" />
+</LinearLayout>
