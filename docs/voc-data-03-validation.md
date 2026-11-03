@@ -1,8 +1,8 @@
 # VOC-DATA-03 validation and review handoff
 
-**Cập nhật review P2 local:** xem mục cuối tài liệu. Các kết quả implementation
-commit, Gradle và checksum ở những mục ban đầu bên dưới là evidence cũ, không
-phải kết quả chạy lại cho bản sửa review P2.
+**Cập nhật mới nhất: sửa R3 local trên head 187927d**, xem mục cuối tài liệu.
+Các kết quả implementation commit, Gradle và checksum ở những mục ban đầu bên
+dưới là evidence cũ, không phải kết quả chạy lại cho bản sửa R3.
 
 Ngày thực chạy: 2026-11-03. Phụ trách theo task: Trường; reviewer: Nhân.
 Trạng thái: implementation candidate sẵn sàng kiểm tra, **không đánh dấu Hoàn thành**.
@@ -194,3 +194,58 @@ Phạm vi vẫn **core pipeline + reviewed-jsonl-v1**; native adapters không đ
 bổ sung. Việc xác minh record key thực sự tồn tại/nội dung đúng vẫn cần QA nguồn;
 nhập nguồn thật, contract acceptance và AC-12 vẫn **PENDING/BLOCKED**.
 Không đánh dấu task Done chỉ vì tests pass.
+
+## Sửa rereview R3 trên local ngày 2026-11-03
+
+Review lại xác nhận R1/R2 đạt, phát hiện R3 ở việc dùng `text.splitlines()`.
+Đã kiểm tra head thực tế `187927de048f28da78b37a5deb0e4efdfb7ef720` và working
+tree sạch trước sửa. Tại thời điểm kiểm thử, bản sửa R3 chưa commit/push/PR.
+Sau kiểm thử, người dùng cho phép commit và push; vẫn chưa tạo PR. Các kết quả
+bên dưới thuộc bản sửa local, không gán cho commit 187927d hoặc evidence R1/R2 cũ.
+
+Implementation chỉ tách JSONL theo LF, chấp nhận CRLF bằng whitespace của JSON
+parser. U+0085/U+2028/U+2029 nguyên dạng trong JSON string được giữ để parser và
+helper T1 xử lý. Một LF cuối không sinh thêm record; record cuối không có LF vẫn
+được đọc. Dòng trống/whitespace thật bị INVALID_PARSE với physical file/line và
+được tính rejected; pipeline tiếp tục các dòng còn lại, không xuất batch thành công.
+File rỗng có zero records và không đạt canonical envelope.
+
+Đã bổ sung 2 regression methods: sáu ca literal/escaped cho ba codepoint với
+entries/registry sau chuẩn hóa bằng fixture gốc, counts=4/4/0; bốn ca LF/CRLF
+có/không LF cuối; ba ca dòng trống ở giữa/cuối và whitespace-only, counts=5/4/1,
+không canonical/manifest. Trước sửa implementation, ba ca literal tái hiện lỗi;
+ba ca escaped pass. Sau sửa toàn bộ pass, R1/R2 regressions tiếp tục pass.
+
+Evidence local mới: `build/vocabulary-ingestion/r3-review-20261103/`, script
+`build/verify-ingestion-r3.py` (ignored, chưa đưa vào Git). Môi trường thực chạy:
+Ubuntu WSL2 trên Windows, Python 3.14.4, jsonschema 4.19.2. summary.json ghi base
+head và SHA-256 LF nhận diện implementation/test chưa commit:
+
+- ingest.py: `1c3188c51886a545c878463bff182ae5abdfa02deb23011c9ef5b007d59ac627`
+- test_ingest.py: `f6b90f93e6d3a98393cf6f717cbe6ba1234998b827bb5374fc931a5ab510c02e`
+
+| Kiểm tra thực chạy mới | Kết quả |
+| --- | --- |
+| Vocabulary/source/ingestion suite | 66 pass, gồm 20 ingestion methods |
+| Canonical contract suite | 39 pass |
+| Catalog tooling suite | 5 pass |
+| Tổng | 110 pass, 0 failure/error/skip |
+| Credit consistency / frozen inventory audit | exit 0; eligibleSourceCount=0 |
+| Hai lần CLI fixture vào hai thư mục sạch cli-a/cli-b | exit 0, so từng byte cả 4 file: giống nhau |
+| Validator development / fixture release | exit 0 / exit 1 đúng mong đợi |
+| Bảy nguồn thật, mỗi nguồn import và dry-run | 14 lượt chặn ở gate, read=0, không canonical/manifest |
+| git diff --check | pass |
+
+SHA-256 của cả hai lượt CLI: canonical
+`2628626d9cd4410a3241b2a27bf0cfa00720675b9f0d2d07c18bb6e0c3f7cfbe`, manifest
+`cc6202707691eee2b8892fb208dc62943e163bfacf89333c0e9dadbfb91f3b37`, normalization
+`37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570`, reject report
+`4f44a5f77f943804cf0536c35a4fdee46905dba6036f108fe0ab00bb58ea9930`.
+Manifest mới khác các lượt trước vì tool hash thay đổi; không yêu cầu source hash
+hay toàn bộ canonical bytes bằng nhau khi đổi raw bytes literal thành escaped.
+
+Không chạy lại Android/Gradle/instrumentation hoặc remote CI cho bản sửa local.
+Không thay gate/checksum/approval binding, stableId, canonical contract, raw/evidence,
+userdata hoặc runtime Android. Phạm vi vẫn **core pipeline + reviewed-jsonl-v1**;
+nhập nguồn thật, native adapter scope/contract acceptance và AC-12 vẫn pending.
+Không tự đánh dấu task Done hoặc đề nghị approve/merge từ kết quả fixture.

@@ -153,7 +153,12 @@ def run(config_path, output, *, fixture=False, dry_run=False, root=ROOT):
                     'Identity registry hash conflict')
             identity_index[item['id']] = item
         candidates = []
-        for line_no, line in enumerate(text.splitlines(), 1):
+        # JSONL records end at LF (CRLF is accepted by the JSON parser).
+        # Unicode T1 whitespace inside JSON strings is content, not a delimiter.
+        lines = text.split('\n')
+        if lines[-1] == '':
+            lines.pop()  # A terminal LF does not create another record.
+        for line_no, line in enumerate(lines, 1):
             counts['read'] += 1
             line_locator = f'{config["input"]}#line={line_no}'
             locator = line_locator

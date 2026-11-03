@@ -64,6 +64,12 @@ One corpus artifact per canonical mapping is supported in this version.
 
 Each JSONL line is an object with lemma, pos, senseIndex, meaningVi, exampleEn,
 exampleVi, nullable/omitted ipa, sourceId, provenance and a stable `locator`.
+Records are separated by LF; CRLF is also accepted. The last record may omit its
+terminal newline. A terminal LF does not add an empty record, but actual blank or
+whitespace-only lines are records rejected as INVALID_PARSE with physical line
+numbers. An empty file has zero records and fails final envelope validation.
+Unicode U+0085/U+2028/U+2029 inside JSON strings are content handled by T1,
+whether written literally in UTF-8 or as JSON escapes; they never split records.
 `sourceId` uses canonicalId. Provenance follows canonical component/sourceId/locator;
 each locator starts with the mapped `artifact#` followed by a stable source record
 key. The key must be nonblank under contract T1 normalization; `artifact#` and

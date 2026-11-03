@@ -258,6 +258,53 @@ class IngestionTests(unittest.TestCase):
         self.assertFalse((out / 'canonical-catalog.json').exists())
         self.assertFalse((out / 'manifest.json').exists())
 
+    def test_review_r3_literal_and_escaped_unicode_whitespace(self):
+        code, baseline_out = self.run_pipeline('unicode-baseline')
+        self.assertEqual(code, 0)
+        baseline = ingest.contract.load_json(baseline_out / 'canonical-catalog.json')
+        for character in ('\u0085', '\u2028', '\u2029'):
+            rows = copy.deepcopy(self.rows)
+            rows[0]['exampleEn'] = rows[0]['exampleEn'].replace(' ', character, 1)
+            for escaped in (False, True):
+                with self.subTest(character=hex(ord(character)), escaped=escaped):
+                    raw = ''.join(json.dumps(row, ensure_ascii=escaped) + '\n' for row in rows).encode('utf-8')
+                    self.records(raw=raw)
+                    code, out = self.run_pipeline(f'unicode-{ord(character)}-{escaped}')
+                    self.assertEqual(code, 0)
+                    self.assertEqual(self.report(out)['counts'], {'read': 4, 'accepted': 4, 'rejected': 0})
+                    data = ingest.contract.load_json(out / 'canonical-catalog.json')
+                    self.assertEqual(data['entries'], baseline['entries'])
+                    self.assertEqual(data['identityRegistry'], baseline['identityRegistry'])
+                    self.assertEqual(ingest.contract.validate(data), [])
+                    self.assertTrue(any(r['field'] == 'exampleEn' for r in
+                                        ingest.contract.load_json(out / 'normalization.json')))
+
+    def test_review_r3_physical_lines_and_blank_line_policy(self):
+        lines = [json.dumps(row, ensure_ascii=False) for row in self.rows]
+        for separator in ('\n', '\r\n'):
+            for final_newline in (False, True):
+                with self.subTest(separator=repr(separator), final_newline=final_newline):
+                    raw = separator.join(lines) + (separator if final_newline else '')
+                    self.records(raw=raw.encode('utf-8'))
+                    code, out = self.run_pipeline(f'lines-{len(separator)}-{final_newline}')
+                    self.assertEqual(code, 0)
+                    self.assertEqual(self.report(out)['counts'], {'read': 4, 'accepted': 4, 'rejected': 0})
+        for number, (content, line_no) in enumerate((
+                ('\n'.join(lines[:1] + [''] + lines[1:]) + '\n', 2),
+                ('\r\n'.join(lines) + '\r\n\r\n', 5),
+                ('\n'.join(lines) + '\n   ', 5))):
+            with self.subTest(blank_line=line_no, number=number):
+                self.records(raw=content.encode('utf-8'))
+                code, out = self.run_pipeline(f'blank-line-{number}')
+                self.assertEqual(code, 1)
+                report = self.report(out)
+                self.assertEqual(report['counts'], {'read': 5, 'accepted': 4, 'rejected': 1})
+                self.assertEqual(len(report['rejects']), 1)
+                self.assertEqual(report['rejects'][0]['reason'], 'INVALID_PARSE')
+                self.assertEqual(report['rejects'][0]['locator'], self.config['input'] + f'#line={line_no}')
+                self.assertFalse((out / 'canonical-catalog.json').exists())
+                self.assertFalse((out / 'manifest.json').exists())
+
     def test_ing09_conflicts_quarantine_all_and_retired_preserved(self):
         self.records(self.rows + [self.rows[0]])
         _, out = self.run_pipeline('duplicate')
