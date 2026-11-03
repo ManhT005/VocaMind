@@ -45,6 +45,84 @@ public abstract class CatalogAssetContract {
             return output.toByteArray();
         }
     }
+    @Test public void creditsEnrichExistingCopyAndBothRepositoryQueriesWithoutChangingDatabase() throws Exception {
+        CatalogSource original = read(repository::getSources).get(0);
+        assertFalse(original.attributionText.isEmpty());
+        db.close();
+        byte[] before = java.nio.file.Files.readAllBytes(context.getDatabasePath(name).toPath());
+        db = CatalogDatabase.open(context, name);
+        ContentCredits credits = ContentCredits.parse("""
+                {"schemaVersion":1,"sources":[
+                  {"sourceId":"fixture-authored-20261023","snapshotDate":"2026-10-23",
+                   "authors":["Synthetic test author A","Synthetic test author B"],"creditText":"Test notice only"},
+                  {"sourceId":"not-in-db","snapshotDate":"2026-10-25","authors":["Do not list"],"creditText":null}
+                ]}
+                """);
+        repository = new RoomCatalogRepository(db.catalogDao(), () -> credits);
+        List<CatalogSource> sources = read(repository::getSources);
+        assertEquals(1, sources.size());
+        assertEquals(List.of("Synthetic test author A", "Synthetic test author B"), sources.get(0).authors);
+        String word = read(() -> repository.getWords("pack_toeic_basic")).get(0).stableId;
+        assertEquals(sources.get(0).authors, read(() -> repository.getSourceForVocabulary(word)).get().authors);
+        assertEquals("Test notice only", read(() -> repository.getSourceForVocabulary(word)).get().creditText);
+        assertEquals("Test notice only", sources.get(0).creditText);
+        for (CatalogSource source : List.of(sources.get(0),
+                read(() -> repository.getSourceForVocabulary(word)).get())) {
+            assertEquals(original.attributionText, source.attributionText);
+            assertEquals(original.id, source.id);
+            assertEquals(original.title, source.title);
+            assertEquals(original.url, source.url);
+            assertEquals(original.licenseCode, source.licenseCode);
+            assertEquals(original.licenseUrl, source.licenseUrl);
+            assertEquals(original.snapshotDate, source.snapshotDate);
+            assertThrows(UnsupportedOperationException.class, source.authors::clear);
+        }
+        db.close();
+        assertArrayEquals(before, java.nio.file.Files.readAllBytes(context.getDatabasePath(name).toPath()));
+    }
+
+    @Test public void creditReadFailureIsAnErrorAndCanBeRetried() throws Exception {
+        String word = read(() -> repository.getWords("pack_toeic_basic")).get(0).stableId;
+        boolean[] broken = {true};
+        repository = new RoomCatalogRepository(db.catalogDao(), () -> {
+            if (broken[0]) throw new IllegalStateException("Simulated credit read error");
+            return ContentCredits.empty();
+        });
+        read(() -> { assertThrows(CatalogReadException.class, repository::getSources); return null; });
+        read(() -> { assertThrows(CatalogReadException.class,
+                () -> repository.getSourceForVocabulary(word)); return null; });
+        broken[0] = false;
+        assertEquals(1, read(repository::getSources).size());
+        assertTrue(read(repository::getSources).get(0).authors.isEmpty());
+        assertTrue(read(() -> repository.getSourceForVocabulary(word)).isPresent());
+    }
+
+    @Test public void unmatchedCreditsPreserveBothRepositoryQueries() throws Exception {
+        CatalogSource original = read(repository::getSources).get(0);
+        String word = read(() -> repository.getWords("pack_toeic_basic")).get(0).stableId;
+        ContentCredits credits = ContentCredits.parse("""
+                {"schemaVersion":1,"sources":[
+                  {"sourceId":"fixture-authored-20261023","snapshotDate":"different-date",
+                   "authors":["Wrong snapshot"],"creditText":"Must not appear"},
+                  {"sourceId":"different-source","snapshotDate":"2026-10-23",
+                   "authors":["Wrong source"],"creditText":"Must not appear"}
+                ]}
+                """);
+        repository = new RoomCatalogRepository(db.catalogDao(), () -> credits);
+        for (CatalogSource source : List.of(read(repository::getSources).get(0),
+                read(() -> repository.getSourceForVocabulary(word)).get())) {
+            assertEquals(original.id, source.id);
+            assertEquals(original.title, source.title);
+            assertEquals(original.url, source.url);
+            assertEquals(original.licenseCode, source.licenseCode);
+            assertEquals(original.licenseUrl, source.licenseUrl);
+            assertEquals(original.snapshotDate, source.snapshotDate);
+            assertEquals(original.attributionText, source.attributionText);
+            assertTrue(source.authors.isEmpty());
+            assertNull(source.creditText);
+            assertThrows(UnsupportedOperationException.class, () -> source.authors.add("Unexpected"));
+        }
+    }
     @Test public void opensAssetAndReadsFourPacks() throws Exception {
         List<CatalogPack> packs = read(repository::getPacks);
         assertEquals(4, packs.size());

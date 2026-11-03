@@ -24,6 +24,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         FragmentHomeBinding binding = FragmentHomeBinding.bind(view);
+        binding.openAttribution.setOnClickListener(v -> navigateFromHome(R.id.attributionFragment));
         binding.openPacks.setOnClickListener(v -> navigateFromHome(R.id.packsFragment));
         binding.openVocabulary.setOnClickListener(v -> navigateFromHome(R.id.vocabularyFragment));
         binding.openToday.setOnClickListener(v -> navigateFromHome(R.id.todayFragment));

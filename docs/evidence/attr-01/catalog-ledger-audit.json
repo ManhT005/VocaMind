@@ -1,0 +1,73 @@
+{
+  "baseline": "fff380127b0808b203165e649e22eaf714027afb",
+  "assetSha256": "e88f46f4a10e835d97ab03a87a534ca345321d7cf7738569f49524abda1d4104",
+  "apkCatalogSha256": "e88f46f4a10e835d97ab03a87a534ca345321d7cf7738569f49524abda1d4104",
+  "metadataShaMatches": true,
+  "apkAssetMatches": true,
+  "kind": "synthetic-test-fixture-not-production",
+  "vocabularyCount": 4,
+  "packagedSources": [
+    {
+      "id": "project_fixture",
+      "title": "VocaMind synthetic DATA-01 test fixture; not release vocabulary",
+      "url": "https://github.com/ManhT005/VocaMind",
+      "licenseCode": "LicenseRef-Project-Test-Fixture",
+      "licenseUrl": "https://github.com/ManhT005/VocaMind/blob/develop/tools/catalog/README.md",
+      "snapshotDate": "2026-10-25"
+    }
+  ],
+  "reconciliation": [
+    {
+      "id": "project_fixture",
+      "snapshotDate": "2026-10-25",
+      "ledgerMatch": false,
+      "approvalVerified": false,
+      "blocker": "project_fixture is not a release-approved source/snapshot in the ledger; LicenseRef is a test label, not approval"
+    }
+  ],
+  "registryDecisions": [
+    {
+      "id": "ngsl",
+      "decision": "hold",
+      "redistribution": "not-approved",
+      "pipelineEligible": false
+    },
+    {
+      "id": "tsl",
+      "decision": "hold",
+      "redistribution": "not-approved",
+      "pipelineEligible": false
+    },
+    {
+      "id": "kaikki-viwiktionary",
+      "decision": "hold",
+      "redistribution": "not-approved",
+      "pipelineEligible": false
+    },
+    {
+      "id": "tatoeba-text",
+      "decision": "hold",
+      "redistribution": "not-approved",
+      "pipelineEligible": false
+    },
+    {
+      "id": "fvdp",
+      "decision": "exclude",
+      "redistribution": "forbidden-in-mvp",
+      "pipelineEligible": false
+    },
+    {
+      "id": "tatoeba-audio",
+      "decision": "exclude",
+      "redistribution": "forbidden-in-mvp",
+      "pipelineEligible": false
+    },
+    {
+      "id": "commons-audio",
+      "decision": "hold",
+      "redistribution": "not-approved",
+      "pipelineEligible": false
+    }
+  ],
+  "ac12": "BLOCKED: synthetic fixture only, no real per-snapshot PO/Content Lead approval, fewer than 150 eligible words"
+}

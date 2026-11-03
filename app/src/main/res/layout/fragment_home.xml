@@ -75,6 +75,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/progress" />
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/open_attribution"
+                style="@style/Widget.VocaMind.NavigationButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/attribution" />
         </LinearLayout>
 
     </LinearLayout>

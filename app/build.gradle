@@ -24,6 +24,8 @@ android {
         test.java.srcDir "src/catalogTest/java"
         debug.assets.srcDir rootProject.file('docs/data/vocabulary-contract-v1/fixtures/valid')
         androidTest.java.srcDir "src/catalogTest/java"
+        test.java.srcDir "src/attributionTest/java"
+        androidTest.java.srcDir "src/attributionTest/java"
     }
 
     testOptions {

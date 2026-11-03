@@ -1,0 +1,5 @@
+﻿Code: da6881fcd42f36f030251e933af90bf1da22d598
+Device: Small_Phone API 30
+Airplane: 1
+WiFi: 0
+Data: 0
