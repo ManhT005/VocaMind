@@ -157,6 +157,18 @@ public abstract class UserDao {
         insertReview(event);
         saveProgress(progress);
     }
+    // DATA-07: all progress, independent of active packs, isSaved and learnedAt.
+    @Query("SELECT COUNT(DISTINCT vocabularyId) FROM UserWordProgress")
+    public abstract long distinctProgressCount();
+    @Query("SELECT box, COUNT(DISTINCT vocabularyId) AS wordCount FROM UserWordProgress GROUP BY box ORDER BY box")
+    public abstract List<BoxProgressCount> progressCountsByBox();
+    @Query("SELECT * FROM QuizAttempt ORDER BY completedAt DESC, id DESC")
+    public abstract List<QuizAttempt> completedQuizHistory();
+    /** No implicit history LIMIT/date window; counts/history must share one DB snapshot. */
+    @Transaction
+    public ProgressRows progressSnapshot() {
+        return new ProgressRows(distinctProgressCount(), progressCountsByBox(), completedQuizHistory());
+    }
     private static void id(String value) { require(value != null && !value.trim().isEmpty(), "stable ID"); }
     private static void box(int value) { require(value >= 0 && value <= 5, "box"); }
     private static void require(boolean valid, String field) {

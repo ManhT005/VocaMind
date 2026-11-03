@@ -54,11 +54,13 @@ public class DaoFoundationTest {
         sql.execSQL("DELETE FROM PackWord"); sql.execSQL("DELETE FROM VocabularyFts");
         sql.execSQL("DELETE FROM VocabularyEntry"); sql.execSQL("DELETE FROM LearningPack");
         sql.execSQL("DELETE FROM ContentSource");
-        sql.execSQL("INSERT INTO ContentSource VALUES ('test-source','Original test content',"
-                + "'https://example.invalid','LicenseRef-Test','https://example.invalid/license','2026-10-25')");
+        sql.execSQL("INSERT INTO ContentSource (id,title,url,licenseCode,licenseUrl,snapshotDate,attributionText) "
+                + "VALUES ('test-source','Original test content','https://example.invalid','LicenseRef-Test',"
+                + "'https://example.invalid/license','2026-10-25','Synthetic DATA-03 test content')");
+        int packOrder = 1;
         for (String id : Arrays.asList("A", "B", "C", "E")) {
             sql.execSQL("INSERT INTO LearningPack (id,title,description,category,orderNo,version) VALUES (?,?,?,?,?,?)",
-                    new Object[]{id, id, "test", "test", id.equals("C") ? 2 : id.equals("E") ? 3 : 1, "1"});
+                    new Object[]{id, id, "test", "test", packOrder++, "1"});
         }
         for (String id : Arrays.asList("shared", "a", "b", "new-a", "new-b", "new-c", "paused")) addWord(id);
         membership("A", "shared", 1); membership("A", "a", 2);
@@ -129,7 +131,14 @@ public class DaoFoundationTest {
         catalog.getOpenHelper().getWritableDatabase().execSQL(
                 "INSERT INTO LearningPack (id,title,description,category,orderNo,version) "
                         + "VALUES ('Z-first','First','test','test',0,'1')");
-        membership("Z-first", "shared", 0); membership("Z-first", "a", 0);
+        // Schema v2 requires unique pack order and unique word order within each pack.
+        membership("Z-first", "a", 0); membership("Z-first", "shared", 1);
+        assertThrows(android.database.sqlite.SQLiteConstraintException.class,
+                () -> membership("Z-first", "new-b", 0));
+        assertThrows(android.database.sqlite.SQLiteConstraintException.class,
+                () -> catalog.getOpenHelper().getWritableDatabase().execSQL(
+                        "INSERT INTO LearningPack (id,title,description,category,orderNo,version) "
+                                + "VALUES ('duplicate-order','Duplicate','test','test',0,'1')"));
         assertEquals(Arrays.asList("a", "shared"), cd.words("Z-first").stream()
                 .map(v -> v.id).collect(Collectors.toList()));
 
