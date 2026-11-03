@@ -37,15 +37,15 @@ public abstract class AttributionScreenContract {
             LinearLayout rows = activity.findViewById(R.id.sources);
             assertEquals(1, rows.getChildCount());
             View row = rows.getChildAt(0);
-            assertEquals("VocaMind synthetic DATA-01 test fixture; not release vocabulary",
+            assertEquals("Học liệu tổng hợp chỉ dùng test contract",
                     ((TextView) row.findViewById(R.id.title)).getText().toString());
             assertTrue(((TextView) row.findViewById(R.id.source_url)).getText().toString()
-                    .contains("https://github.com/ManhT005/VocaMind"));
+                    .contains("https://example.invalid/vocamind/fixtures"));
             assertTrue(((TextView) row.findViewById(R.id.license)).getText().toString()
-                    .contains("LicenseRef-Project-Test-Fixture"));
+                    .contains("FIXTURE-ONLY"));
             assertTrue(((TextView) row.findViewById(R.id.license_url)).getText().toString()
-                    .contains("tools/catalog/README.md"));
-            assertTrue(((TextView) row.findViewById(R.id.snapshot)).getText().toString().contains("2026-10-25"));
+                    .contains("https://example.invalid/vocamind/fixtures/license"));
+            assertTrue(((TextView) row.findViewById(R.id.snapshot)).getText().toString().contains("2026-10-23"));
             assertEquals(activity.getString(R.string.attribution_authors,
                     activity.getString(R.string.attribution_authors_missing)),
                     ((TextView) row.findViewById(R.id.authors)).getText().toString());

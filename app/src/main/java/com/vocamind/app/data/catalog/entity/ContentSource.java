@@ -12,4 +12,5 @@ public class ContentSource {
     @NonNull public String licenseCode;
     @NonNull public String licenseUrl;
     @NonNull public String snapshotDate;
+    @NonNull public String attributionText;
 }

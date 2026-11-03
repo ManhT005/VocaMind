@@ -6,7 +6,7 @@ import com.vocamind.app.domain.catalog.*;
 public final class CatalogMapper {
     private CatalogMapper() { }
     public static CatalogSource source(ContentSource s) {
-        return new CatalogSource(s.id, s.title, s.url, s.licenseCode, s.licenseUrl, s.snapshotDate);
+        return new CatalogSource(s.id, s.title, s.url, s.licenseCode, s.licenseUrl, s.snapshotDate, s.attributionText);
     }
     public static CatalogVocabulary vocabulary(VocabularyEntry v) {
         return new CatalogVocabulary(v.id, v.lemma, v.normalizedLemma, v.pos,

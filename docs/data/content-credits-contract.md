@@ -40,8 +40,10 @@ unsupported-version or unreadable metadata raises a catalog error, allowing retr
 Missing or mismatched pairs never borrow credit from another source/snapshot.
 Unused companion rows never become displayed catalog sources.
 
-Already copied v1 databases need no migration or replacement: exact matching pairs
-are enriched from the new APK asset. Older snapshots without a matching row show
+Companion enrichment itself does not modify the database. VOC-DATA02 now uses
+Room schema 2; this does not provide a schema 1 to 2 migration. Installed schema 1
+copies fail closed until a reviewed upgrade path exists. Supported copies with
+exact matching pairs are enriched from the APK asset. Snapshots without a matching row show
 missing credit. Current tooling rejects extra/old pairs against the packaged DB;
 there is **no historical-row support** in v1. A future requirement to ship old
 snapshot credits needs an explicit history section/validator extension, not an
@@ -54,8 +56,8 @@ python tools/catalog/check_credits.py --release
 ```
 
 CI runs the first two commands to check consistency and validation logic. The
-third deliberately fails for today's project_fixture with missing authors.
+third deliberately fails for today's fixture-authored-20261023 with missing authors.
 Even success of `--release` checks only credit completeness: per-snapshot
 ledger, provenance, permissions and real PO/Content Lead approval are still
 required. It is not a Gradle release publication authorization or a replacement
-for AC-12. The project_fixture remains synthetic, four words, not release data.
+for AC-12. The canonical fixture remains synthetic, four words, not release data.

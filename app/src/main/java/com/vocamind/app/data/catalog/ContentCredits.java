@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/** Local companion metadata. Exact pair matching also supports already copied v1 DBs. */
+/** Local companion metadata matched to the exact source and snapshot. */
 public final class ContentCredits {
     public static final String ASSET = "database/content-credits.json";
     private record Key(String sourceId, String snapshotDate) { }
@@ -74,6 +74,6 @@ public final class ContentCredits {
         Credit credit = credits.get(new Key(source.id, source.snapshotDate));
         if (credit == null) return source;
         return new CatalogSource(source.id, source.title, source.url, source.licenseCode,
-                source.licenseUrl, source.snapshotDate, credit.authors(), credit.text());
+                source.licenseUrl, source.snapshotDate, source.attributionText, credit.authors(), credit.text());
     }
 }

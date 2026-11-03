@@ -15,15 +15,25 @@ public class ContentCreditsTest {
         return ContentCredits.parse("{\"schemaVersion\":1,\"sources\":[" + rows + "]}");
     }
     private CatalogSource source(String id, String date) {
-        return new CatalogSource(id,"Title","https://example.com","Test",null,date);
+        return new CatalogSource(id,"Title","https://example.com","Test",null,date,
+                "Original attribution", List.of("Original author"), "Original notice");
     }
     @Test public void onlyExactPairMatchesAndMissingIsTransparent() {
         ContentCredits credits = parse(row);
         assertEquals(List.of("Synthetic A"), credits.enrich(source("a","date")).authors);
         assertEquals("Test credit", credits.enrich(source("a","date")).creditText);
-        assertTrue(credits.enrich(source("a","other-date")).authors.isEmpty());
-        assertTrue(credits.enrich(source("b","date")).authors.isEmpty());
-        assertTrue(ContentCredits.empty().enrich(source("a","date")).authors.isEmpty());
+        CatalogSource original = source("a", "date");
+        CatalogSource enriched = credits.enrich(original);
+        assertEquals(original.attributionText, enriched.attributionText);
+        assertEquals(original.title, enriched.title);
+        assertEquals(original.url, enriched.url);
+        assertEquals(original.licenseCode, enriched.licenseCode);
+        assertEquals(original.licenseUrl, enriched.licenseUrl);
+        assertThrows(UnsupportedOperationException.class, enriched.authors::clear);
+        for (CatalogSource unmatched : List.of(source("a", "other-date"), source("b", "date"))) {
+            assertSame(unmatched, credits.enrich(unmatched));
+        }
+        assertSame(original, ContentCredits.empty().enrich(original));
     }
     @Test public void differentSourcesRetainTheirOwnAuthorsAndNotices() {
         ContentCredits credits = parse(row + "," + row.replace("\"a\"", "\"b\"")

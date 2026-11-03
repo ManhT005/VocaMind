@@ -1,0 +1,66 @@
+[
+  {
+    "inputLemma": "book",
+    "pos": "noun",
+    "senseIndex": 1,
+    "identityKey": "book_noun_1",
+    "fullSha256": "90562a98e8686267026a16f0ddf842d7010766216a4aaa6a07f9bf0db491eab7",
+    "id": "90562a98e8686267"
+  },
+  {
+    "inputLemma": " BOOK ",
+    "pos": "noun",
+    "senseIndex": 1,
+    "identityKey": "book_noun_1",
+    "fullSha256": "90562a98e8686267026a16f0ddf842d7010766216a4aaa6a07f9bf0db491eab7",
+    "id": "90562a98e8686267"
+  },
+  {
+    "inputLemma": "book",
+    "pos": "verb",
+    "senseIndex": 1,
+    "identityKey": "book_verb_1",
+    "fullSha256": "d17314a48504e2ace19ab2bec5b77cd0d046c8ecc8618e0ebf5249c82736fcc7",
+    "id": "d17314a48504e2ac"
+  },
+  {
+    "inputLemma": "book",
+    "pos": "noun",
+    "senseIndex": 2,
+    "identityKey": "book_noun_2",
+    "fullSha256": "d52e437aa92410de1bf63b9527b571a8e2dfe5fbd5983fd1555dd655bf8fa1c5",
+    "id": "d52e437aa92410de"
+  },
+  {
+    "inputLemma": "  CHECK  IN ",
+    "pos": "verb",
+    "senseIndex": 1,
+    "identityKey": "check in_verb_1",
+    "fullSha256": "366c4e1010fd5c992ef386fd3f9f89f9690724f1f83dc827bf83dc0894156c05",
+    "id": "366c4e1010fd5c99"
+  },
+  {
+    "inputLemma": "café",
+    "pos": "noun",
+    "senseIndex": 1,
+    "identityKey": "café_noun_1",
+    "fullSha256": "cb7e46cedbca5370117d62df1d622e48a8f96c81de4f6d5ff7d5b7ee518e0dda",
+    "id": "cb7e46cedbca5370"
+  },
+  {
+    "inputLemma": "mother-in-law",
+    "pos": "noun",
+    "senseIndex": 1,
+    "identityKey": "mother-in-law_noun_1",
+    "fullSha256": "c57f0feb94d63b9700b82934bc383f2feddb8af1103118bb1d69df3495fda9e1",
+    "id": "c57f0feb94d63b97"
+  },
+  {
+    "inputLemma": "don't",
+    "pos": "verb",
+    "senseIndex": 1,
+    "identityKey": "don't_verb_1",
+    "fullSha256": "58f7eb0af1a0d78b2b056fc8ebec61c017e678d3d41579989162949890e2c480",
+    "id": "58f7eb0af1a0d78b"
+  }
+]

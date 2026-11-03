@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.room.*;
 
-@Entity
+@Entity(indices = {@Index(value = {"orderNo"}, unique = true)})
 public class LearningPack {
     @PrimaryKey @NonNull public String id;
     @NonNull public String title;
