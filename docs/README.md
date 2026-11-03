@@ -5,6 +5,8 @@ project entry point; generated build outputs stay in ignored build directories.
 
 | Document | Purpose |
 | --- | --- |
+| [DATA-06 plan](plans/data-06-atomic-review-transaction.md) | Atomic review scope, six-hour plan, test matrix and boundaries |
+| [DATA-06 validation](data-06-validation.md) | Scheduler/use case integration, transaction rollback, conflict checks and evidence |
 | [Local credit metadata contract](data/content-credits-contract.md) | Companion JSON, exact snapshot matching, existing-install compatibility and release limits |
 | [ATTR-01 review fix plan](plans/attr-01-fix-plan.md) | R1 regression and proposed R2 offline author/credit contract awaiting owner/reviewer confirmation |
 | [ATTR-01 validation](attr-01-validation.md) | Offline attribution UI, executed tests, screenshots and separate AC-12 release blocker |

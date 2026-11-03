@@ -1,0 +1,159 @@
+{
+  "baseCommit": "c2ea69e",
+  "scope": "DATA-06 working-tree implementation, not a published CI run",
+  "suites": [
+    {
+      "name": "com.vocamind.app.data.catalog.CatalogAssetTest",
+      "tests": 32,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T13:44:40"
+    },
+    {
+      "name": "com.vocamind.app.data.catalog.ContentCreditsTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T13:44:50"
+    },
+    {
+      "name": "com.vocamind.app.data.user.AtomicReviewTest",
+      "tests": 20,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T13:44:50"
+    },
+    {
+      "name": "com.vocamind.app.data.user.UserDatabaseTest",
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T13:44:50"
+    },
+    {
+      "name": "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T13:44:53"
+    },
+    {
+      "name": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T13:44:53"
+    },
+    {
+      "name": "com.vocamind.app.domain.learning.LeitnerSchedulerTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T13:44:53"
+    },
+    {
+      "name": "com.vocamind.app.domain.learning.RecordReviewUseCaseTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T13:44:53"
+    },
+    {
+      "name": "com.vocamind.app.domain.progress.ProgressDomainTest",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T13:44:53"
+    },
+    {
+      "name": "com.vocamind.app.domain.quiz.QuizDomainTest",
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T13:44:53"
+    },
+    {
+      "name": "com.vocamind.app.feature.attribution.AttributionRenderingTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T13:44:53"
+    },
+    {
+      "name": "com.vocamind.app.feature.attribution.AttributionScreenTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T13:44:56"
+    },
+    {
+      "name": "com.vocamind.app.feature.attribution.AttributionViewModelTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T13:44:58"
+    },
+    {
+      "name": "com.vocamind.app.feature.attribution.ExternalLinksTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T13:44:58"
+    },
+    {
+      "name": "com.vocamind.app.feature.attribution.GetContentSourcesTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T13:44:58"
+    },
+    {
+      "name": "com.vocamind.app.feature.progress.ProgressViewStateTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T13:44:58"
+    }
+  ],
+  "totals": {
+    "tests": 151,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "newData06Executions": 26,
+  "appApkBuild": "passed",
+  "instrumentationApkBuild": "passed",
+  "connectedInstrumentation": "not run",
+  "sha256": {
+    "app/src/androidTest/java/com/vocamind/app/data/user/AtomicReviewInstrumentedTest.java": "d298ba803293466033ec55989887f7fefa0580dd07bf9888f22f110b0423f68b",
+    "app/src/catalogTest/java/com/vocamind/app/data/user/AtomicReviewContract.java": "b3effd981a2c35e23c1d5d4082dc684ee6f87d71df9ed643cd17bb1bd238e64d",
+    "app/src/main/java/com/vocamind/app/core/ReviewProvider.java": "d8a4510eff0071994e1b840dd24fce7eb2beadc11e0f187ab9934fa279144260",
+    "app/src/main/java/com/vocamind/app/data/user/ReviewMapper.java": "4f6505a2ec1b23fab3e2d9804ec70a291cb80a254882a005c96829805b14ae83",
+    "app/src/main/java/com/vocamind/app/data/user/ReviewStateChangedException.java": "1668e0621c95c9206457a5a9077f7b43c5c5b2bd17ced8203069caf64a6c7578",
+    "app/src/main/java/com/vocamind/app/data/user/RoomReviewRepository.java": "4fb69863578e179b2e52abf6cafdff182097b12c1441d2ab5935a3611492b2ff",
+    "app/src/main/java/com/vocamind/app/data/user/UserDao.java": "c80e58806b1707b3d2338e1579599a85f79ff070ce91601cf722cf9e8466c36c",
+    "app/src/main/java/com/vocamind/app/domain/learning/RecordReviewUseCase.java": "8a98b3d5854507dbdb6ac9e58e983d41bc57706708e69b22c2e2e353d5437042",
+    "app/src/main/java/com/vocamind/app/domain/learning/ReviewProgress.java": "aae64d0a7870bba2cb5c651bcaf405a5aa6c5e70f0e8e11aa72dad3fae3d89d2",
+    "app/src/main/java/com/vocamind/app/domain/learning/ReviewRepository.java": "6ab88d98470aa0961d3120d7ebb8e2546b148504fc279ed45273eb6b769c984c",
+    "app/src/main/java/com/vocamind/app/domain/learning/ReviewWriteException.java": "cca9b9357b5a2641542782728fcb1fa2641ecf4e2f7350cf6a3a94222aabb29c",
+    "app/src/test/java/com/vocamind/app/data/user/AtomicReviewTest.java": "918802df396ff0f170a1c30a4471effa662bcad25aea0c4600b195616b046638",
+    "app/src/test/java/com/vocamind/app/domain/learning/RecordReviewUseCaseTest.java": "bddf137b8b14b572e2b6582d69ee5026c373e0833c57ed21d169f1f90a106657"
+  }
+}

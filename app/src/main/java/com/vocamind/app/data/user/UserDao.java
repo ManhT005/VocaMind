@@ -53,6 +53,25 @@ public abstract class UserDao {
         insertReview(event);
         saveProgress(progress);
     }
+    /** Compare and write under the same database transaction; protects first-insert races too. */
+    @Transaction
+    public void recordReviewIfUnchanged(UserWordProgress expected, ReviewEvent event,
+                                        UserWordProgress updated) {
+        require(event != null && updated != null, "review rows");
+        id(updated.vocabularyId);
+        UserWordProgress current = progress(updated.vocabularyId);
+        if (!sameProgress(expected, current)) throw new ReviewStateChangedException();
+        recordReview(event, updated);
+    }
+    private static boolean sameProgress(UserWordProgress a, UserWordProgress b) {
+        if (a == null || b == null) return a == b;
+        return java.util.Objects.equals(a.vocabularyId, b.vocabularyId)
+                && a.box == b.box && a.dueAt == b.dueAt
+                && java.util.Objects.equals(a.learnedAt, b.learnedAt)
+                && java.util.Objects.equals(a.lastReviewedAt, b.lastReviewedAt)
+                && a.consecutiveMistakes == b.consecutiveMistakes && a.isLeech == b.isLeech
+                && a.reviewCount == b.reviewCount && a.isSaved == b.isSaved;
+    }
     private static void id(String value) { require(value != null && !value.trim().isEmpty(), "stable ID"); }
     private static void box(int value) { require(value >= 0 && value <= 5, "box"); }
     private static void require(boolean valid, String field) {
