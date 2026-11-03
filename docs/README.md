@@ -5,6 +5,8 @@ project entry point; generated build outputs stay in ignored build directories.
 
 | Document | Purpose |
 | --- | --- |
+| [DATA-05 plan](plans/data-05-fts4-search.md) | FTS4 search, async boundary, test matrix and seven-hour plan |
+| [DATA-05 validation](data-05-validation.md) | Actual prepack integration, raw 5k profiling, reference-device gate and handoff |
 | [Local credit metadata contract](data/content-credits-contract.md) | Companion JSON, exact snapshot matching, existing-install compatibility and release limits |
 | [ATTR-01 review fix plan](plans/attr-01-fix-plan.md) | R1 regression and proposed R2 offline author/credit contract awaiting owner/reviewer confirmation |
 | [ATTR-01 validation](attr-01-validation.md) | Offline attribution UI, executed tests, screenshots and separate AC-12 release blocker |
