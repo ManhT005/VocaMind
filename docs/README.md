@@ -5,6 +5,8 @@ project entry point; generated build outputs stay in ignored build directories.
 
 | Document | Purpose |
 | --- | --- |
+| [VOC-DATA-03 validation and handoff](voc-data-03-validation.md) | Gated local ingestion, fixture checksums, real-source blockers and pending contract decisions |
+| [VOC-DATA-03 CLI and adapter](../tools/vocabulary/INGESTION.md) | Config, reviewed JSONL mapping, deterministic output and reject policy |
 | [Local credit metadata contract](data/content-credits-contract.md) | Companion JSON, exact snapshot matching, existing-install compatibility and release limits |
 | [ATTR-01 review fix plan](plans/attr-01-fix-plan.md) | R1 regression and proposed R2 offline author/credit contract awaiting owner/reviewer confirmation |
 | [ATTR-01 validation](attr-01-validation.md) | Offline attribution UI, executed tests, screenshots and separate AC-12 release blocker |
