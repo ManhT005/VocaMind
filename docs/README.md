@@ -8,6 +8,10 @@ project entry point; generated build outputs stay in ignored build directories.
 | [Local credit metadata contract](data/content-credits-contract.md) | Companion JSON, exact snapshot matching, existing-install compatibility and release limits |
 | [ATTR-01 review fix plan](plans/attr-01-fix-plan.md) | R1 regression and proposed R2 offline author/credit contract awaiting owner/reviewer confirmation |
 | [ATTR-01 validation](attr-01-validation.md) | Offline attribution UI, executed tests, screenshots and separate AC-12 release blocker |
+| [DATA-03 DAO foundation plan](plans/data-03-dao-foundation.md) | Query contracts, active due/new selection, transaction boundaries, fixtures and 7-hour implementation plan |
+| [DATA-03 validation](data-03-validation.md) | DAO contracts, batch/transaction semantics, fixture results and repository handoff |
+| [DATA-03 acceptance checklist](data-03-acceptance-checklist.md) | Integration evidence, G-01…G-13 gates, contract decisions and pending reviewer acceptance |
+| [DATA-03 acceptance evidence](data-03-acceptance-evidence.json) | Actual JUnit/Python counts, report/APK hashes and verified input digest |
 | [VOC-DATA-01 revised handoff plan](plans/voc-data-01-source-ledger-and-handoff.md) | User-provided candidate/hold semantics, metadata-only audio research and sequential handoff |
 | [VOC-DATA-01 handoff](voc-data-01-handoff.md) | Frozen inventory commands, ID aliases, component provenance and human acceptance blockers |
 | [VOC-DATA-01 requirements traceability](voc-data-01-requirements-traceability.md) | SRS and assignment evidence, task boundaries and approval responsibilities |

@@ -12,6 +12,9 @@ the remaining GitHub merge-gate setup.
 
 ## Documentation
 
+- [DATA-03 DAO foundation plan](docs/plans/data-03-dao-foundation.md)
+- [DATA-03 implementation and validation](docs/data-03-validation.md)
+- [DATA-03 acceptance checklist and handoff](docs/data-03-acceptance-checklist.md)
 - [VOC-DATA-01 revised source ledger / handoff plan](docs/plans/voc-data-01-source-ledger-and-handoff.md)
 - [VOC-DATA-01 handoff implementation](docs/voc-data-01-handoff.md)
 - [VOC-DATA-01 implementation plan](docs/plans/voc-data-01-external-sources.md)

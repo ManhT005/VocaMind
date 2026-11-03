@@ -2,6 +2,29 @@ plugins {
     id 'com.android.application'
 }
 
+// Resolve SDK jars through Gradle's cache before JUnit starts. Robolectric's
+// runtime Maven fetcher otherwise downloads them outside Gradle/CI caching.
+// Keep one configuration per SDK so version conflict resolution cannot replace
+// the API 26 jar with the API 35 jar (they share the same Maven artifact ID).
+def robolectricSdkConfigurations = [
+        '8.0.0_r4-robolectric-r1-i7',
+        '15-robolectric-13954326-i7'
+].withIndex().collect { version, index ->
+    def sdk = configurations.create("robolectricSdk${index}") {
+        canBeConsumed = false
+        canBeResolved = true
+        transitive = false
+    }
+    dependencies.add(sdk.name, "org.robolectric:android-all-instrumented:$version")
+    sdk
+}
+
+def robolectricSdkDirectory = layout.buildDirectory.dir("robolectric-sdks")
+def prepareRobolectricSdks = tasks.register('prepareRobolectricSdks', Sync) {
+    from robolectricSdkConfigurations
+    into robolectricSdkDirectory
+}
+
 android {
     namespace 'com.vocamind.app'
     compileSdk 35
@@ -31,6 +54,8 @@ android {
     testOptions {
         unitTests.includeAndroidResources = true
         unitTests.all {
+            dependsOn prepareRobolectricSdks
+            inputs.files(robolectricSdkConfigurations)
             // Robolectric's native loader treats URL-encoded spaces as literal paths.
             // Use the OS temp directory when the checkout path contains spaces.
             def testHome = projectDir.absolutePath.contains(' ')
@@ -38,7 +63,12 @@ android {
                     : layout.buildDirectory.dir("robolectric-home").get().asFile
             testHome.mkdirs()
             systemProperty "user.home", testHome.absolutePath
-            systemProperty "robolectric.dependency.repo.url", "https://repo.maven.apache.org/maven2"
+            systemProperty "robolectric.offline", "true"
+            systemProperty "robolectric.dependency.dir", robolectricSdkDirectory.get().asFile.absolutePath
+            testLogging {
+                events "failed", "skipped"
+                exceptionFormat "full"
+            }
         }
     }
 
