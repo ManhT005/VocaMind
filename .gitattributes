@@ -6,5 +6,6 @@ docs/data/vocabulary-contract-v1/** text eol=lf
 tools/vocabulary/ingest.py text eol=lf
 tools/vocabulary/test_ingest.py text eol=lf
 tools/vocabulary/fixtures/ingestion/** text eol=lf
+docs/evidence/voc-data-03/** text eol=lf
 app/src/main/assets/database/*.metadata.json text eol=lf
 app/src/main/assets/database/*.db binary

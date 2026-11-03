@@ -1,0 +1,54 @@
+{
+  "status": "success",
+  "fixtureOnly": true,
+  "toolVersion": "1.0.0",
+  "adapter": "reviewed-jsonl-v1",
+  "python": "3.14.4",
+  "unicode": "16.0.0",
+  "jsonschema": "4.19.2",
+  "inputHashes": {
+    "tools/vocabulary/fixtures/ingestion/config.json": "e19d4e291d8da0c333579c30851c086df270f2924857f4be348d157c9eb40b43",
+    "tools/vocabulary/fixtures/ingestion/examples.txt": "3c482e1feb616ee27cca028248a4bdf0529b59a3dee026c8f7a8dbe139d4852b",
+    "tools/vocabulary/fixtures/ingestion/identities.json": "64ec359d0567367a117ef3762f9a993ee62f9015f1f957d7890e8e3783e01075",
+    "tools/vocabulary/fixtures/ingestion/records.jsonl": "d160b570646d26f00eec4c665752978d717c1f292efb89daa9e43983a4e021ce"
+  },
+  "toolHashes": {
+    "ingest.py": "5afc2237edcb3fd0a78ae635be8a8568c2291cea0ec1613b9dbaed5443f62867",
+    "validate_contract.py": "ce189d852641434294fdda732a54f0bcd55cc2d7a9447be55eebb445f34690b6",
+    "catalog.schema.json": "72da0647d802d56bc83ab1aef7a25f73d83c7550aa81040ffc12404f6da927e5",
+    "source_gate.py": "e2318a77883392ec8b70d4e7eba06b82a8d4b2e6b2447183ecf6f705f29177cb",
+    "gate_sources.py": "16504989b63ed607259e2ce531a9ab86cf953b690719a7e3efa687dbf0858208"
+  },
+  "baselineCompared": false,
+  "counts": {
+    "read": 4,
+    "accepted": 4,
+    "rejected": 0
+  },
+  "sourceMappings": [
+    {
+      "registryId": "synthetic-fixture",
+      "snapshotId": "synthetic-v1",
+      "canonicalId": "fixture-examples-v1",
+      "artifact": "tools/vocabulary/fixtures/ingestion/examples.txt",
+      "sha256": "3c482e1feb616ee27cca028248a4bdf0529b59a3dee026c8f7a8dbe139d4852b"
+    },
+    {
+      "registryId": "synthetic-fixture",
+      "snapshotId": "synthetic-v1",
+      "canonicalId": "fixture-lexical-v1",
+      "artifact": "tools/vocabulary/fixtures/ingestion/records.jsonl",
+      "sha256": "d160b570646d26f00eec4c665752978d717c1f292efb89daa9e43983a4e021ce"
+    }
+  ],
+  "outputHashes": {
+    "canonical-catalog.json": "2628626d9cd4410a3241b2a27bf0cfa00720675b9f0d2d07c18bb6e0c3f7cfbe",
+    "normalization.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "reject-report.json": "4f44a5f77f943804cf0536c35a4fdee46905dba6036f108fe0ab00bb58ea9930"
+  },
+  "limitations": [
+    "No content QA or AC-12 acceptance",
+    "No catalog/app asset built",
+    "No published baseline compared"
+  ]
+}
