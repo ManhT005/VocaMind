@@ -1,5 +1,9 @@
 # VOC-DATA-03 validation and review handoff
 
+**Cập nhật review P2 local:** xem mục cuối tài liệu. Các kết quả implementation
+commit, Gradle và checksum ở những mục ban đầu bên dưới là evidence cũ, không
+phải kết quả chạy lại cho bản sửa review P2.
+
 Ngày thực chạy: 2026-11-03. Phụ trách theo task: Trường; reviewer: Nhân.
 Trạng thái: implementation candidate sẵn sàng kiểm tra, **không đánh dấu Hoàn thành**.
 Chưa tạo PR theo yêu cầu người dùng dừng trước PR. Không sửa SRS/phân công.
@@ -124,3 +128,69 @@ Không tự đánh dấu task Done hoặc sửa quyết định nguồn/SRS.
 
 PR chưa tạo theo chỉ dẫn dừng để người dùng kiểm tra trước PR. Kết quả CI remote
 và head bàn giao sẽ được báo riêng sau push; local pass không thay remote CI.
+
+## Sửa review R1/R2 trên local ngày 2026-11-03
+
+Head kiểm tra lại: `6780e23534b57e7813e6e58b347f81a9332eb9c8`, đúng bản
+review `6780e23`; working tree ban đầu sạch, không có commit mới hoặc thay đổi
+của người khác cần ghép. Tại thời điểm kiểm thử, bản sửa chưa commit/push/PR.
+Sau kiểm thử, người dùng cho phép commit và push; vẫn chưa tạo PR.
+Các kết quả sau thuộc bản sửa local trên head này, không gán cho commit cũ.
+
+- R1: tách provenance locator thành mapped artifact và record key bằng dấu `#`;
+  key rỗng hoặc chỉ whitespace theo helper T1 bị reject `MISSING_PROVENANCE`,
+  field cụ thể như `provenance[0].locator`, locator diagnostic là input file/line.
+  Locator có key hợp lệ và dùng chung giữa nhiều record/component vẫn được nhận.
+- R2: kiểm tra kiểu required fields và cấu trúc provenance trước dict lookup,
+  set hoặc sort. `sourceId=[]`, `provenance[0].component=[]` và
+  `provenance[0].sourceId=[]` thành record reject `INVALID_FIELD_TYPE` ở mapping,
+  có field/locator/reason. Row locator sai kiểu hoặc blank dùng file/line dự phòng.
+  Pipeline tiếp tục các dòng sau; một record có nhiều lỗi vẫn chỉ tính rejected
+  một lần. Strict batch policy giữ nguyên: có reject thì không có canonical/manifest.
+
+Đã thêm 5 regression test methods (có subtests), tái hiện lỗi trước sửa rồi pass
+sau sửa. Có ca trộn ba record sai kiểu và một record hợp lệ: read=4, accepted=1,
+rejected=3, năm diagnostic cho ba record, sourceFailures=[]; không có output thành
+công. Ca sai kiểu ở dòng đầu và unsupported POS ở dòng sau cũng thu đủ cả hai.
+
+Evidence mới tách khỏi `docs/evidence/voc-data-03/` cũ, lưu local trong
+`build/vocabulary-ingestion/p2-review-20261103/` (ignored, chưa đưa vào Git).
+Script chạy local: `build/verify-ingestion-p2.py`; summary.json ghi base head,
+environment và SHA-256 LF của implementation/test để nhận diện bản chưa commit:
+
+- ingest.py: `5f929f6edc84649fe5e51de7431e40e385f47bfa941faf1040bd7efac8ab51c9`
+- test_ingest.py: `7a452ea1d9975c0164fd0847c4a75777056a0675872b2fd70058d80d363b6d72`
+
+Môi trường thực chạy: Windows host, Ubuntu WSL2, Python 3.14.4, jsonschema 4.19.2.
+
+| Kiểm tra mới | Kết quả |
+| --- | --- |
+| `python3 -m unittest discover -s tools/vocabulary -p 'test_*.py' -v` | 64 pass, gồm 18 ingestion tests, 0 fail/error/skip |
+| `python3 -m unittest discover -s docs/data/vocabulary-contract-v1 -p test_contract.py -v` | 39 pass, 0 fail/error/skip |
+| `python3 -m unittest discover -s tools/catalog -p 'test_*.py' -v` | 5 pass, 0 fail/error/skip |
+| `python3 tools/catalog/check_credits.py` | exit 0, consistency only |
+| frozen inventory audit với registry thật | exit 0; eligibleSourceCount=0 |
+| CLI fixture vào hai thư mục mới `cli-a`, `cli-b` trong thư mục evidence mới | exit 0 cả hai; so sánh từng byte của đúng 4 file, tất cả giống nhau |
+| Validator development / release trên canonical mới | exit 0 / exit 1 đúng mong đợi |
+| CLI từng 7 nguồn thật, cả import và dry-run | 14 lượt exit 1 tại gate, read=0, không canonical/manifest |
+| `git diff --check` | pass |
+
+SHA-256 mới, giống ở cả hai thư mục CLI:
+
+| File | SHA-256 |
+| --- | --- |
+| canonical-catalog.json | `2628626d9cd4410a3241b2a27bf0cfa00720675b9f0d2d07c18bb6e0c3f7cfbe` |
+| manifest.json | `7d6d679ed33086dfc97c5518ad1efb8e08e57396e2bddd17230c7325b676656a` |
+| normalization.json | `37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570` |
+| reject-report.json | `4f44a5f77f943804cf0536c35a4fdee46905dba6036f108fe0ab00bb58ea9930` |
+
+Canonical fixture hợp lệ không đổi bytes; manifest đổi so với evidence cũ vì
+hash implementation đã đổi. Không dùng manifest cũ làm evidence bản sửa.
+Không có kiểm tra được yêu cầu nào bị bỏ hoặc bị chặn. Không chạy lại Android/
+Gradle/instrumentation hay remote CI trong lần sửa tooling local này; kết quả cũ
+không đại diện cho bản sửa mới. Source gate/checksum/approval binding, fixture
+isolation, stableId, canonical contract, userdata và runtime Android không đổi.
+Phạm vi vẫn **core pipeline + reviewed-jsonl-v1**; native adapters không được
+bổ sung. Việc xác minh record key thực sự tồn tại/nội dung đúng vẫn cần QA nguồn;
+nhập nguồn thật, contract acceptance và AC-12 vẫn **PENDING/BLOCKED**.
+Không đánh dấu task Done chỉ vì tests pass.

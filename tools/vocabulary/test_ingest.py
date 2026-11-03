@@ -168,6 +168,96 @@ class IngestionTests(unittest.TestCase):
         self.assertEqual(before['identityRegistry'], after['identityRegistry'])
         self.assertTrue((out / 'normalization.json').stat().st_size > 4)
 
+    def test_review_r1_provenance_requires_nonblank_record_key(self):
+        for number, suffix in enumerate(('', '    ', '\u00a0\t')):
+            with self.subTest(suffix=suffix):
+                rows = copy.deepcopy(self.rows)
+                ref = rows[0]['provenance'][0]
+                ref['locator'] = ref['locator'].split('#', 1)[0] + '#' + suffix
+                self.records(rows)
+                code, out = self.run_pipeline(f'empty-key-{number}')
+                self.assertEqual(code, 1)
+                report = self.report(out)
+                rejection = next(r for r in report['rejects'] if r['field'] == 'provenance[0].locator')
+                self.assertEqual(rejection['locator'], self.config['input'] + '#line=1')
+                self.assertEqual(rejection['stage'], 'mapping')
+                self.assertEqual(rejection['reason'], 'MISSING_PROVENANCE')
+                self.assertEqual(report['counts'], {'read': 4, 'accepted': 3, 'rejected': 1})
+                self.assertFalse((out / 'canonical-catalog.json').exists())
+                self.assertFalse((out / 'manifest.json').exists())
+
+    def test_review_r1_valid_shared_component_locators_remain_supported(self):
+        # Multiple senses may cite the same reviewed component record. There is
+        # deliberately no global locator uniqueness requirement.
+        for row in self.rows:
+            for ref in row['provenance']:
+                ref['locator'] = ref['locator'].split('#', 1)[0] + '#shared-reviewed-key'
+        self.records()
+        code, out = self.run_pipeline('shared-keys')
+        self.assertEqual(code, 0)
+        self.assertEqual(self.report(out)['counts'], {'read': 4, 'accepted': 4, 'rejected': 0})
+
+    def test_review_r2_bad_types_are_record_rejects_and_scanning_continues(self):
+        cases = (
+            ('sourceId', lambda r: r.update(sourceId=[])),
+            ('provenance[0].component', lambda r: r['provenance'][0].update(component=[])),
+            ('provenance[0].sourceId', lambda r: r['provenance'][0].update(sourceId=[])),
+        )
+        for number, (field, mutate) in enumerate(cases):
+            with self.subTest(field=field):
+                rows = copy.deepcopy(self.rows)
+                mutate(rows[0])
+                rows[0]['locator'] = []
+                # A later bad row must be diagnosed too; remaining valid rows
+                # still count as accepted although strict batch prevents publish.
+                rows[2]['pos'] = 'unsupported'
+                self.records(rows)
+                code, out = self.run_pipeline(f'bad-type-{number}')
+                self.assertEqual(code, 1)
+                report = self.report(out)
+                self.assertEqual(report['counts'], {'read': 4, 'accepted': 2, 'rejected': 2})
+                self.assertEqual(report['sourceFailures'], [])
+                rejection = next(r for r in report['rejects'] if r['field'] == field)
+                self.assertEqual(rejection['reason'], 'INVALID_FIELD_TYPE')
+                self.assertEqual(rejection['locator'], self.config['input'] + '#line=1')
+                self.assertEqual(rejection['stage'], 'mapping')
+                self.assertTrue(any(r['reason'] == 'UNSUPPORTED_POS' for r in report['rejects']))
+                self.assertEqual(len({r['locator'] for r in report['rejects']}), 2)
+                self.assertFalse((out / 'canonical-catalog.json').exists())
+                self.assertFalse((out / 'manifest.json').exists())
+
+    def test_review_r2_invalid_row_locators_use_file_line_fallback(self):
+        for number, value in enumerate((None, '', '   ', {}, [], 12)):
+            with self.subTest(locator=value):
+                rows = copy.deepcopy(self.rows)
+                rows[0].update(locator=value, sourceId=[])
+                self.records(rows)
+                code, out = self.run_pipeline(f'bad-locator-{number}')
+                self.assertEqual(code, 1)
+                report = self.report(out)
+                self.assertEqual(report['counts'], {'read': 4, 'accepted': 3, 'rejected': 1})
+                self.assertTrue(report['rejects'])
+                self.assertTrue(all(r['locator'] == self.config['input'] + '#line=1'
+                                    and r['field'] and r['reason'] and r['stage'] == 'mapping'
+                                    for r in report['rejects']))
+
+    def test_review_r2_multiple_bad_records_have_reconcilable_counts(self):
+        self.rows[0]['sourceId'] = []
+        self.rows[1]['provenance'][0]['component'] = []
+        self.rows[2]['provenance'][0]['sourceId'] = []
+        self.records()
+        code, out = self.run_pipeline('three-bad-records')
+        self.assertEqual(code, 1)
+        report = self.report(out)
+        self.assertEqual(report['counts'], {'read': 4, 'accepted': 1, 'rejected': 3})
+        self.assertEqual(report['sourceFailures'], [])
+        self.assertEqual({r['locator'] for r in report['rejects']}, {r['locator'] for r in self.rows[:3]})
+        self.assertEqual({r['field'] for r in report['rejects'] if r['reason'] == 'INVALID_FIELD_TYPE'},
+                         {'sourceId', 'provenance[0].component', 'provenance[0].sourceId'})
+        self.assertTrue(all(r['stage'] == 'mapping' for r in report['rejects']))
+        self.assertFalse((out / 'canonical-catalog.json').exists())
+        self.assertFalse((out / 'manifest.json').exists())
+
     def test_ing09_conflicts_quarantine_all_and_retired_preserved(self):
         self.records(self.rows + [self.rows[0]])
         _, out = self.run_pipeline('duplicate')

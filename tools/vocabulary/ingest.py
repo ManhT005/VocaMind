@@ -155,7 +155,8 @@ def run(config_path, output, *, fixture=False, dry_run=False, root=ROOT):
         candidates = []
         for line_no, line in enumerate(text.splitlines(), 1):
             counts['read'] += 1
-            locator = f'{config["input"]}#line={line_no}'
+            line_locator = f'{config["input"]}#line={line_no}'
+            locator = line_locator
             before = len(rejects)
             stage = 'parse'
             try:
@@ -165,14 +166,57 @@ def run(config_path, output, *, fixture=False, dry_run=False, root=ROOT):
                 reject(locator, 'INVALID_PARSE', None, str(exc))
                 continue
             stage = 'mapping'
-            locator = row.get('locator', locator)
-            sid = row.get('sourceId')
+            row_locator = row.get('locator', line_locator)
+            if isinstance(row_locator, str) and contract.clean_text(row_locator):
+                locator = row_locator
+            else:
+                reject(line_locator, 'INVALID_FIELD_TYPE' if not isinstance(row_locator, str)
+                       else 'MISSING_FIELD', 'locator', 'Nonblank string locator required')
+            # Never use an unvalidated JSON value as a dict key, set member or
+            # sort key. Bad fields belong in record diagnostics, not batch errors.
+            sid = row.get('sourceId') if isinstance(row.get('sourceId'), str) else None
             binding = binding_map.get(sid, {})
             snap = binding.get('snapshotId')
             fields = ('lemma', 'pos', 'meaningVi', 'exampleEn', 'exampleVi', 'sourceId')
             for field in fields:
-                if not isinstance(row.get(field), str) or not contract.clean_text(row[field]):
+                if field in row and not isinstance(row[field], str):
+                    reject(locator, 'INVALID_FIELD_TYPE', field, 'String required', sid, snap)
+                elif field not in row or not contract.clean_text(row[field]):
                     reject(locator, 'MISSING_FIELD', field, 'Nonblank string required', sid, snap)
+            refs = row.get('provenance', [])
+            needed = {'lexical', 'meaningVi', 'examplePair'} | ({'ipa'} if row.get('ipa') is not None else set())
+            if not isinstance(refs, list):
+                reject(locator, 'INVALID_FIELD_TYPE', 'provenance', 'Array required', sid, snap)
+                refs = []
+            components = set()
+            for ref_no, ref in enumerate(refs):
+                field = f'provenance[{ref_no}]'
+                if not isinstance(ref, dict):
+                    reject(locator, 'INVALID_FIELD_TYPE', field, 'Object required', sid, snap)
+                    continue
+                component = ref.get('component')
+                if not isinstance(component, str):
+                    reject(locator, 'INVALID_FIELD_TYPE', field + '.component', 'String required', sid, snap)
+                else:
+                    components.add(component)
+                ref_sid = ref.get('sourceId')
+                if not isinstance(ref_sid, str):
+                    reject(locator, 'INVALID_FIELD_TYPE', field + '.sourceId', 'String required', sid, snap)
+                    mapped = None
+                else:
+                    mapped = binding_map.get(ref_sid)
+                    if mapped is None:
+                        reject(locator, 'INVALID_SOURCE_REFERENCE', field + '.sourceId', 'Unmapped component source', sid, snap)
+                ref_locator = ref.get('locator')
+                if not isinstance(ref_locator, str):
+                    reject(line_locator, 'INVALID_FIELD_TYPE', field + '.locator', 'String required', sid, snap)
+                elif mapped is not None:
+                    artifact, separator, record_key = ref_locator.partition('#')
+                    if artifact != mapped['artifact'] or not separator or not contract.clean_text(record_key):
+                        reject(line_locator, 'MISSING_PROVENANCE', field + '.locator',
+                               'Use mapped artifact#nonblank-record-key', sid, snap)
+            if not needed <= components:
+                reject(locator, 'MISSING_PROVENANCE', 'provenance', 'Required component coverage missing', sid, snap)
             if len(rejects) != before:
                 continue
             if row['pos'] not in POS:
@@ -194,20 +238,6 @@ def run(config_path, output, *, fixture=False, dry_run=False, root=ROOT):
                 continue
             if sid not in binding_map:
                 reject(locator, 'INVALID_SOURCE_REFERENCE', 'sourceId', 'Unmapped source', sid, snap)
-                continue
-            refs = row.get('provenance', [])
-            needed = {'lexical', 'meaningVi', 'examplePair'} | ({'ipa'} if row.get('ipa') is not None else set())
-            if not isinstance(refs, list) or not all(isinstance(r, dict) for r in refs):
-                refs = []
-            if not needed <= {r.get('component') for r in refs}:
-                reject(locator, 'MISSING_PROVENANCE', 'provenance', 'Required component coverage missing', sid, snap)
-            for ref in refs:
-                mapped = binding_map.get(ref.get('sourceId'))
-                if mapped is None:
-                    reject(locator, 'INVALID_SOURCE_REFERENCE', 'provenance.sourceId', 'Unmapped component source', sid, snap)
-                elif not isinstance(ref.get('locator'), str) or not ref['locator'].startswith(mapped['artifact'] + '#'):
-                    reject(locator, 'MISSING_PROVENANCE', 'provenance.locator', 'Use mapped artifact#stable-record-key', sid, snap)
-            if len(rejects) != before:
                 continue
             entry = {'id': eid, 'lemma': row['lemma'], 'normalizedLemma': contract.normalize_lemma(row['lemma']),
                      'pos': POS[row['pos']], 'senseIndex': index, 'meaningVi': row['meaningVi'],

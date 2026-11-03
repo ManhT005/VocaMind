@@ -66,9 +66,13 @@ Each JSONL line is an object with lemma, pos, senseIndex, meaningVi, exampleEn,
 exampleVi, nullable/omitted ipa, sourceId, provenance and a stable `locator`.
 `sourceId` uses canonicalId. Provenance follows canonical component/sourceId/locator;
 each locator starts with the mapped `artifact#` followed by a stable source record
-key. Keep edition/extraction/sense or EN/VI sentence IDs, authors, licenses and
+key. The key must be nonblank under contract T1 normalization; `artifact#` and
+`artifact#   ` are rejected. Valid locators can be shared by records/components;
+this check does not prove the key exists in the source or replace content QA.
+Keep edition/extraction/sense or EN/VI sentence IDs, authors, licenses and
 pair links in the raw artifact and attribution notice. A physical line locator
-is used only when parsing fails; it never allocates identity.
+identifies parse/locator errors and is the fallback for invalid row locators;
+it never allocates identity.
 
 POS accepts all canonical enum values and explicit aliases n/n./NOUN, v/v./VERB,
 adj/adj., adv/adv. Unknown labels are rejected; `other` must be explicitly reviewed.
@@ -93,6 +97,10 @@ reasons may refer to one row; read counts physical JSONL lines, accepted counts
 mapped nonconflicting records, rejected = read - accepted. Duplicate identity
 claims reject **all** claimants, including identical duplicates. No first row wins.
 Source failures (including INVALID_ENCODING) are separate from record rejects.
+Malformed field types are record-level `INVALID_FIELD_TYPE` rejects, with indexed
+fields such as `provenance[0].sourceId`; scanning continues through later lines.
+Invalid row locators use `input-path#line=N` for diagnostics. Malformed provenance
+locators always report that physical input line and the specific reference field.
 Stable record reasons: INVALID_PARSE, UNSUPPORTED_POS, MISSING_FIELD,
 UNRESOLVED_SENSE, IDENTITY_CONFLICT, MISSING_PROVENANCE,
 INVALID_SOURCE_REFERENCE, CANONICAL_VIOLATION. Final validator errors preserve
