@@ -19,10 +19,17 @@ final class PackWordAdapter extends ListAdapter<StudyItem, PackWordAdapter.Holde
             return a.getVocabulary().stableId.equals(b.getVocabulary().stableId);
         }
         @Override public boolean areContentsTheSame(@NonNull StudyItem a, @NonNull StudyItem b) {
-            // Immutable domain snapshots have no value equality; always rebind changed snapshots.
-            return a == b;
+            com.vocamind.app.domain.catalog.CatalogVocabulary x = a.getVocabulary(), y = b.getVocabulary();
+            return java.util.Objects.equals(x.lemma, y.lemma)
+                    && java.util.Objects.equals(x.pos, y.pos)
+                    && java.util.Objects.equals(x.meaningVi, y.meaningVi)
+                    && java.util.Objects.equals(x.ipa, y.ipa)
+                    && statusKey(a.getProgress()) == statusKey(b.getProgress());
         }
     };
+    private static int statusKey(WordProgress progress) {
+        return progress == null || progress.getLearnedAtEpochMillis() == null ? -1 : progress.getBox();
+    }
     private final Consumer<String> click;
     PackWordAdapter(Consumer<String> click) {
         super(DIFF);
