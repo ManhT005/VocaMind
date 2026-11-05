@@ -55,4 +55,5 @@ Use lowercase kebab-case filenames for new documentation. Put task plans in
 validation records separate from the current setup and foundation guides.
 
 [Project README](../README.md)
+
 - [VOCAB-01 validation và handoff](vocab-01-validation.md)
