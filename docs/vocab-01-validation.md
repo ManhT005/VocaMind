@@ -11,7 +11,20 @@ Fetch origin thành công. Tạo feature/vocab-01-vocabulary-list từ develop m
 
 **SHA code/tests đã kiểm thử: b09d08fa6f2f4da2a98d460abfa57e4de39b091e.**
 Commit tài liệu/evidence sau đó không thay đổi code/tests.
-PACK-02 chưa merge: khi tích hợp cần giữ cả refresh generation và mutation guard của PACK-02 trong AsyncListViewModel, cùng thay đổi Factory/PackDetailFragment của hai task.
+### Lưu ý tích hợp PACK-02
+
+Theo kết quả mô phỏng ghép do reviewer cung cấp, với nhánh feature/pack-02-activation tại 0512417 có conflict ở:
+
+- app/src/main/java/com/vocamind/app/feature/packs/AsyncListViewModel.java
+- app/src/main/java/com/vocamind/app/feature/packs/PackDetailFragment.java
+- app/src/main/res/values/strings.xml
+- docs/README.md
+
+PACK-02 chưa nằm trong develop đã fetch ở baseline trên. Đây là lưu ý tích hợp giữa hai feature branches, không phải conflict hiện tại của VOCAB-01 với develop. Lượt cập nhật tài liệu này không thực hiện merge hoặc chạy lại mô phỏng.
+
+Nhánh merge sau phải giữ generation/refresh và mutation/write guard của PACK-02; đồng thời giữ PackWordAdapter, row navigation, reload và strings của VOCAB-01. Không chọn toàn bộ một phía để giải quyết conflict. docs/README.md cần giữ liên kết tài liệu của cả hai task.
+
+PacksViewModelFactory được Git auto-merge trong mô phỏng nhưng vẫn cần kiểm tra cả hai hành vi sau tích hợp: activate/pause và reconcile sau lỗi ghi của PACK-02; browsing read-only, missing arguments, progress reload và navigation stableId của VOCAB-01. Chạy lại tests của cả hai feature và full unit/build/lint trên SHA tích hợp; evidence hiện tại chỉ áp dụng cho SHA VOCAB-01 đã ghi, chưa xác minh tổ hợp hai feature.
 
 ## Triển khai / quyết định
 
