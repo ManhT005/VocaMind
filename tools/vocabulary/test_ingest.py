@@ -45,6 +45,112 @@ class IngestionTests(unittest.TestCase):
     def report(self, output):
         return ingest.contract.load_json(output / 'reject-report.json')
 
+    def enable_reference_checks(self):
+        self.config['sources'][0]['referenceAdapter'] = 'reviewed-jsonl-v1'
+        binding = self.config['sources'][1]
+        binding['referenceAdapter'] = 'component-jsonl-v1'
+        raw = b''.join(json.dumps({'key': r['locator'], 'component': 'examplePair',
+                                  'exampleEn': r['exampleEn'], 'exampleVi': r['exampleVi']},
+                                 ensure_ascii=False).encode('utf-8') + b'\n' for r in self.rows)
+        (self.root / binding['artifact']).write_bytes(raw)
+        binding['sha256'] = binding['metadata']['snapshotSha256'] = ingest.digest(raw)
+
+    def test_verified_reference_keys_content_and_shared_locators(self):
+        self.enable_reference_checks()
+        self.assertEqual(self.run_pipeline('verified')[0], 0)
+        self.rows[0]['provenance'][2]['locator'] += '-missing'
+        self.rows[1]['exampleEn'] = 'Altered text with valid source key.'
+        self.records()
+        code, out = self.run_pipeline('bad-reference')
+        self.assertEqual(code, 1)
+        report = self.report(out)
+        self.assertEqual(report['counts'], {'read': 4, 'accepted': 2, 'rejected': 2})
+        self.assertEqual({r['reason'] for r in report['rejects']},
+                         {'PROVENANCE_KEY_NOT_FOUND', 'PROVENANCE_CONTENT_MISMATCH'})
+        self.assertTrue(all(r['field'] == 'provenance[2].locator' and r['stage'] == 'mapping'
+                            and '#line=' in r['locator'] for r in report['rejects']))
+        self.assertFalse((out / 'manifest.json').exists())
+
+    def test_reference_adapters_only_after_all_gates(self):
+        self.enable_reference_checks()
+        self.config['fixtureOnly'] = False
+        self.config.update(sourceRegistry=self.relative + '/registry.json',
+                           inventory=self.relative + '/inventory.json')
+        self.save('registry.json', {})
+        self.save('inventory.json', {})
+        with patch.object(ingest, 'audit_eligible'), patch.object(ingest, 'verify_snapshot'), \
+                patch.object(ingest, 'authorize', side_effect=ValueError('hold')), \
+                patch.object(ingest, 'read_index', side_effect=AssertionError('Must not parse')) as reader:
+            self.assertEqual(self.run_pipeline('hold-reference', fixture=False)[0], 1)
+            reader.assert_not_called()
+
+    def test_native_reference_adapters(self):
+        from ingestion_refs import read_index, matches
+        for adapter, raw in (
+                ('ngsl-csv-v1', b'Lemma,SFI Rank\nbook,1\n'),
+                ('tsl-csv-v1', 'Word,TSL Rank\ncaf\u00e9,1\n'.encode('cp1252'))):
+            index = read_index(raw, adapter, ingest.contract)
+            self.assertEqual(set(index), {('rank=1', 'lexical')})
+            self.assertNotIn(('rank=1', 'meaningVi'), index)
+        raw = json.dumps({'word': 'book', 'pos': 'noun', 'lang_code': 'en',
+                          'senses': [{'glosses': ['cuốn sách']}],
+                          'sounds': [{'ipa': '/bʊk/'}]}, ensure_ascii=False).encode()
+        index = read_index(raw, 'kaikki-jsonl-v1', ingest.contract)
+        self.assertTrue(matches(index[('line=1;sense=1', 'meaningVi')][0], self.rows[0],
+                                ingest.contract, ingest.POS))
+        self.assertIn(('line=1;sound=1', 'ipa'), index)
+        with self.assertRaises(ValueError):
+            read_index(b'Lemma,SFI Rank\nbook,1\nbook,1\n', 'ngsl-csv-v1', ingest.contract)
+        with self.assertRaises(ValueError):
+            read_index(b'wrong,headers\nbook,1\n', 'ngsl-csv-v1', ingest.contract)
+
+    def test_native_components_through_pipeline(self):
+        self.enable_reference_checks()
+        for sid, filename, adapter, raw in (
+                ('fixture-ngsl-v1', 'ngsl.csv', 'ngsl-csv-v1',
+                 b'Lemma,SFI Rank\nbook,1\nbank,2\nairport,3\n'),
+                ('fixture-kaikki-v1', 'kaikki.jsonl', 'kaikki-jsonl-v1',
+                 b''.join(json.dumps({'word': r['lemma'], 'pos': r['pos'], 'lang_code': 'en',
+                                      'senses': [{'glosses': [r['meaningVi']]}]},
+                                     ensure_ascii=False).encode() + b'\n' for r in self.rows))):
+            binding = copy.deepcopy(self.config['sources'][0])
+            binding.update(canonicalId=sid, artifact=self.relative + '/' + filename,
+                           referenceAdapter=adapter, sha256=ingest.digest(raw))
+            binding['metadata'].update(id=sid, snapshotSha256=ingest.digest(raw))
+            (self.fixtures / filename).write_bytes(raw)
+            self.config['sources'].append(binding)
+        for number, row in enumerate(self.rows, 1):
+            row['sourceId'] = 'fixture-ngsl-v1'
+            row['provenance'][0].update(sourceId='fixture-ngsl-v1',
+                locator=self.relative + '/ngsl.csv#rank=' + str({'book': 1, 'bank': 2, 'airport': 3}[row['lemma']]))
+            row['provenance'][1].update(sourceId='fixture-kaikki-v1',
+                locator=self.relative + f'/kaikki.jsonl#line={number};sense=1')
+        self.records()
+        code, out = self.run_pipeline('native-components')
+        self.assertEqual(code, 0)
+        manifest = ingest.contract.load_json(out / 'manifest.json')
+        self.assertTrue(manifest['provenanceContentVerified'])
+        self.assertEqual(manifest['counts'], {'read': 4, 'accepted': 4, 'rejected': 0})
+        # One wordlist rank can back more than one reviewed sense/POS.
+        self.assertEqual(self.rows[0]['provenance'][0], self.rows[1]['provenance'][0])
+
+    def test_tatoeba_reference_pair_ids_credit_and_links(self):
+        from ingestion_refs import read_index
+        pair = {'linked': True,
+                'en': {'id': 1, 'text': 'Book a room.', 'author': 'Fixture EN', 'license': 'FIXTURE-ONLY'},
+                'vi': {'id': 2, 'text': 'Đặt phòng.', 'author': 'Fixture VI', 'license': 'FIXTURE-ONLY'}}
+        def read(value):
+            return read_index(json.dumps(value, ensure_ascii=False).encode(),
+                              'tatoeba-linked-jsonl-v1', ingest.contract)
+        self.assertEqual(read(pair)[('en=1;vi=2', 'examplePair')],
+                         [{'exampleEn': 'Book a room.', 'exampleVi': 'Đặt phòng.'}])
+        for target, field, value in ((None, 'linked', False), ('vi', 'author', ''),
+                                     ('en', 'license', None), ('en', 'id', True)):
+            bad = copy.deepcopy(pair)
+            (bad if target is None else bad[target])[field] = value
+            with self.assertRaises(ValueError):
+                read(bad)
+
     def test_ing01_02_07_12_reproducible_offline_multisource(self):
         with patch.object(socket.socket, 'connect', side_effect=AssertionError('Network forbidden')):
             a, first = self.run_pipeline('one')
@@ -99,6 +205,7 @@ class IngestionTests(unittest.TestCase):
             self.assertEqual(self.run_pipeline('inventory', fixture=False)[0], 1)
 
     def test_ing01_production_gate_integration_with_temporary_synthetic_approval(self):
+        self.enable_reference_checks()
         helper = test_source_gate.SourceGateTest()
         helper.setUp()
         self.addCleanup(helper.doCleanups)
@@ -122,6 +229,12 @@ class IngestionTests(unittest.TestCase):
         sources = ingest.contract.load_json(out / 'canonical-catalog.json')['sources']
         self.assertEqual({s['approvedBy'] for s in sources}, {'synthetic-test-reviewer'})
         self.assertTrue(all(s['attributionText'] == 'Synthetic test attribution' for s in sources))
+        adapter = self.config['sources'][1].pop('referenceAdapter')
+        code, out = self.run_pipeline('missing-production-reference-adapter', fixture=False)
+        self.assertEqual(code, 1)
+        self.assertEqual(self.report(out)['counts']['read'], 0)
+        self.assertEqual(self.report(out)['sourceFailures'][0]['stage'], 'references')
+        self.config['sources'][1]['referenceAdapter'] = adapter
         first['review']['snapshotSha256'] = '0' * 64
         self.save('registry.json', helper.document)
         # Re-freezing does not confer approval; digest binding still blocks it.

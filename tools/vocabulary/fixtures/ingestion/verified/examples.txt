@@ -1,0 +1,4 @@
+{"key": "book/noun/1", "component": "examplePair", "exampleEn": "I put the book on the desk.", "exampleVi": "Tôi đặt cuốn sách lên bàn."}
+{"key": "book/verb/1", "component": "examplePair", "exampleEn": "We will book a room tomorrow.", "exampleVi": "Chúng tôi sẽ đặt phòng vào ngày mai."}
+{"key": "bank/noun/1", "component": "examplePair", "exampleEn": "She works at a local bank.", "exampleVi": "Cô ấy làm việc tại một ngân hàng địa phương."}
+{"key": "airport/noun/1", "component": "examplePair", "exampleEn": "They arrived at the airport early.", "exampleVi": "Họ đến sân bay sớm."}

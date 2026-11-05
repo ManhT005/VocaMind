@@ -249,3 +249,59 @@ Không thay gate/checksum/approval binding, stableId, canonical contract, raw/ev
 userdata hoặc runtime Android. Phạm vi vẫn **core pipeline + reviewed-jsonl-v1**;
 nhập nguồn thật, native adapter scope/contract acceptance và AC-12 vẫn pending.
 Không tự đánh dấu task Done hoặc đề nghị approve/merge từ kết quả fixture.
+
+## Follow-up và tích hợp develop — 2026-11-05
+
+Mục này là evidence mới; các section ngày 03/11 phía trên là lịch sử, không thay
+bằng kết quả mới. Working tree ban đầu sạch tại b0ba6a6. Đã fetch và merge develop
+82d438c qua merge commit c35e480; conflict duy nhất docs/README.md được giải bằng
+cách giữ cả liên kết ingestion và DAO foundation, không bỏ thay đổi develop.
+
+Bổ sung ingestion_refs.py: kiểm tra record key tồn tại và nội dung từng component
+trong artifact đã gate/checksum. Production bắt buộc referenceAdapter; fixture cũ
+vẫn chạy structural mode để giữ regression lịch sử. Manifest ghi rõ mức kiểm tra.
+Bổ sung readers NGSL CSV UTF-8, TSL CSV cp1252, Kaikki English JSONL từ edition Việt,
+component/reviewed JSONL và Tatoeba linked-pair export JSONL. Đây là component readers
+cho reviewed staging, không tự chọn sense, join bản dịch hoặc cấp identity. Tatoeba
+upstream TSV extraction chưa triển khai; không tuyên bố đã import native dump thật.
+Source gate, approval digest, fixture isolation và canonical contract không đổi.
+
+Fixture verified/ là snapshot mới; raw fixture cũ, registry và baseline giữ nguyên.
+CLI verify_ingestion.py chạy lại hai lượt và so byte đủ 4 file, không ghi đè output.
+INGESTION.md mô tả format/key, reason, ví dụ, lệnh audit và phương án custody/baseline
+cụ thể để review; không tự ghi nhận acceptance hoặc người phê duyệt.
+
+Kiểm chứng thực chạy trên Python 3.14.4/jsonschema 4.19.2 trong Ubuntu WSL2:
+
+- Vocabulary: 71 tests, gồm 25 ingestion methods; contract: 39; catalog: 5.
+  Tổng 115 pass, không failure/error/skip. Regression production thiếu reference
+  adapter được bổ sung sau lượt full suite và chạy lại cả 25 ingestion methods: pass.
+- Hai CLI verified fixture: so từng byte cả 4 file giống nhau. Development validator
+  exit 0; release exit 1 đúng mong đợi. Credit consistency và frozen inventory pass.
+- Cả 7 nguồn thật, mỗi nguồn import và dry-run: 14 lần gate failure, read=0,
+  không canonical/manifest. eligibleSourceCount=0, raw declared rows=4059 không phải
+  số từ đủ điều kiện học hoặc release.
+- Gradle testDebugUnitTest assembleDebug assembleDebugAndroidTest: BUILD SUCCESSFUL;
+  158 unit tests, 0 failure/error/skip, có chạy test task và compile sau merge.
+  Build instrumentation APK không có nghĩa đã chạy device/emulator instrumentation.
+- git diff --check pass; git ls-files -u rỗng sau giải conflict.
+
+Evidence mới: docs/evidence/voc-data-03/followup-20261105/ chứa summary với SHA-256
+LF code/test, môi trường, counts, source status và comparison.json. Log chi tiết local
+ở build/vocabulary-ingestion/merge-followup-20261105/ và followup-proof-20261105/.
+Evidence được tạo trước commit implementation, nhận diện bằng code hashes; không gán
+kết quả cho merge commit chỉ chứa develop. Remote CI được kiểm tra riêng sau push.
+
+SHA-256 cả hai lượt:
+
+- canonical-catalog.json: 329091f45d888d94a64ad1f56a776a5b66497f70b220ae6fb9b86cc43ca9b671
+- manifest.json: fd3ab8a6c01104b8a3d44d224024313bf125ce4fa3c0c1b0834062f767057e98
+- normalization.json: 37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+- reject-report.json: 4f44a5f77f943804cf0536c35a4fdee46905dba6036f108fe0ab00bb58ea9930
+
+Giới hạn còn lại: production staging phải là data artifact được phê duyệt, các nguồn
+hiện hold/exclude vẫn chặn; cần raw corpus/metadata/links và sign-off theo từng nguồn.
+Kiểm tra key/content chứng minh khớp bytes, không chứng minh dịch đúng hoặc license
+hợp lệ ngoài hồ sơ gate. Contract acceptance, custody và baseline phát hành còn chờ
+quyết định; semantic QA thuộc VOC-DATA-04, asset build thuộc VOC-DATA-06. Import nguồn
+thật và AC-12 vẫn pending. Không đánh dấu task Done hoặc tự merge PR.

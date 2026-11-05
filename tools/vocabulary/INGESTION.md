@@ -35,8 +35,9 @@ Operational timestamps are not part of deterministic artifacts.
 `reviewed-jsonl-v1` is an **enriched, reviewed staging format**, not a native
 NGSL, TSL, Kaikki or Tatoeba parser. Only explicit UTF-8 is supported; no encoding
 guessing, scraping, language inference, sense merging or invented translations.
-Native CSV/extraction/link adapters remain pending source input and scope review.
-In particular TSL cp1252 raw cannot be passed directly to this adapter.
+Native component readers described below resolve NGSL/TSL/Kaikki evidence;
+the orchestration input remains reviewed staging JSONL. In particular TSL
+cp1252 raw cannot be passed as the orchestration input.
 
 The checked-in config is a runnable example. It selects tool/adapter/schema/content
 versions, encoding, input artifact, identity registry array, optional full canonical
@@ -74,7 +75,9 @@ whether written literally in UTF-8 or as JSON escapes; they never split records.
 each locator starts with the mapped `artifact#` followed by a stable source record
 key. The key must be nonblank under contract T1 normalization; `artifact#` and
 `artifact#   ` are rejected. Valid locators can be shared by records/components;
-this check does not prove the key exists in the source or replace content QA.
+legacy fixture mode checks only locator structure. Production requires
+`referenceAdapter` for every mapping and verifies both key existence and component
+content. This mechanical comparison does not replace content QA.
 Keep edition/extraction/sense or EN/VI sentence IDs, authors, licenses and
 pair links in the raw artifact and attribution notice. A physical line locator
 identifies parse/locator errors and is the fallback for invalid row locators;
@@ -122,3 +125,73 @@ Tests are automatically included by existing CI `tools/vocabulary/test_*.py`
 discovery. Run all vocabulary, contract and catalog suites as in their READMEs.
 `--release` against fixture output must fail. A development pass does not prove
 content QA, 150 real words, approved rights or Android asset readiness.
+
+## Verified component adapters (2026-11-05)
+
+Run the new isolated example (the original fixtures are preserved):
+
+```sh
+python3 tools/vocabulary/ingest.py --fixture --config tools/vocabulary/fixtures/ingestion/verified/config.json --output build/vocabulary-ingestion/verified-a
+python3 tools/vocabulary/verify_ingestion.py --fixture --config tools/vocabulary/fixtures/ingestion/verified/config.json --output build/vocabulary-ingestion/proof-a
+```
+
+Each source binding may select `referenceAdapter`. It is mandatory outside fixture
+mode. All source gates and corpus checksums pass before any adapter parses records;
+dry-run parses none. The artifact is rehashed before reference parsing. No implicit
+fallback is used for unsupported formats or encodings.
+
+| referenceAdapter | Bytes / key after artifact# | Evidence compared |
+| --- | --- | --- |
+| reviewed-jsonl-v1 | UTF-8 JSONL / row.locator | lexical lemma/POS, meaningVi, example pair, IPA |
+| component-jsonl-v1 | UTF-8 JSONL / key | Explicit component and its matching canonical text fields |
+| ngsl-csv-v1 | UTF-8 with optional BOM; Lemma,SFI Rank / rank=N | Lexical lemma only |
+| tsl-csv-v1 | cp1252; Word,TSL Rank / rank=N | Lexical lemma only |
+| kaikki-jsonl-v1 | UTF-8 English entries from Vietnamese edition / line=N;sense=M or line=N;sound=M | Lemma/POS, one exact gloss or IPA; ordinals are 1-based source positions |
+| tatoeba-linked-jsonl-v1 | UTF-8 reviewed pair export / en=N;vi=M | Both sentence texts, positive IDs, linked=true and nonblank author/license on each sentence |
+
+Component JSONL records contain `key`, `component` and the fields for that component:
+lexical: lemma/pos; meaningVi: meaningVi; examplePair: exampleEn/exampleVi; ipa: ipa.
+Tatoeba pair export uses `{linked:true,en:{id,text,author,license},vi:{...}}`, the
+existing research tool's explicit pair structure. It is **not** an adapter for
+upstream sentences/links TSV files. Link/credit extraction into that export still
+needs a reviewed snapshot route; author/license values are retained in the bound
+artifact and offline attribution comes from its approved attribution artifact.
+
+Lemma/POS comparison uses the existing contract helpers/aliases; text comparison
+uses T1. Wordlist rank and Kaikki source sense ordinal never allocate senseIndex.
+The reviewed staging must select an already registered sense and provide all
+required components. Wordlists alone cannot produce a canonical learning entry.
+Missing keys produce PROVENANCE_KEY_NOT_FOUND; differing component content produces
+PROVENANCE_CONTENT_MISMATCH with input file/line and indexed provenance field.
+Multiple records/components may share a source key. Strict batch rejection remains.
+Malformed reference artifacts fail at source stage `references` before mapping.
+
+`manifest.provenanceContentVerified` is true only when every mapped artifact was
+indexed. The original structural fixture remains available for old regression
+cases; it reports false and cannot be used in production mode.
+
+## Remaining external inputs and handoff decisions
+
+Obtain the current blockers with existing audited commands:
+
+```sh
+python3 tools/vocabulary/gate_sources.py --snapshot docs/data/snapshot.json --json
+python3 tools/vocabulary/source_gate.py --source ngsl --json
+```
+
+The first command verifies inventory; it does not approve a source. The second
+must fail while NGSL is hold. Repeat with the relevant registry source ID.
+NGSL/TSL need per-snapshot rights/technical review; Kaikki needs corpus, license
+route and credit; Tatoeba needs sentence metadata, authors/licenses, links and
+sign-off. FVDP/audio remain excluded. Capture and approval belong to VOC-DATA-01.
+
+Concrete proposals for contract review (not recorded as accepted): apply existing
+canonical v1.0.0 unchanged; content/ETL proposes sense registry updates with contract
+review; integration stores the first approved canonical envelope plus SHA-256 as
+the release baseline. Until its location and custody are confirmed, pass a reviewed
+baseline explicitly via config, or report baselineCompared=false. Do not invent a
+baseline. Exact same snapshot/config/versions must match all four output files;
+reordered raw bytes change source hash while identity and entry ordering stay fixed.
+Semantic QA is VOC-DATA-04 and asset build is VOC-DATA-06. This task does not write
+catalog.db or app assets. Real import and AC-12 remain pending real approval and QA;
+passing fixture tests never closes those gates.

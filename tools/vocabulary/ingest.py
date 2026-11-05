@@ -14,6 +14,7 @@ import unicodedata
 
 from gate_sources import verify_snapshot
 from source_gate import ROOT, ALIASES, audit_eligible, authorize, require
+from ingestion_refs import read_index, matches
 
 CONTRACT = ROOT / 'docs/data/vocabulary-contract-v1'
 spec = importlib.util.spec_from_file_location('ingestion_contract', CONTRACT / 'validate_contract.py')
@@ -135,6 +136,21 @@ def run(config_path, output, *, fixture=False, dry_run=False, root=ROOT):
             write(output / 'check.json', {'status': 'gate-pass-only', 'fixtureOnly': fixture,
                                          'inputHashes': hashes, 'recordsParsed': 0})
             return 0
+        stage = 'references'
+        reference_indexes = {}
+        for binding in bindings:
+            adapter = binding.get('referenceAdapter')
+            require(fixture or adapter is not None,
+                    'Production mappings require referenceAdapter for content verification')
+            if adapter is not None:
+                try:
+                    reference_raw = load(binding['artifact'], as_json=False)
+                    require(digest(reference_raw) == binding['sha256'],
+                            'Reference artifact changed after gate verification')
+                    reference_indexes[binding['canonicalId']] = read_index(
+                        reference_raw, adapter, contract)
+                except (ValueError, KeyError, TypeError, AttributeError) as exc:
+                    raise ValueError(f"Reference artifact {binding['artifact']}: {exc}") from exc
         stage = 'parse'
         require(config['input'] in {b['artifact'] for b in bindings},
                 'Input must be a checksum-verified mapped corpus artifact')
@@ -220,6 +236,14 @@ def run(config_path, output, *, fixture=False, dry_run=False, root=ROOT):
                     if artifact != mapped['artifact'] or not separator or not contract.clean_text(record_key):
                         reject(line_locator, 'MISSING_PROVENANCE', field + '.locator',
                                'Use mapped artifact#nonblank-record-key', sid, snap)
+                    elif ref_sid in reference_indexes and isinstance(component, str):
+                        evidence = reference_indexes[ref_sid].get((record_key, component), [])
+                        if not evidence:
+                            reject(line_locator, 'PROVENANCE_KEY_NOT_FOUND', field + '.locator',
+                                   'Record key/component absent from verified artifact', sid, snap)
+                        elif not any(matches(item, row, contract, POS) for item in evidence):
+                            reject(line_locator, 'PROVENANCE_CONTENT_MISMATCH', field + '.locator',
+                                   'Component content differs from verified artifact', sid, snap)
             if not needed <= components:
                 reject(locator, 'MISSING_PROVENANCE', 'provenance', 'Required component coverage missing', sid, snap)
             if len(rejects) != before:
@@ -300,7 +324,8 @@ def run(config_path, output, *, fixture=False, dry_run=False, root=ROOT):
         write(output / 'normalization.json', sorted(normalized, key=lambda r: (r['locator'], r['field'])))
         write(output / 'reject-report.json', {'counts': counts, 'rejects': [], 'sourceFailures': []})
         tools = [Path(__file__), CONTRACT / 'validate_contract.py', CONTRACT / 'catalog.schema.json',
-                 Path(__file__).with_name('source_gate.py'), Path(__file__).with_name('gate_sources.py')]
+                 Path(__file__).with_name('source_gate.py'), Path(__file__).with_name('gate_sources.py'),
+                 Path(__file__).with_name('ingestion_refs.py')]
         manifest = {'status': 'success', 'fixtureOnly': fixture, 'toolVersion': VERSION,
                     'adapter': ADAPTER, 'python': platform.python_version(),
                     'unicode': unicodedata.unidata_version,
@@ -308,6 +333,7 @@ def run(config_path, output, *, fixture=False, dry_run=False, root=ROOT):
                     'inputHashes': dict(sorted(hashes.items())),
                     'toolHashes': {p.name: digest(p.read_bytes().replace(b'\r\n', b'\n')) for p in tools},
                     'baselineCompared': previous is not None, 'counts': counts,
+                    'provenanceContentVerified': len(reference_indexes) == len(bindings),
                     'sourceMappings': [{k: b[k] for k in ('registryId', 'snapshotId', 'canonicalId', 'artifact', 'sha256')}
                                        for b in sorted(bindings, key=lambda b: b['canonicalId'])],
                     'outputHashes': {p.name: digest(p.read_bytes()) for p in sorted(output.iterdir())},
@@ -328,7 +354,7 @@ def run(config_path, output, *, fixture=False, dry_run=False, root=ROOT):
                   'sourceFailures': [{'stage': stage,
                                       'reason': 'INVALID_ENCODING' if isinstance(exc, UnicodeError) else
                                                 'GATE_FAILURE' if stage == 'gate' else 'INPUT_FAILURE',
-                                      'message': str(exc)}] if stage in ('input', 'gate', 'parse') else [],
+                                      'message': str(exc)}] if stage in ('input', 'gate', 'parse', 'references') else [],
                   'validationErrors': failures if stage == 'validation' else []})
         print(f'BLOCKED ({stage}): {exc}', file=sys.stderr)
         return 1
