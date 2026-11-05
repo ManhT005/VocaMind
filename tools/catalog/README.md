@@ -1,86 +1,59 @@
-# DATA-01 catalog fixture
+# Canonical catalog integration fixture
 
-This is **synthetic test content authored for this implementation**, not data
-imported from NGSL, Kaikki or Tatoeba, and not a production MVP vocabulary pack.
-No external source license or content approval is claimed. The source record's
-`LicenseRef-Project-Test-Fixture` is a local provenance label, **not** a standard
-license grant or a release approval. Group review and the approved source ledger
-remain required for VOC-DATA-06. Do not distribute this as the final catalog.
+This is synthetic test content, not approved production vocabulary. The single
+input is `docs/data/vocabulary-contract-v1/fixtures/valid/catalog.json`: four
+unique senses, sixteen memberships, nullable IPA, four stable `pack_*` IDs.
+The builder validates the contract before writing, copies attributionText into
+Room, and keeps approval/evidence/provenance in canonical JSON only.
 
-Four original example pairs and four distinct senses are reused in all four
-packs: **4 unique vocabulary IDs, 16 memberships, 4 members per pack**. This
-intentionally makes it impossible to mistake membership count for unique count.
-IPA is null to exercise the nullable data path. No placeholder is stored as IPA.
-
-## Rebuild
-
-From repository root, using the project's JDK 17 and Android SDK:
+## Rebuild and verify
 
 ```bash
-bash ./gradlew :app:compileDebugJavaWithJavac
-python3 tools/catalog/build_fixture.py
-bash ./gradlew :app:testDebugUnitTest :app:assembleDebug :app:assembleDebugAndroidTest
+python -m pip install -r docs/data/vocabulary-contract-v1/requirements-validation.txt
+./gradlew :app:compileDebugJavaWithJavac
+python tools/catalog/build_fixture.py
+python -m unittest discover -s tools/catalog -p 'test_*.py' -v
+./gradlew testDebugUnitTest assembleDebug assembleDebugAndroidTest
 ```
 
-The Python script uses only the standard library and exported Room JSON in
-`app/schemas/com.vocamind.app.data.catalog.CatalogDatabase/1.json`. DDL, indices,
-Room metadata and identity hash come from that compiler output; no example hash
-is embedded. Run twice and compare the metadata SHA-256 to verify repeatability.
-The checked-in asset is needed so normal builds/tests do not depend on Python.
-Regenerate after schema changes; review database version/migration implications.
+DDL, indexes and identity hash come from compiler-exported Room schema `2.json`.
+Do not edit that export or invent the hash. `catalog.metadata.json` records both
+canonical-input and database checksums. Canonical files use LF for reproducible
+checksums across Windows/Linux. Rebuilding twice must produce identical bytes.
+Metadata records the SQLite version because engine versions can change binary
+serialization. CI compares logical SQL dumps across engines and verifies the
+committed file checksum; two builds on the same engine must be byte-identical.
 
-The script writes `app/src/main/assets/database/catalog.db` atomically after
-checking SQLite integrity, foreign keys and English/Vietnamese FTS mapping, and
-writes `catalog.metadata.json` with checksum, version and counts. It operates
-only on build-time assets; it never touches an installed app or userdata.db.
-
-Stable IDs use SHA-256 UTF-8 `lemma_pos_senseIndex`, truncated to 16 lowercase
-hex characters; these lowercase ASCII fixture lemmas use senseIndex **1**.
-This is compatible with the proposed VOC-DATA-02 contract at remote commit
-`feb275cb41e00a500d6f3081306249949ff93037` for the fixture's identity inputs.
-That contract is an implementation candidate awaiting team review; this script
-is not a replacement for its general normalization/identity registry/validator
-or the production ETL. Fixture contentVersion is `1.0.0`, schema version is `1`.
-
-## Runtime boundary
-
-`CatalogProvider` is an application-scoped owner of `CatalogDatabase` and exposes
-only the domain `CatalogRepository`. Inject that interface into use cases and
-ViewModels; do not inject the DAO. Calls block and must run on a worker executor.
-Close the provider when its owning scope is disposed. No main-thread queries are
-enabled, no business write API exists, and database failures are wrapped in
-`CatalogReadException` with the cause retained. Missing IDs return empty values;
-collection results are immutable.
-
-`createFromAsset` copies an asset; it does not enforce SQLite file read-only mode
-or replace an already installed catalog on every launch. This implementation
-provides **business read-only** access. No destructive fallback is configured.
-Catalog upgrades still need the staged validation/swap/rollback workflow; this
-task does not implement that workflow or modify userdata.db.
-
-FTS is a standalone Room `@Fts4` table, populated at asset build time with the
-same integer rowid as VocabularyEntry's hidden SQLite rowid. VocabularyEntry.id
-remains TEXT PRIMARY KEY. There are no runtime writes to either table, so no
-external-content triggers are needed. The fixture MATCH query proves the join;
-DATA-05 owns the complete search contract and performance work.
-
-## Tests
-
-`src/catalogTest` holds 11 shared contract tests. Robolectric runs them using
-native SQLite on API 26 and API 35 (22 executions). The AndroidJUnit4 wrapper
-runs the same contract on a device:
+Python integration tests cover exact row mapping, nullable IPA, deterministic
+build/checksums, integrity/foreign keys, ordering, negative uniqueness, rowid FTS
+joins in English/Vietnamese, invalid-input atomicity and the release gate.
+`src/catalogTest` opens the same generated asset through Room and the repository,
+compares the bundled canonical fixture, checks attribution/checksums and rejects
+duplicate ordering. Robolectric executes this shared contract on API 26 and 35.
+The AndroidJUnit4 wrapper uses the same tests on a device:
 
 ```bash
-bash ./gradlew :app:connectedDebugAndroidTest \
-  -Pandroid.testInstrumentationRunnerArguments.class=com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest
+./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest
 ```
 
-Tests use only the isolated name `catalog-data01-test.db`; cleanup never targets
-`catalog.db` or userdata.db. They cover opening the real asset through Room,
-ordering, missing IDs, nullable IPA, mapping, offline source metadata, MATCH
-English/Vietnamese, rowid joins, integrity, reopen, immutable lists and rejection
-of a deliberately corrupted identity hash without deleting the test copy.
+Building a test APK is not evidence of device execution. The test database is
+`catalog-data01-test.db`; tests never target installed catalog.db or userdata.db.
 
-Robolectric native SQLite validates Room + the actual asset on a host runtime;
-it is not evidence of execution on an emulator/physical device, UI behavior,
-release data licensing, FTS performance or catalog upgrade safety.
+## Runtime and upgrade boundary
+
+CatalogProvider exposes the immutable domain CatalogRepository. Blocking calls
+run on a worker executor; no business write API exists. createFromAsset copies a
+catalog for a new database; it does not refresh an existing installed copy.
+FTS has the same integer rowid as VocabularyEntry; userdata stores only TEXT
+stable IDs, never rowid. Full search behavior/performance remains DATA-05 scope.
+
+Room schema 2 adds attributionText and unique ordering indexes. Version 1 export
+is retained. No destructive fallback or unverified migration is supplied; old
+installed catalogs fail closed. Release history and any real baseline must be
+confirmed by integration owners before distribution. Catalog staging/swap/
+rollback and UserPack/progress preservation tests are still required if version
+1 was distributed. No user data or stable ID is rewritten here.
+
+Source approval, real content QA, quota 150, sense registry custody, published
+baseline location and cross-team acceptance remain release/review gates. See
+`docs/data/vocabulary-contract-v1/REVIEW.md`.

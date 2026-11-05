@@ -103,3 +103,85 @@ as completed attempts.
 No UI, navigation, Gradle dependency, Room schema, DAO or Leitner changes. Review
 by the assigned reviewer and a PR into `develop` remain delivery steps; this local
 implementation does not claim they have occurred.
+
+## Generator test fix — 2026-11-02
+
+Code commit: [`a2048412cbab7d3ef611f22d92d7372d9516de7d`](https://github.com/ManhT005/VocaMind/commit/a2048412cbab7d3ef611f22d92d7372d9516de7d).
+Plan: [quiz-01-fix-plan.md](plans/quiz-01-fix-plan.md).
+Branch: `fix/quiz-01-generator-test`, based on develop
+`fff380127b0808b203165e649e22eaf714027afb`.
+PR: [#16](https://github.com/ManhT005/VocaMind/pull/16).
+
+The earlier verification section records the original QUIZ-01 implementation
+merged by PR #6 (`37f14ca3cdb9086e9960fef988290c0839d5aa3e`); those results are
+historical and are not reused as evidence for this fix.
+
+### Reproduction before the fix
+
+After extracting the unchanged inline fake into a private helper and adding
+REG-01, the following command was actually run against the old selection logic:
+
+```powershell
+.\gradlew.bat :app:testDebugUnitTest --tests 'com.vocamind.app.domain.quiz.QuizDomainTest.seededFakeHandlesFiveIdsWithRepeatedMeaning'
+```
+
+Result: **1 test, 1 failure, 0 skipped**, BUILD FAILED. JUnit XML recorded
+`java.lang.IllegalArgumentException: distinct option IDs and meanings required`
+from `QuizQuestion` via the fake. The pool was READY with five distinct IDs and
+meanings A,A,B,C,D in that fixed order, and target count 5. Sampling all five IDs
+guarantees the old distractor loop encounters duplicate A keys for some targets.
+This was a real failing run, not an assertion that catches the exception.
+
+That diagnostic run used the preinstalled Corretto JDK **22.0.2** before JDK 17
+was available. All post-fix checks below use portable Temurin **17.0.20.1+1**,
+Gradle wrapper **8.9** and the project's existing Android SDK settings.
+No Gradle/SDK versions or dependencies were changed. Portable verification tools
+remain outside the committed change under `.tools/`.
+
+### Fix and regression matrix
+
+The fake remains a private test helper. It seeds `usedMeaningKeys` with the
+correct key, selects only unseen distractor keys from QuizPool and stops at four
+options. It still uses the supplied Random, null guards and EMPTY/INVALID_INPUT
+outcomes. Production source and normalization behavior are unchanged.
+
+| Case | Test | Required behavior |
+| --- | --- | --- |
+| REG-01 | `seededFakeHandlesFiveIdsWithRepeatedMeaning` | 5 IDs, A,A,B,C,D; READY, target/output 5 |
+| REG-02/03 | `seededFakePreservesIdTargetWithRepeatedMeanings` | 7/12 IDs with four meanings; READY, output 7/10 |
+| REG-04/05 | `seededFakeReturnsEmptyForInsufficientPools` | 4 IDs/3 meanings or 3 IDs; EMPTY, zero questions, no session |
+| REG-06 | `seededFakeRepeatsQuestionOrderForSameSeed` | Same repeated-meaning pool and seed yield the same question ID order |
+| REG-07 | `seededFakeRejectsNullInputs` | Null pool or Random yields INVALID_INPUT, including both null and insufficient pool/null Random |
+
+Independent output assertions check exact question count, unique stableIds,
+pool membership/payload, four distinct option IDs and meaningKeys, and exactly
+one correct option whose key/text match the question vocabulary in the pool.
+They do not duplicate the distractor selection algorithm or require different
+questions to have different correct meanings. Existing model/session/result
+and generator contract tests remain in place.
+
+### New verification
+
+```powershell
+.\gradlew.bat :app:testDebugUnitTest --tests 'com.vocamind.app.domain.quiz.*'
+.\gradlew.bat testDebugUnitTest assembleDebug
+git diff --check
+```
+
+- Focused Gradle run: **BUILD SUCCESSFUL**, Quiz JUnit XML `tests=15`,
+  `failures=0`, `errors=0`, `skipped=0` (2026-11-02).
+- Full `testDebugUnitTest assembleDebug`: **BUILD SUCCESSFUL** (1m 9s).
+  Fresh JUnit XML totals: **77 tests, 0 failures, 0 errors, 0 skipped**;
+  Quiz=15, catalog=22, user DB=16, Leitner=24. Debug APK built successfully.
+- `git diff --check`: PASS. Only the test class and Quiz documentation changed.
+- CI is verified on the pushed head via [PR #16 checks](https://github.com/ManhT005/VocaMind/pull/16/checks),
+  separately from these local results; a green plan-commit run is not evidence
+  for this fix. Reviewer Trường has not signed off.
+
+### Remaining scope
+
+This proves the QUIZ-01 test double's contract behavior only. Production sampling,
+option shuffle, full Unicode casefold, semantic distractor quality and correct
+meaning mapping validation remain QUIZ-02; UI/debounce/lifecycle/persistence
+remain QUIZ-03/integration. No emulator is required for this pure domain test fix.
+No acceptance of the complete AC-10 feature or reviewer approval is claimed.

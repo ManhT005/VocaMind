@@ -8,7 +8,7 @@ import com.vocamind.app.data.catalog.entity.*;
 
 /** Physically separate from userdata.db; catalog business API is read-only. */
 @Database(entities = {ContentSource.class, VocabularyEntry.class, VocabularyFts.class,
-        LearningPack.class, PackWord.class}, version = 1, exportSchema = true)
+        LearningPack.class, PackWord.class}, version = 2, exportSchema = true)
 public abstract class CatalogDatabase extends RoomDatabase {
     public static final String ASSET = "database/catalog.db";
     public abstract CatalogDao catalogDao();

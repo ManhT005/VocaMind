@@ -33,3 +33,8 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# Local verification tools
+.tools/
+.gradle-local/
+__pycache__/

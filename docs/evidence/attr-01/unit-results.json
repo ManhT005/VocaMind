@@ -1,0 +1,79 @@
+﻿[
+    {
+        "name":  "com.vocamind.app.data.catalog.CatalogAssetTest",
+        "tests":  22,
+        "failures":  0,
+        "errors":  0,
+        "skipped":  0
+    },
+    {
+        "name":  "com.vocamind.app.data.user.UserDatabaseTest",
+        "tests":  16,
+        "failures":  0,
+        "errors":  0,
+        "skipped":  0
+    },
+    {
+        "name":  "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+        "tests":  8,
+        "failures":  0,
+        "errors":  0,
+        "skipped":  0
+    },
+    {
+        "name":  "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+        "tests":  10,
+        "failures":  0,
+        "errors":  0,
+        "skipped":  0
+    },
+    {
+        "name":  "com.vocamind.app.domain.learning.LeitnerSchedulerTest",
+        "tests":  6,
+        "failures":  0,
+        "errors":  0,
+        "skipped":  0
+    },
+    {
+        "name":  "com.vocamind.app.domain.quiz.QuizDomainTest",
+        "tests":  10,
+        "failures":  0,
+        "errors":  0,
+        "skipped":  0
+    },
+    {
+        "name":  "com.vocamind.app.feature.attribution.AttributionRenderingTest",
+        "tests":  2,
+        "failures":  0,
+        "errors":  0,
+        "skipped":  0
+    },
+    {
+        "name":  "com.vocamind.app.feature.attribution.AttributionScreenTest",
+        "tests":  2,
+        "failures":  0,
+        "errors":  0,
+        "skipped":  0
+    },
+    {
+        "name":  "com.vocamind.app.feature.attribution.AttributionViewModelTest",
+        "tests":  2,
+        "failures":  0,
+        "errors":  0,
+        "skipped":  0
+    },
+    {
+        "name":  "com.vocamind.app.feature.attribution.ExternalLinksTest",
+        "tests":  4,
+        "failures":  0,
+        "errors":  0,
+        "skipped":  0
+    },
+    {
+        "name":  "com.vocamind.app.feature.attribution.GetContentSourcesTest",
+        "tests":  2,
+        "failures":  0,
+        "errors":  0,
+        "skipped":  0
+    }
+]

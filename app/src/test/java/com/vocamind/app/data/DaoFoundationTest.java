@@ -54,11 +54,14 @@ public class DaoFoundationTest {
         sql.execSQL("DELETE FROM PackWord"); sql.execSQL("DELETE FROM VocabularyFts");
         sql.execSQL("DELETE FROM VocabularyEntry"); sql.execSQL("DELETE FROM LearningPack");
         sql.execSQL("DELETE FROM ContentSource");
-        sql.execSQL("INSERT INTO ContentSource VALUES ('test-source','Original test content',"
-                + "'https://example.invalid','LicenseRef-Test','https://example.invalid/license','2026-10-25')");
+        sql.execSQL("INSERT INTO ContentSource "
+                + "(id,title,url,licenseCode,licenseUrl,snapshotDate,attributionText) "
+                + "VALUES ('test-source','Original test content','https://example.invalid',"
+                + "'LicenseRef-Test','https://example.invalid/license','2026-10-25','Original test content by VocaMind')");
+        int packOrder = 1;
         for (String id : Arrays.asList("A", "B", "C", "E")) {
             sql.execSQL("INSERT INTO LearningPack (id,title,description,category,orderNo,version) VALUES (?,?,?,?,?,?)",
-                    new Object[]{id, id, "test", "test", id.equals("C") ? 2 : id.equals("E") ? 3 : 1, "1"});
+                    new Object[]{id, id, "test", "test", packOrder++, "1"});
         }
         for (String id : Arrays.asList("shared", "a", "b", "new-a", "new-b", "new-c", "paused")) addWord(id);
         membership("A", "shared", 1); membership("A", "a", 2);
@@ -115,6 +118,7 @@ public class DaoFoundationTest {
         assertNull(cd.sourceForVocabulary("unknown")); assertEquals(4, cd.wordCount("A"));
         assertNull(cd.vocabulary("a").ipa); assertEquals("test-source", cd.sourceForVocabulary("a").id);
         assertEquals("https://example.invalid/license", cd.sources().get(0).licenseUrl);
+        assertEquals("Original test content by VocaMind", cd.sources().get(0).attributionText);
     }
 
     @Test public void membershipDuplicatesAreIntentionalButVocabularyPoolIsUnique() {
@@ -129,7 +133,9 @@ public class DaoFoundationTest {
         catalog.getOpenHelper().getWritableDatabase().execSQL(
                 "INSERT INTO LearningPack (id,title,description,category,orderNo,version) "
                         + "VALUES ('Z-first','First','test','test',0,'1')");
-        membership("Z-first", "shared", 0); membership("Z-first", "a", 0);
+        // Schema v2 requires unique orderNo within each pack. Keep insertion
+        // order opposite to display order to exercise ordering across batches.
+        membership("Z-first", "shared", 1); membership("Z-first", "a", 0);
         assertEquals(Arrays.asList("a", "shared"), cd.words("Z-first").stream()
                 .map(v -> v.id).collect(Collectors.toList()));
 

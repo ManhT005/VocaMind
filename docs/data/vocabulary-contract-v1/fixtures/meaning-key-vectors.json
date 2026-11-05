@@ -1,0 +1,34 @@
+[
+  {
+    "input": " NGÂN HÀNG ",
+    "expected": "ngân hàng"
+  },
+  {
+    "input": "ngân hàng",
+    "expected": "ngân hàng"
+  },
+  {
+    "input": "Straße",
+    "expected": "strasse"
+  },
+  {
+    "input": "STRASSE",
+    "expected": "strasse"
+  },
+  {
+    "input": "Σ",
+    "expected": "σ"
+  },
+  {
+    "input": "ς",
+    "expected": "σ"
+  },
+  {
+    "input": "ban",
+    "expected": "ban"
+  },
+  {
+    "input": "bàn",
+    "expected": "bàn"
+  }
+]

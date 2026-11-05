@@ -34,4 +34,7 @@
         android:name="com.vocamind.app.feature.progress.ProgressFragment"
         android:label="@string/progress" />
 
+    <fragment android:id="@+id/attributionFragment"
+        android:name="com.vocamind.app.feature.attribution.AttributionFragment"
+        android:label="@string/attribution" />
 </navigation>

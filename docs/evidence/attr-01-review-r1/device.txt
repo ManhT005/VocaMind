@@ -1,0 +1,6 @@
+﻿Code commit: c800ebd8192dd4a914788c0a63e3f82eb5f3c22d
+Device: Small_Phone / emulator-5554
+API: 30
+Airplane: 1
+Wi-Fi: 0
+Mobile data: 0

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" tests="12" failures="0" errors="0" skipped="0" time="6.34" timestamp="2026-11-02T07:41:55" hostname="localhost">
+  <properties>
+    <property name="device" value="Small_Phone(AVD) - 11" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="ftsEnglishAndVietnameseReturnTextStableId" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.242" />
+  <testcase name="reopeningExistingCopyWorks" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.039" />
+  <testcase name="opensAssetAndReadsFourPacks" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.031" />
+  <testcase name="wordsRespectMembershipOrderAndStableIds" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.031" />
+  <testcase name="examplesAndNullableIpaSurviveMapping" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.032" />
+  <testcase name="domainListsAreImmutable" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.031" />
+  <testcase name="everyFtsRowMapsToCorrectEntry" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.062" />
+  <testcase name="sourceAttributionIsAvailableOffline" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.03" />
+  <testcase name="missingIdsReturnEmpty" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.029" />
+  <testcase name="databaseIsConsistent" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.054" />
+  <testcase name="invalidIdentityHashFailsWithoutDeletingCopy" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.544" />
+  <testcase name="attributionAvailableBeforeLearningSurvivesRecreationAndBack" classname="com.vocamind.app.feature.attribution.AttributionScreenInstrumentedTest" time="3.499" />
+</testsuite>

@@ -1,0 +1,14 @@
+{
+  "codeCommit": "da6881fcd42f36f030251e933af90bf1da22d598",
+  "assets": {
+    "catalog.db": {
+      "sha256": "e88f46f4a10e835d97ab03a87a534ca345321d7cf7738569f49524abda1d4104",
+      "apkMatches": true
+    },
+    "content-credits.json": {
+      "sha256": "5cc8429f101e1da80848418cc0ab1ac0cea04f78d85d67a8c41a60242c53161c",
+      "apkMatches": true
+    }
+  },
+  "ac12": "BLOCKED: fixture missing verified authors and per-snapshot approval; four synthetic words"
+}
