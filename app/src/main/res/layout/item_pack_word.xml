@@ -2,11 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="wrap_content"
     android:paddingTop="@dimen/shell_item_spacing" android:paddingBottom="@dimen/shell_item_spacing"
-    android:orientation="vertical">
+    android:orientation="vertical" android:minHeight="48dp" android:background="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
     <com.google.android.material.textview.MaterialTextView android:id="@+id/word_title"
         style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
         android:layout_height="wrap_content" android:textStyle="bold" />
     <com.google.android.material.textview.MaterialTextView android:id="@+id/word_meaning"
+        style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <com.google.android.material.textview.MaterialTextView android:id="@+id/word_ipa"
         style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <com.google.android.material.textview.MaterialTextView android:id="@+id/word_status"

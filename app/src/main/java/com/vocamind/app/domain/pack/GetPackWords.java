@@ -5,7 +5,7 @@ import com.vocamind.app.domain.learning.StudyItem;
 import java.util.List;
 import java.util.Objects;
 
-/** Blocking query: words of one pack in catalog order with progress. Use a worker executor. */
+/** GetVocabularyByPack boundary (retains PACK-01 API name). Blocking query: words of one pack in catalog order with progress. Use a worker executor. */
 public final class GetPackWords {
     private final PackRepository repository;
 

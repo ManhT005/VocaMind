@@ -29,6 +29,7 @@ public class AsyncListViewModel<T> extends ViewModel {
     private final Runnable close;
     private boolean loading;
     private boolean cleared;
+    private long generation;
 
     protected AsyncListViewModel(Supplier<RepoResult<List<T>>> query, Executor worker, Executor main, Runnable close) {
         this.query = query;
@@ -43,6 +44,13 @@ public class AsyncListViewModel<T> extends ViewModel {
     /** Main thread only; overlapping loads are ignored. */
     public void retry() {
         if (loading || cleared) return;
+        refresh();
+    }
+
+    /** Reconcile durable data on return; discard older queued results. Main thread only. */
+    public void refresh() {
+        if (cleared) return;
+        long ticket = ++generation;
         loading = true;
         state.setValue(new State<>(Status.LOADING, List.of()));
         worker.execute(() -> {
@@ -56,7 +64,7 @@ public class AsyncListViewModel<T> extends ViewModel {
             }
             State<T> completed = result;
             main.execute(() -> {
-                if (cleared) return;
+                if (cleared || ticket != generation) return;
                 loading = false;
                 state.setValue(completed);
             });
