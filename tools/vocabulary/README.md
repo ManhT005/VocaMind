@@ -1,5 +1,7 @@
 # Vocabulary source gate
 
+VOC-DATA-03: [local ingestion CLI, adapter and failure policy](INGESTION.md).
+
 Requires Python 3.11+; standard library only. Run from repository root:
 
 ```powershell

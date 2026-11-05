@@ -1,0 +1,309 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "1.0.0",
+  "fixtureOnly": true,
+  "sources": [
+    {
+      "id": "fixture-examples-v1",
+      "title": "Học liệu tổng hợp chỉ dùng test contract",
+      "url": "https://example.invalid/vocamind/fixtures",
+      "licenseCode": "FIXTURE-ONLY",
+      "licenseUrl": "https://example.invalid/vocamind/fixtures/license",
+      "snapshotDate": "2026-10-23",
+      "snapshotSha256": "3c482e1feb616ee27cca028248a4bdf0529b59a3dee026c8f7a8dbe139d4852b",
+      "attributionText": "Synthetic EN author and VI translator; pair links in fixture; fixture only.",
+      "approvalStatus": "fixture_only",
+      "approvedBy": null,
+      "evidenceRef": null
+    },
+    {
+      "id": "fixture-lexical-v1",
+      "title": "Học liệu tổng hợp chỉ dùng test contract",
+      "url": "https://example.invalid/vocamind/fixtures",
+      "licenseCode": "FIXTURE-ONLY",
+      "licenseUrl": "https://example.invalid/vocamind/fixtures/license",
+      "snapshotDate": "2026-10-23",
+      "snapshotSha256": "d160b570646d26f00eec4c665752978d717c1f292efb89daa9e43983a4e021ce",
+      "attributionText": "Synthetic lexical/meaning contributors; fixture only, no rights granted.",
+      "approvalStatus": "fixture_only",
+      "approvedBy": null,
+      "evidenceRef": null
+    }
+  ],
+  "entries": [
+    {
+      "id": "5aecfbf5b9a23aee",
+      "lemma": "bank",
+      "normalizedLemma": "bank",
+      "pos": "noun",
+      "senseIndex": 1,
+      "meaningVi": "ngân hàng",
+      "exampleEn": "She works at a local bank.",
+      "exampleVi": "Cô ấy làm việc tại một ngân hàng địa phương.",
+      "ipa": null,
+      "sourceId": "fixture-lexical-v1",
+      "contentVersion": "1.0.0",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "fixture-examples-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/examples.txt#bank/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/records.jsonl#bank/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/records.jsonl#bank/noun/1"
+        }
+      ]
+    },
+    {
+      "id": "90562a98e8686267",
+      "lemma": "book",
+      "normalizedLemma": "book",
+      "pos": "noun",
+      "senseIndex": 1,
+      "meaningVi": "cuốn sách",
+      "exampleEn": "I put the book on the desk.",
+      "exampleVi": "Tôi đặt cuốn sách lên bàn.",
+      "ipa": null,
+      "sourceId": "fixture-lexical-v1",
+      "contentVersion": "1.0.0",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "fixture-examples-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/examples.txt#book/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/records.jsonl#book/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/records.jsonl#book/noun/1"
+        }
+      ]
+    },
+    {
+      "id": "923d45253cc2c67c",
+      "lemma": "airport",
+      "normalizedLemma": "airport",
+      "pos": "noun",
+      "senseIndex": 1,
+      "meaningVi": "sân bay",
+      "exampleEn": "They arrived at the airport early.",
+      "exampleVi": "Họ đến sân bay sớm.",
+      "ipa": null,
+      "sourceId": "fixture-lexical-v1",
+      "contentVersion": "1.0.0",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "fixture-examples-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/examples.txt#airport/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/records.jsonl#airport/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/records.jsonl#airport/noun/1"
+        }
+      ]
+    },
+    {
+      "id": "d17314a48504e2ac",
+      "lemma": "book",
+      "normalizedLemma": "book",
+      "pos": "verb",
+      "senseIndex": 1,
+      "meaningVi": "đặt trước",
+      "exampleEn": "We will book a room tomorrow.",
+      "exampleVi": "Chúng tôi sẽ đặt phòng vào ngày mai.",
+      "ipa": null,
+      "sourceId": "fixture-lexical-v1",
+      "contentVersion": "1.0.0",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "fixture-examples-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/examples.txt#book/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/records.jsonl#book/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/records.jsonl#book/verb/1"
+        }
+      ]
+    }
+  ],
+  "identityRegistry": [
+    {
+      "id": "5aecfbf5b9a23aee",
+      "identityLemma": "bank",
+      "pos": "noun",
+      "senseIndex": 1,
+      "fullSha256": "5aecfbf5b9a23aee26dbe4bcdd25f93efe4aa57ac2fd9773ff5239d9643ace9b",
+      "senseDefinition": "ngân hàng",
+      "status": "active"
+    },
+    {
+      "id": "90562a98e8686267",
+      "identityLemma": "book",
+      "pos": "noun",
+      "senseIndex": 1,
+      "fullSha256": "90562a98e8686267026a16f0ddf842d7010766216a4aaa6a07f9bf0db491eab7",
+      "senseDefinition": "cuốn sách",
+      "status": "active"
+    },
+    {
+      "id": "923d45253cc2c67c",
+      "identityLemma": "airport",
+      "pos": "noun",
+      "senseIndex": 1,
+      "fullSha256": "923d45253cc2c67c03182b2251edbd35eeb0d8b082655369ece86216251f7e6f",
+      "senseDefinition": "sân bay",
+      "status": "active"
+    },
+    {
+      "id": "d17314a48504e2ac",
+      "identityLemma": "book",
+      "pos": "verb",
+      "senseIndex": 1,
+      "fullSha256": "d17314a48504e2ace19ab2bec5b77cd0d046c8ecc8618e0ebf5249c82736fcc7",
+      "senseDefinition": "đặt trước",
+      "status": "active"
+    }
+  ],
+  "packs": [
+    {
+      "id": "pack_toeic_basic",
+      "title": "TOEIC Căn bản",
+      "description": "Gói fixture nhỏ chỉ dùng kiểm tra contract.",
+      "category": "toeic",
+      "orderNo": 0,
+      "version": "1.0.0"
+    },
+    {
+      "id": "pack_toeic_office",
+      "title": "TOEIC Công sở & Giao dịch",
+      "description": "Gói fixture nhỏ chỉ dùng kiểm tra contract.",
+      "category": "toeic",
+      "orderNo": 1,
+      "version": "1.0.0"
+    },
+    {
+      "id": "pack_daily_life",
+      "title": "Tiếng Anh Đời sống Hàng ngày",
+      "description": "Gói fixture nhỏ chỉ dùng kiểm tra contract.",
+      "category": "general",
+      "orderNo": 2,
+      "version": "1.0.0"
+    },
+    {
+      "id": "pack_academic",
+      "title": "Từ vựng Học thuật Thiết yếu",
+      "description": "Gói fixture nhỏ chỉ dùng kiểm tra contract.",
+      "category": "academic",
+      "orderNo": 3,
+      "version": "1.0.0"
+    }
+  ],
+  "packWords": [
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "90562a98e8686267",
+      "orderNo": 0
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "d17314a48504e2ac",
+      "orderNo": 1
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "5aecfbf5b9a23aee",
+      "orderNo": 2
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "923d45253cc2c67c",
+      "orderNo": 3
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "90562a98e8686267",
+      "orderNo": 0
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "d17314a48504e2ac",
+      "orderNo": 1
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "5aecfbf5b9a23aee",
+      "orderNo": 2
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "923d45253cc2c67c",
+      "orderNo": 3
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "90562a98e8686267",
+      "orderNo": 0
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "d17314a48504e2ac",
+      "orderNo": 1
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "5aecfbf5b9a23aee",
+      "orderNo": 2
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "923d45253cc2c67c",
+      "orderNo": 3
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "90562a98e8686267",
+      "orderNo": 0
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "d17314a48504e2ac",
+      "orderNo": 1
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "5aecfbf5b9a23aee",
+      "orderNo": 2
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "923d45253cc2c67c",
+      "orderNo": 3
+    }
+  ]
+}

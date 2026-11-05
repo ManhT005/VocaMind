@@ -5,6 +5,9 @@ project entry point; generated build outputs stay in ignored build directories.
 
 | Document | Purpose |
 | --- | --- |
+| [VOC-DATA-03 acceptance checklist](voc-data-03-acceptance-checklist.md) | SRS v1.1 trace, adapter decision, registry/baseline custody and merge/task/release gates |
+| [VOC-DATA-03 validation and handoff](voc-data-03-validation.md) | Gated local ingestion, fixture checksums, real-source blockers and pending contract decisions |
+| [VOC-DATA-03 CLI and adapter](../tools/vocabulary/INGESTION.md) | Config, reviewed JSONL mapping, deterministic output and reject policy |
 | [DATA-03 DAO foundation plan](plans/data-03-dao-foundation.md) | Query contracts, active due/new selection, transaction boundaries, fixtures and 7-hour implementation plan |
 | [DATA-03 validation](data-03-validation.md) | DAO contracts, batch/transaction semantics, fixture results and repository handoff |
 | [DATA-03 acceptance checklist](data-03-acceptance-checklist.md) | Integration evidence, G-01…G-13 gates, contract decisions and pending reviewer acceptance |

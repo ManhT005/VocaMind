@@ -3,5 +3,11 @@ gradlew.bat text eol=crlf
 # Upstream byte archives: preserve hashes and avoid text whitespace rewrites.
 docs/data/evidence/** binary
 docs/data/vocabulary-contract-v1/** text eol=lf
+tools/vocabulary/ingest.py text eol=lf
+tools/vocabulary/test_ingest.py text eol=lf
+tools/vocabulary/ingestion_refs.py text eol=lf
+tools/vocabulary/verify_ingestion.py text eol=lf
+tools/vocabulary/fixtures/ingestion/** text eol=lf
+docs/evidence/voc-data-03/** text eol=lf
 app/src/main/assets/database/*.metadata.json text eol=lf
 app/src/main/assets/database/*.db binary

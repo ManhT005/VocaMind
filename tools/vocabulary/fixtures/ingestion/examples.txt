@@ -1,0 +1,1 @@
+Synthetic EN/VI pairs: book/noun/1; book/verb/1; bank/noun/1; airport/noun/1.
