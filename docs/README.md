@@ -55,3 +55,5 @@ Use lowercase kebab-case filenames for new documentation. Put task plans in
 validation records separate from the current setup and foundation guides.
 
 [Project README](../README.md)
+
+- [PACK-02 activation validation and handoff](pack-02-validation.md)
