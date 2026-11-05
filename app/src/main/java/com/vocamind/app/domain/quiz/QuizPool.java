@@ -8,8 +8,10 @@ public final class QuizPool {
     private final List<QuizVocabulary> vocabulary;
     private final Map<String, String> meaningKeys;
     private final Availability availability;
+    private final MeaningNormalizer normalizer;
     public QuizPool(Collection<QuizVocabulary> input, MeaningNormalizer normalizer) {
         if (input == null || normalizer == null) throw new IllegalArgumentException("input/normalizer");
+        this.normalizer = normalizer;
         Map<String, QuizVocabulary> unique = new LinkedHashMap<>();
         Map<String, String> keys = new LinkedHashMap<>();
         for (QuizVocabulary v : input) {
@@ -25,6 +27,13 @@ public final class QuizPool {
         meaningKeys = Collections.unmodifiableMap(keys);
         availability = unique.size() < 4 ? Availability.INSUFFICIENT_VOCABULARY
                 : new HashSet<>(keys.values()).size() < 4 ? Availability.INSUFFICIENT_MEANINGS : Availability.READY;
+    }
+    /** Constructs a question from this snapshot using exactly the pool's normalizer. */
+    public QuizQuestion createQuestion(String stableId, Collection<QuizOption> options, String correctOptionId) {
+        for (QuizVocabulary v : vocabulary)
+            if (v.getStableId().equals(stableId))
+                return new QuizQuestion(v, options, correctOptionId, normalizer);
+        throw new IllegalArgumentException("unknown stableId");
     }
     public List<QuizVocabulary> getVocabulary() { return vocabulary; }
     public String getMeaningKey(String stableId) {

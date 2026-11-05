@@ -18,11 +18,14 @@ Tests: `app/src/test/java/com/vocamind/app/domain/quiz/QuizDomainTest.java`.
   Keys are derived in memory, not added to the canonical data schema. The test fixture
   uses NFC/trim/lowercase for its limited Vietnamese vectors; it is NOT a production
   normalizer and does NOT establish full Unicode casefold compliance.
-- `QuizQuestion` retains vocabulary POS/context for later prompt construction,
-  requires four distinct option IDs and meaning keys, and one referenced correct ID.
-  `QuizOption` accepts already normalized keys. QUIZ-02 must ensure keys correspond
-  to display text, the correct key matches the vocabulary, and distractors are
-  semantically unambiguous. String inequality alone does not prove single-sense correctness.
+- `QuizQuestion` retains vocabulary POS/context and requires four distinct option
+  IDs and meaning keys, one referenced correct ID, and an explicit MeaningNormalizer.
+  It rejects keys inconsistent with normalized option text and a correct key that
+  differs from the normalized target meaning. The unchecked three-argument
+  constructor has been removed. Use `pool.createQuestion(stableId, options, correctId)`
+  to construct from the pool snapshot with its exact normalizer.
+  QUIZ-02 must still ensure distractors are semantically unambiguous; string
+  inequality alone does not prove single-sense correctness.
 - `QuizSession` is immutable: every accepted operation returns a `Transition` with
   a new session. Rejected operations return the same snapshot and an explicit outcome.
   The caller must retain the returned session and serialize UI events against the
@@ -37,7 +40,8 @@ Tests: `app/src/test/java/com/vocamind/app/domain/quiz/QuizDomainTest.java`.
   tests demonstrates the boundary. `QuizGenerationOutcome` distinguishes READY,
   EMPTY with a pool availability reason, and INVALID_INPUT with an explanation.
   Ready output validates session size/unique IDs. The production generator must
-  additionally honor pool membership, target count and correct meaning mapping.
+  additionally honor pool membership and target count; pool.createQuestion enforces
+  membership and normalized meaning mapping for each question.
 
 Typical caller flow (on a serialized event handler):
 
@@ -50,6 +54,37 @@ if (transition.getOutcome() == QuizSession.Outcome.ACCEPTED) {
 // On the user's next action: session = session.next().getSession();
 // After confirmed exit: session = session.abandon().getSession();
 ```
+
+## Issue #19 — correct meaning validation (2026-11-05)
+
+The regression `rejectsCorrectOptionWithWrongTargetMeaning` was executed via
+Android Studio Gradle on the original constructor: **1 failed, 0 passed**,
+with `expected IllegalArgumentException to be thrown, but nothing was thrown`.
+It supplied four distinct valid options and marked a distractor as correct.
+
+The fix makes normalization mandatory at question construction. Every option key
+must match its display meaning, and the selected correct key must match the target.
+QuizPool now supplies a factory using the same injected normalizer and its own
+vocabulary snapshot. The seeded fake uses this factory. Repository test data now
+uses a target meaning consistent with its correct answer.
+
+Additional tests cover null/blank normalizers, forged correct/distractor keys,
+NFC/NFD, whitespace, case, an explicit ß→ss casefold vector, normalized duplicates,
+unknown pool IDs, and successful scoring after normalized construction. Existing
+stableId dedup/conflict and repeated-meaning pool targets 5/7/10 remain covered.
+The test adapter is still not a production full Unicode implementation.
+
+Verification through Android Studio Gradle:
+- Before fix: focused regression above failed because no exception was thrown.
+- After fix: `:app:testDebugUnitTest :app:assembleDebug` completed successfully;
+  **195 passed, 0 skipped, 0 failed** on the current working tree.
+- `git diff --check`: PASS (Git emitted line-ending warnings for unrelated files).
+- No commit/push or new CI run was performed, so no CI link for this fix is
+  available yet. These are local verification results, not reviewer sign-off.
+Historical sections below describe their original commits; the earlier handoff
+of mapping validation to QUIZ-02 is superseded by this fix. Production sampling,
+full Unicode adapter and semantic distractor quality still belong to QUIZ-02.
+No end-to-end AC-10 acceptance is claimed.
 
 ## Verification
 
