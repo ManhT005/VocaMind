@@ -1,0 +1,4514 @@
+{
+  "status": "candidate-only",
+  "releaseEligible": false,
+  "productionQcPassed": false,
+  "inputSha256": "e3ddf388396a2a8128c0aac8f3837ed567e16853e4d790f6ea35209a2466a8e2",
+  "stagingSha256": "67d2ac10dff7f3560aeee41fe6226a6466ed63b499877088e0c3c54e507a15e6",
+  "candidateDatasetSha256": "431587485b724f7de9cfff33a10b3a731beb439d359b50bda353cc7abaebfe80",
+  "counts": {
+    "candidateSenses": 150,
+    "proposedIds": 150,
+    "publishedIds": 0,
+    "memberships": 150,
+    "ngslLexicalMatches": 135,
+    "editorialOnlyHeadwords": 15,
+    "humanApprovedRecords": 0
+  },
+  "developmentContractErrors": [],
+  "packs": [
+    {
+      "packId": "pack_toeic_basic",
+      "memberships": 40,
+      "distinctMeanings": 40,
+      "quizGate": true
+    },
+    {
+      "packId": "pack_toeic_office",
+      "memberships": 40,
+      "distinctMeanings": 40,
+      "quizGate": true
+    },
+    {
+      "packId": "pack_daily_life",
+      "memberships": 40,
+      "distinctMeanings": 40,
+      "quizGate": true
+    },
+    {
+      "packId": "pack_academic",
+      "memberships": 30,
+      "distinctMeanings": 30,
+      "quizGate": true
+    }
+  ],
+  "componentReferencesVerified": 585,
+  "sources": [
+    {
+      "registryId": "ngsl",
+      "authorized": false,
+      "reason": "Source on hold or excluded; candidate is not include"
+    },
+    {
+      "registryId": "vocamind-editorial",
+      "authorized": false,
+      "reason": "Unknown source"
+    }
+  ],
+  "qcGateExitCode": 1,
+  "errorsByCode": {
+    "CONTENT_REVIEW_REQUIRED": 150,
+    "SOURCE_NOT_APPROVED": 2
+  },
+  "warningsByCode": {},
+  "issues": [
+    {
+      "recordRef": "dataset",
+      "stableId": null,
+      "errorCode": "SOURCE_NOT_APPROVED",
+      "field": "sources/ngsl-12-20261025",
+      "reason": "Source requires reviewed rights; license metadata alone is insufficient",
+      "severity": "error",
+      "provenance": []
+    },
+    {
+      "recordRef": "dataset",
+      "stableId": null,
+      "errorCode": "SOURCE_NOT_APPROVED",
+      "field": "sources/vocamind-editorial-draft-v1",
+      "reason": "Source requires reviewed rights; license metadata alone is insufficient",
+      "severity": "error",
+      "provenance": []
+    },
+    {
+      "recordRef": "entries/0",
+      "stableId": "010b4ac271bcee7c",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#luggage/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#luggage/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#luggage/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/1",
+      "stableId": "0143ae3ced507401",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#mother/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=338"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#mother/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#mother/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/2",
+      "stableId": "0207c263f8c49060",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#careful/adjective/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1637"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#careful/adjective/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#careful/adjective/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/3",
+      "stableId": "04f6267e6210a62b",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#neighbor/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1222"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#neighbor/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#neighbor/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/4",
+      "stableId": "0699e8c16aeb2c75",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#package/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1319"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#package/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#package/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/5",
+      "stableId": "08e316e478a1cb48",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#eat/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=476"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#eat/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#eat/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/6",
+      "stableId": "094d6eb38436449c",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#father/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=448"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#father/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#father/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/7",
+      "stableId": "09ccd86563216372",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#training/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#training/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#training/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/8",
+      "stableId": "0a498cc4cc82ed55",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#meeting/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#meeting/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#meeting/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/9",
+      "stableId": "12ad019497d6252b",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#schedule/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1240"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#schedule/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#schedule/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/10",
+      "stableId": "13b658cda964e2fc",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#improve/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=508"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#improve/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#improve/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/11",
+      "stableId": "154ad3c75bd7a6f6",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#define/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=930"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#define/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#define/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/12",
+      "stableId": "1816f4bcf0432990",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#departure/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#departure/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#departure/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/13",
+      "stableId": "18c8c1664b1f0e78",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#phone/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=479"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#phone/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#phone/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/14",
+      "stableId": "1ea16d6488d32531",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#describe/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=457"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#describe/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#describe/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/15",
+      "stableId": "1f431cc21a98d12f",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#product/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=304"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#product/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#product/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/16",
+      "stableId": "1fdd05db52c836d6",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#flight/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1219"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#flight/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#flight/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/17",
+      "stableId": "21be5e8881d7cab1",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#speak/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=284"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#speak/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#speak/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/18",
+      "stableId": "2219291add402728",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#payment/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1268"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#payment/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#payment/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/19",
+      "stableId": "28df1baa0ff1f8ad",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#passport/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#passport/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#passport/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/20",
+      "stableId": "2a0bd49d29501e9d",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#parent/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=297"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#parent/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#parent/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/21",
+      "stableId": "2a1a65c13e33bc68",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#hungry/adjective/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#hungry/adjective/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#hungry/adjective/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/22",
+      "stableId": "2a341b4ec105c143",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#drink/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=655"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#drink/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#drink/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/23",
+      "stableId": "2a509f121003cd06",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sugar/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=2234"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sugar/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sugar/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/24",
+      "stableId": "2fde3352568ed7fe",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#computer/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=429"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#computer/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#computer/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/25",
+      "stableId": "3142d729b72035da",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#family/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=172"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#family/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#family/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/26",
+      "stableId": "339a41a30122525c",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#concept/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1213"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#concept/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#concept/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/27",
+      "stableId": "3586522dac0ead10",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cook/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1196"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cook/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cook/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/28",
+      "stableId": "35d609ed98afcb6f",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#develop/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=350"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#develop/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#develop/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/29",
+      "stableId": "363c503bebd37391",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#reservation/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#reservation/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#reservation/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/30",
+      "stableId": "36fd889573de8c99",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#contract/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=714"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#contract/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#contract/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/31",
+      "stableId": "3d5117748d4c5141",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#data/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=556"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#data/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#data/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/32",
+      "stableId": "3dbaed5c338b2b1c",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#receipt/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#receipt/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#receipt/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/33",
+      "stableId": "4a756afdff0f53ac",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#employee/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=624"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#employee/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#employee/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/34",
+      "stableId": "4c4abdecc46493b5",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#menu/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=2597"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#menu/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#menu/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/35",
+      "stableId": "4dbafd4ecdb3dacc",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#function/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=702"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#function/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#function/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/36",
+      "stableId": "4e6431a4739ab29e",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#clean/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=842"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#clean/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#clean/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/37",
+      "stableId": "4fae627dc5b73414",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#effect/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=315"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#effect/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#effect/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/38",
+      "stableId": "524b9dddc2876a46",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#research/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=423"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#research/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#research/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/39",
+      "stableId": "53184184e303b46b",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#interview/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=784"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#interview/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#interview/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/40",
+      "stableId": "55d9e63344378006",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#email/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1169"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#email/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#email/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/41",
+      "stableId": "57e8f34166e86602",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#support/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=272"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#support/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#support/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/42",
+      "stableId": "5911ac176d3f214c",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#dinner/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1117"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#dinner/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#dinner/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/43",
+      "stableId": "6330e75b7661e248",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#buy/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=242"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#buy/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#buy/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/44",
+      "stableId": "633188448bb2750d",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#company/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=107"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#company/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#company/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/45",
+      "stableId": "634bc7b326fdfddd",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#theory/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=876"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#theory/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#theory/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/46",
+      "stableId": "643eefd4035066d7",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#restaurant/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=919"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#restaurant/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#restaurant/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/47",
+      "stableId": "65f0859e4989297a",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#prepare/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=604"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#prepare/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#prepare/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/48",
+      "stableId": "66248220016a4c4f",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cause/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=319"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cause/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cause/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/49",
+      "stableId": "680f5d8d8ea18784",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#listen/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=573"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#listen/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#listen/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/50",
+      "stableId": "6878a6bfd1203dfe",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#warehouse/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#warehouse/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#warehouse/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/51",
+      "stableId": "68cf70d8331dfeb3",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#budget/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1016"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#budget/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#budget/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/52",
+      "stableId": "6c1fea0390defc05",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#expensive/adjective/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1061"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#expensive/adjective/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#expensive/adjective/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/53",
+      "stableId": "6dddf2d3e33455f9",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#fruit/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1640"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#fruit/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#fruit/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/54",
+      "stableId": "6efc89d4b3a8f007",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#door/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=490"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#door/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#door/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/55",
+      "stableId": "732c533f208ab60d",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#result/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=233"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#result/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#result/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/56",
+      "stableId": "743fc4aebc74dc29",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sell/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=418"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sell/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sell/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/57",
+      "stableId": "749505edb46ed2e9",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#office/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=343"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#office/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#office/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/58",
+      "stableId": "74fb0128cec1c90a",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#method/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=755"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#method/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#method/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/59",
+      "stableId": "75bc1957c2522c98",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#salary/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1816"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#salary/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#salary/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/60",
+      "stableId": "76fafba7114e9592",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#chair/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1060"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#chair/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#chair/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/61",
+      "stableId": "7a24bdf094914ffb",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#walk/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=339"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#walk/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#walk/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/62",
+      "stableId": "7d18d115c89193ca",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#printer/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=2664"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#printer/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#printer/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/63",
+      "stableId": "7e09d3489f1b4832",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#coffee/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1395"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#coffee/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#coffee/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/64",
+      "stableId": "7ed4eab7db38de9e",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#stock/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=691"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#stock/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#stock/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/65",
+      "stableId": "7fe46ad7d9da1204",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#room/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=254"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#room/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#room/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/66",
+      "stableId": "814c072810abf7a2",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sign/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=500"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sign/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sign/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/67",
+      "stableId": "832bc62cf611ef76",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#friend/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=208"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#friend/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#friend/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/68",
+      "stableId": "8427eccd5d4c4df4",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#water/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=322"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#water/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#water/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/69",
+      "stableId": "84b99b98d945db07",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#house/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=165"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#house/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#house/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/70",
+      "stableId": "84d7ff576a0352d7",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#ticket/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1249"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#ticket/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#ticket/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/71",
+      "stableId": "8a29babd28b7431b",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#arrival/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=2058"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#arrival/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#arrival/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/72",
+      "stableId": "8a76a2f0dc14014f",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#analysis/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=756"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#analysis/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#analysis/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/73",
+      "stableId": "8c46632cf2e617d2",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#delivery/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1428"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#delivery/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#delivery/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/74",
+      "stableId": "8ca8a2a4ae0ed0bd",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#equipment/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1055"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#equipment/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#equipment/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/75",
+      "stableId": "8d57e94d31e48520",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#document/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=882"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#document/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#document/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/76",
+      "stableId": "8d87e61afc56f490",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#explain/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=489"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#explain/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#explain/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/77",
+      "stableId": "8dfb40053188d6e2",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sister/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=964"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sister/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sister/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/78",
+      "stableId": "923d45253cc2c67c",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#airport/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#airport/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#airport/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/79",
+      "stableId": "926cb2c7b70e55dd",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#principle/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1071"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#principle/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#principle/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/80",
+      "stableId": "9533b3a23d1c4fe0",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#wake/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1508"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#wake/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#wake/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/81",
+      "stableId": "961ef9a79a039621",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cheap/adjective/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1095"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cheap/adjective/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cheap/adjective/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/82",
+      "stableId": "966322961d7b2a54",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#tea/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1599"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#tea/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#tea/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/83",
+      "stableId": "966dc6001179f77a",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#home/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=161"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#home/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#home/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/84",
+      "stableId": "97b60271c7847cec",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#skill/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=685"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#skill/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#skill/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/85",
+      "stableId": "98475b4ca08e0ad8",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#wash/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1368"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#wash/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#wash/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/86",
+      "stableId": "98b58efbaa0a7f1f",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#invoice/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#invoice/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#invoice/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/87",
+      "stableId": "9b2457a96a18cc6a",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#happy/adjective/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=513"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#happy/adjective/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#happy/adjective/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/88",
+      "stableId": "9d68ebb49ea25a87",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#discuss/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=605"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#discuss/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#discuss/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/89",
+      "stableId": "9e4319249efff080",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#supplier/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=2004"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#supplier/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#supplier/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/90",
+      "stableId": "9e50e0d149f9b83c",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#factor/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=636"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#factor/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#factor/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/91",
+      "stableId": "9e5de132fc3085f9",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#table/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=450"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#table/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#table/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/92",
+      "stableId": "9e61c13dbd55c590",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#compare/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=614"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#compare/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#compare/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/93",
+      "stableId": "9e6450caee747c20",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#shoe/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1476"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#shoe/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#shoe/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/94",
+      "stableId": "9e84e8ebe9e2a529",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#travel/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=503"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#travel/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#travel/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/95",
+      "stableId": "9eee80ccf844e456",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#attend/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=820"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#attend/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#attend/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/96",
+      "stableId": "a0adea31b35a7f42",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#client/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#client/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#client/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/97",
+      "stableId": "a22879209e8e0506",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#order/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=215"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#order/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#order/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/98",
+      "stableId": "a5568d2ba7bee3e4",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#manager/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=661"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#manager/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#manager/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/99",
+      "stableId": "a744e451d1bdad3d",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#science/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=905"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#science/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#science/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/100",
+      "stableId": "b0d465f82f26660c",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bedroom/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1432"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bedroom/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bedroom/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/101",
+      "stableId": "b6386bc208da0874",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#deadline/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#deadline/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#deadline/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/102",
+      "stableId": "b7834c1148baa64a",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#task/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=854"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#task/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#task/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/103",
+      "stableId": "b7bcc9dcf3586381",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bread/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=2262"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bread/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bread/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/104",
+      "stableId": "b8eeeb568b74a80b",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#file/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=835"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#file/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#file/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/105",
+      "stableId": "be14412e62bb09fa",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#hotel/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=759"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#hotel/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#hotel/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/106",
+      "stableId": "be5192ae23f51730",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#structure/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=667"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#structure/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#structure/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/107",
+      "stableId": "becb25b23f9ee952",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#kitchen/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1307"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#kitchen/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#kitchen/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/108",
+      "stableId": "bf0be5b61866f965",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#change/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=113"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#change/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#change/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/109",
+      "stableId": "c09530564094b0ac",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#study/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=187"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#study/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#study/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/110",
+      "stableId": "c16e2c85165e9642",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#breakfast/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1819"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#breakfast/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#breakfast/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/111",
+      "stableId": "c3c40e610a088175",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#healthy/adjective/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1362"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#healthy/adjective/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#healthy/adjective/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/112",
+      "stableId": "c3f4a0f8569f129e",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bathroom/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bathroom/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bathroom/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/113",
+      "stableId": "c50193865412fbdd",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#train/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=289"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#train/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#train/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/114",
+      "stableId": "c50f97678af2c3b0",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#brother/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=821"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#brother/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#brother/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/115",
+      "stableId": "c61d1941e83e9805",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#window/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=734"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#window/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#window/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/116",
+      "stableId": "cc93c43a835e8bd3",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#service/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=223"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#service/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#service/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/117",
+      "stableId": "ccb4c475e4c5374f",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#project/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=518"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#project/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#project/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/118",
+      "stableId": "cdb9f58f4061c249",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bus/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=810"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bus/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bus/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/119",
+      "stableId": "d121b12bf674524c",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#evidence/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=592"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#evidence/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#evidence/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/120",
+      "stableId": "d1c881300fa31491",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#message/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=863"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#message/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#message/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/121",
+      "stableId": "d42cd44739b0e370",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#education/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=531"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#education/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#education/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/122",
+      "stableId": "d4cefbbdfda250ce",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#write/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=121"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#write/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#write/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/123",
+      "stableId": "d67b0acba33b2c64",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#help/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=133"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#help/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#help/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/124",
+      "stableId": "d70a8da417e1518c",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#process/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=286"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#process/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#process/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/125",
+      "stableId": "d7aed07271411f20",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cash/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1339"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cash/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cash/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/126",
+      "stableId": "d93c6ed2429a25b6",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#team/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=407"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#team/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#team/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/127",
+      "stableId": "d9502a131e68548d",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#child/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=102"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#child/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#child/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/128",
+      "stableId": "daba18657d6679e8",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#confirm/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1206"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#confirm/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#confirm/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/129",
+      "stableId": "de8fb7c19de25ba6",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#report/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=166"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#report/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#report/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/130",
+      "stableId": "df679670d76cbece",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#card/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=781"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#card/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#card/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/131",
+      "stableId": "df89f71e93a58312",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bed/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=694"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bed/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bed/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/132",
+      "stableId": "e2497882de1443c6",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#shop/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=437"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#shop/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#shop/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/133",
+      "stableId": "e519d3c5c741a451",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#read/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=207"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#read/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#read/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/134",
+      "stableId": "e60be53a143266a0",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#clothes/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=956"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#clothes/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#clothes/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/135",
+      "stableId": "e812fbe52f19fdad",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#lunch/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1334"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#lunch/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#lunch/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/136",
+      "stableId": "e879f569a68bd61c",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#business/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=211"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#business/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#business/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/137",
+      "stableId": "e89a6829b7badb63",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#station/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=709"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#station/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#station/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/138",
+      "stableId": "ea0e961551c98538",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#knowledge/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=619"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#knowledge/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#knowledge/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/139",
+      "stableId": "ecf6c310590530e8",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#colleague/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1251"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#colleague/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#colleague/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/140",
+      "stableId": "ecfb366e8e09fd2c",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#system/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=179"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#system/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#system/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/141",
+      "stableId": "edcc67afb8658f36",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#price/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=296"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#price/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#price/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/142",
+      "stableId": "ee46fdf826f53ce2",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#customer/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=487"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#customer/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#customer/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/143",
+      "stableId": "f14c1376c41412d6",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#milk/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1789"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#milk/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#milk/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/144",
+      "stableId": "f44bdd7635550987",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#visit/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=333"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#visit/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#visit/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/145",
+      "stableId": "f4a89b4c349dda7f",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#evaluate/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=2139"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#evaluate/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#evaluate/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/146",
+      "stableId": "f672afbf13be68df",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#tired/adjective/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#tired/adjective/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#tired/adjective/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/147",
+      "stableId": "f99fcd7b01315093",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sleep/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=827"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sleep/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sleep/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/148",
+      "stableId": "fc63a682aa35b611",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#department/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=736"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#department/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#department/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/149",
+      "stableId": "feb842c0ca22355c",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#garden/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "ngsl-12-20261025",
+          "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=972"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#garden/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#garden/noun/1"
+        }
+      ]
+    }
+  ],
+  "reviewFocus": [
+    "Check kinship translations: parent/brother/sister are one English relation with Vietnamese age/gender variants.",
+    "Review research versus study and home versus house; different strings do not prove semantic distinction.",
+    "Check English POS/selected sense, exact EN/VI correspondence and every warning.",
+    "Editorial rights route is not registered in the seven-source ledger; requires an explicit reviewed extension, not relabeling as NGSL."
+  ]
+}

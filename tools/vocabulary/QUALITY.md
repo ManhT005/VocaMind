@@ -1,5 +1,10 @@
 # VOC-DATA-04 normalization and quality gates
 
+The [150-sense editorial corpus](../../docs/data/voc-data-04/README.md) supplies
+substantive candidate meanings and example pairs, a full review worksheet and
+record-bound pending decisions. It is distinct from the four synthetic fixtures
+below and cannot be consumed as approved production output.
+
 Build-time Python 3.11+; install the existing contract requirements first.
 Integration base: `develop` at `752cce4`. Uses VOC-DATA-01 source authorization,
 VOC-DATA-02 canonical v1.0.0 and VOC-DATA-03 verified component adapters unchanged.

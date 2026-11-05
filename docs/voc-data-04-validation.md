@@ -47,7 +47,7 @@ vào sys.path; đây là điều chỉnh cách chạy local, không sửa pipeli
 
 | Check | Kết quả |
 | --- | --- |
-| Vocabulary: `python -m unittest discover -s tools/vocabulary -p 'test_*.py' -v` | 96 pass, gồm 25 test QC mới |
+| Vocabulary: `python -m unittest discover -s tools/vocabulary -p 'test_*.py' -v` | 106 pass, gồm 25 test QC và 10 test corpus |
 | Contract: `python -m unittest discover -s docs/data/vocabulary-contract-v1 -p test_contract.py -v` | 39 pass |
 | Catalog: `python -m unittest discover -s tools/catalog -p 'test_*.py' -v` | 5 pass |
 | QC-01…19 | Bao phủ trong `test_quality.py`, thêm custody, stale review và pack context |
@@ -96,8 +96,8 @@ Title: `feat(vocabulary): add normalization and quality gates for VOC-DATA-04`
 
 Base: `develop`. QC chặn publish canonical khi record/pack/rights/review không đạt,
 giữ stableId và provenance contract hiện hữu. Bổ sung review sidecar có checksum,
-reports deterministic, fixture evidence, 25 test QC và workflow CI. Validation:
-96 vocabulary + 39 contract + 5 catalog tests pass; 6 artifacts tái lập giống hệt;
+reports deterministic, fixture evidence, 25 test QC và 10 test corpus. Validation:
+106 vocabulary + 39 contract + 5 catalog tests pass; 6 artifacts QC tái lập giống hệt;
 unreviewed fixture exit 1 không publish. Nguồn/corpus thật, semantic approval và
 review Trường còn pending; không tuyên bố task hoặc MVP đã được nghiệm thu.
 
@@ -111,3 +111,30 @@ với quyền synthetic cô lập (gồm thu hồi approval). Không thay approv
 
 [Checklist DoD và bàn giao](voc-data-04-acceptance-checklist.md) ghi rõ owner,
 đầu vào còn thiếu và các bước thực tế để nghiệm thu corpus production.
+
+## Corpus biên tập đã bổ sung
+
+[Hồ sơ corpus](data/voc-data-04/README.md) có **150 mục nghĩa và 150 cặp ví dụ EN/VI**
+được soạn với hỗ trợ AI, không trích nghĩa/ví dụ từ NGSL/Kaikki/Tatoeba. Bốn pack có
+40/40/40/30 membership và tương ứng 40/40/40/30 meaning key phân biệt. IPA null.
+135 headword có tham chiếu lexical vào snapshot NGSL đã lưu, 15 headword được chọn
+biên tập; cả 150 mục có provenance riêng cho nghĩa, ví dụ và POS biên tập.
+585 component references được đối chiếu key/nội dung bằng adapter hiện hữu.
+
+TSV gốc, staging JSONL, canonical preview, identity proposals, bảng review 150 dòng,
+review sidecar pending và manifest candidate được lưu versioned. **Không còn chỉ
+có fixture 4 từ**. Proposal có stableId=null; canonical preview dùng proposed ID
+để kiểm thử liên kết, không cấp ID phát hành hoặc sửa registry hiện hữu.
+
+Mechanical QC trên toàn corpus: development contract pass, không có cảnh báo
+length/single-sense heuristic. Production QC trả 1: 150 CONTENT_REVIEW_REQUIRED
+và 2 SOURCE_NOT_APPROVED; gate thật chặn ingestion trước parse. Đây là kết quả
+đã kiểm chứng, không phải giả định phê duyệt. Candidate manifest không phải
+production completion marker; consumer hiện hữu từ chối đọc candidate.
+
+10 test corpus gồm completeness, component lineage, immutable/deterministic
+snapshot, content-edit/ID invariance, source checksum, output boundary, quota,
+pending reviews và việc không thể publish. CI chạy lại exporter hai lần, diff
+cả 9 file với nhau và với snapshot, đồng thời kiểm tra actual ingestion bị chặn.
+150 Python tests liên quan (106 vocabulary + 39 contract + 5 catalog) đã pass local;
+evidence corpus và log được bổ sung trong docs/evidence/voc-data-04/.

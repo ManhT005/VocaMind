@@ -12,9 +12,9 @@ This checklist distinguishes executed technical checks from external approvals.
 | Required meaningVi/example pair, nullable IPA | QC-02/03/04. Empty IPA follows contract rejection. |
 | Duplicate/provenance/license/pack gates | QC-05/09/10/11/12/13/18/19 and tamper/custody tests. |
 | License metadata alone is insufficient | Replay uses actual `authorize()` plus frozen inventory; unapproved sources remain blocked. |
-| Rejects traceable and repaired under control, rerun succeeds | Error schema carries recordRef/stableId/field/reason/provenance; wording correction/renewed review test passes; rejected CLI emits no success artifact. Real corpus remediation not yet possible. |
-| Important tests pass and reports supplied | 140 Python tests local and CI; Android unit tests/debug APK/instrumentation APK pass. CI #90 and artifact linked in validation. |
-| MVP content reviewed per record | **Pending**: no approved production corpus or actual semantic review sidecar supplied. Synthetic decisions are test data only. |
+| Rejects traceable and repaired under control, rerun succeeds | Error schema carries recordRef/stableId/field/reason/provenance; wording correction/renewed review test passes; 150-sense draft and row-level review worksheet supplied. Real corpus decisions remain pending. |
+| Important tests pass and reports supplied | 150 Python tests local after corpus addition (106 vocabulary + 39 contract + 5 catalog). Prior implementation CI #90 covered 140 plus Android tests/APKs; latest-head corpus CI tracked in PR #27. |
+| MVP content reviewed per record | 150 drafted senses with EN/VI examples, source/component lineage, canonical preview and 150-row review worksheet now supplied. **Pending**: actual human decisions and source approvals; draft sidecar flags remain false. |
 | Reviewer can reproduce | `tools/vocabulary/QUALITY.md` provides exact CLI and review schema. Reviewer execution/confirmation remains pending. |
 | Trường reviews PR, required CI passes before merge | [PR #27](https://github.com/ManhT005/VocaMind/pull/27), CI #90 success at implementation caa59a8; requested Letruong18, actual review pending. |
 
@@ -49,5 +49,10 @@ production source/content approval was found. No such decision is fabricated her
 6. Trường reviews the implementation and evidence. CI success alone does not
    authorize source rights, substitute content review or close overall AC-04/10/12.
 
-The implementation and PR can be reviewed now. Full task acceptance depends on
+The [150-sense editorial draft](data/voc-data-04/README.md) makes content review
+concrete: 40/40/40/30 memberships, 585 verified component references, no missing
+required content. Two source approvals and 150 human content decisions remain
+blocking. The candidate has no production completion marker or published IDs.
+
+The implementation, corpus and PR can be reviewed now. Full task acceptance depends on
 steps 1–6, including decisions outside the implementation author's authority.
