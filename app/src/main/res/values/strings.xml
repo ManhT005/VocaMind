@@ -42,4 +42,12 @@
     <string name="pack_word_new">Chưa học</string>
     <string name="pack_word_box">Hộp %1$d</string>
     <string name="pack_word_title">%1$s (%2$s)</string>
+    <string name="pack_activate">Kích hoạt</string>
+    <string name="pack_pause">Tạm dừng</string>
+    <string name="pack_inactive">Chưa kích hoạt / Đã tạm dừng</string>
+    <string name="pack_activation_pending">Đang cập nhật trạng thái…</string>
+    <string name="pack_activation_error">Không thể xác nhận trạng thái đã lưu. Thử lại để đọc trạng thái trước khi thao tác tiếp.</string>
+    <string name="today_choose_pack">Chọn gói học</string>
+    <string name="today_explore">Khám phá</string>
+    <string name="today_active_boundary">Đã có gói đang học. Tính năng phiên học Hôm nay đang được phát triển.</string>
 </resources>

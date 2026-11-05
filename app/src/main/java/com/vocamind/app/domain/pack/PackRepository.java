@@ -12,7 +12,7 @@ public interface PackRepository {
     /** NOT_FOUND if the catalog has no such pack. Keeps the first activation time on reactivation. */
     RepoResult<PackState> activatePack(String packId, long nowEpochMillis);
 
-    /** Pauses an active pack. Returns true if state changed; progress is kept. */
+    /** NOT_FOUND for unknown catalog pack. Missing user row is a no-op; progress is kept. */
     RepoResult<Boolean> pausePack(String packId);
 
     /**

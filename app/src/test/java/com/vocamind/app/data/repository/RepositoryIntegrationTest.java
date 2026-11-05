@@ -93,6 +93,66 @@ public class RepositoryIntegrationTest {
         catalog.getOpenHelper().getWritableDatabase().execSQL("INSERT INTO PackWord VALUES (?,?,?)", new Object[]{pack, word, order});
     }
 
+    @Test public void pack02ValidationNoOpAndFailedWriteNeverCreateOrphan() {
+        for (String id : new String[]{null, "", "  "}) {
+            assertEquals(RepoError.INVALID_ARGUMENT, packs.pausePack(id).getError());
+            assertEquals(RepoError.INVALID_ARGUMENT, packs.activatePack(id, 0).getError());
+        }
+        assertEquals(RepoError.NOT_FOUND, packs.pausePack("unknown").getError());
+        assertEquals(RepoError.NOT_FOUND, packs.activatePack("unknown", 0).getError());
+        assertFalse(packs.pausePack("A").get());
+        assertTrue(user.userDao().packs().isEmpty());
+        user.getOpenHelper().getWritableDatabase().execSQL(
+                "CREATE TRIGGER block_pack BEFORE INSERT ON UserPack BEGIN SELECT RAISE(ABORT,'blocked'); END");
+        assertEquals(RepoError.WRITE_FAILED, packs.activatePack("A", 0).getError());
+        assertTrue(user.userDao().packs().isEmpty());
+        user.getOpenHelper().getWritableDatabase().execSQL("DROP TRIGGER block_pack");
+        assertTrue(packs.activatePack("A", 0).get().isActive());
+    }
+
+    @Test public void pack02PauseSharedAndExclusiveDueAndNewWordsThenReopenPreservesUserdata() {
+        assertTrue(study.newWords(50).get().isEmpty());
+        assertTrue(user.userDao().packs().isEmpty());
+        packs.activatePack("A", 0); packs.activatePack("A", 100); packs.activatePack("B", 1);
+        packs.pausePack("A");
+        assertEquals(List.of(SHARED, W4, W5), ids(study.newWords(50).get()));
+        packs.activatePack("A", 200);
+        long now = 10 * DAY;
+        WordProgress original = reviews.recordReview(W1,
+                schedule(LeitnerState.newWord(), Rating.FORGOT, now), now).get();
+        reviews.recordReview(SHARED, schedule(LeitnerState.newWord(), Rating.FORGOT, now), now);
+        user.userDao().setSaved(W1, true);
+        assertTrue(packs.pausePack("A").get());
+        assertFalse(packs.pausePack("A").get());
+        assertEquals(Arrays.asList(W4, W5), ids(study.newWords(50).get()));
+        assertEquals(List.of(SHARED), study.dueItems(now + DAY, 50).get().stream()
+                .map(i -> i.getVocabulary().stableId).collect(Collectors.toList()));
+        // Close real file-backed Room and reopen; never delete/reset app userdata.
+        user.close(); user = UserDatabase.open(context, userName);
+        packs = new RoomPackRepository(catalog.catalogDao(), user.userDao());
+        study = new RoomStudyRepository(catalog.catalogDao(), user.userDao());
+        assertFalse(packs.getPackStates().get().get(0).isActive());
+        assertEquals(0L, user.userDao().pack("A").activatedAt);
+        assertEquals(original.getDueAtEpochMillis(), user.userDao().progress(W1).dueAt);
+        assertEquals(original.getBox(), user.userDao().progress(W1).box);
+        assertEquals(original.getLearnedAtEpochMillis(), user.userDao().progress(W1).learnedAt);
+        assertEquals(original.getLastReviewedAtEpochMillis(), user.userDao().progress(W1).lastReviewedAt);
+        assertTrue(user.userDao().progress(W1).isSaved);
+        assertEquals(2, user.userDao().reviews().size());
+        packs.activatePack("A", 999);
+        assertEquals(Long.valueOf(0), packs.getPackStates().get().get(0).getActivatedAtEpochMillis());
+        List<String> due = study.dueItems(now + DAY, 50).get().stream()
+                .map(i -> i.getVocabulary().stableId).collect(Collectors.toList());
+        assertEquals(2, due.size()); assertEquals(2, new HashSet<>(due).size());
+        assertTrue(due.containsAll(List.of(W1, SHARED)));
+        packs.pausePack("A"); packs.pausePack("B");
+        user.userDao().activatePack("orphan", 999); // legacy logical row cannot add catalog words
+        assertTrue(packs.getPackStates().get().stream().noneMatch(PackState::isActive));
+        assertTrue(study.newWords(50).get().isEmpty());
+        assertTrue(study.dueItems(now + DAY, 50).get().isEmpty());
+        assertEquals(2, user.userDao().reviews().size());
+    }
+
     private static ScheduleResult schedule(LeitnerState state, Rating rating, long now) {
         return new LeitnerScheduler().schedule(state, rating, now, ZoneOffset.UTC);
     }

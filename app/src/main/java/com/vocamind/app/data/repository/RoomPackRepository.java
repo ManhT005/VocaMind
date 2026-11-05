@@ -70,6 +70,7 @@ public final class RoomPackRepository implements PackRepository {
     @Override public RepoResult<Boolean> pausePack(String packId) {
         if (packId == null || packId.trim().isEmpty()) return RepoResult.failure(RepoError.INVALID_ARGUMENT);
         return RepositoryGuard.write(() -> {
+            if (catalog.pack(packId) == null) return RepoResult.<Boolean>failure(RepoError.NOT_FOUND);
             UserPack before = user.pack(packId);
             boolean wasActive = before != null && before.isActive;
             user.pausePack(packId);
@@ -96,7 +97,9 @@ public final class RoomPackRepository implements PackRepository {
     }
 
     private RepoResult<PackState> stateOf(String packId) {
-        for (PackState s : getPackStates().get()) if (s.getPack().id.equals(packId)) return RepoResult.success(s);
+        RepoResult<List<PackState>> states = getPackStates();
+        if (!states.isSuccess()) return RepoResult.failure(states.getError());
+        for (PackState s : states.get()) if (s.getPack().id.equals(packId)) return RepoResult.success(s);
         return RepoResult.failure(RepoError.NOT_FOUND);
     }
 
