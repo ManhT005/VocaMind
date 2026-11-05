@@ -1,9 +1,20 @@
 # VOC-DATA-04 normalization and quality gates
 
-The [150-sense editorial corpus](../../docs/data/voc-data-04/README.md) supplies
-substantive candidate meanings and example pairs, a full review worksheet and
-record-bound pending decisions. It is distinct from the four synthetic fixtures
-below and cannot be consumed as approved production output.
+The owner has accepted all 150 worksheet records and project use of the AI-generated
+text. The [accepted delivery](../../docs/data/voc-data-04/accepted-delivery.md)
+uses a separate source registry, exact artifact hashes, real owner acceptance and
+rebound reviews. Production ingestion/QC must still pass. corpus-v1 remains the
+unchanged historical pending draft; accepted-v1 is the current accepted input.
+The four synthetic fixtures below remain development-only.
+
+PR #27 also includes Quiz Issue #19: QuizQuestion now requires MeaningNormalizer
+and validates option text/key plus correct target meaning. QuizPool.createQuestion
+uses the pool normalizer; test constructors were migrated. No Android schema/UI
+or stableId algorithm changes were required.
+
+For editorial handoff use accept_editorial.load_handoff(qc_directory), which
+returns both the validated canonical envelope and dataset-bound Quiz exclusions.
+QUIZ-02 must apply can_be_distractor before sampling, across all active packs.
 
 Build-time Python 3.11+; install the existing contract requirements first.
 Integration base: `develop` at `752cce4`. Uses VOC-DATA-01 source authorization,

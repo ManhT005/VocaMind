@@ -1,58 +1,48 @@
 # VOC-DATA-04 acceptance and downstream handoff
 
-Owner: Vương Quang Thành. Reviewer: Trường (`Letruong18`, author of VOC-DATA-03
-PR #18). Integration base: `develop` at `752cce4`.
-This checklist distinguishes executed technical checks from external approvals.
+Owner: Vương Quang Thành / thanhcodeai. Reviewer: Trường (`Letruong18`).
+PR: #27 into develop. This records local task delivery, not a GitHub review or merge.
 
-| Plan Definition of Done | Evidence/status |
+## Owner decision — 2026-11-05
+
+The user explicitly accepted all 150 records according to the worksheet and
+confirmed that the project's AI-generated corpus does not need external-source
+approval. [owner-acceptance.json](data/voc-data-04/owner-acceptance.json) records
+the actual instruction, reviewer/date, TSV/worksheet hashes and scope.
+This supersedes the previous source/content blockers for the accepted editorial
+snapshot only. It does not approve NGSL or any other external dataset, attribute
+a new independent review to Codex/Trường, or grant an external license.
+
+| Task delivery | Evidence/status |
 | --- | --- |
-| VOC-DATA-02/03 input and VOC-DATA-06 consumer compatibility | Canonical v1.0.0 unchanged; replay verified ingestion; `load_validated` consumer checksum/mode gate; isolated existing catalog-builder integration test passes. Owner acceptance pending. |
-| Deterministic/idempotent normalization, Vietnamese preserved | QC-07/14/15 and two independent CLI outputs; comparison evidence. |
-| StableId preserved for wording edits, no FTS rowid identity | QC-06, identity mismatch tests and unchanged contract helper. |
-| Required meaningVi/example pair, nullable IPA | QC-02/03/04. Empty IPA follows contract rejection. |
-| Duplicate/provenance/license/pack gates | QC-05/09/10/11/12/13/18/19 and tamper/custody tests. |
-| License metadata alone is insufficient | Replay uses actual `authorize()` plus frozen inventory; unapproved sources remain blocked. |
-| Rejects traceable and repaired under control, rerun succeeds | Error schema carries recordRef/stableId/field/reason/provenance; wording correction/renewed review test passes; 150-sense draft and row-level review worksheet supplied. Real corpus decisions remain pending. |
-| Important tests pass and reports supplied | 150 Python tests local after corpus addition (106 vocabulary + 39 contract + 5 catalog). Prior implementation CI #90 covered 140 plus Android tests/APKs; latest-head corpus CI tracked in PR #27. |
-| MVP content reviewed per record | 150 drafted senses with EN/VI examples, source/component lineage, canonical preview and 150-row review worksheet now supplied. **Pending**: actual human decisions and source approvals; draft sidecar flags remain false. |
-| Reviewer can reproduce | `tools/vocabulary/QUALITY.md` provides exact CLI and review schema. Reviewer execution/confirmation remains pending. |
-| Trường reviews PR, required CI passes before merge | [PR #27](https://github.com/ManhT005/VocaMind/pull/27), CI #90 success at implementation caa59a8; requested Letruong18, actual review pending. |
+| Canonical v1 compatibility | Same schema/IDs/wording/memberships; content-verified ingestion and production consumer test. |
+| Deterministic normalization, required text, nullable IPA, duplicate/pack gates | Existing QC tests retained; new accepted-snapshot reproduction test. |
+| Project-generated content route | Separate single-source registry; exact artifact bytes, owner decision and snapshot digest checked. Seven-source research registry unchanged. |
+| 150 content decisions | Owner worksheet acceptance materialized in accepted-v1/reviews.json; every entry and the final envelope have fresh checksums. |
+| Identity | First local accepted editorial registry; preserves the 150 proposed tuples and IDs. No published production registry overwritten; baseline comparison not claimed. |
+| Production ingestion/QC | Non-fixture run: 150 read/accepted, QC pass with zero errors. See accepted-delivery.md for commands/results. |
+| Ambiguous distractors Q1–Q3 | Dataset-bound policy excludes research/study, home/house, customer/client in both directions across packs. Handoff loader and helper tested; Android QUIZ-02 must apply the policy when implementing generation. |
+| D1 scope correction | Validation/QUALITY now disclose the accompanying Quiz #19 change and constructor migration. |
+| Downstream deliverable | accepted-v1 contains staging, registry, config, review sidecar, attribution and policy; QC output under build/vocabulary-quality/editorial-accepted-final. Use accept_editorial.load_handoff to retain policy. |
+| Reviewer/CI | New local tests and evidence recorded separately. Prior CI #96 applies to 4ade2a1 only; a new CI run and Trường's submitted review/merge are not claimed. |
 
-## Verified blockers, 2026-11-05
+The owner-approved content and pipeline are ready for downstream use within
+VOC-DATA-04. This does not establish VOC-DATA-06 asset/Room/FTS acceptance,
+end-to-end Quiz behavior, or sign-off by another team member.
 
-The checked-in source registry and audited snapshot have zero pipeline-eligible
-sources. NGSL/TSL are on hold awaiting snapshot rights/technical approval;
-Kaikki/Tatoeba lack approved corpus/credit routes. FVDP/audio are excluded or
-research-only. Existing local NGSL/TSL research wordlists cannot supply reviewed
-Vietnamese meanings or translated example pairs. Neither metadata nor merged
-VOC-DATA-03 establishes semantic approval or permission to publish a real dataset.
+## Reproduction and downstream contract
 
-GitHub PR #18 was checked: merged into develop, body still explicitly reports
-zero eligible sources and pending custody decisions, no comment confirming
-production source/content approval was found. No such decision is fabricated here.
+Follow [accepted delivery](data/voc-data-04/accepted-delivery.md).
+The draft corpus-v1 remains unchanged as a historical research/review snapshot.
+Its pending flags and negative tests are intentional and do not describe accepted-v1.
 
-## Concrete handoff
+For this corpus call `accept_editorial.load_handoff(qc_directory)` to get
+`(canonical, quiz_policy)`. Apply `can_be_distractor(policy, targetId, candidateId)`
+before sampling; do not use string inequality alone. The helper checks both
+directions, including customer/client from separate packs. QUIZ-02 remains
+responsible for enforcing this in the Android production generator.
 
-1. VOC-DATA-01 / PO or Content Lead provides source snapshots with the artifact
-   roles, review and bound checksum required by `source_gate.authorize()`.
-2. VOC-DATA-03 owner provides reviewed staging JSONL, registered sense identities,
-   verified component adapters and the exact successful ingestion config/manifest.
-   The staging itself needs an approved artifact route, not just the wordlist.
-3. Content reviewer inspects single sense, EN usage, corresponding VI translation
-   and meaning distinction in each pack. The sidecar must contain actual reviewer,
-   date, explicit decisions, entry SHA-256 and full dataset SHA-256.
-4. Run QC without `--fixture` in a fresh directory. Any error blocks the entire
-   publication. Fix upstream, renew affected evidence and rerun all pack gates.
-5. VOC-DATA-05/06 calls `quality.load_validated(directory)` with production default,
-   preserves the entire envelope/manifest/reports and confirms the handoff in PR.
-   Enrichment must not reuse stale QC decisions after changing the envelope.
-6. Trường reviews the implementation and evidence. CI success alone does not
-   authorize source rights, substitute content review or close overall AC-04/10/12.
-
-The [150-sense editorial draft](data/voc-data-04/README.md) makes content review
-concrete: 40/40/40/30 memberships, 585 verified component references, no missing
-required content. Two source approvals and 150 human content decisions remain
-blocking. The candidate has no production completion marker or published IDs.
-
-The implementation, corpus and PR can be reviewed now. Full task acceptance depends on
-steps 1–6, including decisions outside the implementation author's authority.
+Any wording, provenance or pack-context edit invalidates review checksums.
+Renew the owner's affected decisions, rebind reviews and rerun ingestion/QC.
+Do not copy old success manifests, mark synthetic fixtures as approved, or
+overwrite an existing run directory.

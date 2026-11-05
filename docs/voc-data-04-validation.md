@@ -3,7 +3,11 @@
 Ngày triển khai: 05/11/2026. Owner theo kế hoạch: Vương Quang Thành; reviewer: Trường.
 Nhánh: `feature/voc-data-04-quality-gates`, base `develop` / `752cce4`.
 PR: [#27](https://github.com/ManhT005/VocaMind/pull/27), target `develop`.
-Trạng thái: **technical checks pass; chưa đóng nghiệm thu dữ liệu MVP**.
+Trạng thái cập nhật: **150 nội dung đã được owner chấp nhận theo worksheet;
+production ingestion/QC local pass**. Xem [accepted delivery](data/voc-data-04/accepted-delivery.md)
+và [checklist](voc-data-04-acceptance-checklist.md). Các mục pending nguồn/nội dung
+bên dưới ghi lịch sử draft; đã được thay thế cho accepted-v1 theo quyết định
+người dùng ngày 05/11/2026. Không tự ghi nhận review/merge của Trường.
 
 ## Căn cứ và đầu vào
 
@@ -35,7 +39,12 @@ hay completion manifest. Dataset lỗi không được biến thành pass bằng
 record âm thầm. Chạy lại phải dùng thư mục mới. IPA null hợp lệ, chuỗi IPA rỗng
 vẫn fail contract; ví dụ ngoài 5–20 từ và dấu hiệu nhiều nghĩa chỉ là warning.
 
-Không sửa Android, schema, thuật toán ID, ingestion hay quota release. Hướng dẫn
+Phần QC ban đầu không sửa Android/schema/thuật toán ID hay quota release.
+PR còn kèm fix Quiz Issue #19: QuizQuestion bắt buộc MeaningNormalizer, kiểm tra
+key của option và đáp án đúng; QuizPool.createQuestion dùng normalizer của pool,
+các call site test đã được chuyển đổi. Xem docs/quiz-01-validation.md.
+Route accepted-v1 bổ sung source authorization riêng cho nội dung AI được owner
+chấp nhận; registry nguồn bên ngoài và gate cũ giữ nguyên. Hướng dẫn
 CLI, review format, chính sách reject và handoff: [QUALITY.md](../tools/vocabulary/QUALITY.md).
 
 ## Kiểm chứng

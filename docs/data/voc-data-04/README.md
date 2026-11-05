@@ -1,4 +1,26 @@
-# VOC-DATA-04 editorial corpus for review
+# VOC-DATA-04 editorial corpus
+
+## Current owner-accepted delivery — 2026-11-05
+
+The user accepted all 150 records according to the worksheet and confirmed the
+project's AI-generated corpus does not need external-source approval.
+[owner-acceptance.json](owner-acceptance.json) preserves that instruction and binds
+it to the exact TSV and worksheet. [accepted-v1](accepted-v1/) contains the rebound
+review sidecar, first local editorial identity registry, staging/config and
+project-generated source route. [Delivery and reproduction](accepted-delivery.md)
+records production QC and consumer validation. No external license or another
+person's review is claimed.
+
+Research provenance is retained in the original draft. The accepted snapshot
+uses editorial-only component references and does not activate NGSL. Quiz policy
+excludes research/study, home/house and customer/client from serving as distractors
+for each other across active packs; Android QUIZ-02 must enforce that policy.
+
+## Historical draft dossier (superseded for accepted-v1)
+
+The following describes corpus-v1 at PR head 4ade2a1 before the owner's acceptance.
+Its pending decisions and negative-gate results remain intentional historical
+evidence; they are not the status of accepted-v1.
 
 This directory now contains substantive learning material: **150 candidate senses**,
 each with one selected Vietnamese meaning and an English/Vietnamese example pair.

@@ -107,6 +107,15 @@ jobs:
           test "$editorial_status" -eq 1
           test ! -e build/vocabulary-ingestion/editorial-approval-check/manifest.json
 
+      - name: Verify owner-accepted editorial production handoff
+        run: |
+          python tools/vocabulary/accept_editorial.py --output build/vocabulary-corpus/accepted-ci
+          diff -r docs/data/voc-data-04/accepted-v1 build/vocabulary-corpus/accepted-ci
+          python tools/vocabulary/ingest.py --config docs/data/voc-data-04/accepted-v1/ingestion-config.json --output build/vocabulary-ingestion/accepted-ci
+          python tools/vocabulary/quality.py --input build/vocabulary-ingestion/accepted-ci --config docs/data/voc-data-04/accepted-v1/ingestion-config.json --reviews docs/data/voc-data-04/accepted-v1/reviews.json --output build/vocabulary-quality/ci-accepted
+          python docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-quality/ci-accepted/canonical-catalog.json --release
+          python tools/vocabulary/accept_editorial.py --verify build/vocabulary-quality/ci-accepted
+
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
@@ -139,5 +148,6 @@ jobs:
             build/vocabulary-quality/ci-*/
             build/vocabulary-corpus/ci-*/
             build/vocabulary-ingestion/editorial-approval-check/
+            build/vocabulary-ingestion/accepted-ci/
           if-no-files-found: warn
           retention-days: 14
