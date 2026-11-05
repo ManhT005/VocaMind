@@ -61,6 +61,16 @@ jobs:
           python -m unittest discover -s docs/data/vocabulary-contract-v1 -p 'test_contract.py' -v
           python docs/data/vocabulary-contract-v1/validate_contract.py docs/data/vocabulary-contract-v1/fixtures/valid/catalog.json
 
+      - name: Verify ingestion reproducibility and fixture release rejection
+        run: |
+          python tools/vocabulary/verify_ingestion.py --fixture --config tools/vocabulary/fixtures/ingestion/verified/config.json --output build/vocabulary-ingestion/ci-proof
+          python docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-ingestion/ci-proof/a/canonical-catalog.json
+          set +e
+          python docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-ingestion/ci-proof/a/canonical-catalog.json --release
+          release_status=$?
+          set -e
+          test "$release_status" -eq 1
+
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
@@ -80,7 +90,7 @@ jobs:
       - name: Assemble instrumentation test APK
         run: ./gradlew assembleDebugAndroidTest
 
-      - name: Upload test reports and APKs
+      - name: Upload test reports, APKs and ingestion proof
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -89,5 +99,6 @@ jobs:
             app/build/reports/tests/
             app/build/test-results/
             app/build/outputs/apk/
+            build/vocabulary-ingestion/ci-proof/
           if-no-files-found: warn
           retention-days: 14

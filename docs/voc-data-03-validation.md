@@ -1,8 +1,8 @@
 # VOC-DATA-03 validation and review handoff
 
-**Cập nhật mới nhất: sửa R3 local trên head 187927d**, xem mục cuối tài liệu.
-Các kết quả implementation commit, Gradle và checksum ở những mục ban đầu bên
-dưới là evidence cũ, không phải kết quả chạy lại cho bản sửa R3.
+**Cập nhật mới nhất: checklist nghiệm thu và CI proof ngày 05/11/2026**, xem mục
+cuối và [acceptance checklist](voc-data-03-acceptance-checklist.md). Các mục trước
+giữ lịch sử; kết quả của lần chạy cũ không thay cho kiểm tra commit PR cuối.
 
 Ngày thực chạy: 2026-11-03. Phụ trách theo task: Trường; reviewer: Nhân.
 Trạng thái: implementation candidate sẵn sàng kiểm tra, **không đánh dấu Hoàn thành**.
@@ -305,3 +305,43 @@ Kiểm tra key/content chứng minh khớp bytes, không chứng minh dịch đ�
 hợp lệ ngoài hồ sơ gate. Contract acceptance, custody và baseline phát hành còn chờ
 quyết định; semantic QA thuộc VOC-DATA-04, asset build thuộc VOC-DATA-06. Import nguồn
 thật và AC-12 vẫn pending. Không đánh dấu task Done hoặc tự merge PR.
+
+## Checklist nghiệm thu và CI proof — 05/11/2026
+
+Bản sửa này dựa trên head `505a3fcef7ee220c196337108dbbb0096a306753`, đã chứa
+develop `82d438c` và thay đổi DATA-03 schema v2. Không còn conflict hoặc unmerged
+paths; docs/README.md giữ cả liên kết DATA-03 và VOC-DATA-03.
+
+Đọc trực tiếp SRS baseline v1.1 và sheet Phân công hiện hành: VOC-DATA-03 vẫn
+Đang làm, Trường thực hiện, Nhân review. Bổ sung acceptance checklist gồm đối chiếu
+§7.3 DATA-01..06/AC-12, quyết định adapter, registry custody, baseline phát hành
+và tiêu chí riêng cho merge implementation, đóng task và release. Quyết định của
+Nhân/owner chưa có xác nhận; không thay SRS hoặc tự cập nhật sheet.
+
+CI bổ sung chạy CLI verified fixture hai lần, so byte cả 4 artifacts, validate
+development và yêu cầu release validator từ chối fixture với đúng exit 1; upload
+logs, hai bộ output và comparison cùng reports/APKs. Giữ toàn bộ gates Python,
+source checks, DATA-03 Android regression và Gradle/build sẵn có.
+
+Kiểm chứng local mới trên Linux, Python 3.12.14, jsonschema 4.26.0:
+
+| Kiểm tra | Kết quả |
+| --- | --- |
+| Vocabulary / contract / catalog suites | 71 + 39 + 5 = 115 tests pass |
+| Frozen inventory audit | Pass; eligibleSourceCount=0 |
+| Credit consistency | Exit 0; releaseCreditComplete=false, licenseApprovalVerified=false |
+| Verified fixture CLI hai lượt | Exit 0, cả 4 file giống byte |
+| Development / release validator | Exit 0 / 1 đúng mong đợi; 4 stableId, 16 memberships, 4 pack fixture |
+| git diff --check / unmerged paths | Pass / không có |
+
+Proof local: `build/vocabulary-ingestion/ci-proof/comparison.json`. Canonical SHA-256
+`329091f45d888d94a64ad1f56a776a5b66497f70b220ae6fb9b86cc43ca9b671`, manifest
+`912a96f4d20a8fbce5eea05a55abceae03b037e9311a7b508c0b703379c44cc7`.
+Manifest khác lần trước do ghi phiên bản môi trường; không yêu cầu byte identity
+giữa các phiên bản Python khác nhau. Không đổi implementation ingest/reference,
+canonical contract, registry, baseline, catalog assets hoặc userdata.
+
+Môi trường local lần này không có Android SDK; Android unit tests, debug APK và
+instrumentation APK phải đọc kết quả Android CI trên commit mới. CI head trước
+`505a3fc` đã success tại run `41953591113`, không dùng run đó làm bằng chứng head
+mới. Các quyết định acceptance, import snapshot thật và AC-12 vẫn pending.

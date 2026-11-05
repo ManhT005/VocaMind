@@ -2,6 +2,8 @@
 
 Implementation candidate for Trường / reviewer Nhân. Contract v1.0.0 remains
 pending team acceptance. This tool does not approve sources or establish AC-12.
+[Acceptance and custody checklist](../../docs/voc-data-03-acceptance-checklist.md)
+tracks the explicit decisions required before task closure.
 Python 3.11+ and `docs/data/vocabulary-contract-v1/requirements-validation.txt`
 are required; no Android dependency is added.
 
