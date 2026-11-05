@@ -2,7 +2,8 @@
 
 Ngày triển khai: 05/11/2026. Owner theo kế hoạch: Vương Quang Thành; reviewer: Trường.
 Nhánh: `feature/voc-data-04-quality-gates`, base `develop` / `752cce4`.
-Trạng thái: **implementation candidate; chưa đóng nghiệm thu dữ liệu MVP**.
+PR: [#27](https://github.com/ManhT005/VocaMind/pull/27), target `develop`.
+Trạng thái: **technical checks pass; chưa đóng nghiệm thu dữ liệu MVP**.
 
 ## Căn cứ và đầu vào
 
@@ -64,9 +65,19 @@ tests là kết quả mong đợi, không phải suite thất bại.
 
 CI hiện có tự discover các test mới. Workflow bổ sung hai lần QC, so sánh toàn
 bộ output, validate canonical, negative run thiếu review và upload artifacts.
-CI GitHub sẽ chạy Python/source gates, Android unit tests, debug build và
-instrumentation APK trên PR. Kết quả chỉ được ghi nhận sau khi đối chiếu đúng
-commit. Build APK không thay instrumentation tests trên thiết bị.
+**[Android CI #90 — SUCCESS](https://github.com/ManhT005/VocaMind/actions/runs/42029581859)**
+đã xác minh cho implementation head `caa59a830365808eae8f12465862bb5fc90a684e`.
+Job `127252295417` checkout merge ref `923b0931a16c6d9f9be017bd9801f7f28d7cd5bc`,
+ghép head trên với develop `752cce4d2170f58cd138ead3b9bf1c90a35e1527`.
+140 Python tests, source/credit/contract gates, ingestion/QC reproducibility và
+negative publication đều pass; Android unit tests, `assembleDebug` và
+`assembleDebugAndroidTest` đều BUILD SUCCESSFUL. Build instrumentation APK
+không thay instrumentation tests trên thiết bị.
+
+Artifact `13415741246` chứa reports/APKs/ingestion và QC proof, SHA-256 zip
+`98281fed7469cd1ed8833aa33d1e1861636f2ec73ba131bd4e229bfd3b4eefa3`.
+Đây là evidence cho implementation commit nêu rõ ở trên; mọi commit tiếp theo
+được kiểm tra riêng trong PR, không gán CI cũ sang head mới.
 
 ## Những mục nghiệm thu còn mở
 
@@ -76,8 +87,8 @@ commit. Build APK không thay instrumentation tests trên thiết bị.
 - Review nghĩa/ví dụ trên corpus MVP thật bởi reviewer có trách nhiệm; evidence
   fixture không thay thế bước này và không chứng minh AC-04/10/12 toàn sản phẩm.
 - VOC-DATA-05/06 xác nhận handoff, enrichment và asset/release validation.
-- Trường review PR, CI bắt buộc pass trước merge. PR được mở vào develop để chạy
-  CI và yêu cầu reviewer; không có xác nhận review nào được tự tạo.
+- Đã mở PR #27 vào develop và request review `Letruong18` (Trường).
+  Review thực tế vẫn pending; không có xác nhận review nào được tự tạo.
 
 ## Nội dung PR chuẩn bị
 

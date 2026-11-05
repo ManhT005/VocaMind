@@ -1,0 +1,32 @@
+{
+  "repository": "ManhT005/VocaMind",
+  "pullRequest": 27,
+  "baseSha": "752cce4d2170f58cd138ead3b9bf1c90a35e1527",
+  "headSha": "caa59a830365808eae8f12465862bb5fc90a684e",
+  "checkedOutMergeSha": "923b0931a16c6d9f9be017bd9801f7f28d7cd5bc",
+  "workflowRunId": 42029581859,
+  "workflowRunUrl": "https://github.com/ManhT005/VocaMind/actions/runs/42029581859",
+  "jobId": 127252295417,
+  "conclusion": "success",
+  "pythonTests": {"vocabulary": 96, "contract": 39, "catalog": 5},
+  "successfulChecks": [
+    "source registry and frozen inventory",
+    "local credit consistency",
+    "contract validation",
+    "ingestion reproducibility and fixture release rejection",
+    "QC reproducibility and unreviewed publication rejection",
+    "Android unit tests",
+    "assembleDebug",
+    "assembleDebugAndroidTest",
+    "artifact upload"
+  ],
+  "artifact": {
+    "id": 13415741246,
+    "name": "android-validation-923b0931a16c6d9f9be017bd9801f7f28d7cd5bc",
+    "zipSha256": "98281fed7469cd1ed8833aa33d1e1861636f2ec73ba131bd4e229bfd3b4eefa3"
+  },
+  "requestedReviewer": "Letruong18",
+  "reviewApproval": "pending",
+  "productionContentAcceptance": "blocked: no approved corpus or semantic review evidence supplied",
+  "limitations": "CI success does not approve production source rights, semantic content, downstream owner handoff or overall AC-04/10/12. Instrumentation APK assembled; device tests not run."
+}

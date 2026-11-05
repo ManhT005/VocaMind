@@ -13,10 +13,10 @@ This checklist distinguishes executed technical checks from external approvals.
 | Duplicate/provenance/license/pack gates | QC-05/09/10/11/12/13/18/19 and tamper/custody tests. |
 | License metadata alone is insufficient | Replay uses actual `authorize()` plus frozen inventory; unapproved sources remain blocked. |
 | Rejects traceable and repaired under control, rerun succeeds | Error schema carries recordRef/stableId/field/reason/provenance; wording correction/renewed review test passes; rejected CLI emits no success artifact. Real corpus remediation not yet possible. |
-| Important tests pass and reports supplied | See validation and evidence directory; CI links supplied in PR after publishing. |
+| Important tests pass and reports supplied | 140 Python tests local and CI; Android unit tests/debug APK/instrumentation APK pass. CI #90 and artifact linked in validation. |
 | MVP content reviewed per record | **Pending**: no approved production corpus or actual semantic review sidecar supplied. Synthetic decisions are test data only. |
 | Reviewer can reproduce | `tools/vocabulary/QUALITY.md` provides exact CLI and review schema. Reviewer execution/confirmation remains pending. |
-| Trường reviews PR, required CI passes before merge | PR/CI to be linked in validation; actual review is pending until submitted by Trường. |
+| Trường reviews PR, required CI passes before merge | [PR #27](https://github.com/ManhT005/VocaMind/pull/27), CI #90 success at implementation caa59a8; requested Letruong18, actual review pending. |
 
 ## Verified blockers, 2026-11-05
 
