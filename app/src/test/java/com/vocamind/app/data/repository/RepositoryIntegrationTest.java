@@ -203,6 +203,58 @@ public class RepositoryIntegrationTest {
         assertEquals(2, user.userDao().reviews().size());
     }
 
+    /** Reviews W1 with each rating in turn, feeding the stored progress back into the scheduler. */
+    private WordProgress review(WordProgress previous, Rating rating, long now) {
+        LeitnerState state = previous == null ? LeitnerState.newWord() : previous.toState();
+        return reviews.recordReview(W1, schedule(state, rating, now), now).get();
+    }
+
+    private WordProgress stored() { return study.getProgress(W1).get().get(); }
+
+    @Test public void leechFlagPersistsOnlyAtFourthConsecutiveForgot() {
+        WordProgress p = null;
+        for (int i = 1; i <= 3; i++) {
+            p = review(p, Rating.FORGOT, i * DAY);
+            assertEquals(i, p.getConsecutiveMistakes());
+            assertFalse(p.isLeech());
+        }
+        p = review(p, Rating.FORGOT, 4 * DAY);
+        assertEquals(4, p.getConsecutiveMistakes());
+        assertTrue(p.isLeech());
+
+        WordProgress stored = stored();
+        assertEquals(4, stored.getConsecutiveMistakes());
+        assertTrue(stored.isLeech());
+        assertTrue(user.userDao().progress(W1).isLeech);
+    }
+
+    @Test public void forgotKeepsLeechAndHardOrRememberedClearsItInStorage() {
+        for (Rating clearing : new Rating[]{Rating.HARD, Rating.REMEMBERED}) {
+            user.getOpenHelper().getWritableDatabase().execSQL("DELETE FROM UserWordProgress");
+            WordProgress p = null;
+            for (int i = 1; i <= 4; i++) p = review(p, Rating.FORGOT, i * DAY);
+            assertTrue(p.isLeech());
+
+            p = review(p, Rating.FORGOT, 5 * DAY);
+            assertTrue("FORGOT must not clear leech", stored().isLeech());
+            assertEquals(5, stored().getConsecutiveMistakes());
+
+            p = review(p, clearing, 6 * DAY);
+            WordProgress stored = stored();
+            assertFalse(clearing + " must clear leech", stored.isLeech());
+            assertEquals(0, stored.getConsecutiveMistakes());
+        }
+    }
+
+    @Test public void interruptedForgotStreakRestartsTowardLeech() {
+        WordProgress p = null;
+        for (int i = 1; i <= 3; i++) p = review(p, Rating.FORGOT, i * DAY);
+        p = review(p, Rating.HARD, 4 * DAY);
+        for (int i = 5; i <= 7; i++) p = review(p, Rating.FORGOT, i * DAY);
+        assertEquals(3, stored().getConsecutiveMistakes());
+        assertFalse(stored().isLeech());
+    }
+
     @Test public void reviewRejectsUnknownWordStaleBoxAndBadArguments() {
         ScheduleResult fresh = schedule(LeitnerState.newWord(), Rating.REMEMBERED, 10 * DAY);
         assertEquals(RepoError.NOT_FOUND, reviews.recordReview("ffffffffffffffff", fresh, 10 * DAY).getError());
