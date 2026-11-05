@@ -1,0 +1,151 @@
+pack	lemma	pos	senseIndex	meaningVi	exampleEn	exampleVi
+basic	customer	noun	1	khách hàng	The customer paid for two cups of coffee.	Khách hàng đã thanh toán hai tách cà phê.
+basic	price	noun	1	giá bán	The price includes breakfast for two people.	Giá bán đã bao gồm bữa sáng cho hai người.
+basic	product	noun	1	sản phẩm	This product comes with a small instruction book.	Sản phẩm này đi kèm một cuốn sách hướng dẫn nhỏ.
+basic	order	noun	1	đơn đặt hàng	Your order will arrive on Friday morning.	Đơn đặt hàng của bạn sẽ đến vào sáng thứ Sáu.
+basic	payment	noun	1	khoản thanh toán	We received your payment for the train tickets.	Chúng tôi đã nhận khoản thanh toán vé tàu của bạn.
+basic	receipt	noun	1	biên lai	Please keep the receipt until you leave.	Vui lòng giữ biên lai cho đến khi bạn rời đi.
+basic	ticket	noun	1	vé	She bought a ticket for the evening bus.	Cô ấy đã mua một vé xe buýt buổi tối.
+basic	hotel	noun	1	khách sạn	Our hotel is near the main train station.	Khách sạn của chúng tôi ở gần ga tàu chính.
+basic	room	noun	1	phòng	The room has two beds and a desk.	Phòng có hai chiếc giường và một chiếc bàn làm việc.
+basic	travel	verb	1	đi du lịch	We travel to a new city every summer.	Chúng tôi đi du lịch đến một thành phố mới mỗi mùa hè.
+basic	train	noun	1	tàu hỏa	The train leaves at seven in the morning.	Tàu hỏa khởi hành lúc bảy giờ sáng.
+basic	bus	noun	1	xe buýt	This bus stops outside the shopping center.	Xe buýt này dừng bên ngoài trung tâm mua sắm.
+basic	station	noun	1	nhà ga	Meet me at the station after lunch.	Hãy gặp tôi tại nhà ga sau bữa trưa.
+basic	airport	noun	1	sân bay	We reached the airport before the rain started.	Chúng tôi đã đến sân bay trước khi trời bắt đầu mưa.
+basic	flight	noun	1	chuyến bay	Her flight arrives at nine this evening.	Chuyến bay của cô ấy đến lúc chín giờ tối nay.
+basic	passport	noun	1	hộ chiếu	Please show your passport at the hotel desk.	Vui lòng xuất trình hộ chiếu tại quầy lễ tân khách sạn.
+basic	luggage	noun	1	hành lý	He left his luggage beside the reception desk.	Anh ấy đã để hành lý cạnh quầy lễ tân.
+basic	reservation	noun	1	việc đặt chỗ trước	I made a reservation for two people tonight.	Tôi đã đặt chỗ trước cho hai người vào tối nay.
+basic	arrival	noun	1	sự đến nơi	Please call us after your arrival in Hanoi.	Vui lòng gọi cho chúng tôi sau khi bạn đến Hà Nội.
+basic	departure	noun	1	sự khởi hành	The departure of our train was delayed.	Sự khởi hành của chuyến tàu chúng tôi đã bị hoãn.
+basic	breakfast	noun	1	bữa sáng	Breakfast is served in the dining room downstairs.	Bữa sáng được phục vụ tại phòng ăn ở tầng dưới.
+basic	lunch	noun	1	bữa trưa	We had lunch at a small restaurant nearby.	Chúng tôi đã ăn bữa trưa tại một nhà hàng nhỏ gần đó.
+basic	dinner	noun	1	bữa tối	My family usually has dinner at seven.	Gia đình tôi thường ăn bữa tối lúc bảy giờ.
+basic	menu	noun	1	thực đơn	The waiter brought us a menu in English.	Người phục vụ đã mang cho chúng tôi một thực đơn tiếng Anh.
+basic	restaurant	noun	1	nhà hàng	The restaurant closes at ten every night.	Nhà hàng đóng cửa lúc mười giờ mỗi tối.
+basic	table	noun	1	bàn	We chose a table beside the window.	Chúng tôi đã chọn một bàn bên cạnh cửa sổ.
+basic	water	noun	1	nước	Please bring a glass of water for me.	Vui lòng mang cho tôi một cốc nước.
+basic	coffee	noun	1	cà phê	He drinks coffee without milk every morning.	Anh ấy uống cà phê không sữa mỗi sáng.
+basic	tea	noun	1	trà	Would you like some tea after your meal?	Bạn có muốn uống chút trà sau bữa ăn không?
+basic	bread	noun	1	bánh mì	We bought fresh bread from the corner shop.	Chúng tôi đã mua bánh mì mới ở cửa hàng góc phố.
+basic	fruit	noun	1	trái cây	She eats fresh fruit after breakfast every day.	Cô ấy ăn trái cây tươi sau bữa sáng mỗi ngày.
+basic	milk	noun	1	sữa	There is some milk in the kitchen fridge.	Có một ít sữa trong tủ lạnh ở bếp.
+basic	sugar	noun	1	đường ăn	I only add a little sugar to my tea.	Tôi chỉ thêm một ít đường ăn vào trà.
+basic	cash	noun	1	tiền mặt	This small shop only accepts payment in cash.	Cửa hàng nhỏ này chỉ chấp nhận thanh toán bằng tiền mặt.
+basic	card	noun	1	thẻ thanh toán	You can pay with your card at reception.	Bạn có thể trả bằng thẻ thanh toán tại quầy lễ tân.
+basic	shop	noun	1	cửa hàng	The shop sells food and cold drinks.	Cửa hàng bán đồ ăn và đồ uống lạnh.
+basic	buy	verb	1	mua	I want to buy a ticket for tomorrow.	Tôi muốn mua một vé cho ngày mai.
+basic	sell	verb	1	bán	They sell fresh fruit at the morning market.	Họ bán trái cây tươi tại chợ buổi sáng.
+basic	cheap	adjective	1	rẻ	We found a cheap hotel near the beach.	Chúng tôi đã tìm được một khách sạn rẻ gần biển.
+basic	expensive	adjective	1	đắt	This restaurant is too expensive for our budget.	Nhà hàng này quá đắt so với ngân sách của chúng tôi.
+office	office	noun	1	văn phòng	Our office is on the second floor.	Văn phòng của chúng tôi ở tầng hai.
+office	company	noun	1	công ty	The company makes furniture for local schools.	Công ty sản xuất đồ nội thất cho các trường học địa phương.
+office	employee	noun	1	nhân viên	Each employee receives a new security card.	Mỗi nhân viên được nhận một thẻ an ninh mới.
+office	manager	noun	1	người quản lý	The manager will explain the new work schedule.	Người quản lý sẽ giải thích lịch làm việc mới.
+office	colleague	noun	1	đồng nghiệp	My colleague helped me finish the monthly report.	Đồng nghiệp của tôi đã giúp tôi hoàn thành báo cáo tháng.
+office	meeting	noun	1	cuộc họp	Our meeting starts at nine tomorrow morning.	Cuộc họp của chúng ta bắt đầu lúc chín giờ sáng mai.
+office	report	noun	1	báo cáo	Please send the report before Friday afternoon.	Vui lòng gửi báo cáo trước chiều thứ Sáu.
+office	email	noun	1	thư điện tử	I received an email from the sales team.	Tôi đã nhận một thư điện tử từ nhóm bán hàng.
+office	message	noun	1	tin nhắn	She left a message on my work phone.	Cô ấy đã để lại một tin nhắn trên điện thoại công việc của tôi.
+office	phone	noun	1	điện thoại	The phone on my desk is ringing.	Điện thoại trên bàn làm việc của tôi đang reo.
+office	computer	noun	1	máy tính	This computer stores all our customer records.	Máy tính này lưu tất cả hồ sơ khách hàng của chúng tôi.
+office	printer	noun	1	máy in	The printer needs more paper before the meeting.	Máy in cần thêm giấy trước cuộc họp.
+office	document	noun	1	tài liệu	Please read this document before you sign.	Vui lòng đọc tài liệu này trước khi ký.
+office	file	noun	1	tệp tin	Save the file in the shared project folder.	Hãy lưu tệp tin vào thư mục dự án dùng chung.
+office	contract	noun	1	hợp đồng	Both companies signed the contract yesterday afternoon.	Cả hai công ty đã ký hợp đồng vào chiều hôm qua.
+office	invoice	noun	1	hóa đơn yêu cầu thanh toán	Please send the invoice after delivering the goods.	Vui lòng gửi hóa đơn yêu cầu thanh toán sau khi giao hàng.
+office	budget	noun	1	ngân sách	Our budget covers travel and hotel costs.	Ngân sách của chúng tôi bao gồm chi phí đi lại và khách sạn.
+office	salary	noun	1	lương cố định	Her salary is paid at the end of each month.	Lương cố định của cô ấy được trả vào cuối mỗi tháng.
+office	interview	noun	1	buổi phỏng vấn	His interview is scheduled for Monday morning.	Buổi phỏng vấn của anh ấy được lên lịch vào sáng thứ Hai.
+office	training	noun	1	việc đào tạo	The training will help employees use the software.	Việc đào tạo sẽ giúp nhân viên sử dụng phần mềm.
+office	schedule	noun	1	lịch trình	We checked the schedule before booking our flights.	Chúng tôi đã kiểm tra lịch trình trước khi đặt vé máy bay.
+office	deadline	noun	1	hạn chót	The deadline for this report is next Tuesday.	Hạn chót cho báo cáo này là thứ Ba tuần tới.
+office	project	noun	1	dự án	Our project will improve the company website.	Dự án của chúng tôi sẽ cải thiện trang web công ty.
+office	task	noun	1	nhiệm vụ	Your first task is to check these records.	Nhiệm vụ đầu tiên của bạn là kiểm tra các hồ sơ này.
+office	team	noun	1	nhóm làm việc	Our team meets every Monday to share ideas.	Nhóm làm việc của chúng tôi họp mỗi thứ Hai để chia sẻ ý tưởng.
+office	department	noun	1	phòng ban	This department handles questions about customer payments.	Phòng ban này xử lý các câu hỏi về khoản thanh toán của khách hàng.
+office	business	noun	1	hoạt động kinh doanh	The new website helped our business grow.	Trang web mới đã giúp hoạt động kinh doanh của chúng tôi phát triển.
+office	service	noun	1	dịch vụ	The hotel offers a free delivery service.	Khách sạn cung cấp một dịch vụ giao hàng miễn phí.
+office	supplier	noun	1	nhà cung cấp	Our supplier delivers fresh vegetables every morning.	Nhà cung cấp của chúng tôi giao rau tươi mỗi sáng.
+office	client	noun	1	khách hàng sử dụng dịch vụ	The lawyer met her client at the office.	Nữ luật sư đã gặp khách hàng sử dụng dịch vụ của mình tại văn phòng.
+office	delivery	noun	1	việc giao hàng	Delivery usually takes three working days after payment.	Việc giao hàng thường mất ba ngày làm việc sau khi thanh toán.
+office	package	noun	1	kiện hàng	The package contains books for our new library.	Kiện hàng chứa sách cho thư viện mới của chúng tôi.
+office	warehouse	noun	1	kho hàng	The company stores spare parts in this warehouse.	Công ty cất giữ phụ tùng trong kho hàng này.
+office	stock	noun	1	hàng tồn kho	We checked the stock before ordering more chairs.	Chúng tôi đã kiểm tra hàng tồn kho trước khi đặt thêm ghế.
+office	equipment	noun	1	thiết bị	The new equipment will arrive early next week.	Thiết bị mới sẽ đến vào đầu tuần tới.
+office	prepare	verb	1	chuẩn bị	Please prepare the meeting room before ten.	Vui lòng chuẩn bị phòng họp trước mười giờ.
+office	confirm	verb	1	xác nhận	Can you confirm the delivery date by email?	Bạn có thể xác nhận ngày giao hàng qua thư điện tử không?
+office	sign	verb	1	ký tên	Please sign your name at the bottom.	Vui lòng ký tên của bạn ở phía dưới.
+office	attend	verb	1	tham dự	All team leaders will attend the meeting tomorrow.	Tất cả trưởng nhóm sẽ tham dự cuộc họp ngày mai.
+office	discuss	verb	1	thảo luận	We will discuss the new project after lunch.	Chúng ta sẽ thảo luận về dự án mới sau bữa trưa.
+daily	family	noun	1	gia đình	My family eats together every Sunday evening.	Gia đình tôi ăn cùng nhau vào mỗi tối Chủ nhật.
+daily	parent	noun	1	cha hoặc mẹ	Each parent can attend the school meeting.	Mỗi người cha hoặc mẹ đều có thể tham dự cuộc họp ở trường.
+daily	mother	noun	1	mẹ	My mother grows flowers in our small garden.	Mẹ tôi trồng hoa trong khu vườn nhỏ của chúng tôi.
+daily	father	noun	1	cha	Her father walks to work every morning.	Cha cô ấy đi bộ đến chỗ làm mỗi sáng.
+daily	child	noun	1	đứa trẻ	The child is drawing a picture of a tree.	Đứa trẻ đang vẽ một bức tranh về một cái cây.
+daily	brother	noun	1	anh hoặc em trai	My older brother plays football after school every day.	Anh trai tôi chơi bóng đá sau giờ học mỗi ngày.
+daily	sister	noun	1	chị hoặc em gái	His older sister works at a nearby hospital.	Chị gái của anh ấy làm việc tại một bệnh viện gần đó.
+daily	friend	noun	1	người bạn	I met a friend at the park yesterday.	Tôi đã gặp một người bạn ở công viên hôm qua.
+daily	neighbor	noun	1	người hàng xóm	Our neighbor looks after the house when we travel.	Người hàng xóm trông nom nhà khi chúng tôi đi du lịch.
+daily	home	noun	1	mái ấm	She feels safe and happy in her home.	Cô ấy cảm thấy an toàn và hạnh phúc trong mái ấm của mình.
+daily	house	noun	1	nhà ở	Their house has a red roof and white walls.	Nhà ở của họ có mái đỏ và tường trắng.
+daily	kitchen	noun	1	nhà bếp	We cook our meals in the kitchen.	Chúng tôi nấu các bữa ăn trong nhà bếp.
+daily	bedroom	noun	1	phòng ngủ	The bedroom is quiet and has a large window.	Phòng ngủ yên tĩnh và có một cửa sổ lớn.
+daily	bathroom	noun	1	phòng tắm	There are clean towels in the bathroom.	Có những chiếc khăn sạch trong phòng tắm.
+daily	garden	noun	1	vườn	We grow tomatoes in the garden behind our house.	Chúng tôi trồng cà chua trong vườn phía sau nhà.
+daily	door	noun	1	cửa ra vào	Please close the door before you leave.	Vui lòng đóng cửa ra vào trước khi bạn rời đi.
+daily	window	noun	1	cửa sổ	She opened the window to let fresh air in.	Cô ấy đã mở cửa sổ để không khí trong lành vào.
+daily	chair	noun	1	ghế	Please put a chair beside the table.	Vui lòng đặt một chiếc ghế cạnh bàn.
+daily	bed	noun	1	giường	The cat is sleeping under my bed.	Con mèo đang ngủ dưới giường của tôi.
+daily	clothes	noun	1	quần áo	He washed his clothes after the long trip.	Anh ấy đã giặt quần áo sau chuyến đi dài.
+daily	shoe	noun	1	chiếc giày	There is a small stone inside my shoe.	Có một hòn đá nhỏ bên trong chiếc giày của tôi.
+daily	wash	verb	1	rửa	Please wash your hands before eating dinner.	Vui lòng rửa tay trước khi ăn bữa tối.
+daily	cook	verb	1	nấu ăn	I cook for my family every evening.	Tôi nấu ăn cho gia đình mình mỗi tối.
+daily	clean	verb	1	làm sạch	We clean the kitchen after each meal.	Chúng tôi làm sạch nhà bếp sau mỗi bữa ăn.
+daily	eat	verb	1	ăn	They eat breakfast together before leaving for work.	Họ ăn sáng cùng nhau trước khi đi làm.
+daily	drink	verb	1	uống	You should drink enough water during the day.	Bạn nên uống đủ nước trong ngày.
+daily	sleep	verb	1	ngủ	Young children need to sleep for many hours.	Trẻ nhỏ cần ngủ trong nhiều giờ.
+daily	wake	verb	1	thức giấc	I usually wake before my alarm rings.	Tôi thường thức giấc trước khi chuông báo thức reo.
+daily	walk	verb	1	đi bộ	We walk to the market every Saturday morning.	Chúng tôi đi bộ đến chợ mỗi sáng thứ Bảy.
+daily	read	verb	1	đọc	She likes to read stories before going to bed.	Cô ấy thích đọc truyện trước khi đi ngủ.
+daily	write	verb	1	viết	Please write your address on this piece of paper.	Vui lòng viết địa chỉ của bạn lên tờ giấy này.
+daily	listen	verb	1	lắng nghe	The children listen carefully when their teacher speaks.	Bọn trẻ lắng nghe chăm chú khi giáo viên nói.
+daily	speak	verb	1	nói	Can you speak a little more slowly?	Bạn có thể nói chậm hơn một chút không?
+daily	help	verb	1	giúp đỡ	Our neighbors help us carry the heavy boxes.	Những người hàng xóm giúp đỡ chúng tôi mang các thùng nặng.
+daily	visit	verb	1	đến thăm	We visit our grandparents on Sunday afternoons.	Chúng tôi đến thăm ông bà vào các chiều Chủ nhật.
+daily	happy	adjective	1	vui vẻ	The children look happy after playing outside.	Bọn trẻ trông vui vẻ sau khi chơi ngoài trời.
+daily	tired	adjective	1	mệt	I feel tired after working all day.	Tôi cảm thấy mệt sau khi làm việc cả ngày.
+daily	hungry	adjective	1	đói	She was hungry after the long morning walk.	Cô ấy đã đói sau buổi đi bộ dài vào buổi sáng.
+daily	healthy	adjective	1	khỏe mạnh	Regular exercise helps us stay healthy and active.	Tập thể dục đều đặn giúp chúng ta luôn khỏe mạnh và năng động.
+daily	careful	adjective	1	cẩn thận	Be careful when you cross this busy road.	Hãy cẩn thận khi bạn băng qua con đường đông đúc này.
+academic	research	noun	1	nghiên cứu	Her research focuses on how children learn languages.	Nghiên cứu của cô ấy tập trung vào cách trẻ em học ngôn ngữ.
+academic	study	noun	1	công trình nghiên cứu	The study examined reading habits among university students.	Công trình nghiên cứu đã khảo sát thói quen đọc của sinh viên đại học.
+academic	theory	noun	1	lý thuyết	This theory explains why objects fall toward the ground.	Lý thuyết này giải thích vì sao các vật rơi xuống mặt đất.
+academic	method	noun	1	phương pháp	The teacher introduced a new method for learning vocabulary.	Giáo viên đã giới thiệu một phương pháp mới để học từ vựng.
+academic	result	noun	1	kết quả	The result of the experiment surprised the students.	Kết quả của thí nghiệm đã khiến các sinh viên ngạc nhiên.
+academic	evidence	noun	1	bằng chứng	We need more evidence to support this explanation.	Chúng ta cần thêm bằng chứng để hỗ trợ lời giải thích này.
+academic	analysis	noun	1	sự phân tích	The analysis revealed a clear pattern in the data.	Sự phân tích đã cho thấy một quy luật rõ ràng trong dữ liệu.
+academic	data	noun	1	dữ liệu	The team collected data from three local schools.	Nhóm đã thu thập dữ liệu từ ba trường học địa phương.
+academic	science	noun	1	khoa học	Science helps us understand the natural world.	Khoa học giúp chúng ta hiểu thế giới tự nhiên.
+academic	education	noun	1	giáo dục	Education can create new opportunities for young people.	Giáo dục có thể tạo ra những cơ hội mới cho người trẻ.
+academic	knowledge	noun	1	kiến thức	Reading widely can increase your knowledge of history.	Đọc nhiều có thể mở rộng kiến thức lịch sử của bạn.
+academic	skill	noun	1	kỹ năng	Clear writing is an important skill for researchers.	Viết rõ ràng là một kỹ năng quan trọng đối với các nhà nghiên cứu.
+academic	concept	noun	1	khái niệm	The teacher explained the concept with a simple drawing.	Giáo viên đã giải thích khái niệm bằng một hình vẽ đơn giản.
+academic	principle	noun	1	nguyên lý	This principle applies to many types of machines.	Nguyên lý này áp dụng cho nhiều loại máy móc.
+academic	process	noun	1	quá trình	The process turns raw materials into useful products.	Quá trình này biến nguyên liệu thô thành sản phẩm hữu ích.
+academic	structure	noun	1	cấu trúc	The structure of this sentence is quite simple.	Cấu trúc của câu này khá đơn giản.
+academic	function	noun	1	chức năng	The main function of the heart is to pump blood.	Chức năng chính của tim là bơm máu.
+academic	system	noun	1	hệ thống	The school uses a new system to record attendance.	Nhà trường sử dụng một hệ thống mới để ghi nhận việc đi học.
+academic	factor	noun	1	yếu tố	Cost is an important factor in this decision.	Chi phí là một yếu tố quan trọng trong quyết định này.
+academic	effect	noun	1	ảnh hưởng	The study measured the effect of noise on sleep.	Công trình nghiên cứu đã đo ảnh hưởng của tiếng ồn lên giấc ngủ.
+academic	cause	noun	1	nguyên nhân	The scientists investigated the cause of the sudden change.	Các nhà khoa học đã điều tra nguyên nhân của sự thay đổi đột ngột.
+academic	change	noun	1	sự thay đổi	We observed a small change in water temperature.	Chúng tôi đã quan sát một sự thay đổi nhỏ về nhiệt độ nước.
+academic	develop	verb	1	phát triển	Students develop useful skills through regular practice.	Sinh viên phát triển những kỹ năng hữu ích nhờ luyện tập thường xuyên.
+academic	compare	verb	1	so sánh	Compare the two results before drawing a conclusion.	Hãy so sánh hai kết quả trước khi đưa ra kết luận.
+academic	explain	verb	1	giải thích	Can you explain how this simple machine works?	Bạn có thể giải thích chiếc máy đơn giản này hoạt động thế nào không?
+academic	describe	verb	1	mô tả	Please describe the changes you observed during the experiment.	Vui lòng mô tả những thay đổi bạn đã quan sát trong thí nghiệm.
+academic	define	verb	1	định nghĩa	The first chapter will define the main terms.	Chương đầu tiên sẽ định nghĩa các thuật ngữ chính.
+academic	evaluate	verb	1	đánh giá	Teachers evaluate student progress throughout the school year.	Giáo viên đánh giá sự tiến bộ của học sinh trong suốt năm học.
+academic	support	verb	1	củng cố	These results support our explanation of the problem.	Những kết quả này củng cố lời giải thích của chúng tôi về vấn đề.
+academic	improve	verb	1	cải thiện	Regular practice can improve your reading speed.	Luyện tập thường xuyên có thể cải thiện tốc độ đọc của bạn.

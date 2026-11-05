@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0.0",
+  "fixtureOnly": true,
+  "records": [
+    {
+      "stableId": "5aecfbf5b9a23aee",
+      "entrySha256": "073cb79073517f5bd2abd945c34226f6d1d4f583e07825d7289095ede90941dc",
+      "reviewer": "Synthetic fixture reviewer (not production approval)",
+      "reviewedAt": "2026-11-05",
+      "decision": "approved",
+      "singleSense": true,
+      "exampleSense": true,
+      "translationEquivalent": true,
+      "distinctMeaning": true
+    },
+    {
+      "stableId": "90562a98e8686267",
+      "entrySha256": "da0a4f8b287522bdeca606cfaeb7d3a0abe784d94679641df3520ad5e6bf8045",
+      "reviewer": "Synthetic fixture reviewer (not production approval)",
+      "reviewedAt": "2026-11-05",
+      "decision": "approved",
+      "singleSense": true,
+      "exampleSense": true,
+      "translationEquivalent": true,
+      "distinctMeaning": true
+    },
+    {
+      "stableId": "923d45253cc2c67c",
+      "entrySha256": "99001c128f069df0f420cd8da0ef23ec3ab0dc7b47c39f101d4ba781c1e96b76",
+      "reviewer": "Synthetic fixture reviewer (not production approval)",
+      "reviewedAt": "2026-11-05",
+      "decision": "approved",
+      "singleSense": true,
+      "exampleSense": true,
+      "translationEquivalent": true,
+      "distinctMeaning": true
+    },
+    {
+      "stableId": "d17314a48504e2ac",
+      "entrySha256": "d5ef9ddd6ffe59764c8ee3033c664bd63841d03a8905ed92287629617adb6625",
+      "reviewer": "Synthetic fixture reviewer (not production approval)",
+      "reviewedAt": "2026-11-05",
+      "decision": "approved",
+      "singleSense": true,
+      "exampleSense": true,
+      "translationEquivalent": true,
+      "distinctMeaning": true
+    }
+  ],
+  "datasetSha256": "480d8d9aed29a9595866754204cc28232cc9fcdc8c97eda61ec6da7fb5db3f60"
+}

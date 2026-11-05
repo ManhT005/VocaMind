@@ -314,9 +314,9 @@ public class RepositoryIntegrationTest {
     private static QuizResult completedResult(int n, int correct) {
         List<QuizQuestion> qs = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            QuizVocabulary v = new QuizVocabulary(String.format("%016x", i + 1), "w" + i, "noun", "m" + i, "");
+            QuizVocabulary v = new QuizVocabulary(String.format("%016x", i + 1), "w" + i, "noun", "m0", "");
             qs.add(new QuizQuestion(v, new ArrayList<>(Arrays.asList(new QuizOption("a", "m0", "m0"),
-                    new QuizOption("b", "m1", "m1"), new QuizOption("c", "m2", "m2"), new QuizOption("d", "m3", "m3"))), "a"));
+                    new QuizOption("b", "m1", "m1"), new QuizOption("c", "m2", "m2"), new QuizOption("d", "m3", "m3"))), "a", meaning -> meaning));
         }
         QuizSession s = new QuizSession(qs);
         for (int i = 0; i < n; i++) {

@@ -1,0 +1,810 @@
+{
+  "toolVersion": "1.0.0",
+  "adapter": "reviewed-jsonl-v1",
+  "schemaVersion": "1.0.0",
+  "contentVersion": "1.0.0",
+  "fixtureOnly": false,
+  "encoding": "utf-8",
+  "input": "docs/data/voc-data-04/accepted-v1/staging.jsonl",
+  "identityRegistry": "docs/data/voc-data-04/accepted-v1/identity-registry.json",
+  "baseline": null,
+  "sourceRegistry": "docs/data/voc-data-04/accepted-v1/source-registry.json",
+  "inventory": "docs/data/voc-data-04/accepted-v1/inventory.json",
+  "sources": [
+    {
+      "registryId": "vocamind-ai-editorial",
+      "canonicalId": "vocamind-ai-editorial-v1",
+      "snapshotId": "editorial-accepted-v1",
+      "upstreamVersion": "1.0.0",
+      "artifact": "docs/data/voc-data-04/accepted-v1/staging.jsonl",
+      "sha256": "b588844e1f1228acaeed139efe08a5d9d53dcb5a9da8e4f056a23bea3ed959c9",
+      "referenceAdapter": "reviewed-jsonl-v1"
+    }
+  ],
+  "packs": [
+    {
+      "id": "pack_toeic_basic",
+      "title": "TOEIC Căn bản",
+      "description": "Bản nháp học liệu chờ duyệt nội dung và quyền.",
+      "category": "toeic",
+      "orderNo": 0,
+      "version": "1.0.0"
+    },
+    {
+      "id": "pack_toeic_office",
+      "title": "TOEIC Công sở & Giao dịch",
+      "description": "Bản nháp học liệu chờ duyệt nội dung và quyền.",
+      "category": "toeic",
+      "orderNo": 1,
+      "version": "1.0.0"
+    },
+    {
+      "id": "pack_daily_life",
+      "title": "Tiếng Anh Đời sống Hàng ngày",
+      "description": "Bản nháp học liệu chờ duyệt nội dung và quyền.",
+      "category": "general",
+      "orderNo": 2,
+      "version": "1.0.0"
+    },
+    {
+      "id": "pack_academic",
+      "title": "Từ vựng Học thuật Thiết yếu",
+      "description": "Bản nháp học liệu chờ duyệt nội dung và quyền.",
+      "category": "academic",
+      "orderNo": 3,
+      "version": "1.0.0"
+    }
+  ],
+  "packWords": [
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "524b9dddc2876a46",
+      "orderNo": 0
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "c09530564094b0ac",
+      "orderNo": 1
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "634bc7b326fdfddd",
+      "orderNo": 2
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "74fb0128cec1c90a",
+      "orderNo": 3
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "732c533f208ab60d",
+      "orderNo": 4
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "d121b12bf674524c",
+      "orderNo": 5
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "8a76a2f0dc14014f",
+      "orderNo": 6
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "3d5117748d4c5141",
+      "orderNo": 7
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "a744e451d1bdad3d",
+      "orderNo": 8
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "d42cd44739b0e370",
+      "orderNo": 9
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "ea0e961551c98538",
+      "orderNo": 10
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "97b60271c7847cec",
+      "orderNo": 11
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "339a41a30122525c",
+      "orderNo": 12
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "926cb2c7b70e55dd",
+      "orderNo": 13
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "d70a8da417e1518c",
+      "orderNo": 14
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "be5192ae23f51730",
+      "orderNo": 15
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "4dbafd4ecdb3dacc",
+      "orderNo": 16
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "ecfb366e8e09fd2c",
+      "orderNo": 17
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "9e50e0d149f9b83c",
+      "orderNo": 18
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "4fae627dc5b73414",
+      "orderNo": 19
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "66248220016a4c4f",
+      "orderNo": 20
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "bf0be5b61866f965",
+      "orderNo": 21
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "35d609ed98afcb6f",
+      "orderNo": 22
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "9e61c13dbd55c590",
+      "orderNo": 23
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "8d87e61afc56f490",
+      "orderNo": 24
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "1ea16d6488d32531",
+      "orderNo": 25
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "154ad3c75bd7a6f6",
+      "orderNo": 26
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "f4a89b4c349dda7f",
+      "orderNo": 27
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "57e8f34166e86602",
+      "orderNo": 28
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "13b658cda964e2fc",
+      "orderNo": 29
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "3142d729b72035da",
+      "orderNo": 0
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "2a0bd49d29501e9d",
+      "orderNo": 1
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "0143ae3ced507401",
+      "orderNo": 2
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "094d6eb38436449c",
+      "orderNo": 3
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "d9502a131e68548d",
+      "orderNo": 4
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "c50f97678af2c3b0",
+      "orderNo": 5
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "8dfb40053188d6e2",
+      "orderNo": 6
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "832bc62cf611ef76",
+      "orderNo": 7
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "04f6267e6210a62b",
+      "orderNo": 8
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "966dc6001179f77a",
+      "orderNo": 9
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "84b99b98d945db07",
+      "orderNo": 10
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "becb25b23f9ee952",
+      "orderNo": 11
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "b0d465f82f26660c",
+      "orderNo": 12
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "c3f4a0f8569f129e",
+      "orderNo": 13
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "feb842c0ca22355c",
+      "orderNo": 14
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "6efc89d4b3a8f007",
+      "orderNo": 15
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "c61d1941e83e9805",
+      "orderNo": 16
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "76fafba7114e9592",
+      "orderNo": 17
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "df89f71e93a58312",
+      "orderNo": 18
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "e60be53a143266a0",
+      "orderNo": 19
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "9e6450caee747c20",
+      "orderNo": 20
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "98475b4ca08e0ad8",
+      "orderNo": 21
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "3586522dac0ead10",
+      "orderNo": 22
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "4e6431a4739ab29e",
+      "orderNo": 23
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "08e316e478a1cb48",
+      "orderNo": 24
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "2a341b4ec105c143",
+      "orderNo": 25
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "f99fcd7b01315093",
+      "orderNo": 26
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "9533b3a23d1c4fe0",
+      "orderNo": 27
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "7a24bdf094914ffb",
+      "orderNo": 28
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "e519d3c5c741a451",
+      "orderNo": 29
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "d4cefbbdfda250ce",
+      "orderNo": 30
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "680f5d8d8ea18784",
+      "orderNo": 31
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "21be5e8881d7cab1",
+      "orderNo": 32
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "d67b0acba33b2c64",
+      "orderNo": 33
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "f44bdd7635550987",
+      "orderNo": 34
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "9b2457a96a18cc6a",
+      "orderNo": 35
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "f672afbf13be68df",
+      "orderNo": 36
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "2a1a65c13e33bc68",
+      "orderNo": 37
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "c3c40e610a088175",
+      "orderNo": 38
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "0207c263f8c49060",
+      "orderNo": 39
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "ee46fdf826f53ce2",
+      "orderNo": 0
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "edcc67afb8658f36",
+      "orderNo": 1
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "1f431cc21a98d12f",
+      "orderNo": 2
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "a22879209e8e0506",
+      "orderNo": 3
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "2219291add402728",
+      "orderNo": 4
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "3dbaed5c338b2b1c",
+      "orderNo": 5
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "84d7ff576a0352d7",
+      "orderNo": 6
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "be14412e62bb09fa",
+      "orderNo": 7
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "7fe46ad7d9da1204",
+      "orderNo": 8
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "9e84e8ebe9e2a529",
+      "orderNo": 9
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "c50193865412fbdd",
+      "orderNo": 10
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "cdb9f58f4061c249",
+      "orderNo": 11
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "e89a6829b7badb63",
+      "orderNo": 12
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "923d45253cc2c67c",
+      "orderNo": 13
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "1fdd05db52c836d6",
+      "orderNo": 14
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "28df1baa0ff1f8ad",
+      "orderNo": 15
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "010b4ac271bcee7c",
+      "orderNo": 16
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "363c503bebd37391",
+      "orderNo": 17
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "8a29babd28b7431b",
+      "orderNo": 18
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "1816f4bcf0432990",
+      "orderNo": 19
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "c16e2c85165e9642",
+      "orderNo": 20
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "e812fbe52f19fdad",
+      "orderNo": 21
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "5911ac176d3f214c",
+      "orderNo": 22
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "4c4abdecc46493b5",
+      "orderNo": 23
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "643eefd4035066d7",
+      "orderNo": 24
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "9e5de132fc3085f9",
+      "orderNo": 25
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "8427eccd5d4c4df4",
+      "orderNo": 26
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "7e09d3489f1b4832",
+      "orderNo": 27
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "966322961d7b2a54",
+      "orderNo": 28
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "b7bcc9dcf3586381",
+      "orderNo": 29
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "6dddf2d3e33455f9",
+      "orderNo": 30
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "f14c1376c41412d6",
+      "orderNo": 31
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "2a509f121003cd06",
+      "orderNo": 32
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "d7aed07271411f20",
+      "orderNo": 33
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "df679670d76cbece",
+      "orderNo": 34
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "e2497882de1443c6",
+      "orderNo": 35
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "6330e75b7661e248",
+      "orderNo": 36
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "743fc4aebc74dc29",
+      "orderNo": 37
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "961ef9a79a039621",
+      "orderNo": 38
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "6c1fea0390defc05",
+      "orderNo": 39
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "749505edb46ed2e9",
+      "orderNo": 0
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "633188448bb2750d",
+      "orderNo": 1
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "4a756afdff0f53ac",
+      "orderNo": 2
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "a5568d2ba7bee3e4",
+      "orderNo": 3
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "ecf6c310590530e8",
+      "orderNo": 4
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "0a498cc4cc82ed55",
+      "orderNo": 5
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "de8fb7c19de25ba6",
+      "orderNo": 6
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "55d9e63344378006",
+      "orderNo": 7
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "d1c881300fa31491",
+      "orderNo": 8
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "18c8c1664b1f0e78",
+      "orderNo": 9
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "2fde3352568ed7fe",
+      "orderNo": 10
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "7d18d115c89193ca",
+      "orderNo": 11
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "8d57e94d31e48520",
+      "orderNo": 12
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "b8eeeb568b74a80b",
+      "orderNo": 13
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "36fd889573de8c99",
+      "orderNo": 14
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "98b58efbaa0a7f1f",
+      "orderNo": 15
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "68cf70d8331dfeb3",
+      "orderNo": 16
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "75bc1957c2522c98",
+      "orderNo": 17
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "53184184e303b46b",
+      "orderNo": 18
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "09ccd86563216372",
+      "orderNo": 19
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "12ad019497d6252b",
+      "orderNo": 20
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "b6386bc208da0874",
+      "orderNo": 21
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "ccb4c475e4c5374f",
+      "orderNo": 22
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "b7834c1148baa64a",
+      "orderNo": 23
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "d93c6ed2429a25b6",
+      "orderNo": 24
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "fc63a682aa35b611",
+      "orderNo": 25
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "e879f569a68bd61c",
+      "orderNo": 26
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "cc93c43a835e8bd3",
+      "orderNo": 27
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "9e4319249efff080",
+      "orderNo": 28
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "a0adea31b35a7f42",
+      "orderNo": 29
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "8c46632cf2e617d2",
+      "orderNo": 30
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "0699e8c16aeb2c75",
+      "orderNo": 31
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "6878a6bfd1203dfe",
+      "orderNo": 32
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "7ed4eab7db38de9e",
+      "orderNo": 33
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "8ca8a2a4ae0ed0bd",
+      "orderNo": 34
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "65f0859e4989297a",
+      "orderNo": 35
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "daba18657d6679e8",
+      "orderNo": 36
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "814c072810abf7a2",
+      "orderNo": 37
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "9eee80ccf844e456",
+      "orderNo": 38
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "9d68ebb49ea25a87",
+      "orderNo": 39
+    }
+  ]
+}

@@ -71,6 +71,51 @@ jobs:
           set -e
           test "$release_status" -eq 1
 
+      - name: Verify vocabulary QC and refusal to publish unreviewed content
+        run: |
+          python tools/vocabulary/quality.py --fixture --input build/vocabulary-ingestion/ci-proof/a --config tools/vocabulary/fixtures/ingestion/verified/config.json --reviews tools/vocabulary/fixtures/quality/reviews.json --output build/vocabulary-quality/ci-a
+          python tools/vocabulary/quality.py --fixture --input build/vocabulary-ingestion/ci-proof/a --config tools/vocabulary/fixtures/ingestion/verified/config.json --reviews tools/vocabulary/fixtures/quality/reviews.json --output build/vocabulary-quality/ci-b
+          diff -r build/vocabulary-quality/ci-a build/vocabulary-quality/ci-b
+          python docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-quality/ci-a/canonical-catalog.json
+          set +e
+          python tools/vocabulary/quality.py --fixture --input build/vocabulary-ingestion/ci-proof/a --config tools/vocabulary/fixtures/ingestion/verified/config.json --reviews tools/vocabulary/fixtures/quality/pending-reviews.json --output build/vocabulary-quality/ci-rejected
+          qc_status=$?
+          set -e
+          test "$qc_status" -eq 1
+          test ! -e build/vocabulary-quality/ci-rejected/manifest.json
+          test ! -e build/vocabulary-quality/ci-rejected/canonical-catalog.json
+          test ! -e build/vocabulary-quality/ci-rejected/validated_vocab.jsonl
+
+      - name: Verify editorial corpus reproducibility and approval blockers
+        run: |
+          set +e
+          python tools/vocabulary/prepare_corpus.py --require-approved --output build/vocabulary-corpus/ci-a
+          corpus_a_status=$?
+          python tools/vocabulary/prepare_corpus.py --require-approved --output build/vocabulary-corpus/ci-b
+          corpus_b_status=$?
+          set -e
+          test "$corpus_a_status" -eq 1
+          test "$corpus_b_status" -eq 1
+          diff -r build/vocabulary-corpus/ci-a build/vocabulary-corpus/ci-b
+          diff -r docs/data/voc-data-04/corpus-v1 build/vocabulary-corpus/ci-a
+          test ! -e build/vocabulary-corpus/ci-a/manifest.json
+          test ! -e build/vocabulary-corpus/ci-a/validated_vocab.jsonl
+          set +e
+          python tools/vocabulary/ingest.py --config docs/data/voc-data-04/corpus-v1/ingestion-proposal.json --output build/vocabulary-ingestion/editorial-approval-check
+          editorial_status=$?
+          set -e
+          test "$editorial_status" -eq 1
+          test ! -e build/vocabulary-ingestion/editorial-approval-check/manifest.json
+
+      - name: Verify owner-accepted editorial production handoff
+        run: |
+          python tools/vocabulary/accept_editorial.py --output build/vocabulary-corpus/accepted-ci
+          diff -r docs/data/voc-data-04/accepted-v1 build/vocabulary-corpus/accepted-ci
+          python tools/vocabulary/ingest.py --config docs/data/voc-data-04/accepted-v1/ingestion-config.json --output build/vocabulary-ingestion/accepted-ci
+          python tools/vocabulary/quality.py --input build/vocabulary-ingestion/accepted-ci --config docs/data/voc-data-04/accepted-v1/ingestion-config.json --reviews docs/data/voc-data-04/accepted-v1/reviews.json --output build/vocabulary-quality/ci-accepted
+          python docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-quality/ci-accepted/canonical-catalog.json --release
+          python tools/vocabulary/accept_editorial.py --verify build/vocabulary-quality/ci-accepted
+
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
@@ -100,5 +145,9 @@ jobs:
             app/build/test-results/
             app/build/outputs/apk/
             build/vocabulary-ingestion/ci-proof/
+            build/vocabulary-quality/ci-*/
+            build/vocabulary-corpus/ci-*/
+            build/vocabulary-ingestion/editorial-approval-check/
+            build/vocabulary-ingestion/accepted-ci/
           if-no-files-found: warn
           retention-days: 14

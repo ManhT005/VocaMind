@@ -1,0 +1,283 @@
+{
+  "toolVersion": "1.0.0",
+  "fixtureOnly": true,
+  "command": "python tools/vocabulary/quality.py --input build/vocabulary-ingestion/voc-data04-20261105-a --config tools/vocabulary/fixtures/ingestion/verified/config.json --reviews tools/vocabulary/fixtures/quality/pending-reviews.json --output <new-directory> --fixture",
+  "python": "3.13.9",
+  "unicode": "15.1.0",
+  "toolSha256": "9639218c5045f4762091a2cb975aabb12f941b60290699c4dc516fdb766e6da6",
+  "inputSha256": "329091f45d888d94a64ad1f56a776a5b66497f70b220ae6fb9b86cc43ca9b671",
+  "manifestSha256": "299b75cd3fca5d263b4e6b8868d1cca11b6819d4cff1b9e72be6e120e537012a",
+  "reviewSha256": "cc499e8aafca29829f46a3bff2f0082326f367b299796d30304a09d62c9da5a6",
+  "configSha256": "bda14d00e04509bd709463335cc14ebec2a5a8093c49cc45a8b82a9431f6870f",
+  "snapshots": [
+    {
+      "registryId": "synthetic-fixture",
+      "snapshotId": "synthetic-v1",
+      "canonicalId": "fixture-examples-v1",
+      "artifact": "tools/vocabulary/fixtures/ingestion/verified/examples.txt",
+      "sha256": "49f3f4d100736fe0e6343c5383a612cfde952320bcaae28e0f9dd32324061688"
+    },
+    {
+      "registryId": "synthetic-fixture",
+      "snapshotId": "synthetic-v1",
+      "canonicalId": "fixture-lexical-v1",
+      "artifact": "tools/vocabulary/fixtures/ingestion/verified/records.jsonl",
+      "sha256": "2b7ade33c95655fdf36f7f98d13ec8b7602eddb9ac179db52beedcda6be92e63"
+    }
+  ],
+  "status": "failed",
+  "counts": {
+    "input": 4,
+    "accepted": 0,
+    "rejected": 4,
+    "withheld": 0
+  },
+  "errorsByCode": {
+    "CONTENT_REVIEW_REQUIRED": 4,
+    "REVIEW_CONTENT_MISMATCH": 4,
+    "REVIEW_DATASET_MISMATCH": 1
+  },
+  "warningsByCode": {},
+  "packs": [
+    {
+      "packId": "pack_toeic_basic",
+      "memberships": 4,
+      "distinctMeanings": 4,
+      "quizGate": true
+    },
+    {
+      "packId": "pack_toeic_office",
+      "memberships": 4,
+      "distinctMeanings": 4,
+      "quizGate": true
+    },
+    {
+      "packId": "pack_daily_life",
+      "memberships": 4,
+      "distinctMeanings": 4,
+      "quizGate": true
+    },
+    {
+      "packId": "pack_academic",
+      "memberships": 4,
+      "distinctMeanings": 4,
+      "quizGate": true
+    }
+  ],
+  "issues": [
+    {
+      "recordRef": "dataset",
+      "stableId": null,
+      "errorCode": "REVIEW_DATASET_MISMATCH",
+      "field": "reviews.datasetSha256",
+      "reason": "Review must bind the normalized envelope, including pack meaning context",
+      "severity": "error",
+      "provenance": []
+    },
+    {
+      "recordRef": "entries/0",
+      "stableId": "5aecfbf5b9a23aee",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "fixture-examples-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/examples.txt#bank/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/records.jsonl#bank/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/records.jsonl#bank/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/0",
+      "stableId": "5aecfbf5b9a23aee",
+      "errorCode": "REVIEW_CONTENT_MISMATCH",
+      "field": "reviews.entrySha256",
+      "reason": "Missing/stale evidence for normalized record",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "fixture-examples-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/examples.txt#bank/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/records.jsonl#bank/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/records.jsonl#bank/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/1",
+      "stableId": "90562a98e8686267",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "fixture-examples-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/examples.txt#book/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/records.jsonl#book/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/records.jsonl#book/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/1",
+      "stableId": "90562a98e8686267",
+      "errorCode": "REVIEW_CONTENT_MISMATCH",
+      "field": "reviews.entrySha256",
+      "reason": "Missing/stale evidence for normalized record",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "fixture-examples-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/examples.txt#book/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/records.jsonl#book/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/records.jsonl#book/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/2",
+      "stableId": "923d45253cc2c67c",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "fixture-examples-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/examples.txt#airport/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/records.jsonl#airport/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/records.jsonl#airport/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/2",
+      "stableId": "923d45253cc2c67c",
+      "errorCode": "REVIEW_CONTENT_MISMATCH",
+      "field": "reviews.entrySha256",
+      "reason": "Missing/stale evidence for normalized record",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "fixture-examples-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/examples.txt#airport/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/records.jsonl#airport/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/records.jsonl#airport/noun/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/3",
+      "stableId": "d17314a48504e2ac",
+      "errorCode": "CONTENT_REVIEW_REQUIRED",
+      "field": "reviews",
+      "reason": "Dated reviewer approval of sense, examples and meaning distinction required",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "fixture-examples-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/examples.txt#book/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/records.jsonl#book/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/records.jsonl#book/verb/1"
+        }
+      ]
+    },
+    {
+      "recordRef": "entries/3",
+      "stableId": "d17314a48504e2ac",
+      "errorCode": "REVIEW_CONTENT_MISMATCH",
+      "field": "reviews.entrySha256",
+      "reason": "Missing/stale evidence for normalized record",
+      "severity": "error",
+      "provenance": [
+        {
+          "component": "examplePair",
+          "sourceId": "fixture-examples-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/examples.txt#book/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/records.jsonl#book/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "fixture-lexical-v1",
+          "locator": "tools/vocabulary/fixtures/ingestion/verified/records.jsonl#book/verb/1"
+        }
+      ]
+    }
+  ],
+  "normalization": [],
+  "limitations": [
+    "Fixture results never approve production data",
+    "No release quotas, database build or Android acceptance; review by Trường remains required"
+  ]
+}

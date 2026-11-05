@@ -5,6 +5,10 @@ project entry point; generated build outputs stay in ignored build directories.
 
 | Document | Purpose |
 | --- | --- |
+| [VOC-DATA-04 editorial corpus](data/voc-data-04/README.md) | 150 drafted senses with EN/VI examples, source lineage, pending reviews and approval blockers |
+| [VOC-DATA-04 validation](voc-data-04-validation.md) | Normalization, record/pack/source/content gates, reproducibility and test evidence |
+| [VOC-DATA-04 acceptance checklist](voc-data-04-acceptance-checklist.md) | Definition of Done, real-source blockers and downstream owner handoff |
+| [VOC-DATA-04 CLI](../tools/vocabulary/QUALITY.md) | QC commands, review sidecar and verified consumer entrypoint |
 | [VOC-DATA-03 acceptance checklist](voc-data-03-acceptance-checklist.md) | SRS v1.1 trace, adapter decision, registry/baseline custody and merge/task/release gates |
 | [VOC-DATA-03 validation and handoff](voc-data-03-validation.md) | Gated local ingestion, fixture checksums, real-source blockers and pending contract decisions |
 | [VOC-DATA-03 CLI and adapter](../tools/vocabulary/INGESTION.md) | Config, reviewed JSONL mapping, deterministic output and reject policy |

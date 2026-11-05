@@ -8,6 +8,13 @@ tools/vocabulary/test_ingest.py text eol=lf
 tools/vocabulary/ingestion_refs.py text eol=lf
 tools/vocabulary/verify_ingestion.py text eol=lf
 tools/vocabulary/fixtures/ingestion/** text eol=lf
+tools/vocabulary/quality.py text eol=lf
+tools/vocabulary/test_quality.py text eol=lf
+tools/vocabulary/fixtures/quality/** text eol=lf
+tools/vocabulary/prepare_corpus.py text eol=lf
+tools/vocabulary/test_prepare_corpus.py text eol=lf
+docs/data/voc-data-04/** text eol=lf
+docs/evidence/voc-data-04/** text eol=lf
 docs/evidence/voc-data-03/** text eol=lf
 app/src/main/assets/database/*.metadata.json text eol=lf
 app/src/main/assets/database/*.db binary

@@ -23,7 +23,7 @@ public class QuizDomainTest {
     }
     private static List<QuizQuestion> questions(int n) {
         List<QuizQuestion> list = new ArrayList<>();
-        for (int i = 0; i < n; i++) list.add(new QuizQuestion(word(i, "nghĩa 0"), options(), "a"));
+        for (int i = 0; i < n; i++) list.add(new QuizQuestion(word(i, "nghĩa 0"), options(), "a", FIXTURE));
         return list;
     }
     private static QuizSession complete(int n, int correct) {
@@ -82,20 +82,72 @@ public class QuizDomainTest {
         for (int n : new int[]{3, 5}) {
             List<QuizOption> opts = options();
             if (n == 3) opts.remove(0); else opts.add(new QuizOption("e", "e", "e"));
-            assertThrows(IllegalArgumentException.class, () -> new QuizQuestion(word(0, "x"), opts, "a"));
+            assertThrows(IllegalArgumentException.class, () -> new QuizQuestion(word(0, "x"), opts, "a", FIXTURE));
         }
         List<QuizOption> dupId = options(); dupId.set(1, new QuizOption("a", "other", "other"));
         List<QuizOption> dupKey = options(); dupKey.set(1, new QuizOption("b", "other", "nghĩa 0"));
         List<QuizOption> nullItem = options(); nullItem.set(0, null);
         for (List<QuizOption> invalid : Arrays.asList(dupId, dupKey, nullItem))
-            assertThrows(IllegalArgumentException.class, () -> new QuizQuestion(word(0, "x"), invalid, "a"));
-        assertThrows(IllegalArgumentException.class, () -> new QuizQuestion(word(0, "x"), options(), "unknown"));
-        assertThrows(IllegalArgumentException.class, () -> new QuizQuestion(null, options(), "a"));
-        assertThrows(IllegalArgumentException.class, () -> new QuizQuestion(word(0, "x"), null, "a"));
-        List<QuizOption> original = options(); QuizQuestion q = new QuizQuestion(word(0, "x"), original, "a"); original.clear();
+            assertThrows(IllegalArgumentException.class, () -> new QuizQuestion(word(0, "x"), invalid, "a", FIXTURE));
+        assertThrows(IllegalArgumentException.class, () -> new QuizQuestion(word(0, "x"), options(), "unknown", FIXTURE));
+        assertThrows(IllegalArgumentException.class, () -> new QuizQuestion(null, options(), "a", FIXTURE));
+        assertThrows(IllegalArgumentException.class, () -> new QuizQuestion(word(0, "x"), null, "a", FIXTURE));
+        List<QuizOption> original = options(); QuizQuestion q = new QuizQuestion(word(0, "nghĩa 0"), original, "a", FIXTURE); original.clear();
         assertEquals(4, q.getOptions().size());
         assertThrows(UnsupportedOperationException.class, () -> q.getOptions().clear());
     }
+    @Test public void rejectsCorrectOptionWithWrongTargetMeaning() {
+        assertThrows(IllegalArgumentException.class,
+                () -> new QuizQuestion(word(0, "nghĩa 0"), options(), "b", FIXTURE));
+    }
+
+    @Test public void questionValidatesAllOptionKeysAndNormalizer() {
+        assertThrows(IllegalArgumentException.class,
+                () -> new QuizQuestion(word(0, "nghĩa 0"), options(), "a", null));
+        assertThrows(IllegalArgumentException.class,
+                () -> new QuizQuestion(word(0, "nghĩa 0"), options(), "a", s -> " "));
+        List<QuizOption> forgedCorrect = options();
+        forgedCorrect.set(0, new QuizOption("a", "cam", "nghĩa 0"));
+        List<QuizOption> forgedDistractor = options();
+        forgedDistractor.set(1, new QuizOption("b", "nghĩa 0", "nghĩa 1"));
+        for (List<QuizOption> invalid : Arrays.asList(forgedCorrect, forgedDistractor))
+            assertThrows(IllegalArgumentException.class,
+                    () -> new QuizQuestion(word(0, "nghĩa 0"), invalid, "a", FIXTURE));
+    }
+
+    @Test public void poolQuestionUsesSameNormalizationAndScoresCorrectly() {
+        // Test adapter includes one full-casefold vector; it is not the production adapter.
+        MeaningNormalizer normalizer = s -> FIXTURE.normalize(s).replace("ß", "ss");
+        for (String target : Arrays.asList(" BÀN ", Normalizer.normalize("BÀN", Normalizer.Form.NFD), " STRAßE ")) {
+            String key = normalizer.normalize(target);
+            QuizVocabulary vocabulary = word(0, target);
+            QuizPool pool = new QuizPool(Arrays.asList(vocabulary, word(1, "cam"),
+                    word(2, "chuối"), word(3, "lê")), normalizer);
+            List<QuizOption> opts = Arrays.asList(new QuizOption("a", key, key),
+                    new QuizOption("b", "cam", "cam"), new QuizOption("c", "chuối", "chuối"),
+                    new QuizOption("d", "lê", "lê"));
+            QuizQuestion question = pool.createQuestion(vocabulary.getStableId(), opts, "a");
+            assertEquals(pool.getMeaningKey(question.getId()), question.getOptions().get(0).getMeaningKey());
+            assertThrows(IllegalArgumentException.class,
+                    () -> pool.createQuestion(vocabulary.getStableId(), opts, "b"));
+            assertThrows(IllegalArgumentException.class,
+                    () -> pool.createQuestion("unknown", opts, "a"));
+            List<QuizQuestion> sessionQuestions = new ArrayList<>();
+            sessionQuestions.add(question);
+            sessionQuestions.addAll(questions(4).subList(1, 4));
+            QuizSession session = new QuizSession(sessionQuestions);
+            for (int i = 0; i < 4; i++) {
+                session = session.answer(session.getCurrentQuestion().getId(), "a").getSession();
+                if (i < 3) session = session.next().getSession();
+            }
+            assertEquals(100, session.getResult().get().getScorePercent());
+            List<QuizOption> duplicate = new ArrayList<>(opts);
+            duplicate.set(1, new QuizOption("b", target, key));
+            assertThrows(IllegalArgumentException.class,
+                    () -> pool.createQuestion(vocabulary.getStableId(), duplicate, "a"));
+        }
+    }
+
     @Test public void sessionGuardsAndSnapshots() {
         for (int n : new int[]{0, 3, 11}) assertThrows(IllegalArgumentException.class, () -> new QuizSession(questions(n)));
         assertThrows(IllegalArgumentException.class, () -> new QuizSession(null));
@@ -166,7 +218,7 @@ public class QuizDomainTest {
                     if (usedMeaningKeys.add(key))
                         opts.add(new QuizOption(distractor.getStableId(), distractor.getMeaning(), key));
                 }
-                output.add(new QuizQuestion(v, opts, "correct"));
+                output.add(pool.createQuestion(v.getStableId(), opts, "correct"));
             }
             return QuizGenerationOutcome.ready(output);
         };
