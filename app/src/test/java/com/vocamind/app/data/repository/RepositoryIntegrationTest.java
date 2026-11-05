@@ -117,6 +117,18 @@ public class RepositoryIntegrationTest {
         assertEquals("first activation time survives", Long.valueOf(1000L), again.getActivatedAtEpochMillis());
     }
 
+    @Test public void packWordsKeepOrderNoAndMergeProgressByStableId() {
+        long now = 10 * DAY;
+        reviews.recordReview(W2, schedule(LeitnerState.newWord(), Rating.REMEMBERED, now), now);
+        List<StudyItem> words = packs.getPackWords("A").get();
+        assertEquals(Arrays.asList(SHARED, W1, W2, W3),
+                words.stream().map(i -> i.getVocabulary().stableId).collect(Collectors.toList()));
+        assertNull(words.get(0).getProgress());
+        assertEquals(1, words.get(2).getProgress().getBox());
+        assertEquals(RepoError.NOT_FOUND, packs.getPackWords("nope").getError());
+        assertEquals(RepoError.INVALID_ARGUMENT, packs.getPackWords(" ").getError());
+    }
+
     @Test public void unknownPackIsNotFoundAndNothingIsCreated() {
         assertEquals(RepoError.NOT_FOUND, packs.activatePack("nope", 1L).getError());
         assertTrue(user.userDao().packs().isEmpty());
