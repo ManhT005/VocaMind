@@ -7,6 +7,10 @@ project entry point; generated build outputs stay in ignored build directories.
 | --- | --- |
 | [VOC-DATA-03 validation and handoff](voc-data-03-validation.md) | Gated local ingestion, fixture checksums, real-source blockers and pending contract decisions |
 | [VOC-DATA-03 CLI and adapter](../tools/vocabulary/INGESTION.md) | Config, reviewed JSONL mapping, deterministic output and reject policy |
+| [DATA-03 DAO foundation plan](plans/data-03-dao-foundation.md) | Query contracts, active due/new selection, transaction boundaries, fixtures and 7-hour implementation plan |
+| [DATA-03 validation](data-03-validation.md) | DAO contracts, batch/transaction semantics, fixture results and repository handoff |
+| [DATA-03 acceptance checklist](data-03-acceptance-checklist.md) | Integration evidence, G-01…G-13 gates, contract decisions and pending reviewer acceptance |
+| [DATA-03 acceptance evidence](data-03-acceptance-evidence.json) | Actual JUnit/Python counts, report/APK hashes and verified input digest |
 | [Local credit metadata contract](data/content-credits-contract.md) | Companion JSON, exact snapshot matching, existing-install compatibility and release limits |
 | [ATTR-01 review fix plan](plans/attr-01-fix-plan.md) | R1 regression and proposed R2 offline author/credit contract awaiting owner/reviewer confirmation |
 | [ATTR-01 validation](attr-01-validation.md) | Offline attribution UI, executed tests, screenshots and separate AC-12 release blocker |

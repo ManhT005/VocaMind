@@ -76,3 +76,18 @@ jobs:
 
       - name: Assemble debug APK
         run: ./gradlew assembleDebug
+
+      - name: Assemble instrumentation test APK
+        run: ./gradlew assembleDebugAndroidTest
+
+      - name: Upload test reports and APKs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-validation-${{ github.sha }}
+          path: |
+            app/build/reports/tests/
+            app/build/test-results/
+            app/build/outputs/apk/
+          if-no-files-found: warn
+          retention-days: 14
