@@ -1,0 +1,102 @@
+# VOC-DATA-04 — Normalization + quality gates
+
+Ngày triển khai: 05/11/2026. Owner theo kế hoạch: Vương Quang Thành; reviewer: Trường.
+Nhánh: `feature/voc-data-04-quality-gates`, base `develop` / `752cce4`.
+Trạng thái: **implementation candidate; chưa đóng nghiệm thu dữ liệu MVP**.
+
+## Căn cứ và đầu vào
+
+- [Kế hoạch người dùng cung cấp](plans/voc-data-04-normalization-quality-gates.md),
+  lưu nguyên nội dung từ `VOC-DATA04_PLAN.md`.
+- Base chứa ledger VOC-DATA-01, contract VOC-DATA-02 v1.0.0 và ingestion
+  VOC-DATA-03, gồm verified component adapters. Không tìm thấy AGENTS.md.
+- Đã chạy lại ingestion trên `fixtures/ingestion/verified/config.json`:
+  4 record, 4 pack, 16 membership; manifest thành công, component provenance
+  được đối chiếu nội dung, baseline chưa có (`baselineCompared=false`).
+- Canonical envelope, packWords, identityRegistry, sourceMappings và các checksum
+  dùng nguyên contract hiện có. Consumer VOC-DATA-06 nhận envelope cùng QC
+  manifest; việc owner consumer xác nhận nghiệm thu vẫn pending.
+
+## Thay đổi
+
+`tools/vocabulary/quality.py` thêm CLI sau ingestion. Reuse T1, POS aliases,
+stableId, meaningKey và validator; kiểm tra record, duplicate, provenance/license,
+pack và review nghĩa/ví dụ. QC replay ingestion để xác minh lại ledger và snapshot
+thực tế, không chỉ tin licenseCode hoặc approvalStatus trong canonical.
+
+Review sidecar gắn SHA-256 vào từng normalized entry và toàn dataset (kể cả pack
+context), yêu cầu ngày/người review cùng quyết định single sense, dùng đúng nghĩa,
+dịch tương ứng và phân biệt đáp án. Thay wording giữ ID nhưng cần review mới.
+Fixture decisions chỉ là dữ liệu test tổng hợp, không đại diện phê duyệt của người thật.
+
+Output/report có thứ tự ổn định; lỗi blocking trả 1 và không xuất validated output
+hay completion manifest. Dataset lỗi không được biến thành pass bằng việc loại
+record âm thầm. Chạy lại phải dùng thư mục mới. IPA null hợp lệ, chuỗi IPA rỗng
+vẫn fail contract; ví dụ ngoài 5–20 từ và dấu hiệu nhiều nghĩa chỉ là warning.
+
+Không sửa Android, schema, thuật toán ID, ingestion hay quota release. Hướng dẫn
+CLI, review format, chính sách reject và handoff: [QUALITY.md](../tools/vocabulary/QUALITY.md).
+
+## Kiểm chứng
+
+Môi trường local: Python embedded 3.13.9, jsonschema 4.26.0. Python hệ thống và
+`py` không khả dụng; dùng `.tools/python/python.exe`. Để chạy script trực tiếp
+trên bản embedded có sys.path cô lập, dùng `runpy` và chèn `tools/vocabulary`
+vào sys.path; đây là điều chỉnh cách chạy local, không sửa pipeline production.
+
+| Check | Kết quả |
+| --- | --- |
+| Vocabulary: `python -m unittest discover -s tools/vocabulary -p 'test_*.py' -v` | 96 pass, gồm 25 test QC mới |
+| Contract: `python -m unittest discover -s docs/data/vocabulary-contract-v1 -p test_contract.py -v` | 39 pass |
+| Catalog: `python -m unittest discover -s tools/catalog -p 'test_*.py' -v` | 5 pass |
+| QC-01…19 | Bao phủ trong `test_quality.py`, thêm custody, stale review và pack context |
+| QC chạy CLI hai lần cùng input/config/review | Cả 6 file giống byte-for-byte |
+| Canonical sau QC | Pass development contract; fixture bị chặn release |
+| Thiếu review | Exit 1; không canonical, validated JSONL hay manifest |
+| `git diff --check` | Pass |
+
+[comparison.json](evidence/voc-data-04/comparison.json) lưu hash 6 file.
+[Fixture report](evidence/voc-data-04/fixture-qc-report.json) có snapshot/config/
+tool/review/input checksums và 4 nghĩa phân biệt mỗi pack.
+[Unreviewed report](evidence/voc-data-04/unreviewed-qc-report.json) chứng minh fail
+closed. Log các suite được lưu cùng thư mục evidence. Dòng BLOCKED trong negative
+tests là kết quả mong đợi, không phải suite thất bại.
+
+CI hiện có tự discover các test mới. Workflow bổ sung hai lần QC, so sánh toàn
+bộ output, validate canonical, negative run thiếu review và upload artifacts.
+CI GitHub sẽ chạy Python/source gates, Android unit tests, debug build và
+instrumentation APK trên PR. Kết quả chỉ được ghi nhận sau khi đối chiếu đúng
+commit. Build APK không thay instrumentation tests trên thiết bị.
+
+## Những mục nghiệm thu còn mở
+
+- VOC-DATA-01: quyền, corpus snapshot và phê duyệt nguồn thật; không tự bỏ hold.
+- VOC-DATA-03: các quyết định adapter, identity custody và baseline tại
+  [acceptance checklist](voc-data-03-acceptance-checklist.md) vẫn do owner xác nhận.
+- Review nghĩa/ví dụ trên corpus MVP thật bởi reviewer có trách nhiệm; evidence
+  fixture không thay thế bước này và không chứng minh AC-04/10/12 toàn sản phẩm.
+- VOC-DATA-05/06 xác nhận handoff, enrichment và asset/release validation.
+- Trường review PR, CI bắt buộc pass trước merge. PR được mở vào develop để chạy
+  CI và yêu cầu reviewer; không có xác nhận review nào được tự tạo.
+
+## Nội dung PR chuẩn bị
+
+Title: `feat(vocabulary): add normalization and quality gates for VOC-DATA-04`
+
+Base: `develop`. QC chặn publish canonical khi record/pack/rights/review không đạt,
+giữ stableId và provenance contract hiện hữu. Bổ sung review sidecar có checksum,
+reports deterministic, fixture evidence, 25 test QC và workflow CI. Validation:
+96 vocabulary + 39 contract + 5 catalog tests pass; 6 artifacts tái lập giống hệt;
+unreviewed fixture exit 1 không publish. Nguồn/corpus thật, semantic approval và
+review Trường còn pending; không tuyên bố task hoặc MVP đã được nghiệm thu.
+
+## Rà soát hoàn thiện
+
+Bổ sung xử lý lỗi ghi completion marker: dọn success payload, trả 1 và lưu report
+failed khi filesystem còn ghi được; malformed manifest fail closed. Thêm consumer
+API `quality.load_validated` kiểm tra đủ artifact/hash/mode/contract, test tích hợp
+builder hiện hữu trên database synthetic tạm thời, và production-codepath test
+với quyền synthetic cô lập (gồm thu hồi approval). Không thay approval nguồn thật.
+
+[Checklist DoD và bàn giao](voc-data-04-acceptance-checklist.md) ghi rõ owner,
+đầu vào còn thiếu và các bước thực tế để nghiệm thu corpus production.

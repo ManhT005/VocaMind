@@ -1,0 +1,15 @@
+{
+  "identicalFiles": 6,
+  "sha256": {
+    "canonical-catalog.json": "329091f45d888d94a64ad1f56a776a5b66497f70b220ae6fb9b86cc43ca9b671",
+    "manifest.json": "6071c2bba6b238e814cba08a378ad97373803a1063f9e6ded0893a39bd0bdd44",
+    "qc_report.json": "48b3c12ab301c6b0a4f56c23d378593f7fe6a145f3208dfa88fc1f1437404260",
+    "qc_report.md": "e0a93f9494e91f8477d5e2d4cc50da727bf7f5d6a47181f803e0ea1aa7bb4f95",
+    "rejected_records.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "validated_vocab.jsonl": "4d2c2e483729cf14146b61db5d97403496a8419f25d29bc4b4ad2cc74007edc8"
+  },
+  "unreviewedExitCode": 1,
+  "unreviewedPublishes": false,
+  "developmentContractPass": true,
+  "fixtureReleaseRejected": true
+}

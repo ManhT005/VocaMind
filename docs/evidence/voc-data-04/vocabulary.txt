@@ -1,0 +1,160 @@
+test_audit_and_frozen_check_hash_each_file_once (test_gate_optimization.GateOptimizationTest.test_audit_and_frozen_check_hash_each_file_once) ... ok
+test_cached_hash_rechecks_declared_checksum (test_gate_optimization.GateOptimizationTest.test_cached_hash_rechecks_declared_checksum) ... ok
+test_malformed_structures_fail_with_validation_error (test_gate_optimization.GateOptimizationTest.test_malformed_structures_fail_with_validation_error) ... ok
+test_report_distinguishes_raw_rows_and_eligibility (test_gate_optimization.GateOptimizationTest.test_report_distinguishes_raw_rows_and_eligibility) ... ok
+test_reused_snapshot_id_with_new_valid_bytes_needs_new_review (test_gate_optimization.GateOptimizationTest.test_reused_snapshot_id_with_new_valid_bytes_needs_new_review) ... ok
+test_same_size_rewrite_invalidates_cache (test_gate_optimization.GateOptimizationTest.test_same_size_rewrite_invalidates_cache) ... ok
+test_acquisition_preserves_bytes_and_records_hash (test_handoff_tools.HandoffToolsTest.test_acquisition_preserves_bytes_and_records_hash) ... Captured tsl/words.csv: 19 bytes
+ok
+test_capture_cannot_masquerade_as_frozen_inventory (test_handoff_tools.HandoffToolsTest.test_capture_cannot_masquerade_as_frozen_inventory) ... ok
+test_frozen_inventory_cannot_drop_registry_binding (test_handoff_tools.HandoffToolsTest.test_frozen_inventory_cannot_drop_registry_binding) ... ok
+test_frozen_inventory_rejects_changed_registry (test_handoff_tools.HandoffToolsTest.test_frozen_inventory_rejects_changed_registry) ... ok
+test_frozen_inventory_rejects_missing_artifact_listing (test_handoff_tools.HandoffToolsTest.test_frozen_inventory_rejects_missing_artifact_listing) ... ok
+test_frozen_inventory_verifies_and_refuses_overwrite (test_handoff_tools.HandoffToolsTest.test_frozen_inventory_verifies_and_refuses_overwrite) ... ok
+test_incomplete_acquisition_cannot_verify (test_handoff_tools.HandoffToolsTest.test_incomplete_acquisition_cannot_verify) ... Unavailable tsl/words.csv: offline
+ok
+test_metadata_queries_only_api_and_keeps_hold (test_handoff_tools.HandoffToolsTest.test_metadata_queries_only_api_and_keeps_hold) ... ok
+test_metadata_title_cannot_expand_query (test_handoff_tools.HandoffToolsTest.test_metadata_title_cannot_expand_query) ... ok
+test_missing_metadata_is_rejected (test_handoff_tools.HandoffToolsTest.test_missing_metadata_is_rejected) ... ok
+test_ing01_02_07_12_reproducible_offline_multisource (test_ingest.IngestionTests.test_ing01_02_07_12_reproducible_offline_multisource) ... ok
+test_ing01_production_gate_integration_with_temporary_synthetic_approval (test_ingest.IngestionTests.test_ing01_production_gate_integration_with_temporary_synthetic_approval) ... BLOCKED (references): Production mappings require referenceAdapter for content verification
+BLOCKED (gate): Approval content digest mismatch; source rights or snapshot changes require new review
+ok
+test_ing03_order_independence (test_ingest.IngestionTests.test_ing03_order_independence) ... ok
+test_ing04_checksum_and_missing_input (test_ingest.IngestionTests.test_ing04_checksum_and_missing_input) ... BLOCKED (gate): Corpus checksum mismatch
+BLOCKED (gate): [Errno 2] No such file or directory: 'C:\\Users\\thanh\\AppData\\Local\\Temp\\tmp2_gmr4n8\\tools\\vocabulary\\fixtures\\ingestion\\records.jsonl'
+ok
+test_ing05_real_gate_blocks_before_parse_also_dry_run (test_ingest.IngestionTests.test_ing05_real_gate_blocks_before_parse_also_dry_run) ... BLOCKED (gate): hold
+BLOCKED (gate): hold
+BLOCKED (gate): inventory failure
+ok
+test_ing06_reasons (test_ingest.IngestionTests.test_ing06_reasons) ... BLOCKED (validation): Batch rejected; see reject-report.json
+BLOCKED (validation): Batch rejected; see reject-report.json
+BLOCKED (validation): Batch rejected; see reject-report.json
+BLOCKED (validation): Batch rejected; see reject-report.json
+BLOCKED (validation): Batch rejected; see reject-report.json
+BLOCKED (validation): Batch rejected; see reject-report.json
+BLOCKED (validation): Batch rejected; see reject-report.json
+BLOCKED (parse): 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+ok
+test_ing08_wording_and_normalization (test_ingest.IngestionTests.test_ing08_wording_and_normalization) ... ok
+test_ing09_collision_and_baseline_removal (test_ingest.IngestionTests.test_ing09_collision_and_baseline_removal) ... BLOCKED (parse): Identity registry collision/duplicate ID
+BLOCKED (validation): Batch rejected; see reject-report.json
+BLOCKED (validation): Batch rejected; see reject-report.json
+ok
+test_ing09_conflicts_quarantine_all_and_retired_preserved (test_ingest.IngestionTests.test_ing09_conflicts_quarantine_all_and_retired_preserved) ... BLOCKED (validation): Batch rejected; see reject-report.json
+BLOCKED (validation): Batch rejected; see reject-report.json
+ok
+test_ing10_vectors_reference_helpers (test_ingest.IngestionTests.test_ing10_vectors_reference_helpers) ... ok
+test_ing11_publish_failure_has_no_success_payload (test_ingest.IngestionTests.test_ing11_publish_failure_has_no_success_payload) ... BLOCKED (publish): simulated disk failure
+ok
+test_ing13_output_and_fixture_boundaries (test_ingest.IngestionTests.test_ing13_output_and_fixture_boundaries) ... BLOCKED (gate): Fixture cannot claim approval
+ok
+test_ing14_fixture_release_blocked_dry_run_has_no_records (test_ingest.IngestionTests.test_ing14_fixture_release_blocked_dry_run_has_no_records) ... ok
+test_native_components_through_pipeline (test_ingest.IngestionTests.test_native_components_through_pipeline) ... ok
+test_native_reference_adapters (test_ingest.IngestionTests.test_native_reference_adapters) ... ok
+test_reference_adapters_only_after_all_gates (test_ingest.IngestionTests.test_reference_adapters_only_after_all_gates) ... BLOCKED (gate): hold
+ok
+test_review_r1_provenance_requires_nonblank_record_key (test_ingest.IngestionTests.test_review_r1_provenance_requires_nonblank_record_key) ... BLOCKED (validation): Batch rejected; see reject-report.json
+BLOCKED (validation): Batch rejected; see reject-report.json
+BLOCKED (validation): Batch rejected; see reject-report.json
+ok
+test_review_r1_valid_shared_component_locators_remain_supported (test_ingest.IngestionTests.test_review_r1_valid_shared_component_locators_remain_supported) ... ok
+test_review_r2_bad_types_are_record_rejects_and_scanning_continues (test_ingest.IngestionTests.test_review_r2_bad_types_are_record_rejects_and_scanning_continues) ... BLOCKED (validation): Batch rejected; see reject-report.json
+BLOCKED (validation): Batch rejected; see reject-report.json
+BLOCKED (validation): Batch rejected; see reject-report.json
+ok
+test_review_r2_invalid_row_locators_use_file_line_fallback (test_ingest.IngestionTests.test_review_r2_invalid_row_locators_use_file_line_fallback) ... BLOCKED (validation): Batch rejected; see reject-report.json
+BLOCKED (validation): Batch rejected; see reject-report.json
+BLOCKED (validation): Batch rejected; see reject-report.json
+BLOCKED (validation): Batch rejected; see reject-report.json
+BLOCKED (validation): Batch rejected; see reject-report.json
+BLOCKED (validation): Batch rejected; see reject-report.json
+ok
+test_review_r2_multiple_bad_records_have_reconcilable_counts (test_ingest.IngestionTests.test_review_r2_multiple_bad_records_have_reconcilable_counts) ... BLOCKED (validation): Batch rejected; see reject-report.json
+ok
+test_review_r3_literal_and_escaped_unicode_whitespace (test_ingest.IngestionTests.test_review_r3_literal_and_escaped_unicode_whitespace) ... ok
+test_review_r3_physical_lines_and_blank_line_policy (test_ingest.IngestionTests.test_review_r3_physical_lines_and_blank_line_policy) ... BLOCKED (validation): Batch rejected; see reject-report.json
+BLOCKED (validation): Batch rejected; see reject-report.json
+BLOCKED (validation): Batch rejected; see reject-report.json
+ok
+test_tatoeba_reference_pair_ids_credit_and_links (test_ingest.IngestionTests.test_tatoeba_reference_pair_ids_credit_and_links) ... ok
+test_verified_reference_keys_content_and_shared_locators (test_ingest.IngestionTests.test_verified_reference_keys_content_and_shared_locators) ... BLOCKED (validation): Batch rejected; see reject-report.json
+ok
+test_audio_metadata_cannot_grant_release (test_prepare_1000_candidates.TestPrepareCandidates.test_audio_metadata_cannot_grant_release) ... ok
+test_deterministic_research_output_is_not_release (test_prepare_1000_candidates.TestPrepareCandidates.test_deterministic_research_output_is_not_release) ... ok
+test_kaikki_gloss_and_ipa_are_candidates_only (test_prepare_1000_candidates.TestPrepareCandidates.test_kaikki_gloss_and_ipa_are_candidates_only) ... ok
+test_modified_source_is_rejected (test_prepare_1000_candidates.TestPrepareCandidates.test_modified_source_is_rejected) ... ok
+test_unlinked_examples_are_rejected (test_prepare_1000_candidates.TestPrepareCandidates.test_unlinked_examples_are_rejected) ... ok
+test_changed_pack_context_requires_new_review (test_quality.QualityTests.test_changed_pack_context_requires_new_review) ... ok
+test_cli_nonzero_and_synthetic_cannot_be_production (test_quality.QualityTests.test_cli_nonzero_and_synthetic_cannot_be_production) ... ok
+test_consumer_envelope_can_be_built_by_existing_catalog_consumer (test_quality.QualityTests.test_consumer_envelope_can_be_built_by_existing_catalog_consumer) ... ok
+test_consumer_requires_completion_mode_and_all_artifact_hashes (test_quality.QualityTests.test_consumer_requires_completion_mode_and_all_artifact_hashes) ... ok
+test_custody_detects_changed_source_bytes_and_missing_manifest (test_quality.QualityTests.test_custody_detects_changed_source_bytes_and_missing_manifest) ... BLOCKED (gate): Corpus checksum mismatch
+ok
+test_custody_detects_tampered_canonical_even_with_rewritten_hash (test_quality.QualityTests.test_custody_detects_tampered_canonical_even_with_rewritten_hash) ... ok
+test_identity_not_silently_repaired_and_control_characters_blocked (test_quality.QualityTests.test_identity_not_silently_repaired_and_control_characters_blocked) ... ok
+test_malformed_envelopes_report_instead_of_crashing (test_quality.QualityTests.test_malformed_envelopes_report_instead_of_crashing) ... ok
+test_malformed_manifest_fails_closed_with_report (test_quality.QualityTests.test_malformed_manifest_fails_closed_with_report) ... ok
+test_production_authorization_path_with_isolated_synthetic_rights (test_quality.QualityTests.test_production_authorization_path_with_isolated_synthetic_rights) ... BLOCKED (gate): Approval content digest mismatch; source rights or snapshot changes require new review
+ok
+test_publication_failure_cleans_payload_and_marks_report_failed (test_quality.QualityTests.test_publication_failure_cleans_payload_and_marks_report_failed) ... QC failed: publication error: simulated completion-marker write failure
+ok
+test_qc01_04_12_19_valid_nullable_ipa_four_meanings_and_component_sources (test_quality.QualityTests.test_qc01_04_12_19_valid_nullable_ipa_four_meanings_and_component_sources) ... ok
+test_qc02_03_required_fields (test_quality.QualityTests.test_qc02_03_required_fields) ... ok
+test_qc05_all_duplicate_claimants_rejected (test_quality.QualityTests.test_qc05_all_duplicate_claimants_rejected) ... ok
+test_qc06_wording_does_not_change_identity_but_invalidates_review (test_quality.QualityTests.test_qc06_wording_does_not_change_identity_but_invalidates_review) ... ok
+test_qc07_15_unicode_normalization_idempotent (test_quality.QualityTests.test_qc07_15_unicode_normalization_idempotent) ... ok
+test_qc08_unknown_pos_and_alias (test_quality.QualityTests.test_qc08_unknown_pos_and_alias) ... ok
+test_qc09_provenance_missing_or_unknown (test_quality.QualityTests.test_qc09_provenance_missing_or_unknown) ... ok
+test_qc10_license_string_is_not_approval (test_quality.QualityTests.test_qc10_license_string_is_not_approval) ... ok
+test_qc11_13_three_meanings_fail_despite_case_nfc_whitespace (test_quality.QualityTests.test_qc11_13_three_meanings_fail_despite_case_nfc_whitespace) ... ok
+test_qc14_deterministic_publication_and_envelope_compatibility (test_quality.QualityTests.test_qc14_deterministic_publication_and_envelope_compatibility) ... ok
+test_qc16_fail_no_artifacts_and_old_output_refused (test_quality.QualityTests.test_qc16_fail_no_artifacts_and_old_output_refused) ... ok
+test_qc17_short_examples_and_multisense_are_warnings (test_quality.QualityTests.test_qc17_short_examples_and_multisense_are_warnings) ... ok
+test_qc18_unknown_vocabulary_and_pack_references (test_quality.QualityTests.test_qc18_unknown_vocabulary_and_pack_references) ... ok
+test_reviews_are_required_dated_explicit_and_nonduplicated (test_quality.QualityTests.test_reviews_are_required_dated_explicit_and_nonduplicated) ... ok
+test_all_archived_artifacts_match_capture_hashes (test_research_inventory.ResearchInventoryTest.test_all_archived_artifacts_match_capture_hashes) ... ok
+test_every_actual_source_remains_blocked (test_research_inventory.ResearchInventoryTest.test_every_actual_source_remains_blocked) ... ok
+test_raw_wordlists_match_registered_counts (test_research_inventory.ResearchInventoryTest.test_raw_wordlists_match_registered_counts) ... ok
+test_all_live_sources_blocked (test_source_gate.SourceGateTest.test_all_live_sources_blocked) ... ok
+test_approval_is_bound_to_snapshot (test_source_gate.SourceGateTest.test_approval_is_bound_to_snapshot) ... ok
+test_approved_synthetic_snapshot (test_source_gate.SourceGateTest.test_approved_synthetic_snapshot) ... ok
+test_attribution_obligations_change_requires_new_approval (test_source_gate.SourceGateTest.test_attribution_obligations_change_requires_new_approval) ... ok
+test_candidate_cannot_be_used_as_audit_decision (test_source_gate.SourceGateTest.test_candidate_cannot_be_used_as_audit_decision) ... ok
+test_ci_audit_checks_eligible_artifacts (test_source_gate.SourceGateTest.test_ci_audit_checks_eligible_artifacts) ... ok
+test_commons_cannot_be_promoted_to_media_import (test_source_gate.SourceGateTest.test_commons_cannot_be_promoted_to_media_import) ... ok
+test_corrupt_bytes_same_length (test_source_gate.SourceGateTest.test_corrupt_bytes_same_length) ... ok
+test_duplicate_registry_id (test_source_gate.SourceGateTest.test_duplicate_registry_id) ... ok
+test_exclusion_cannot_be_overridden (test_source_gate.SourceGateTest.test_exclusion_cannot_be_overridden) ... ok
+test_invalid_dates (test_source_gate.SourceGateTest.test_invalid_dates) ... ok
+test_invalid_registry_shape (test_source_gate.SourceGateTest.test_invalid_registry_shape) ... ok
+test_legacy_snapshot_only_digest_is_not_accepted (test_source_gate.SourceGateTest.test_legacy_snapshot_only_digest_is_not_accepted) ... ok
+test_license_change_requires_new_approval (test_source_gate.SourceGateTest.test_license_change_requires_new_approval) ... ok
+test_missing_license_evidence (test_source_gate.SourceGateTest.test_missing_license_evidence) ... ok
+test_missing_review_and_unknown_license (test_source_gate.SourceGateTest.test_missing_review_and_unknown_license) ... ok
+test_path_escape (test_source_gate.SourceGateTest.test_path_escape) ... ok
+test_plan_source_id_alias (test_source_gate.SourceGateTest.test_plan_source_id_alias) ... ok
+test_registry_structure (test_source_gate.SourceGateTest.test_registry_structure) ... ok
+test_scope_change_requires_new_approval (test_source_gate.SourceGateTest.test_scope_change_requires_new_approval) ... ok
+test_tatoeba_requires_sentence_metadata_and_links (test_source_gate.SourceGateTest.test_tatoeba_requires_sentence_metadata_and_links) ... ok
+test_technical_review_does_not_replace_content_approval (test_source_gate.SourceGateTest.test_technical_review_does_not_replace_content_approval) ... ok
+
+----------------------------------------------------------------------
+Ran 96 tests in 8.293s
+
+OK
+QC fixture-pass: 4 input, 0 errors
+QC fixture-pass: 4 input, 0 errors
+QC failed: 0 input, 1 errors
+QC failed: 0 input, 1 errors
+QC failed: 0 input, 1 errors
+QC failed: 0 input, 1 errors
+QC failed: 0 input, 1 errors
+QC failed: 0 input, 1 errors
+QC failed: 0 input, 1 errors
+QC pass: 4 input, 0 errors
+QC failed: 0 input, 1 errors
+QC fixture-pass: 4 input, 0 errors
+QC fixture-pass: 4 input, 0 errors
+QC failed: 4 input, 9 errors

@@ -1,6 +1,7 @@
 # Vocabulary source gate
 
 VOC-DATA-03: [local ingestion CLI, adapter and failure policy](INGESTION.md).
+VOC-DATA-04: [normalization, quality gates and content review evidence](QUALITY.md).
 
 Requires Python 3.11+; standard library only. Run from repository root:
 
