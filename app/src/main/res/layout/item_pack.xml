@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pack_root" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/shell_section_spacing" android:background="?attr/selectableItemBackground"
+    android:clickable="true" android:focusable="true" android:minHeight="@dimen/shell_button_height"
+    android:orientation="vertical">
+    <com.google.android.material.textview.MaterialTextView android:id="@+id/pack_title"
+        style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:textStyle="bold" />
+    <com.google.android.material.textview.MaterialTextView android:id="@+id/pack_description"
+        style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginTop="@dimen/shell_item_spacing" />
+    <com.google.android.material.textview.MaterialTextView android:id="@+id/pack_progress_text"
+        style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginTop="@dimen/shell_item_spacing" />
+    <ProgressBar android:id="@+id/pack_progress" style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/shell_item_spacing" android:importantForAccessibility="no" />
+</LinearLayout>

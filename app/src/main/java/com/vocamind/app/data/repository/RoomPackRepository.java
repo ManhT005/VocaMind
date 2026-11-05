@@ -5,11 +5,13 @@ import com.vocamind.app.data.catalog.CatalogDao;
 import com.vocamind.app.data.catalog.CatalogMapper;
 import com.vocamind.app.data.catalog.PackMembership;
 import com.vocamind.app.data.catalog.entity.LearningPack;
+import com.vocamind.app.data.catalog.entity.VocabularyEntry;
 import com.vocamind.app.data.user.UserDao;
 import com.vocamind.app.data.user.entity.UserPack;
 import com.vocamind.app.data.user.entity.UserWordProgress;
 import com.vocamind.app.domain.common.RepoError;
 import com.vocamind.app.domain.common.RepoResult;
+import com.vocamind.app.domain.learning.StudyItem;
 import com.vocamind.app.domain.pack.PackRepository;
 import com.vocamind.app.domain.pack.PackState;
 import java.util.ArrayList;
@@ -72,6 +74,24 @@ public final class RoomPackRepository implements PackRepository {
             boolean wasActive = before != null && before.isActive;
             user.pausePack(packId);
             return RepoResult.success(wasActive);
+        });
+    }
+
+    @Override public RepoResult<List<StudyItem>> getPackWords(String packId) {
+        if (packId == null || packId.trim().isEmpty()) return RepoResult.failure(RepoError.INVALID_ARGUMENT);
+        return RepositoryGuard.read(() -> {
+            if (catalog.pack(packId) == null) return RepoResult.<List<StudyItem>>failure(RepoError.NOT_FOUND);
+            List<VocabularyEntry> words = catalog.words(packId);
+            List<String> ids = new ArrayList<>();
+            for (VocabularyEntry v : words) ids.add(v.id);
+            Map<String, UserWordProgress> progress = new HashMap<>();
+            for (UserWordProgress p : user.progressByIds(ids)) progress.put(p.vocabularyId, p);
+            List<StudyItem> out = new ArrayList<>();
+            for (VocabularyEntry v : words) {
+                UserWordProgress p = progress.get(v.id);
+                out.add(new StudyItem(CatalogMapper.vocabulary(v), p == null ? null : UserDataMapper.progress(p)));
+            }
+            return RepoResult.success(Collections.unmodifiableList(out));
         });
     }
 

@@ -1,32 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="@dimen/shell_screen_padding">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/destination_title"
-            style="@style/TextAppearance.VocaMind.Title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/packs"
-            android:textAlignment="center" />
-
-        <com.google.android.material.textview.MaterialTextView
-            style="@style/TextAppearance.VocaMind.Body"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/shell_item_spacing"
-            android:text="@string/placeholder_description"
-            android:textAlignment="center" />
-
+    android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="@dimen/shell_screen_padding">
+        <com.google.android.material.textview.MaterialTextView android:id="@+id/destination_title"
+            style="@style/TextAppearance.VocaMind.Title" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="@string/packs" />
+        <com.google.android.material.textview.MaterialTextView style="@style/TextAppearance.VocaMind.Body"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/shell_item_spacing" android:text="@string/packs_description" />
+        <ProgressBar android:id="@+id/loading" android:layout_width="48dp" android:layout_height="48dp"
+            android:layout_gravity="center_horizontal" android:contentDescription="@string/packs_loading" />
+        <com.google.android.material.textview.MaterialTextView android:id="@+id/message"
+            style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:accessibilityLiveRegion="polite" android:visibility="gone" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/retry"
+            style="@style/Widget.VocaMind.NavigationButton" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="@string/packs_retry" android:visibility="gone" />
+        <LinearLayout android:id="@+id/pack_list" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="vertical" />
     </LinearLayout>
-
 </ScrollView>

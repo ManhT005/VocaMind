@@ -15,6 +15,11 @@
         android:label="@string/packs" />
 
     <fragment
+        android:id="@+id/packDetailFragment"
+        android:name="com.vocamind.app.feature.packs.PackDetailFragment"
+        android:label="@string/pack_detail_title" />
+
+    <fragment
         android:id="@+id/vocabularyFragment"
         android:name="com.vocamind.app.feature.vocabulary.VocabularyFragment"
         android:label="@string/vocabulary" />
