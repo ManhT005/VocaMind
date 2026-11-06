@@ -55,6 +55,6 @@ public class GenerateQuizTest {
         assertEquals(QuizGenerationOutcome.Status.INVALID_INPUT, generate.execute(new Random(1)).get().getStatus());
         repository.next = RepoResult.success(Collections.emptyList());
         assertEquals(QuizGenerationOutcome.Status.EMPTY, generate.execute(new Random(1)).get().getStatus());
-        assertEquals(7, repository.reads);
+        assertEquals(RepoError.values().length + 2, repository.reads);
     }
 }
