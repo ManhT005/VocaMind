@@ -1,0 +1,12 @@
+{
+  "app": {
+    "path": "build\\search01-small-phone-offline-apk\\outputs\\apk\\debug\\app-debug.apk",
+    "sha256": "b35a30fe7c58a03ab1e107b04ddad9a707dcc6244be75c4c40ec7d6a9f3df77e",
+    "install": "Performing Streamed Install\r\nSuccess\r\n"
+  },
+  "tests": {
+    "path": "build\\search01-small-phone-offline-apk\\outputs\\apk\\androidTest\\debug\\app-debug-androidTest.apk",
+    "sha256": "5b3f5698a9d72a7822294ed5435960d81cbe2d203d1de75ccddd8cfe140635ab",
+    "install": "Performing Streamed Install\r\nSuccess\r\n"
+  }
+}

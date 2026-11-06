@@ -1,0 +1,22 @@
+{
+  "ro.product.model": "sdk_gphone_x86",
+  "ro.product.device": "generic_x86_arm",
+  "ro.product.cpu.abi": "x86",
+  "ro.build.version.release": "11",
+  "ro.build.version.sdk": "30",
+  "ro.build.fingerprint": "google/sdk_gphone_x86/generic_x86_arm:11/RSR1.201013.001/6903271:user/release-keys",
+  "ro.hardware": "ranchu",
+  "avd": "Small_Phone\r\r\nOK",
+  "meminfo": "MemTotal:        2028236 kB\r\nMemFree:          420932 kB\r\nMemAvailable:    1206160 kB\r\nBuffers:           28020 kB\r\nCached:           790372 kB\r\nSwapCached:         3500 kB\r\nActive:           768640 kB\r\nInactive:         551320 kB\r\nActive(anon):     302576 kB\r\nInactive(anon):   210720 kB\r\nActive(file):     466064 kB\r\nInactive(file):   340600 kB\r\nUnevictable:        2988 kB\r\nMlocked:            2988 kB\r\nSwapTotal:       1521172 kB\r\nSwapFree:        1326100 kB\r\nDirty:                 0 kB\r\nWriteback:             0 kB\r\nAnonPages:        501904 kB\r\nMapped:           463956 kB\r\nShmem:              9288 kB\r\nKReclaimable:      43376 kB\r\nSlab:             124184 kB\r\nSReclaimable:      43376 kB\r\nSUnreclaim:        80808 kB\r\nKernelStack:       24240 kB\r\nPageTables:        36916 kB\r\nNFS_Unstable:          0 kB\r\nBounce:                0 kB\r\nWritebackTmp:          0 kB\r\nCommitLimit:     2535288 kB\r\nCommitted_AS:   29220888 kB\r\nVmallocTotal:   34359738367 kB\r\nVmallocUsed:       37576 kB\r\nVmallocChunk:          0 kB\r\nPercpu:             3264 kB\r\nCmaTotal:              0 kB\r\nCmaFree:               0 kB\r\nDirectMap4k:      145232 kB\r\nDirectMap2M:     1951744 kB\r\nDirectMap1G:           0 kB",
+  "size": "Physical size: 720x1280",
+  "density": "Physical density: 320",
+  "emulatorConfigRamMb": 1024,
+  "head": "1aad5653c801224316e1bdaec096b2a9b7582607",
+  "initialSettings": {
+    "global.airplane_mode_on": "1",
+    "global.wifi_on": "2",
+    "system.font_scale": "null",
+    "system.accelerometer_rotation": "1",
+    "system.user_rotation": "0"
+  }
+}

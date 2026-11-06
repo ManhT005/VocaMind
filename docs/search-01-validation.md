@@ -222,3 +222,19 @@ Khi có thiết bị, lưu model/API/build/chipset/RAM và SHA APK trước khi 
 QA có thể chạy trên thiết bị Android hỗ trợ; việc đó không thay thế benchmark
 trên cấu hình tham chiếu hoặc cấu hình thay thế đã được chấp thuận. Giữ nguyên
 HOLD cho đến khi đủ evidence, không dùng số đo host hoặc CI xanh để đóng gate.
+
+## QA bổ sung trên Small Phone
+
+Đã chạy emulator QA tại head `1aad5653c801224316e1bdaec096b2a9b7582607`:
+12 instrumentation tests có sẵn, 5 ca QA bổ sung, 3 lượt font 150% và 1 lượt
+first launch offline PASS; ADB tap/type/Back/rotation cũng PASS. Phần QA emulator
+đã có evidence, thay cho trạng thái chưa chạy ở ghi nhận review trước đó.
+
+Benchmark DATA-05 trên emulator lưu đủ 500 raw samples/5.000 từ; broad-query
+p95 42.8040 ms, max 44.3659 ms. **AC-05/NFR-VM-03 vẫn HOLD** vì đây không phải
+cấu hình tham chiếu SRS. Error/Retry UI dùng fault injection; full detail/Save
+vẫn thuộc VOCAB-02. Không thay source sản phẩm.
+
+Xem [báo cáo và evidence Small Phone](evidence/search-01-small-phone-local/REPORT.md).
+Sau phiên kiểm thử chỉ tạo evidence local, người dùng đã yêu cầu commit/push
+báo cáo này lên nhánh SEARCH-01; không có yêu cầu tạo PR hoặc merge.
