@@ -6,7 +6,8 @@ project entry point; generated build outputs stay in ignored build directories.
 | Document | Purpose |
 | --- | --- |
 | [DATA-06 plan](plans/data-06-atomic-review-transaction.md) | Atomic review scope, six-hour plan, test matrix and boundaries |
-| [DATA-06 validation](data-06-validation.md) | Scheduler/use case integration, transaction rollback, conflict checks and evidence |
+| [DATA-06 validation](data-06-validation.md) | Canonical writer, snapshot contract, current verification and handoff |
+| [DATA-06 PR #24 fix validation](data-06-fix-validation.md) | DATA-04 compatibility, atomic races/rollback, DEC-12 red/green proof and remaining gates |
 | [DATA-05 plan](plans/data-05-fts4-search.md) | FTS4 search, async boundary, test matrix and seven-hour plan |
 | [DATA-05 validation](data-05-validation.md) | Actual prepack integration, raw 5k profiling, reference-device gate and handoff |
 | [DATA-05 PR #23 fix validation](data-05-fix-validation.md) | Develop integration, combined DAO regression, current evidence and remaining acceptance gates |

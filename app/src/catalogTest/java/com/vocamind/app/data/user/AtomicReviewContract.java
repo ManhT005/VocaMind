@@ -283,6 +283,42 @@ public abstract class AtomicReviewContract {
             assertEquals(before, snapshot()); return null;
         });
     }
+    @Test public void persistedDueTimeSurvivesZoneChangeAndReopen() throws Exception {
+        run(() -> {
+            ScheduleResult committed = useCase().execute(ID, Rating.HARD);
+            long dueAt = committed.getDueAtEpochMillis();
+            assertEquals(LocalDateTime.parse("2026-11-04T16:30"),
+                    Instant.ofEpochMilli(dueAt).atZone(ZONE).toLocalDateTime());
+            db.close(); db = UserDatabase.open(context, name);
+            ReviewRepository repository = new RoomReviewRepository(catalog.catalogDao(), db);
+            ReviewProvider.create(repository, CLOCK, ZoneId.of("America/New_York"))
+                    .execute("90562a98e8686267", Rating.HARD);
+            assertEquals(dueAt, db.userDao().progress(ID).dueAt);
+            assertEquals(dueAt, db.userDao().reviews().get(0).nextDueAt);
+            assertEquals(dueAt, repository.getProgress(ID).get().dueAt);
+            return null;
+        });
+    }
+    @Test public void mismatchedIdsAndTamperedHistoryCannotWrite() throws Exception {
+        run(() -> {
+            seed(ID); String before = snapshot();
+            ReviewRepository repository = new RoomReviewRepository(catalog.catalogDao(), db);
+            Optional<ReviewProgress> expected = repository.getProgress(ID);
+            ReviewProgress wrongId = new ReviewProgress("90562a98e8686267", 3, 999, 111L,
+                    CLOCK.millis(), 0, false, 8, true);
+            assertThrows(IllegalArgumentException.class,
+                    () -> repository.recordReview(expected, wrongId, Rating.HARD, CLOCK.millis()));
+            ReviewProgress wrongCount = new ReviewProgress(ID, 3, 999, 111L,
+                    CLOCK.millis(), 0, false, 9, true);
+            assertThrows(IllegalArgumentException.class,
+                    () -> repository.recordReview(expected, wrongCount, Rating.HARD, CLOCK.millis()));
+            ReviewEvent event = new ReviewEvent(); event.vocabularyId = "90562a98e8686267";
+            event.rating = "HARD"; event.boxBefore = 3; event.boxAfter = 3; event.nextDueAt = 1234;
+            UserWordProgress row = db.userDao().progress(ID);
+            assertThrows(IllegalArgumentException.class, () -> db.userDao().recordReviewIfUnchanged(row, event, row));
+            assertEquals(before, snapshot()); return null;
+        });
+    }
     @Test public void closedDatabaseReadReportsReadFailure() throws Exception {
         run(() -> {
             RecordReviewUseCase useCase = useCase(); db.close();

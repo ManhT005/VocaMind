@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-11-06T14:11:16" hostname="7a0e3157ddf4" time="0.001">
+  <properties/>
+  <testcase name="wordBecomesDueAtStoredReviewTime" classname="com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest" time="0.0"/>
+  <testcase name="dueAtPreservesLocalTimeForEveryBox" classname="com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest" time="0.0"/>
+  <testcase name="mistakeCounterDoesNotOverflow" classname="com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest" time="0.0"/>
+  <testcase name="fallBackKeepsCalendarDays" classname="com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest" time="0.0"/>
+  <testcase name="lastMillisecondOfDayAndMidnightBelongToDifferentDays" classname="com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest" time="0.0"/>
+  <testcase name="sameInstantUsesTheZoneCalendarDay" classname="com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest" time="0.001"/>
+  <testcase name="springForwardKeepsCalendarDays" classname="com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest" time="0.0"/>
+  <testcase name="intervalTableMatchesPlanAndRejectsInvalidBox" classname="com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

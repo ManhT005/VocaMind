@@ -1,0 +1,26 @@
+{
+  "identicalFiles": 4,
+  "sha256": {
+    "canonical-catalog.json": "329091f45d888d94a64ad1f56a776a5b66497f70b220ae6fb9b86cc43ca9b671",
+    "manifest.json": "6c21bc874420cb70bc30372761c265f805863761b2ae210c79fd43cf7d74a112",
+    "normalization.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "reject-report.json": "4f44a5f77f943804cf0536c35a4fdee46905dba6036f108fe0ab00bb58ea9930"
+  }
+}
+{
+  "result": "PASS_CONTRACT_CHECKS",
+  "mode": "development",
+  "uniqueWords": 4,
+  "memberships": 16,
+  "packs": 4,
+  "baselineCompared": false,
+  "limitations": "Does not verify semantic quality, license evidence, Room asset, FTS or app release readiness."
+}
+FIXTURE_NOT_RELEASE: fixtureOnly=true
+RELEASE_UNIQUE_WORDS: 4 < 150
+RELEASE_PACK_QUOTA: pack_toeic_basic: < 40
+RELEASE_PACK_QUOTA: pack_toeic_office: < 40
+RELEASE_PACK_QUOTA: pack_daily_life: < 40
+RELEASE_PACK_QUOTA: pack_academic: < 30
+RELEASE_SOURCE_NOT_APPROVED: fixture-examples-v1
+RELEASE_SOURCE_NOT_APPROVED: fixture-lexical-v1
