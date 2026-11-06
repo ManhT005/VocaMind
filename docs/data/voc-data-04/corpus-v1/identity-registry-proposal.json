@@ -1,0 +1,1352 @@
+[
+  {
+    "id": "010b4ac271bcee7c",
+    "identityLemma": "luggage",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "010b4ac271bcee7cbf12f5dbf1f87c3be1b40545bc07e4b7d227189ced6d02ce",
+    "senseDefinition": "hành lý",
+    "status": "active"
+  },
+  {
+    "id": "0143ae3ced507401",
+    "identityLemma": "mother",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "0143ae3ced507401b91103b32eba8d7ac69ec1852e56a0636fdd01a654298d5e",
+    "senseDefinition": "mẹ",
+    "status": "active"
+  },
+  {
+    "id": "0207c263f8c49060",
+    "identityLemma": "careful",
+    "pos": "adjective",
+    "senseIndex": 1,
+    "fullSha256": "0207c263f8c49060ce2e4eeab87fa977e1c8affdd0cb7c091a4bc73b94a4161e",
+    "senseDefinition": "cẩn thận",
+    "status": "active"
+  },
+  {
+    "id": "04f6267e6210a62b",
+    "identityLemma": "neighbor",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "04f6267e6210a62bf0e0fa7b384b979b9e063552263812ccc6bbc1cf22aa75ea",
+    "senseDefinition": "người hàng xóm",
+    "status": "active"
+  },
+  {
+    "id": "0699e8c16aeb2c75",
+    "identityLemma": "package",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "0699e8c16aeb2c75e8ad8167291375e0e46e9e1207dcfef479dd837b18d2287d",
+    "senseDefinition": "kiện hàng",
+    "status": "active"
+  },
+  {
+    "id": "08e316e478a1cb48",
+    "identityLemma": "eat",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "08e316e478a1cb4810681ead3946e76244d74f9e8daffd2bfb3dbd5cc8caad38",
+    "senseDefinition": "ăn",
+    "status": "active"
+  },
+  {
+    "id": "094d6eb38436449c",
+    "identityLemma": "father",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "094d6eb38436449c1cced9b76386de27d23d90b52310a3ad9fa0bf3ed0cb7a7f",
+    "senseDefinition": "cha",
+    "status": "active"
+  },
+  {
+    "id": "09ccd86563216372",
+    "identityLemma": "training",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "09ccd865632163720ad43696738d80b86ffd8c76eb7b86d9d007769171f3eaef",
+    "senseDefinition": "việc đào tạo",
+    "status": "active"
+  },
+  {
+    "id": "0a498cc4cc82ed55",
+    "identityLemma": "meeting",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "0a498cc4cc82ed55a01d3174e9cc37795a1ea615c4e8a8072f479eb572827894",
+    "senseDefinition": "cuộc họp",
+    "status": "active"
+  },
+  {
+    "id": "12ad019497d6252b",
+    "identityLemma": "schedule",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "12ad019497d6252bbd9f690c89ce68fb57e5fd26e42d7a6680617349ca6e8b4e",
+    "senseDefinition": "lịch trình",
+    "status": "active"
+  },
+  {
+    "id": "13b658cda964e2fc",
+    "identityLemma": "improve",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "13b658cda964e2fc39fadfaa2498276a36f548afe186ae994cc6ec502d96273e",
+    "senseDefinition": "cải thiện",
+    "status": "active"
+  },
+  {
+    "id": "154ad3c75bd7a6f6",
+    "identityLemma": "define",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "154ad3c75bd7a6f6d2f8dd6eb2dce5f6f7e4683d6797476dcd917a5c7b61d07f",
+    "senseDefinition": "định nghĩa",
+    "status": "active"
+  },
+  {
+    "id": "1816f4bcf0432990",
+    "identityLemma": "departure",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "1816f4bcf0432990b4c901b17e2101cb8fe2f54d01197a2cded70c96f6a09465",
+    "senseDefinition": "sự khởi hành",
+    "status": "active"
+  },
+  {
+    "id": "18c8c1664b1f0e78",
+    "identityLemma": "phone",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "18c8c1664b1f0e78ec6e277ba8129db9b05694f9dc0c16a42faef78d4036c6e9",
+    "senseDefinition": "điện thoại",
+    "status": "active"
+  },
+  {
+    "id": "1ea16d6488d32531",
+    "identityLemma": "describe",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "1ea16d6488d325318adfc598f2764c465d035ce0545f58611ec034938d7d6088",
+    "senseDefinition": "mô tả",
+    "status": "active"
+  },
+  {
+    "id": "1f431cc21a98d12f",
+    "identityLemma": "product",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "1f431cc21a98d12f38156ffc11166d31d69992736e4a6de2f73dffd22d955312",
+    "senseDefinition": "sản phẩm",
+    "status": "active"
+  },
+  {
+    "id": "1fdd05db52c836d6",
+    "identityLemma": "flight",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "1fdd05db52c836d6d3db6873af37d0e3e6825a43f928883db7915ab8f0e3332f",
+    "senseDefinition": "chuyến bay",
+    "status": "active"
+  },
+  {
+    "id": "21be5e8881d7cab1",
+    "identityLemma": "speak",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "21be5e8881d7cab1fd98d05c135ae5bc99d337286cbb56c12009d25ce42ad75d",
+    "senseDefinition": "nói",
+    "status": "active"
+  },
+  {
+    "id": "2219291add402728",
+    "identityLemma": "payment",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "2219291add402728f080989c427058fbbe875206e2ca44a1498ade00834fa1a1",
+    "senseDefinition": "khoản thanh toán",
+    "status": "active"
+  },
+  {
+    "id": "28df1baa0ff1f8ad",
+    "identityLemma": "passport",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "28df1baa0ff1f8ad45fe089352d615af1e674e824230b199aa9c86252fb73217",
+    "senseDefinition": "hộ chiếu",
+    "status": "active"
+  },
+  {
+    "id": "2a0bd49d29501e9d",
+    "identityLemma": "parent",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "2a0bd49d29501e9de30f7421d720d02c7386afc9abe96fa01de82cd14f0fe503",
+    "senseDefinition": "cha hoặc mẹ",
+    "status": "active"
+  },
+  {
+    "id": "2a1a65c13e33bc68",
+    "identityLemma": "hungry",
+    "pos": "adjective",
+    "senseIndex": 1,
+    "fullSha256": "2a1a65c13e33bc68b9d200dc5c99317a5817e9df40d488b2e2c2152093ad213a",
+    "senseDefinition": "đói",
+    "status": "active"
+  },
+  {
+    "id": "2a341b4ec105c143",
+    "identityLemma": "drink",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "2a341b4ec105c1435ae1d5453812fb38e99f27e1104bc2d9f3afe25c83c95262",
+    "senseDefinition": "uống",
+    "status": "active"
+  },
+  {
+    "id": "2a509f121003cd06",
+    "identityLemma": "sugar",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "2a509f121003cd06b1ca172de764c64d7dbc63deae51f4d09ea8b529835d85cc",
+    "senseDefinition": "đường ăn",
+    "status": "active"
+  },
+  {
+    "id": "2fde3352568ed7fe",
+    "identityLemma": "computer",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "2fde3352568ed7feed78c00b7f18ed84de8bbcc9d12d93935e9e81808805afe6",
+    "senseDefinition": "máy tính",
+    "status": "active"
+  },
+  {
+    "id": "3142d729b72035da",
+    "identityLemma": "family",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "3142d729b72035daae17d2ec1ffd51f8990b3dfe89d57014b8caadcd7422332b",
+    "senseDefinition": "gia đình",
+    "status": "active"
+  },
+  {
+    "id": "339a41a30122525c",
+    "identityLemma": "concept",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "339a41a30122525c48a39a1f7ef4687ad6916025ff1e3d3c5be17f77c9339f88",
+    "senseDefinition": "khái niệm",
+    "status": "active"
+  },
+  {
+    "id": "3586522dac0ead10",
+    "identityLemma": "cook",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "3586522dac0ead10c36f77e4d95e7ba33fd3102ec6d8ee49152e130a9dade6e2",
+    "senseDefinition": "nấu ăn",
+    "status": "active"
+  },
+  {
+    "id": "35d609ed98afcb6f",
+    "identityLemma": "develop",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "35d609ed98afcb6fd1f92190e93c1b2fbbc1395ab9790c348f896eb8c81d55d4",
+    "senseDefinition": "phát triển",
+    "status": "active"
+  },
+  {
+    "id": "363c503bebd37391",
+    "identityLemma": "reservation",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "363c503bebd3739152818a29b14ba80e80dabc724a31cea90f2fadbe130109f4",
+    "senseDefinition": "việc đặt chỗ trước",
+    "status": "active"
+  },
+  {
+    "id": "36fd889573de8c99",
+    "identityLemma": "contract",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "36fd889573de8c993ba56ede14ab299e2c7e498be7f8311d0e18ccbeaf2f9696",
+    "senseDefinition": "hợp đồng",
+    "status": "active"
+  },
+  {
+    "id": "3d5117748d4c5141",
+    "identityLemma": "data",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "3d5117748d4c51417a2a36e16943a5e0a00fc97cdde91a6190c4ce61d2ec2e91",
+    "senseDefinition": "dữ liệu",
+    "status": "active"
+  },
+  {
+    "id": "3dbaed5c338b2b1c",
+    "identityLemma": "receipt",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "3dbaed5c338b2b1c4e0fd4469c8fbf1ef4488cc5c31a28d6732403c4b72d0b5d",
+    "senseDefinition": "biên lai",
+    "status": "active"
+  },
+  {
+    "id": "4a756afdff0f53ac",
+    "identityLemma": "employee",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "4a756afdff0f53aca30a54af342fbeb90d3323b9c8d696d7fa0b85449829644b",
+    "senseDefinition": "nhân viên",
+    "status": "active"
+  },
+  {
+    "id": "4c4abdecc46493b5",
+    "identityLemma": "menu",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "4c4abdecc46493b552c5326dceda8f5f73b61b2ae6a244e91a888599744c48de",
+    "senseDefinition": "thực đơn",
+    "status": "active"
+  },
+  {
+    "id": "4dbafd4ecdb3dacc",
+    "identityLemma": "function",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "4dbafd4ecdb3dacc775ffd9eb1c9f18c7e80a05e30f8bd542b1d2a10da80c24a",
+    "senseDefinition": "chức năng",
+    "status": "active"
+  },
+  {
+    "id": "4e6431a4739ab29e",
+    "identityLemma": "clean",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "4e6431a4739ab29e0f9ab4d6e1db5096ca315461e87f8deb690ad46d80e1c715",
+    "senseDefinition": "làm sạch",
+    "status": "active"
+  },
+  {
+    "id": "4fae627dc5b73414",
+    "identityLemma": "effect",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "4fae627dc5b7341433b8791362215c0a8bddfc58c455cb47ba6f02bf67b957e7",
+    "senseDefinition": "ảnh hưởng",
+    "status": "active"
+  },
+  {
+    "id": "524b9dddc2876a46",
+    "identityLemma": "research",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "524b9dddc2876a46e014a875be4edb49902f4fa9c69cbd34825ac9778ca712d8",
+    "senseDefinition": "nghiên cứu",
+    "status": "active"
+  },
+  {
+    "id": "53184184e303b46b",
+    "identityLemma": "interview",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "53184184e303b46b4c386cab07fd01ca010524cd70d2da8bd41c602feb194be8",
+    "senseDefinition": "buổi phỏng vấn",
+    "status": "active"
+  },
+  {
+    "id": "55d9e63344378006",
+    "identityLemma": "email",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "55d9e63344378006e338f2e03bf639f479fc0e9b86bb44e68731038b3633b1ab",
+    "senseDefinition": "thư điện tử",
+    "status": "active"
+  },
+  {
+    "id": "57e8f34166e86602",
+    "identityLemma": "support",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "57e8f34166e86602983765f30d2ced3d20ddf0305cdc640cf816bcdc9c541f9c",
+    "senseDefinition": "củng cố",
+    "status": "active"
+  },
+  {
+    "id": "5911ac176d3f214c",
+    "identityLemma": "dinner",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "5911ac176d3f214c26bb171cf08a9aea27605b66d8ff3ff16428db67d503bf44",
+    "senseDefinition": "bữa tối",
+    "status": "active"
+  },
+  {
+    "id": "6330e75b7661e248",
+    "identityLemma": "buy",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "6330e75b7661e24828dc8c1ff51b92670d42ef5837ba5591aed47d5947bea8fa",
+    "senseDefinition": "mua",
+    "status": "active"
+  },
+  {
+    "id": "633188448bb2750d",
+    "identityLemma": "company",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "633188448bb2750d1ba6d854899f4a3edf243d8889a33850bec17ba05bb6b0a4",
+    "senseDefinition": "công ty",
+    "status": "active"
+  },
+  {
+    "id": "634bc7b326fdfddd",
+    "identityLemma": "theory",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "634bc7b326fdfddd984985ed8384d385d0cc0ecbe510fc05be179f8a70ee83db",
+    "senseDefinition": "lý thuyết",
+    "status": "active"
+  },
+  {
+    "id": "643eefd4035066d7",
+    "identityLemma": "restaurant",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "643eefd4035066d7490372ba1b21be03a9e020388bce6fd9cd9ce9459f3055ac",
+    "senseDefinition": "nhà hàng",
+    "status": "active"
+  },
+  {
+    "id": "65f0859e4989297a",
+    "identityLemma": "prepare",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "65f0859e4989297a6008f881f22b82eea84f73ebc46e682675e2c7d1f11de689",
+    "senseDefinition": "chuẩn bị",
+    "status": "active"
+  },
+  {
+    "id": "66248220016a4c4f",
+    "identityLemma": "cause",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "66248220016a4c4f1736dd0bc56041f5175cfe0f262b1ecba9d835b0cb8437f2",
+    "senseDefinition": "nguyên nhân",
+    "status": "active"
+  },
+  {
+    "id": "680f5d8d8ea18784",
+    "identityLemma": "listen",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "680f5d8d8ea18784c942de0f68566c5bd15eed12a18deaa22ee2fde75c886f36",
+    "senseDefinition": "lắng nghe",
+    "status": "active"
+  },
+  {
+    "id": "6878a6bfd1203dfe",
+    "identityLemma": "warehouse",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "6878a6bfd1203dfe4edf2538e682a3fd7245a8c9502fcc3341eb3b934ca86b55",
+    "senseDefinition": "kho hàng",
+    "status": "active"
+  },
+  {
+    "id": "68cf70d8331dfeb3",
+    "identityLemma": "budget",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "68cf70d8331dfeb3bb149df5f948a0e7e94454f532193bc57317ccee2b4cd271",
+    "senseDefinition": "ngân sách",
+    "status": "active"
+  },
+  {
+    "id": "6c1fea0390defc05",
+    "identityLemma": "expensive",
+    "pos": "adjective",
+    "senseIndex": 1,
+    "fullSha256": "6c1fea0390defc0540eb843e0a5df3de067292ceafdf39ecad2d1fce3c1a6631",
+    "senseDefinition": "đắt",
+    "status": "active"
+  },
+  {
+    "id": "6dddf2d3e33455f9",
+    "identityLemma": "fruit",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "6dddf2d3e33455f963382320e11e8527d90dd2e66e056f85f9d86ada071af442",
+    "senseDefinition": "trái cây",
+    "status": "active"
+  },
+  {
+    "id": "6efc89d4b3a8f007",
+    "identityLemma": "door",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "6efc89d4b3a8f0077a91af9858eb9206eeb1a7eedac0221d8bd21abf56e4f2d8",
+    "senseDefinition": "cửa ra vào",
+    "status": "active"
+  },
+  {
+    "id": "732c533f208ab60d",
+    "identityLemma": "result",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "732c533f208ab60dc6b90a85b9072e7252aa19221607358ce10ef7e97c4620f2",
+    "senseDefinition": "kết quả",
+    "status": "active"
+  },
+  {
+    "id": "743fc4aebc74dc29",
+    "identityLemma": "sell",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "743fc4aebc74dc29b9f5185e08a91092fdf198d40178f4f9280f185f593b1e12",
+    "senseDefinition": "bán",
+    "status": "active"
+  },
+  {
+    "id": "749505edb46ed2e9",
+    "identityLemma": "office",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "749505edb46ed2e93fc0c162abacfa435e132b96b982c6a8f1ec759bd1168821",
+    "senseDefinition": "văn phòng",
+    "status": "active"
+  },
+  {
+    "id": "74fb0128cec1c90a",
+    "identityLemma": "method",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "74fb0128cec1c90a8cf86c6fb7f5acee9ba6ef8cd4cbbae931a49c4476d12047",
+    "senseDefinition": "phương pháp",
+    "status": "active"
+  },
+  {
+    "id": "75bc1957c2522c98",
+    "identityLemma": "salary",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "75bc1957c2522c987c5be81ec8663ce49a2966a3dcff85a6574f71f4f60f9ec3",
+    "senseDefinition": "lương cố định",
+    "status": "active"
+  },
+  {
+    "id": "76fafba7114e9592",
+    "identityLemma": "chair",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "76fafba7114e959221d241a496c1babd8589f0bf8b6a8aa167340c9077f70df9",
+    "senseDefinition": "ghế",
+    "status": "active"
+  },
+  {
+    "id": "7a24bdf094914ffb",
+    "identityLemma": "walk",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "7a24bdf094914ffb4f7afe68a6b0c57f47aef0098d370fa1f42be6a4238b145e",
+    "senseDefinition": "đi bộ",
+    "status": "active"
+  },
+  {
+    "id": "7d18d115c89193ca",
+    "identityLemma": "printer",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "7d18d115c89193ca41088cf071a9fb650b39ce70d60b41f57b97252273977fc7",
+    "senseDefinition": "máy in",
+    "status": "active"
+  },
+  {
+    "id": "7e09d3489f1b4832",
+    "identityLemma": "coffee",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "7e09d3489f1b4832aabdc26308cc7633dba4ffc28d9cee8fce6686846079dbf6",
+    "senseDefinition": "cà phê",
+    "status": "active"
+  },
+  {
+    "id": "7ed4eab7db38de9e",
+    "identityLemma": "stock",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "7ed4eab7db38de9eb5fca0fee59cfd1db8b4139ce1e5bc1aec78a77f27bdaeec",
+    "senseDefinition": "hàng tồn kho",
+    "status": "active"
+  },
+  {
+    "id": "7fe46ad7d9da1204",
+    "identityLemma": "room",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "7fe46ad7d9da1204b911a8049dc435055b32badcdcc439a88c2100bd2953a55c",
+    "senseDefinition": "phòng",
+    "status": "active"
+  },
+  {
+    "id": "814c072810abf7a2",
+    "identityLemma": "sign",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "814c072810abf7a20e29fc5a937bf086d97dd8e57a628b4c38bf9b557e83d794",
+    "senseDefinition": "ký tên",
+    "status": "active"
+  },
+  {
+    "id": "832bc62cf611ef76",
+    "identityLemma": "friend",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "832bc62cf611ef7689a85a39f0796bba01918475f932b560ab24a1ca53897117",
+    "senseDefinition": "người bạn",
+    "status": "active"
+  },
+  {
+    "id": "8427eccd5d4c4df4",
+    "identityLemma": "water",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "8427eccd5d4c4df4ca032ba85a1523422f4bf4dfb8268235b6ea22639e20cf3d",
+    "senseDefinition": "nước",
+    "status": "active"
+  },
+  {
+    "id": "84b99b98d945db07",
+    "identityLemma": "house",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "84b99b98d945db07deb6882178aa1e9b65e9f346d431a3476e85fce3cd3f6c85",
+    "senseDefinition": "nhà ở",
+    "status": "active"
+  },
+  {
+    "id": "84d7ff576a0352d7",
+    "identityLemma": "ticket",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "84d7ff576a0352d7f8053aaa5cfbe7b27d26ce170261d982fbf86c72aaeec6be",
+    "senseDefinition": "vé",
+    "status": "active"
+  },
+  {
+    "id": "8a29babd28b7431b",
+    "identityLemma": "arrival",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "8a29babd28b7431b7d880ebe08dcd349bcd5e03d4f443617c1556c0d6e13792e",
+    "senseDefinition": "sự đến nơi",
+    "status": "active"
+  },
+  {
+    "id": "8a76a2f0dc14014f",
+    "identityLemma": "analysis",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "8a76a2f0dc14014f6c9a2e433d67e421017ebf56b26a1dad3ab4330a426fa050",
+    "senseDefinition": "sự phân tích",
+    "status": "active"
+  },
+  {
+    "id": "8c46632cf2e617d2",
+    "identityLemma": "delivery",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "8c46632cf2e617d2ec51d42c6918bf6333fc779d26b97602ebb4c030711dec13",
+    "senseDefinition": "việc giao hàng",
+    "status": "active"
+  },
+  {
+    "id": "8ca8a2a4ae0ed0bd",
+    "identityLemma": "equipment",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "8ca8a2a4ae0ed0bd198d345fc77980aee96c0426bf378b2a709217a2c79e695b",
+    "senseDefinition": "thiết bị",
+    "status": "active"
+  },
+  {
+    "id": "8d57e94d31e48520",
+    "identityLemma": "document",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "8d57e94d31e485207baba469ad6108dc3204aed4b7b6b4412e6c0645732b202b",
+    "senseDefinition": "tài liệu",
+    "status": "active"
+  },
+  {
+    "id": "8d87e61afc56f490",
+    "identityLemma": "explain",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "8d87e61afc56f490376bbfd4bb769de1179311eefaad4db1a7c41b48061ffdad",
+    "senseDefinition": "giải thích",
+    "status": "active"
+  },
+  {
+    "id": "8dfb40053188d6e2",
+    "identityLemma": "sister",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "8dfb40053188d6e2db76c3f5080c33506f571c9b7a7be1a35b8740667fd175f5",
+    "senseDefinition": "chị hoặc em gái",
+    "status": "active"
+  },
+  {
+    "id": "923d45253cc2c67c",
+    "identityLemma": "airport",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "923d45253cc2c67c03182b2251edbd35eeb0d8b082655369ece86216251f7e6f",
+    "senseDefinition": "sân bay",
+    "status": "active"
+  },
+  {
+    "id": "926cb2c7b70e55dd",
+    "identityLemma": "principle",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "926cb2c7b70e55ddd7f6c78994969af2384fc8b154a0e0ee4d3629e7685eb7b1",
+    "senseDefinition": "nguyên lý",
+    "status": "active"
+  },
+  {
+    "id": "9533b3a23d1c4fe0",
+    "identityLemma": "wake",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "9533b3a23d1c4fe08522d89f831aa2f58492c2c042e5a4bb7cddc2f6b7728274",
+    "senseDefinition": "thức giấc",
+    "status": "active"
+  },
+  {
+    "id": "961ef9a79a039621",
+    "identityLemma": "cheap",
+    "pos": "adjective",
+    "senseIndex": 1,
+    "fullSha256": "961ef9a79a039621e3ac094de6d3c69c090a90e8a935fd18a55a0fa99c76b416",
+    "senseDefinition": "rẻ",
+    "status": "active"
+  },
+  {
+    "id": "966322961d7b2a54",
+    "identityLemma": "tea",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "966322961d7b2a5444c026775634d0b14ead8a0f8eee62ca61f509c865281c2d",
+    "senseDefinition": "trà",
+    "status": "active"
+  },
+  {
+    "id": "966dc6001179f77a",
+    "identityLemma": "home",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "966dc6001179f77a37e0548c2335ae86077fe943dbc7c40e2bf293e613574c00",
+    "senseDefinition": "mái ấm",
+    "status": "active"
+  },
+  {
+    "id": "97b60271c7847cec",
+    "identityLemma": "skill",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "97b60271c7847cec3ef82f234fdf05929b45e3681d2d458b5e7637b35039b783",
+    "senseDefinition": "kỹ năng",
+    "status": "active"
+  },
+  {
+    "id": "98475b4ca08e0ad8",
+    "identityLemma": "wash",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "98475b4ca08e0ad8e1a416a5d454551181eb9b1c927168ac155e5baefdf0bc51",
+    "senseDefinition": "rửa",
+    "status": "active"
+  },
+  {
+    "id": "98b58efbaa0a7f1f",
+    "identityLemma": "invoice",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "98b58efbaa0a7f1f69d888f069ab61d44e135dbf0f4272c07ee38c6c0b7298fa",
+    "senseDefinition": "hóa đơn yêu cầu thanh toán",
+    "status": "active"
+  },
+  {
+    "id": "9b2457a96a18cc6a",
+    "identityLemma": "happy",
+    "pos": "adjective",
+    "senseIndex": 1,
+    "fullSha256": "9b2457a96a18cc6a378e1f2dd85b48a71f65eae9c305047d21ff4660582d6244",
+    "senseDefinition": "vui vẻ",
+    "status": "active"
+  },
+  {
+    "id": "9d68ebb49ea25a87",
+    "identityLemma": "discuss",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "9d68ebb49ea25a8738280159d5bc986e135771c3980cb49c9b2dcf1cdd3b4c27",
+    "senseDefinition": "thảo luận",
+    "status": "active"
+  },
+  {
+    "id": "9e4319249efff080",
+    "identityLemma": "supplier",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "9e4319249efff08060a878d38af389b1a451a8dcf77f9bda321c03e84666aeee",
+    "senseDefinition": "nhà cung cấp",
+    "status": "active"
+  },
+  {
+    "id": "9e50e0d149f9b83c",
+    "identityLemma": "factor",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "9e50e0d149f9b83c904f0e26ffb6267b2680766faa96cd204f2ae6ea48b96988",
+    "senseDefinition": "yếu tố",
+    "status": "active"
+  },
+  {
+    "id": "9e5de132fc3085f9",
+    "identityLemma": "table",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "9e5de132fc3085f93831cc6419ee61e87264f5c1538e90a26d2a7437d8336102",
+    "senseDefinition": "bàn",
+    "status": "active"
+  },
+  {
+    "id": "9e61c13dbd55c590",
+    "identityLemma": "compare",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "9e61c13dbd55c59058151bab05d25ec8d9b945e06ce777117b2446deb1b72341",
+    "senseDefinition": "so sánh",
+    "status": "active"
+  },
+  {
+    "id": "9e6450caee747c20",
+    "identityLemma": "shoe",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "9e6450caee747c20459d7d5df0f7d061eca144b4d6eb2063c4941ba251692959",
+    "senseDefinition": "chiếc giày",
+    "status": "active"
+  },
+  {
+    "id": "9e84e8ebe9e2a529",
+    "identityLemma": "travel",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "9e84e8ebe9e2a5299900e45f20efe3c1f25c63f6ba2556bde2dc6dea9e43cd48",
+    "senseDefinition": "đi du lịch",
+    "status": "active"
+  },
+  {
+    "id": "9eee80ccf844e456",
+    "identityLemma": "attend",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "9eee80ccf844e456fbdadcb27d04f5179485b104678dbb0f8414010aa3f3e7b2",
+    "senseDefinition": "tham dự",
+    "status": "active"
+  },
+  {
+    "id": "a0adea31b35a7f42",
+    "identityLemma": "client",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "a0adea31b35a7f429ebef4c818abbd7eaad163d04ca8e66603f0732ff2dd9d44",
+    "senseDefinition": "khách hàng sử dụng dịch vụ",
+    "status": "active"
+  },
+  {
+    "id": "a22879209e8e0506",
+    "identityLemma": "order",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "a22879209e8e0506f1ffd84b3feeb979f9fb686787173d5fd40f77ae1e74e845",
+    "senseDefinition": "đơn đặt hàng",
+    "status": "active"
+  },
+  {
+    "id": "a5568d2ba7bee3e4",
+    "identityLemma": "manager",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "a5568d2ba7bee3e4eb2edaa76bfdc449a23c5a2d79cc3a8ce933d6572b83af76",
+    "senseDefinition": "người quản lý",
+    "status": "active"
+  },
+  {
+    "id": "a744e451d1bdad3d",
+    "identityLemma": "science",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "a744e451d1bdad3d027a78bade22e9e4b610f77a9604a32f9256ca79fd0b3c7f",
+    "senseDefinition": "khoa học",
+    "status": "active"
+  },
+  {
+    "id": "b0d465f82f26660c",
+    "identityLemma": "bedroom",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "b0d465f82f26660c2e0e621e544cf5ce78de5ebee17cc5d149b0f9ecbadaa680",
+    "senseDefinition": "phòng ngủ",
+    "status": "active"
+  },
+  {
+    "id": "b6386bc208da0874",
+    "identityLemma": "deadline",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "b6386bc208da08747869170c6d2cdf1b912bc663736cf4d82ce9181f474c24af",
+    "senseDefinition": "hạn chót",
+    "status": "active"
+  },
+  {
+    "id": "b7834c1148baa64a",
+    "identityLemma": "task",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "b7834c1148baa64a00e905c8699160c0ea2ed66430a5a36656d1504dca3b9869",
+    "senseDefinition": "nhiệm vụ",
+    "status": "active"
+  },
+  {
+    "id": "b7bcc9dcf3586381",
+    "identityLemma": "bread",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "b7bcc9dcf358638143fea9ebe1b7c9db427d04d70f87fb90b1b323d1f218b7db",
+    "senseDefinition": "bánh mì",
+    "status": "active"
+  },
+  {
+    "id": "b8eeeb568b74a80b",
+    "identityLemma": "file",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "b8eeeb568b74a80bc733276479055f5c41de0cb40f58f615d0148b12a492de82",
+    "senseDefinition": "tệp tin",
+    "status": "active"
+  },
+  {
+    "id": "be14412e62bb09fa",
+    "identityLemma": "hotel",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "be14412e62bb09fa4aabd1d3961d33d51d68f4876313ab8c4eb54b60212a161d",
+    "senseDefinition": "khách sạn",
+    "status": "active"
+  },
+  {
+    "id": "be5192ae23f51730",
+    "identityLemma": "structure",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "be5192ae23f517304e1a39398338578b06f4d761f54948af6c46b3ce92d52a25",
+    "senseDefinition": "cấu trúc",
+    "status": "active"
+  },
+  {
+    "id": "becb25b23f9ee952",
+    "identityLemma": "kitchen",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "becb25b23f9ee952b701c31655267b355b45fc0916f7f43a95d6cae5537618cc",
+    "senseDefinition": "nhà bếp",
+    "status": "active"
+  },
+  {
+    "id": "bf0be5b61866f965",
+    "identityLemma": "change",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "bf0be5b61866f965f3ff98f978e224466bcbc3f9e9fdeb247476a5342c1b9352",
+    "senseDefinition": "sự thay đổi",
+    "status": "active"
+  },
+  {
+    "id": "c09530564094b0ac",
+    "identityLemma": "study",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "c09530564094b0accbd8b06890e464d36423c81b52d4f2390ebbb9ad0e424dae",
+    "senseDefinition": "công trình nghiên cứu",
+    "status": "active"
+  },
+  {
+    "id": "c16e2c85165e9642",
+    "identityLemma": "breakfast",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "c16e2c85165e9642b6aa5285d072237f239e3b59db806677011e27bcf4552182",
+    "senseDefinition": "bữa sáng",
+    "status": "active"
+  },
+  {
+    "id": "c3c40e610a088175",
+    "identityLemma": "healthy",
+    "pos": "adjective",
+    "senseIndex": 1,
+    "fullSha256": "c3c40e610a0881754a8e2d1f1f35480791fc1e55a768524d9a7e93c5ab27e52c",
+    "senseDefinition": "khỏe mạnh",
+    "status": "active"
+  },
+  {
+    "id": "c3f4a0f8569f129e",
+    "identityLemma": "bathroom",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "c3f4a0f8569f129e10e9fe1334be55de7b4a6fdd3e37a405d88192f9addaeef1",
+    "senseDefinition": "phòng tắm",
+    "status": "active"
+  },
+  {
+    "id": "c50193865412fbdd",
+    "identityLemma": "train",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "c50193865412fbdd8d52db9e9493b031577de620cefca5a263961d8cfec40c4c",
+    "senseDefinition": "tàu hỏa",
+    "status": "active"
+  },
+  {
+    "id": "c50f97678af2c3b0",
+    "identityLemma": "brother",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "c50f97678af2c3b0f8a17196beed44141f566297794146d404cfb173ef8c59af",
+    "senseDefinition": "anh hoặc em trai",
+    "status": "active"
+  },
+  {
+    "id": "c61d1941e83e9805",
+    "identityLemma": "window",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "c61d1941e83e98052659036d2bb9a3552a4f839a8443380f9cce9721a760a1e7",
+    "senseDefinition": "cửa sổ",
+    "status": "active"
+  },
+  {
+    "id": "cc93c43a835e8bd3",
+    "identityLemma": "service",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "cc93c43a835e8bd32bff3082fbb9858ac884b602748ca55355adb5429ad96d78",
+    "senseDefinition": "dịch vụ",
+    "status": "active"
+  },
+  {
+    "id": "ccb4c475e4c5374f",
+    "identityLemma": "project",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "ccb4c475e4c5374fe2e9a38ab87390c9c4e377074c2071d6152def289b7f08f6",
+    "senseDefinition": "dự án",
+    "status": "active"
+  },
+  {
+    "id": "cdb9f58f4061c249",
+    "identityLemma": "bus",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "cdb9f58f4061c249e0ea441d4037176865cb13c80124360b3986654b4e0900b5",
+    "senseDefinition": "xe buýt",
+    "status": "active"
+  },
+  {
+    "id": "d121b12bf674524c",
+    "identityLemma": "evidence",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "d121b12bf674524c505523b05457b2473b8d87867ca6f12d0aa26a36ff443814",
+    "senseDefinition": "bằng chứng",
+    "status": "active"
+  },
+  {
+    "id": "d1c881300fa31491",
+    "identityLemma": "message",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "d1c881300fa3149140657ca00c06c90eb7397689d9364a7d8f8a73427b5a5a11",
+    "senseDefinition": "tin nhắn",
+    "status": "active"
+  },
+  {
+    "id": "d42cd44739b0e370",
+    "identityLemma": "education",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "d42cd44739b0e370022b3121f03beeb4aca11790ed21659fd684ee6bde1d5d35",
+    "senseDefinition": "giáo dục",
+    "status": "active"
+  },
+  {
+    "id": "d4cefbbdfda250ce",
+    "identityLemma": "write",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "d4cefbbdfda250ce688705090d1d078e48a77fc28b4f7a372d778075574263e7",
+    "senseDefinition": "viết",
+    "status": "active"
+  },
+  {
+    "id": "d67b0acba33b2c64",
+    "identityLemma": "help",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "d67b0acba33b2c64f70688deabb31b2d19a891068b882159ebd22651302571b1",
+    "senseDefinition": "giúp đỡ",
+    "status": "active"
+  },
+  {
+    "id": "d70a8da417e1518c",
+    "identityLemma": "process",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "d70a8da417e1518c2796528555cf7d35b4b75e27de795b12339792e7dc7f2a89",
+    "senseDefinition": "quá trình",
+    "status": "active"
+  },
+  {
+    "id": "d7aed07271411f20",
+    "identityLemma": "cash",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "d7aed07271411f2032dbaa393451241d09e857aa9856189127e6917f602b8675",
+    "senseDefinition": "tiền mặt",
+    "status": "active"
+  },
+  {
+    "id": "d93c6ed2429a25b6",
+    "identityLemma": "team",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "d93c6ed2429a25b6598ab34a5930db14a717848bc82a60b3580da1e2a6b3d406",
+    "senseDefinition": "nhóm làm việc",
+    "status": "active"
+  },
+  {
+    "id": "d9502a131e68548d",
+    "identityLemma": "child",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "d9502a131e68548d1a9d8b19ac59173e4695f66ff83c40ef90db262db48b1407",
+    "senseDefinition": "đứa trẻ",
+    "status": "active"
+  },
+  {
+    "id": "daba18657d6679e8",
+    "identityLemma": "confirm",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "daba18657d6679e804acedbc98c53342e22dcf65ca92edb6de45aad49d170560",
+    "senseDefinition": "xác nhận",
+    "status": "active"
+  },
+  {
+    "id": "de8fb7c19de25ba6",
+    "identityLemma": "report",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "de8fb7c19de25ba6862b601ee6df02d7f79d2fd66fd304ec9a006ebbac9cfd50",
+    "senseDefinition": "báo cáo",
+    "status": "active"
+  },
+  {
+    "id": "df679670d76cbece",
+    "identityLemma": "card",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "df679670d76cbecef07db321ba30c3c5d74d2df9245673503965a984c615923f",
+    "senseDefinition": "thẻ thanh toán",
+    "status": "active"
+  },
+  {
+    "id": "df89f71e93a58312",
+    "identityLemma": "bed",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "df89f71e93a5831204578fd063c023317ea492522efd12115f2c882cf35055b6",
+    "senseDefinition": "giường",
+    "status": "active"
+  },
+  {
+    "id": "e2497882de1443c6",
+    "identityLemma": "shop",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "e2497882de1443c6d8bd5d9ff4203de4822f4c63d62a9211550c6153908e73bc",
+    "senseDefinition": "cửa hàng",
+    "status": "active"
+  },
+  {
+    "id": "e519d3c5c741a451",
+    "identityLemma": "read",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "e519d3c5c741a4514cc1738bbcc34af5349b4fba97f0cbd4a5a725b038bffcc3",
+    "senseDefinition": "đọc",
+    "status": "active"
+  },
+  {
+    "id": "e60be53a143266a0",
+    "identityLemma": "clothes",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "e60be53a143266a0a88efd8f2567619f0e05e46554721f27b456d6528eb8f912",
+    "senseDefinition": "quần áo",
+    "status": "active"
+  },
+  {
+    "id": "e812fbe52f19fdad",
+    "identityLemma": "lunch",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "e812fbe52f19fdad3fca05e76140b7a99d27e3dca40ba474c92d5146233e47f6",
+    "senseDefinition": "bữa trưa",
+    "status": "active"
+  },
+  {
+    "id": "e879f569a68bd61c",
+    "identityLemma": "business",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "e879f569a68bd61ca279a141aa0c1f2ef5e812c228ea8a1bef443c0510e8f613",
+    "senseDefinition": "hoạt động kinh doanh",
+    "status": "active"
+  },
+  {
+    "id": "e89a6829b7badb63",
+    "identityLemma": "station",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "e89a6829b7badb63f7ea1944106e7498cf4738aa2fb8c136f53d09ebb719dab5",
+    "senseDefinition": "nhà ga",
+    "status": "active"
+  },
+  {
+    "id": "ea0e961551c98538",
+    "identityLemma": "knowledge",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "ea0e961551c98538ee3566ad9e7fbaacc3f015fe9502c017b85863e20b04c848",
+    "senseDefinition": "kiến thức",
+    "status": "active"
+  },
+  {
+    "id": "ecf6c310590530e8",
+    "identityLemma": "colleague",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "ecf6c310590530e8db6422074dd4a41281ee92128b69081f6dbfd060da7ad23f",
+    "senseDefinition": "đồng nghiệp",
+    "status": "active"
+  },
+  {
+    "id": "ecfb366e8e09fd2c",
+    "identityLemma": "system",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "ecfb366e8e09fd2cc133400fbbf8668cffe397465e11b3df6cb925ce650df39b",
+    "senseDefinition": "hệ thống",
+    "status": "active"
+  },
+  {
+    "id": "edcc67afb8658f36",
+    "identityLemma": "price",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "edcc67afb8658f36c9176a80769b14d65c3b4e3db47caf48d512569ccf5e3d09",
+    "senseDefinition": "giá bán",
+    "status": "active"
+  },
+  {
+    "id": "ee46fdf826f53ce2",
+    "identityLemma": "customer",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "ee46fdf826f53ce252617d25001b2d03dc4c35b96c804633732565e8d2c85f4b",
+    "senseDefinition": "khách hàng",
+    "status": "active"
+  },
+  {
+    "id": "f14c1376c41412d6",
+    "identityLemma": "milk",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "f14c1376c41412d60b56921d49cc37fbadbd218a4d82451e10b6354336900192",
+    "senseDefinition": "sữa",
+    "status": "active"
+  },
+  {
+    "id": "f44bdd7635550987",
+    "identityLemma": "visit",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "f44bdd7635550987aac2f2cecd44013f8a18957b1fa6574ec44db0d7cd1ef9c3",
+    "senseDefinition": "đến thăm",
+    "status": "active"
+  },
+  {
+    "id": "f4a89b4c349dda7f",
+    "identityLemma": "evaluate",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "f4a89b4c349dda7fb18ec361dd7ca70121321847ee82b8ddbda31bedf1e795e5",
+    "senseDefinition": "đánh giá",
+    "status": "active"
+  },
+  {
+    "id": "f672afbf13be68df",
+    "identityLemma": "tired",
+    "pos": "adjective",
+    "senseIndex": 1,
+    "fullSha256": "f672afbf13be68dfca47d10061e29fd58126c2e0b5a07dafd8093f506ce6c2c8",
+    "senseDefinition": "mệt",
+    "status": "active"
+  },
+  {
+    "id": "f99fcd7b01315093",
+    "identityLemma": "sleep",
+    "pos": "verb",
+    "senseIndex": 1,
+    "fullSha256": "f99fcd7b01315093222652b3b35cdd86553201584d1e1b1be5d546385396f1ab",
+    "senseDefinition": "ngủ",
+    "status": "active"
+  },
+  {
+    "id": "fc63a682aa35b611",
+    "identityLemma": "department",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "fc63a682aa35b611b300b7851f6661026f23e900c9b4312b0798db927fe35a5e",
+    "senseDefinition": "phòng ban",
+    "status": "active"
+  },
+  {
+    "id": "feb842c0ca22355c",
+    "identityLemma": "garden",
+    "pos": "noun",
+    "senseIndex": 1,
+    "fullSha256": "feb842c0ca22355c44f10388150a84f7093a1f923ecda10db493c73ce7f934bf",
+    "senseDefinition": "vườn",
+    "status": "active"
+  }
+]

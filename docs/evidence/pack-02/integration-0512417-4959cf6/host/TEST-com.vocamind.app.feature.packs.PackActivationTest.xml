@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.packs.PackActivationTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-06T10:06:41" hostname="DESKTOP-KUH3S13" time="0.139">
+  <properties/>
+  <testcase name="invalidAndUnknownIdsDoNotReadClockOrWrite" classname="com.vocamind.app.feature.packs.PackActivationTest" time="0.019"/>
+  <testcase name="doubleTapRefreshAndOldReadCannotReplaceConfirmedWrite" classname="com.vocamind.app.feature.packs.PackActivationTest" time="0.02"/>
+  <testcase name="savedWriteFollowedByReadFailureIsReconciledWithoutReplay" classname="com.vocamind.app.feature.packs.PackActivationTest" time="0.017"/>
+  <testcase name="explicitActionKeepsZeroFirstTimestampAndLearnedCount" classname="com.vocamind.app.feature.packs.PackActivationTest" time="0.026"/>
+  <testcase name="readFailureAndWriteFailureStayErrorAndRetryReconciles" classname="com.vocamind.app.feature.packs.PackActivationTest" time="0.023"/>
+  <testcase name="initialLoadAndNewOwnerNeverActivateAndClearingWaitsForWrite" classname="com.vocamind.app.feature.packs.PackActivationTest" time="0.034"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

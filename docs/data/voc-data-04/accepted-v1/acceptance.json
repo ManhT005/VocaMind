@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "decision": "accepted",
+  "reviewer": "thanhcodeai",
+  "reviewedAt": "2026-11-05",
+  "basis": "Explicit project-owner instruction in this conversation; acceptance of the 150 records according to the worksheet. This records owner acceptance, not a new independent review by Codex or Trường.",
+  "sourceDecision": "Project AI-generated text accepted without external-source approval. NGSL research references remain in the historical draft; the accepted corpus has editorial-only component provenance. No external source has been approved or reclassified.",
+  "contentStatement": "ko cần nguồn, do đây là do AI gen ra, 150 nội dung được phê duyệt theo worksheet",
+  "executionStatement": "làm đi b",
+  "draftSha256": "e3ddf388396a2a8128c0aac8f3837ed567e16853e4d790f6ea35209a2466a8e2",
+  "worksheetSha256": "07df2b0c88b8367b79dc724b807c82230f007382c7e0f03f9384302ff3618497",
+  "candidateSha256": "86413cc7b251bae0d46ff473dbaf5c66565ac0af68556b2e143a2fcd08ea8d8a",
+  "identityScope": "Register these deterministic sense tuples for this first accepted editorial snapshot; do not overwrite a published catalog or claim comparison to an unavailable production baseline.",
+  "quizPolicy": {
+    "schemaVersion": 1,
+    "scope": "All active packs, in both directions; enforce in QUIZ-02 before sampling distractors.",
+    "forbiddenLemmaPairs": [
+      [
+        "research",
+        "study"
+      ],
+      [
+        "home",
+        "house"
+      ],
+      [
+        "customer",
+        "client"
+      ]
+    ],
+    "note": "Resolve noun stableIds from the accepted corpus during promotion. No wording changes to manufacture distinct meanings."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "status": "candidate-only",
+  "releaseEligible": false,
+  "productionQcPassed": false,
+  "toolVersion": "1.0.0",
+  "inputHashes": {
+    "docs/data/voc-data-04/editorial-v1.tsv": "e3ddf388396a2a8128c0aac8f3837ed567e16853e4d790f6ea35209a2466a8e2",
+    "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv": "2098bab8955a120a9766c6282a51d7d578c6cb0a7d946600d2ffb73ba25a0b44"
+  },
+  "sourceRegistrySemanticSha256": "2e346f12870a2d0af5e49fe05f257bdf9812acb5070d2d247db7f3ca7275abc8",
+  "toolSha256": "f4487d6b17c249dc94609f56afa3ac3866e1df8fdb5e3b338d02bb11e52c54db",
+  "outputHashes": {
+    "candidate-catalog.json": "86413cc7b251bae0d46ff473dbaf5c66565ac0af68556b2e143a2fcd08ea8d8a",
+    "candidate-qc-report.json": "d9e33d86cf21dcfea60fa1fca591db13963ab001ab7436d4240e897622cb9ae7",
+    "identity-registry-proposal.json": "156e6dc876ea2e7619b46d91d7fa2e408480c64384c25dce3f35b6329003f418",
+    "ingestion-proposal.json": "5d74bd08d8076ff5e21bba50c8705c1fea6f1a1d9f69c512f32340ed0c437d39",
+    "proposals.json": "9d016f5f3190d60ee8baecab80236440622ba9606e7222d5f9f33b6aa574ff11",
+    "review-worksheet.md": "07df2b0c88b8367b79dc724b807c82230f007382c7e0f03f9384302ff3618497",
+    "reviews-pending.json": "dbd7139663da9a280066cab438995097c19d553987647314a0c9b16cea43651a",
+    "staging.jsonl": "67d2ac10dff7f3560aeee41fe6226a6466ed63b499877088e0c3c54e507a15e6"
+  }
+}

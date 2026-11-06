@@ -1,0 +1,173 @@
+{
+  "toolVersion": "1.0.0",
+  "adapter": "reviewed-jsonl-v1",
+  "schemaVersion": "1.0.0",
+  "contentVersion": "1.0.0",
+  "fixtureOnly": true,
+  "encoding": "utf-8",
+  "input": "tools/vocabulary/fixtures/ingestion/verified/records.jsonl",
+  "identityRegistry": "tools/vocabulary/fixtures/ingestion/identities.json",
+  "baseline": null,
+  "sources": [
+    {
+      "registryId": "synthetic-fixture",
+      "canonicalId": "fixture-lexical-v1",
+      "snapshotId": "synthetic-v1",
+      "upstreamVersion": "synthetic-1",
+      "artifact": "tools/vocabulary/fixtures/ingestion/verified/records.jsonl",
+      "sha256": "2b7ade33c95655fdf36f7f98d13ec8b7602eddb9ac179db52beedcda6be92e63",
+      "metadata": {
+        "id": "fixture-lexical-v1",
+        "title": "Học liệu tổng hợp chỉ dùng test contract",
+        "url": "https://example.invalid/vocamind/fixtures",
+        "licenseCode": "FIXTURE-ONLY",
+        "licenseUrl": "https://example.invalid/vocamind/fixtures/license",
+        "snapshotDate": "2026-10-23",
+        "snapshotSha256": "2b7ade33c95655fdf36f7f98d13ec8b7602eddb9ac179db52beedcda6be92e63",
+        "attributionText": "Synthetic lexical/meaning contributors; fixture only, no rights granted.",
+        "approvalStatus": "fixture_only",
+        "approvedBy": null,
+        "evidenceRef": null
+      },
+      "referenceAdapter": "reviewed-jsonl-v1"
+    },
+    {
+      "registryId": "synthetic-fixture",
+      "canonicalId": "fixture-examples-v1",
+      "snapshotId": "synthetic-v1",
+      "upstreamVersion": "synthetic-1",
+      "artifact": "tools/vocabulary/fixtures/ingestion/verified/examples.txt",
+      "sha256": "49f3f4d100736fe0e6343c5383a612cfde952320bcaae28e0f9dd32324061688",
+      "metadata": {
+        "id": "fixture-examples-v1",
+        "title": "Học liệu tổng hợp chỉ dùng test contract",
+        "url": "https://example.invalid/vocamind/fixtures",
+        "licenseCode": "FIXTURE-ONLY",
+        "licenseUrl": "https://example.invalid/vocamind/fixtures/license",
+        "snapshotDate": "2026-10-23",
+        "snapshotSha256": "49f3f4d100736fe0e6343c5383a612cfde952320bcaae28e0f9dd32324061688",
+        "attributionText": "Synthetic EN author and VI translator; pair links in fixture; fixture only.",
+        "approvalStatus": "fixture_only",
+        "approvedBy": null,
+        "evidenceRef": null
+      },
+      "referenceAdapter": "component-jsonl-v1"
+    }
+  ],
+  "packs": [
+    {
+      "id": "pack_toeic_basic",
+      "title": "TOEIC Căn bản",
+      "description": "Gói fixture nhỏ chỉ dùng kiểm tra contract.",
+      "category": "toeic",
+      "orderNo": 0,
+      "version": "1.0.0"
+    },
+    {
+      "id": "pack_toeic_office",
+      "title": "TOEIC Công sở & Giao dịch",
+      "description": "Gói fixture nhỏ chỉ dùng kiểm tra contract.",
+      "category": "toeic",
+      "orderNo": 1,
+      "version": "1.0.0"
+    },
+    {
+      "id": "pack_daily_life",
+      "title": "Tiếng Anh Đời sống Hàng ngày",
+      "description": "Gói fixture nhỏ chỉ dùng kiểm tra contract.",
+      "category": "general",
+      "orderNo": 2,
+      "version": "1.0.0"
+    },
+    {
+      "id": "pack_academic",
+      "title": "Từ vựng Học thuật Thiết yếu",
+      "description": "Gói fixture nhỏ chỉ dùng kiểm tra contract.",
+      "category": "academic",
+      "orderNo": 3,
+      "version": "1.0.0"
+    }
+  ],
+  "packWords": [
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "90562a98e8686267",
+      "orderNo": 0
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "d17314a48504e2ac",
+      "orderNo": 1
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "5aecfbf5b9a23aee",
+      "orderNo": 2
+    },
+    {
+      "packId": "pack_toeic_basic",
+      "vocabularyId": "923d45253cc2c67c",
+      "orderNo": 3
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "90562a98e8686267",
+      "orderNo": 0
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "d17314a48504e2ac",
+      "orderNo": 1
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "5aecfbf5b9a23aee",
+      "orderNo": 2
+    },
+    {
+      "packId": "pack_toeic_office",
+      "vocabularyId": "923d45253cc2c67c",
+      "orderNo": 3
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "90562a98e8686267",
+      "orderNo": 0
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "d17314a48504e2ac",
+      "orderNo": 1
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "5aecfbf5b9a23aee",
+      "orderNo": 2
+    },
+    {
+      "packId": "pack_daily_life",
+      "vocabularyId": "923d45253cc2c67c",
+      "orderNo": 3
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "90562a98e8686267",
+      "orderNo": 0
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "d17314a48504e2ac",
+      "orderNo": 1
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "5aecfbf5b9a23aee",
+      "orderNo": 2
+    },
+    {
+      "packId": "pack_academic",
+      "vocabularyId": "923d45253cc2c67c",
+      "orderNo": 3
+    }
+  ]
+}

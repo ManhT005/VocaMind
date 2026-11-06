@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-06",
+  "originalHead": "f86332b1d3a33b89f71ed3e1e73840f78a47a882",
+  "mergedDevelop": "e923c993e9ba731bb2aab146e712885731e20479",
+  "sourceCommits": [
+    "afce5e0bdeba27f1c95af77396511b1a471edc1b",
+    "3705641d6b9c74d8b53d2ed0cd542e94947c5015"
+  ],
+  "testedInputFiles": 328,
+  "testedInputsManifestSha256": "555c790504fef8d25edfcaeab450ec5e339abecbb692a7b2b383be2c9d662616",
+  "environment": {
+    "jdk": "Temurin 17.0.21+9",
+    "gradle": "8.9 (checksum matches pinned wrapper)",
+    "compileSdk": 35,
+    "buildTools": "34.0.0",
+    "python": "3.12.14"
+  },
+  "gradleExitCode": 0,
+  "androidTests": {
+    "tests": 343,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "pythonUnittestTests": 159,
+  "focusedIntegrationTests": 94,
+  "calendarTimeBefore": {
+    "tests": 8,
+    "failures": 8,
+    "calendarTestSha256": "178cc87533303401e501576363220cf94608af4977dce77581ebd5c60a36eff6",
+    "schedulerBaseCommit": "e923c993e9ba731bb2aab146e712885731e20479"
+  },
+  "calendarTimeAfter": {
+    "tests": 8,
+    "failures": 0
+  },
+  "lint": {
+    "Warning": 6
+  },
+  "artifacts": [
+    {
+      "path": "app/build/outputs/apk/debug/app-debug.apk",
+      "bytes": 7631398,
+      "sha256": "ad587bccf4a1082851762fd7ec72e0ad209c1add87b6281dec2a105ff30ab06f"
+    },
+    {
+      "path": "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+      "bytes": 732284,
+      "sha256": "bba474b3f0e2820d2a429c494ee8e025fc5b11fc018c9dd03a182aa7a848bd0b"
+    }
+  ],
+  "schemaAssetChanged": false,
+  "connectedInstrumentationExecuted": false,
+  "deviceListFile": "adb-devices.txt",
+  "uiE2eExecuted": false,
+  "data07AggregationExecuted": false,
+  "approvalsRecorded": false,
+  "githubCI": "Check published head runs linked from PR description"
+}

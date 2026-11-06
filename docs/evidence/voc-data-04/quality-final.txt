@@ -1,0 +1,77 @@
+.\.tools\python\python.exe : test_changed_pack_context_requires_new_review
+(test_quality.QualityTests.test_changed_pack_context_requires_new_review) ... ok
+At line:2 char:1
++ .\.tools\python\python.exe -m unittest discover -s tools/vocabulary - ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_changed_pa..._review) ... ok:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+test_cli_nonzero_and_synthetic_cannot_be_production
+(test_quality.QualityTests.test_cli_nonzero_and_synthetic_cannot_be_production) ... ok
+test_consumer_envelope_can_be_built_by_existing_catalog_consumer
+(test_quality.QualityTests.test_consumer_envelope_can_be_built_by_existing_catalog_consumer) ... ok
+test_consumer_requires_completion_mode_and_all_artifact_hashes
+(test_quality.QualityTests.test_consumer_requires_completion_mode_and_all_artifact_hashes) ... ok
+test_custody_detects_changed_source_bytes_and_missing_manifest
+(test_quality.QualityTests.test_custody_detects_changed_source_bytes_and_missing_manifest) ... BLOCKED (gate): Corpus
+checksum mismatch
+ok
+test_custody_detects_tampered_canonical_even_with_rewritten_hash
+(test_quality.QualityTests.test_custody_detects_tampered_canonical_even_with_rewritten_hash) ... ok
+test_identity_not_silently_repaired_and_control_characters_blocked
+(test_quality.QualityTests.test_identity_not_silently_repaired_and_control_characters_blocked) ... ok
+test_malformed_envelopes_report_instead_of_crashing
+(test_quality.QualityTests.test_malformed_envelopes_report_instead_of_crashing) ... ok
+test_malformed_manifest_fails_closed_with_report
+(test_quality.QualityTests.test_malformed_manifest_fails_closed_with_report) ... ok
+test_production_authorization_path_with_isolated_synthetic_rights
+(test_quality.QualityTests.test_production_authorization_path_with_isolated_synthetic_rights) ... BLOCKED (gate):
+Approval content digest mismatch; source rights or snapshot changes require new review
+ok
+test_publication_failure_cleans_payload_and_marks_report_failed
+(test_quality.QualityTests.test_publication_failure_cleans_payload_and_marks_report_failed) ... QC failed: publication
+error: simulated completion-marker write failure
+ok
+test_qc01_04_12_19_valid_nullable_ipa_four_meanings_and_component_sources
+(test_quality.QualityTests.test_qc01_04_12_19_valid_nullable_ipa_four_meanings_and_component_sources) ... ok
+test_qc02_03_required_fields (test_quality.QualityTests.test_qc02_03_required_fields) ... ok
+test_qc05_all_duplicate_claimants_rejected (test_quality.QualityTests.test_qc05_all_duplicate_claimants_rejected) ...
+ok
+test_qc06_wording_does_not_change_identity_but_invalidates_review
+(test_quality.QualityTests.test_qc06_wording_does_not_change_identity_but_invalidates_review) ... ok
+test_qc07_15_unicode_normalization_idempotent
+(test_quality.QualityTests.test_qc07_15_unicode_normalization_idempotent) ... ok
+test_qc08_unknown_pos_and_alias (test_quality.QualityTests.test_qc08_unknown_pos_and_alias) ... ok
+test_qc09_provenance_missing_or_unknown (test_quality.QualityTests.test_qc09_provenance_missing_or_unknown) ... ok
+test_qc10_license_string_is_not_approval (test_quality.QualityTests.test_qc10_license_string_is_not_approval) ... ok
+test_qc11_13_three_meanings_fail_despite_case_nfc_whitespace
+(test_quality.QualityTests.test_qc11_13_three_meanings_fail_despite_case_nfc_whitespace) ... ok
+test_qc14_deterministic_publication_and_envelope_compatibility
+(test_quality.QualityTests.test_qc14_deterministic_publication_and_envelope_compatibility) ... ok
+test_qc16_fail_no_artifacts_and_old_output_refused
+(test_quality.QualityTests.test_qc16_fail_no_artifacts_and_old_output_refused) ... ok
+test_qc17_short_examples_and_multisense_are_warnings
+(test_quality.QualityTests.test_qc17_short_examples_and_multisense_are_warnings) ... ok
+test_qc18_unknown_vocabulary_and_pack_references
+(test_quality.QualityTests.test_qc18_unknown_vocabulary_and_pack_references) ... ok
+test_reviews_are_required_dated_explicit_and_nonduplicated
+(test_quality.QualityTests.test_reviews_are_required_dated_explicit_and_nonduplicated) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 4.286s
+
+OK
+QC fixture-pass: 4 input, 0 errors
+QC fixture-pass: 4 input, 0 errors
+QC failed: 0 input, 1 errors
+QC failed: 0 input, 1 errors
+QC failed: 0 input, 1 errors
+QC failed: 0 input, 1 errors
+QC failed: 0 input, 1 errors
+QC failed: 0 input, 1 errors
+QC failed: 0 input, 1 errors
+QC pass: 4 input, 0 errors
+QC failed: 0 input, 1 errors
+QC fixture-pass: 4 input, 0 errors
+QC fixture-pass: 4 input, 0 errors
+QC failed: 4 input, 9 errors

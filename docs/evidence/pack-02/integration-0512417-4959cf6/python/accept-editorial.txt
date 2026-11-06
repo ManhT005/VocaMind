@@ -1,0 +1,1 @@
+Prepared 150 owner-accepted records; run ingestion and production QC before handoff.

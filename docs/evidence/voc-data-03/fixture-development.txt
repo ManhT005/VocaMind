@@ -1,0 +1,12 @@
+$ python3 docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-ingestion/review-a/canonical-catalog.json
+{
+  "result": "PASS_CONTRACT_CHECKS",
+  "mode": "development",
+  "uniqueWords": 4,
+  "memberships": 16,
+  "packs": 4,
+  "baselineCompared": false,
+  "limitations": "Does not verify semantic quality, license evidence, Room asset, FTS or app release readiness."
+}
+
+exit=0

@@ -1,7 +1,7 @@
 package com.vocamind.app.domain.learning;
 
 import java.time.Instant;
-import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.time.ZoneId;
 
 /**
@@ -54,9 +54,8 @@ public final class LeitnerScheduler {
                 throw new IllegalArgumentException("rating");
         }
 
-        LocalDate today = Instant.ofEpochMilli(nowEpochMillis).atZone(zone).toLocalDate();
-        long dueAt = today.plusDays(intervalDays(boxAfter))
-                .atStartOfDay(zone).toInstant().toEpochMilli();
+        ZonedDateTime reviewedAt = Instant.ofEpochMilli(nowEpochMillis).atZone(zone);
+        long dueAt = reviewedAt.plusDays(intervalDays(boxAfter)).toInstant().toEpochMilli();
         return new ScheduleResult(rating, boxBefore, boxAfter, dueAt, mistakes, state.isLeech(), leech);
     }
 

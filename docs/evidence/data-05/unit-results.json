@@ -1,0 +1,179 @@
+{
+  "baseCommit": "c2ea69e",
+  "scope": "DATA-05 working-tree host validation, not a reference-device/CI result",
+  "suites": [
+    {
+      "name": "com.vocamind.app.data.catalog.CatalogAssetTest",
+      "tests": 32,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T14:21:38"
+    },
+    {
+      "name": "com.vocamind.app.data.catalog.ContentCreditsTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T14:21:48"
+    },
+    {
+      "name": "com.vocamind.app.data.catalog.FtsSearchBenchmarkTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T14:21:48"
+    },
+    {
+      "name": "com.vocamind.app.data.catalog.FtsSearchTest",
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T14:21:57"
+    },
+    {
+      "name": "com.vocamind.app.data.user.UserDatabaseTest",
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T14:21:57"
+    },
+    {
+      "name": "com.vocamind.app.domain.catalog.SearchVocabularyUseCaseTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T14:22:01"
+    },
+    {
+      "name": "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T14:22:01"
+    },
+    {
+      "name": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T14:22:01"
+    },
+    {
+      "name": "com.vocamind.app.domain.learning.LeitnerSchedulerTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T14:22:01"
+    },
+    {
+      "name": "com.vocamind.app.domain.progress.ProgressDomainTest",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T14:22:01"
+    },
+    {
+      "name": "com.vocamind.app.domain.quiz.QuizDomainTest",
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T14:22:01"
+    },
+    {
+      "name": "com.vocamind.app.feature.attribution.AttributionRenderingTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T14:22:01"
+    },
+    {
+      "name": "com.vocamind.app.feature.attribution.AttributionScreenTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T14:22:04"
+    },
+    {
+      "name": "com.vocamind.app.feature.attribution.AttributionViewModelTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T14:22:05"
+    },
+    {
+      "name": "com.vocamind.app.feature.attribution.ExternalLinksTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T14:22:05"
+    },
+    {
+      "name": "com.vocamind.app.feature.attribution.GetContentSourcesTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T14:22:06"
+    },
+    {
+      "name": "com.vocamind.app.feature.progress.ProgressViewStateTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-11-03T14:22:06"
+    }
+  ],
+  "totals": {
+    "tests": 149,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "newExecutions": 24,
+  "appApkBuild": "passed",
+  "instrumentationApkBuild": "passed",
+  "benchmarkFixtureExcludedFromAppApk": true,
+  "lint": {
+    "errors": 0,
+    "warnings": [
+      "Existing MissingApplicationIcon"
+    ]
+  },
+  "referenceDeviceLatencyGate": "pending; host outliers above 50ms observed",
+  "connectedInstrumentation": "not run",
+  "sha256": {
+    "app/build.gradle": "3083aedb96717d338a32b030f466131a3be8d5eab30526733224785c01c4b8b2",
+    "app/src/androidTest/java/com/vocamind/app/data/catalog/FtsSearchBenchmarkInstrumentedTest.java": "29b9e7417adc41681132ee86eacd545fcf9097bf44e30bc6280441c2d9775f19",
+    "app/src/androidTest/java/com/vocamind/app/data/catalog/FtsSearchInstrumentedTest.java": "b3b8011454457ec0cba1502831414281477e93075793421eecf2a5fc3f30b0af",
+    "app/src/catalogTest/java/com/vocamind/app/data/catalog/FtsSearchBenchmarkContract.java": "569faff451436573075ce74062dc854fdb0c182f0e96e6f5a2a77b1354baca3a",
+    "app/src/catalogTest/java/com/vocamind/app/data/catalog/FtsSearchContract.java": "851ffd4c4856eda3e94325951d477bd6be55ffec892c4740e0e5a69e1b83a08b",
+    "app/src/main/java/com/vocamind/app/core/SearchProvider.java": "dffefd0e7d36395ae430f0ec53e3b77169bdf3e25d1ad5be7015f0df699dc26a",
+    "app/src/main/java/com/vocamind/app/data/catalog/CatalogDao.java": "c4786ed8f6eef50ea23bbea47fdd0e7cc3bd2ae5cce0c87741eae9e50b7a31f7",
+    "app/src/main/java/com/vocamind/app/data/catalog/FtsMatchExpression.java": "381fedfce30894af68422514879a7a8583623ba8994052aa5454cee2e990f1bc",
+    "app/src/main/java/com/vocamind/app/data/catalog/RoomVocabularySearchRepository.java": "3631b538a00a352f088033ad30f039cadbf018bab175a055c873eb7c18b555d8",
+    "app/src/main/java/com/vocamind/app/domain/catalog/SearchVocabularyUseCase.java": "79843d66df008012053d8e45f8cce80888c461d760568b7d152c20e6f0638521",
+    "app/src/main/java/com/vocamind/app/domain/catalog/VocabularySearchQuery.java": "b2adbe53a5c04cd050b60456f08282ddafbe76c21678bc14c1934681ccd65656",
+    "app/src/main/java/com/vocamind/app/domain/catalog/VocabularySearchRepository.java": "a8130cc5b9a2429a490ef48b3f1a08224c6ecf894b5d3b16e13e6e1e19e9e809",
+    "app/src/main/java/com/vocamind/app/domain/catalog/VocabularySearchResult.java": "27e10661d92a0f7fe91f902936cd283db687127b0825a1132e8585b3d518ac2b",
+    "app/src/test/java/com/vocamind/app/data/catalog/FtsSearchBenchmarkTest.java": "6e558c1dadfea061a39c5581000ae3cab74c4455b0536a7ca23d3d9da7ec47bb",
+    "app/src/test/java/com/vocamind/app/data/catalog/FtsSearchTest.java": "6d0895c82763876be84c3fe3c42adfe2bab65b62678c9b5a2902cfb74f31d4d8",
+    "app/src/test/java/com/vocamind/app/domain/catalog/SearchVocabularyUseCaseTest.java": "99eb7a90d5df0424875a5eaea8d79cf54a03098cbb230ee2d98ebb0af09b9f6e",
+    "tools/catalog/build_search_benchmark_fixture.py": "bd69ac34fb83b38dba00b36c08256fccb885868195e484b955a50b77ad5bfd6a"
+  }
+}

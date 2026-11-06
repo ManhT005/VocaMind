@@ -1,5 +1,8 @@
 # DATA-07 — Progress aggregation queries
 
+> Current integration: [PR #26 fix validation](data-07-fix-validation.md), 06/11/2026.
+> The 185-test result in section 6 is historical pre-integration evidence.
+
 ## 1. Căn cứ và phạm vi
 
 Tuần 2, D8, 5 giờ, Nhân thực hiện / Thi review, High. Phụ thuộc DATA-02 và DATA-03.
@@ -7,7 +10,9 @@ Tuần 2, D8, 5 giờ, Nhân thực hiện / Thi review, High. Phụ thuộc DAT
 người dùng đính kèm: FR-VM-041..043, UC-07, AC-11, DEC-15. Xem
 [kế hoạch](plans/data-07-progress-aggregation-queries.md).
 
-Branch: feature/data-07-progress-aggregation-queries. Bắt đầu từ develop c2ea69e,
+Branch: feature/data-07-progress-aggregation-queries. Ngày 06/11/2026 đã ghép
+`develop` tại `67e5e13d8990121f454ac432c79ccad3f007ce62`, gồm DATA-05/06 đã sửa.
+Lịch sử: bắt đầu từ develop c2ea69e,
 merge DATA-03 e668bcb vào riêng feature branch, integration commit 84ad09d.
 Không thay develop/main hoặc nhánh DATA-06. Nhánh bàn giao là
 feature/data-07-progress-aggregation-queries; chưa merge vào develop/main.
@@ -23,7 +28,7 @@ feature/data-07-progress-aggregation-queries; chưa merge vào develop/main.
 | ProgressRows / BoxProgressCount | Kết quả nội bộ tầng data, không truyền lên UI |
 | ProgressMapper | Điền sáu box, kiểm invariant, tạo ProgressSummary/QuizHistoryItem/ProgressSnapshot |
 | RoomProgressRepository | Triển khai đúng ProgressRepository/ProgressReadResult hiện có |
-| ProgressProvider | Ghép dependency với một UserDatabase do application owner quản lý |
+| ProgressProvider / RepositoryProvider | Đọc qua cùng UserDatabase application-owned với Review/Quiz; cấp domain repository/use case |
 
 Không tạo contract domain khác, không sửa UI, schema, Entity hoặc asset. Mapper
 sử dụng các model immutable đã có; UI không được cộng lại counts theo quy tắc riêng.
@@ -70,8 +75,8 @@ Dùng UserDatabase đã được application owner mở trên worker. Factory kh
 hoặc đóng database và không tạo thêm instance cho mỗi lần refresh.
 
 ```java
-ProgressRepository repository = ProgressProvider.create(applicationOwnedUserDatabase);
-GetProgressUseCase getProgress = repository::readProgress;
+// Composition root giữ RepositoryProvider; UI chỉ nhận domain use case.
+GetProgressUseCase getProgress = repositories.progressUseCase();
 // Trên worker executor:
 ProgressReadResult result = getProgress.execute();
 // PROGRESS-02 chuyển result sang ViewState và render trên UI thread.
@@ -81,7 +86,7 @@ Contract đồng bộ, không tự tạo thread/subscription và không tự ref
 quản lý lifecycle và reload sau các thao tác ghi. Dao/Entity không được inject
 vào Fragment/ViewModel. Lỗi phải hiển thị qua ViewState ERROR, không giả empty.
 
-## 6. Lệnh xác minh
+## 6. Lệnh và kết quả lịch sử trước lần sửa 06/11/2026
 
 Tại root repository, JDK 17 và SDK theo project:
 
@@ -122,5 +127,6 @@ hiển thị trên thiết bị; PROGRESS-02 và reviewer Thi nghiệm thu phầ
 trạng thái Excel hoặc ghi review thay thành viên. Không ghi nhận CI GitHub hoặc
 connected tests thành công khi chỉ chạy local host.
 
-Nhánh DATA-06 giữ riêng; khi ghép cần giữ transaction ghi review và queries đọc
-DATA-07 trong UserDao. Không có destructive migration/reset hoặc thay đổi schema.
+DATA-06 đã có trong develop được ghép. UserDao hiện giữ cả conditional transaction
+ghi review và snapshot aggregation; xem regression kết hợp trong báo cáo follow-up.
+Không có destructive migration/reset hoặc thay đổi schema.

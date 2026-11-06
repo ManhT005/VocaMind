@@ -4,6 +4,11 @@ import android.content.Context;
 import androidx.room.Room;
 import androidx.test.core.app.ApplicationProvider;
 import com.vocamind.app.core.ProgressProvider;
+import com.vocamind.app.core.ReviewProvider;
+import com.vocamind.app.data.catalog.CatalogDatabase;
+import com.vocamind.app.data.repository.RoomReviewRepository;
+import com.vocamind.app.domain.learning.*;
+import java.time.*;
 import com.vocamind.app.data.user.entity.*;
 import com.vocamind.app.domain.progress.*;
 import org.junit.*;
@@ -196,4 +201,157 @@ public abstract class ProgressAggregationContract {
             return null;
         });
     }
+    private static final String BANK = "5aecfbf5b9a23aee";
+    private static final String BOOK = "90562a98e8686267";
+    private static final Clock REVIEW_CLOCK = Clock.fixed(Instant.parse("2026-11-06T07:30:00Z"), ZoneOffset.UTC);
+    private void withCatalog(java.util.function.Consumer<CatalogDatabase> test) {
+        String catalogName = name + "-catalog";
+        CatalogDatabase catalog = CatalogDatabase.open(context, catalogName);
+        try {
+            catalog.getOpenHelper().getReadableDatabase();
+            test.accept(catalog);
+        } finally { catalog.close(); context.deleteDatabase(catalogName); }
+    }
+    private RecordReviewUseCase reviewing(CatalogDatabase catalog) {
+        return ReviewProvider.create(new RoomReviewRepository(catalog.catalogDao(), db),
+                REVIEW_CLOCK, ZoneId.of("Asia/Bangkok"));
+    }
+    private void assertHealthyDb() {
+        try (var c = db.getOpenHelper().getReadableDatabase().query("PRAGMA integrity_check")) {
+            assertTrue(c.moveToFirst()); assertEquals("ok", c.getString(0)); assertFalse(c.moveToNext());
+        }
+        try (var c = db.getOpenHelper().getReadableDatabase().query("PRAGMA foreign_key_check")) {
+            assertFalse(c.moveToFirst());
+        }
+    }
+    private void assertSameSnapshot(ProgressSnapshot before, ProgressSnapshot after) {
+        assertEquals(before.getSummary().getTotalLearned(), after.getSummary().getTotalLearned());
+        assertArrayEquals(before.getSummary().getBoxCounts(), after.getSummary().getBoxCounts());
+        assertEquals(before.getQuizHistory().size(), after.getQuizHistory().size());
+        for (int i = 0; i < before.getQuizHistory().size(); i++) {
+            QuizHistoryItem a = before.getQuizHistory().get(i), b = after.getQuizHistory().get(i);
+            assertEquals(a.getAttemptId(), b.getAttemptId());
+            assertEquals(a.getCompletedAtEpochMillis(), b.getCompletedAtEpochMillis());
+            assertEquals(a.getQuestionCount(), b.getQuestionCount());
+            assertEquals(a.getCorrectCount(), b.getCorrectCount());
+            assertEquals(a.getScorePercent(), b.getScorePercent());
+        }
+    }
+    @Test public void atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks() throws Exception {
+        run(() -> {
+            withCatalog(catalog -> {
+                long membershipCount = 0;
+                for (var pack : catalog.catalogDao().packs())
+                    for (var word : catalog.catalogDao().words(pack.id))
+                        if (BANK.equals(word.id)) membershipCount++;
+                assertTrue(membershipCount > 1); assertTrue(db.userDao().activePacks().isEmpty());
+                RecordReviewUseCase review = reviewing(catalog);
+                review.execute(BANK, Rating.REMEMBERED);
+                ProgressSnapshot before = success();
+                assertEquals(1, before.getSummary().getTotalLearned());
+                assertArrayEquals(new long[]{0, 1, 0, 0, 0, 0}, before.getSummary().getBoxCounts());
+                review.execute(BANK, Rating.REMEMBERED);
+                ProgressSnapshot after = success();
+                assertEquals(1, after.getSummary().getTotalLearned());
+                assertArrayEquals(new long[]{0, 0, 1, 0, 0, 0}, after.getSummary().getBoxCounts());
+                assertEquals(2, db.userDao().reviews().size());
+                assertEquals(2, db.userDao().progress(BANK).reviewCount);
+                assertEquals(1, before.getSummary().getBoxCount(1));
+                assertHealthyDb();
+            }); return null;
+        });
+    }
+    @Test public void failedEventInsertDoesNotChangeSummaryOrHistory() throws Exception {
+        reviewRollback(true, "INSERT", "ReviewEvent");
+    }
+    @Test public void failedFirstProgressInsertRollsBackEventAndKeepsSummary() throws Exception {
+        reviewRollback(false, "INSERT", "UserWordProgress");
+    }
+    @Test public void failedProgressUpdateDoesNotMoveBoxOrChangeHistory() throws Exception {
+        reviewRollback(true, "UPDATE", "UserWordProgress");
+    }
+    private void reviewRollback(boolean existing, String operation, String table) throws Exception {
+        run(() -> {
+            withCatalog(catalog -> {
+                RecordReviewUseCase review = reviewing(catalog);
+                if (existing) review.execute(BANK, Rating.HARD);
+                quiz(100, 2);
+                ProgressSnapshot before = success();
+                int eventsBefore = db.userDao().reviews().size();
+                var sql = db.getOpenHelper().getWritableDatabase();
+                sql.execSQL("CREATE TRIGGER data07_review_fault BEFORE " + operation + " ON " + table
+                        + " BEGIN SELECT RAISE(ABORT,'data07-forced-rollback'); END");
+                ReviewWriteException failure = assertThrows(ReviewWriteException.class,
+                        () -> review.execute(BANK, Rating.REMEMBERED));
+                assertEquals(ReviewWriteException.Reason.STORAGE, failure.getReason());
+                assertSameSnapshot(before, success());
+                assertEquals(eventsBefore, db.userDao().reviews().size());
+                if (existing) assertEquals(1, db.userDao().progress(BANK).reviewCount);
+                else assertNull(db.userDao().progress(BANK));
+                sql.execSQL("DROP TRIGGER data07_review_fault");
+                review.execute(BANK, Rating.REMEMBERED);
+                assertEquals(1, success().getSummary().getTotalLearned());
+                assertArrayEquals(new long[]{0, 1, 0, 0, 0, 0}, success().getSummary().getBoxCounts());
+                assertEquals(eventsBefore + 1, db.userDao().reviews().size());
+                assertEquals(1, success().getQuizHistory().size());
+                assertHealthyDb();
+            }); return null;
+        });
+    }
+    @Test public void atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings() throws Exception {
+        run(() -> {
+            withCatalog(catalog -> {
+                RecordReviewUseCase review = reviewing(catalog);
+                for (int round = 0; round < 3; round++) {
+                    var sql = db.getOpenHelper().getWritableDatabase();
+                    db.runInTransaction(() -> {
+                        sql.execSQL("DELETE FROM ReviewEvent"); sql.execSQL("DELETE FROM UserWordProgress");
+                        sql.execSQL("DELETE FROM QuizAttempt");
+                    });
+                    CountDownLatch betweenQueries = new CountDownLatch(1), writerStarted = new CountDownLatch(1);
+                    AtomicBoolean armed = new AtomicBoolean(false);
+                    UserDatabase reader = Room.databaseBuilder(context, UserDatabase.class, name)
+                            .setQueryCallback((query, args) -> {
+                                if (query.contains("GROUP BY box") && armed.compareAndSet(true, false)) {
+                                    betweenQueries.countDown();
+                                    try { if (!writerStarted.await(15, TimeUnit.SECONDS)) throw new IllegalStateException("Writer did not start"); }
+                                    catch (InterruptedException e) { Thread.currentThread().interrupt(); throw new RuntimeException(e); }
+                                }
+                            }, Runnable::run).build();
+                    ExecutorService parallel = Executors.newFixedThreadPool(2);
+                    try {
+                        reader.getOpenHelper().getWritableDatabase();
+                        review.execute(BANK, Rating.HARD); quiz(100, 2);
+                        armed.set(true);
+                        Future<ProgressReadResult> reading = parallel.submit(() -> new RoomProgressRepository(reader.userDao()).readProgress());
+                        Future<?> writing = parallel.submit(() -> {
+                            try {
+                                if (!betweenQueries.await(15, TimeUnit.SECONDS)) throw new IllegalStateException("Reader did not reach groups");
+                                writerStarted.countDown();
+                                db.runInTransaction(() -> {
+                                    review.execute(BANK, Rating.REMEMBERED);
+                                    review.execute(BOOK, Rating.REMEMBERED); quiz(200, 4);
+                                });
+                            } catch (InterruptedException e) { Thread.currentThread().interrupt(); throw new RuntimeException(e); }
+                        });
+                        ProgressReadResult result = reading.get(30, TimeUnit.SECONDS); writing.get(30, TimeUnit.SECONDS);
+                        assertTrue(result.isSuccess());
+                        ProgressSnapshot old = result.getSnapshot();
+                        assertEquals(1, old.getSummary().getTotalLearned());
+                        assertArrayEquals(new long[]{1, 0, 0, 0, 0, 0}, old.getSummary().getBoxCounts());
+                        assertEquals(1, old.getQuizHistory().size());
+                        assertEquals(100, old.getQuizHistory().get(0).getCompletedAtEpochMillis());
+                        ProgressSnapshot refreshed = success();
+                        assertEquals(2, refreshed.getSummary().getTotalLearned());
+                        assertArrayEquals(new long[]{0, 2, 0, 0, 0, 0}, refreshed.getSummary().getBoxCounts());
+                        assertEquals(2, refreshed.getQuizHistory().size());
+                        assertEquals(200, refreshed.getQuizHistory().get(0).getCompletedAtEpochMillis());
+                        assertEquals(3, db.userDao().reviews().size()); assertHealthyDb();
+                    } catch (Exception e) { throw new RuntimeException(e); }
+                    finally { parallel.shutdownNow(); reader.close(); }
+                }
+            }); return null;
+        });
+    }
+
 }

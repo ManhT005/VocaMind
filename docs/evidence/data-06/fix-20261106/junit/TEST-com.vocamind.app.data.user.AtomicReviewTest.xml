@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.data.user.AtomicReviewTest" tests="42" skipped="0" failures="0" errors="0" timestamp="2026-11-06T14:11:12" hostname="7a0e3157ddf4" time="1.73">
+  <properties/>
+  <testcase name="mismatchedIdsAndTamperedHistoryCannotWrite[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.039"/>
+  <testcase name="legacyAndUseCaseCannotBothInsertFirstReview[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.052"/>
+  <testcase name="staleEmptySnapshotCannotOverwriteFirstReview[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.037"/>
+  <testcase name="closedDatabaseReadReportsReadFailure[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.035"/>
+  <testcase name="existingProgressUpdateFailureRollsBackInsertedEvent[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.034"/>
+  <testcase name="malformedProgressIsTypedInvalidDataWithNoWrite[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.044"/>
+  <testcase name="eventInsertFailureLeavesExistingProgressUnchanged[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.04"/>
+  <testcase name="legacyEventFailureRollsBack[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.038"/>
+  <testcase name="legacyAndUseCaseCannotCommitSameSnapshotTwice[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.042"/>
+  <testcase name="bothApisUseOneWriterAndLegacyHardReplayIsRejected[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.044"/>
+  <testcase name="legacyNewProgressFailureRollsBackEvent[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.034"/>
+  <testcase name="persistedDueTimeSurvivesZoneChangeAndReopen[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.04"/>
+  <testcase name="existingWordAllRatingsPersistSchedulerOutcome[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.036"/>
+  <testcase name="twoDatabaseInstancesCannotCommitSameSnapshotTwice[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.036"/>
+  <testcase name="legacyProgressUpdateFailureRollsBackEvent[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.039"/>
+  <testcase name="unknownCatalogWordCannotCreateOrphanThroughEitherApi[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.037"/>
+  <testcase name="explicitRetryAfterFaultAndReopenPersistsExactlyOneReview[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.041"/>
+  <testcase name="savedFlagChangedAfterReadCausesConflictNotOverwrite[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.035"/>
+  <testcase name="newProgressInsertFailureRollsBackInsertedEvent[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.033"/>
+  <testcase name="firstReviewWritesOneMatchingEventAndProgress[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.031"/>
+  <testcase name="catalogReadFailureIsTypedReadFailedWithoutWriting[26]" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.038"/>
+  <testcase name="mismatchedIdsAndTamperedHistoryCannotWrite" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.042"/>
+  <testcase name="legacyAndUseCaseCannotBothInsertFirstReview" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.045"/>
+  <testcase name="staleEmptySnapshotCannotOverwriteFirstReview" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.045"/>
+  <testcase name="closedDatabaseReadReportsReadFailure" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.041"/>
+  <testcase name="existingProgressUpdateFailureRollsBackInsertedEvent" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.041"/>
+  <testcase name="malformedProgressIsTypedInvalidDataWithNoWrite" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.042"/>
+  <testcase name="eventInsertFailureLeavesExistingProgressUnchanged" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.041"/>
+  <testcase name="legacyEventFailureRollsBack" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.046"/>
+  <testcase name="legacyAndUseCaseCannotCommitSameSnapshotTwice" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.039"/>
+  <testcase name="bothApisUseOneWriterAndLegacyHardReplayIsRejected" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.038"/>
+  <testcase name="legacyNewProgressFailureRollsBackEvent" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.055"/>
+  <testcase name="persistedDueTimeSurvivesZoneChangeAndReopen" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.049"/>
+  <testcase name="existingWordAllRatingsPersistSchedulerOutcome" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.05"/>
+  <testcase name="twoDatabaseInstancesCannotCommitSameSnapshotTwice" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.054"/>
+  <testcase name="legacyProgressUpdateFailureRollsBackEvent" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.042"/>
+  <testcase name="unknownCatalogWordCannotCreateOrphanThroughEitherApi" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.046"/>
+  <testcase name="explicitRetryAfterFaultAndReopenPersistsExactlyOneReview" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.045"/>
+  <testcase name="savedFlagChangedAfterReadCausesConflictNotOverwrite" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.036"/>
+  <testcase name="newProgressInsertFailureRollsBackInsertedEvent" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.042"/>
+  <testcase name="firstReviewWritesOneMatchingEventAndProgress" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.038"/>
+  <testcase name="catalogReadFailureIsTypedReadFailedWithoutWriting" classname="com.vocamind.app.data.user.AtomicReviewTest" time="0.044"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

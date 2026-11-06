@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.data.repository.RepositoryIntegrationTest" tests="46" skipped="0" failures="0" errors="0" timestamp="2026-11-06T14:11:10" hostname="7a0e3157ddf4" time="2.3">
+  <properties/>
+  <testcase name="pack02ValidationNoOpAndFailedWriteNeverCreateOrphan[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.047"/>
+  <testcase name="generatedQuizUsesFreshActiveSnapshotAndNeverWrites[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.06"/>
+  <testcase name="reviewedWordLeavesNewListAndBecomesDueByDate[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.053"/>
+  <testcase name="leechFlagPersistsOnlyAtFourthConsecutiveForgot[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.038"/>
+  <testcase name="packWordsKeepOrderNoAndMergeProgressByStableId[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.038"/>
+  <testcase name="pack02PauseSharedAndExclusiveDueAndNewWordsThenReopenPreservesUserdata[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.061"/>
+  <testcase name="unknownPackIsNotFoundAndNothingIsCreated[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.04"/>
+  <testcase name="newWordsFollowActivePackOrderWithoutDuplicates[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.039"/>
+  <testcase name="reviewRejectsUnknownWordStaleBoxAndBadArguments[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.037"/>
+  <testcase name="productionNormalizerVectorsOnAndroid[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.033"/>
+  <testcase name="quizVocabularyWithNonHexStableIdIsInvalidData[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.033"/>
+  <testcase name="interruptedForgotStreakRestartsTowardLeech[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.044"/>
+  <testcase name="acceptedPolicyTravelsThroughRoomSnapshotAndGenerationWithoutWrites[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.165"/>
+  <testcase name="pausedPackProgressIsKeptButNotStudied[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.038"/>
+  <testcase name="absentOrMalformedPolicyIsRepositoryErrorEvenWhenNoPacksAreActive[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.036"/>
+  <testcase name="forgotKeepsLeechAndHardOrRememberedClearsItInStorage[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.057"/>
+  <testcase name="reviewKeepsLearnedAtAndSavedFlagAndCounts[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.045"/>
+  <testcase name="corruptStoredProgressIsInvalidDataNotEmpty[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.034"/>
+  <testcase name="vocabularyBrowsingIsReadOnlyAcrossInactivePausedAndFileReopen[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.065"/>
+  <testcase name="packStatesMergeCatalogWithUserByPackId[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.043"/>
+  <testcase name="failedReviewWriteRollsBackEventAndProgress[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.038"/>
+  <testcase name="quizVocabularyIsActivePacksOnlyAndAttemptsPersist[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.046"/>
+  <testcase name="learnedCountIsDistinctWordsWithLearnedAt[26]" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.044"/>
+  <testcase name="pack02ValidationNoOpAndFailedWriteNeverCreateOrphan" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.053"/>
+  <testcase name="generatedQuizUsesFreshActiveSnapshotAndNeverWrites" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.052"/>
+  <testcase name="reviewedWordLeavesNewListAndBecomesDueByDate" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.043"/>
+  <testcase name="leechFlagPersistsOnlyAtFourthConsecutiveForgot" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.047"/>
+  <testcase name="packWordsKeepOrderNoAndMergeProgressByStableId" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.041"/>
+  <testcase name="pack02PauseSharedAndExclusiveDueAndNewWordsThenReopenPreservesUserdata" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.071"/>
+  <testcase name="unknownPackIsNotFoundAndNothingIsCreated" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.035"/>
+  <testcase name="newWordsFollowActivePackOrderWithoutDuplicates" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.046"/>
+  <testcase name="reviewRejectsUnknownWordStaleBoxAndBadArguments" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.04"/>
+  <testcase name="productionNormalizerVectorsOnAndroid" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.039"/>
+  <testcase name="quizVocabularyWithNonHexStableIdIsInvalidData" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.047"/>
+  <testcase name="interruptedForgotStreakRestartsTowardLeech" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.058"/>
+  <testcase name="acceptedPolicyTravelsThroughRoomSnapshotAndGenerationWithoutWrites" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.122"/>
+  <testcase name="pausedPackProgressIsKeptButNotStudied" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.048"/>
+  <testcase name="absentOrMalformedPolicyIsRepositoryErrorEvenWhenNoPacksAreActive" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.04"/>
+  <testcase name="forgotKeepsLeechAndHardOrRememberedClearsItInStorage" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.058"/>
+  <testcase name="reviewKeepsLearnedAtAndSavedFlagAndCounts" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.045"/>
+  <testcase name="corruptStoredProgressIsInvalidDataNotEmpty" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.047"/>
+  <testcase name="vocabularyBrowsingIsReadOnlyAcrossInactivePausedAndFileReopen" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.057"/>
+  <testcase name="packStatesMergeCatalogWithUserByPackId" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.044"/>
+  <testcase name="failedReviewWriteRollsBackEventAndProgress" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.038"/>
+  <testcase name="quizVocabularyIsActivePacksOnlyAndAttemptsPersist" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.042"/>
+  <testcase name="learnedCountIsDistinctWordsWithLearnedAt" classname="com.vocamind.app.data.repository.RepositoryIntegrationTest" time="0.045"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

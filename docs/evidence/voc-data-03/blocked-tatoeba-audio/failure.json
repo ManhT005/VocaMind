@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "stage": "gate",
+  "errors": [
+    "gate: Source on hold or excluded; candidate is not include"
+  ]
+}

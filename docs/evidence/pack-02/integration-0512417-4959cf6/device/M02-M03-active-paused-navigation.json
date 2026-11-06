@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "checks": [
+    "detail activate",
+    "active badge on list",
+    "active Today no CTA",
+    "detail pause",
+    "inactive list",
+    "Today CTA returns"
+  ]
+}

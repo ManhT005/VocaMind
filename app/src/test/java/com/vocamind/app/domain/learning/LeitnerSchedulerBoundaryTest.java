@@ -33,11 +33,11 @@ public class LeitnerSchedulerBoundaryTest {
         assertEquals(LocalDate.of(2026, 10, 28), due(early, HCM).toLocalDate());
     }
 
-    @Test public void dueAtIsAlwaysStartOfLocalDay() {
+    @Test public void dueAtPreservesLocalTimeForEveryBox() {
         for (int box = 0; box <= 5; box++) {
             ScheduleResult r = scheduler.schedule(new LeitnerState(box, 0, false), Rating.HARD,
                     at(LocalDateTime.of(2026, 10, 26, 13, 37), HCM), HCM);
-            assertEquals(LocalTime.MIDNIGHT, due(r, HCM).toLocalTime());
+            assertEquals(LocalTime.of(13, 37), due(r, HCM).toLocalTime());
         }
     }
 
@@ -55,7 +55,7 @@ public class LeitnerSchedulerBoundaryTest {
         long now = at(LocalDateTime.of(2026, 3, 7, 22, 0), NEW_YORK);
         ScheduleResult r = scheduler.schedule(new LeitnerState(1, 0, false), Rating.REMEMBERED, now, NEW_YORK);
         assertEquals(LocalDate.of(2026, 3, 10), due(r, NEW_YORK).toLocalDate());
-        assertEquals(LocalTime.MIDNIGHT, due(r, NEW_YORK).toLocalTime());
+        assertEquals(LocalTime.of(22, 0), due(r, NEW_YORK).toLocalTime());
     }
 
     @Test public void fallBackKeepsCalendarDays() {
@@ -63,14 +63,15 @@ public class LeitnerSchedulerBoundaryTest {
         long now = at(LocalDateTime.of(2026, 10, 31, 23, 30), NEW_YORK);
         ScheduleResult r = scheduler.schedule(LeitnerState.newWord(), Rating.FORGOT, now, NEW_YORK);
         assertEquals(LocalDate.of(2026, 11, 1), due(r, NEW_YORK).toLocalDate());
-        assertEquals(LocalTime.MIDNIGHT, due(r, NEW_YORK).toLocalTime());
+        assertEquals(LocalTime.of(23, 30), due(r, NEW_YORK).toLocalTime());
     }
 
-    @Test public void wordDueTodayIsDueAtAnyTimeThatDay() {
+    @Test public void wordBecomesDueAtStoredReviewTime() {
         long reviewedAt = at(LocalDateTime.of(2026, 10, 26, 21, 0), HCM);
         ScheduleResult r = scheduler.schedule(LeitnerState.newWord(), Rating.FORGOT, reviewedAt, HCM);
         long nextMorning = at(LocalDateTime.of(2026, 10, 27, 6, 0), HCM);
-        assertTrue(r.getDueAtEpochMillis() <= nextMorning);
+        assertTrue(r.getDueAtEpochMillis() > nextMorning);
+        assertEquals(at(LocalDateTime.of(2026, 10, 27, 21, 0), HCM), r.getDueAtEpochMillis());
         assertTrue(r.getDueAtEpochMillis() > reviewedAt);
     }
 

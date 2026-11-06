@@ -15,6 +15,8 @@ import com.vocamind.app.data.local.DaoInputs;
 @Dao
 @WorkerThread
 public interface CatalogDao {
+    @Query("SELECT * FROM VocabularyEntry ORDER BY id")
+    List<VocabularyEntry> allVocabulary();
     @Query("SELECT * FROM LearningPack ORDER BY orderNo, id")
     List<LearningPack> packs();
     @Query("SELECT * FROM LearningPack WHERE id = :id")
@@ -69,7 +71,11 @@ public interface CatalogDao {
         for (PackMembership row : membershipsForPacks(packIds)) ids.add(row.vocabularyId);
         return new ArrayList<>(ids);
     }
-    // Used to prove the DATA-01 mapping. Full search UX/contracts belong to DATA-05.
+    /** Production FTS4 path; the expression is generated from literal tokens, not raw UI syntax. */
+    @Query("SELECT v.* FROM VocabularyEntry v JOIN VocabularyFts f ON f.rowid = v.rowid "
+            + "WHERE VocabularyFts MATCH :expression ORDER BY v.normalizedLemma COLLATE NOCASE, v.id")
+    List<VocabularyEntry> searchVocabulary(String expression);
+    // Compatibility probe for DATA-01 fixtures.
     @Query("SELECT v.* FROM VocabularyEntry v JOIN VocabularyFts f ON f.rowid = v.rowid WHERE VocabularyFts MATCH :expression ORDER BY v.id")
     List<VocabularyEntry> matchFixture(String expression);
 }

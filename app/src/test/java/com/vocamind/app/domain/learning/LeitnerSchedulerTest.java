@@ -2,7 +2,6 @@ package com.vocamind.app.domain.learning;
 
 import org.junit.Test;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 
@@ -16,8 +15,8 @@ public class LeitnerSchedulerTest {
     private static long at(int y, int m, int d, int h, int min) {
         return LocalDateTime.of(y, m, d, h, min).atZone(ZONE).toInstant().toEpochMilli();
     }
-    private static long startOfDay(int y, int m, int d) {
-        return LocalDate.of(y, m, d).atStartOfDay(ZONE).toInstant().toEpochMilli();
+    private static long sameReviewTime(int y, int m, int d) {
+        return LocalDateTime.of(y, m, d, 15, 30).atZone(ZONE).toInstant().toEpochMilli();
     }
 
     @Test public void newWordStartsInBoxZero() {
@@ -31,21 +30,21 @@ public class LeitnerSchedulerTest {
         ScheduleResult r = scheduler.schedule(new LeitnerState(2, 0, false), Rating.REMEMBERED, NOW, ZONE);
         assertEquals(2, r.getBoxBefore());
         assertEquals(3, r.getBoxAfter());
-        assertEquals(startOfDay(2026, 11, 2), r.getDueAtEpochMillis());
+        assertEquals(sameReviewTime(2026, 11, 2), r.getDueAtEpochMillis());
         assertEquals(Rating.REMEMBERED, r.getRating());
     }
 
     @Test public void hardKeepsBox() {
         ScheduleResult r = scheduler.schedule(new LeitnerState(3, 0, false), Rating.HARD, NOW, ZONE);
         assertEquals(3, r.getBoxAfter());
-        assertEquals(startOfDay(2026, 11, 2), r.getDueAtEpochMillis());
+        assertEquals(sameReviewTime(2026, 11, 2), r.getDueAtEpochMillis());
     }
 
     @Test public void forgotResetsToBoxZeroDueTomorrow() {
         ScheduleResult r = scheduler.schedule(new LeitnerState(4, 0, false), Rating.FORGOT, NOW, ZONE);
         assertEquals(0, r.getBoxAfter());
         assertEquals(1, r.getConsecutiveMistakes());
-        assertEquals(startOfDay(2026, 10, 27), r.getDueAtEpochMillis());
+        assertEquals(sameReviewTime(2026, 10, 27), r.getDueAtEpochMillis());
     }
 
     @Test public void toStateCarriesResultForward() {
