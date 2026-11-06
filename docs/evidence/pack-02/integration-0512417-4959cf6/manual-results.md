@@ -1,5 +1,9 @@
 # Device QA results (automated emulator assertions)
 
+Publication binding: these source/APK fingerprints match integrated source commit
+`63f1edf5c5aedeb83ee7024c0b813b6984568df0`; see [publication.json](publication.json).
+The original uncommitted collection context is retained below.
+
 All results below use the uncommitted source fingerprint and APK hashes identified
 in environment.md. These are real API30 emulator checks, separate from 227 host
 test executions. No manual reviewer sign-off is implied.

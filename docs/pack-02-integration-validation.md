@@ -1,5 +1,12 @@
 # PACK-02 / PR #29 — local develop integration follow-up
 
+Publication update: the user's subsequent request authorized commit/push and PR
+publication. The integrated source is now commit
+`63f1edf5c5aedeb83ee7024c0b813b6984568df0`. Its source matches the QA fingerprint
+below. See [publication evidence](evidence/pack-02/integration-0512417-4959cf6/publication.json)
+for the new host verification and binding to the device-tested APK hashes.
+The uncommitted-state descriptions below preserve the original collection context.
+
 Owner: Trường. Assigned reviewer: Thành. This is implementation/QA evidence for
 review, not Thành's approval or acceptance of all AC-03/09/13.
 
