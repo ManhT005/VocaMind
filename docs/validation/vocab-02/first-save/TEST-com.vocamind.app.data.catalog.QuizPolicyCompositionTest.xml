@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.data.catalog.QuizPolicyCompositionTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-06T13:23:33" hostname="DESKTOP-KUH3S13" time="0.453">
+  <properties/>
+  <testcase name="defaultUseCaseLoadsPolicyBoundToBundledCatalogAndVocabularyRepository[26]" classname="com.vocamind.app.data.catalog.QuizPolicyCompositionTest" time="0.115"/>
+  <testcase name="firstSaveThroughProductionCompositionPersistsAcrossReopen[26]" classname="com.vocamind.app.data.catalog.QuizPolicyCompositionTest" time="0.095"/>
+  <testcase name="absentCompanionAssetIsRejectedInsteadOfUnrestrictedFallback[26]" classname="com.vocamind.app.data.catalog.QuizPolicyCompositionTest" time="0.019"/>
+  <testcase name="defaultUseCaseLoadsPolicyBoundToBundledCatalogAndVocabularyRepository" classname="com.vocamind.app.data.catalog.QuizPolicyCompositionTest" time="0.109"/>
+  <testcase name="firstSaveThroughProductionCompositionPersistsAcrossReopen" classname="com.vocamind.app.data.catalog.QuizPolicyCompositionTest" time="0.094"/>
+  <testcase name="absentCompanionAssetIsRejectedInsteadOfUnrestrictedFallback" classname="com.vocamind.app.data.catalog.QuizPolicyCompositionTest" time="0.018"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

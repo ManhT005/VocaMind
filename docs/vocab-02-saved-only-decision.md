@@ -1,64 +1,58 @@
-# VOCAB-02 — quyết định saved-only đang chờ
+# VOCAB-02 — contract saved-only due-now
 
-Ngày đối chiếu: 06/11/2026. Phụ trách Trường; cần Thành (reviewer) và Nhân (data owner) xác nhận.
-Trạng thái: **PENDING / BLOCKED**, chưa có người/ngày/commit phê duyệt. Không phải quyết định nghiệp vụ mới.
+Ngày chốt triển khai: 06/11/2026. Nguồn xác nhận: chỉ dẫn trực tiếp của người dùng trong phiên
+VOCAB-02 sau review 2482a4e. Không ghi thay tên/chữ ký Thành hoặc Nhân.
+Đây là quyết định kỹ thuật cho phần SRS chưa quy định giá trị khởi tạo saved-only,
+**không phải trích dẫn quy định khởi tạo có sẵn trong SRS**. Không sửa SRS hoặc phân công.
+Code triển khai: `016373c37fc0f39d35f9ae3f9ea010be46dbda59`.
 
-Develop đã fetch: `46d6c18`. `UserDao.setSaved` chỉ UPDATE progress có sẵn.
-[PROGRESS-01 handoff](progress-01-handoff.md) và [contract](plans/progress-01-contract.md)
-vẫn ghi PENDING. Không có bằng chứng phê duyệt mới trong source/handoff hiện hành.
+## Representation được thực hiện
 
-## Hai phương án cụ thể để Thành/Nhân review
-
-Ưu tiên vẫn lưu isSaved trong UserWordProgress theo BR-02, box chỉ 0..5.
-Nếu tạo row chỉ để lưu, representation đề xuất để thảo luận:
-
-| Field | Giá trị / ý nghĩa đề xuất, CHƯA triển khai |
+| Field | First-save khi chưa có progress |
 | --- | --- |
-| vocabularyId | stableId TEXT đúng catalog |
+| vocabularyId | stableId TEXT hợp lệ, đúng membership pack của route |
 | isSaved | true |
-| box | 0; chưa có lượt review, nhưng sẽ được thống kê ở box0 theo literal FR-VM-042 |
-| dueAt | Long.MAX_VALUE, sentinel không đến hạn trong ngày giờ thực; cần chốt contract rõ |
-| learnedAt / lastReviewedAt | null / null; không giả lập thời điểm học |
-| consecutiveMistakes / reviewCount | 0 / 0 |
+| box | 0 |
+| dueAt | thời điểm Save, epoch milliseconds từ clock trên worker |
+| learnedAt / lastReviewedAt | null / null |
+| reviewCount / consecutiveMistakes | 0 / 0 |
 | isLeech | false |
 
-**A — giữ nguyên mọi query hiện hành.** Row trên bị loại khỏi newVocabularyIds ngay vì đã có progress
-(FR-VM-017); không vào due ở thời gian thực; tổng COUNT DISTINCT và box0 đều tăng 1
-(FR-VM-042), learned-today vẫn 0. Nhược điểm: từ chưa học đã Save không được planner chọn như
-từ mới, kể cả sau Unsave nếu giữ progress. Không khuyến nghị chấp nhận ngầm.
+Không dùng Long.MAX_VALUE hoặc timestamps học giả. Không tạo ReviewEvent khi Save.
 
-**B — đề nghị làm rõ FR-VM-017 bằng quyết định/CR, rồi mới triển khai.** Dùng representation trên,
-cho planner coi row learnedAt=null/reviewCount=0 là chưa bắt đầu học và vẫn vào new pool.
-Due không chọn row chỉ lưu; learned-today vẫn 0. Tổng/box0 vẫn tăng 1 theo FR-VM-042,
-phải được chấp nhận và diễn giải minh bạch; không tự lọc learnedAt khỏi thống kê.
-Nếu muốn Save không tăng tổng/box0 thì phải có CR riêng cho FR-VM-042/representation,
-không thể âm thầm đạt điều đó bằng filter. Không triển khai query/schema/filter nào của B trong nhánh này.
+## Hệ quả baseline được chấp nhận
 
-Với cả hai phương án: first review phải đọc row hiện tại trong transaction, giữ isSaved,
-gán learnedAt khi thực sự review lần đầu, cập nhật dueAt theo scheduler, tăng counters và ghi lịch sử.
-Conditional insert khi first save không được ghi đè row first review vừa tạo. Unsave không xóa progress;
-missing-row unsave có thể no-op false chỉ sau khi contract được phê duyệt.
-Phải bổ sung test first-save/first-review và new/due/stats theo quyết định cuối.
+- FR-VM-042: thêm một row progress làm tổng COUNT DISTINCT và box0 tăng đúng 1.
+  Không thêm filter learnedAt vào thống kê. Box0 của tổng thống kê có thể gồm từ chỉ lưu,
+  chưa có review; đây là hệ quả representation đã được chấp nhận, không chứng minh từ đã thuộc.
+- FR-VM-017: từ đã có progress bị loại khỏi new pool, kể cả sau Unsave.
+- FR-VM-016/020: dueAt=Save time nên từ có thể được lấy qua due pool khi đến hạn và thuộc
+  ít nhất một pack active. Save không tự activate pack. Paused/inactive không làm phát sinh due eligibility.
+- Pack learnedCount và learned-today hiện dựa trên learnedAt nên chỉ Save vẫn bằng 0.
+  Không đồng nhất tổng progress FR-VM-042 với số từ đã có lượt học.
+- Unsave chỉ đổi isSaved=false; giữ row, dueAt, box và toàn bộ trường/lịch sử khác.
+- First review thực sự mới gán learnedAt/lastReviewedAt, tăng counters và ghi ReviewEvent,
+  cập nhật lịch theo scheduler; isSaved được giữ từ row hiện hành trong transaction review.
 
-Khuyến nghị trình B để chốt semantics và ảnh hưởng FR-VM-017 trước; chưa có phê duyệt để thực hiện.
-Không thêm bảng bookmark, box ngoài miền hoặc learnedAt giả.
+Không hứa Save hoàn toàn không ảnh hưởng planner/thống kê. Các phương án PENDING cũ dùng
+sentinel hoặc đổi filter đã được thay bằng contract này; không áp dụng chúng.
 
-## Hành vi bản triển khai độc lập
+## Transaction và idempotency
 
-`RoomVocabularyRepository.setSaved` kiểm tra tồn tại/membership qua CatalogRepository,
-sau đó transaction UPDATE duy nhất isSaved. Affected count=1 mới success.
-Affected count=0 trả SAVED_POLICY_REQUIRED cho cả true/false, không insert và không báo no-op đã được duyệt.
-UI vẫn có nút Lưu cho từ chưa học; click hiển thị blocker. Sau UI refresh, không hiện Retry
-cho lỗi policy vì đọc lại không giải quyết được contract còn thiếu.
-Đây là phần còn thiếu của tính năng, không phải giới hạn Save được chọn để đóng task.
+RoomVocabularyRepository kiểm tra catalog/membership trước ghi. Toàn bộ thao tác userdata trong
+một transaction: targeted UPDATE isSaved; nếu 0 row và target=true thì INSERT OR IGNORE row trên.
+Nếu insert bị bỏ qua, phải targeted UPDATE xác nhận được đúng một row; nếu không thì lỗi và rollback,
+không coi UPDATE 0 là success. Không upsert bản sao progress đã đọc trước đó.
 
-Các row progress đã tồn tại (kể cả legacy learnedAt=null) chỉ được đổi flag.
-Không sửa new/due/stats, catalog, schema hoặc review implementation.
+Target=false và row chưa tồn tại: đọc xác nhận absence trong transaction, trả confirmed false,
+không tạo row. Target=false với row có sẵn chỉ UPDATE flag, không xóa.
+Save lặp không reset dueAt/timestamps/counters và không tạo trùng. Clock chỉ đọc khi cần tạo row.
+First-review và first-save trên các kết nối DB được SQLite transaction tuần tự hóa;
+review đọc row hiện hành và insert-if-absent không ghi đè kết quả review.
+Retry UI chỉ reconcile persisted state, không tự replay/đảo trạng thái.
 
-## Thông tin cần bổ sung khi có quyết định
+## Kiểm chứng và nghiệm thu
 
-- Thành: người xác nhận, ngày, link/commit/contract và phạm vi phê duyệt.
-- Nhân: representation/sentinel, new pool, due pool, FR-VM-042 và first review.
-- Quyết định/CR cho FR-VM-017 và/hoặc FR-VM-042 nếu cần; test expectations cụ thể.
-
-Cho đến khi có thông tin trên: Save từ chưa học, T05/T13 và AC-04 toàn phần **BLOCKED**.
+[Validation first-save](vocab-02-first-save-validation.md) ghi SHA, lệnh, kết quả và evidence mới.
+P1 first-save đã có triển khai và acceptance host API26/35; cần reviewer kiểm tra head mới.
+Device QA riêng vẫn NOT RUN nếu chưa có thiết bị; không tự đánh dấu VOCAB-02 Hoàn thành.

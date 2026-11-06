@@ -1,5 +1,8 @@
 # VOCAB-02 — follow-up review 2482a4e
 
+**Cập nhật mới:** R1 đã được triển khai tại `016373c` sau khi người dùng chốt contract due-now;
+xem [first-save acceptance](vocab-02-first-save-validation.md). BLOCKED bên dưới là trạng thái lịch sử tại 1dabe27.
+
 Ngày 06/11/2026. Phụ trách Trường, reviewer Thành.
 Review đầu vào: VOCAB-02-review-2482a4e.md do người dùng cung cấp ngoài repository.
 Không tạo PR/merge vào develop, không đánh dấu Done hoặc tự sửa SRS.

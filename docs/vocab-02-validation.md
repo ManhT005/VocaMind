@@ -1,5 +1,8 @@
 # VOCAB-02 — validation và handoff
 
+**Bản hiện hành:** first-save được sửa tại `016373c` theo contract due-now do người dùng chốt;
+xem [first-save validation/evidence](vocab-02-first-save-validation.md). Các dòng BLOCKED dưới đây là lịch sử trước quyết định.
+
 **Sau review 2482a4e:** đã tích hợp develop/Quiz policy tại `7be46fe`, xem
 [review follow-up và evidence sau resolve](vocab-02-review-followup.md). R1 first-save còn BLOCKED.
 

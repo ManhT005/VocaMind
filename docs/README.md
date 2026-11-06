@@ -66,3 +66,4 @@ validation records separate from the current setup and foundation guides.
 - [VOCAB-02 PR draft](vocab-02-pr-draft.md)
 - [VOCAB-02 UI refresh validation](vocab-02-ui-validation.md)
 - [VOCAB-02 review follow-up / develop integration](vocab-02-review-followup.md)
+- [VOCAB-02 first-save contract acceptance](vocab-02-first-save-validation.md)
