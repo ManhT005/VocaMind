@@ -1,0 +1,19 @@
+
+com.vocamind.app.feature.packs.PackActivationInstrumentedTest:
+Error in rotationWhileWritePendingKeepsSingleMutationAndReconciles(com.vocamind.app.feature.packs.PackActivationInstrumentedTest):
+java.lang.AssertionError: UI condition did not settle within 20 seconds
+	at org.junit.Assert.fail(Assert.java:89)
+	at com.vocamind.app.feature.packs.PackActivationInstrumentedTest.await(PackActivationInstrumentedTest.java:46)
+	at com.vocamind.app.feature.packs.PackActivationInstrumentedTest.rotationWhileWritePendingKeepsSingleMutationAndReconciles(PackActivationInstrumentedTest.java:189)
+
+
+Time: 21.85
+There was 1 failure:
+1) rotationWhileWritePendingKeepsSingleMutationAndReconciles(com.vocamind.app.feature.packs.PackActivationInstrumentedTest)
+java.lang.AssertionError: UI condition did not settle within 20 seconds
+	at org.junit.Assert.fail(Assert.java:89)
+	at com.vocamind.app.feature.packs.PackActivationInstrumentedTest.await(PackActivationInstrumentedTest.java:46)
+	at com.vocamind.app.feature.packs.PackActivationInstrumentedTest.rotationWhileWritePendingKeepsSingleMutationAndReconciles(PackActivationInstrumentedTest.java:189)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1

@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "processDeath": {
+    "oldPid": "4263",
+    "newPid": "4441",
+    "mechanism": "HOME then adb am kill, verified PID absent; launcher reused task"
+  },
+  "cases": [
+    "M01",
+    "M02",
+    "M03",
+    "M04-active",
+    "M04-paused",
+    "M05-loading-pending-confirmed",
+    "M06",
+    "M08"
+  ]
+}

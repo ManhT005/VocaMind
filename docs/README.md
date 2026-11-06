@@ -56,4 +56,6 @@ validation records separate from the current setup and foundation guides.
 
 [Project README](../README.md)
 
+- [PACK-02 activation validation and handoff](pack-02-validation.md)
 - [VOCAB-01 validation và handoff](vocab-01-validation.md)
+- [PACK-02 / VOCAB-01 local integration and device QA](pack-02-integration-validation.md)

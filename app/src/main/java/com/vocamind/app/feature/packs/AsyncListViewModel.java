@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import com.vocamind.app.domain.common.RepoResult;
+import com.vocamind.app.domain.common.RepoError;
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.function.Supplier;
@@ -15,8 +16,16 @@ public class AsyncListViewModel<T> extends ViewModel {
     public static final class State<T> {
         public final Status status;
         public final List<T> items;
+        public final boolean pending;
+        public final RepoError error;
 
         private State(Status status, List<T> items) {
+            this(status, items, false, null);
+        }
+
+        private State(Status status, List<T> items, boolean pending, RepoError error) {
+            this.pending = pending;
+            this.error = error;
             this.status = status;
             this.items = List.copyOf(items);
         }
@@ -29,6 +38,7 @@ public class AsyncListViewModel<T> extends ViewModel {
     private final Runnable close;
     private boolean loading;
     private boolean cleared;
+    private boolean writing;
     private long generation;
 
     protected AsyncListViewModel(Supplier<RepoResult<List<T>>> query, Executor worker, Executor main, Runnable close) {
@@ -41,32 +51,46 @@ public class AsyncListViewModel<T> extends ViewModel {
 
     public LiveData<State<T>> state() { return state; }
 
-    /** Main thread only; overlapping loads are ignored. */
+    /** Main thread only; ordinary overlapping retries are ignored. */
     public void retry() {
-        if (loading || cleared) return;
-        refresh();
+        if (loading || writing || cleared) return;
+        load(query, false);
     }
 
-    /** Reconcile durable data on return; discard older queued results. Main thread only. */
+    /** Lifecycle refresh supersedes old reads, including results waiting on the main queue. */
     public void refresh() {
-        if (cleared) return;
+        if (writing || cleared) return; // write already includes a fresh query
+        load(query, false);
+    }
+
+    protected final void mutate(Supplier<RepoResult<List<T>>> operation) {
+        if (writing || cleared) return;
+        load(operation, true);
+    }
+
+    private void load(Supplier<RepoResult<List<T>>> operation, boolean write) {
         long ticket = ++generation;
+        writing = write;
         loading = true;
-        state.setValue(new State<>(Status.LOADING, List.of()));
+        List<T> previous = state.getValue() == null ? List.of() : state.getValue().items;
+        state.setValue(new State<>(Status.LOADING, previous, write, null));
         worker.execute(() -> {
-            State<T> result;
-            try {
-                RepoResult<List<T>> r = query.get();
-                result = !r.isSuccess() ? new State<>(Status.ERROR, List.of())
-                        : new State<>(r.get().isEmpty() ? Status.EMPTY : Status.CONTENT, r.get());
-            } catch (RuntimeException failure) {
-                result = new State<>(Status.ERROR, List.of());
+            RepoResult<List<T>> result;
+            try { result = operation.get(); }
+            catch (RuntimeException failure) {
+                result = RepoResult.failure(write ? RepoError.WRITE_FAILED : RepoError.READ_FAILED);
             }
-            State<T> completed = result;
+            RepoResult<List<T>> completed = result;
             main.execute(() -> {
                 if (cleared || ticket != generation) return;
                 loading = false;
-                state.setValue(completed);
+                writing = false;
+                if (!completed.isSuccess()) {
+                    state.setValue(new State<>(Status.ERROR, List.of(), false, completed.getError()));
+                } else {
+                    List<T> items = completed.get();
+                    state.setValue(new State<>(items.isEmpty() ? Status.EMPTY : Status.CONTENT, items));
+                }
             });
         });
     }

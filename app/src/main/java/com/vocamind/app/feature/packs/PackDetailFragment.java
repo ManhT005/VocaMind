@@ -15,8 +15,14 @@ import com.vocamind.app.databinding.FragmentPackDetailBinding;
 
 /** Words of one pack in PackWord.orderNo order, with per-word progress. */
 public final class PackDetailFragment extends Fragment {
+    private PacksViewModel activationModel;
     private PackWordsViewModel model;
-    @Override public void onResume() { super.onResume(); model.refresh(); }
+    @Override public void onResume() {
+        super.onResume();
+        activationModel.refresh();
+        model.refresh();
+    }
+
     public PackDetailFragment() { super(R.layout.fragment_pack_detail); }
 
     @Override public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -28,6 +34,24 @@ public final class PackDetailFragment extends Fragment {
         ViewCompat.setAccessibilityHeading(binding.detailTitle, true);
         model = new ViewModelProvider(this,
                 new PacksViewModelFactory(requireContext(), packId)).get(PackWordsViewModel.class);
+        activationModel = new ViewModelProvider(requireActivity(),
+                new PacksViewModelFactory(requireContext(), null)).get(PacksViewModel.class);
+        activationModel.state().observe(getViewLifecycleOwner(), state -> {
+            boolean ready = state.status == AsyncListViewModel.Status.CONTENT;
+            com.vocamind.app.domain.pack.PackState pack = state.items.stream()
+                    .filter(p -> p.getPack().id.equals(packId)).findFirst().orElse(null);
+            boolean error = state.status == AsyncListViewModel.Status.ERROR;
+            binding.activation.setEnabled(error || (ready && pack != null));
+            binding.activation.setText(error ? R.string.packs_retry
+                    : pack != null && pack.isActive() ? R.string.pack_pause : R.string.pack_activate);
+            binding.activationStatus.setText(error ? R.string.pack_activation_error
+                    : !ready ? R.string.pack_activation_pending
+                    : pack != null && pack.isActive() ? R.string.pack_active : R.string.pack_inactive);
+            binding.activation.setOnClickListener(v -> {
+                if (error) activationModel.retry(); // reconcile durable state before another write
+                else if (pack != null) activationModel.setActive(packId, !pack.isActive());
+            });
+        });
         PackWordAdapter adapter = new PackWordAdapter(id ->
                 NavHostFragment.findNavController(this).navigate(R.id.vocabularyDetailFragment,
                         com.vocamind.app.feature.vocabulary.VocabularyDetailFragment.arguments(packId, id)));

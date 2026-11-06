@@ -1,0 +1,476 @@
+{
+  "recordedAt": "2026-11-06T17:13:22.057315+07:00",
+  "revision": {
+    "head": "0512417f1e5d398e09f6c9a00707b6a28c4a2543",
+    "incomingDevelop": "4959cf6d29314d7105f4285edd76e3169d912958",
+    "sourceFingerprintSha256": "f0025e557ed0ceb92d540a88b99969176ced36f59bdc40dbe669c7f2fbf04395",
+    "uncommitted": true
+  },
+  "host": {
+    "command": "gradlew.bat testDebugUnitTest assembleDebug assembleDebugAndroidTest lintDebug --offline --console=plain",
+    "exit": 0,
+    "suites": [
+      {
+        "name": "com.vocamind.app.data.catalog.CatalogAssetTest",
+        "tests": 32,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.data.catalog.CatalogAssetTest.xml",
+        "sha256": "a03d2acaf6ff77bb04636015935f6f438a18e8731fa89ef32264db22b3762e5a"
+      },
+      {
+        "name": "com.vocamind.app.data.catalog.ContentCreditsTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.data.catalog.ContentCreditsTest.xml",
+        "sha256": "8f3242849f9eb30a733cb405627fdd1647e4939f70ede16fec53c555c5f135fa"
+      },
+      {
+        "name": "com.vocamind.app.data.DaoFoundationTest",
+        "tests": 32,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.data.DaoFoundationTest.xml",
+        "sha256": "f46d8af402378892d4e1c72793190db11878bfed3e288b1bcb0feed687205548"
+      },
+      {
+        "name": "com.vocamind.app.data.DataBoundaryTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.data.DataBoundaryTest.xml",
+        "sha256": "90b1b3f58993afd9d3c8721ff9b86bd90e2c7c28193a5ee81c08e55ee07021a0"
+      },
+      {
+        "name": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+        "tests": 38,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.data.repository.RepositoryIntegrationTest.xml",
+        "sha256": "b43e387bc4a6d3a98d3d24f8e451895ba45d01eb2561fcfe2d7ae60a8a15df72"
+      },
+      {
+        "name": "com.vocamind.app.data.user.UserDatabaseTest",
+        "tests": 16,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.data.user.UserDatabaseTest.xml",
+        "sha256": "ec85c13131c3d842e71278eb3e76aa6250a51dc786da0617cd571796614a43b3"
+      },
+      {
+        "name": "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest.xml",
+        "sha256": "ca612e535d27ba7cb0b112527c747f671c293465087dd3cfd537fee67dc501ac"
+      },
+      {
+        "name": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest.xml",
+        "sha256": "185cd3d1030fdb0f6303ca56678ceb53a923b6f1fe443e8f0d82b23f8591c84d"
+      },
+      {
+        "name": "com.vocamind.app.domain.learning.LeitnerSchedulerTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.domain.learning.LeitnerSchedulerTest.xml",
+        "sha256": "9dd9adece0006de1664f598d71a9e7bab9633062d478eca7332bce04d42a5c79"
+      },
+      {
+        "name": "com.vocamind.app.domain.progress.ProgressDomainTest",
+        "tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.domain.progress.ProgressDomainTest.xml",
+        "sha256": "daaa7cb121aa616536029be01d14d6e349fe295a9c44a0559fd5645f6b9dbb0d"
+      },
+      {
+        "name": "com.vocamind.app.domain.quiz.QuizDomainTest",
+        "tests": 18,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.domain.quiz.QuizDomainTest.xml",
+        "sha256": "0ebcf7de10a6856f1d2d93b465adab7128da789bfaa6b5c2865ee14f577e3975"
+      },
+      {
+        "name": "com.vocamind.app.fake.FakeRepositoriesTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.fake.FakeRepositoriesTest.xml",
+        "sha256": "ed8a1b904d2bff6900e713b62d3be284aaad9338ba70ff2f1d6ab6faf91d5ea9"
+      },
+      {
+        "name": "com.vocamind.app.feature.attribution.AttributionRenderingTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.feature.attribution.AttributionRenderingTest.xml",
+        "sha256": "ae6bd4605b5d2a059f2b052e54b38e7c83e316dfcc1a0a789c19fe4177779eb3"
+      },
+      {
+        "name": "com.vocamind.app.feature.attribution.AttributionScreenTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.feature.attribution.AttributionScreenTest.xml",
+        "sha256": "0cb9eb1aedff4c7e6e54229a6ee9ad71a0456d69203622b7f3a4578ba35dca66"
+      },
+      {
+        "name": "com.vocamind.app.feature.attribution.AttributionViewModelTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.feature.attribution.AttributionViewModelTest.xml",
+        "sha256": "e6174423d6083cfec50308068c2064fc02c0bff8eac07f4fadae8c3b2fe01e59"
+      },
+      {
+        "name": "com.vocamind.app.feature.attribution.ExternalLinksTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.feature.attribution.ExternalLinksTest.xml",
+        "sha256": "42d228eb5e04c7a147f26de17da310518aedf0d05a9ca0539eb61a251fd21f3b"
+      },
+      {
+        "name": "com.vocamind.app.feature.attribution.GetContentSourcesTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.feature.attribution.GetContentSourcesTest.xml",
+        "sha256": "3c341fe6d03ccd67a41f5d70bcba240c8456e115e998b04d97de50a85f2b382c"
+      },
+      {
+        "name": "com.vocamind.app.feature.packs.PackActivationRenderingTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.feature.packs.PackActivationRenderingTest.xml",
+        "sha256": "1f438d74013f2a1675905621e012f7aa4c4e84ff88ee08e43a2dfbfd525a23ab"
+      },
+      {
+        "name": "com.vocamind.app.feature.packs.PackActivationTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.feature.packs.PackActivationTest.xml",
+        "sha256": "186e396f429aa4b43b999cd8113ea26115c9f60b3699c3c1bae1396b396fe2e7"
+      },
+      {
+        "name": "com.vocamind.app.feature.packs.PacksViewModelTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.feature.packs.PacksViewModelTest.xml",
+        "sha256": "7bab1e869a127a90bbdf7743053871191915d332d8e4617fb6eac5dd2d1875aa"
+      },
+      {
+        "name": "com.vocamind.app.feature.packs.PackVocabularyIntegrationTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.feature.packs.PackVocabularyIntegrationTest.xml",
+        "sha256": "02af8d7f811bb26cceaeb121879962d3a0f27da723c790255c9a9f6b2f112d19"
+      },
+      {
+        "name": "com.vocamind.app.feature.packs.VocabularyListTest",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.feature.packs.VocabularyListTest.xml",
+        "sha256": "7c05608737e80483f58f720673977f7e9e26049dd6114c2c535fa4b279066069"
+      },
+      {
+        "name": "com.vocamind.app.feature.progress.ProgressViewStateTest",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\test-results\\testDebugUnitTest\\TEST-com.vocamind.app.feature.progress.ProgressViewStateTest.xml",
+        "sha256": "f30404658cc673acc3256de061efe73f4af88456f427839ce00060c6ce3b0535"
+      }
+    ],
+    "totals": {
+      "tests": 227,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 6,
+    "ids": [
+      "GradleDependency",
+      "Overdraw",
+      "Overdraw",
+      "UnusedResources",
+      "UnusedResources",
+      "MissingApplicationIcon"
+    ]
+  },
+  "connected": {
+    "command": "gradlew.bat connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.notClass=com.vocamind.app.feature.packs.PackActivationInstrumentedTest --offline --console=plain",
+    "exit": 0,
+    "suites": [
+      {
+        "name": "com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest",
+        "tests": 18,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "report": "app\\build\\outputs\\androidTest-results\\connected\\debug\\TEST-pack02-followup(AVD) - 11-_app-.xml",
+        "sha256": "d020f96a2c11ae099cb324258530b58341eb3ede3950625bf2764c9977bcddd2"
+      }
+    ],
+    "totals": {
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "python": [
+    {
+      "name": "source-gate",
+      "command": "python tools/vocabulary/gate_sources.py --snapshot docs/data/snapshot.json --json",
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "vocabulary-tests",
+      "command": "python -m unittest discover -s tools/vocabulary -p test_*.py -v",
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "credits",
+      "command": "python tools/catalog/check_credits.py",
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "catalog-tests",
+      "command": "python -m unittest discover -s tools/catalog -p test_*.py -v",
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "contract-tests",
+      "command": "python -m unittest discover -s docs/data/vocabulary-contract-v1 -p test_contract.py -v",
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "contract",
+      "command": "python docs/data/vocabulary-contract-v1/validate_contract.py docs/data/vocabulary-contract-v1/fixtures/valid/catalog.json",
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "ingestion",
+      "command": "python tools/vocabulary/verify_ingestion.py --fixture --config tools/vocabulary/fixtures/ingestion/verified/config.json --output build/vocabulary-ingestion/pack02-followup-20261106-165650",
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "ingestion-contract",
+      "command": "python docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-ingestion/pack02-followup-20261106-165650/a/canonical-catalog.json",
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "release-rejection",
+      "command": "python docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-ingestion/pack02-followup-20261106-165650/a/canonical-catalog.json --release",
+      "exit": 1,
+      "expected": 1
+    },
+    {
+      "name": "qc-a",
+      "command": "python tools/vocabulary/quality.py --fixture --input build/vocabulary-ingestion/pack02-followup-20261106-165650/a --config tools/vocabulary/fixtures/ingestion/verified/config.json --reviews tools/vocabulary/fixtures/quality/reviews.json --output build/vocabulary-quality/pack02-followup-20261106-165650-a",
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "qc-b",
+      "command": "python tools/vocabulary/quality.py --fixture --input build/vocabulary-ingestion/pack02-followup-20261106-165650/a --config tools/vocabulary/fixtures/ingestion/verified/config.json --reviews tools/vocabulary/fixtures/quality/reviews.json --output build/vocabulary-quality/pack02-followup-20261106-165650-b",
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "qc-contract",
+      "command": "python docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-quality/pack02-followup-20261106-165650-a/canonical-catalog.json",
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "qc-rejection",
+      "command": "python tools/vocabulary/quality.py --fixture --input build/vocabulary-ingestion/pack02-followup-20261106-165650/a --config tools/vocabulary/fixtures/ingestion/verified/config.json --reviews tools/vocabulary/fixtures/quality/pending-reviews.json --output build/vocabulary-quality/pack02-followup-20261106-165650-rejected",
+      "exit": 1,
+      "expected": 1
+    },
+    {
+      "name": "corpus-a",
+      "command": "python tools/vocabulary/prepare_corpus.py --require-approved --output build/vocabulary-corpus/pack02-followup-20261106-165650-a",
+      "exit": 1,
+      "expected": 1
+    },
+    {
+      "name": "corpus-b",
+      "command": "python tools/vocabulary/prepare_corpus.py --require-approved --output build/vocabulary-corpus/pack02-followup-20261106-165650-b",
+      "exit": 1,
+      "expected": 1
+    },
+    {
+      "name": "editorial-rejection",
+      "command": "python tools/vocabulary/ingest.py --config docs/data/voc-data-04/corpus-v1/ingestion-proposal.json --output build/vocabulary-ingestion/pack02-followup-20261106-165650-editorial-rejected",
+      "exit": 1,
+      "expected": 1
+    },
+    {
+      "name": "accept-editorial",
+      "command": "python tools/vocabulary/accept_editorial.py --output build/vocabulary-corpus/pack02-followup-20261106-165650-accepted",
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "accepted-ingestion",
+      "command": "python tools/vocabulary/ingest.py --config docs/data/voc-data-04/accepted-v1/ingestion-config.json --output build/vocabulary-ingestion/pack02-followup-20261106-165650-accepted",
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "accepted-quality",
+      "command": "python tools/vocabulary/quality.py --input build/vocabulary-ingestion/pack02-followup-20261106-165650-accepted --config docs/data/voc-data-04/accepted-v1/ingestion-config.json --reviews docs/data/voc-data-04/accepted-v1/reviews.json --output build/vocabulary-quality/pack02-followup-20261106-165650-accepted",
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "accepted-contract",
+      "command": "python docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-quality/pack02-followup-20261106-165650-accepted/canonical-catalog.json --release",
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "accepted-verify",
+      "command": "python tools/vocabulary/accept_editorial.py --verify build/vocabulary-quality/pack02-followup-20261106-165650-accepted",
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "byte-compare",
+      "a": "build/vocabulary-quality/pack02-followup-20261106-165650-a",
+      "b": "build/vocabulary-quality/pack02-followup-20261106-165650-b",
+      "equal": true
+    },
+    {
+      "name": "byte-compare",
+      "a": "build/vocabulary-corpus/pack02-followup-20261106-165650-a",
+      "b": "build/vocabulary-corpus/pack02-followup-20261106-165650-b",
+      "equal": true
+    },
+    {
+      "name": "byte-compare",
+      "a": "docs/data/voc-data-04/corpus-v1",
+      "b": "build/vocabulary-corpus/pack02-followup-20261106-165650-a",
+      "equal": true
+    },
+    {
+      "name": "byte-compare",
+      "a": "docs/data/voc-data-04/accepted-v1",
+      "b": "build/vocabulary-corpus/pack02-followup-20261106-165650-accepted",
+      "equal": true
+    },
+    {
+      "name": "refused-output-absent",
+      "folder": "build/vocabulary-quality/pack02-followup-20261106-165650-rejected",
+      "passed": true
+    },
+    {
+      "name": "refused-output-absent",
+      "folder": "build/vocabulary-corpus/pack02-followup-20261106-165650-a",
+      "passed": true
+    },
+    {
+      "name": "refused-output-absent",
+      "folder": "build/vocabulary-ingestion/pack02-followup-20261106-165650-editorial-rejected",
+      "passed": true
+    }
+  ],
+  "deviceEnvironment": {
+    "ro.product.model": "sdk_gphone_x86",
+    "ro.build.version.sdk": "30",
+    "ro.build.fingerprint": "google/sdk_gphone_x86/generic_x86_arm:11/RSR1.201013.001/6903271:user/release-keys",
+    "serial": "emulator-5560",
+    "avd": "pack02-followup",
+    "date": "2026-11-06T17:03:00.612653+07:00",
+    "apkSha256": {
+      "app/build/outputs/apk/debug/app-debug.apk": "aa7afecc7a1452eb0a16af6dcf9cf15feecda126adcbb5bedee76b9116f9cf7c",
+      "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": "9ebb61cbd05e740fc13912a60864d8360de5564d5d7d5be27cf1da3585f886fd"
+    }
+  },
+  "deviceResult": {
+    "status": "PASS",
+    "processDeath": {
+      "oldPid": "4263",
+      "newPid": "4441",
+      "mechanism": "HOME then adb am kill, verified PID absent; launcher reused task"
+    },
+    "cases": [
+      "M01",
+      "M02",
+      "M03",
+      "M04-active",
+      "M04-paused",
+      "M05-loading-pending-confirmed",
+      "M06",
+      "M08"
+    ]
+  },
+  "deviceTargetedExecutions": 11,
+  "deviceTargetedFunctionalExecutions": 10,
+  "deviceTargetedSetupExecutions": 1,
+  "apkSha256": {
+    "app/build/outputs/apk/debug/app-debug.apk": "aa7afecc7a1452eb0a16af6dcf9cf15feecda126adcbb5bedee76b9116f9cf7c",
+    "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": "9ebb61cbd05e740fc13912a60864d8360de5564d5d7d5be27cf1da3585f886fd"
+  },
+  "sourceStatus": "M  app/src/main/java/com/vocamind/app/core/PacksViewModelFactory.java\nM  app/src/main/java/com/vocamind/app/domain/pack/GetPackWords.java\nM  app/src/main/java/com/vocamind/app/feature/packs/PackDetailFragment.java\nA  app/src/main/java/com/vocamind/app/feature/packs/PackWordAdapter.java\nA  app/src/main/java/com/vocamind/app/feature/vocabulary/VocabularyDetailFragment.java\nA  app/src/main/res/layout/fragment_vocabulary_detail.xml\nM  app/src/main/res/layout/item_pack_word.xml\nM  app/src/main/res/navigation/nav_graph.xml\nM  app/src/main/res/values/strings.xml\nM  app/src/test/java/com/vocamind/app/data/repository/RepositoryIntegrationTest.java\nA  app/src/test/java/com/vocamind/app/feature/packs/VocabularyListTest.java\nMM docs/README.md\n M docs/pack-02-validation.md\nA  docs/validation/vocab-01/TEST-com.vocamind.app.data.repository.RepositoryIntegrationTest.xml\nA  docs/validation/vocab-01/TEST-com.vocamind.app.feature.packs.VocabularyListTest.xml\nA  docs/validation/vocab-01/build.log\nA  docs/validation/vocab-01/connected.log\nA  docs/validation/vocab-01/lint-results.txt\nA  docs/validation/vocab-01/local-evidence.json\nA  docs/vocab-01-pr-draft.md\nA  docs/vocab-01-validation.md\n?? app/src/androidTest/java/com/vocamind/app/feature/packs/\n?? app/src/test/java/com/vocamind/app/feature/packs/PackVocabularyIntegrationTest.java\n?? docs/evidence/pack-02/\n?? docs/pack-02-integration-validation.md",
+  "unmergedPaths": "",
+  "notRun": [
+    "physical device",
+    "API26 and API35+ device matrix",
+    "TalkBack/font-scale visual acceptance",
+    "remote CI for uncommitted integration",
+    "Th\u00e0nh approval",
+    "full AC-03/09/13 acceptance"
+  ],
+  "deviceEnvironmentMatchesFinalApks": true
+}
