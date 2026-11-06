@@ -12,8 +12,22 @@ public final class SearchProvider implements AutoCloseable {
     private final ExecutorService worker = Executors.newSingleThreadExecutor(r -> new Thread(r, "vocamind-search"));
     private final SearchVocabularyUseCase search;
     public SearchProvider(CatalogDatabase database) {
-        search = new SearchVocabularyUseCase(new RoomVocabularySearchRepository(
-                Objects.requireNonNull(database).catalogDao()), worker);
+        RoomVocabularySearchRepository repository = new RoomVocabularySearchRepository(
+                Objects.requireNonNull(database).catalogDao());
+        search = new SearchVocabularyUseCase(query -> {
+            long start = System.nanoTime();
+            try { return repository.search(query); }
+            finally { trace("query_hydration_ms", System.nanoTime() - start); }
+        }, task -> {
+            long queued = System.nanoTime();
+            worker.execute(() -> {
+                trace("queue_ms", System.nanoTime() - queued);
+                task.run();
+            });
+        });
+    }
+    private static void trace(String phase, long nanos) {
+        if (com.vocamind.app.BuildConfig.DEBUG) android.util.Log.d("SearchTiming", phase + "=" + nanos / 1_000_000.0);
     }
     public SearchVocabularyUseCase search() { return search; }
     /** Gracefully finish queued reads; app database must outlive in-flight reads.

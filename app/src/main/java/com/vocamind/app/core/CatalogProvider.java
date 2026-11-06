@@ -19,5 +19,6 @@ public final class CatalogProvider implements AutoCloseable {
     public CatalogRepository repository() { return repository; }
     /** Package-private: only RepositoryProvider may coordinate catalog and userdata. */
     CatalogDao catalogDao() { return database.catalogDao(); }
+    SearchProvider searchProvider() { return new SearchProvider(database); }
     @Override public void close() { database.close(); }
 }

@@ -57,4 +57,14 @@
     <string name="word_route_pending">Đã nhận vocabularyId: %1$s\nPack: %2$s\nNội dung chi tiết đang chờ VOCAB-02.</string>
     <string name="word_route_invalid">Thiếu hoặc sai mã từ/gói. Hãy quay lại danh sách.</string>
     <string name="word_route_loading">Đang kiểm tra mã từ…</string>
+    <string name="search_hint">Tìm từ tiếng Anh hoặc nghĩa tiếng Việt</string>
+    <string name="search_reset">Xóa tìm kiếm</string>
+    <string name="search_retry">Thử lại</string>
+    <string name="search_no_input">Nhập từ tiếng Anh hoặc nghĩa tiếng Việt để tìm.</string>
+    <string name="search_loading">Đang tìm…</string>
+    <string name="search_no_match">Không tìm thấy từ phù hợp.</string>
+    <string name="search_content">Kết quả tìm kiếm</string>
+    <string name="search_invalid">Từ khóa quá dài hoặc quá nhiều từ. Hãy sửa hoặc xóa tìm kiếm.</string>
+    <string name="search_error">Không đọc được dữ liệu. Hãy thử lại hoặc quay về.</string>
+    <string name="search_detail_preview">%1$s\n%2$s\nID: %3$s\nNội dung chi tiết đang được bổ sung.</string>
 </resources>
