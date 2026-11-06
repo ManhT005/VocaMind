@@ -48,7 +48,8 @@ Không thêm bảng bookmark, box ngoài miền hoặc learnedAt giả.
 `RoomVocabularyRepository.setSaved` kiểm tra tồn tại/membership qua CatalogRepository,
 sau đó transaction UPDATE duy nhất isSaved. Affected count=1 mới success.
 Affected count=0 trả SAVED_POLICY_REQUIRED cho cả true/false, không insert và không báo no-op đã được duyệt.
-UI vẫn có nút Lưu cho từ chưa học; click hiển thị blocker và Retry đọc lại state.
+UI vẫn có nút Lưu cho từ chưa học; click hiển thị blocker. Sau UI refresh, không hiện Retry
+cho lỗi policy vì đọc lại không giải quyết được contract còn thiếu.
 Đây là phần còn thiếu của tính năng, không phải giới hạn Save được chọn để đóng task.
 
 Các row progress đã tồn tại (kể cả legacy learnedAt=null) chỉ được đổi flag.

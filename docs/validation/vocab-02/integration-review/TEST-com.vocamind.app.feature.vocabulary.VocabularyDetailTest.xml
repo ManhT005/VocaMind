@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-11-06T13:12:46" hostname="DESKTOP-KUH3S13" time="10.0">
+  <properties/>
+  <testcase name="captureDetailLayoutsWithFixedActionAndPolicyFeedback[26]" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="4.262"/>
+  <testcase name="longExamplesRemainScrollableAtLargeFontOnSmallScreen[26]" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.084"/>
+  <testcase name="captureDetailLayoutsWithFixedActionAndPolicyFeedback" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="5.302"/>
+  <testcase name="longExamplesRemainScrollableAtLargeFontOnSmallScreen" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.111"/>
+  <testcase name="renderAllFieldsNullBlankIpaAndReplacePreviousWordWithoutInventingContent[26]" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.057"/>
+  <testcase name="pendingBlocksDoubleTapAndResumeRetryReconcilesAmbiguousCommitWithoutReplay[26]" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.024"/>
+  <testcase name="refreshGenerationAndClearedOwnerRejectLateReadsAndWrites[26]" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.017"/>
+  <testcase name="renderAllFieldsNullBlankIpaAndReplacePreviousWordWithoutInventingContent" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.067"/>
+  <testcase name="pendingBlocksDoubleTapAndResumeRetryReconcilesAmbiguousCommitWithoutReplay" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.025"/>
+  <testcase name="refreshGenerationAndClearedOwnerRejectLateReadsAndWrites" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.021"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

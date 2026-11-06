@@ -65,3 +65,4 @@ validation records separate from the current setup and foundation guides.
 - [VOCAB-02 saved-only decision pending](vocab-02-saved-only-decision.md)
 - [VOCAB-02 PR draft](vocab-02-pr-draft.md)
 - [VOCAB-02 UI refresh validation](vocab-02-ui-validation.md)
+- [VOCAB-02 review follow-up / develop integration](vocab-02-review-followup.md)

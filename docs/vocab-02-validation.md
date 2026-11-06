@@ -1,5 +1,8 @@
 # VOCAB-02 — validation và handoff
 
+**Sau review 2482a4e:** đã tích hợp develop/Quiz policy tại `7be46fe`, xem
+[review follow-up và evidence sau resolve](vocab-02-review-followup.md). R1 first-save còn BLOCKED.
+
 **UI hiện hành:** code/tests `894db81`, xem [UI refresh và evidence mới](vocab-02-ui-validation.md).
 Các SHA/kết quả bên dưới là validation ban đầu tại `582e412`, được giữ làm lịch sử.
 

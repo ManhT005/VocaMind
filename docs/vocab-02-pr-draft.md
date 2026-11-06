@@ -3,6 +3,10 @@
 Base dự kiến: develop. Tác giả phụ trách: Trường. Reviewer: Thành; cần Nhân xác nhận data contract.
 Đây là nội dung nháp local, chưa tạo PR.
 
+Follow-up review: tích hợp develop `45db604` tại `7be46fe`, resolve RepositoryProvider giữ cả
+vocabulary repository và Quiz policy loader PR #31. [Validation sau resolve](vocab-02-review-followup.md).
+P1 first-save vẫn BLOCKED chờ Thành/Nhân chốt contract; chưa đủ approve tính năng hoàn chỉnh.
+
 UI refresh tại `894db81`: thêm thanh tiêu đề/Back, nhóm nghĩa và ví dụ thành thẻ,
 nội dung cuộn với nút Lưu cố định phía dưới, màu light/dark; bỏ Retry cho saved-only/not-found.
 Xem [validation UI mới nhất](vocab-02-ui-validation.md) cho SHA/kết quả/ảnh host-rendered.
