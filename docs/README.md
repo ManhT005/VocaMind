@@ -73,3 +73,5 @@ validation records separate from the current setup and foundation guides.
 - [PACK-02 activation validation and handoff](pack-02-validation.md)
 - [VOCAB-01 validation và handoff](vocab-01-validation.md)
 - [PACK-02 / VOCAB-01 local integration and device QA](pack-02-integration-validation.md)
+- [SEARCH-01 validation và handoff](search-01-validation.md)
+- [SEARCH-01 PR draft](search-01-pr-draft.md)
