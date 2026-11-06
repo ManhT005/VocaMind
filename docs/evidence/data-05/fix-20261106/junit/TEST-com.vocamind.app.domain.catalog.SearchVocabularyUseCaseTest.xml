@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.domain.catalog.SearchVocabularyUseCaseTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-06T13:40:23" hostname="7a0e3157ddf4" time="0.005">
+  <properties/>
+  <testcase name="invalidInputAndRejectedExecutorAreExplicitErrors" classname="com.vocamind.app.domain.catalog.SearchVocabularyUseCaseTest" time="0.001"/>
+  <testcase name="normalizationPreservesVietnameseAndTreatsOperatorsAsWords" classname="com.vocamind.app.domain.catalog.SearchVocabularyUseCaseTest" time="0.001"/>
+  <testcase name="emptyAndPunctuationDoNotScheduleOrRead" classname="com.vocamind.app.domain.catalog.SearchVocabularyUseCaseTest" time="0.0"/>
+  <testcase name="databaseRunsOnWorkerAndCallingThreadDoesNotBlock" classname="com.vocamind.app.domain.catalog.SearchVocabularyUseCaseTest" time="0.001"/>
+  <testcase name="repositoryFailuresAreNotEmptySuccess" classname="com.vocamind.app.domain.catalog.SearchVocabularyUseCaseTest" time="0.001"/>
+  <testcase name="resultSnapshotsAreImmutableAndRejectDuplicateStableIds" classname="com.vocamind.app.domain.catalog.SearchVocabularyUseCaseTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

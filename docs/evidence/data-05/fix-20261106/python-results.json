@@ -1,0 +1,68 @@
+[
+  {
+    "step": "Install vocabulary validation dependencies",
+    "exitCode": 0,
+    "log": "python/03.log",
+    "unittestCounts": []
+  },
+  {
+    "step": "Validate vocabulary source registry and gate",
+    "exitCode": 0,
+    "log": "python/04.log",
+    "unittestCounts": [
+      112
+    ]
+  },
+  {
+    "step": "Validate local credit consistency",
+    "exitCode": 0,
+    "log": "python/05.log",
+    "unittestCounts": []
+  },
+  {
+    "step": "Test catalog builder and credit consistency validator",
+    "exitCode": 0,
+    "log": "python/06.log",
+    "unittestCounts": [
+      8
+    ]
+  },
+  {
+    "step": "Validate vocabulary contract and canonical catalog",
+    "exitCode": 0,
+    "log": "python/08.log",
+    "unittestCounts": [
+      39
+    ]
+  },
+  {
+    "step": "Verify ingestion reproducibility and fixture release rejection",
+    "exitCode": 0,
+    "log": "python/09.log",
+    "unittestCounts": []
+  },
+  {
+    "step": "Verify vocabulary QC and refusal to publish unreviewed content",
+    "exitCode": 0,
+    "log": "python/10.log",
+    "unittestCounts": []
+  },
+  {
+    "step": "Verify editorial corpus reproducibility and approval blockers",
+    "exitCode": 0,
+    "log": "python/11.log",
+    "unittestCounts": []
+  },
+  {
+    "step": "Verify owner-accepted editorial production handoff",
+    "exitCode": 0,
+    "log": "python/12.log",
+    "unittestCounts": []
+  },
+  {
+    "step": "Verify pinned Quiz Unicode tables",
+    "exitCode": 0,
+    "log": "python/13.log",
+    "unittestCounts": []
+  }
+]

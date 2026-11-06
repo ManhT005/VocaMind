@@ -1,0 +1,14 @@
+$ python3 tools/catalog/check_credits.py
+{
+  "matchedPairs": 1,
+  "missingAuthors": [
+    [
+      "fixture-authored-20261023",
+      "2026-10-23"
+    ]
+  ],
+  "releaseCreditComplete": false,
+  "licenseApprovalVerified": false
+}
+
+exit=0

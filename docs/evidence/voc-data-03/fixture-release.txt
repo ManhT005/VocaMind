@@ -1,0 +1,11 @@
+$ python3 docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-ingestion/review-a/canonical-catalog.json --release
+FIXTURE_NOT_RELEASE: fixtureOnly=true
+RELEASE_UNIQUE_WORDS: 4 < 150
+RELEASE_PACK_QUOTA: pack_toeic_basic: < 40
+RELEASE_PACK_QUOTA: pack_toeic_office: < 40
+RELEASE_PACK_QUOTA: pack_daily_life: < 40
+RELEASE_PACK_QUOTA: pack_academic: < 30
+RELEASE_SOURCE_NOT_APPROVED: fixture-examples-v1
+RELEASE_SOURCE_NOT_APPROVED: fixture-lexical-v1
+
+exit=1

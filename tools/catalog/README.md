@@ -24,6 +24,43 @@ Metadata records the SQLite version because engine versions can change binary
 serialization. CI compares logical SQL dumps across engines and verifies the
 committed file checksum; two builds on the same engine must be byte-identical.
 
+## Quiz policy companion
+
+`build_fixture.py` also emits `database/quiz-policy.json`. The synthetic fixture
+explicitly has no exclusions. Missing policy files never imply unrestricted
+content at runtime. `RepositoryProvider` loads this required companion against
+the complete installed Room vocabulary, then `RoomQuizRepository.activeSnapshot`
+returns active words together with that policy. Generation does not use the
+older vocabulary-only read. No Room schema or stable IDs are changed.
+
+For accepted real content, retain the policy from
+`accept_editorial.load_handoff(qc_directory)` and export the companion from that
+same validated canonical envelope, for example:
+
+```sh
+python tools/catalog/build_quiz_policy.py --canonical build/vocabulary-quality/ci-accepted/canonical-catalog.json --policy docs/data/voc-data-04/accepted-v1/quiz-policy.json --output build/quiz-policy.json
+```
+
+The exporter checks the handoff's canonical dataset SHA-256 and all pair
+references. It refuses real content without an explicit policy. Ship its output
+as `database/quiz-policy.json` alongside the matching catalog when that catalog
+is packaged; exporting a companion does not publish or replace the catalog.
+The accepted 150-word corpus is exercised in tests, while the bundled database
+continues to be the existing synthetic fixture.
+
+Runtime verifies `projectionSha256` against every installed vocabulary row,
+including inactive rows, so activation changes do not invalidate the policy and
+an old installed catalog cannot silently use a new incompatible companion.
+The projection sorts stable IDs and hashes five fields per row: ID, lemma, POS,
+Vietnamese meaning, English context. Each field is UTF-8, prefixed with its byte
+length as a four-byte unsigned big-endian integer. `datasetSha256` preserves the
+full canonical envelope identity verified by the exporter; Room does not contain
+all provenance fields needed to recompute that separate digest.
+
+Policy errors return `RepoError.INVALID_DATA`. A valid snapshot with too few
+safe distractor meanings returns `INVALID_INPUT / AMBIGUOUS_DISTRACTORS`, never a
+shortened quiz. Content QA owns identifying restrictions; QUIZ-02 enforces them.
+
 Python integration tests cover exact row mapping, nullable IPA, deterministic
 build/checksums, integrity/foreign keys, ordering, negative uniqueness, rowid FTS
 joins in English/Vietnamese, invalid-input atomicity and the release gate.

@@ -1,0 +1,4 @@
+$ python3 tools/vocabulary/ingest.py --config build/real-check-kaikki-viwiktionary.json --output build/vocabulary-ingestion/blocked-kaikki-viwiktionary
+BLOCKED (gate): Source on hold or excluded; candidate is not include
+
+exit=1

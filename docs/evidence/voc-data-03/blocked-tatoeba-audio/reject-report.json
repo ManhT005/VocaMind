@@ -1,0 +1,16 @@
+{
+  "counts": {
+    "read": 0,
+    "accepted": 0,
+    "rejected": 0
+  },
+  "rejects": [],
+  "sourceFailures": [
+    {
+      "stage": "gate",
+      "reason": "GATE_FAILURE",
+      "message": "Source on hold or excluded; candidate is not include"
+    }
+  ],
+  "validationErrors": []
+}

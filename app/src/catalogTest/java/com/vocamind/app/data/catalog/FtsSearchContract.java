@@ -47,6 +47,32 @@ public abstract class FtsSearchContract {
         Set<String> ids = new HashSet<>(); for (var word : result.getWords()) ids.add(word.stableId);
         assertEquals(2, ids.size());
     }
+    @Test public void searchIdsComposeWithFoundationBatchAndMembershipQueries() throws Exception {
+        var matches = search("book").getWords();
+        assertEquals(2, matches.size());
+        Set<String> ids = new HashSet<>();
+        for (var word : matches) ids.add(word.stableId);
+        worker.submit(() -> {
+            var dao = db.catalogDao();
+            List<String> batchIds = new ArrayList<>(ids);
+            batchIds.add(matches.get(0).stableId); // Foundation must still deduplicate batch input.
+            var rows = dao.vocabulariesByIds(batchIds);
+            assertEquals(2, rows.size());
+            Set<String> hydrated = new HashSet<>();
+            for (var row : rows) hydrated.add(row.id);
+            assertEquals(ids, hydrated);
+            assertEquals(2, dao.matchFixture(FtsMatchExpression.from(VocabularySearchQuery.parse("book"))).size());
+            for (var pack : dao.packs()) {
+                assertEquals(4, dao.wordCount(pack.id));
+                assertTrue(dao.uniqueVocabularyIdsForPacks(Arrays.asList(pack.id, pack.id)).containsAll(ids));
+                var memberships = dao.membershipsForPacks(Collections.singletonList(pack.id));
+                assertEquals(4, memberships.size());
+                for (var row : memberships) assertEquals(pack.id, row.packId);
+            }
+            assertThrows(IllegalArgumentException.class, () -> dao.wordCount(" "));
+            return null;
+        }).get(15, TimeUnit.SECONDS);
+    }
     @Test public void blankNoMatchAndOperatorSyntaxAreSafe() throws Exception {
         for (String input : Arrays.asList("", "   ", "*", "notpresentvocabulary", "bank OR airport", "\" OR 1=1 --")) {
             var result = search(input); assertTrue(result.isSuccess()); assertTrue(result.getWords().isEmpty());

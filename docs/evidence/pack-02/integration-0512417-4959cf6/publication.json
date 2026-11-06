@@ -1,0 +1,211 @@
+{
+  "date": "2026-11-06T17:22:14.429577+07:00",
+  "sourceCommit": "63f1edf5c5aedeb83ee7024c0b813b6984568df0",
+  "sourceFingerprintSha256": "f0025e557ed0ceb92d540a88b99969176ced36f59bdc40dbe669c7f2fbf04395",
+  "sourceMatchesDeviceQaManifest": true,
+  "host": {
+    "command": "gradlew.bat cleanTestDebugUnitTest testDebugUnitTest assembleDebug assembleDebugAndroidTest lintDebug --offline --console=plain",
+    "exit": 0,
+    "totals": {
+      "tests": 227,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "suites": [
+      {
+        "name": "com.vocamind.app.data.catalog.CatalogAssetTest",
+        "tests": 32,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "ac9c52098eb721fa13d965722bad70c8c396549cc49f7bde51c4fd438fa411b9"
+      },
+      {
+        "name": "com.vocamind.app.data.catalog.ContentCreditsTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "893f0eaa646dd409e154721d6a957608579c64f452441b2df6f246626104a02c"
+      },
+      {
+        "name": "com.vocamind.app.data.DaoFoundationTest",
+        "tests": 32,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "6f557ecff8a48675d25af24eee9e7b7dbadc03dd6bb01b62de57d60f15dac3aa"
+      },
+      {
+        "name": "com.vocamind.app.data.DataBoundaryTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "11f172cf2eb71c02d8950b3720a8107b7151e10ff3c445940a9ebc1e0f423f0d"
+      },
+      {
+        "name": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+        "tests": 38,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "f2935dda569304aa4e734afb15bdf5b1049e3d3c15e9a604053859e91d846cc8"
+      },
+      {
+        "name": "com.vocamind.app.data.user.UserDatabaseTest",
+        "tests": 16,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "4ec34382d5782f7eeec612c7efc3357622d2f31e048bab788164955817fa2304"
+      },
+      {
+        "name": "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "4974591cc167604389ef850d50a935ced121fb1f94faff06069726921774743d"
+      },
+      {
+        "name": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "9f7a70e175cdc84d3700daee31b7434a6279249c9ef526807525d8948093ca82"
+      },
+      {
+        "name": "com.vocamind.app.domain.learning.LeitnerSchedulerTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "63346c781aa49996be12236d6bbcaa2facdca751b09f6f8f51a376a62c4d3848"
+      },
+      {
+        "name": "com.vocamind.app.domain.progress.ProgressDomainTest",
+        "tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "21862aed10a56569f180d628f619792b1dad657b27be8e12725dde70d63373bf"
+      },
+      {
+        "name": "com.vocamind.app.domain.quiz.QuizDomainTest",
+        "tests": 18,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "1cfed68e063a7690f7b4ef939dbf2a24e91f7c1825e27dc3bc3cc571179996a4"
+      },
+      {
+        "name": "com.vocamind.app.fake.FakeRepositoriesTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "b14a0f9b542822554a1f4d37a1ccacb92033bc0ad7078ba62414c4ec90a9f46d"
+      },
+      {
+        "name": "com.vocamind.app.feature.attribution.AttributionRenderingTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "a17f980814d0d48a93ef7a056a48a2fadbce45acbe937c7b65fba5264e2009ae"
+      },
+      {
+        "name": "com.vocamind.app.feature.attribution.AttributionScreenTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "3b8a22abee6c0c2f4ae2a1be6db127eef7112b6afa82d4740a84bbd66043eb26"
+      },
+      {
+        "name": "com.vocamind.app.feature.attribution.AttributionViewModelTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "89256058697939bb8c0911581f1421f99f6fe1b0b91c2f3135de9c107384d3a4"
+      },
+      {
+        "name": "com.vocamind.app.feature.attribution.ExternalLinksTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "dd42d5f3cdd366e2b9f042904f55f9f3212a095ce28c59c91cb6b64e590ad33f"
+      },
+      {
+        "name": "com.vocamind.app.feature.attribution.GetContentSourcesTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "61e96c0d8e54cae5e1f323b02ad54bb5e7dca650e09b9809c70c5fb048456618"
+      },
+      {
+        "name": "com.vocamind.app.feature.packs.PackActivationRenderingTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "53f2521da43db4539976df7f7bb922d8f2dbbeac896c0e56999fac8f74a8bfe3"
+      },
+      {
+        "name": "com.vocamind.app.feature.packs.PackActivationTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "829cf2a765c97487703b8a0c052425ee6e905063bbae0f33bd67ad20389ab8a0"
+      },
+      {
+        "name": "com.vocamind.app.feature.packs.PacksViewModelTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "c02d277a899e1b27196dd82b62820b15f129f50753ebe56acc0d89358ea2da2b"
+      },
+      {
+        "name": "com.vocamind.app.feature.packs.PackVocabularyIntegrationTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "ee3857af3032b3f4e4ac58c800c6c8c535e7b37d1593fa9d57f92ee2bdef0343"
+      },
+      {
+        "name": "com.vocamind.app.feature.packs.VocabularyListTest",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "d0037e7d2179f8c2bd97ce5e746e8f61519ab85e4956b96f4cac7974547c63b9"
+      },
+      {
+        "name": "com.vocamind.app.feature.progress.ProgressViewStateTest",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "d0cfafe9b2b54ef817dbbd29153f64fb838cadf63c2dba866b35c6d8d19d7ac5"
+      }
+    ]
+  },
+  "apkSha256": {
+    "app/build/outputs/apk/debug/app-debug.apk": "aa7afecc7a1452eb0a16af6dcf9cf15feecda126adcbb5bedee76b9116f9cf7c",
+    "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": "9ebb61cbd05e740fc13912a60864d8360de5564d5d7d5be27cf1da3585f886fd"
+  },
+  "deviceEvidenceMatchesPublishedSource": true,
+  "deviceRerunAtPublication": false,
+  "deviceNote": "Existing API30 QA reused because source/config manifest and both APK hashes exactly match; no emulator rerun claimed.",
+  "remoteCi": "Pending push/new head checks; old CI success is not reused as new head success.",
+  "userAuthorization": "Subsequent user request to publish PR authorizes commit and push; does not authorize merging PR."
+}

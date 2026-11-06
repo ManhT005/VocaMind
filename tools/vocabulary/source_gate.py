@@ -42,9 +42,57 @@ def snapshot_content_digest(snapshot, source):
     return hashlib.sha256(encoded).hexdigest()
 
 
+def validate_project_registry(document):
+    """A separate, explicit route for owner-accepted project-generated text.
+
+    This is a project-use decision, not a third-party license grant. The research
+    registry and its seven external-source decisions are unaffected.
+    """
+    require(document.get('schemaVersion') == 1, 'Unsupported project registry version')
+    sources = document.get('sources')
+    require(isinstance(sources, list) and len(sources) == 1 and
+            isinstance(sources[0], dict) and sources[0].get('id') == 'vocamind-ai-editorial',
+            'Project registry permits only vocamind-ai-editorial')
+    source = sources[0]
+    require(source.get('origin') == 'project-ai-generated' and
+            source.get('licenseCode') == 'PROJECT-USE-OWNER-ACCEPTED' and
+            https_url(source.get('licenseUrl')), 'Explicit project-use route required')
+    require(source.get('decision') in ('include', 'hold') and
+            type(source.get('pipelineEligible')) is bool and
+            isinstance(source.get('blockers'), list), 'Invalid project source state')
+    return sources
+
+
+def authorize_project(document, source_id, root, hash_cache=None):
+    source = validate_project_registry(document)[0]
+    require(source_id == source['id'], 'Unknown project source')
+    require(source.get('decision') == 'include' and source.get('pipelineEligible') is True and
+            source.get('packagingStatus') == 'approved' and source.get('blockers') == [],
+            'Project source not accepted')
+    review, snapshot = source.get('review', {}), source.get('snapshot', {})
+    require(review.get('role') == 'Project owner' and review.get('decision') == 'accepted' and
+            bool(review.get('reviewer')), 'Explicit project-owner acceptance required')
+    datetime.strptime(review['reviewedAt'], '%Y-%m-%d')
+    require(review.get('snapshotId') == snapshot.get('id') and bool(snapshot.get('id')) and
+            bool(snapshot.get('upstreamVersion')), 'Project acceptance snapshot mismatch')
+    retrieved = datetime.fromisoformat(snapshot['retrievedAt'].replace('Z', '+00:00'))
+    require(retrieved.utcoffset() is not None and retrieved.utcoffset().total_seconds() == 0,
+            'Project snapshot date must be UTC')
+    artifacts = snapshot.get('artifacts', [])
+    require({a.get('role') for a in artifacts} == {'data', 'attribution', 'approval'} and
+            len(artifacts) == 3, 'Project data, attribution and acceptance evidence required')
+    for artifact in artifacts:
+        verified_artifact(artifact, root, hash_cache)
+    require(review.get('snapshotSha256') == snapshot_content_digest(snapshot, source),
+            'Project acceptance content digest mismatch')
+    return source
+
+
 def validate_registry(document):
     require(isinstance(document, dict), 'Registry must be an object')
     require(document.get('schemaVersion') == 1, 'Unsupported registry version')
+    if document.get('purpose') == 'project-generated-content':
+        return validate_project_registry(document)
     sources = document.get('sources', [])
     require(isinstance(sources, list) and all(isinstance(s, dict) for s in sources),
             'Sources must be an array of objects')
@@ -118,6 +166,8 @@ def verified_artifact(artifact, root, hash_cache=None):
 
 
 def authorize(document, source_id, root=ROOT, hash_cache=None):
+    if isinstance(document, dict) and document.get('purpose') == 'project-generated-content':
+        return authorize_project(document, source_id, root, hash_cache)
     source_id = ALIASES.get(source_id, source_id)
     sources = validate_registry(document)
     source = next((s for s in sources if s['id'] == source_id), None)

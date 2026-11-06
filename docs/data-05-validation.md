@@ -1,5 +1,9 @@
 # DATA-05 — FTS4 search
 
+> Current integration follow-up: [PR #23 fix validation](data-05-fix-validation.md).
+> Sections 4–8 below retain the original branch's test/benchmark evidence; the
+> 149-test total and host samples are historical, not acceptance of the merged head.
+
 ## 1. Căn cứ, nhánh và phạm vi
 
 D6–D7, 7 giờ, Nhân/Trường thực hiện, Thi review, Critical. Căn cứ trực tiếp hai
@@ -7,11 +11,11 @@ file đính kèm VocaMind_SRS_Baseline_v1.1.docx và VocaMind — Phân công.xl
 FR-VM-011..014, AC-05, NFR-VM-03, ADR-03 và SRS §7.3 DATA-05.
 Xem [kế hoạch](plans/data-05-fts4-search.md).
 
-Nhánh local feature/data-05-fts4-search, nền develop c2ea69e. DATA-01 có sẵn,
-DATA-04 tổng thể chưa có branch/implementation trên remote tại thời điểm kiểm tra.
-Task này tạo search boundary hẹp tương thích model/mapper catalog, không tự công bố
-đã làm DATA-04 và không đổi CatalogRepository để phá consumer/fake hiện có.
-Cần owner DATA-04/Thi/Trường review boundary khi tích hợp.
+Nhánh feature/data-05-fts4-search ban đầu dựa trên develop c2ea69e. Ngày 06/11/2026,
+nhánh đã ghép develop 45db6049b3d8885bfab5570e4e70e03b0cf04511, gồm DAO foundation,
+DATA-04 repositories và PACK-01/02. Giữ search boundary hẹp tương thích
+model/mapper catalog, không đổi CatalogRepository hoặc consumer/fake hiện có.
+Kết quả kiểm tra sau ghép và các gate còn thiếu nằm ở tài liệu follow-up phía trên.
 
 ## 2. Implementation
 
@@ -140,12 +144,13 @@ app/build/reports/lint-results-debug.xml. Không có diff schema/asset sản ph�
 ## 7. Bàn giao và giới hạn
 
 - Nhánh bàn giao: feature/data-05-fts4-search; chưa merge vào develop/main; Thi chưa review.
-- DATA-04 integration và SEARCH-01/02 còn pending; không sửa trạng thái Excel thay nhóm.
+- DATA-04 đã có trong develop được ghép; SEARCH-01/02 vẫn là handoff cần triển khai/
+  kiểm tra riêng. Không sửa trạng thái Excel thay nhóm.
 - 5.000-word benchmark synthetic không thay VOC-DATA-06 production catalog.
 - Hiệu năng reference device chưa được đo/đạt; outlier host >50ms được giữ nguyên.
 - Không có connected instrumentation evidence hoặc UI typing/render validation.
 
-## 8. Kết quả thực tế cuối phiên
+## 8. Kết quả lịch sử của nhánh trước lần sửa 06/11/2026
 
 BUILD SUCCESSFUL: **149 executed, 149 passed, 0 failures/errors/skipped**.
 24 lượt mới = 6 domain + 8 functional cases × API26/35 + 1 benchmark runner × API26/35.
