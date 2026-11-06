@@ -49,6 +49,8 @@ project entry point; generated build outputs stay in ignored build directories.
 | [LEARN-01 validation](learn-01-validation.md) | Implemented scheduler rules, test evidence and handoff |
 | [LEARN-02 validation](learn-02-validation.md) | TC-SCHED-01..10 and boundary test coverage for the Leitner scheduler |
 | [UI sketch](sketchs.png) | Visual reference for future feature screens |
+| [QUIZ-02 plan](plans/quiz-02-generation.md) | Production Quiz generation, normalization, sampling and planned validation |
+| [QUIZ-02 validation](quiz-02-validation.md) | Generator, pinned Unicode NFC/casefold, test evidence and QUIZ-03 handoff |
 
 Use lowercase kebab-case filenames for new documentation. Put task plans in
 `plans/` and link new documents from this index. Keep historical plans and

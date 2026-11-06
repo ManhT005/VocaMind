@@ -116,6 +116,11 @@ jobs:
           python docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-quality/ci-accepted/canonical-catalog.json --release
           python tools/vocabulary/accept_editorial.py --verify build/vocabulary-quality/ci-accepted
 
+      - name: Verify pinned Quiz Unicode tables
+        run: |
+          python tools/unicode/generate.py
+          git diff --exit-code -- app/src/main/java/com/vocamind/app/domain/quiz/UnicodeCaseFold.java app/src/main/java/com/vocamind/app/domain/quiz/UnicodeNfcData.java tools/unicode/SHA256SUMS
+
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:

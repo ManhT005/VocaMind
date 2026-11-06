@@ -81,12 +81,77 @@ public class RepositoryIntegrationTest {
         packs = new RoomPackRepository(catalog.catalogDao(), user.userDao());
         study = new RoomStudyRepository(catalog.catalogDao(), user.userDao());
         reviews = new RoomReviewRepository(catalog.catalogDao(), user);
-        quizzes = new RoomQuizRepository(catalog.catalogDao(), user.userDao());
+        quizzes = new RoomQuizRepository(catalog.catalogDao(), user.userDao(), QuizDistractorPolicy::unrestricted);
     }
 
     @After public void close() {
         catalog.close(); user.close();
         context.deleteDatabase(catalogName); context.deleteDatabase(userName);
+    }
+
+    @Test public void acceptedPolicyTravelsThroughRoomSnapshotAndGenerationWithoutWrites() throws Exception {
+        org.json.JSONObject data = new org.json.JSONObject(
+                com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest.read("docs/data/voc-data-04/accepted-v1/canonical-preview.json"));
+        String companion = com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest.read("app/src/test/resources/quiz/accepted-policy.json");
+        SupportSQLiteDatabase sql = catalog.getOpenHelper().getWritableDatabase();
+        sql.execSQL("DELETE FROM PackWord");
+        sql.execSQL("DELETE FROM VocabularyEntry");
+        sql.execSQL("DELETE FROM LearningPack");
+        org.json.JSONArray entries = data.getJSONArray("entries");
+        for (int i = 0; i < entries.length(); i++) {
+            org.json.JSONObject v = entries.getJSONObject(i);
+            sql.execSQL("INSERT INTO VocabularyEntry (id,lemma,normalizedLemma,pos,meaningVi,exampleEn,exampleVi,ipa,sourceId,contentVersion) "
+                    + "VALUES (?,?,?,?,?,?,?,NULL,'src','1')", new Object[]{v.getString("id"), v.getString("lemma"),
+                    v.getString("normalizedLemma"), v.getString("pos"), v.getString("meaningVi"),
+                    v.getString("exampleEn"), v.getString("exampleVi")});
+        }
+        org.json.JSONArray acceptedPacks = data.getJSONArray("packs");
+        for (int i = 0; i < acceptedPacks.length(); i++) {
+            org.json.JSONObject p = acceptedPacks.getJSONObject(i);
+            sql.execSQL("INSERT INTO LearningPack (id,title,description,category,orderNo,version) VALUES (?,?,?,?,?,?)",
+                    new Object[]{p.getString("id"), p.getString("title"), p.getString("description"),
+                            p.getString("category"), p.getInt("orderNo"), p.getString("version")});
+            assertTrue(packs.activatePack(p.getString("id"), i + 1).isSuccess());
+        }
+        org.json.JSONArray memberships = data.getJSONArray("packWords");
+        for (int i = 0; i < memberships.length(); i++) {
+            org.json.JSONObject m = memberships.getJSONObject(i);
+            member(m.getString("packId"), m.getString("vocabularyId"), m.getInt("orderNo"));
+        }
+        quizzes = new RoomQuizRepository(catalog.catalogDao(), user.userDao(), () -> {
+            List<QuizVocabulary> full = new ArrayList<>();
+            for (var row : catalog.catalogDao().allVocabulary())
+                full.add(UserDataMapper.quizVocabulary(com.vocamind.app.data.catalog.CatalogMapper.vocabulary(row)));
+            return com.vocamind.app.data.catalog.QuizPolicyAsset.parse(companion, full);
+        });
+        assertEquals(150, quizzes.activeSnapshot().get().getVocabulary().size());
+        org.json.JSONArray pairs = new org.json.JSONObject(companion).getJSONArray("forbiddenDistractorPairs");
+        String beforeCatalog = snapshot(sql), beforeUser = snapshot(user.getOpenHelper().getWritableDatabase());
+        GenerateQuiz generate = new GenerateQuiz(quizzes);
+        for (int seed : new int[]{0, 60, 262, 357, 473, 786, 900}) {
+            QuizGenerationOutcome outcome = generate.execute(new Random(seed)).get();
+            assertEquals(QuizGenerationOutcome.Status.READY, outcome.getStatus());
+            assertEquals(10, outcome.getQuestions().size());
+            for (QuizQuestion q : outcome.getQuestions()) for (QuizOption option : q.getOptions())
+                for (int i = 0; i < pairs.length(); i++) {
+                    String a = pairs.getJSONArray(i).getString(0), b = pairs.getJSONArray(i).getString(1);
+                    assertFalse((q.getId().equals(a) && option.getId().equals(b)) ||
+                            (q.getId().equals(b) && option.getId().equals(a)));
+                }
+        }
+        assertEquals(beforeCatalog, snapshot(sql));
+        assertEquals(beforeUser, snapshot(user.getOpenHelper().getWritableDatabase()));
+        // Installed catalog changed without updating its required policy: fail closed.
+        sql.execSQL("UPDATE VocabularyEntry SET meaningVi='changed' WHERE id=?", new Object[]{entries.getJSONObject(0).getString("id")});
+        assertEquals(RepoError.INVALID_DATA, generate.execute(new Random(60)).getError());
+    }
+
+    @Test public void absentOrMalformedPolicyIsRepositoryErrorEvenWhenNoPacksAreActive() {
+        for (java.util.function.Supplier<QuizDistractorPolicy> loader : Arrays.<java.util.function.Supplier<QuizDistractorPolicy>>asList(
+                () -> { throw new IllegalArgumentException("missing policy"); }, () -> null)) {
+            RoomQuizRepository repository = new RoomQuizRepository(catalog.catalogDao(), user.userDao(), loader);
+            assertEquals(RepoError.INVALID_DATA, new GenerateQuiz(repository).execute(new Random(1)).getError());
+        }
     }
 
     private void member(String pack, String word, int order) {
@@ -412,6 +477,53 @@ public class RepositoryIntegrationTest {
         assertTrue(id > 0);
         assertEquals(80, user.userDao().quizzes().get(0).scorePercent);
         assertEquals(RepoError.INVALID_ARGUMENT, quizzes.saveAttempt(null, 1L).getError());
+    }
+
+    @Test public void generatedQuizUsesFreshActiveSnapshotAndNeverWrites() {
+        GenerateQuiz generate = new GenerateQuiz(quizzes);
+        assertEquals(QuizGenerationOutcome.Status.EMPTY, generate.execute(new Random(42)).get().getStatus());
+        packs.activatePack("A", 1L);
+        packs.activatePack("B", 2L);
+        packs.activatePack("C", 3L);
+        packs.pausePack("C");
+        user.getOpenHelper().getWritableDatabase().execSQL(
+                "INSERT INTO UserPack (packId,isActive,activatedAt) VALUES ('orphan',1,1)");
+        String beforeCatalog = snapshot(catalog.getOpenHelper().getWritableDatabase());
+        String beforeUser = snapshot(user.getOpenHelper().getWritableDatabase());
+        QuizGenerationOutcome out = generate.execute(new Random(42)).get();
+        assertEquals(QuizGenerationOutcome.Status.READY, out.getStatus());
+        assertEquals(6, out.getQuestions().size());
+        Set<String> expected = new HashSet<>(Arrays.asList(SHARED, W1, W2, W3, W4, W5));
+        Set<String> actual = new HashSet<>();
+        for (QuizQuestion q : out.getQuestions()) {
+            assertTrue(actual.add(q.getId()));
+            for (QuizOption option : q.getOptions()) assertTrue(expected.contains(option.getId()));
+        }
+        assertEquals(expected, actual);
+        assertEquals(beforeCatalog, snapshot(catalog.getOpenHelper().getWritableDatabase()));
+        assertEquals(beforeUser, snapshot(user.getOpenHelper().getWritableDatabase()));
+        packs.pausePack("A");
+        assertEquals("INSUFFICIENT_VOCABULARY", generate.execute(new Random(42)).get().getReason());
+        packs.pausePack("B");
+        assertEquals(QuizGenerationOutcome.Status.EMPTY, generate.execute(new Random(42)).get().getStatus());
+        catalog.close();
+        assertEquals(RepoError.READ_FAILED, generate.execute(new Random(42)).getError());
+    }
+
+    @Test public void productionNormalizerVectorsOnAndroid() {
+        new QuizGenerationTestVectors().verify();
+    }
+
+    private static final class QuizGenerationTestVectors {
+        void verify() {
+            MeaningNormalizer n = new UnicodeMeaningNormalizer();
+            assertEquals("b\u00e0n", n.normalize("\u00a0BA\u0300N\u0085"));
+            assertEquals("strasse", n.normalize("Stra\u00dfe"));
+            assertEquals("\u03c3\u03c3\u03c3", n.normalize("\u03a3\u03c3\u03c2"));
+            assertEquals("i\u0307", n.normalize("\u0130"));
+            assertEquals("\ud801\udc28", n.normalize("\ud801\udc00"));
+            assertNotEquals(n.normalize("ban"), n.normalize("b\u00e0n"));
+        }
     }
 
     @Test public void quizVocabularyWithNonHexStableIdIsInvalidData() {

@@ -1,5 +1,11 @@
 gradlew text eol=lf
 gradlew.bat text eol=crlf
+# Preserve downloaded Unicode bytes so pinned checksums survive Windows checkouts.
+tools/unicode/*.txt -text
+tools/unicode/generate.py text eol=lf
+tools/unicode/SHA256SUMS text eol=lf
+app/src/main/java/com/vocamind/app/domain/quiz/UnicodeCaseFold.java text eol=lf
+app/src/main/java/com/vocamind/app/domain/quiz/UnicodeNfcData.java text eol=lf
 # Upstream byte archives: preserve hashes and avoid text whitespace rewrites.
 docs/data/evidence/** binary
 docs/data/vocabulary-contract-v1/** text eol=lf

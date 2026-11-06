@@ -12,6 +12,11 @@ import com.vocamind.app.domain.pack.PackRepository;
 import com.vocamind.app.domain.quiz.QuizRepository;
 import com.vocamind.app.domain.vocabulary.VocabularyRepository;
 import com.vocamind.app.data.repository.RoomVocabularyRepository;
+import com.vocamind.app.data.catalog.QuizPolicyAsset;
+import com.vocamind.app.data.catalog.CatalogMapper;
+import com.vocamind.app.data.repository.UserDataMapper;
+import java.util.ArrayList;
+import com.vocamind.app.domain.quiz.QuizVocabulary;
 
 /**
  * Composition root for DATA-04. Hands out domain contracts only; DAOs and Room stay private.
@@ -32,7 +37,12 @@ public final class RepositoryProvider implements AutoCloseable {
         packs = new RoomPackRepository(catalogDao, userDao);
         study = new RoomStudyRepository(catalogDao, userDao);
         reviews = new RoomReviewRepository(catalogDao, userDatabase);
-        quizzes = new RoomQuizRepository(catalogDao, userDao);
+        quizzes = new RoomQuizRepository(catalogDao, userDao, () -> {
+            var vocabulary = new ArrayList<QuizVocabulary>();
+            for (var row : catalogDao.allVocabulary())
+                vocabulary.add(UserDataMapper.quizVocabulary(CatalogMapper.vocabulary(row)));
+            return QuizPolicyAsset.load(context.getApplicationContext().getAssets(), vocabulary);
+        });
         vocabulary = new RoomVocabularyRepository(catalog.repository(), userDatabase);
     }
 
