@@ -54,7 +54,13 @@
     <string name="word_unreviewed">Chưa có lượt ôn</string>
     <string name="word_relearn">Học lại</string>
     <string name="word_level">Cấp ôn %1$d</string>
-    <string name="word_route_pending">Đã nhận vocabularyId: %1$s\nPack: %2$s\nNội dung chi tiết đang chờ VOCAB-02.</string>
     <string name="word_route_invalid">Thiếu hoặc sai mã từ/gói. Hãy quay lại danh sách.</string>
     <string name="word_route_loading">Đang kiểm tra mã từ…</string>
+    <string name="detail_ready">Chi tiết từ vựng</string>
+    <string name="detail_save">Lưu</string>
+    <string name="detail_unsave">Bỏ lưu</string>
+    <string name="detail_saving">Đang lưu…</string>
+    <string name="detail_error">Không thể xác nhận dữ liệu. Thử lại để đọc trạng thái đã lưu trước khi thao tác tiếp.</string>
+    <string name="detail_policy_pending">Chưa thể lưu từ này. Chức năng lưu từ chưa có tiến độ đang chờ hoàn thiện.</string>
+    <string name="detail_missing">Chưa có dữ liệu</string>
 </resources>

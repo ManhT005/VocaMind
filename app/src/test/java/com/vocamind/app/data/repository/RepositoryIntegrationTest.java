@@ -423,6 +423,112 @@ public class RepositoryIntegrationTest {
         assertEquals(RepoError.INVALID_DATA, quizzes.activeVocabulary().getError());
     }
 
+    private RoomVocabularyRepository detailRepository() {
+        return new RoomVocabularyRepository(new com.vocamind.app.data.catalog.RoomCatalogRepository(catalog.catalogDao()), user);
+    }
+
+    @Test public void vocab02SaveUnsaveReopenOnlyChangesFlagAndCatalogIsReadOnly() {
+        var repository = detailRepository();
+        var get = new com.vocamind.app.domain.vocabulary.GetVocabularyDetail(repository);
+        var save = new com.vocamind.app.domain.vocabulary.ToggleSaved(repository);
+        reviews.recordReview(SHARED, schedule(LeitnerState.newWord(), Rating.FORGOT, DAY), DAY);
+        String catalogBefore = snapshot(catalog.getOpenHelper().getWritableDatabase());
+        String userBefore = snapshot(user.getOpenHelper().getWritableDatabase());
+        var before = user.userDao().progress(SHARED);
+        assertEquals("w" + SHARED, get.execute("A", SHARED).get().word.lemma);
+        assertNull(get.execute("A", SHARED).get().word.ipa);
+        assertTrue(save.execute("A", SHARED, true).get());
+        assertTrue(save.execute("A", SHARED, true).get());
+        assertTrue(get.execute("B", SHARED).get().saved);
+        var after = user.userDao().progress(SHARED);
+        assertEquals(before.box, after.box); assertEquals(before.dueAt, after.dueAt);
+        assertEquals(before.learnedAt, after.learnedAt); assertEquals(before.lastReviewedAt, after.lastReviewedAt);
+        assertEquals(before.consecutiveMistakes, after.consecutiveMistakes);
+        assertEquals(before.isLeech, after.isLeech); assertEquals(before.reviewCount, after.reviewCount);
+        assertTrue(user.userDao().packs().isEmpty());
+        user.close(); user = UserDatabase.open(context, userName);
+        repository = detailRepository();
+        assertTrue(repository.getDetail("B", SHARED).get().saved);
+        assertFalse(repository.setSaved("B", SHARED, false).get());
+        assertEquals(userBefore, snapshot(user.getOpenHelper().getWritableDatabase()));
+        user.close(); user = UserDatabase.open(context, userName);
+        assertFalse(detailRepository().getDetail("A", SHARED).get().saved);
+        assertEquals(catalogBefore, snapshot(catalog.getOpenHelper().getWritableDatabase()));
+    }
+
+    @Test public void vocab02MissingProgressIsBlockedNotFalseSuccessAndPoolsAreUntouched() {
+        var repository = detailRepository();
+        packs.activatePack("A", DAY);
+        String before = snapshot(user.getOpenHelper().getWritableDatabase());
+        var newBefore = ids(study.newWords(50).get());
+        for (boolean target : new boolean[]{true, false, true}) {
+            assertEquals(RepoError.SAVED_POLICY_REQUIRED, repository.setSaved("A", W1, target).getError());
+        }
+        assertFalse(repository.getDetail("A", W1).get().saved);
+        assertNull(user.userDao().progress(W1));
+        assertEquals(newBefore, ids(study.newWords(50).get()));
+        assertTrue(study.dueItems(Long.MAX_VALUE, 50).get().isEmpty());
+        assertEquals(before, snapshot(user.getOpenHelper().getWritableDatabase()));
+        for (String id : new String[]{null, "", "  "}) {
+            assertEquals(RepoError.INVALID_ARGUMENT, repository.getDetail("A", id).getError());
+            assertEquals(RepoError.INVALID_ARGUMENT, repository.setSaved("A", id, true).getError());
+        }
+        assertEquals(RepoError.NOT_FOUND, repository.setSaved("A", "unknown", true).getError());
+        assertEquals(RepoError.NOT_FOUND, repository.getDetail("B", W1).getError());
+        assertEquals(RepoError.NOT_FOUND, repository.getDetail("A", " " + W1).getError());
+        assertEquals(RepoError.INVALID_ARGUMENT, repository.getDetail(null, W1).getError());
+        assertEquals(before, snapshot(user.getOpenHelper().getWritableDatabase()));
+    }
+
+    @Test public void vocab02WriteFailureReadFailureAndIdempotentReconciliation() {
+        reviews.recordReview(W1, schedule(LeitnerState.newWord(), Rating.HARD, DAY), DAY);
+        var repository = detailRepository();
+        user.getOpenHelper().getWritableDatabase().execSQL(
+                "CREATE TRIGGER block_saved BEFORE UPDATE OF isSaved ON UserWordProgress BEGIN SELECT RAISE(ABORT,'blocked'); END");
+        assertEquals(RepoError.WRITE_FAILED, repository.setSaved("A", W1, true).getError());
+        assertFalse(repository.getDetail("A", W1).get().saved);
+        user.getOpenHelper().getWritableDatabase().execSQL("DROP TRIGGER block_saved");
+        assertTrue(repository.setSaved("A", W1, true).get());
+        assertTrue(repository.setSaved("A", W1, true).get());
+        user.close();
+        assertEquals(RepoError.READ_FAILED, repository.getDetail("A", W1).getError());
+        user = UserDatabase.open(context, userName);
+        assertTrue(detailRepository().getDetail("A", W1).get().saved);
+        catalog.close();
+        assertEquals(RepoError.READ_FAILED, detailRepository().setSaved("A", W1, false).getError());
+    }
+
+    @Test public void vocab02SaveConcurrentWithReviewRetainsBothAndHistory() throws Exception {
+        reviews.recordReview(W1, schedule(LeitnerState.newWord(), Rating.HARD, DAY), DAY);
+        var repository = detailRepository();
+        for (int i = 0; i < 8; i++) {
+            final long now = (i + 2) * DAY;
+            var previous = user.userDao().progress(W1);
+            var scheduled = schedule(new LeitnerState(previous.box, previous.consecutiveMistakes, previous.isLeech), Rating.FORGOT, now);
+            java.util.concurrent.CountDownLatch start = new java.util.concurrent.CountDownLatch(1);
+            AtomicReference<Throwable> failure = new AtomicReference<>();
+            Thread saveThread = new Thread(() -> {
+                try { start.await(); assertTrue(repository.setSaved("A", W1, true).get()); }
+                catch (Throwable e) { failure.set(e); }
+            });
+            Thread reviewThread = new Thread(() -> {
+                try { start.await(); assertTrue(reviews.recordReview(W1, scheduled, now).isSuccess()); }
+                catch (Throwable e) { failure.set(e); }
+            });
+            saveThread.start(); reviewThread.start(); start.countDown();
+            saveThread.join(10000); reviewThread.join(10000);
+            assertFalse(saveThread.isAlive()); assertFalse(reviewThread.isAlive());
+            if (failure.get() != null) throw new AssertionError(failure.get());
+            var stored = user.userDao().progress(W1);
+            assertTrue(stored.isSaved); assertEquals(i + 2, stored.reviewCount);
+            assertEquals(now, stored.lastReviewedAt.longValue());
+            assertEquals(scheduled.getDueAtEpochMillis(), stored.dueAt);
+            assertEquals(scheduled.getConsecutiveMistakes(), stored.consecutiveMistakes);
+            assertEquals(scheduled.isLeech(), stored.isLeech);
+            assertEquals(i + 2, user.userDao().reviews().size());
+            assertFalse(repository.setSaved("A", W1, false).get());
+        }
+    }
     private static QuizResult completedResult(int n, int correct) {
         List<QuizQuestion> qs = new ArrayList<>();
         for (int i = 0; i < n; i++) {

@@ -10,6 +10,8 @@ import com.vocamind.app.domain.learning.ReviewRepository;
 import com.vocamind.app.domain.learning.StudyRepository;
 import com.vocamind.app.domain.pack.PackRepository;
 import com.vocamind.app.domain.quiz.QuizRepository;
+import com.vocamind.app.domain.vocabulary.VocabularyRepository;
+import com.vocamind.app.data.repository.RoomVocabularyRepository;
 
 /**
  * Composition root for DATA-04. Hands out domain contracts only; DAOs and Room stay private.
@@ -21,6 +23,7 @@ public final class RepositoryProvider implements AutoCloseable {
     private final StudyRepository study;
     private final ReviewRepository reviews;
     private final QuizRepository quizzes;
+    private final VocabularyRepository vocabulary;
 
     public RepositoryProvider(Context context, CatalogProvider catalog) {
         userDatabase = UserDatabase.open(context);
@@ -30,12 +33,14 @@ public final class RepositoryProvider implements AutoCloseable {
         study = new RoomStudyRepository(catalogDao, userDao);
         reviews = new RoomReviewRepository(catalogDao, userDatabase);
         quizzes = new RoomQuizRepository(catalogDao, userDao);
+        vocabulary = new RoomVocabularyRepository(catalog.repository(), userDatabase);
     }
 
     public PackRepository packs() { return packs; }
     public StudyRepository study() { return study; }
     public ReviewRepository reviews() { return reviews; }
     public QuizRepository quizzes() { return quizzes; }
+    public VocabularyRepository vocabulary() { return vocabulary; }
 
     /** The catalog database is owned and closed by CatalogProvider. */
     @Override public void close() { userDatabase.close(); }
