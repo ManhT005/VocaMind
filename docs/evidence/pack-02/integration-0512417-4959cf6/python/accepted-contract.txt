@@ -1,0 +1,9 @@
+{
+  "result": "PASS_CONTRACT_CHECKS",
+  "mode": "release-metadata",
+  "uniqueWords": 150,
+  "memberships": 150,
+  "packs": 4,
+  "baselineCompared": false,
+  "limitations": "Does not verify semantic quality, license evidence, Room asset, FTS or app release readiness."
+}

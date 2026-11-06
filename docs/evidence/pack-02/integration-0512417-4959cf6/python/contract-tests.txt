@@ -1,0 +1,44 @@
+test_approved_source_needs_named_evidence (test_contract.ContractTests.test_approved_source_needs_named_evidence) ... ok
+test_changed_export_requires_new_content_version (test_contract.ContractTests.test_changed_export_requires_new_content_version) ... ok
+test_changed_sense_index_is_blocked (test_contract.ContractTests.test_changed_sense_index_is_blocked) ... ok
+test_changed_source_snapshot_requires_new_source_id (test_contract.ContractTests.test_changed_source_snapshot_requires_new_source_id) ... ok
+test_cli_malformed_canonical_values_are_exit_one (test_contract.ContractTests.test_cli_malformed_canonical_values_are_exit_one) ... ok
+test_cli_valid_and_invalid_exit_codes (test_contract.ContractTests.test_cli_valid_and_invalid_exit_codes) ... ok
+test_control_and_hidden_characters_are_rejected (test_contract.ContractTests.test_control_and_hidden_characters_are_rejected) ... ok
+test_decimal_integer_tokens_return_contract_error (test_contract.ContractTests.test_decimal_integer_tokens_return_contract_error) ... ok
+test_display_capitalization_preserves_identity (test_contract.ContractTests.test_display_capitalization_preserves_identity) ... ok
+test_duplicate_json_keys_are_rejected (test_contract.ContractTests.test_duplicate_json_keys_are_rejected) ... ok
+test_duplicate_meanings_fail_pack_quiz_gate (test_contract.ContractTests.test_duplicate_meanings_fail_pack_quiz_gate) ... ok
+test_fixture_cannot_pass_release_gate (test_contract.ContractTests.test_fixture_cannot_pass_release_gate) ... ok
+test_identity_whitespace_set_is_explicit (test_contract.ContractTests.test_identity_whitespace_set_is_explicit) ... ok
+test_invalid_fixtures_have_declared_failure (test_contract.ContractTests.test_invalid_fixtures_have_declared_failure) ... ok
+test_invalid_previous_baseline_does_not_certify_upgrade (test_contract.ContractTests.test_invalid_previous_baseline_does_not_certify_upgrade) ... ok
+test_invalid_sense_index (test_contract.ContractTests.test_invalid_sense_index) ... ok
+test_meaning_casefold_vectors (test_contract.ContractTests.test_meaning_casefold_vectors) ... ok
+test_missing_source_does_not_pass_with_provenance_only (test_contract.ContractTests.test_missing_source_does_not_pass_with_provenance_only) ... ok
+test_multi_source_provenance_is_valid (test_contract.ContractTests.test_multi_source_provenance_is_valid) ... ok
+test_non_nfc_canonical_text_is_rejected (test_contract.ContractTests.test_non_nfc_canonical_text_is_rejected) ... ok
+test_non_null_ipa_requires_provenance (test_contract.ContractTests.test_non_null_ipa_requires_provenance) ... ok
+test_null_ipa_is_valid (test_contract.ContractTests.test_null_ipa_is_valid) ... ok
+test_punctuation_and_accents_are_not_erased (test_contract.ContractTests.test_punctuation_and_accents_are_not_erased) ... ok
+test_registry_hash_tampering_is_blocked (test_contract.ContractTests.test_registry_hash_tampering_is_blocked) ... ok
+test_release_counts_unique_ids_not_memberships (test_contract.ContractTests.test_release_counts_unique_ids_not_memberships) ... ok
+test_release_metadata_positive_boundary_150_words (test_contract.ContractTests.test_release_metadata_positive_boundary_150_words) ... ok
+test_removed_published_entry_is_blocked (test_contract.ContractTests.test_removed_published_entry_is_blocked) ... ok
+test_removed_published_pack_is_blocked (test_contract.ContractTests.test_removed_published_pack_is_blocked) ... ok
+test_removed_registry_is_blocked (test_contract.ContractTests.test_removed_registry_is_blocked) ... ok
+test_reordering_does_not_reassign_ids (test_contract.ContractTests.test_reordering_does_not_reassign_ids) ... ok
+test_retired_identity_cannot_be_reused (test_contract.ContractTests.test_retired_identity_cannot_be_reused) ... ok
+test_same_word_different_pos_or_sense_has_different_id (test_contract.ContractTests.test_same_word_different_pos_or_sense_has_different_id) ... ok
+test_stable_id_vectors (test_contract.ContractTests.test_stable_id_vectors) ... ok
+test_unassigned_word_is_rejected (test_contract.ContractTests.test_unassigned_word_is_rejected) ... ok
+test_unchanged_baseline_is_valid (test_contract.ContractTests.test_unchanged_baseline_is_valid) ... ok
+test_unicode_composition_and_spaces_have_same_identity (test_contract.ContractTests.test_unicode_composition_and_spaces_have_same_identity) ... ok
+test_unpaired_surrogate_returns_contract_error (test_contract.ContractTests.test_unpaired_surrogate_returns_contract_error) ... ok
+test_valid_contract_fixture (test_contract.ContractTests.test_valid_contract_fixture) ... ok
+test_wording_update_preserves_id_against_previous (test_contract.ContractTests.test_wording_update_preserves_id_against_previous) ... ok
+
+----------------------------------------------------------------------
+Ran 39 tests in 2.282s
+
+OK

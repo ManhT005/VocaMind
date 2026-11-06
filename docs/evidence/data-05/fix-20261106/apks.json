@@ -1,0 +1,17 @@
+[
+  {
+    "path": "app/build/outputs/apk/debug/app-debug.apk",
+    "bytes": 7559629,
+    "sha256": "ff7bd99e44c62729ac22fdd659b8aa54a4fc274a14bece9bc1ec79779439f67d",
+    "benchmarkAssetEntries": []
+  },
+  {
+    "path": "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+    "bytes": 716902,
+    "sha256": "e2050acddab0b8ebf619be3c51c67c4254b28f5c0a23c347d4d82bc232d43994",
+    "benchmarkAssetEntries": [
+      "assets/benchmark/catalog-5000.db",
+      "assets/benchmark/catalog-5000.metadata.json"
+    ]
+  }
+]

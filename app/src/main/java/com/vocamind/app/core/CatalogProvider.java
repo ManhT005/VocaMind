@@ -1,6 +1,7 @@
 package com.vocamind.app.core;
 
 import android.content.Context;
+import com.vocamind.app.data.catalog.CatalogDao;
 import com.vocamind.app.data.catalog.CatalogDatabase;
 import com.vocamind.app.data.catalog.RoomCatalogRepository;
 import com.vocamind.app.data.catalog.ContentCredits;
@@ -16,5 +17,7 @@ public final class CatalogProvider implements AutoCloseable {
         repository = new RoomCatalogRepository(database.catalogDao(), () -> ContentCredits.load(assets));
     }
     public CatalogRepository repository() { return repository; }
+    /** Package-private: only RepositoryProvider may coordinate catalog and userdata. */
+    CatalogDao catalogDao() { return database.catalogDao(); }
     @Override public void close() { database.close(); }
 }

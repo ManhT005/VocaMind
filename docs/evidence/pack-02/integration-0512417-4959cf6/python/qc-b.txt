@@ -1,0 +1,1 @@
+QC fixture-pass: 4 input, 0 errors

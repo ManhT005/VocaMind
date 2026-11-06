@@ -1,0 +1,44 @@
+{
+  "status": "candidate-preparation-verified-production-blocked",
+  "identicalFiles": 9,
+  "matchesCommittedCandidateSnapshot": true,
+  "outputHashes": {
+    "candidate-catalog.json": "86413cc7b251bae0d46ff473dbaf5c66565ac0af68556b2e143a2fcd08ea8d8a",
+    "candidate-manifest.json": "354109c2f2c6d533cd307d4e3050555a6ba124ea59a59fe6b36a5b45f3b2c086",
+    "candidate-qc-report.json": "d9e33d86cf21dcfea60fa1fca591db13963ab001ab7436d4240e897622cb9ae7",
+    "identity-registry-proposal.json": "156e6dc876ea2e7619b46d91d7fa2e408480c64384c25dce3f35b6329003f418",
+    "ingestion-proposal.json": "5d74bd08d8076ff5e21bba50c8705c1fea6f1a1d9f69c512f32340ed0c437d39",
+    "proposals.json": "9d016f5f3190d60ee8baecab80236440622ba9606e7222d5f9f33b6aa574ff11",
+    "review-worksheet.md": "07df2b0c88b8367b79dc724b807c82230f007382c7e0f03f9384302ff3618497",
+    "reviews-pending.json": "dbd7139663da9a280066cab438995097c19d553987647314a0c9b16cea43651a",
+    "staging.jsonl": "67d2ac10dff7f3560aeee41fe6226a6466ed63b499877088e0c3c54e507a15e6"
+  },
+  "candidateCounts": {
+    "candidateSenses": 150,
+    "proposedIds": 150,
+    "publishedIds": 0,
+    "memberships": 150,
+    "ngslLexicalMatches": 135,
+    "editorialOnlyHeadwords": 15,
+    "humanApprovedRecords": 0
+  },
+  "componentReferencesVerified": 585,
+  "productionQcExitCode": 1,
+  "errorsByCode": {
+    "CONTENT_REVIEW_REQUIRED": 150,
+    "SOURCE_NOT_APPROVED": 2
+  },
+  "actualIngestion": {
+    "exitCode": 1,
+    "stage": "gate",
+    "recordsRead": 0,
+    "failure": {
+      "status": "failed",
+      "stage": "gate",
+      "errors": [
+        "gate: Source on hold or excluded; candidate is not include"
+      ]
+    }
+  },
+  "publishedIds": 0
+}

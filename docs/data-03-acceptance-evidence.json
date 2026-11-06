@@ -1,0 +1,151 @@
+{
+  "purpose": "DATA-03 local integration verification; not reviewer or CI approval",
+  "verifiedAtUtc": "2026-11-01T15:39:44.455044+00:00",
+  "branch": "feature/data-03-dao-foundation",
+  "baseCommit": "fff380127b0808b203165e649e22eaf714027afb",
+  "integrationCommit": "77bf900da510a267e7c903b6cf464c775d4d9900",
+  "jdk": "Temurin 17.0.20.1+1",
+  "gradle": "8.9",
+  "robolectric": "4.16.1",
+  "sqliteMode": "NATIVE",
+  "androidApis": [
+    26,
+    35
+  ],
+  "gradleTasks": [
+    ":app:testDebugUnitTest",
+    ":app:assembleDebug",
+    ":app:assembleDebugAndroidTest"
+  ],
+  "gradleExitCode": 0,
+  "totals": {
+    "tests": 105,
+    "passed": 105,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "suites": [
+    {
+      "suite": "com.vocamind.app.data.catalog.CatalogAssetTest",
+      "tests": 22,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 22,
+      "xml": "app/build/test-results/testDebugUnitTest/TEST-com.vocamind.app.data.catalog.CatalogAssetTest.xml",
+      "sha256": "34671147fc653342dadd6168b80e5cdacb7f61e5bee70c8d88eaf1926f1f9e29"
+    },
+    {
+      "suite": "com.vocamind.app.data.DaoFoundationTest",
+      "tests": 32,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 32,
+      "xml": "app/build/test-results/testDebugUnitTest/TEST-com.vocamind.app.data.DaoFoundationTest.xml",
+      "sha256": "bbf0825217580dc32e9f5cb8617f4213e3e82948ee2607e8f1c8c52eea05e883"
+    },
+    {
+      "suite": "com.vocamind.app.data.DataBoundaryTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 1,
+      "xml": "app/build/test-results/testDebugUnitTest/TEST-com.vocamind.app.data.DataBoundaryTest.xml",
+      "sha256": "7a6bb850dfa255e0c8fd0e62d61fd6247226cdd925855f71c9a3217965492ad4"
+    },
+    {
+      "suite": "com.vocamind.app.data.user.UserDatabaseTest",
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 16,
+      "xml": "app/build/test-results/testDebugUnitTest/TEST-com.vocamind.app.data.user.UserDatabaseTest.xml",
+      "sha256": "2874986275f436cd1a4493a66f5aec1db4d5318504fdcbe5bd045995b6afc166"
+    },
+    {
+      "suite": "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 8,
+      "xml": "app/build/test-results/testDebugUnitTest/TEST-com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest.xml",
+      "sha256": "39d23d4f7827d6dc434016c428cd1d1eb32581d85fb7c0695a9b31fb92461323"
+    },
+    {
+      "suite": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 10,
+      "xml": "app/build/test-results/testDebugUnitTest/TEST-com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest.xml",
+      "sha256": "10138bc6db7962e67fc3d9e533d0994605dfc08d6421a5fc0781cd81e054dc6a"
+    },
+    {
+      "suite": "com.vocamind.app.domain.learning.LeitnerSchedulerTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 6,
+      "xml": "app/build/test-results/testDebugUnitTest/TEST-com.vocamind.app.domain.learning.LeitnerSchedulerTest.xml",
+      "sha256": "b2a24ad304b81d10a8aad2118678e0f15de4f1b1a025874f46190a9e24629b12"
+    },
+    {
+      "suite": "com.vocamind.app.domain.quiz.QuizDomainTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 10,
+      "xml": "app/build/test-results/testDebugUnitTest/TEST-com.vocamind.app.domain.quiz.QuizDomainTest.xml",
+      "sha256": "18df70660832e99f564a6ed119188c72fb50b9f55d26fa6c8eb3fdf42c0e768c"
+    }
+  ],
+  "pythonVocabularyTests": {
+    "tests": 46,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "sourceInventoryCheck": "passed; does not authorize import or release",
+  "schemaAndAssetDiffFromBase": [],
+  "connectedDeviceTests": "not run; adb devices was empty",
+  "artifacts": [
+    {
+      "path": "app/build/outputs/apk/debug/app-debug.apk",
+      "bytes": 7412195,
+      "sha256": "25af82c7c18da27ceb5228a831eb138bb0f58b3604ceb9656448065781380234"
+    },
+    {
+      "path": "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+      "bytes": 365445,
+      "sha256": "2aefc095eafcfdccbdd9d02c765f0ed15aed543caab01bf8b9796893246adf99"
+    }
+  ],
+  "testedInputs": {
+    "gitLsFilesPathspecs": [
+      "app",
+      ".github",
+      "tools",
+      "gradle",
+      "build.gradle",
+      "settings.gradle",
+      "gradle.properties",
+      "gradlew",
+      "gradlew.bat",
+      ".gitattributes",
+      "docs/data"
+    ],
+    "fileCount": 124,
+    "sha256": "5b2702be06ba69470af9b6df9eaa81dea2e974e9e9d99e16e9a154ff118c9b79",
+    "algorithm": "SHA-256 of sorted UTF-8 lines: relative path + NUL + lowercase SHA-256(file bytes) + LF; working-tree bytes, no path excluded within the listed tracked pathspecs"
+  },
+  "remoteCiForThisLocalChange": "not run; not pushed",
+  "reviewerAcceptance": "pending Dao review"
+}

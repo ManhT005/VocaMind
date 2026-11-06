@@ -1,0 +1,36 @@
+{
+  "implementationCommit": "d52544b717b5e0b922e5d257c5cf03fc948ab3ab",
+  "baseCommit": "c2ea69ec7d1589653660eab9164e70285faff666",
+  "environment": {
+    "system": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "python": "3.14.4",
+    "jsonschema": "4.19.2"
+  },
+  "identicalRuns": [
+    "build/vocabulary-ingestion/review-a",
+    "build/vocabulary-ingestion/review-b"
+  ],
+  "outputSha256": {
+    "canonical-catalog.json": "2628626d9cd4410a3241b2a27bf0cfa00720675b9f0d2d07c18bb6e0c3f7cfbe",
+    "manifest.json": "0c45b086163bd22a074560531cb34b601ebdf2fa4a8ec2b730743026e86f00cd",
+    "normalization.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "reject-report.json": "4f44a5f77f943804cf0536c35a4fdee46905dba6036f108fe0ab00bb58ea9930"
+  },
+  "blockedRealSources": [
+    "ngsl",
+    "tsl",
+    "kaikki-viwiktionary",
+    "tatoeba-text",
+    "fvdp",
+    "tatoeba-audio",
+    "commons-audio"
+  ],
+  "gradleJUnitCounts": {
+    "tests": 125,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "remoteCI": "not run yet",
+  "AC-12": "pending; synthetic fixture only"
+}

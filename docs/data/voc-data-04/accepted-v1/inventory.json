@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "purpose": "research-inventory",
+  "registrySha256": "25192a1f597b094c09703ab50834d314daffecac2d1d1757ce327cb882df3680",
+  "sources": {
+    "vocamind-ai-editorial": [
+      {
+        "role": "data",
+        "path": "docs/data/voc-data-04/accepted-v1/staging.jsonl",
+        "url": "https://github.com/ManhT005/VocaMind/blob/feature/voc-data-04-quality-gates/docs/data/voc-data-04/accepted-v1/staging.jsonl",
+        "bytes": 107993,
+        "sha256": "b588844e1f1228acaeed139efe08a5d9d53dcb5a9da8e4f056a23bea3ed959c9"
+      },
+      {
+        "role": "attribution",
+        "path": "docs/data/voc-data-04/accepted-v1/attribution.txt",
+        "url": "https://github.com/ManhT005/VocaMind/blob/feature/voc-data-04-quality-gates/docs/data/voc-data-04/accepted-v1/attribution.txt",
+        "bytes": 277,
+        "sha256": "cdd461d191938f1865c5112c32bf5bf91a4e2fecacc524792dc5f8cac125801f"
+      },
+      {
+        "role": "approval",
+        "path": "docs/data/voc-data-04/accepted-v1/acceptance.json",
+        "url": "https://github.com/ManhT005/VocaMind/blob/feature/voc-data-04-quality-gates/docs/data/voc-data-04/accepted-v1/acceptance.json",
+        "bytes": 1686,
+        "sha256": "242069fe359d6b95c67916d5f5de734fd6f3bf2fb87844fac1fb423ae0b23ada"
+      }
+    ]
+  },
+  "errors": []
+}

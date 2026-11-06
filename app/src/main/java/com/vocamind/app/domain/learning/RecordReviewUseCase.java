@@ -28,11 +28,7 @@ public final class RecordReviewUseCase {
         long now = clock.millis();
         LeitnerState state = previous.map(ReviewProgress::schedulingState).orElseGet(LeitnerState::newWord);
         ScheduleResult result = scheduler.schedule(state, rating, now, zone);
-        ReviewProgress old = previous.orElse(null);
-        int count = old == null ? 1 : Math.addExact(old.reviewCount, 1);
-        ReviewProgress updated = new ReviewProgress(vocabularyId, result.getBoxAfter(),
-                result.getDueAtEpochMillis(), old == null || old.learnedAt == null ? now : old.learnedAt,
-                now, result.getConsecutiveMistakes(), result.isLeech(), count, old != null && old.isSaved);
+        ReviewProgress updated = ReviewProgress.afterReview(vocabularyId, previous, result, now);
         repository.recordReview(previous, updated, rating, now);
         return result;
     }

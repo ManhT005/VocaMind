@@ -1,0 +1,2402 @@
+[
+  {
+    "locator": "customer/noun/1",
+    "stableId": null,
+    "proposedStableId": "ee46fdf826f53ce2",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=2",
+    "selection": {
+      "ngslRank": 487,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "price/noun/1",
+    "stableId": null,
+    "proposedStableId": "edcc67afb8658f36",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=3",
+    "selection": {
+      "ngslRank": 296,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "product/noun/1",
+    "stableId": null,
+    "proposedStableId": "1f431cc21a98d12f",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=4",
+    "selection": {
+      "ngslRank": 304,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "order/noun/1",
+    "stableId": null,
+    "proposedStableId": "a22879209e8e0506",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=5",
+    "selection": {
+      "ngslRank": 215,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "payment/noun/1",
+    "stableId": null,
+    "proposedStableId": "2219291add402728",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=6",
+    "selection": {
+      "ngslRank": 1268,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "receipt/noun/1",
+    "stableId": null,
+    "proposedStableId": "3dbaed5c338b2b1c",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=7",
+    "selection": {
+      "ngslRank": null,
+      "method": "editorial headword selection"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "ticket/noun/1",
+    "stableId": null,
+    "proposedStableId": "84d7ff576a0352d7",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=8",
+    "selection": {
+      "ngslRank": 1249,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "hotel/noun/1",
+    "stableId": null,
+    "proposedStableId": "be14412e62bb09fa",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=9",
+    "selection": {
+      "ngslRank": 759,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "room/noun/1",
+    "stableId": null,
+    "proposedStableId": "7fe46ad7d9da1204",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=10",
+    "selection": {
+      "ngslRank": 254,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "travel/verb/1",
+    "stableId": null,
+    "proposedStableId": "9e84e8ebe9e2a529",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=11",
+    "selection": {
+      "ngslRank": 503,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "train/noun/1",
+    "stableId": null,
+    "proposedStableId": "c50193865412fbdd",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=12",
+    "selection": {
+      "ngslRank": 289,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "bus/noun/1",
+    "stableId": null,
+    "proposedStableId": "cdb9f58f4061c249",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=13",
+    "selection": {
+      "ngslRank": 810,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "station/noun/1",
+    "stableId": null,
+    "proposedStableId": "e89a6829b7badb63",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=14",
+    "selection": {
+      "ngslRank": 709,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "airport/noun/1",
+    "stableId": null,
+    "proposedStableId": "923d45253cc2c67c",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=15",
+    "selection": {
+      "ngslRank": null,
+      "method": "editorial headword selection"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "flight/noun/1",
+    "stableId": null,
+    "proposedStableId": "1fdd05db52c836d6",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=16",
+    "selection": {
+      "ngslRank": 1219,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "passport/noun/1",
+    "stableId": null,
+    "proposedStableId": "28df1baa0ff1f8ad",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=17",
+    "selection": {
+      "ngslRank": null,
+      "method": "editorial headword selection"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "luggage/noun/1",
+    "stableId": null,
+    "proposedStableId": "010b4ac271bcee7c",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=18",
+    "selection": {
+      "ngslRank": null,
+      "method": "editorial headword selection"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "reservation/noun/1",
+    "stableId": null,
+    "proposedStableId": "363c503bebd37391",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=19",
+    "selection": {
+      "ngslRank": null,
+      "method": "editorial headword selection"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "arrival/noun/1",
+    "stableId": null,
+    "proposedStableId": "8a29babd28b7431b",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=20",
+    "selection": {
+      "ngslRank": 2058,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "departure/noun/1",
+    "stableId": null,
+    "proposedStableId": "1816f4bcf0432990",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=21",
+    "selection": {
+      "ngslRank": null,
+      "method": "editorial headword selection"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "breakfast/noun/1",
+    "stableId": null,
+    "proposedStableId": "c16e2c85165e9642",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=22",
+    "selection": {
+      "ngslRank": 1819,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "lunch/noun/1",
+    "stableId": null,
+    "proposedStableId": "e812fbe52f19fdad",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=23",
+    "selection": {
+      "ngslRank": 1334,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "dinner/noun/1",
+    "stableId": null,
+    "proposedStableId": "5911ac176d3f214c",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=24",
+    "selection": {
+      "ngslRank": 1117,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "menu/noun/1",
+    "stableId": null,
+    "proposedStableId": "4c4abdecc46493b5",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=25",
+    "selection": {
+      "ngslRank": 2597,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "restaurant/noun/1",
+    "stableId": null,
+    "proposedStableId": "643eefd4035066d7",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=26",
+    "selection": {
+      "ngslRank": 919,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "table/noun/1",
+    "stableId": null,
+    "proposedStableId": "9e5de132fc3085f9",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=27",
+    "selection": {
+      "ngslRank": 450,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "water/noun/1",
+    "stableId": null,
+    "proposedStableId": "8427eccd5d4c4df4",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=28",
+    "selection": {
+      "ngslRank": 322,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "coffee/noun/1",
+    "stableId": null,
+    "proposedStableId": "7e09d3489f1b4832",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=29",
+    "selection": {
+      "ngslRank": 1395,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "tea/noun/1",
+    "stableId": null,
+    "proposedStableId": "966322961d7b2a54",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=30",
+    "selection": {
+      "ngslRank": 1599,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "bread/noun/1",
+    "stableId": null,
+    "proposedStableId": "b7bcc9dcf3586381",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=31",
+    "selection": {
+      "ngslRank": 2262,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "fruit/noun/1",
+    "stableId": null,
+    "proposedStableId": "6dddf2d3e33455f9",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=32",
+    "selection": {
+      "ngslRank": 1640,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "milk/noun/1",
+    "stableId": null,
+    "proposedStableId": "f14c1376c41412d6",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=33",
+    "selection": {
+      "ngslRank": 1789,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "sugar/noun/1",
+    "stableId": null,
+    "proposedStableId": "2a509f121003cd06",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=34",
+    "selection": {
+      "ngslRank": 2234,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "cash/noun/1",
+    "stableId": null,
+    "proposedStableId": "d7aed07271411f20",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=35",
+    "selection": {
+      "ngslRank": 1339,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "card/noun/1",
+    "stableId": null,
+    "proposedStableId": "df679670d76cbece",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=36",
+    "selection": {
+      "ngslRank": 781,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "shop/noun/1",
+    "stableId": null,
+    "proposedStableId": "e2497882de1443c6",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=37",
+    "selection": {
+      "ngslRank": 437,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "buy/verb/1",
+    "stableId": null,
+    "proposedStableId": "6330e75b7661e248",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=38",
+    "selection": {
+      "ngslRank": 242,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "sell/verb/1",
+    "stableId": null,
+    "proposedStableId": "743fc4aebc74dc29",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=39",
+    "selection": {
+      "ngslRank": 418,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "cheap/adjective/1",
+    "stableId": null,
+    "proposedStableId": "961ef9a79a039621",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=40",
+    "selection": {
+      "ngslRank": 1095,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "expensive/adjective/1",
+    "stableId": null,
+    "proposedStableId": "6c1fea0390defc05",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_basic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=41",
+    "selection": {
+      "ngslRank": 1061,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "office/noun/1",
+    "stableId": null,
+    "proposedStableId": "749505edb46ed2e9",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=42",
+    "selection": {
+      "ngslRank": 343,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "company/noun/1",
+    "stableId": null,
+    "proposedStableId": "633188448bb2750d",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=43",
+    "selection": {
+      "ngslRank": 107,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "employee/noun/1",
+    "stableId": null,
+    "proposedStableId": "4a756afdff0f53ac",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=44",
+    "selection": {
+      "ngslRank": 624,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "manager/noun/1",
+    "stableId": null,
+    "proposedStableId": "a5568d2ba7bee3e4",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=45",
+    "selection": {
+      "ngslRank": 661,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "colleague/noun/1",
+    "stableId": null,
+    "proposedStableId": "ecf6c310590530e8",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=46",
+    "selection": {
+      "ngslRank": 1251,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "meeting/noun/1",
+    "stableId": null,
+    "proposedStableId": "0a498cc4cc82ed55",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=47",
+    "selection": {
+      "ngslRank": null,
+      "method": "editorial headword selection"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "report/noun/1",
+    "stableId": null,
+    "proposedStableId": "de8fb7c19de25ba6",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=48",
+    "selection": {
+      "ngslRank": 166,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "email/noun/1",
+    "stableId": null,
+    "proposedStableId": "55d9e63344378006",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=49",
+    "selection": {
+      "ngslRank": 1169,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "message/noun/1",
+    "stableId": null,
+    "proposedStableId": "d1c881300fa31491",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=50",
+    "selection": {
+      "ngslRank": 863,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "phone/noun/1",
+    "stableId": null,
+    "proposedStableId": "18c8c1664b1f0e78",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=51",
+    "selection": {
+      "ngslRank": 479,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "computer/noun/1",
+    "stableId": null,
+    "proposedStableId": "2fde3352568ed7fe",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=52",
+    "selection": {
+      "ngslRank": 429,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "printer/noun/1",
+    "stableId": null,
+    "proposedStableId": "7d18d115c89193ca",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=53",
+    "selection": {
+      "ngslRank": 2664,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "document/noun/1",
+    "stableId": null,
+    "proposedStableId": "8d57e94d31e48520",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=54",
+    "selection": {
+      "ngslRank": 882,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "file/noun/1",
+    "stableId": null,
+    "proposedStableId": "b8eeeb568b74a80b",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=55",
+    "selection": {
+      "ngslRank": 835,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "contract/noun/1",
+    "stableId": null,
+    "proposedStableId": "36fd889573de8c99",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=56",
+    "selection": {
+      "ngslRank": 714,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "invoice/noun/1",
+    "stableId": null,
+    "proposedStableId": "98b58efbaa0a7f1f",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=57",
+    "selection": {
+      "ngslRank": null,
+      "method": "editorial headword selection"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "budget/noun/1",
+    "stableId": null,
+    "proposedStableId": "68cf70d8331dfeb3",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=58",
+    "selection": {
+      "ngslRank": 1016,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "salary/noun/1",
+    "stableId": null,
+    "proposedStableId": "75bc1957c2522c98",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=59",
+    "selection": {
+      "ngslRank": 1816,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "interview/noun/1",
+    "stableId": null,
+    "proposedStableId": "53184184e303b46b",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=60",
+    "selection": {
+      "ngslRank": 784,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "training/noun/1",
+    "stableId": null,
+    "proposedStableId": "09ccd86563216372",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=61",
+    "selection": {
+      "ngslRank": null,
+      "method": "editorial headword selection"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "schedule/noun/1",
+    "stableId": null,
+    "proposedStableId": "12ad019497d6252b",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=62",
+    "selection": {
+      "ngslRank": 1240,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "deadline/noun/1",
+    "stableId": null,
+    "proposedStableId": "b6386bc208da0874",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=63",
+    "selection": {
+      "ngslRank": null,
+      "method": "editorial headword selection"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "project/noun/1",
+    "stableId": null,
+    "proposedStableId": "ccb4c475e4c5374f",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=64",
+    "selection": {
+      "ngslRank": 518,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "task/noun/1",
+    "stableId": null,
+    "proposedStableId": "b7834c1148baa64a",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=65",
+    "selection": {
+      "ngslRank": 854,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "team/noun/1",
+    "stableId": null,
+    "proposedStableId": "d93c6ed2429a25b6",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=66",
+    "selection": {
+      "ngslRank": 407,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "department/noun/1",
+    "stableId": null,
+    "proposedStableId": "fc63a682aa35b611",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=67",
+    "selection": {
+      "ngslRank": 736,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "business/noun/1",
+    "stableId": null,
+    "proposedStableId": "e879f569a68bd61c",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=68",
+    "selection": {
+      "ngslRank": 211,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "service/noun/1",
+    "stableId": null,
+    "proposedStableId": "cc93c43a835e8bd3",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=69",
+    "selection": {
+      "ngslRank": 223,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "supplier/noun/1",
+    "stableId": null,
+    "proposedStableId": "9e4319249efff080",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=70",
+    "selection": {
+      "ngslRank": 2004,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "client/noun/1",
+    "stableId": null,
+    "proposedStableId": "a0adea31b35a7f42",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=71",
+    "selection": {
+      "ngslRank": null,
+      "method": "editorial headword selection"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "delivery/noun/1",
+    "stableId": null,
+    "proposedStableId": "8c46632cf2e617d2",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=72",
+    "selection": {
+      "ngslRank": 1428,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "package/noun/1",
+    "stableId": null,
+    "proposedStableId": "0699e8c16aeb2c75",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=73",
+    "selection": {
+      "ngslRank": 1319,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "warehouse/noun/1",
+    "stableId": null,
+    "proposedStableId": "6878a6bfd1203dfe",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=74",
+    "selection": {
+      "ngslRank": null,
+      "method": "editorial headword selection"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "stock/noun/1",
+    "stableId": null,
+    "proposedStableId": "7ed4eab7db38de9e",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=75",
+    "selection": {
+      "ngslRank": 691,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "equipment/noun/1",
+    "stableId": null,
+    "proposedStableId": "8ca8a2a4ae0ed0bd",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=76",
+    "selection": {
+      "ngslRank": 1055,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "prepare/verb/1",
+    "stableId": null,
+    "proposedStableId": "65f0859e4989297a",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=77",
+    "selection": {
+      "ngslRank": 604,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "confirm/verb/1",
+    "stableId": null,
+    "proposedStableId": "daba18657d6679e8",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=78",
+    "selection": {
+      "ngslRank": 1206,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "sign/verb/1",
+    "stableId": null,
+    "proposedStableId": "814c072810abf7a2",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=79",
+    "selection": {
+      "ngslRank": 500,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "attend/verb/1",
+    "stableId": null,
+    "proposedStableId": "9eee80ccf844e456",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=80",
+    "selection": {
+      "ngslRank": 820,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "discuss/verb/1",
+    "stableId": null,
+    "proposedStableId": "9d68ebb49ea25a87",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_toeic_office",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=81",
+    "selection": {
+      "ngslRank": 605,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "family/noun/1",
+    "stableId": null,
+    "proposedStableId": "3142d729b72035da",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=82",
+    "selection": {
+      "ngslRank": 172,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "parent/noun/1",
+    "stableId": null,
+    "proposedStableId": "2a0bd49d29501e9d",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=83",
+    "selection": {
+      "ngslRank": 297,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "mother/noun/1",
+    "stableId": null,
+    "proposedStableId": "0143ae3ced507401",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=84",
+    "selection": {
+      "ngslRank": 338,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "father/noun/1",
+    "stableId": null,
+    "proposedStableId": "094d6eb38436449c",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=85",
+    "selection": {
+      "ngslRank": 448,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "child/noun/1",
+    "stableId": null,
+    "proposedStableId": "d9502a131e68548d",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=86",
+    "selection": {
+      "ngslRank": 102,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "brother/noun/1",
+    "stableId": null,
+    "proposedStableId": "c50f97678af2c3b0",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=87",
+    "selection": {
+      "ngslRank": 821,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "sister/noun/1",
+    "stableId": null,
+    "proposedStableId": "8dfb40053188d6e2",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=88",
+    "selection": {
+      "ngslRank": 964,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "friend/noun/1",
+    "stableId": null,
+    "proposedStableId": "832bc62cf611ef76",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=89",
+    "selection": {
+      "ngslRank": 208,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "neighbor/noun/1",
+    "stableId": null,
+    "proposedStableId": "04f6267e6210a62b",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=90",
+    "selection": {
+      "ngslRank": 1222,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "home/noun/1",
+    "stableId": null,
+    "proposedStableId": "966dc6001179f77a",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=91",
+    "selection": {
+      "ngslRank": 161,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "house/noun/1",
+    "stableId": null,
+    "proposedStableId": "84b99b98d945db07",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=92",
+    "selection": {
+      "ngslRank": 165,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "kitchen/noun/1",
+    "stableId": null,
+    "proposedStableId": "becb25b23f9ee952",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=93",
+    "selection": {
+      "ngslRank": 1307,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "bedroom/noun/1",
+    "stableId": null,
+    "proposedStableId": "b0d465f82f26660c",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=94",
+    "selection": {
+      "ngslRank": 1432,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "bathroom/noun/1",
+    "stableId": null,
+    "proposedStableId": "c3f4a0f8569f129e",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=95",
+    "selection": {
+      "ngslRank": null,
+      "method": "editorial headword selection"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "garden/noun/1",
+    "stableId": null,
+    "proposedStableId": "feb842c0ca22355c",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=96",
+    "selection": {
+      "ngslRank": 972,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "door/noun/1",
+    "stableId": null,
+    "proposedStableId": "6efc89d4b3a8f007",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=97",
+    "selection": {
+      "ngslRank": 490,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "window/noun/1",
+    "stableId": null,
+    "proposedStableId": "c61d1941e83e9805",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=98",
+    "selection": {
+      "ngslRank": 734,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "chair/noun/1",
+    "stableId": null,
+    "proposedStableId": "76fafba7114e9592",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=99",
+    "selection": {
+      "ngslRank": 1060,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "bed/noun/1",
+    "stableId": null,
+    "proposedStableId": "df89f71e93a58312",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=100",
+    "selection": {
+      "ngslRank": 694,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "clothes/noun/1",
+    "stableId": null,
+    "proposedStableId": "e60be53a143266a0",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=101",
+    "selection": {
+      "ngslRank": 956,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "shoe/noun/1",
+    "stableId": null,
+    "proposedStableId": "9e6450caee747c20",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=102",
+    "selection": {
+      "ngslRank": 1476,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "wash/verb/1",
+    "stableId": null,
+    "proposedStableId": "98475b4ca08e0ad8",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=103",
+    "selection": {
+      "ngslRank": 1368,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "cook/verb/1",
+    "stableId": null,
+    "proposedStableId": "3586522dac0ead10",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=104",
+    "selection": {
+      "ngslRank": 1196,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "clean/verb/1",
+    "stableId": null,
+    "proposedStableId": "4e6431a4739ab29e",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=105",
+    "selection": {
+      "ngslRank": 842,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "eat/verb/1",
+    "stableId": null,
+    "proposedStableId": "08e316e478a1cb48",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=106",
+    "selection": {
+      "ngslRank": 476,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "drink/verb/1",
+    "stableId": null,
+    "proposedStableId": "2a341b4ec105c143",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=107",
+    "selection": {
+      "ngslRank": 655,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "sleep/verb/1",
+    "stableId": null,
+    "proposedStableId": "f99fcd7b01315093",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=108",
+    "selection": {
+      "ngslRank": 827,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "wake/verb/1",
+    "stableId": null,
+    "proposedStableId": "9533b3a23d1c4fe0",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=109",
+    "selection": {
+      "ngslRank": 1508,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "walk/verb/1",
+    "stableId": null,
+    "proposedStableId": "7a24bdf094914ffb",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=110",
+    "selection": {
+      "ngslRank": 339,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "read/verb/1",
+    "stableId": null,
+    "proposedStableId": "e519d3c5c741a451",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=111",
+    "selection": {
+      "ngslRank": 207,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "write/verb/1",
+    "stableId": null,
+    "proposedStableId": "d4cefbbdfda250ce",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=112",
+    "selection": {
+      "ngslRank": 121,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "listen/verb/1",
+    "stableId": null,
+    "proposedStableId": "680f5d8d8ea18784",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=113",
+    "selection": {
+      "ngslRank": 573,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "speak/verb/1",
+    "stableId": null,
+    "proposedStableId": "21be5e8881d7cab1",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=114",
+    "selection": {
+      "ngslRank": 284,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "help/verb/1",
+    "stableId": null,
+    "proposedStableId": "d67b0acba33b2c64",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=115",
+    "selection": {
+      "ngslRank": 133,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "visit/verb/1",
+    "stableId": null,
+    "proposedStableId": "f44bdd7635550987",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=116",
+    "selection": {
+      "ngslRank": 333,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "happy/adjective/1",
+    "stableId": null,
+    "proposedStableId": "9b2457a96a18cc6a",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=117",
+    "selection": {
+      "ngslRank": 513,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "tired/adjective/1",
+    "stableId": null,
+    "proposedStableId": "f672afbf13be68df",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=118",
+    "selection": {
+      "ngslRank": null,
+      "method": "editorial headword selection"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "hungry/adjective/1",
+    "stableId": null,
+    "proposedStableId": "2a1a65c13e33bc68",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=119",
+    "selection": {
+      "ngslRank": null,
+      "method": "editorial headword selection"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "healthy/adjective/1",
+    "stableId": null,
+    "proposedStableId": "c3c40e610a088175",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=120",
+    "selection": {
+      "ngslRank": 1362,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "careful/adjective/1",
+    "stableId": null,
+    "proposedStableId": "0207c263f8c49060",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_daily_life",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=121",
+    "selection": {
+      "ngslRank": 1637,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "research/noun/1",
+    "stableId": null,
+    "proposedStableId": "524b9dddc2876a46",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=122",
+    "selection": {
+      "ngslRank": 423,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "study/noun/1",
+    "stableId": null,
+    "proposedStableId": "c09530564094b0ac",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=123",
+    "selection": {
+      "ngslRank": 187,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "theory/noun/1",
+    "stableId": null,
+    "proposedStableId": "634bc7b326fdfddd",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=124",
+    "selection": {
+      "ngslRank": 876,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "method/noun/1",
+    "stableId": null,
+    "proposedStableId": "74fb0128cec1c90a",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=125",
+    "selection": {
+      "ngslRank": 755,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "result/noun/1",
+    "stableId": null,
+    "proposedStableId": "732c533f208ab60d",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=126",
+    "selection": {
+      "ngslRank": 233,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "evidence/noun/1",
+    "stableId": null,
+    "proposedStableId": "d121b12bf674524c",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=127",
+    "selection": {
+      "ngslRank": 592,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "analysis/noun/1",
+    "stableId": null,
+    "proposedStableId": "8a76a2f0dc14014f",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=128",
+    "selection": {
+      "ngslRank": 756,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "data/noun/1",
+    "stableId": null,
+    "proposedStableId": "3d5117748d4c5141",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=129",
+    "selection": {
+      "ngslRank": 556,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "science/noun/1",
+    "stableId": null,
+    "proposedStableId": "a744e451d1bdad3d",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=130",
+    "selection": {
+      "ngslRank": 905,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "education/noun/1",
+    "stableId": null,
+    "proposedStableId": "d42cd44739b0e370",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=131",
+    "selection": {
+      "ngslRank": 531,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "knowledge/noun/1",
+    "stableId": null,
+    "proposedStableId": "ea0e961551c98538",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=132",
+    "selection": {
+      "ngslRank": 619,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "skill/noun/1",
+    "stableId": null,
+    "proposedStableId": "97b60271c7847cec",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=133",
+    "selection": {
+      "ngslRank": 685,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "concept/noun/1",
+    "stableId": null,
+    "proposedStableId": "339a41a30122525c",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=134",
+    "selection": {
+      "ngslRank": 1213,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "principle/noun/1",
+    "stableId": null,
+    "proposedStableId": "926cb2c7b70e55dd",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=135",
+    "selection": {
+      "ngslRank": 1071,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "process/noun/1",
+    "stableId": null,
+    "proposedStableId": "d70a8da417e1518c",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=136",
+    "selection": {
+      "ngslRank": 286,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "structure/noun/1",
+    "stableId": null,
+    "proposedStableId": "be5192ae23f51730",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=137",
+    "selection": {
+      "ngslRank": 667,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "function/noun/1",
+    "stableId": null,
+    "proposedStableId": "4dbafd4ecdb3dacc",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=138",
+    "selection": {
+      "ngslRank": 702,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "system/noun/1",
+    "stableId": null,
+    "proposedStableId": "ecfb366e8e09fd2c",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=139",
+    "selection": {
+      "ngslRank": 179,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "factor/noun/1",
+    "stableId": null,
+    "proposedStableId": "9e50e0d149f9b83c",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=140",
+    "selection": {
+      "ngslRank": 636,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "effect/noun/1",
+    "stableId": null,
+    "proposedStableId": "4fae627dc5b73414",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=141",
+    "selection": {
+      "ngslRank": 315,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "cause/noun/1",
+    "stableId": null,
+    "proposedStableId": "66248220016a4c4f",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=142",
+    "selection": {
+      "ngslRank": 319,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "change/noun/1",
+    "stableId": null,
+    "proposedStableId": "bf0be5b61866f965",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=143",
+    "selection": {
+      "ngslRank": 113,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "develop/verb/1",
+    "stableId": null,
+    "proposedStableId": "35d609ed98afcb6f",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=144",
+    "selection": {
+      "ngslRank": 350,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "compare/verb/1",
+    "stableId": null,
+    "proposedStableId": "9e61c13dbd55c590",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=145",
+    "selection": {
+      "ngslRank": 614,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "explain/verb/1",
+    "stableId": null,
+    "proposedStableId": "8d87e61afc56f490",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=146",
+    "selection": {
+      "ngslRank": 489,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "describe/verb/1",
+    "stableId": null,
+    "proposedStableId": "1ea16d6488d32531",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=147",
+    "selection": {
+      "ngslRank": 457,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "define/verb/1",
+    "stableId": null,
+    "proposedStableId": "154ad3c75bd7a6f6",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=148",
+    "selection": {
+      "ngslRank": 930,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "evaluate/verb/1",
+    "stableId": null,
+    "proposedStableId": "f4a89b4c349dda7f",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=149",
+    "selection": {
+      "ngslRank": 2139,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "support/verb/1",
+    "stableId": null,
+    "proposedStableId": "57e8f34166e86602",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=150",
+    "selection": {
+      "ngslRank": 272,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  },
+  {
+    "locator": "improve/verb/1",
+    "stableId": null,
+    "proposedStableId": "13b658cda964e2fc",
+    "proposedSenseIndex": 1,
+    "status": "pending",
+    "packId": "pack_academic",
+    "inputRef": "docs/data/voc-data-04/editorial-v1.tsv#line=151",
+    "selection": {
+      "ngslRank": 508,
+      "method": "NGSL lexical match"
+    },
+    "authorship": "AI-assisted editorial draft; no human author or reviewer asserted",
+    "licenseApproval": "pending",
+    "semanticReview": "pending"
+  }
+]

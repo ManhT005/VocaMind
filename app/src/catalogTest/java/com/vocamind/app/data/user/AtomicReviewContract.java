@@ -4,6 +4,9 @@ import android.content.Context;
 import androidx.test.core.app.ApplicationProvider;
 import com.vocamind.app.core.ReviewProvider;
 import com.vocamind.app.data.user.entity.*;
+import com.vocamind.app.data.catalog.CatalogDatabase;
+import com.vocamind.app.data.repository.RoomReviewRepository;
+import com.vocamind.app.domain.common.*;
 import com.vocamind.app.domain.learning.*;
 import org.junit.*;
 import java.time.*;
@@ -13,22 +16,27 @@ import static org.junit.Assert.*;
 
 /** File-backed SQLite integration; fault injection uses DB triggers, not production hooks. */
 public abstract class AtomicReviewContract {
-    private static final String ID = "0123456789abcdef";
+    private static final String ID = "5aecfbf5b9a23aee";
     private static final ZoneId ZONE = ZoneId.of("Asia/Bangkok");
     private static final Clock CLOCK = Clock.fixed(Instant.parse("2026-11-03T09:30:00Z"), ZONE);
     private Context context;
     private UserDatabase db;
+    private CatalogDatabase catalog;
     private ExecutorService worker;
     private String name;
     @Before public void open() throws Exception {
         context = ApplicationProvider.getApplicationContext();
         name = "data06-" + UUID.randomUUID() + ".db";
         worker = Executors.newSingleThreadExecutor();
-        run(() -> { db = UserDatabase.open(context, name); return null; });
+        run(() -> {
+            catalog = CatalogDatabase.open(context, name + "-catalog");
+            catalog.getOpenHelper().getReadableDatabase();
+            db = UserDatabase.open(context, name); return null;
+        });
     }
     @After public void close() throws Exception {
-        try { if (db != null) run(() -> { db.close(); return null; }); }
-        finally { if (worker != null) worker.shutdownNow(); context.deleteDatabase(name); }
+        try { if (db != null) run(() -> { db.close(); catalog.close(); return null; }); }
+        finally { if (worker != null) worker.shutdownNow(); context.deleteDatabase(name); context.deleteDatabase(name + "-catalog"); }
     }
     private <T> T run(Callable<T> call) throws Exception {
         try { return worker.submit(call).get(60, TimeUnit.SECONDS); }
@@ -43,7 +51,7 @@ public abstract class AtomicReviewContract {
         p.consecutiveMistakes = 3; p.isLeech = false; p.reviewCount = 7; p.isSaved = true;
         db.userDao().saveProgress(p); return p;
     }
-    private RecordReviewUseCase useCase() { return ReviewProvider.create(db, CLOCK, ZONE); }
+    private RecordReviewUseCase useCase() { return ReviewProvider.create(new RoomReviewRepository(catalog.catalogDao(), db), CLOCK, ZONE); }
     private void fault(String name, String operation, String table) {
         db.getOpenHelper().getWritableDatabase().execSQL("CREATE TRIGGER " + name + " BEFORE "
                 + operation + " ON " + table + " BEGIN SELECT RAISE(ABORT, 'data06-forced-failure'); END");
@@ -75,7 +83,7 @@ public abstract class AtomicReviewContract {
     @Test public void existingWordAllRatingsPersistSchedulerOutcome() throws Exception {
         run(() -> {
             for (Rating rating : Rating.values()) {
-                String id = String.format(Locale.ROOT, "%016x", rating.ordinal() + 100);
+                String id = new String[]{"90562a98e8686267", "d17314a48504e2ac", ID}[rating.ordinal()];
                 seed(id); ScheduleResult result = useCase().execute(id, rating);
                 UserWordProgress p = db.userDao().progress(id);
                 assertEquals(result.getBoxAfter(), p.box); assertEquals(result.getDueAtEpochMillis(), p.dueAt);
@@ -122,7 +130,7 @@ public abstract class AtomicReviewContract {
     }
     @Test public void savedFlagChangedAfterReadCausesConflictNotOverwrite() throws Exception {
         run(() -> {
-            seed(ID); ReviewRepository repository = new RoomReviewRepository(db.userDao());
+            seed(ID); ReviewRepository repository = new RoomReviewRepository(catalog.catalogDao(), db);
             Optional<ReviewProgress> stale = repository.getProgress(ID);
             db.userDao().setSaved(ID, false); String before = snapshot();
             ReviewProgress next = new ReviewProgress(ID, 4, 999, 111L, CLOCK.millis(), 0, false, 8, true);
@@ -134,7 +142,7 @@ public abstract class AtomicReviewContract {
     }
     @Test public void staleEmptySnapshotCannotOverwriteFirstReview() throws Exception {
         run(() -> {
-            ReviewRepository first = new RoomReviewRepository(db.userDao());
+            ReviewRepository first = new RoomReviewRepository(catalog.catalogDao(), db);
             Optional<ReviewProgress> empty = first.getProgress(ID);
             useCase().execute(ID, Rating.HARD); String committed = snapshot();
             ReviewProgress next = new ReviewProgress(ID, 1, 999, CLOCK.millis(), CLOCK.millis(), 0, false, 1, false);
@@ -145,29 +153,50 @@ public abstract class AtomicReviewContract {
         });
     }
     @Test public void twoDatabaseInstancesCannotCommitSameSnapshotTwice() throws Exception {
+        race(true, false);
+    }
+    @Test public void legacyAndUseCaseCannotCommitSameSnapshotTwice() throws Exception {
+        race(true, true);
+    }
+    @Test public void legacyAndUseCaseCannotBothInsertFirstReview() throws Exception {
+        race(false, true);
+    }
+    private void race(boolean existing, boolean legacySecond) throws Exception {
         run(() -> {
             UserDatabase other = UserDatabase.open(context, name);
-            seed(ID);
+            if (existing) seed(ID);
             ExecutorService parallel = Executors.newFixedThreadPool(2);
             try {
                 CyclicBarrier barrier = new CyclicBarrier(2);
                 List<Callable<ReviewWriteException.Reason>> tasks = new ArrayList<>();
                 for (UserDatabase database : Arrays.asList(db, other)) {
-                    ReviewRepository real = new RoomReviewRepository(database.userDao());
+                    ReviewRepository real = new RoomReviewRepository(catalog.catalogDao(), database);
                     ReviewRepository coordinated = new ReviewRepository() {
                         public Optional<ReviewProgress> getProgress(String id) {
-                            Optional<ReviewProgress> snapshot = real.getProgress(id);
+                            Optional<ReviewProgress> value = real.getProgress(id);
                             try { barrier.await(15, TimeUnit.SECONDS); }
                             catch (Exception e) { throw new RuntimeException(e); }
-                            return snapshot;
+                            return value;
                         }
                         public void recordReview(Optional<ReviewProgress> expected, ReviewProgress next, Rating rating, long now) {
                             real.recordReview(expected, next, rating, now);
                         }
                     };
+                    boolean legacy = legacySecond && database == other;
                     tasks.add(() -> {
-                        try { new RecordReviewUseCase(coordinated, new LeitnerScheduler(), CLOCK, ZONE).execute(ID, Rating.HARD); return null; }
-                        catch (ReviewWriteException e) { return e.getReason(); }
+                        try {
+                            if (legacy) {
+                                var state = existing ? new LeitnerState(3, 3, false) : LeitnerState.newWord();
+                                var result = new LeitnerScheduler().schedule(state, Rating.HARD, CLOCK.millis(), ZONE);
+                                var committed = coordinated.recordReview(ID, result, CLOCK.millis());
+                                if (committed.isSuccess()) return null;
+                                assertEquals(RepoError.CONFLICT, committed.getError());
+                                return ReviewWriteException.Reason.CONFLICT;
+                            }
+                            new RecordReviewUseCase(coordinated, new LeitnerScheduler(), CLOCK, ZONE)
+                                    .execute(ID, Rating.HARD);
+                            return null;
+                        } catch (ReviewWriteException e) { return e.getReason(); }
                     });
                 }
                 int successes = 0, conflicts = 0;
@@ -178,16 +207,87 @@ public abstract class AtomicReviewContract {
                     else fail("Expected conflict, got " + reason);
                 }
                 assertEquals(1, successes); assertEquals(1, conflicts);
-                assertEquals(1, db.userDao().reviews().size()); assertEquals(8, db.userDao().progress(ID).reviewCount);
+                assertEquals(1, db.userDao().reviews().size());
+                assertEquals(existing ? 8 : 1, db.userDao().progress(ID).reviewCount);
+                assertEquals(1, db.userDao().allProgress().size());
             } finally { parallel.shutdownNow(); other.close(); }
             return null;
         });
     }
-    @Test public void closedDatabaseReadReportsStorageFailure() throws Exception {
+    @Test public void bothApisUseOneWriterAndLegacyHardReplayIsRejected() throws Exception {
+        run(() -> {
+            ReviewRepository repository = new RoomReviewRepository(catalog.catalogDao(), db);
+            var result = new LeitnerScheduler().schedule(LeitnerState.newWord(), Rating.HARD, CLOCK.millis(), ZONE);
+            assertTrue(repository.recordReview(ID, result, CLOCK.millis()).isSuccess());
+            ReviewProvider.create(repository, CLOCK, ZONE).execute(ID, Rating.HARD);
+            assertEquals(2, db.userDao().reviews().size());
+            assertEquals(2, db.userDao().progress(ID).reviewCount);
+            assertEquals(RepoError.CONFLICT, repository.recordReview(ID, result, CLOCK.millis()).getError());
+            assertEquals(2, db.userDao().reviews().size());
+            assertEquals(1, db.userDao().allProgress().size());
+            assertTrue(db.userDao().quizzes().isEmpty());
+            return null;
+        });
+    }
+    @Test public void unknownCatalogWordCannotCreateOrphanThroughEitherApi() throws Exception {
+        run(() -> {
+            String unknown = "ffffffffffffffff";
+            ReviewRepository repository = new RoomReviewRepository(catalog.catalogDao(), db);
+            assertEquals(ReviewWriteException.Reason.NOT_FOUND,
+                    assertThrows(ReviewWriteException.class, () -> useCase().execute(unknown, Rating.HARD)).getReason());
+            var result = new LeitnerScheduler().schedule(LeitnerState.newWord(), Rating.HARD, CLOCK.millis(), ZONE);
+            assertEquals(RepoError.NOT_FOUND, repository.recordReview(unknown, result, CLOCK.millis()).getError());
+            ReviewProgress next = ReviewProgress.afterReview(unknown, Optional.empty(), result, CLOCK.millis());
+            assertEquals(ReviewWriteException.Reason.NOT_FOUND,
+                    assertThrows(ReviewWriteException.class,
+                            () -> repository.recordReview(Optional.empty(), next, Rating.HARD, CLOCK.millis())).getReason());
+            assertTrue(db.userDao().allProgress().isEmpty()); assertTrue(db.userDao().reviews().isEmpty());
+            return null;
+        });
+    }
+    @Test public void catalogReadFailureIsTypedReadFailedWithoutWriting() throws Exception {
+        run(() -> {
+            catalog.close();
+            assertEquals(ReviewWriteException.Reason.READ_FAILED,
+                    assertThrows(ReviewWriteException.class, () -> useCase().execute(ID, Rating.HARD)).getReason());
+            var result = new LeitnerScheduler().schedule(LeitnerState.newWord(), Rating.HARD, CLOCK.millis(), ZONE);
+            var repository = new RoomReviewRepository(catalog.catalogDao(), db);
+            assertEquals(RepoError.READ_FAILED, repository.recordReview(ID, result, CLOCK.millis()).getError());
+            assertTrue(db.userDao().reviews().isEmpty()); assertTrue(db.userDao().allProgress().isEmpty());
+            return null;
+        });
+    }
+    @Test public void legacyEventFailureRollsBack() throws Exception { legacyFailure(true, "INSERT", "ReviewEvent"); }
+    @Test public void legacyNewProgressFailureRollsBackEvent() throws Exception { legacyFailure(false, "INSERT", "UserWordProgress"); }
+    @Test public void legacyProgressUpdateFailureRollsBackEvent() throws Exception { legacyFailure(true, "UPDATE", "UserWordProgress"); }
+    private void legacyFailure(boolean existing, String operation, String table) throws Exception {
+        run(() -> {
+            if (existing) seed(ID);
+            String before = snapshot(); fault("legacy_fault", operation, table);
+            var state = existing ? new LeitnerState(3, 3, false) : LeitnerState.newWord();
+            var result = new LeitnerScheduler().schedule(state, Rating.HARD, CLOCK.millis(), ZONE);
+            assertEquals(RepoError.WRITE_FAILED,
+                    new RoomReviewRepository(catalog.catalogDao(), db).recordReview(ID, result, CLOCK.millis()).getError());
+            assertEquals(before, snapshot());
+            assertEquals(existing ? 1 : 0, db.userDao().allProgress().size());
+            assertTrue(db.userDao().quizzes().isEmpty());
+            return null;
+        });
+    }
+    @Test public void malformedProgressIsTypedInvalidDataWithNoWrite() throws Exception {
+        run(() -> {
+            seed(ID); db.getOpenHelper().getWritableDatabase().execSQL("UPDATE UserWordProgress SET box=9 WHERE vocabularyId=?", new Object[]{ID});
+            String before = snapshot();
+            assertEquals(ReviewWriteException.Reason.INVALID_DATA,
+                    assertThrows(ReviewWriteException.class, () -> useCase().execute(ID, Rating.HARD)).getReason());
+            assertEquals(before, snapshot()); return null;
+        });
+    }
+    @Test public void closedDatabaseReadReportsReadFailure() throws Exception {
         run(() -> {
             RecordReviewUseCase useCase = useCase(); db.close();
             ReviewWriteException e = assertThrows(ReviewWriteException.class, () -> useCase.execute(ID, Rating.HARD));
-            assertEquals(ReviewWriteException.Reason.STORAGE, e.getReason()); return null;
+            assertEquals(ReviewWriteException.Reason.READ_FAILED, e.getReason()); return null;
         });
     }
 }

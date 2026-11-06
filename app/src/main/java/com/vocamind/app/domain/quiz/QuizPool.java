@@ -8,8 +8,16 @@ public final class QuizPool {
     private final List<QuizVocabulary> vocabulary;
     private final Map<String, String> meaningKeys;
     private final Availability availability;
+    private final MeaningNormalizer normalizer;
+    private final QuizDistractorPolicy policy;
     public QuizPool(Collection<QuizVocabulary> input, MeaningNormalizer normalizer) {
+        this(input, normalizer, QuizDistractorPolicy.unrestricted());
+    }
+    public QuizPool(Collection<QuizVocabulary> input, MeaningNormalizer normalizer, QuizDistractorPolicy policy) {
         if (input == null || normalizer == null) throw new IllegalArgumentException("input/normalizer");
+        if (policy == null) throw new IllegalArgumentException("policy required");
+        this.policy = policy;
+        this.normalizer = normalizer;
         Map<String, QuizVocabulary> unique = new LinkedHashMap<>();
         Map<String, String> keys = new LinkedHashMap<>();
         for (QuizVocabulary v : input) {
@@ -26,7 +34,21 @@ public final class QuizPool {
         availability = unique.size() < 4 ? Availability.INSUFFICIENT_VOCABULARY
                 : new HashSet<>(keys.values()).size() < 4 ? Availability.INSUFFICIENT_MEANINGS : Availability.READY;
     }
+    /** Constructs a question from this snapshot using exactly the pool's normalizer. */
+    public QuizQuestion createQuestion(String stableId, Collection<QuizOption> options, String correctOptionId) {
+        if (options == null) throw new IllegalArgumentException("options required");
+        for (QuizOption option : options) {
+            if (option == null) throw new IllegalArgumentException("option required");
+            if (!option.getId().equals(correctOptionId) && !policy.allows(stableId, option.getId()))
+                throw new IllegalArgumentException("forbidden distractor");
+        }
+        for (QuizVocabulary v : vocabulary)
+            if (v.getStableId().equals(stableId))
+                return new QuizQuestion(v, options, correctOptionId, normalizer);
+        throw new IllegalArgumentException("unknown stableId");
+    }
     public List<QuizVocabulary> getVocabulary() { return vocabulary; }
+    public QuizDistractorPolicy getPolicy() { return policy; }
     public String getMeaningKey(String stableId) {
         if (!meaningKeys.containsKey(stableId)) throw new IllegalArgumentException("unknown stableId");
         return meaningKeys.get(stableId);

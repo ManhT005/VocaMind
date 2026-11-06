@@ -1,0 +1,4 @@
+$ python3 tools/vocabulary/ingest.py --config build/real-check-ngsl.json --output build/vocabulary-ingestion/blocked-ngsl
+BLOCKED (gate): Source on hold or excluded; candidate is not include
+
+exit=1
