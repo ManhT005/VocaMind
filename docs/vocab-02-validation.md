@@ -1,5 +1,8 @@
 # VOCAB-02 — validation và handoff
 
+**Tích hợp mới nhất:** develop `8209ef7` với DATA-06/DATA-07; xem
+[validation sau resolve hiện hành](vocab-02-data0607-integration.md). Các số liệu trên base45db604 là lịch sử.
+
 **Bản hiện hành:** first-save được sửa tại `016373c` theo contract due-now do người dùng chốt;
 xem [first-save validation/evidence](vocab-02-first-save-validation.md). Các dòng BLOCKED dưới đây là lịch sử trước quyết định.
 

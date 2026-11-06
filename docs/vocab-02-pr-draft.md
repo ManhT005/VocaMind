@@ -1,27 +1,37 @@
 # VOCAB-02 — chi tiết từ và lưu cá nhân bền vững
 
-Base: develop. Phụ trách Trường; reviewer Thành. Đây là bản nháp, chưa tạo PR.
+PR #32 vào develop. Phụ trách Trường; reviewer Thành. Chưa tự nghiệm thu Done/merge.
 
-Hoàn thiện VocabularyDetailFragment kế thừa route vocabularyId/packId TEXT của VOCAB-01:
-lemma/POS/nghĩa/ví dụ Anh–Việt/IPA nullable, loading/error/retry, UI light/dark và nút Save cố định.
-GetVocabularyDetail/ToggleSaved đi qua domain repository, I/O trên worker; catalog chỉ đọc.
+Hoàn thiện VocabularyDetailFragment theo route stableId/packId TEXT của VOCAB-01: lemma/POS,
+nghĩa/ví dụ Anh–Việt, IPA nullable/fallback, loading/error/retry, pending Save và UI light/dark.
+GetVocabularyDetail/ToggleSaved qua domain repository, I/O trên worker; catalog chỉ đọc.
 
-Save từ chưa học nay persist được: tạo progress nếu chưa có với isSaved=true, box0, dueAt=Save time,
-timestamps học null và counters0. Query planner/thống kê giữ nguyên: tổng/box0 tăng một, từ rời new
-và có thể vào due khi pack active; Save không tự activate, không ghi ReviewEvent hoặc tăng learned-today.
-Đây là [contract triển khai đã được người dùng chốt](vocab-02-saved-only-decision.md), không phải
-bộ giá trị khởi tạo được SRS quy định sẵn. Unsave giữ progress/lịch sử; existing progress chỉ đổi flag.
-Target command idempotent, transaction/insert-if-absent bảo vệ race với first-review; Retry đọc lại persisted state.
+First-save tạo progress box0, dueAt=Save time, isSaved=true, timestamps học=null, counters0/leech=false.
+Giữ nguyên baseline: tổng/box0 tăng một, từ rời new pool và eligible qua due khi pack active;
+Save không tự activate, không tạo ReviewEvent hoặc tăng learned-today/pack learnedCount.
+Existing progress/Unsave chỉ đổi flag, không xóa/reset dữ liệu học. Đây là contract kỹ thuật do người dùng
+xác nhận, không phải bộ giá trị khởi tạo được SRS quy định sẵn.
 
-Đã tích hợp develop 45db604 và resolve RepositoryProvider giữ cả vocabulary repository lẫn Quiz policy
-loader PR #31. Không đổi schema, new/due/stats queries, search, Flashcard hoặc TTS.
+Đã tích hợp develop **8209ef7** (DATA-06/DATA-07) tại code/tests **a99e742c67edda2ecbd0f3629f47ff551af1a972**.
+Resolve RepositoryProvider giữ vocabulary()/VocabularyRepository, progress()/progressUseCase(),
+recordReview(Clock, ZoneId) và Quiz policy loader PR #31. UserDao giữ cả first-save và các query
+aggregation/snapshot/compare-and-commit. Không đổi schema hoặc new/due/stats queries.
 
-[Validation first-save mới nhất](vocab-02-first-save-validation.md): code/tests 016373c,
-full regression gồm production composition/reopen, UI first-save không seed progress,
-first-save/first-review trên hai DB connections, snapshot catalog, total/box0/new/due/learned-today
-và trigger rollback/ignored insert. Build hai APK và lint có evidence riêng đúng SHA.
-Kết quả: 287 tests/31 suites PASS, 0 failures/errors/skipped; build PASS, lint 0 errors/11 warnings.
+Save là target command idempotent trong transaction/insert-if-absent. DATA-06 review dùng optimistic
+snapshot: nếu Save đổi row giữa read/commit, review trả CONFLICT, không ghi event và không tự replay rating;
+caller cần đọc lại và quyết định mới. Tests chứng minh không mất saved flag/history, lần đánh giá mới
+chỉ tạo một event. Giữ policy Quiz fail-closed.
 
-AC-04 có acceptance host cho detail/save/unsave/reopen; device Airplane Mode/process restart/TalkBack
-vẫn NOT RUN, không xác nhận QA nội dung toàn catalog hoặc AC-12/13 từ task này.
-Chờ reviewer nghiệm thu; không tự đánh dấu task Hoàn thành hoặc merge.
+Validation tại SHA a99e742: **408 tests / 39 suites, 0 failures/errors/skipped** trên Robolectric API26/35;
+assembleDebug/assembleDebugAndroidTest PASS; lint **0 errors/11 warnings**.
+Full command: testDebugUnitTest assembleDebug assembleDebugAndroidTest lintDebug --offline --console=plain.
+Native SQLite dùng TEMP/TMP/java.io.tmpdir ngắn trên Windows. Tests gồm first-save→reopen→Unsave,
+concurrency first-review, total/box0 qua DATA-07 thật, learned-today=0 khi chỉ Save, atomic rollback,
+actual composition và accepted Quiz policy. Không dùng số liệu cũ 287 tests thay cho bản sau resolve.
+
+[Validation sau resolve](vocab-02-data0607-integration.md) · [Contract saved-only](vocab-02-saved-only-decision.md)
+
+AC-04 có acceptance host detail/save/unsave/reopen/catalog bất biến; **device QA NOT RUN** vì ADB
+không có thiết bị: Airplane Mode, process restart/reboot, TalkBack. Host recreation/Room reopen không
+thay device QA; build test APK không phải chạy instrumentation. Không xác nhận content QA toàn catalog
+hoặc AC-12/13 từ task này. Không thêm search UI, Flashcard, TTS hay danh sách saved.

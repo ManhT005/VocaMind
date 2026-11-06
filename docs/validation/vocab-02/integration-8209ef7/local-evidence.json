@@ -1,0 +1,341 @@
+{
+    "testedCodeSha":  "a99e742c67edda2ecbd0f3629f47ff551af1a972",
+    "mergedDevelop":  "8209ef7",
+    "date":  "2026-11-06T23:37:56.5697927+07:00",
+    "worktree":  "Separate feature/vocab-02-vocabulary-detail worktree; SEARCH-01 changes preserved",
+    "environment":  "Windows JDK17; Gradle8.9; Robolectric API26/35; TEMP/TMP/java.io.tmpdir=C:/Temp/vm02",
+    "command":  ".\\gradlew.bat testDebugUnitTest assembleDebug assembleDebugAndroidTest lintDebug --offline --console=plain",
+    "result":  "BUILD SUCCESSFUL",
+    "suiteCount":  39,
+    "tests":  408,
+    "failures":  0,
+    "errors":  0,
+    "skipped":  0,
+    "lint":  "0 errors, 11 warnings",
+    "integration":  "Vocabulary + progress/progressUseCase + recordReview(Clock,ZoneId) + Quiz policy retained. First-save uses actual DATA-07 aggregator. DATA-06 snapshot conflicts require reload/new user decision; no automatic rating retry.",
+    "deviceQA":  "NOT RUN: adb list empty",
+    "suites":  [
+                   {
+                       "name":  "com.vocamind.app.data.catalog.CatalogAssetTest",
+                       "tests":  32,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "B8E5623625738E5D73E8A0B74EDE88A86E0E0EF56D6DE7A56056D0EE5481B789"
+                   },
+                   {
+                       "name":  "com.vocamind.app.data.catalog.ContentCreditsTest",
+                       "tests":  6,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "26B19A6D5676DE1926CDF62CC72E31D56F9019EF7EBF09F0F1F47D9ABBEC5D0D"
+                   },
+                   {
+                       "name":  "com.vocamind.app.data.catalog.FtsSearchBenchmarkTest",
+                       "tests":  2,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "2A051AE09A6EEECBA72CB57EB7F608D2AE0EACEAD4627D42406712D813961BD8"
+                   },
+                   {
+                       "name":  "com.vocamind.app.data.catalog.FtsSearchTest",
+                       "tests":  18,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "02148E7D64A0DD868F9887CAAE4AC42BB47DD156D3B55669CCE1447CE2669D92"
+                   },
+                   {
+                       "name":  "com.vocamind.app.data.catalog.QuizPolicyCompositionTest",
+                       "tests":  6,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "EB1BE71E39DB4AF78A2260D98502E567C5CF0A436F0C051AE174B4973C4F9EA2"
+                   },
+                   {
+                       "name":  "com.vocamind.app.data.DaoFoundationTest",
+                       "tests":  32,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "268E48C7373BD1C3AA22E5580C9837DF7790573101E8A435C5E90085DA18B7C3"
+                   },
+                   {
+                       "name":  "com.vocamind.app.data.DataBoundaryTest",
+                       "tests":  1,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "50CD3B4C9E32247D6831E66962BBE0B9FABB086FA72AB080EF79E688C61EF7FA"
+                   },
+                   {
+                       "name":  "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+                       "tests":  62,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "A27CCC9CBCCB523078DC2FC6AC243D7994FEE6D82C7BDD19B80F21D82BA4B304"
+                   },
+                   {
+                       "name":  "com.vocamind.app.data.user.AtomicReviewTest",
+                       "tests":  42,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "86630637CAA042E015D065A3B4F83BD8E43B98377D8696E478EF49FB92DECF58"
+                   },
+                   {
+                       "name":  "com.vocamind.app.data.user.ProgressAggregationTest",
+                       "tests":  34,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "3DF5DA02EDBD61264B69451E579B7A564D703949F17E2D79EE76367D942A0CE8"
+                   },
+                   {
+                       "name":  "com.vocamind.app.data.user.ProgressMapperTest",
+                       "tests":  3,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "B4DCABA95529A59F07722BA588E630BDE79D75EB390790602402A82D713E5568"
+                   },
+                   {
+                       "name":  "com.vocamind.app.data.user.UserDatabaseTest",
+                       "tests":  16,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "40DD2A1D0261C77398BECEB590BA2B5123BBC6A89ADB60F0644C3BECD58DBBD6"
+                   },
+                   {
+                       "name":  "com.vocamind.app.domain.catalog.SearchVocabularyUseCaseTest",
+                       "tests":  6,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "D288C14115013A8FC6E2084271959AAF04522E364AEAA91FC8209001E95EC7C0"
+                   },
+                   {
+                       "name":  "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+                       "tests":  8,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "24CA289B6DC36AA7ECCA6A727E8973C69F7BB01DF1B95A0F36B231BA7B6DC523"
+                   },
+                   {
+                       "name":  "com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest",
+                       "tests":  8,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "F0EDA54B991E856185074C596D8AF4A190161580A6A2B209787440C37D8EFFFE"
+                   },
+                   {
+                       "name":  "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+                       "tests":  10,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "D7ECFB7C98EBCFB688E2A88F49E564FE02C611381A3EF7275B0DE724DC171D77"
+                   },
+                   {
+                       "name":  "com.vocamind.app.domain.learning.LeitnerSchedulerTest",
+                       "tests":  6,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "69F37D1EF14D537CAEB644E0BA68A36B28370812D7DF65DF92FC71AE114E21A3"
+                   },
+                   {
+                       "name":  "com.vocamind.app.domain.learning.RecordReviewUseCaseTest",
+                       "tests":  6,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "B85F8C6A9BAEBD806EA7281EC7503D732034F8C1AE92A2CA37104D21B79F5B05"
+                   },
+                   {
+                       "name":  "com.vocamind.app.domain.progress.ProgressDomainTest",
+                       "tests":  11,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "AE1F7E6329658B74534F9369FDDFA4BA72B83D652644A7A3E037A0846CAAB0F2"
+                   },
+                   {
+                       "name":  "com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest",
+                       "tests":  6,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "C88600814733AE6A22F6E8C0D00A3DA2CDAF4C484E3C7FA6F2485C5187E49B0A"
+                   },
+                   {
+                       "name":  "com.vocamind.app.domain.quiz.AndroidNfcConformanceTest",
+                       "tests":  4,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "23BD9859206513FA2C9EB4D8F52E5E5E2628CEB1AC9242B4D8463B8ABAD89757"
+                   },
+                   {
+                       "name":  "com.vocamind.app.domain.quiz.GenerateQuizTest",
+                       "tests":  2,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "10E76A928538ACF362440B5ABF55413CEAAF797CCFB8C15AC9D36E33B6C8169C"
+                   },
+                   {
+                       "name":  "com.vocamind.app.domain.quiz.NfcConformanceTest",
+                       "tests":  2,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "915F1F80B1A13C08224D01C347DD9DF62B91086268F8013D02EAF107CA3B0C17"
+                   },
+                   {
+                       "name":  "com.vocamind.app.domain.quiz.QuizDistractorPolicyTest",
+                       "tests":  3,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "46E5335A06F8A1F968C29E7158A86E50523D04E7D55733F477D6B054FCC767D5"
+                   },
+                   {
+                       "name":  "com.vocamind.app.domain.quiz.QuizDomainTest",
+                       "tests":  18,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "4314FC8FFE7DF9D8224A8CA340793BC7A66F050489BEC7FC25D9C05E477F2D59"
+                   },
+                   {
+                       "name":  "com.vocamind.app.domain.quiz.QuizGenerationTest",
+                       "tests":  5,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "2BBF97D49AB9ECFA27A6DC3AC216ABB82C7F758E52CAB6661628B6322831877E"
+                   },
+                   {
+                       "name":  "com.vocamind.app.fake.FakeRepositoriesTest",
+                       "tests":  4,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "3ED9F7B343854E63FDA80293387FFA36D169770C9D9A12CC7169C816A4C4CA1B"
+                   },
+                   {
+                       "name":  "com.vocamind.app.feature.attribution.AttributionRenderingTest",
+                       "tests":  2,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "52FED9211500923BEEF154E055994C1268C35EBED4E957929C2BB41B56EDDA7A"
+                   },
+                   {
+                       "name":  "com.vocamind.app.feature.attribution.AttributionScreenTest",
+                       "tests":  2,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "1E2B715CE20FC8DB0BF4E5ABA532E64ED7238AAD2A0949A009310DF76042B0A6"
+                   },
+                   {
+                       "name":  "com.vocamind.app.feature.attribution.AttributionViewModelTest",
+                       "tests":  2,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "7B61F4CA86F0BAD36B7277A135B2707DC5415915C750567CD24110FA27E0C237"
+                   },
+                   {
+                       "name":  "com.vocamind.app.feature.attribution.ExternalLinksTest",
+                       "tests":  6,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "493D6E0A4498BEB7F110CF20604FF0BFB8CCDB02859CF727BC75571968A8338D"
+                   },
+                   {
+                       "name":  "com.vocamind.app.feature.attribution.GetContentSourcesTest",
+                       "tests":  2,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "8937B3BB909F8AC0E7FC4D13B5BDDA98DCA37F75471FB4CDD460A11447ECA103"
+                   },
+                   {
+                       "name":  "com.vocamind.app.feature.packs.PackActivationRenderingTest",
+                       "tests":  4,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "942B06003D45109A22C28EDA251B45F69F78EB3FE2138355061BC02FC3B5C1F6"
+                   },
+                   {
+                       "name":  "com.vocamind.app.feature.packs.PackActivationTest",
+                       "tests":  6,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "3E3F39A0047F6784A054DCD5F2D575617869D79C779FEFBBEDE4BB18F03781D9"
+                   },
+                   {
+                       "name":  "com.vocamind.app.feature.packs.PacksViewModelTest",
+                       "tests":  4,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "4F19952DDA24E909F925989841D92D2950B7ECB17ADA7A2F1F57EC5FFB3DDB6B"
+                   },
+                   {
+                       "name":  "com.vocamind.app.feature.packs.PackVocabularyIntegrationTest",
+                       "tests":  2,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "6BE5DD0C82A11891C78E80FB06EB4EF17BFFB71838534DB9C98C4E367D0089C6"
+                   },
+                   {
+                       "name":  "com.vocamind.app.feature.packs.VocabularyListTest",
+                       "tests":  8,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "6DE070C5EC7EF0F6E8D46A6485AB07ED28D9693767738FD5DF8BF5BC1BF34FA0"
+                   },
+                   {
+                       "name":  "com.vocamind.app.feature.progress.ProgressViewStateTest",
+                       "tests":  7,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "03AEDCE38CB822330CAE5281716AE5EAE142EF6AF6FAD023FCA9E81F35AD9DE3"
+                   },
+                   {
+                       "name":  "com.vocamind.app.feature.vocabulary.VocabularyDetailTest",
+                       "tests":  10,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0,
+                       "sha256":  "BABBDB55F865B9B73C9FCFF8F50BBB89C7AF00FA1EEB81B9C56949409D5826BD"
+                   }
+               ],
+    "artifacts":  [
+                      {
+                          "path":  "C:\\Users\\LMT\\Documents\\University\\Nam4\\N4_HK1\\PTUDTBDT\\BLT\\VocaMind\\.worktrees\\vocab-02-integration\\app\\build\\outputs\\apk\\debug\\app-debug.apk",
+                          "sha256":  "A4EECBD4D3085281BEE8D29F463B1E679393CD9996B0BCB5219E22BFB2990C39"
+                      },
+                      {
+                          "path":  "C:\\Users\\LMT\\Documents\\University\\Nam4\\N4_HK1\\PTUDTBDT\\BLT\\VocaMind\\.worktrees\\vocab-02-integration\\app\\build\\outputs\\apk\\androidTest\\debug\\app-debug-androidTest.apk",
+                          "sha256":  "ED661570993D4B7BE5277CBAEAB8816328B3368DCFC8B196BD5194DB70C6C90C"
+                      }
+                  ]
+}

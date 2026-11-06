@@ -47,8 +47,11 @@ không coi UPDATE 0 là success. Không upsert bản sao progress đã đọc tr
 Target=false và row chưa tồn tại: đọc xác nhận absence trong transaction, trả confirmed false,
 không tạo row. Target=false với row có sẵn chỉ UPDATE flag, không xóa.
 Save lặp không reset dueAt/timestamps/counters và không tạo trùng. Clock chỉ đọc khi cần tạo row.
-First-review và first-save trên các kết nối DB được SQLite transaction tuần tự hóa;
-review đọc row hiện hành và insert-if-absent không ghi đè kết quả review.
+Sau tích hợp DATA-06 tại develop 8209ef7, review dùng optimistic compare-and-commit:
+nếu Save đổi row sau khi review đã đọc snapshot, review trả CONFLICT, không ghi event/progress.
+Caller phải đọc lại và chờ quyết định đánh giá mới; không tự replay rating. Insert-if-absent và
+targeted UPDATE của Save vẫn không ghi đè kết quả review đã commit. Tests kiểm tra cả race thực
+trên hai connections lẫn interleaving snapshot→Save→stale review→fresh user decision.
 Retry UI chỉ reconcile persisted state, không tự replay/đảo trạng thái.
 
 ## Kiểm chứng và nghiệm thu

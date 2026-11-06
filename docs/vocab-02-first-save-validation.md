@@ -1,5 +1,8 @@
 # VOCAB-02 — first-save acceptance và handoff
 
+**Sau DATA-06/DATA-07:** xem [kết quả tích hợp hiện hành](vocab-02-data0607-integration.md)
+trên develop8209ef7; validation 287 tests bên dưới là lịch sử trước lần tích hợp đó.
+
 Ngày: 06/11/2026. Phụ trách Trường; reviewer Thành. Chưa tự đánh dấu task Hoàn thành.
 Base feature trước sửa: `1fb3005`, đã chứa develop `45db604` và Quiz policy PR #31.
 Working tree ban đầu sạch. Không sửa SRS, phân công, schema hoặc các query planner/thống kê.
