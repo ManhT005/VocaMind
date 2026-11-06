@@ -243,3 +243,21 @@ Final Gradle command: **BUILD SUCCESSFUL in 4m 9s**. Local logs are
 These results were collected locally before publication. Remote CI on the
 correction, physical-device execution and assigned reviewer approval are not
 claimed by this record.
+
+### CI import correction after b60e3db
+
+[PR run 42217424583](https://github.com/ManhT005/VocaMind/actions/runs/42217424583)
+failed in vocabulary test discovery before Gradle ran. The existing QC consumer
+loads `tools/catalog/build_fixture.py` using `importlib`; the new sibling import
+`build_quiz_policy` depended on the catalog directory already being on
+`sys.path`. The earlier local catalog-only suite supplied that directory and
+missed this caller. Reproducing the vocabulary suite separately produced the
+same `ModuleNotFoundError` as CI.
+
+The builder now resolves its sibling tooling directory from `__file__`, matching
+its existing explicit contract-directory resolution. The failing QC consumer
+test is retained unchanged. Verification after the correction: source gate
+passed; **112 vocabulary tests, 8 catalog tests and 39 contract tests passed**.
+Logs: `build/quiz02-ci-vocabulary.log`, `build/quiz02-ci-catalog.log`, and
+`build/quiz02-ci-contract.log`. This changes Python module resolution only;
+the previously verified Java implementation and catalog bytes are unchanged.

@@ -8,11 +8,14 @@ from pathlib import Path
 import sqlite3
 import sys
 import tempfile
-import build_quiz_policy
 
 ROOT = Path(__file__).resolve().parents[2]
 CONTRACT = ROOT / 'docs/data/vocabulary-contract-v1'
+# QC consumers load this file via importlib rather than running it as a script.
+# Resolve sibling tooling from this file, independently of cwd/discovery paths.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(CONTRACT))
+import build_quiz_policy
 from validate_contract import load_json, validate
 
 SCHEMA = ROOT / 'app/schemas/com.vocamind.app.data.catalog.CatalogDatabase/2.json'
