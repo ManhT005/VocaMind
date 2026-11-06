@@ -2,7 +2,6 @@ package com.vocamind.app.domain.learning;
 
 import org.junit.Test;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 
@@ -10,7 +9,7 @@ import static org.junit.Assert.*;
 
 /**
  * TC-SCHED-01..10. Expected values follow the rules in
- * docs/plans/learn-01-leitner-scheduler.md (assumed until checked against the SRS).
+ * SRS v1.1 DEC-12 and docs/plans/learn-01-leitner-scheduler.md.
  */
 public class LeitnerSchedulerSrsTest {
     private static final ZoneId ZONE = ZoneId.of("Asia/Ho_Chi_Minh");
@@ -21,7 +20,7 @@ public class LeitnerSchedulerSrsTest {
         return scheduler.schedule(new LeitnerState(box, mistakes, leech), rating, NOW, ZONE);
     }
     private static long dueInDays(int days) {
-        return LocalDate.of(2026, 10, 26).plusDays(days).atStartOfDay(ZONE).toInstant().toEpochMilli();
+        return LocalDateTime.of(2026, 10, 26, 9, 0).plusDays(days).atZone(ZONE).toInstant().toEpochMilli();
     }
 
     @Test public void tcSched01_newWordRememberedGoesToBox1DueTomorrow() {

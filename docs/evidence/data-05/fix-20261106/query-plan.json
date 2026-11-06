@@ -1,0 +1,127 @@
+{
+  "scope": "Host SQLite structural triage only; no latency or reference-device certification",
+  "fixtureSha256": "5fac69d4a5776130346be14747d81af3354a9220c2f9675ed95740c5058f54a7",
+  "cases": [
+    {
+      "expression": "\"benchword04999*\"",
+      "matches": 1,
+      "queryPlan": [
+        [
+          4,
+          0,
+          10,
+          "SCAN f VIRTUAL TABLE INDEX 5:"
+        ],
+        [
+          9,
+          0,
+          45,
+          "SEARCH v USING INTEGER PRIMARY KEY (rowid=?)"
+        ],
+        [
+          26,
+          0,
+          0,
+          "USE TEMP B-TREE FOR ORDER BY"
+        ]
+      ]
+    },
+    {
+      "expression": "\"nghĩa*\" \"kiểm*\" \"thử*\" \"04999*\"",
+      "matches": 1,
+      "queryPlan": [
+        [
+          4,
+          0,
+          10,
+          "SCAN f VIRTUAL TABLE INDEX 5:"
+        ],
+        [
+          9,
+          0,
+          45,
+          "SEARCH v USING INTEGER PRIMARY KEY (rowid=?)"
+        ],
+        [
+          26,
+          0,
+          0,
+          "USE TEMP B-TREE FOR ORDER BY"
+        ]
+      ]
+    },
+    {
+      "expression": "\"benchword000*\"",
+      "matches": 100,
+      "queryPlan": [
+        [
+          4,
+          0,
+          10,
+          "SCAN f VIRTUAL TABLE INDEX 5:"
+        ],
+        [
+          9,
+          0,
+          45,
+          "SEARCH v USING INTEGER PRIMARY KEY (rowid=?)"
+        ],
+        [
+          26,
+          0,
+          0,
+          "USE TEMP B-TREE FOR ORDER BY"
+        ]
+      ]
+    },
+    {
+      "expression": "\"notpresentbenchmark*\"",
+      "matches": 0,
+      "queryPlan": [
+        [
+          4,
+          0,
+          10,
+          "SCAN f VIRTUAL TABLE INDEX 5:"
+        ],
+        [
+          9,
+          0,
+          45,
+          "SEARCH v USING INTEGER PRIMARY KEY (rowid=?)"
+        ],
+        [
+          26,
+          0,
+          0,
+          "USE TEMP B-TREE FOR ORDER BY"
+        ]
+      ]
+    },
+    {
+      "expression": "\"benchword*\"",
+      "matches": 5000,
+      "queryPlan": [
+        [
+          4,
+          0,
+          10,
+          "SCAN f VIRTUAL TABLE INDEX 5:"
+        ],
+        [
+          9,
+          0,
+          45,
+          "SEARCH v USING INTEGER PRIMARY KEY (rowid=?)"
+        ],
+        [
+          26,
+          0,
+          0,
+          "USE TEMP B-TREE FOR ORDER BY"
+        ]
+      ]
+    }
+  ],
+  "interpretation": "FTS virtual index drives rowid PK lookups; ORDER BY uses a temporary B-tree. This is not evidence that sorting explains Android latency outliers; no SQL/schema/result-limit changes made."
+}

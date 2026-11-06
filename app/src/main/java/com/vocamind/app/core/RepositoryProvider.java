@@ -16,6 +16,11 @@ import com.vocamind.app.data.catalog.QuizPolicyAsset;
 import com.vocamind.app.data.catalog.CatalogMapper;
 import com.vocamind.app.data.repository.UserDataMapper;
 import java.util.ArrayList;
+import java.time.Clock;
+import java.time.ZoneId;
+import com.vocamind.app.domain.learning.RecordReviewUseCase;
+import com.vocamind.app.domain.progress.ProgressRepository;
+import com.vocamind.app.domain.progress.GetProgressUseCase;
 import com.vocamind.app.domain.quiz.QuizVocabulary;
 
 /**
@@ -29,6 +34,7 @@ public final class RepositoryProvider implements AutoCloseable {
     private final ReviewRepository reviews;
     private final QuizRepository quizzes;
     private final VocabularyRepository vocabulary;
+    private final ProgressRepository progress;
 
     public RepositoryProvider(Context context, CatalogProvider catalog) {
         userDatabase = UserDatabase.open(context);
@@ -37,6 +43,7 @@ public final class RepositoryProvider implements AutoCloseable {
         packs = new RoomPackRepository(catalogDao, userDao);
         study = new RoomStudyRepository(catalogDao, userDao);
         reviews = new RoomReviewRepository(catalogDao, userDatabase);
+        progress = ProgressProvider.create(userDatabase);
         quizzes = new RoomQuizRepository(catalogDao, userDao, () -> {
             var vocabulary = new ArrayList<QuizVocabulary>();
             for (var row : catalogDao.allVocabulary())
@@ -49,8 +56,15 @@ public final class RepositoryProvider implements AutoCloseable {
     public PackRepository packs() { return packs; }
     public StudyRepository study() { return study; }
     public ReviewRepository reviews() { return reviews; }
+    /** Same writer/DB instance as reviews(); call the resulting use case on a worker. */
+    public RecordReviewUseCase recordReview(Clock clock, ZoneId zone) {
+        return ReviewProvider.create(reviews, clock, zone);
+    }
     public QuizRepository quizzes() { return quizzes; }
     public VocabularyRepository vocabulary() { return vocabulary; }
+    public ProgressRepository progress() { return progress; }
+    /** Reads the same application-owned userdata DB as review/Quiz writes; run on a worker. */
+    public GetProgressUseCase progressUseCase() { return progress::readProgress; }
 
     /** The catalog database is owned and closed by CatalogProvider. */
     @Override public void close() { userDatabase.close(); }

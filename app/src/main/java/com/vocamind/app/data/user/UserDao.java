@@ -175,6 +175,40 @@ public abstract class UserDao {
         insertReview(event);
         saveProgress(progress);
     }
+    // DATA-07: all progress, independent of active packs, isSaved and learnedAt.
+    @Query("SELECT COUNT(DISTINCT vocabularyId) FROM UserWordProgress")
+    public abstract long distinctProgressCount();
+    @Query("SELECT box, COUNT(DISTINCT vocabularyId) AS wordCount FROM UserWordProgress GROUP BY box ORDER BY box")
+    public abstract List<BoxProgressCount> progressCountsByBox();
+    @Query("SELECT * FROM QuizAttempt ORDER BY completedAt DESC, id DESC")
+    public abstract List<QuizAttempt> completedQuizHistory();
+    /** No implicit history LIMIT/date window; counts/history must share one DB snapshot. */
+    @Transaction
+    public ProgressRows progressSnapshot() {
+        return new ProgressRows(distinctProgressCount(), progressCountsByBox(), completedQuizHistory());
+    }
+    /** Compare and write under the same database transaction; protects first-insert races too. */
+    @Transaction
+    public void recordReviewIfUnchanged(UserWordProgress expected, ReviewEvent event,
+                                        UserWordProgress updated) {
+        require(event != null && updated != null, "review rows");
+        id(updated.vocabularyId);
+        require(expected == null || updated.vocabularyId.equals(expected.vocabularyId), "expected stable ID");
+        require(updated.vocabularyId.equals(event.vocabularyId), "review stable ID");
+        require(event.boxBefore == (expected == null ? 0 : expected.box), "review starting box");
+        UserWordProgress current = progress(updated.vocabularyId);
+        if (!sameProgress(expected, current)) throw new ReviewStateChangedException();
+        recordReview(event, updated);
+    }
+    private static boolean sameProgress(UserWordProgress a, UserWordProgress b) {
+        if (a == null || b == null) return a == b;
+        return java.util.Objects.equals(a.vocabularyId, b.vocabularyId)
+                && a.box == b.box && a.dueAt == b.dueAt
+                && java.util.Objects.equals(a.learnedAt, b.learnedAt)
+                && java.util.Objects.equals(a.lastReviewedAt, b.lastReviewedAt)
+                && a.consecutiveMistakes == b.consecutiveMistakes && a.isLeech == b.isLeech
+                && a.reviewCount == b.reviewCount && a.isSaved == b.isSaved;
+    }
     private static void id(String value) { require(value != null && !value.trim().isEmpty(), "stable ID"); }
     private static void box(int value) { require(value >= 0 && value <= 5, "box"); }
     private static void require(boolean valid, String field) {

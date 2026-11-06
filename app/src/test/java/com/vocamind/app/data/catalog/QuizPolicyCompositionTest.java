@@ -34,12 +34,14 @@ public class QuizPolicyCompositionTest {
                     assertFalse(detail.execute(pack.id, word.stableId).get().saved);
                     // First-save from empty userdata through real production composition.
                     assertTrue(save.execute(pack.id, word.stableId, true).get());
+                    assertEquals(1, repositories.progress().readProgress().getSnapshot().getSummary().getTotalLearned());
+                    assertEquals(1, repositories.progressUseCase().execute().getSnapshot().getSummary().getBoxCount(0));
                     assertNull(repositories.study().getProgress(word.stableId).get().get().getLearnedAtEpochMillis());
                     assertEquals(0, repositories.study().getProgress(word.stableId).get().get().getReviewCount());
-                    var scheduled = new com.vocamind.app.domain.learning.LeitnerScheduler().schedule(
-                            com.vocamind.app.domain.learning.LeitnerState.newWord(),
-                            com.vocamind.app.domain.learning.Rating.HARD, 1000L, java.time.ZoneOffset.UTC);
-                    assertTrue(repositories.reviews().recordReview(word.stableId, scheduled, 1000L).isSuccess());
+                    repositories.recordReview(java.time.Clock.fixed(java.time.Instant.ofEpochMilli(1000L), java.time.ZoneOffset.UTC),
+                            java.time.ZoneOffset.UTC).execute(word.stableId, com.vocamind.app.domain.learning.Rating.HARD);
+                    assertEquals(1, repositories.study().getProgress(word.stableId).get().get().getReviewCount());
+                    assertEquals(1, repositories.progressUseCase().execute().getSnapshot().getSummary().getTotalLearned());
                     assertTrue(save.execute(pack.id, word.stableId, true).get());
                     GenerateQuiz generate = new GenerateQuiz(repositories.quizzes());
                     assertEquals(QuizGenerationOutcome.Status.EMPTY, generate.execute(new Random(60)).get().getStatus());

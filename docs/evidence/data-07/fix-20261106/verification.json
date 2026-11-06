@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-06",
+  "originalHead": "7f0e9b6e682f994d4cdb42f3a1f02e10e36ff0ac",
+  "mergedDevelop": "67e5e13d8990121f454ac432c79ccad3f007ce62",
+  "testedInputFiles": 337,
+  "testedInputsManifestSha256": "dfc6fd55ea0e6af00790771ea76809b046678ebf922dffd6d8947ec06fff89a0",
+  "environment": {
+    "jdk": "Temurin 17.0.21+9",
+    "gradle": "8.9 (checksum matches pinned wrapper)",
+    "compileSdk": 35,
+    "buildTools": "34.0.0",
+    "python": "3.12.14"
+  },
+  "gradleExitCode": 0,
+  "androidTests": {
+    "tests": 380,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "progressIntegrationTests": 34,
+  "atomicReviewTests": 42,
+  "pythonUnittestTests": 159,
+  "interleavingRoundsPerApi": 3,
+  "interleavingApis": [
+    26,
+    35
+  ],
+  "lint": {
+    "Warning": 6
+  },
+  "artifacts": [
+    {
+      "path": "app/build/outputs/apk/debug/app-debug.apk",
+      "bytes": 7631398,
+      "sha256": "135e24adf6e1c1feafb7b4b23f7ae9f23a8687806a044f56ba525ac74dcf4403"
+    },
+    {
+      "path": "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+      "bytes": 744453,
+      "sha256": "2cc8c26a27a5ced9f320811dc139f8280da04afad1fa973434efb82fc626f0ac"
+    }
+  ],
+  "unchangedFromDevelop": [
+    ".github/workflows/android-ci.yml",
+    "app/build.gradle",
+    "app/src/main/java/com/vocamind/app/data/catalog/CatalogDao.java",
+    "app/schemas",
+    "app/src/main/assets"
+  ],
+  "sqlFormulaChanged": false,
+  "schemaAssetChanged": false,
+  "connectedInstrumentationExecuted": false,
+  "uiE2eExecuted": false,
+  "reviewApprovalRecorded": false,
+  "acceptance": "DATA-07 integrated query evidence; device checks/PROGRESS-02/AC-11 remain pending",
+  "githubCI": "Check pushed head workflows linked from PR description"
+}

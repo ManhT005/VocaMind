@@ -1,30 +1,37 @@
 package com.vocamind.app.fake;
 
 import com.vocamind.app.domain.common.RepoError;
-import com.vocamind.app.domain.common.RepoResult;
-import com.vocamind.app.domain.learning.ReviewRepository;
-import com.vocamind.app.domain.learning.ScheduleResult;
-import com.vocamind.app.domain.learning.WordProgress;
-import java.util.ArrayList;
-import java.util.List;
+import com.vocamind.app.domain.learning.*;
+import java.util.*;
 
-/** Records every accepted review. Set {@code failure} to simulate a rolled-back write. */
+/** Immutable snapshots and one compare-and-commit path, shared by both review APIs. */
 public final class FakeReviewRepository implements ReviewRepository {
-    public static final class Call {
-        public final String vocabularyId;
-        public final ScheduleResult result;
-        public final long reviewedAt;
-        Call(String id, ScheduleResult result, long reviewedAt) {
-            this.vocabularyId = id; this.result = result; this.reviewedAt = reviewedAt;
-        }
-    }
-    public final List<Call> calls = new ArrayList<>();
+    public final List<ReviewProgress> calls = new ArrayList<>();
+    private final Map<String, ReviewProgress> progress = new HashMap<>();
     public RepoError failure;
 
-    @Override public RepoResult<WordProgress> recordReview(String id, ScheduleResult r, long reviewedAt) {
-        if (failure != null) return RepoResult.failure(failure);
-        calls.add(new Call(id, r, reviewedAt));
-        return RepoResult.success(new WordProgress(id, r.getBoxAfter(), r.getDueAtEpochMillis(), reviewedAt,
-                reviewedAt, r.getConsecutiveMistakes(), r.isLeech(), calls.size(), false));
+    private void checkFailure() {
+        if (failure == null) return;
+        ReviewWriteException.Reason reason;
+        switch (failure) {
+            case NOT_FOUND: reason = ReviewWriteException.Reason.NOT_FOUND; break;
+            case READ_FAILED: reason = ReviewWriteException.Reason.READ_FAILED; break;
+            case INVALID_DATA: reason = ReviewWriteException.Reason.INVALID_DATA; break;
+            case CONFLICT: reason = ReviewWriteException.Reason.CONFLICT; break;
+            case INVALID_ARGUMENT: throw new IllegalArgumentException("test failure");
+            default: reason = ReviewWriteException.Reason.STORAGE;
+        }
+        throw new ReviewWriteException(reason, null);
+    }
+    @Override public synchronized Optional<ReviewProgress> getProgress(String id) {
+        ReviewProgress.requireId(id); checkFailure();
+        return Optional.ofNullable(progress.get(id));
+    }
+    @Override public synchronized void recordReview(Optional<ReviewProgress> expected,
+                                                    ReviewProgress next, Rating rating, long now) {
+        checkFailure();
+        if (!Objects.equals(expected.orElse(null), progress.get(next.vocabularyId)))
+            throw new ReviewWriteException(ReviewWriteException.Reason.CONFLICT, null);
+        calls.add(next); progress.put(next.vocabularyId, next);
     }
 }

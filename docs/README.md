@@ -5,6 +5,18 @@ project entry point; generated build outputs stay in ignored build directories.
 
 | Document | Purpose |
 | --- | --- |
+| [DATA-07 plan](plans/data-07-progress-aggregation-queries.md) | Five-hour plan, distinct counts, six-box and quiz history acceptance |
+| [DATA-07 validation](data-07-validation.md) | Transactional snapshot reads, fixtures, error mapping and integration evidence |
+| [DATA-07 PR #26 fix validation](data-07-fix-validation.md) | DATA-05/06 integration, scope audit, atomic review/progress regression and AC-11 handoff |
+| [Local credit metadata contract](data/content-credits-contract.md) | Companion JSON, exact snapshot matching, existing-install compatibility and release limits |
+| [ATTR-01 review fix plan](plans/attr-01-fix-plan.md) | R1 regression and proposed R2 offline author/credit contract awaiting owner/reviewer confirmation |
+| [ATTR-01 validation](attr-01-validation.md) | Offline attribution UI, executed tests, screenshots and separate AC-12 release blocker |
+| [DATA-06 plan](plans/data-06-atomic-review-transaction.md) | Atomic review scope, six-hour plan, test matrix and boundaries |
+| [DATA-06 validation](data-06-validation.md) | Canonical writer, snapshot contract, current verification and handoff |
+| [DATA-06 PR #24 fix validation](data-06-fix-validation.md) | DATA-04 compatibility, atomic races/rollback, DEC-12 red/green proof and remaining gates |
+| [DATA-05 plan](plans/data-05-fts4-search.md) | FTS4 search, async boundary, test matrix and seven-hour plan |
+| [DATA-05 validation](data-05-validation.md) | Actual prepack integration, raw 5k profiling, reference-device gate and handoff |
+| [DATA-05 PR #23 fix validation](data-05-fix-validation.md) | Develop integration, combined DAO regression, current evidence and remaining acceptance gates |
 | [VOC-DATA-04 editorial corpus](data/voc-data-04/README.md) | 150 drafted senses with EN/VI examples, source lineage, pending reviews and approval blockers |
 | [VOC-DATA-04 validation](voc-data-04-validation.md) | Normalization, record/pack/source/content gates, reproducibility and test evidence |
 | [VOC-DATA-04 acceptance checklist](voc-data-04-acceptance-checklist.md) | Definition of Done, real-source blockers and downstream owner handoff |

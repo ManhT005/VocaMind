@@ -587,6 +587,10 @@ public class RepositoryIntegrationTest {
             assertTrue(counts.moveToFirst()); assertEquals(1, counts.getInt(0)); assertEquals(1, counts.getInt(1));
         }
         assertEquals(0, user.userDao().learnedCount(0, 3 * DAY));
+        var aggregated = new com.vocamind.app.data.user.RoomProgressRepository(user.userDao()).readProgress();
+        assertTrue(aggregated.isSuccess());
+        assertEquals(1, aggregated.getSnapshot().getSummary().getTotalLearned());
+        assertEquals(1, aggregated.getSnapshot().getSummary().getBoxCount(0));
         assertTrue(user.userDao().reviews().isEmpty());
         assertTrue(user.userDao().packs().isEmpty()); // Save does not activate any pack
         assertTrue(study.dueItems(DAY, 50).get().isEmpty());
@@ -650,18 +654,29 @@ public class RepositoryIntegrationTest {
                 var scheduled = schedule(LeitnerState.newWord(), Rating.REMEMBERED, 2 * DAY);
                 java.util.concurrent.CountDownLatch start = new java.util.concurrent.CountDownLatch(1);
                 AtomicReference<Throwable> failure = new AtomicReference<>();
+                AtomicReference<RepoResult<WordProgress>> reviewOutcome = new AtomicReference<>();
                 Thread saveThread = new Thread(() -> {
                     try { start.await(); assertTrue(repository.setSaved("A", id, true).get()); }
                     catch (Throwable e) { failure.set(e); }
                 });
                 Thread reviewThread = new Thread(() -> {
-                    try { start.await(); assertTrue(reviews.recordReview(id, scheduled, 2 * DAY).isSuccess()); }
+                    try { start.await(); reviewOutcome.set(reviews.recordReview(id, scheduled, 2 * DAY)); }
                     catch (Throwable e) { failure.set(e); }
                 });
                 saveThread.start(); reviewThread.start(); start.countDown();
                 saveThread.join(10000); reviewThread.join(10000);
                 assertFalse(saveThread.isAlive()); assertFalse(reviewThread.isAlive());
                 if (failure.get() != null) throw new AssertionError(failure.get());
+                assertNotNull(reviewOutcome.get());
+                if (!reviewOutcome.get().isSuccess()) {
+                    assertEquals(RepoError.CONFLICT, reviewOutcome.get().getError());
+                    assertTrue(user.userDao().reviewHistory(id, 0, 3 * DAY, 10).isEmpty());
+                    assertTrue(user.userDao().progress(id).isSaved);
+                    // Simulate a fresh user decision after DATA-06 conflict, never automatic replay.
+                    new RecordReviewUseCase(reviews, new LeitnerScheduler(),
+                            java.time.Clock.fixed(java.time.Instant.ofEpochMilli(2 * DAY), ZoneOffset.UTC), ZoneOffset.UTC)
+                            .execute(id, Rating.REMEMBERED);
+                }
                 var stored = user.userDao().progress(id);
                 assertTrue(stored.isSaved); assertEquals(1, stored.reviewCount);
                 assertEquals(1, stored.box); assertEquals(scheduled.getDueAtEpochMillis(), stored.dueAt);
@@ -705,18 +720,29 @@ public class RepositoryIntegrationTest {
             var scheduled = schedule(new LeitnerState(previous.box, previous.consecutiveMistakes, previous.isLeech), Rating.FORGOT, now);
             java.util.concurrent.CountDownLatch start = new java.util.concurrent.CountDownLatch(1);
             AtomicReference<Throwable> failure = new AtomicReference<>();
+            AtomicReference<RepoResult<WordProgress>> reviewOutcome = new AtomicReference<>();
             Thread saveThread = new Thread(() -> {
                 try { start.await(); assertTrue(repository.setSaved("A", W1, true).get()); }
                 catch (Throwable e) { failure.set(e); }
             });
             Thread reviewThread = new Thread(() -> {
-                try { start.await(); assertTrue(reviews.recordReview(W1, scheduled, now).isSuccess()); }
+                try { start.await(); reviewOutcome.set(reviews.recordReview(W1, scheduled, now)); }
                 catch (Throwable e) { failure.set(e); }
             });
             saveThread.start(); reviewThread.start(); start.countDown();
             saveThread.join(10000); reviewThread.join(10000);
             assertFalse(saveThread.isAlive()); assertFalse(reviewThread.isAlive());
             if (failure.get() != null) throw new AssertionError(failure.get());
+            assertNotNull(reviewOutcome.get());
+            if (!reviewOutcome.get().isSuccess()) {
+                assertEquals(RepoError.CONFLICT, reviewOutcome.get().getError());
+                assertEquals(previous.reviewCount, user.userDao().progress(W1).reviewCount);
+                assertEquals(i + 1, user.userDao().reviews().size());
+                assertTrue(user.userDao().progress(W1).isSaved);
+                new RecordReviewUseCase(reviews, new LeitnerScheduler(),
+                        java.time.Clock.fixed(java.time.Instant.ofEpochMilli(now), ZoneOffset.UTC), ZoneOffset.UTC)
+                        .execute(W1, Rating.FORGOT);
+            }
             var stored = user.userDao().progress(W1);
             assertTrue(stored.isSaved); assertEquals(i + 2, stored.reviewCount);
             assertEquals(now, stored.lastReviewedAt.longValue());
@@ -727,6 +753,26 @@ public class RepositoryIntegrationTest {
             assertFalse(repository.setSaved("A", W1, false).get());
         }
     }
+    @Test public void vocab02FirstSaveBetweenReviewSnapshotAndCommitRejectsStaleReview() {
+        var expected = reviews.getProgress(W1);
+        assertTrue(expected.isEmpty());
+        var scheduled = schedule(LeitnerState.newWord(), Rating.REMEMBERED, 2 * DAY);
+        var updated = ReviewProgress.afterReview(W1, expected, scheduled, 2 * DAY);
+        assertTrue(detailRepository().setSaved("A", W1, true).get());
+        String before = snapshot(user.getOpenHelper().getWritableDatabase());
+        ReviewWriteException conflict = assertThrows(ReviewWriteException.class,
+                () -> reviews.recordReview(expected, updated, Rating.REMEMBERED, 2 * DAY));
+        assertEquals(ReviewWriteException.Reason.CONFLICT, conflict.getReason());
+        assertEquals(before, snapshot(user.getOpenHelper().getWritableDatabase()));
+        assertTrue(user.userDao().reviews().isEmpty());
+        new RecordReviewUseCase(reviews, new LeitnerScheduler(),
+                java.time.Clock.fixed(java.time.Instant.ofEpochMilli(2 * DAY), ZoneOffset.UTC), ZoneOffset.UTC)
+                .execute(W1, Rating.REMEMBERED);
+        assertTrue(user.userDao().progress(W1).isSaved);
+        assertEquals(1, user.userDao().progress(W1).reviewCount);
+        assertEquals(1, user.userDao().reviews().size());
+    }
+
     private static QuizResult completedResult(int n, int correct) {
         List<QuizQuestion> qs = new ArrayList<>();
         for (int i = 0; i < n; i++) {

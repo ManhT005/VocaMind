@@ -1,0 +1,78 @@
+[
+  {
+    "step": "Install vocabulary validation dependencies",
+    "exitCode": 0,
+    "command": "python -m pip install -r docs/data/vocabulary-contract-v1/requirements-validation.txt",
+    "log": "python/03.log",
+    "unittestCounts": []
+  },
+  {
+    "step": "Validate vocabulary source registry and gate",
+    "exitCode": 0,
+    "command": "python tools/vocabulary/gate_sources.py --snapshot docs/data/snapshot.json --json\npython -m unittest discover -s tools/vocabulary -p 'test_*.py' -v\n",
+    "log": "python/04.log",
+    "unittestCounts": [
+      112
+    ]
+  },
+  {
+    "step": "Validate local credit consistency",
+    "exitCode": 0,
+    "command": "python tools/catalog/check_credits.py",
+    "log": "python/05.log",
+    "unittestCounts": []
+  },
+  {
+    "step": "Test catalog builder and credit consistency validator",
+    "exitCode": 0,
+    "command": "python -m unittest discover -s tools/catalog -p 'test_*.py' -v",
+    "log": "python/06.log",
+    "unittestCounts": [
+      8
+    ]
+  },
+  {
+    "step": "Validate vocabulary contract and canonical catalog",
+    "exitCode": 0,
+    "command": "python -m unittest discover -s docs/data/vocabulary-contract-v1 -p 'test_contract.py' -v\npython docs/data/vocabulary-contract-v1/validate_contract.py docs/data/vocabulary-contract-v1/fixtures/valid/catalog.json\n",
+    "log": "python/08.log",
+    "unittestCounts": [
+      39
+    ]
+  },
+  {
+    "step": "Verify ingestion reproducibility and fixture release rejection",
+    "exitCode": 0,
+    "command": "python tools/vocabulary/verify_ingestion.py --fixture --config tools/vocabulary/fixtures/ingestion/verified/config.json --output build/vocabulary-ingestion/data07-ci-proof\npython docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-ingestion/data07-ci-proof/a/canonical-catalog.json\nset +e\npython docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-ingestion/data07-ci-proof/a/canonical-catalog.json --release\nrelease_status=$?\nset -e\ntest \"$release_status\" -eq 1\n",
+    "log": "python/09.log",
+    "unittestCounts": []
+  },
+  {
+    "step": "Verify vocabulary QC and refusal to publish unreviewed content",
+    "exitCode": 0,
+    "command": "python tools/vocabulary/quality.py --fixture --input build/vocabulary-ingestion/data07-ci-proof/a --config tools/vocabulary/fixtures/ingestion/verified/config.json --reviews tools/vocabulary/fixtures/quality/reviews.json --output build/vocabulary-quality/data07-ci-a\npython tools/vocabulary/quality.py --fixture --input build/vocabulary-ingestion/data07-ci-proof/a --config tools/vocabulary/fixtures/ingestion/verified/config.json --reviews tools/vocabulary/fixtures/quality/reviews.json --output build/vocabulary-quality/data07-ci-b\ndiff -r build/vocabulary-quality/data07-ci-a build/vocabulary-quality/data07-ci-b\npython docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-quality/data07-ci-a/canonical-catalog.json\nset +e\npython tools/vocabulary/quality.py --fixture --input build/vocabulary-ingestion/data07-ci-proof/a --config tools/vocabulary/fixtures/ingestion/verified/config.json --reviews tools/vocabulary/fixtures/quality/pending-reviews.json --output build/vocabulary-quality/data07-ci-rejected\nqc_status=$?\nset -e\ntest \"$qc_status\" -eq 1\ntest ! -e build/vocabulary-quality/data07-ci-rejected/manifest.json\ntest ! -e build/vocabulary-quality/data07-ci-rejected/canonical-catalog.json\ntest ! -e build/vocabulary-quality/data07-ci-rejected/validated_vocab.jsonl\n",
+    "log": "python/10.log",
+    "unittestCounts": []
+  },
+  {
+    "step": "Verify editorial corpus reproducibility and approval blockers",
+    "exitCode": 0,
+    "command": "set +e\npython tools/vocabulary/prepare_corpus.py --require-approved --output build/vocabulary-corpus/data07-ci-a\ncorpus_a_status=$?\npython tools/vocabulary/prepare_corpus.py --require-approved --output build/vocabulary-corpus/data07-ci-b\ncorpus_b_status=$?\nset -e\ntest \"$corpus_a_status\" -eq 1\ntest \"$corpus_b_status\" -eq 1\ndiff -r build/vocabulary-corpus/data07-ci-a build/vocabulary-corpus/data07-ci-b\ndiff -r docs/data/voc-data-04/corpus-v1 build/vocabulary-corpus/data07-ci-a\ntest ! -e build/vocabulary-corpus/data07-ci-a/manifest.json\ntest ! -e build/vocabulary-corpus/data07-ci-a/validated_vocab.jsonl\nset +e\npython tools/vocabulary/ingest.py --config docs/data/voc-data-04/corpus-v1/ingestion-proposal.json --output build/vocabulary-ingestion/data07-editorial-approval-check\neditorial_status=$?\nset -e\ntest \"$editorial_status\" -eq 1\ntest ! -e build/vocabulary-ingestion/data07-editorial-approval-check/manifest.json\n",
+    "log": "python/11.log",
+    "unittestCounts": []
+  },
+  {
+    "step": "Verify owner-accepted editorial production handoff",
+    "exitCode": 0,
+    "command": "python tools/vocabulary/accept_editorial.py --output build/vocabulary-corpus/data07-accepted-ci\ndiff -r docs/data/voc-data-04/accepted-v1 build/vocabulary-corpus/data07-accepted-ci\npython tools/vocabulary/ingest.py --config docs/data/voc-data-04/accepted-v1/ingestion-config.json --output build/vocabulary-ingestion/data07-accepted-ci\npython tools/vocabulary/quality.py --input build/vocabulary-ingestion/data07-accepted-ci --config docs/data/voc-data-04/accepted-v1/ingestion-config.json --reviews docs/data/voc-data-04/accepted-v1/reviews.json --output build/vocabulary-quality/data07-ci-accepted\npython docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-quality/data07-ci-accepted/canonical-catalog.json --release\npython tools/vocabulary/accept_editorial.py --verify build/vocabulary-quality/data07-ci-accepted\n",
+    "log": "python/12.log",
+    "unittestCounts": []
+  },
+  {
+    "step": "Verify pinned Quiz Unicode tables",
+    "exitCode": 0,
+    "command": "python tools/unicode/generate.py\ngit diff --exit-code -- app/src/main/java/com/vocamind/app/domain/quiz/UnicodeCaseFold.java app/src/main/java/com/vocamind/app/domain/quiz/UnicodeNfcData.java tools/unicode/SHA256SUMS\n",
+    "log": "python/13.log",
+    "unittestCounts": []
+  }
+]

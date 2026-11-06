@@ -30,11 +30,11 @@ public class FakeRepositoriesTest {
 
     @Test public void fakeReviewRecordsCallsAndCanFail() {
         FakeReviewRepository fake = new FakeReviewRepository();
-        WordProgress p = fake.recordReview("w", remembered(), NOW).get();
+        WordProgress p = fake.recordReview("0123456789abcdef", remembered(), NOW).get();
         assertEquals(1, p.getBox());
         assertEquals(1, fake.calls.size());
         fake.failure = RepoError.WRITE_FAILED;
-        assertEquals(RepoError.WRITE_FAILED, fake.recordReview("w", remembered(), NOW).getError());
+        assertEquals(RepoError.WRITE_FAILED, fake.recordReview("0123456789abcdef", remembered(), NOW).getError());
         assertEquals(1, fake.calls.size());
     }
 

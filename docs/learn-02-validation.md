@@ -28,7 +28,7 @@ leech ≥ 4). Align with SRS TC-SCHED-01..10 when the SRS is available.
 ## Boundary tests (`LeitnerSchedulerBoundaryTest`)
 
 - Last millisecond of a day vs. midnight fall on different calendar days.
-- dueAt is always 00:00 local time.
+- dueAt preserves the local review time for every box (DEC-12 correction in DATA-06 PR #24).
 - One instant gives different days in UTC and Asia/Ho_Chi_Minh.
 - DST spring-forward and fall-back in America/New_York keep calendar days.
 - A word reviewed in the evening is due from the next morning.
