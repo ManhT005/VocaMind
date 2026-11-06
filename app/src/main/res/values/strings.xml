@@ -61,6 +61,10 @@
     <string name="detail_unsave">Bỏ lưu</string>
     <string name="detail_saving">Đang lưu…</string>
     <string name="detail_error">Không thể xác nhận dữ liệu. Thử lại để đọc trạng thái đã lưu trước khi thao tác tiếp.</string>
-    <string name="detail_policy_pending">Chưa thể lưu từ này. Chức năng lưu từ chưa có tiến độ đang chờ hoàn thiện.</string>
+    <string name="detail_policy_pending">Chưa thể lưu từ chưa có tiến độ. Chức năng này đang được hoàn thiện.</string>
+    <string name="detail_meaning_label">NGHĨA TIẾNG VIỆT</string>
+    <string name="detail_example_label">VÍ DỤ</string>
+    <string name="detail_english_label">Tiếng Anh</string>
+    <string name="detail_vietnamese_label">Tiếng Việt</string>
     <string name="detail_missing">Chưa có dữ liệu</string>
 </resources>

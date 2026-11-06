@@ -46,8 +46,11 @@ public final class VocabularyDetailFragment extends Fragment {
                 ? R.string.word_route_invalid : R.string.detail_error;
         message.setText(state.loading ? R.string.word_route_loading : state.pending ? R.string.detail_saving
                 : state.error != null ? error : R.string.detail_ready);
+        message.setVisibility(state.error != null || state.loading ? View.VISIBLE : View.GONE);
+        view.findViewById(R.id.detail_loading).setVisibility(state.loading ? View.VISIBLE : View.GONE);
         view.findViewById(R.id.detail_content).setVisibility(state.detail == null ? View.GONE : View.VISIBLE);
-        view.findViewById(R.id.detail_retry).setVisibility(state.error == null ? View.GONE : View.VISIBLE);
+        boolean retryable = state.error == RepoError.READ_FAILED || state.error == RepoError.WRITE_FAILED;
+        view.findViewById(R.id.detail_retry).setVisibility(retryable ? View.VISIBLE : View.GONE);
         TextView save = view.findViewById(R.id.detail_save);
         save.setVisibility(state.detail == null ? View.GONE : View.VISIBLE);
         save.setEnabled(state.detail != null && !state.pending && !state.loading && state.error == null);
