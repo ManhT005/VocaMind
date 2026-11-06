@@ -198,3 +198,27 @@ checks không thay review hoặc chứng nhận CI. Theo chỉ thị trực ti�
 commit/push feature được phép; không tạo PR/merge.
 
 Bản nháp PR: [search-01-pr-draft.md](search-01-pr-draft.md).
+
+## Ghi nhận review ngày 07/11/2026
+
+Người dùng báo review chưa phát hiện lỗi chức năng cần chặn PR: 406 tests/40
+suites pass, hai APK build thành công, lint 0 errors/7 warnings và CI xanh.
+Đây là thông tin review do người dùng cung cấp; chưa bổ sung run URL/SHA của CI
+vào evidence local. Ghi nhận này không phải phê duyệt nghiệm thu toàn bộ task
+hoặc yêu cầu tạo PR/merge.
+
+Kiểm tra lại local: head `bda013b9d07049d10d8c7bf6be66bee2a4d7d507`, working
+tree sạch trước cập nhật tài liệu; `adb devices -l` không liệt kê thiết bị nào.
+Không thay code hoặc chạy lại tests/build vì review không yêu cầu sửa chức năng.
+
+Hai phần còn mở:
+
+| Hạng mục | Trạng thái | Evidence cần bổ sung |
+|---|---|---|
+| Query trên Helio G85/3 GB/Android 10, fixture 5.000 từ | BLOCKED do chưa có thiết bị; AC-05/NFR-VM-03 HOLD | Inventory, fixture hash, exact SHA, 20 warmups và 100 samples cho mỗi workload DATA-05; giữ toàn bộ outlier, đánh giá max <50 ms và báo riêng mục tiêu <15 ms |
+| QA thiết bị | NOT RUN | Typing nhanh bank → book → clear và A → B → A; bàn phím/màn nhỏ/nghĩa dài; Airplane Mode trước first launch; mở detail/Back/recreate; kết quả hiện hành, không ghi dữ liệu hoặc activate pack |
+
+Khi có thiết bị, lưu model/API/build/chipset/RAM và SHA APK trước khi chạy.
+QA có thể chạy trên thiết bị Android hỗ trợ; việc đó không thay thế benchmark
+trên cấu hình tham chiếu hoặc cấu hình thay thế đã được chấp thuận. Giữ nguyên
+HOLD cho đến khi đủ evidence, không dùng số đo host hoặc CI xanh để đóng gate.
