@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.data.DaoFoundationTest" tests="32" skipped="0" failures="0" errors="0" timestamp="2026-11-06T14:35:29" hostname="7a0e3157ddf4" time="8.315">
+  <properties/>
+  <testcase name="historyUsesTimestampThenIdAndPreservesRepeatedEvents[26]" classname="com.vocamind.app.data.DaoFoundationTest" time="2.975"/>
+  <testcase name="largeIdBatchesMergeBeforeLimitAndStayUnique[26]" classname="com.vocamind.app.data.DaoFoundationTest" time="0.418"/>
+  <testcase name="savedFlagDoesNotInventProgressOrResetLearning[26]" classname="com.vocamind.app.data.DaoFoundationTest" time="0.072"/>
+  <testcase name="closedDatabaseErrorsAreNotSilentlyReturnedAsEmpty[26]" classname="com.vocamind.app.data.DaoFoundationTest" time="0.058"/>
+  <testcase name="dueFiltersActiveAndOrphanBeforeGlobalLimit[26]" classname="com.vocamind.app.data.DaoFoundationTest" time="0.056"/>
+  <testcase name="pausedOrNoActivePacksHaveNoCandidatesAndNeverActivateAutomatically[26]" classname="com.vocamind.app.data.DaoFoundationTest" time="0.061"/>
+  <testcase name="catalogOrderEmptyNullableAndAttribution[26]" classname="com.vocamind.app.data.DaoFoundationTest" time="0.05"/>
+  <testcase name="planningSnapshotAndFileReopenPreserveState[26]" classname="com.vocamind.app.data.DaoFoundationTest" time="0.066"/>
+  <testcase name="firstReviewRollsBackEventWhenNewProgressInsertFails[26]" classname="com.vocamind.app.data.DaoFoundationTest" time="0.044"/>
+  <testcase name="reviewTransactionRollsBackOnRealSqlFailureAfterInsert[26]" classname="com.vocamind.app.data.DaoFoundationTest" time="0.046"/>
+  <testcase name="newIsAbsenceOfAnyProgressAndLimitComesAfterDedup[26]" classname="com.vocamind.app.data.DaoFoundationTest" time="0.049"/>
+  <testcase name="catalogMergesBatchesBeforeOrderingAndDeduplicatingCandidates[26]" classname="com.vocamind.app.data.DaoFoundationTest" time="0.055"/>
+  <testcase name="quotaCountsUniqueFirstLearnedTimesNotReviewEvents[26]" classname="com.vocamind.app.data.DaoFoundationTest" time="0.043"/>
+  <testcase name="membershipDuplicatesAreIntentionalButVocabularyPoolIsUnique[26]" classname="com.vocamind.app.data.DaoFoundationTest" time="0.047"/>
+  <testcase name="progressBoxAndDueTieOrderingAreStable[26]" classname="com.vocamind.app.data.DaoFoundationTest" time="0.062"/>
+  <testcase name="invalidAndEmptyInputsCannotBecomeFullTableQueries[26]" classname="com.vocamind.app.data.DaoFoundationTest" time="0.075"/>
+  <testcase name="historyUsesTimestampThenIdAndPreservesRepeatedEvents" classname="com.vocamind.app.data.DaoFoundationTest" time="3.115"/>
+  <testcase name="largeIdBatchesMergeBeforeLimitAndStayUnique" classname="com.vocamind.app.data.DaoFoundationTest" time="0.312"/>
+  <testcase name="savedFlagDoesNotInventProgressOrResetLearning" classname="com.vocamind.app.data.DaoFoundationTest" time="0.061"/>
+  <testcase name="closedDatabaseErrorsAreNotSilentlyReturnedAsEmpty" classname="com.vocamind.app.data.DaoFoundationTest" time="0.041"/>
+  <testcase name="dueFiltersActiveAndOrphanBeforeGlobalLimit" classname="com.vocamind.app.data.DaoFoundationTest" time="0.049"/>
+  <testcase name="pausedOrNoActivePacksHaveNoCandidatesAndNeverActivateAutomatically" classname="com.vocamind.app.data.DaoFoundationTest" time="0.051"/>
+  <testcase name="catalogOrderEmptyNullableAndAttribution" classname="com.vocamind.app.data.DaoFoundationTest" time="0.055"/>
+  <testcase name="planningSnapshotAndFileReopenPreserveState" classname="com.vocamind.app.data.DaoFoundationTest" time="0.052"/>
+  <testcase name="firstReviewRollsBackEventWhenNewProgressInsertFails" classname="com.vocamind.app.data.DaoFoundationTest" time="0.046"/>
+  <testcase name="reviewTransactionRollsBackOnRealSqlFailureAfterInsert" classname="com.vocamind.app.data.DaoFoundationTest" time="0.046"/>
+  <testcase name="newIsAbsenceOfAnyProgressAndLimitComesAfterDedup" classname="com.vocamind.app.data.DaoFoundationTest" time="0.044"/>
+  <testcase name="catalogMergesBatchesBeforeOrderingAndDeduplicatingCandidates" classname="com.vocamind.app.data.DaoFoundationTest" time="0.043"/>
+  <testcase name="quotaCountsUniqueFirstLearnedTimesNotReviewEvents" classname="com.vocamind.app.data.DaoFoundationTest" time="0.039"/>
+  <testcase name="membershipDuplicatesAreIntentionalButVocabularyPoolIsUnique" classname="com.vocamind.app.data.DaoFoundationTest" time="0.047"/>
+  <testcase name="progressBoxAndDueTieOrderingAreStable" classname="com.vocamind.app.data.DaoFoundationTest" time="0.055"/>
+  <testcase name="invalidAndEmptyInputsCannotBecomeFullTableQueries" classname="com.vocamind.app.data.DaoFoundationTest" time="0.056"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[[Robolectric] WARN: Android SDK 36 requires Java 21 (have Java 17). Tests won't be run on SDK 36 unless explicitly requested.
+]]></system-err>
+</testsuite>

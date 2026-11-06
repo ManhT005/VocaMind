@@ -5,6 +5,12 @@ project entry point; generated build outputs stay in ignored build directories.
 
 | Document | Purpose |
 | --- | --- |
+| [DATA-07 plan](plans/data-07-progress-aggregation-queries.md) | Five-hour plan, distinct counts, six-box and quiz history acceptance |
+| [DATA-07 validation](data-07-validation.md) | Transactional snapshot reads, fixtures, error mapping and integration evidence |
+| [DATA-07 PR #26 fix validation](data-07-fix-validation.md) | DATA-05/06 integration, scope audit, atomic review/progress regression and AC-11 handoff |
+| [Local credit metadata contract](data/content-credits-contract.md) | Companion JSON, exact snapshot matching, existing-install compatibility and release limits |
+| [ATTR-01 review fix plan](plans/attr-01-fix-plan.md) | R1 regression and proposed R2 offline author/credit contract awaiting owner/reviewer confirmation |
+| [ATTR-01 validation](attr-01-validation.md) | Offline attribution UI, executed tests, screenshots and separate AC-12 release blocker |
 | [DATA-06 plan](plans/data-06-atomic-review-transaction.md) | Atomic review scope, six-hour plan, test matrix and boundaries |
 | [DATA-06 validation](data-06-validation.md) | Canonical writer, snapshot contract, current verification and handoff |
 | [DATA-06 PR #24 fix validation](data-06-fix-validation.md) | DATA-04 compatibility, atomic races/rollback, DEC-12 red/green proof and remaining gates |

@@ -136,6 +136,12 @@ public class DaoFoundationTest {
         // Schema v2 requires unique orderNo within each pack. Keep insertion
         // order opposite to display order to exercise ordering across batches.
         membership("Z-first", "shared", 1); membership("Z-first", "a", 0);
+        assertThrows(android.database.sqlite.SQLiteConstraintException.class,
+                () -> membership("Z-first", "new-b", 0));
+        assertThrows(android.database.sqlite.SQLiteConstraintException.class,
+                () -> catalog.getOpenHelper().getWritableDatabase().execSQL(
+                        "INSERT INTO LearningPack (id,title,description,category,orderNo,version) "
+                                + "VALUES ('duplicate-order','Duplicate','test','test',0,'1')"));
         assertEquals(Arrays.asList("a", "shared"), cd.words("Z-first").stream()
                 .map(v -> v.id).collect(Collectors.toList()));
 
