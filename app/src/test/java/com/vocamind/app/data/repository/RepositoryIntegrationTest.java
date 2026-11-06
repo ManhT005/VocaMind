@@ -354,6 +354,53 @@ public class RepositoryIntegrationTest {
         assertEquals(RepoError.INVALID_ARGUMENT, quizzes.saveAttempt(null, 1L).getError());
     }
 
+    @Test public void generatedQuizUsesFreshActiveSnapshotAndNeverWrites() {
+        GenerateQuiz generate = new GenerateQuiz(quizzes);
+        assertEquals(QuizGenerationOutcome.Status.EMPTY, generate.execute(new Random(42)).get().getStatus());
+        packs.activatePack("A", 1L);
+        packs.activatePack("B", 2L);
+        packs.activatePack("C", 3L);
+        packs.pausePack("C");
+        user.getOpenHelper().getWritableDatabase().execSQL(
+                "INSERT INTO UserPack (packId,isActive,activatedAt) VALUES ('orphan',1,1)");
+        String beforeCatalog = snapshot(catalog.getOpenHelper().getWritableDatabase());
+        String beforeUser = snapshot(user.getOpenHelper().getWritableDatabase());
+        QuizGenerationOutcome out = generate.execute(new Random(42)).get();
+        assertEquals(QuizGenerationOutcome.Status.READY, out.getStatus());
+        assertEquals(6, out.getQuestions().size());
+        Set<String> expected = new HashSet<>(Arrays.asList(SHARED, W1, W2, W3, W4, W5));
+        Set<String> actual = new HashSet<>();
+        for (QuizQuestion q : out.getQuestions()) {
+            assertTrue(actual.add(q.getId()));
+            for (QuizOption option : q.getOptions()) assertTrue(expected.contains(option.getId()));
+        }
+        assertEquals(expected, actual);
+        assertEquals(beforeCatalog, snapshot(catalog.getOpenHelper().getWritableDatabase()));
+        assertEquals(beforeUser, snapshot(user.getOpenHelper().getWritableDatabase()));
+        packs.pausePack("A");
+        assertEquals("INSUFFICIENT_VOCABULARY", generate.execute(new Random(42)).get().getReason());
+        packs.pausePack("B");
+        assertEquals(QuizGenerationOutcome.Status.EMPTY, generate.execute(new Random(42)).get().getStatus());
+        catalog.close();
+        assertEquals(RepoError.READ_FAILED, generate.execute(new Random(42)).getError());
+    }
+
+    @Test public void productionNormalizerVectorsOnAndroid() {
+        new QuizGenerationTestVectors().verify();
+    }
+
+    private static final class QuizGenerationTestVectors {
+        void verify() {
+            MeaningNormalizer n = new UnicodeMeaningNormalizer();
+            assertEquals("b\u00e0n", n.normalize("\u00a0BA\u0300N\u0085"));
+            assertEquals("strasse", n.normalize("Stra\u00dfe"));
+            assertEquals("\u03c3\u03c3\u03c3", n.normalize("\u03a3\u03c3\u03c2"));
+            assertEquals("i\u0307", n.normalize("\u0130"));
+            assertEquals("\ud801\udc28", n.normalize("\ud801\udc00"));
+            assertNotEquals(n.normalize("ban"), n.normalize("b\u00e0n"));
+        }
+    }
+
     @Test public void quizVocabularyWithNonHexStableIdIsInvalidData() {
         catalog.getOpenHelper().getWritableDatabase().execSQL("INSERT INTO VocabularyEntry "
                 + "(id,lemma,normalizedLemma,pos,meaningVi,exampleEn,exampleVi,ipa,sourceId,contentVersion) "
