@@ -50,8 +50,8 @@ public class VocabularyDetailTest {
         assertEquals(View.GONE, view.findViewById(R.id.detail_retry).getVisibility());
         VocabularyDetailFragment.render(view, new VocabularyDetailViewModel.State(null, false, false, RepoError.READ_FAILED));
         assertEquals(View.VISIBLE, view.findViewById(R.id.detail_retry).getVisibility());
-        VocabularyDetailFragment.render(view, new VocabularyDetailViewModel.State(detail("second", null, false), false, false, RepoError.SAVED_POLICY_REQUIRED));
-        assertEquals(View.GONE, view.findViewById(R.id.detail_retry).getVisibility());
+        VocabularyDetailFragment.render(view, new VocabularyDetailViewModel.State(detail("second", null, false), false, false, RepoError.WRITE_FAILED));
+        assertEquals(View.VISIBLE, view.findViewById(R.id.detail_retry).getVisibility());
         assertFalse(view.findViewById(R.id.detail_save).isEnabled());
         var missing = new VocabularyDetail(new CatalogVocabulary("missing", "m", "m", "noun", null, "", " ", null, "s", "1"), false);
         VocabularyDetailFragment.render(view, new VocabularyDetailViewModel.State(missing, false, false, null));
@@ -128,7 +128,7 @@ public class VocabularyDetailTest {
     }
 
     @org.robolectric.annotation.GraphicsMode(org.robolectric.annotation.GraphicsMode.Mode.NATIVE)
-    @Test public void captureDetailLayoutsWithFixedActionAndPolicyFeedback() throws Exception {
+    @Test public void captureDetailLayoutsWithFixedActionAndWriteErrorFeedback() throws Exception {
         Context base = ApplicationProvider.getApplicationContext();
         for (boolean night : new boolean[]{false, true}) {
             android.content.res.Configuration config = new android.content.res.Configuration(base.getResources().getConfiguration());
@@ -138,21 +138,21 @@ public class VocabularyDetailTest {
             View view = LayoutInflater.from(context).inflate(R.layout.fragment_vocabulary_detail, new FrameLayout(context), false);
             // Synthetic UI fixture matches the supplied screenshot; not an assertion of catalog QA.
             var word = new CatalogVocabulary("fixture", "book", "book", "noun", "cuốn sách", "I put the book on the desk.", "Tôi đặt cuốn sách lên bàn.", null, "test", "1");
-            for (boolean blocked : new boolean[]{false, true}) {
+            for (boolean failed : new boolean[]{false, true}) {
                 VocabularyDetailFragment.render(view, new VocabularyDetailViewModel.State(new VocabularyDetail(word, false), false, false,
-                        blocked ? RepoError.SAVED_POLICY_REQUIRED : null));
+                        failed ? RepoError.WRITE_FAILED : null));
                 int width = Math.round(393 * context.getResources().getDisplayMetrics().density);
                 int height = Math.round(780 * context.getResources().getDisplayMetrics().density);
                 view.measure(View.MeasureSpec.makeMeasureSpec(width, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(height, View.MeasureSpec.EXACTLY));
                 view.layout(0, 0, width, height);
-                assertEquals(blocked ? View.VISIBLE : View.GONE, view.findViewById(R.id.route_message).getVisibility());
-                assertEquals(View.GONE, view.findViewById(R.id.detail_retry).getVisibility());
-                assertEquals(!blocked, view.findViewById(R.id.detail_save).isEnabled());
+                assertEquals(failed ? View.VISIBLE : View.GONE, view.findViewById(R.id.route_message).getVisibility());
+                assertEquals(failed ? View.VISIBLE : View.GONE, view.findViewById(R.id.detail_retry).getVisibility());
+                assertEquals(!failed, view.findViewById(R.id.detail_save).isEnabled());
                 android.graphics.Bitmap bitmap = android.graphics.Bitmap.createBitmap(width, height, android.graphics.Bitmap.Config.ARGB_8888);
                 view.draw(new android.graphics.Canvas(bitmap));
                 java.io.File folder = new java.io.File("build/reports/vocab-02-ui");
                 assertTrue(folder.isDirectory() || folder.mkdirs());
-                java.io.File file = new java.io.File(folder, "detail-" + android.os.Build.VERSION.SDK_INT + (night ? "-dark" : "-light") + (blocked ? "-blocked" : "-ready") + ".png");
+                java.io.File file = new java.io.File(folder, "detail-" + android.os.Build.VERSION.SDK_INT + (night ? "-dark" : "-light") + (failed ? "-error" : "-ready") + ".png");
                 try (var stream = new java.io.FileOutputStream(file)) { assertTrue(bitmap.compress(android.graphics.Bitmap.CompressFormat.PNG, 100, stream)); }
                 bitmap.recycle();
             }

@@ -112,10 +112,28 @@ public abstract class UserDao {
         DaoInputs.range(dayStart, nextDayStart);
         return new UserPlanningSnapshot(activePacks(), allProgress(), preference(), readLearnedCount(dayStart, nextDayStart));
     }
-    /** Existing progress only; creation semantics for saved-only words require progress contract review. */
+    /** Existing progress only: never overwrites learning fields. */
     @Query("UPDATE UserWordProgress SET isSaved=:saved WHERE vocabularyId=:id")
     protected abstract int writeSaved(String id, boolean saved);
     public int setSaved(String id, boolean saved) { id(id); return writeSaved(id, saved); }
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    protected abstract long insertSavedProgress(UserWordProgress row);
+    /** VOCAB-02 saved-only contract: due now, no fabricated learning/review timestamps. */
+    public long insertSavedProgressIfAbsent(String vocabularyId, long savedAt) {
+        id(vocabularyId);
+        require(savedAt >= 0, "savedAt");
+        UserWordProgress row = new UserWordProgress();
+        row.vocabularyId = vocabularyId;
+        row.isSaved = true;
+        row.box = 0;
+        row.dueAt = savedAt;
+        row.learnedAt = null;
+        row.lastReviewedAt = null;
+        row.reviewCount = 0;
+        row.consecutiveMistakes = 0;
+        row.isLeech = false;
+        return insertSavedProgress(row);
+    }
     @Insert protected abstract long writeReview(ReviewEvent row);
     public long insertReview(ReviewEvent row) {
         require(row != null, "review row");

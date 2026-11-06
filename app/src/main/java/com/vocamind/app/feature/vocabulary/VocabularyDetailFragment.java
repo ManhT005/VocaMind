@@ -41,8 +41,7 @@ public final class VocabularyDetailFragment extends Fragment {
     @Override public void onResume() { super.onResume(); if (model != null) model.refresh(); }
     static void render(View view, VocabularyDetailViewModel.State state) {
         TextView message = view.findViewById(R.id.route_message);
-        int error = state.error == RepoError.SAVED_POLICY_REQUIRED ? R.string.detail_policy_pending
-                : state.error == RepoError.NOT_FOUND || state.error == RepoError.INVALID_ARGUMENT
+        int error = state.error == RepoError.NOT_FOUND || state.error == RepoError.INVALID_ARGUMENT
                 ? R.string.word_route_invalid : R.string.detail_error;
         message.setText(state.loading ? R.string.word_route_loading : state.pending ? R.string.detail_saving
                 : state.error != null ? error : R.string.detail_ready);

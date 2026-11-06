@@ -70,13 +70,6 @@ public class VocabularyListTest {
                 pack.set(db.catalogDao().packs().get(0).id);
                 var word = db.catalogDao().words(pack.get()).get(0);
                 expectedWord.set(com.vocamind.app.data.catalog.CatalogMapper.vocabulary(word));
-                var user = com.vocamind.app.data.user.UserDatabase.open(dbContext);
-                try {
-                    var progress = new com.vocamind.app.data.user.entity.UserWordProgress();
-                    progress.vocabularyId = word.id; progress.box = 3; progress.dueAt = 12345;
-                    progress.learnedAt = 100L; progress.lastReviewedAt = 200L; progress.reviewCount = 4;
-                    user.userDao().saveProgress(progress);
-                } finally { user.close(); }
             } finally { db.close(); }
         });
         reader.start(); reader.join();
@@ -127,7 +120,8 @@ public class VocabularyListTest {
             try {
                 var progress = user.userDao().progress(expected);
                 persistedSaved.set(progress.isSaved);
-                assertEquals(3, progress.box); assertEquals(12345L, progress.dueAt); assertEquals(4, progress.reviewCount);
+                assertEquals(0, progress.box); assertTrue(progress.dueAt > 0); assertEquals(0, progress.reviewCount);
+                assertNull(progress.learnedAt); assertNull(progress.lastReviewedAt);
             } catch (Throwable failure) { verificationFailure.set(failure); }
             finally { user.close(); }
         });

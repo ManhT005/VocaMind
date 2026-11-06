@@ -2,8 +2,6 @@ package com.vocamind.app.domain.common;
 
 /** Standard failure categories for repository calls. No storage exception crosses the domain. */
 public enum RepoError {
-    /** Missing progress: creation/no-op contract awaits data-owner approval. Nothing was written. */
-    SAVED_POLICY_REQUIRED,
     /** Caller passed an invalid argument; nothing was read or written. */
     INVALID_ARGUMENT,
     /** The referenced pack or vocabulary does not exist in the catalog. */

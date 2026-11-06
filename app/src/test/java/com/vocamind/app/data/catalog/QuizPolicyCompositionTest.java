@@ -32,7 +32,10 @@ public class QuizPolicyCompositionTest {
                     var save = new com.vocamind.app.domain.vocabulary.ToggleSaved(repositories.vocabulary());
                     assertEquals(word.stableId, detail.execute(pack.id, word.stableId).get().word.stableId);
                     assertFalse(detail.execute(pack.id, word.stableId).get().saved);
-                    // Existing-progress save only: first-save acceptance remains blocked on policy.
+                    // First-save from empty userdata through real production composition.
+                    assertTrue(save.execute(pack.id, word.stableId, true).get());
+                    assertNull(repositories.study().getProgress(word.stableId).get().get().getLearnedAtEpochMillis());
+                    assertEquals(0, repositories.study().getProgress(word.stableId).get().get().getReviewCount());
                     var scheduled = new com.vocamind.app.domain.learning.LeitnerScheduler().schedule(
                             com.vocamind.app.domain.learning.LeitnerState.newWord(),
                             com.vocamind.app.domain.learning.Rating.HARD, 1000L, java.time.ZoneOffset.UTC);
@@ -67,6 +70,39 @@ public class QuizPolicyCompositionTest {
             assertThrows(IllegalArgumentException.class, () -> QuizPolicyAsset.load(withoutAppAssets, List.of()));
         } finally {
             withoutAppAssets.close();
+        }
+    }
+
+    @Test public void firstSaveThroughProductionCompositionPersistsAcrossReopen() throws Exception {
+        Context context = ApplicationProvider.getApplicationContext();
+        ExecutorService worker = Executors.newSingleThreadExecutor();
+        try {
+            worker.submit(() -> {
+                String packId, stableId;
+                try (CatalogProvider catalog = new CatalogProvider(context);
+                     RepositoryProvider repositories = new RepositoryProvider(context, catalog)) {
+                    packId = catalog.repository().getPacks().get(0).id;
+                    stableId = catalog.repository().getWords(packId).get(0).stableId;
+                    assertTrue(repositories.study().getProgress(stableId).get().isEmpty());
+                    assertTrue(new com.vocamind.app.domain.vocabulary.ToggleSaved(repositories.vocabulary())
+                            .execute(packId, stableId, true).get());
+                }
+                try (CatalogProvider catalog = new CatalogProvider(context);
+                     RepositoryProvider repositories = new RepositoryProvider(context, catalog)) {
+                    assertTrue(repositories.vocabulary().getDetail(packId, stableId).get().saved);
+                    assertNull(repositories.study().getProgress(stableId).get().get().getLearnedAtEpochMillis());
+                    assertFalse(repositories.vocabulary().setSaved(packId, stableId, false).get());
+                }
+                try (CatalogProvider catalog = new CatalogProvider(context);
+                     RepositoryProvider repositories = new RepositoryProvider(context, catalog)) {
+                    assertFalse(repositories.vocabulary().getDetail(packId, stableId).get().saved);
+                    assertEquals(0, repositories.study().getProgress(stableId).get().get().getReviewCount());
+                }
+            }).get(60, TimeUnit.SECONDS);
+        } finally {
+            worker.shutdownNow();
+            context.deleteDatabase("catalog.db");
+            context.deleteDatabase("userdata.db");
         }
     }
 }
