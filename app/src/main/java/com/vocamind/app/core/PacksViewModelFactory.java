@@ -43,7 +43,6 @@ public final class PacksViewModelFactory implements ViewModelProvider.Factory {
                     (id, active) -> new SetPackActive(lazy.get().packs(), System::currentTimeMillis).execute(id, active),
                     worker, main::post, close));
         }
-        if (packId == null) throw new IllegalArgumentException("packId required");
         return modelClass.cast(new PackWordsViewModel(
                 () -> new GetPackWords(lazy.get().packs()).execute(packId), worker, main::post, close));
     }

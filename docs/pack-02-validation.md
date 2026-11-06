@@ -1,5 +1,10 @@
 # PACK-02 activation validation and handoff
 
+Historical evidence for `0512417` is retained below. For the uncommitted integration
+with develop `4959cf6`, new host results and isolated emulator QA, see
+[PACK-02 integration follow-up](pack-02-integration-validation.md). New results do
+not retroactively change the NOT RUN entries for the old reviewed revision.
+
 Implementation owner: Trường. Requested reviewer: Thành. Local handoff for review,
 not a change to task assignment/status or SRS acceptance status. No PR or merge.
 

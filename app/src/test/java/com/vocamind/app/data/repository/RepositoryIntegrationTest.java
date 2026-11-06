@@ -189,6 +189,58 @@ public class RepositoryIntegrationTest {
         assertEquals(RepoError.INVALID_ARGUMENT, packs.getPackWords(" ").getError());
     }
 
+    @Test public void vocabularyBrowsingIsReadOnlyAcrossInactivePausedAndFileReopen() {
+        packs.activatePack("B", 1L); packs.pausePack("B");
+        reviews.recordReview(SHARED, schedule(LeitnerState.newWord(), Rating.HARD, DAY), DAY);
+        user.userDao().setSaved(SHARED, true);
+        String beforeCatalog = snapshot(catalog.getOpenHelper().getWritableDatabase());
+        String beforeUser = snapshot(user.getOpenHelper().getWritableDatabase());
+        List<StudyItem> a = packs.getPackWords("A").get(), b = packs.getPackWords("B").get();
+        assertEquals(Arrays.asList(SHARED, W1, W2, W3),
+                a.stream().map(i -> i.getVocabulary().stableId).collect(Collectors.toList()));
+        assertEquals(Arrays.asList(SHARED, W4, W5),
+                b.stream().map(i -> i.getVocabulary().stableId).collect(Collectors.toList()));
+        assertEquals(a.get(0).getProgress().getBox(), b.get(0).getProgress().getBox());
+        assertTrue(a.get(0).getProgress().isSaved());
+        assertNull(user.userDao().pack("A"));
+        assertFalse(user.userDao().pack("B").isActive);
+        assertEquals(beforeCatalog, snapshot(catalog.getOpenHelper().getWritableDatabase()));
+        assertEquals(beforeUser, snapshot(user.getOpenHelper().getWritableDatabase()));
+        catalog.close(); user.close();
+        catalog = CatalogDatabase.open(context, catalogName);
+        user = UserDatabase.open(context, userName);
+        packs = new RoomPackRepository(catalog.catalogDao(), user.userDao());
+        assertEquals(beforeCatalog, snapshot(catalog.getOpenHelper().getWritableDatabase()));
+        assertEquals(beforeUser, snapshot(user.getOpenHelper().getWritableDatabase()));
+        assertEquals(Long.valueOf(DAY), packs.getPackWords("A").get().get(0).getProgress().getLearnedAtEpochMillis());
+        user.getOpenHelper().getWritableDatabase().execSQL("UPDATE UserWordProgress SET box=5 WHERE vocabularyId=?", new Object[]{SHARED});
+        assertEquals(5, packs.getPackWords("B").get().get(0).getProgress().getBox());
+        assertEquals(RepoError.INVALID_ARGUMENT, packs.getPackWords(null).getError());
+        catalog.getOpenHelper().getWritableDatabase().execSQL("DELETE FROM PackWord WHERE packId='C'");
+        assertTrue(packs.getPackWords("C").get().isEmpty());
+        user.close();
+        assertEquals(RepoError.READ_FAILED, packs.getPackWords("A").getError());
+    }
+
+    private String snapshot(SupportSQLiteDatabase db) {
+        StringBuilder result = new StringBuilder();
+        List<String> tables = new ArrayList<>();
+        try (android.database.Cursor c = db.query("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name")) {
+            while (c.moveToNext()) tables.add(c.getString(0));
+        }
+        for (String table : tables) {
+            List<String> rows = new ArrayList<>();
+            try (android.database.Cursor c = db.query("SELECT * FROM [" + table + "]")) {
+                while (c.moveToNext()) {
+                    StringBuilder row = new StringBuilder();
+                    for (int n=0; n<c.getColumnCount(); n++) row.append(c.isNull(n) ? "<NULL>" : c.getType(n) == android.database.Cursor.FIELD_TYPE_BLOB ? Arrays.toString(c.getBlob(n)) : c.getString(n)).append('|');
+                    rows.add(row.toString());
+                }
+            }
+            Collections.sort(rows); result.append(table).append(rows);
+        }
+        return result.toString();
+    }
     @Test public void unknownPackIsNotFoundAndNothingIsCreated() {
         assertEquals(RepoError.NOT_FOUND, packs.activatePack("nope", 1L).getError());
         assertTrue(user.userDao().packs().isEmpty());

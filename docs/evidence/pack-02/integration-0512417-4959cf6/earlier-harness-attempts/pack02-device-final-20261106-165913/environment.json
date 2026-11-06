@@ -1,0 +1,12 @@
+{
+  "ro.product.model": "sdk_gphone_x86",
+  "ro.build.version.sdk": "30",
+  "ro.build.fingerprint": "google/sdk_gphone_x86/generic_x86_arm:11/RSR1.201013.001/6903271:user/release-keys",
+  "serial": "emulator-5560",
+  "avd": "pack02-followup",
+  "date": "2026-11-06T16:59:15.120976+07:00",
+  "apkSha256": {
+    "app/build/outputs/apk/debug/app-debug.apk": "aa7afecc7a1452eb0a16af6dcf9cf15feecda126adcbb5bedee76b9116f9cf7c",
+    "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": "5af7e934981c3fc8b2df201fbb2d2f3ab9b6cb5be4833a47a20cb41b5047a792"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "result": "PASS_CONTRACT_CHECKS",
+  "mode": "development",
+  "uniqueWords": 4,
+  "memberships": 16,
+  "packs": 4,
+  "baselineCompared": false,
+  "limitations": "Does not verify semantic quality, license evidence, Room asset, FTS or app release readiness."
+}

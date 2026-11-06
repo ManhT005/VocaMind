@@ -1,0 +1,1016 @@
+[
+  {
+    "command": "adb -s emulator-5560 emu avd name",
+    "exit": 0,
+    "outputSha256": "68e7a940b22ea8fe833b50388aeade2d15d6e2517ed966969ccb51ed0eb53387",
+    "output": "pack02-followup\r\r\nOK\r\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 install -r app/build/outputs/apk/debug/app-debug.apk",
+    "exit": 0,
+    "outputSha256": "c4aa470acafcf8576c15b0f0b5ae7e852d1ec5413372d0e6a9272e788e1306d3",
+    "output": "Performing Streamed Install\r\nSuccess\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 install -r app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+    "exit": 0,
+    "outputSha256": "c4aa470acafcf8576c15b0f0b5ae7e852d1ec5413372d0e6a9272e788e1306d3",
+    "output": "Performing Streamed Install\r\nSuccess\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell pm clear com.vocamind.app",
+    "exit": 0,
+    "outputSha256": "df5f678c3e897e8db27b8c5de5ae1938a25aa084aeee89a1a44958f104316b3d",
+    "output": "Success\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cmd connectivity airplane-mode enable",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell svc wifi disable",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell svc data disable",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell settings get global airplane_mode_on",
+    "exit": 0,
+    "outputSha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04",
+    "output": "1\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell settings get global wifi_on",
+    "exit": 0,
+    "outputSha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "output": "0\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell getprop ro.product.model",
+    "exit": 0,
+    "outputSha256": "8341b6d1530586f8bd457237b642097d82740ba554e2ee3410a1aa59bf947211",
+    "output": "sdk_gphone_x86\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell getprop ro.build.version.sdk",
+    "exit": 0,
+    "outputSha256": "c5dbb92bcb2ba79188091ae09688fc17d60b46256d913b3712d785dbc16bc954",
+    "output": "30\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell getprop ro.build.fingerprint",
+    "exit": 0,
+    "outputSha256": "32e704deb23cafc1c1d5f1c0e770551da74c6d3c41c8ea6a4b78e872752a8d22",
+    "output": "google/sdk_gphone_x86/generic_x86_arm:11/RSR1.201013.001/6903271:user/release-keys\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell am instrument -w -e class com.vocamind.app.feature.packs.PackActivationInstrumentedTest#offlineFirstLaunchCtaActivateVocabularyBackPauseAndConfirmedRotation com.vocamind.app.test/androidx.test.runner.AndroidJUnitRunner",
+    "exit": 0,
+    "outputSha256": "575d6aea1dee0aced6e73d72a19cb492cf05d4d3079aef99b66dcff6c6ed2b0d",
+    "output": "\r\ncom.vocamind.app.feature.packs.PackActivationInstrumentedTest:.\r\n\r\nTime: 3.141\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell am instrument -w -e class com.vocamind.app.feature.packs.PackActivationInstrumentedTest#rotationWhileWritePendingKeepsSingleMutationAndReconciles com.vocamind.app.test/androidx.test.runner.AndroidJUnitRunner",
+    "exit": 0,
+    "outputSha256": "51bb28949e7b7463b2fc181f4bb0b85b51a4fa79f475c920c55a6d7a1d5a35b0",
+    "output": "\r\ncom.vocamind.app.feature.packs.PackActivationInstrumentedTest:.\r\n\r\nTime: 2.946\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell am instrument -w -e class com.vocamind.app.feature.packs.PackActivationInstrumentedTest#writeFailureAndSuccessfulWriteFailedRereadUseReadOnlyRetry com.vocamind.app.test/androidx.test.runner.AndroidJUnitRunner",
+    "exit": 0,
+    "outputSha256": "4dc96d23f68d41a6b9e405896497c7f534e991bb1f6b48c34d636c6049f69883",
+    "output": "\r\ncom.vocamind.app.feature.packs.PackActivationInstrumentedTest:.\r\n\r\nTime: 1.995\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell am instrument -w -e class com.vocamind.app.feature.packs.PackActivationInstrumentedTest#persistenceProbe -e active true com.vocamind.app.test/androidx.test.runner.AndroidJUnitRunner",
+    "exit": 0,
+    "outputSha256": "746578f1c5474807734d9e165505ba47678dbbceddb973d46a5f10f3541089d3",
+    "output": "\r\ncom.vocamind.app.feature.packs.PackActivationInstrumentedTest:.\r\n\r\nTime: 2.818\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell am force-stop com.vocamind.app",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell am instrument -w -e class com.vocamind.app.feature.packs.PackActivationInstrumentedTest#persistenceProbe -e active true -e verifyOnly true com.vocamind.app.test/androidx.test.runner.AndroidJUnitRunner",
+    "exit": 0,
+    "outputSha256": "c08323f5dcc6595031f03804fc013e5ec135c7cbf1d4bd2b489b731765a20419",
+    "output": "\r\ncom.vocamind.app.feature.packs.PackActivationInstrumentedTest:.\r\n\r\nTime: 2.636\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 reboot",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell settings get global airplane_mode_on",
+    "exit": 0,
+    "outputSha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04",
+    "output": "1\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell settings get global wifi_on",
+    "exit": 0,
+    "outputSha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "output": "0\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell am instrument -w -e class com.vocamind.app.feature.packs.PackActivationInstrumentedTest#persistenceProbe -e active true -e verifyOnly true com.vocamind.app.test/androidx.test.runner.AndroidJUnitRunner",
+    "exit": 0,
+    "outputSha256": "1931374b815918dfdc14d83397ee3a8e302dbbc6c95f73689a5d259de2b6d77c",
+    "output": "\r\ncom.vocamind.app.feature.packs.PackActivationInstrumentedTest:.\r\n\r\nTime: 2.993\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell am instrument -w -e class com.vocamind.app.feature.packs.PackActivationInstrumentedTest#persistenceProbe -e active false com.vocamind.app.test/androidx.test.runner.AndroidJUnitRunner",
+    "exit": 0,
+    "outputSha256": "6c975f0f923f23e7c7bfd3297b2e787096d24f07b1988191054e05404067f3a2",
+    "output": "\r\ncom.vocamind.app.feature.packs.PackActivationInstrumentedTest:.\r\n\r\nTime: 2.019\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell am force-stop com.vocamind.app",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell am instrument -w -e class com.vocamind.app.feature.packs.PackActivationInstrumentedTest#persistenceProbe -e active false -e verifyOnly true com.vocamind.app.test/androidx.test.runner.AndroidJUnitRunner",
+    "exit": 0,
+    "outputSha256": "67910a5d130dd162fa34e0a1bb7b4a9554c86b55a6a49472b163c6496f806f75",
+    "output": "\r\ncom.vocamind.app.feature.packs.PackActivationInstrumentedTest:.\r\n\r\nTime: 1.681\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 reboot",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell settings get global airplane_mode_on",
+    "exit": 0,
+    "outputSha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04",
+    "output": "1\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell settings get global wifi_on",
+    "exit": 0,
+    "outputSha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "output": "0\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell am instrument -w -e class com.vocamind.app.feature.packs.PackActivationInstrumentedTest#persistenceProbe -e active false -e verifyOnly true com.vocamind.app.test/androidx.test.runner.AndroidJUnitRunner",
+    "exit": 0,
+    "outputSha256": "a8016bec7dca0409b7bf4039586ad99b53841ab685a0c058c674f8947ecc8c66",
+    "output": "\r\ncom.vocamind.app.feature.packs.PackActivationInstrumentedTest:.\r\n\r\nTime: 2.07\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell am instrument -w -e class com.vocamind.app.feature.packs.PackActivationInstrumentedTest#backgroundDestinationForProcessRestoration -e finishActivities false com.vocamind.app.test/androidx.test.runner.AndroidJUnitRunner",
+    "exit": 0,
+    "outputSha256": "f00a6bd39c5b648c886f66bd60ea52f9e2fa3fe039048f7e5303ed4020e921cc",
+    "output": "\r\ncom.vocamind.app.feature.packs.PackActivationInstrumentedTest:.\r\n\r\nTime: 2.052\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell pidof com.vocamind.app",
+    "exit": 1,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell am start -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000 -n com.vocamind.app/.MainActivity",
+    "exit": 0,
+    "outputSha256": "2bf0495b4f0aafe47e201c8bb0d2a0ee01e9111269b08fee45a2d0149ce0c717",
+    "output": "Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.vocamind.app/.MainActivity }\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "10b7e1fe673ced23ecdc981390c792d27c83a967dde111505c6e881f92da0fa8",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.vocamind.app\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\" [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input tap 360 425",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "7925202dfa98fc454b36a46e32fc930a97fc41764947dded8e501ced67f425b6",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.vocamind.app\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\" [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input tap 360 455",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "d94aba8c506c9ce6590edb4bbbcf0b8d5fe81ebfd4e17361f86cf888668726c2",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.vocamind.app\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\" [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell pidof com.vocamind.app",
+    "exit": 0,
+    "outputSha256": "2e0850d902a2f209c533a55b361585fc1800144aa38c83b21158f372a0f6b54f",
+    "output": "4263\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input keyevent KEYCODE_HOME",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell am kill com.vocamind.app",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell pidof com.vocamind.app",
+    "exit": 1,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell am start -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000 -n com.vocamind.app/.MainActivity",
+    "exit": 0,
+    "outputSha256": "6b03525628b51bb23e4c3402043bd15743f1abb9fdffc2c42ca12673371317f8",
+    "output": "Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.vocamind.app/.MainActivity }\r\nWarning: Activity not started, its current task has been brought to the front\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "d94aba8c506c9ce6590edb4bbbcf0b8d5fe81ebfd4e17361f86cf888668726c2",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.vocamind.app\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\" [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell pidof com.vocamind.app",
+    "exit": 0,
+    "outputSha256": "88e7a0a0165e4bcab83cdc1e2652bf35dd741093b26b088f6c40f9a380465beb",
+    "output": "4441\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell am force-stop com.vocamind.app",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell am start -n com.vocamind.app/.MainActivity",
+    "exit": 0,
+    "outputSha256": "a642ce8a4939573d48725dc72f4aa9cb2e7bd92f6ea8b3c7ba25105c80e4cef4",
+    "output": "Starting: Intent { cmp=com.vocamind.app/.MainActivity }\r\nError type 3\r\nError: Activity class {com.vocamind.app/com.vocamind.app.MainActivity} does not exist.\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell am force-stop com.vocamind.app",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell am start -n com.vocamind.app/.MainActivity",
+    "exit": 0,
+    "outputSha256": "a642ce8a4939573d48725dc72f4aa9cb2e7bd92f6ea8b3c7ba25105c80e4cef4",
+    "output": "Starting: Intent { cmp=com.vocamind.app/.MainActivity }\r\nError type 3\r\nError: Activity class {com.vocamind.app/com.vocamind.app.MainActivity} does not exist.\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input keyevent KEYCODE_BACK",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell am start -n com.vocamind.app/.MainActivity",
+    "exit": 0,
+    "outputSha256": "a642ce8a4939573d48725dc72f4aa9cb2e7bd92f6ea8b3c7ba25105c80e4cef4",
+    "output": "Starting: Intent { cmp=com.vocamind.app/.MainActivity }\r\nError type 3\r\nError: Activity class {com.vocamind.app/com.vocamind.app.MainActivity} does not exist.\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input keyevent KEYCODE_BACK",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell am start -n com.vocamind.app/.MainActivity",
+    "exit": 0,
+    "outputSha256": "a642ce8a4939573d48725dc72f4aa9cb2e7bd92f6ea8b3c7ba25105c80e4cef4",
+    "output": "Starting: Intent { cmp=com.vocamind.app/.MainActivity }\r\nError type 3\r\nError: Activity class {com.vocamind.app/com.vocamind.app.MainActivity} does not exist.\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input keyevent KEYCODE_BACK",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell am start -n com.vocamind.app/.MainActivity",
+    "exit": 0,
+    "outputSha256": "a642ce8a4939573d48725dc72f4aa9cb2e7bd92f6ea8b3c7ba25105c80e4cef4",
+    "output": "Starting: Intent { cmp=com.vocamind.app/.MainActivity }\r\nError type 3\r\nError: Activity class {com.vocamind.app/com.vocamind.app.MainActivity} does not exist.\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input keyevent KEYCODE_BACK",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell am start -n com.vocamind.app/.MainActivity",
+    "exit": 0,
+    "outputSha256": "a642ce8a4939573d48725dc72f4aa9cb2e7bd92f6ea8b3c7ba25105c80e4cef4",
+    "output": "Starting: Intent { cmp=com.vocamind.app/.MainActivity }\r\nError type 3\r\nError: Activity class {com.vocamind.app/com.vocamind.app.MainActivity} does not exist.\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input keyevent KEYCODE_BACK",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell am start -n com.vocamind.app/.MainActivity",
+    "exit": 0,
+    "outputSha256": "a642ce8a4939573d48725dc72f4aa9cb2e7bd92f6ea8b3c7ba25105c80e4cef4",
+    "output": "Starting: Intent { cmp=com.vocamind.app/.MainActivity }\r\nError type 3\r\nError: Activity class {com.vocamind.app/com.vocamind.app.MainActivity} does not exist.\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input keyevent KEYCODE_BACK",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell am start -n com.vocamind.app/.MainActivity",
+    "exit": 0,
+    "outputSha256": "a642ce8a4939573d48725dc72f4aa9cb2e7bd92f6ea8b3c7ba25105c80e4cef4",
+    "output": "Starting: Intent { cmp=com.vocamind.app/.MainActivity }\r\nError type 3\r\nError: Activity class {com.vocamind.app/com.vocamind.app.MainActivity} does not exist.\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input keyevent KEYCODE_BACK",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell am start -n com.vocamind.app/.MainActivity",
+    "exit": 0,
+    "outputSha256": "a642ce8a4939573d48725dc72f4aa9cb2e7bd92f6ea8b3c7ba25105c80e4cef4",
+    "output": "Starting: Intent { cmp=com.vocamind.app/.MainActivity }\r\nError type 3\r\nError: Activity class {com.vocamind.app/com.vocamind.app.MainActivity} does not exist.\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input keyevent KEYCODE_BACK",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell am start -n com.vocamind.app/.MainActivity",
+    "exit": 0,
+    "outputSha256": "a642ce8a4939573d48725dc72f4aa9cb2e7bd92f6ea8b3c7ba25105c80e4cef4",
+    "output": "Starting: Intent { cmp=com.vocamind.app/.MainActivity }\r\nError type 3\r\nError: Activity class {com.vocamind.app/com.vocamind.app.MainActivity} does not exist.\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "b04da35a9be938b75f1409c48a9eecdb64db2361daba0abfdf3bcf052bdeceb0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.apps.nexuslauncher\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickab [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell am force-stop com.vocamind.app",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell am start -n com.vocamind.app/.MainActivity",
+    "exit": 0,
+    "outputSha256": "9ca872a1042536152b7097bb7f277f93d48b3dba417f1be44498c2235046c1a2",
+    "output": "Starting: Intent { cmp=com.vocamind.app/.MainActivity }\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "10b7e1fe673ced23ecdc981390c792d27c83a967dde111505c6e881f92da0fa8",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.vocamind.app\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\" [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "10b7e1fe673ced23ecdc981390c792d27c83a967dde111505c6e881f92da0fa8",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.vocamind.app\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\" [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input tap 360 425",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "0701f9bbd958d618a81c9d149137e797734295924e02ed90317ee8d973a8eeba",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.vocamind.app\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\" [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input tap 360 455",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "3991c3fb5f13449bce29c1e771293c9d9534b79adebdd890ec1570580bada75b",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.vocamind.app\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\" [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input tap 360 386",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "c3e2e055a85d4ffba85df15c9933e59d69ac5bb3a6973d1e12957613ee635764",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.vocamind.app\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\" [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input keyevent KEYCODE_BACK",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "880db1e81137b464514d4732471652a7ddffcc60f151a5deb83a05f94012d78f",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.vocamind.app\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\" [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input keyevent KEYCODE_BACK",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "10b7e1fe673ced23ecdc981390c792d27c83a967dde111505c6e881f92da0fa8",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.vocamind.app\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\" [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input tap 360 681",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "23c5d35f2dd04979f3b411954cf0a575f1cfd4da967689374752761f812583b0",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.vocamind.app\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\" [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input keyevent KEYCODE_BACK",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "10b7e1fe673ced23ecdc981390c792d27c83a967dde111505c6e881f92da0fa8",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.vocamind.app\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\" [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input tap 360 425",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "880db1e81137b464514d4732471652a7ddffcc60f151a5deb83a05f94012d78f",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.vocamind.app\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\" [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input tap 360 455",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "c3e2e055a85d4ffba85df15c9933e59d69ac5bb3a6973d1e12957613ee635764",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.vocamind.app\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\" [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input tap 360 386",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "3991c3fb5f13449bce29c1e771293c9d9534b79adebdd890ec1570580bada75b",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.vocamind.app\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\" [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input keyevent KEYCODE_BACK",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "0701f9bbd958d618a81c9d149137e797734295924e02ed90317ee8d973a8eeba",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.vocamind.app\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\" [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input keyevent KEYCODE_BACK",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "10b7e1fe673ced23ecdc981390c792d27c83a967dde111505c6e881f92da0fa8",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.vocamind.app\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\" [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  },
+  {
+    "command": "adb -s emulator-5560 shell input tap 360 681",
+    "exit": 0,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output": ""
+  },
+  {
+    "command": "adb -s emulator-5560 shell uiautomator dump /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "70cda0c2e775f9e81c48b723b2bedd58bdb8c4d5092c721f67663c59ea6806e8",
+    "output": "UI hierchary dumped to: /sdcard/pack02-restoration.xml\r\n"
+  },
+  {
+    "command": "adb -s emulator-5560 shell cat /sdcard/pack02-restoration.xml",
+    "exit": 0,
+    "outputSha256": "d59d648586d0006bc36401e3dbf3d2d72bbe6e4863e3c50b73e60ab3772a71c8",
+    "output": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.vocamind.app\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\" [TRUNCATED: original log retained at build\\pack02-device-final-20261106-170259\\commands.json]"
+  }
+]
