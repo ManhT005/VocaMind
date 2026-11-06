@@ -42,4 +42,11 @@
     <string name="pack_word_new">Chưa học</string>
     <string name="pack_word_box">Hộp %1$d</string>
     <string name="pack_word_title">%1$s (%2$s)</string>
+    <string name="word_ipa_missing">Chưa có phiên âm</string>
+    <string name="word_unreviewed">Chưa có lượt ôn</string>
+    <string name="word_relearn">Học lại</string>
+    <string name="word_level">Cấp ôn %1$d</string>
+    <string name="word_route_pending">Đã nhận vocabularyId: %1$s\nPack: %2$s\nNội dung chi tiết đang chờ VOCAB-02.</string>
+    <string name="word_route_invalid">Thiếu hoặc sai mã từ/gói. Hãy quay lại danh sách.</string>
+    <string name="word_route_loading">Đang kiểm tra mã từ…</string>
 </resources>

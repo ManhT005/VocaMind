@@ -42,4 +42,10 @@
     <fragment android:id="@+id/attributionFragment"
         android:name="com.vocamind.app.feature.attribution.AttributionFragment"
         android:label="@string/attribution" />
+    <fragment android:id="@+id/vocabularyDetailFragment"
+        android:name="com.vocamind.app.feature.vocabulary.VocabularyDetailFragment"
+        android:label="@string/vocabulary">
+        <argument android:name="vocabularyId" app:argType="string" app:nullable="true" android:defaultValue="@null" />
+        <argument android:name="packId" app:argType="string" app:nullable="true" android:defaultValue="@null" />
+    </fragment>
 </navigation>
