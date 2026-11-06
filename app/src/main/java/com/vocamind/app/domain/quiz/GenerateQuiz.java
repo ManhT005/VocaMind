@@ -1,7 +1,6 @@
 package com.vocamind.app.domain.quiz;
 
 import com.vocamind.app.domain.common.RepoResult;
-import java.util.List;
 import java.util.Random;
 
 /** Blocking: execute on caller's worker executor. Reads a fresh snapshot per call. */
@@ -24,11 +23,12 @@ public final class GenerateQuiz {
 
     public RepoResult<QuizGenerationOutcome> execute(Random random) {
         if (random == null) return RepoResult.success(QuizGenerationOutcome.invalidInput("random required"));
-        RepoResult<List<QuizVocabulary>> read = repository.activeVocabulary();
+        RepoResult<QuizSnapshot> read = repository.activeSnapshot();
         if (!read.isSuccess()) return RepoResult.failure(read.getError());
         QuizPool pool;
         try {
-            pool = new QuizPool(read.get(), normalizer);
+            QuizSnapshot snapshot = read.get();
+            pool = new QuizPool(snapshot.getVocabulary(), normalizer, snapshot.getPolicy());
         } catch (IllegalArgumentException invalid) {
             return RepoResult.success(QuizGenerationOutcome.invalidInput(invalid.getMessage()));
         }

@@ -36,15 +36,22 @@ public final class DefaultQuizGenerator implements QuizGenerator {
             // Conservative policy: no alternative sense of the same lemma in options,
             // even when POS/context could distinguish it. Never silently shorten N.
             Set<String> excluded = lemmaMeanings.get(promptNormalizer.normalize(target.getLemma()));
-            List<String> distractorKeys = new ArrayList<>();
-            for (String key : buckets.keySet()) if (!excluded.contains(key)) distractorKeys.add(key);
+            Map<String, List<QuizVocabulary>> eligible = new TreeMap<>();
+            for (Map.Entry<String, List<QuizVocabulary>> bucket : buckets.entrySet()) {
+                if (excluded.contains(bucket.getKey())) continue;
+                List<QuizVocabulary> safe = new ArrayList<>();
+                for (QuizVocabulary entry : bucket.getValue())
+                    if (pool.getPolicy().allows(target.getStableId(), entry.getStableId())) safe.add(entry);
+                if (!safe.isEmpty()) eligible.put(bucket.getKey(), safe);
+            }
+            List<String> distractorKeys = new ArrayList<>(eligible.keySet());
             if (distractorKeys.size() < 3)
                 return QuizGenerationOutcome.invalidInput("AMBIGUOUS_DISTRACTORS: " + target.getStableId());
             Collections.shuffle(distractorKeys, random);
             List<QuizOption> options = new ArrayList<>();
             options.add(new QuizOption(target.getStableId(), target.getMeaning(), correctKey));
             for (String key : distractorKeys.subList(0, 3)) {
-                List<QuizVocabulary> bucket = buckets.get(key);
+                List<QuizVocabulary> bucket = eligible.get(key);
                 QuizVocabulary entry = bucket.get(random.nextInt(bucket.size()));
                 options.add(new QuizOption(entry.getStableId(), entry.getMeaning(), key));
             }

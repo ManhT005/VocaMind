@@ -8,6 +8,7 @@ from pathlib import Path
 import sqlite3
 import sys
 import tempfile
+import build_quiz_policy
 
 ROOT = Path(__file__).resolve().parents[2]
 CONTRACT = ROOT / 'docs/data/vocabulary-contract-v1'
@@ -22,6 +23,7 @@ ASSET = ROOT / 'app/src/main/assets/database/catalog.db'
 def build(asset=ASSET, fixture=FIXTURE):
     asset, fixture = Path(asset), Path(fixture)
     data = load_json(fixture)
+    quiz_policy = build_quiz_policy.companion(data)
     errors = validate(data)
     if errors:
         raise ValueError('\n'.join(errors))
@@ -74,6 +76,8 @@ def build(asset=ASSET, fixture=FIXTURE):
     }
     asset.with_suffix('.metadata.json').write_text(
         json.dumps(metadata, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+    asset.with_name('quiz-policy.json').write_text(
+        json.dumps(quiz_policy, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     return metadata
 
 

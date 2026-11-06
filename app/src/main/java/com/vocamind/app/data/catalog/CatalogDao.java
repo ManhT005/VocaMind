@@ -15,6 +15,8 @@ import com.vocamind.app.data.local.DaoInputs;
 @Dao
 @WorkerThread
 public interface CatalogDao {
+    @Query("SELECT * FROM VocabularyEntry ORDER BY id")
+    List<VocabularyEntry> allVocabulary();
     @Query("SELECT * FROM LearningPack ORDER BY orderNo, id")
     List<LearningPack> packs();
     @Query("SELECT * FROM LearningPack WHERE id = :id")
