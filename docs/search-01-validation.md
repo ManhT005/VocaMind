@@ -19,6 +19,8 @@ SHA code được kiểm thử: **67c06d4aca3b237d7eb8565dfbb410b5acafd674**.
 Commit sau SHA này chỉ bổ sung tài liệu/evidence. Manifest và kết quả nằm tại
 [evidence/search-01](evidence/search-01/); `verification.json` và `tested-inputs.json`
 ghi phạm vi input, kết quả từng suite, hash APK/fixture và môi trường.
+Terminal logs chuẩn hóa UTF-8/newline và bỏ padding cuối dòng để qua diff check;
+raw samples JSON và kết quả JUnit được giữ nguyên nội dung.
 
 ## Thay đổi và phần tái sử dụng
 

@@ -78,5 +78,8 @@ write('verification.json', dict(codeSha=sha, developBase='8209ef75bc882ca10367ab
     AC05='HOLD', NFR_VM_03='HOLD', fullVocab02Detail='PENDING - receiver preview only', githubCI='PENDING on pushed head'))
 for path in OUT.glob('*.txt'):
     raw = path.read_bytes()
-    if raw.startswith((b'\xff\xfe', b'\xfe\xff')): path.write_text(raw.decode('utf-16'), encoding='utf-8')
+    text = raw.decode('utf-16') if raw.startswith((b'\xff\xfe', b'\xfe\xff')) else raw.decode('utf-8-sig')
+    # Normalize terminal log line endings/trailing padding, without changing JSON samples or JUnit results.
+    normalized = '\n'.join(line.rstrip() for line in text.replace('\r\r\n', '\n').splitlines()).rstrip()
+    path.write_bytes((normalized + '\n' if normalized else '').encode('utf-8'))
 print(json.dumps(dict(tests=totals, lint=dict(errors=errors,warnings=warnings), traceSamples={k:len(v) for k,v in phases.items()}, benchmarkRuns=len(benchmarks))))
