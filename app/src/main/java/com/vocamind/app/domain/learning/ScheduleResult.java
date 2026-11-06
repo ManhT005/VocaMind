@@ -24,7 +24,7 @@ public final class ScheduleResult {
     public Rating getRating() { return rating; }
     public int getBoxBefore() { return boxBefore; }
     public int getBoxAfter() { return boxAfter; }
-    /** Start of the local calendar day when the word is due again, in epoch milliseconds. */
+    /** Due instant after calendar-day addition preserving local review time (zone gap/overlap rules apply). */
     public long getDueAtEpochMillis() { return dueAtEpochMillis; }
     public int getConsecutiveMistakes() { return consecutiveMistakes; }
     public boolean isLeech() { return leech; }

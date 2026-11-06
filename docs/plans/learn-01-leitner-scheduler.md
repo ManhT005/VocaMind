@@ -43,9 +43,11 @@ Khoảng ôn theo box sau khi chấm (đơn vị: ngày lịch):
 |---|---|---|---|---|---|---|
 | Số ngày | 1 | 1 | 3 | 7 | 14 | 30 |
 
-- `dueAt` = thời điểm 00:00 (đầu ngày) theo `ZoneId` của ngày `hôm nay + N`,
-  đổi sang epoch milliseconds. Vì vậy từ đến hạn trong cả ngày đó với điều kiện
-  `dueAt <= now`, kể cả khi đổi giờ DST.
+- `dueAt` = thời điểm đánh giá cộng N **ngày lịch** theo `ZoneId`, giữ giờ/phút
+  (và giây/millisecond) địa phương theo SRS v1.1 DEC-12. DST dùng quy tắc
+  `ZonedDateTime.plusDays`: giờ không tồn tại được đẩy qua khoảng trống, giờ lặp
+  giữ offset cũ nếu hợp lệ. Không cộng cứng N × 24 giờ hoặc đưa về 00:00.
+  DATA-03 lọc `dueAt <= now` theo timestamp đã lưu; đổi timezone không rewrite lịch.
 - FORGOT luôn đến hạn ngày mai (box 0 = 1 ngày); việc học lại trong phiên thuộc
   TODAY-02, không thay đổi dueAt.
 - Từ mới bắt đầu ở box 0, mistakes 0, không leech.
