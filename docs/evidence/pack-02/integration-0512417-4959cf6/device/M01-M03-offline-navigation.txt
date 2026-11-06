@@ -1,0 +1,6 @@
+
+com.vocamind.app.feature.packs.PackActivationInstrumentedTest:.
+
+Time: 3.141
+
+OK (1 test)

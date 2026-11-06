@@ -19,12 +19,19 @@ public class PacksFragment extends Fragment {
     public static final String ARG_PACK_ID = "packId";
     public static final String ARG_PACK_TITLE = "packTitle";
 
+    private PacksViewModel model;
+
+    @Override public void onResume() {
+        super.onResume();
+        model.refresh();
+    }
+
     public PacksFragment() { super(R.layout.fragment_packs); }
 
     @Override public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         FragmentPacksBinding binding = FragmentPacksBinding.bind(view);
         ViewCompat.setAccessibilityHeading(binding.destinationTitle, true);
-        PacksViewModel model = new ViewModelProvider(this,
+        model = new ViewModelProvider(requireActivity(),
                 new PacksViewModelFactory(requireContext(), null)).get(PacksViewModel.class);
         binding.retry.setOnClickListener(v -> model.retry());
         model.state().observe(getViewLifecycleOwner(), state -> {

@@ -1,0 +1,167 @@
+[
+  {
+    "name": "source-gate",
+    "command": "python tools/vocabulary/gate_sources.py --snapshot docs/data/snapshot.json --json",
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "name": "vocabulary-tests",
+    "command": "python -m unittest discover -s tools/vocabulary -p test_*.py -v",
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "name": "credits",
+    "command": "python tools/catalog/check_credits.py",
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "name": "catalog-tests",
+    "command": "python -m unittest discover -s tools/catalog -p test_*.py -v",
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "name": "contract-tests",
+    "command": "python -m unittest discover -s docs/data/vocabulary-contract-v1 -p test_contract.py -v",
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "name": "contract",
+    "command": "python docs/data/vocabulary-contract-v1/validate_contract.py docs/data/vocabulary-contract-v1/fixtures/valid/catalog.json",
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "name": "ingestion",
+    "command": "python tools/vocabulary/verify_ingestion.py --fixture --config tools/vocabulary/fixtures/ingestion/verified/config.json --output build/vocabulary-ingestion/pack02-followup-20261106-165650",
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "name": "ingestion-contract",
+    "command": "python docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-ingestion/pack02-followup-20261106-165650/a/canonical-catalog.json",
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "name": "release-rejection",
+    "command": "python docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-ingestion/pack02-followup-20261106-165650/a/canonical-catalog.json --release",
+    "exit": 1,
+    "expected": 1
+  },
+  {
+    "name": "qc-a",
+    "command": "python tools/vocabulary/quality.py --fixture --input build/vocabulary-ingestion/pack02-followup-20261106-165650/a --config tools/vocabulary/fixtures/ingestion/verified/config.json --reviews tools/vocabulary/fixtures/quality/reviews.json --output build/vocabulary-quality/pack02-followup-20261106-165650-a",
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "name": "qc-b",
+    "command": "python tools/vocabulary/quality.py --fixture --input build/vocabulary-ingestion/pack02-followup-20261106-165650/a --config tools/vocabulary/fixtures/ingestion/verified/config.json --reviews tools/vocabulary/fixtures/quality/reviews.json --output build/vocabulary-quality/pack02-followup-20261106-165650-b",
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "name": "qc-contract",
+    "command": "python docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-quality/pack02-followup-20261106-165650-a/canonical-catalog.json",
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "name": "qc-rejection",
+    "command": "python tools/vocabulary/quality.py --fixture --input build/vocabulary-ingestion/pack02-followup-20261106-165650/a --config tools/vocabulary/fixtures/ingestion/verified/config.json --reviews tools/vocabulary/fixtures/quality/pending-reviews.json --output build/vocabulary-quality/pack02-followup-20261106-165650-rejected",
+    "exit": 1,
+    "expected": 1
+  },
+  {
+    "name": "corpus-a",
+    "command": "python tools/vocabulary/prepare_corpus.py --require-approved --output build/vocabulary-corpus/pack02-followup-20261106-165650-a",
+    "exit": 1,
+    "expected": 1
+  },
+  {
+    "name": "corpus-b",
+    "command": "python tools/vocabulary/prepare_corpus.py --require-approved --output build/vocabulary-corpus/pack02-followup-20261106-165650-b",
+    "exit": 1,
+    "expected": 1
+  },
+  {
+    "name": "editorial-rejection",
+    "command": "python tools/vocabulary/ingest.py --config docs/data/voc-data-04/corpus-v1/ingestion-proposal.json --output build/vocabulary-ingestion/pack02-followup-20261106-165650-editorial-rejected",
+    "exit": 1,
+    "expected": 1
+  },
+  {
+    "name": "accept-editorial",
+    "command": "python tools/vocabulary/accept_editorial.py --output build/vocabulary-corpus/pack02-followup-20261106-165650-accepted",
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "name": "accepted-ingestion",
+    "command": "python tools/vocabulary/ingest.py --config docs/data/voc-data-04/accepted-v1/ingestion-config.json --output build/vocabulary-ingestion/pack02-followup-20261106-165650-accepted",
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "name": "accepted-quality",
+    "command": "python tools/vocabulary/quality.py --input build/vocabulary-ingestion/pack02-followup-20261106-165650-accepted --config docs/data/voc-data-04/accepted-v1/ingestion-config.json --reviews docs/data/voc-data-04/accepted-v1/reviews.json --output build/vocabulary-quality/pack02-followup-20261106-165650-accepted",
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "name": "accepted-contract",
+    "command": "python docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-quality/pack02-followup-20261106-165650-accepted/canonical-catalog.json --release",
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "name": "accepted-verify",
+    "command": "python tools/vocabulary/accept_editorial.py --verify build/vocabulary-quality/pack02-followup-20261106-165650-accepted",
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "name": "byte-compare",
+    "a": "build/vocabulary-quality/pack02-followup-20261106-165650-a",
+    "b": "build/vocabulary-quality/pack02-followup-20261106-165650-b",
+    "equal": true
+  },
+  {
+    "name": "byte-compare",
+    "a": "build/vocabulary-corpus/pack02-followup-20261106-165650-a",
+    "b": "build/vocabulary-corpus/pack02-followup-20261106-165650-b",
+    "equal": true
+  },
+  {
+    "name": "byte-compare",
+    "a": "docs/data/voc-data-04/corpus-v1",
+    "b": "build/vocabulary-corpus/pack02-followup-20261106-165650-a",
+    "equal": true
+  },
+  {
+    "name": "byte-compare",
+    "a": "docs/data/voc-data-04/accepted-v1",
+    "b": "build/vocabulary-corpus/pack02-followup-20261106-165650-accepted",
+    "equal": true
+  },
+  {
+    "name": "refused-output-absent",
+    "folder": "build/vocabulary-quality/pack02-followup-20261106-165650-rejected",
+    "passed": true
+  },
+  {
+    "name": "refused-output-absent",
+    "folder": "build/vocabulary-corpus/pack02-followup-20261106-165650-a",
+    "passed": true
+  },
+  {
+    "name": "refused-output-absent",
+    "folder": "build/vocabulary-ingestion/pack02-followup-20261106-165650-editorial-rejected",
+    "passed": true
+  }
+]

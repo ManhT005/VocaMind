@@ -1,0 +1,57 @@
+
+com.vocamind.app.feature.packs.PackActivationInstrumentedTest:
+Error in persistenceProbe(com.vocamind.app.feature.packs.PackActivationInstrumentedTest):
+android.database.sqlite.SQLiteDatabaseLockedException: database is locked (code 5 SQLITE_BUSY)
+	at android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount(Native Method)
+	at android.database.sqlite.SQLiteConnection.executeForChangedRowCount(SQLiteConnection.java:890)
+	at android.database.sqlite.SQLiteSession.executeForChangedRowCount(SQLiteSession.java:756)
+	at android.database.sqlite.SQLiteStatement.executeUpdateDelete(SQLiteStatement.java:66)
+	at android.database.sqlite.SQLiteDatabase.executeSql(SQLiteDatabase.java:1920)
+	at android.database.sqlite.SQLiteDatabase.execSQL(SQLiteDatabase.java:1841)
+	at androidx.sqlite.db.framework.FrameworkSQLiteDatabase.execSQL(FrameworkSQLiteDatabase.android.kt:264)
+	at com.vocamind.app.data.user.UserDatabase$1.onOpen(UserDatabase.java:24)
+	at androidx.room.RoomDatabase$Callback.onOpen(RoomDatabase.android.kt:1979)
+	at androidx.room.BaseRoomConnectionManager.invokeOpenCallback(RoomConnectionManager.kt:353)
+	at androidx.room.BaseRoomConnectionManager.onOpen(RoomConnectionManager.kt:272)
+	at androidx.room.RoomConnectionManager$SupportOpenHelperCallback.onOpen(RoomConnectionManager.android.kt:177)
+	at androidx.sqlite.db.framework.FrameworkSQLiteOpenHelper$OpenHelper.onOpen(FrameworkSQLiteOpenHelper.android.kt:279)
+	at android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked(SQLiteOpenHelper.java:427)
+	at android.database.sqlite.SQLiteOpenHelper.getWritableDatabase(SQLiteOpenHelper.java:316)
+	at androidx.sqlite.db.framework.FrameworkSQLiteOpenHelper$OpenHelper.getWritableOrReadableDatabase(FrameworkSQLiteOpenHelper.android.kt:224)
+	at androidx.sqlite.db.framework.FrameworkSQLiteOpenHelper$OpenHelper.innerGetDatabase(FrameworkSQLiteOpenHelper.android.kt:180)
+	at androidx.sqlite.db.framework.FrameworkSQLiteOpenHelper$OpenHelper.getSupportDatabase(FrameworkSQLiteOpenHelper.android.kt:141)
+	at androidx.sqlite.db.framework.FrameworkSQLiteOpenHelper.getWritableDatabase(FrameworkSQLiteOpenHelper.android.kt:96)
+	at com.vocamind.app.data.user.UserDatabase.open(UserDatabase.java:31)
+	at com.vocamind.app.data.user.UserDatabase.open(UserDatabase.java:18)
+	at com.vocamind.app.feature.packs.PackActivationInstrumentedTest.persistenceProbe(PackActivationInstrumentedTest.java:156)
+
+
+Time: 6.146
+There was 1 failure:
+1) persistenceProbe(com.vocamind.app.feature.packs.PackActivationInstrumentedTest)
+android.database.sqlite.SQLiteDatabaseLockedException: database is locked (code 5 SQLITE_BUSY)
+	at android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount(Native Method)
+	at android.database.sqlite.SQLiteConnection.executeForChangedRowCount(SQLiteConnection.java:890)
+	at android.database.sqlite.SQLiteSession.executeForChangedRowCount(SQLiteSession.java:756)
+	at android.database.sqlite.SQLiteStatement.executeUpdateDelete(SQLiteStatement.java:66)
+	at android.database.sqlite.SQLiteDatabase.executeSql(SQLiteDatabase.java:1920)
+	at android.database.sqlite.SQLiteDatabase.execSQL(SQLiteDatabase.java:1841)
+	at androidx.sqlite.db.framework.FrameworkSQLiteDatabase.execSQL(FrameworkSQLiteDatabase.android.kt:264)
+	at com.vocamind.app.data.user.UserDatabase$1.onOpen(UserDatabase.java:24)
+	at androidx.room.RoomDatabase$Callback.onOpen(RoomDatabase.android.kt:1979)
+	at androidx.room.BaseRoomConnectionManager.invokeOpenCallback(RoomConnectionManager.kt:353)
+	at androidx.room.BaseRoomConnectionManager.onOpen(RoomConnectionManager.kt:272)
+	at androidx.room.RoomConnectionManager$SupportOpenHelperCallback.onOpen(RoomConnectionManager.android.kt:177)
+	at androidx.sqlite.db.framework.FrameworkSQLiteOpenHelper$OpenHelper.onOpen(FrameworkSQLiteOpenHelper.android.kt:279)
+	at android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked(SQLiteOpenHelper.java:427)
+	at android.database.sqlite.SQLiteOpenHelper.getWritableDatabase(SQLiteOpenHelper.java:316)
+	at androidx.sqlite.db.framework.FrameworkSQLiteOpenHelper$OpenHelper.getWritableOrReadableDatabase(FrameworkSQLiteOpenHelper.android.kt:224)
+	at androidx.sqlite.db.framework.FrameworkSQLiteOpenHelper$OpenHelper.innerGetDatabase(FrameworkSQLiteOpenHelper.android.kt:180)
+	at androidx.sqlite.db.framework.FrameworkSQLiteOpenHelper$OpenHelper.getSupportDatabase(FrameworkSQLiteOpenHelper.android.kt:141)
+	at androidx.sqlite.db.framework.FrameworkSQLiteOpenHelper.getWritableDatabase(FrameworkSQLiteOpenHelper.android.kt:96)
+	at com.vocamind.app.data.user.UserDatabase.open(UserDatabase.java:31)
+	at com.vocamind.app.data.user.UserDatabase.open(UserDatabase.java:18)
+	at com.vocamind.app.feature.packs.PackActivationInstrumentedTest.persistenceProbe(PackActivationInstrumentedTest.java:156)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1

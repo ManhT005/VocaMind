@@ -1,0 +1,55 @@
+{
+  "QuizAttempt": [],
+  "ReviewEvent": [
+    [
+      1,
+      "90562a98e8686267",
+      "REMEMBERED",
+      1000,
+      0,
+      1,
+      86400000
+    ]
+  ],
+  "UserPack": [
+    [
+      "pack_toeic_basic",
+      1793959382661,
+      1
+    ]
+  ],
+  "UserPreference": [
+    [
+      1,
+      5,
+      10,
+      0,
+      20
+    ]
+  ],
+  "UserWordProgress": [
+    [
+      "90562a98e8686267",
+      1,
+      86400000,
+      1000,
+      1000,
+      0,
+      0,
+      1,
+      1
+    ]
+  ],
+  "room_master_table": [
+    [
+      42,
+      "daa247b8faf3dd8a10e448a242018a6c"
+    ]
+  ],
+  "sqlite_sequence": [
+    [
+      "ReviewEvent",
+      1
+    ]
+  ]
+}

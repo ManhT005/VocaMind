@@ -8,6 +8,10 @@
     <com.google.android.material.textview.MaterialTextView android:id="@+id/detail_title"
         style="@style/TextAppearance.VocaMind.Title" android:layout_width="match_parent"
         android:layout_height="wrap_content" android:text="@string/pack_detail_title" />
+    <TextView android:id="@+id/activation_status" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:accessibilityLiveRegion="polite" />
+    <com.google.android.material.button.MaterialButton android:id="@+id/activation"
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" />
     <ProgressBar android:id="@+id/loading" android:layout_width="48dp" android:layout_height="48dp"
         android:layout_gravity="center_horizontal" android:contentDescription="@string/pack_detail_loading" />
     <com.google.android.material.textview.MaterialTextView android:id="@+id/message"

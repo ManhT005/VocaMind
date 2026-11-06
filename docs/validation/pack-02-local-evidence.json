@@ -1,0 +1,300 @@
+{
+  "testedSourceCommit": "d31944f0cfd80eb43b9e993bbbde83baddb84115",
+  "baseCommit": "6420377",
+  "recordedAt": "2026-11-06T01:56:27.298429+07:00",
+  "gradle": {
+    "command": ".\\gradlew.bat testDebugUnitTest assembleDebug assembleDebugAndroidTest lintDebug",
+    "exit": 0,
+    "summary": "BUILD SUCCESSFUL in 34s",
+    "jdk": "17",
+    "gradle": "8.9",
+    "suiteCount": 21,
+    "totals": {
+      "tests": 215,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "suites": [
+      {
+        "name": "com.vocamind.app.data.catalog.CatalogAssetTest",
+        "tests": 32,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "71758c6f9ffc640f624c81aa43397dd6d4989767c611f96306608f6cd213cee3"
+      },
+      {
+        "name": "com.vocamind.app.data.catalog.ContentCreditsTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "04aee3cf7ce0f23a5d144349e27626af6b37fe599fe92b16ac45b71c29d08217"
+      },
+      {
+        "name": "com.vocamind.app.data.DaoFoundationTest",
+        "tests": 32,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "5bf09d25dbd122bfeaa154e14cae516e2078ea5008a8caf29189e7c360358248"
+      },
+      {
+        "name": "com.vocamind.app.data.DataBoundaryTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "7223584dc50482985a3bd8c8c3999e400753ff625e485d5e51248dea3ece40f6"
+      },
+      {
+        "name": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+        "tests": 36,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "50c9c3370ae9f0f526cf5ee0cf3835f20f82fcc115d858e4019f431464b899ff"
+      },
+      {
+        "name": "com.vocamind.app.data.user.UserDatabaseTest",
+        "tests": 16,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "0ea59045114ae020a77d7fdb9fd2b42ebc0d74a8846cdc6c80ebf9d3354fb153"
+      },
+      {
+        "name": "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "d0ec24313e80acf310c757d004b60a4a060d8c3dea42cb14ebc64a67a0d718d0"
+      },
+      {
+        "name": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "f8772fd1f27fffab8b56f0de146db65b22ed43ce294074e02ccffa90dfaf343a"
+      },
+      {
+        "name": "com.vocamind.app.domain.learning.LeitnerSchedulerTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "df3817c04b57242e9bb0e9f3833ad506e55a0646a1b79553e5afc37d3cb1c1c8"
+      },
+      {
+        "name": "com.vocamind.app.domain.progress.ProgressDomainTest",
+        "tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "e508ece1a229de417d0d586e8452c3b00231d3eb72413dde60b6ae4ca0292745"
+      },
+      {
+        "name": "com.vocamind.app.domain.quiz.QuizDomainTest",
+        "tests": 18,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "b8a858eedfaf22a02ea5b86a3b172632239ac2517c74c16557f76150f46100f0"
+      },
+      {
+        "name": "com.vocamind.app.fake.FakeRepositoriesTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "49ed28720f68565fe2b80a766230dd6ca738ab41aca246b6a5a5468191261668"
+      },
+      {
+        "name": "com.vocamind.app.feature.attribution.AttributionRenderingTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "3536f59fd10ade6c70f16ffa9d6cb06e973204051cbffaae0063934a574042f1"
+      },
+      {
+        "name": "com.vocamind.app.feature.attribution.AttributionScreenTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "90ec25a94717e1f230b9f28ce71456f5e52a5f12388a8d4e65cbb984cfef4058"
+      },
+      {
+        "name": "com.vocamind.app.feature.attribution.AttributionViewModelTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "59d50f0474dfdcd5f51f8eac5e2a303670f22a2d1b37e16c4c3b00d9ccfd1d0c"
+      },
+      {
+        "name": "com.vocamind.app.feature.attribution.ExternalLinksTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "10f8fe6acc4698a7363c44fb7bf593e27a86c8756c162dc6f91d479810505f46"
+      },
+      {
+        "name": "com.vocamind.app.feature.attribution.GetContentSourcesTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "0c31afdfee75ddb259134c6e5fa673bbebae6482266195f55b9e41a15b6206bd"
+      },
+      {
+        "name": "com.vocamind.app.feature.packs.PackActivationRenderingTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "2b232c5d07764d4e80e42081dc57416dc78ec1294ad9c943f84d3ae9e04d854a"
+      },
+      {
+        "name": "com.vocamind.app.feature.packs.PackActivationTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "140080cfd55842af7f6fc8804a1e52242d7d32d831296d448067a6573bf77847"
+      },
+      {
+        "name": "com.vocamind.app.feature.packs.PacksViewModelTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "6d939f7d773f8b067f770ae02abd89ae9c64cbd9af6c093eb711e1226f4ff184"
+      },
+      {
+        "name": "com.vocamind.app.feature.progress.ProgressViewStateTest",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "2295dcf394bb3e4d2b357b569685cde2ebcc91641d25c4321e9385d90f6f4d2f"
+      }
+    ]
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 4,
+    "ids": [
+      "GradleDependency",
+      "NotifyDataSetChanged",
+      "Overdraw",
+      "MissingApplicationIcon"
+    ]
+  },
+  "python": {
+    "executable": "build/pack02-venv/Scripts/python.exe",
+    "version": "3.13.14",
+    "checks": [
+      {
+        "check": "source-gate",
+        "command": "python tools/vocabulary/gate_sources.py --snapshot docs/data/snapshot.json --json",
+        "exit": 0,
+        "expected": 0
+      },
+      {
+        "check": "vocabulary-tests",
+        "command": "python -m unittest discover -s tools/vocabulary -p test_*.py -v",
+        "exit": 0,
+        "expected": 0,
+        "tests": 112
+      },
+      {
+        "check": "credits",
+        "command": "python tools/catalog/check_credits.py",
+        "exit": 0,
+        "expected": 0
+      },
+      {
+        "check": "catalog-tests",
+        "command": "python -m unittest discover -s tools/catalog -p test_*.py -v",
+        "exit": 0,
+        "expected": 0,
+        "tests": 5
+      },
+      {
+        "check": "contract-tests",
+        "command": "python -m unittest discover -s docs/data/vocabulary-contract-v1 -p test_contract.py -v",
+        "exit": 0,
+        "expected": 0,
+        "tests": 39
+      },
+      {
+        "check": "contract",
+        "command": "python docs/data/vocabulary-contract-v1/validate_contract.py docs/data/vocabulary-contract-v1/fixtures/valid/catalog.json",
+        "exit": 0,
+        "expected": 0
+      },
+      {
+        "check": "ingestion",
+        "command": "python tools/vocabulary/verify_ingestion.py --fixture --config tools/vocabulary/fixtures/ingestion/verified/config.json --output build/vocabulary-ingestion/pack02-verified-proof",
+        "exit": 0,
+        "expected": 0
+      },
+      {
+        "check": "ingestion-contract",
+        "command": "python docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-ingestion/pack02-verified-proof/a/canonical-catalog.json",
+        "exit": 0,
+        "expected": 0
+      },
+      {
+        "check": "release-rejection",
+        "command": "python docs/data/vocabulary-contract-v1/validate_contract.py build/vocabulary-ingestion/pack02-verified-proof/a/canonical-catalog.json --release",
+        "exit": 1,
+        "expected": 1
+      }
+    ]
+  },
+  "diffCheck": {
+    "command": "git diff --check",
+    "exit": 0
+  },
+  "device": {
+    "command": "C:/Users/LMT/AppData/Local/Android/Sdk/platform-tools/adb.exe devices",
+    "output": "List of devices attached (empty)",
+    "connectedTests": "NOT RUN",
+    "offline": "NOT RUN: no device",
+    "reboot": "NOT RUN: no device",
+    "rotation": "NOT RUN on device; host view detach/attach covered",
+    "navigation": "NOT RUN on device; host rendering covered"
+  },
+  "artifactsSha256": {
+    "app\\build\\outputs\\apk\\debug\\app-debug.apk": "71ee167d027e35e88afe605ade0a4848e289a1388dbc01e4c1d1d1d1950887aa",
+    "app\\build\\outputs\\apk\\androidTest\\debug\\app-debug-androidTest.apk": "09b78dc456880914eb31b798ed2dab4483a3becc6535bf493ccc5543a33ed9b7"
+  },
+  "logsSha256": {
+    "build/pack02-catalog-tests.log": "d9ca040e4c008241e281f45f9ac493dd0566ff602bd72f3e82082bc8671d251c",
+    "build/pack02-contract-tests.log": "44df2311a693e77cd101c028fc5391e2c99a20fd83484fa52eef18f3e9aa0250",
+    "build/pack02-contract.log": "9af995a43139f31995fa6352677981395feabf7235029140859425883d4129cd",
+    "build/pack02-credits.log": "851019d12fd9cf2ebaef731c7bad99f686aa19250af6c4b2ed0a7e7c4427595d",
+    "build/pack02-gradle.log": "0a145848dfc14116a51fdbc4227fe4681a021c99d377683ddb4b58e4f9c40e01",
+    "build/pack02-ingestion-contract.log": "9af995a43139f31995fa6352677981395feabf7235029140859425883d4129cd",
+    "build/pack02-ingestion.log": "83b39a9eba2be5498f9772d98f2e578afb0adc38f1e28fedaafdf5baca704493",
+    "build/pack02-release-rejection.log": "7e8262d908d132f965ad6596e4c751b40d8e9728e8c1831ff046436fb69ebc9f",
+    "build/pack02-source-gate.log": "437794b2ace04abdd1a832848204dbf000acd9505067264edda8773b20d491f4",
+    "build/pack02-vocabulary-tests.log": "b6c6903b03adcf5347280bb1c420cf814184a7cd2b77f5469ac7560199c70396"
+  },
+  "ingestionComparison": {
+    "identicalFiles": 4,
+    "sha256": {
+      "canonical-catalog.json": "329091f45d888d94a64ad1f56a776a5b66497f70b220ae6fb9b86cc43ca9b671",
+      "manifest.json": "0ccad114f7b989e28efce51c898c6f5946d809817bd064584c50f3b66275acc7",
+      "normalization.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "reject-report.json": "4f44a5f77f943804cf0536c35a4fdee46905dba6036f108fe0ab00bb58ea9930"
+    }
+  }
+}

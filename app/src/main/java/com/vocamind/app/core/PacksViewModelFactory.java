@@ -8,12 +8,13 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import com.vocamind.app.domain.pack.GetPackWords;
 import com.vocamind.app.domain.pack.GetPacks;
+import com.vocamind.app.domain.pack.SetPackActive;
 import com.vocamind.app.feature.packs.PackWordsViewModel;
 import com.vocamind.app.feature.packs.PacksViewModel;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/** Composition root for the Packs screens: owns both databases and a serial worker. */
+/** Composition root: each model owns its databases and serial worker. Packs state is activity scoped. */
 public final class PacksViewModelFactory implements ViewModelProvider.Factory {
     private final Context application;
     private final String packId;
@@ -38,7 +39,9 @@ public final class PacksViewModelFactory implements ViewModelProvider.Factory {
             finally { worker.shutdown(); }
         };
         if (list) {
-            return modelClass.cast(new PacksViewModel(() -> new GetPacks(lazy.get().packs()).execute(), worker, main::post, close));
+            return modelClass.cast(new PacksViewModel(() -> new GetPacks(lazy.get().packs()).execute(),
+                    (id, active) -> new SetPackActive(lazy.get().packs(), System::currentTimeMillis).execute(id, active),
+                    worker, main::post, close));
         }
         return modelClass.cast(new PackWordsViewModel(
                 () -> new GetPackWords(lazy.get().packs()).execute(packId), worker, main::post, close));
