@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-11-06T14:11:16" hostname="7a0e3157ddf4" time="0.002">
+  <properties/>
+  <testcase name="rememberedAt1430KeepsHourMinuteSecondsAndMillis" classname="com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest" time="0.001"/>
+  <testcase name="berlinSpringForwardIs23HoursButSameLocalTime" classname="com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest" time="0.001"/>
+  <testcase name="hardAt2355KeepsLocalTimeOnNextDay" classname="com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest" time="0.0"/>
+  <testcase name="boxFiveRememberedKeepsTimeAfter30CalendarDays" classname="com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest" time="0.0"/>
+  <testcase name="forgotAt0005KeepsLocalTimeOnNextDay" classname="com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest" time="0.0"/>
+  <testcase name="nonexistentSpringTimeMovesForwardByTheGap" classname="com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest" time="0.0"/>
+  <testcase name="berlinFallBackIs25HoursButSameLocalTime" classname="com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest" time="0.0"/>
+  <testcase name="overlappingFallTimeRetainsPreviousValidOffset" classname="com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

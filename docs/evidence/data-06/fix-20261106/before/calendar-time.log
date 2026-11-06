@@ -1,0 +1,114 @@
+Starting a Gradle Daemon, 2 incompatible and 2 stopped Daemons could not be reused, use --status for details
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsDebug UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesDebug UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :app:compileDebugJavaWithJavac UP-TO-DATE
+> Task :app:bundleDebugClassesToRuntimeJar UP-TO-DATE
+> Task :app:bundleDebugClassesToCompileJar UP-TO-DATE
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :app:compileDebugUnitTestJavaWithJavac
+> Task :app:mergeDebugShaders UP-TO-DATE
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets UP-TO-DATE
+> Task :app:packageDebugUnitTestForUnitTest UP-TO-DATE
+> Task :app:generateDebugUnitTestConfig UP-TO-DATE
+> Task :app:prepareRobolectricSdks UP-TO-DATE
+> Task :app:processDebugJavaRes UP-TO-DATE
+> Task :app:processDebugUnitTestJavaRes UP-TO-DATE
+
+> Task :app:testDebugUnitTest FAILED
+
+LeitnerSchedulerCalendarTimeTest > rememberedAt1430KeepsHourMinuteSecondsAndMillis FAILED
+    java.lang.AssertionError: expected:<2026-11-06T14:30:12.345> but was:<2026-11-06T00:00>
+        at org.junit.Assert.fail(Assert.java:89)
+        at org.junit.Assert.failNotEquals(Assert.java:835)
+        at org.junit.Assert.assertEquals(Assert.java:120)
+        at org.junit.Assert.assertEquals(Assert.java:146)
+        at com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest.rememberedAt1430KeepsHourMinuteSecondsAndMillis(LeitnerSchedulerCalendarTimeTest.java:17)
+
+LeitnerSchedulerCalendarTimeTest > berlinSpringForwardIs23HoursButSameLocalTime FAILED
+    java.lang.AssertionError: expected:<2026-03-29T14:30> but was:<2026-03-29T00:00>
+        at org.junit.Assert.fail(Assert.java:89)
+        at org.junit.Assert.failNotEquals(Assert.java:835)
+        at org.junit.Assert.assertEquals(Assert.java:120)
+        at org.junit.Assert.assertEquals(Assert.java:146)
+        at com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest.berlinSpringForwardIs23HoursButSameLocalTime(LeitnerSchedulerCalendarTimeTest.java:32)
+
+LeitnerSchedulerCalendarTimeTest > hardAt2355KeepsLocalTimeOnNextDay FAILED
+    java.lang.AssertionError: expected:<2026-11-06T23:55> but was:<2026-11-06T00:00>
+        at org.junit.Assert.fail(Assert.java:89)
+        at org.junit.Assert.failNotEquals(Assert.java:835)
+        at org.junit.Assert.assertEquals(Assert.java:120)
+        at org.junit.Assert.assertEquals(Assert.java:146)
+        at com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest.hardAt2355KeepsLocalTimeOnNextDay(LeitnerSchedulerCalendarTimeTest.java:21)
+
+LeitnerSchedulerCalendarTimeTest > boxFiveRememberedKeepsTimeAfter30CalendarDays FAILED
+    java.lang.AssertionError: expected:<2026-12-05T14:30> but was:<2026-12-05T00:00>
+        at org.junit.Assert.fail(Assert.java:89)
+        at org.junit.Assert.failNotEquals(Assert.java:835)
+        at org.junit.Assert.assertEquals(Assert.java:120)
+        at org.junit.Assert.assertEquals(Assert.java:146)
+        at com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest.boxFiveRememberedKeepsTimeAfter30CalendarDays(LeitnerSchedulerCalendarTimeTest.java:43)
+
+LeitnerSchedulerCalendarTimeTest > forgotAt0005KeepsLocalTimeOnNextDay FAILED
+    java.lang.AssertionError: expected:<2026-11-06T00:05> but was:<2026-11-06T00:00>
+        at org.junit.Assert.fail(Assert.java:89)
+        at org.junit.Assert.failNotEquals(Assert.java:835)
+        at org.junit.Assert.assertEquals(Assert.java:120)
+        at org.junit.Assert.assertEquals(Assert.java:146)
+        at com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest.forgotAt0005KeepsLocalTimeOnNextDay(LeitnerSchedulerCalendarTimeTest.java:25)
+
+LeitnerSchedulerCalendarTimeTest > nonexistentSpringTimeMovesForwardByTheGap FAILED
+    java.lang.AssertionError: expected:<2026-03-29T03:30> but was:<2026-03-29T00:00>
+        at org.junit.Assert.fail(Assert.java:89)
+        at org.junit.Assert.failNotEquals(Assert.java:835)
+        at org.junit.Assert.assertEquals(Assert.java:120)
+        at org.junit.Assert.assertEquals(Assert.java:146)
+        at com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest.nonexistentSpringTimeMovesForwardByTheGap(LeitnerSchedulerCalendarTimeTest.java:48)
+
+LeitnerSchedulerCalendarTimeTest > berlinFallBackIs25HoursButSameLocalTime FAILED
+    java.lang.AssertionError: expected:<2026-10-25T14:30> but was:<2026-10-25T00:00>
+        at org.junit.Assert.fail(Assert.java:89)
+        at org.junit.Assert.failNotEquals(Assert.java:835)
+        at org.junit.Assert.assertEquals(Assert.java:120)
+        at org.junit.Assert.assertEquals(Assert.java:146)
+        at com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest.berlinFallBackIs25HoursButSameLocalTime(LeitnerSchedulerCalendarTimeTest.java:39)
+
+LeitnerSchedulerCalendarTimeTest > overlappingFallTimeRetainsPreviousValidOffset FAILED
+    java.lang.AssertionError: expected:<2026-10-25T02:30> but was:<2026-10-25T00:00>
+        at org.junit.Assert.fail(Assert.java:89)
+        at org.junit.Assert.failNotEquals(Assert.java:835)
+        at org.junit.Assert.assertEquals(Assert.java:120)
+        at org.junit.Assert.assertEquals(Assert.java:146)
+        at com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest.overlappingFallTimeRetainsPreviousValidOffset(LeitnerSchedulerCalendarTimeTest.java:53)
+
+8 tests completed, 8 failed
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:testDebugUnitTest'.
+> There were failing tests. See the report at: file:///workspace/scratch/1bdaef6100c0/VocaMind/app/build/reports/tests/testDebugUnitTest/index.html
+
+* Try:
+> Run with --scan to get full insights.
+
+BUILD FAILED in 10s
+29 actionable tasks: 2 executed, 27 up-to-date

@@ -24,7 +24,8 @@ SRS is available, align FR-VM-028..033 / TC-SCHED-01..10 by changing constants.
 - HARD: box unchanged, mistakes reset, leech cleared.
 - FORGOT: box 0, mistakes + 1, leech on at ≥ 4 in a row (stays on until
   HARD/REMEMBERED).
-- dueAt = start of local day `today + interval(boxAfter)`; intervals in days
+- dueAt = review instant + `interval(boxAfter)` calendar days in the supplied zone,
+  preserving local time under DEC-12 (corrected in DATA-06 PR #24; DST zone rules apply).
   for box 0..5: 1, 1, 3, 7, 14, 30.
 
 Changing an interval or the threshold only touches constants in

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-11-06T14:11:16" hostname="7a0e3157ddf4" time="0.001">
+  <properties/>
+  <testcase name="tcSched10_resultIsDeterministicForSameInput" classname="com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest" time="0.0"/>
+  <testcase name="tcSched06_forgotFromAnyBoxResetsToBox0DueTomorrow" classname="com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest" time="0.001"/>
+  <testcase name="tcSched09_hardOrRememberedResetsMistakesAndClearsLeech" classname="com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest" time="0.0"/>
+  <testcase name="tcSched05_hardAtBox0StaysAtBox0DueTomorrow" classname="com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest" time="0.0"/>
+  <testcase name="tcSched04_hardKeepsBoxAndUsesSameBoxInterval" classname="com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest" time="0.0"/>
+  <testcase name="tcSched02_rememberedStepsThroughEveryBoxWithItsInterval" classname="com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest" time="0.0"/>
+  <testcase name="tcSched08_fourthForgotInARowBecomesLeech" classname="com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest" time="0.0"/>
+  <testcase name="tcSched07_threeForgotInARowIsNotLeech" classname="com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest" time="0.0"/>
+  <testcase name="tcSched03_rememberedAtBox5StaysAtBox5" classname="com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest" time="0.0"/>
+  <testcase name="tcSched01_newWordRememberedGoesToBox1DueTomorrow" classname="com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

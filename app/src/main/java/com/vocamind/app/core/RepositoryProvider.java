@@ -14,6 +14,9 @@ import com.vocamind.app.data.catalog.QuizPolicyAsset;
 import com.vocamind.app.data.catalog.CatalogMapper;
 import com.vocamind.app.data.repository.UserDataMapper;
 import java.util.ArrayList;
+import java.time.Clock;
+import java.time.ZoneId;
+import com.vocamind.app.domain.learning.RecordReviewUseCase;
 import com.vocamind.app.domain.quiz.QuizVocabulary;
 
 /**
@@ -45,6 +48,10 @@ public final class RepositoryProvider implements AutoCloseable {
     public PackRepository packs() { return packs; }
     public StudyRepository study() { return study; }
     public ReviewRepository reviews() { return reviews; }
+    /** Same writer/DB instance as reviews(); call the resulting use case on a worker. */
+    public RecordReviewUseCase recordReview(Clock clock, ZoneId zone) {
+        return ReviewProvider.create(reviews, clock, zone);
+    }
     public QuizRepository quizzes() { return quizzes; }
 
     /** The catalog database is owned and closed by CatalogProvider. */
