@@ -3,6 +3,10 @@
 Base dự kiến: develop. Tác giả phụ trách: Trường. Reviewer: Thành; cần Nhân xác nhận data contract.
 Đây là nội dung nháp local, chưa tạo PR.
 
+UI refresh tại `894db81`: thêm thanh tiêu đề/Back, nhóm nghĩa và ví dụ thành thẻ,
+nội dung cuộn với nút Lưu cố định phía dưới, màu light/dark; bỏ Retry cho saved-only/not-found.
+Xem [validation UI mới nhất](vocab-02-ui-validation.md) cho SHA/kết quả/ảnh host-rendered.
+
 VOCAB-01 mới mở receiver kiểm tra ID/pack. Thay receiver đó bằng màn detail đọc lemma, POS,
 nghĩa/ví dụ Anh–Việt, IPA hoặc “Chưa có phiên âm”, giữ nguyên route stableId TEXT và Back.
 GetVocabularyDetail/ToggleSaved đi qua domain repository, DB mở/query/write trên worker.

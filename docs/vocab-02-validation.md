@@ -1,5 +1,8 @@
 # VOCAB-02 — validation và handoff
 
+**UI hiện hành:** code/tests `894db81`, xem [UI refresh và evidence mới](vocab-02-ui-validation.md).
+Các SHA/kết quả bên dưới là validation ban đầu tại `582e412`, được giữ làm lịch sử.
+
 Phụ trách: Trường. Reviewer: Thành. Phụ thuộc VOCAB-01.
 Trạng thái: bản triển khai độc lập để review; **chưa đủ Done/AC-04**, không thay phân công/SRS.
 
