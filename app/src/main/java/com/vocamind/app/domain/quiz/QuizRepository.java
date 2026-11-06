@@ -5,6 +5,9 @@ import java.util.List;
 
 /** Blocking contract: call from a worker executor. */
 public interface QuizRepository {
+    /** Fresh active vocabulary with validated catalog policy. Missing/invalid policy is INVALID_DATA. */
+    RepoResult<QuizSnapshot> activeSnapshot();
+
     /** Distinct words of ACTIVE packs in pack order; INVALID_DATA if a stable ID is not 16 hex. */
     RepoResult<List<QuizVocabulary>> activeVocabulary();
 

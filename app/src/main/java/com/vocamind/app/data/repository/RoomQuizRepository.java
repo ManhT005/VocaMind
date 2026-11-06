@@ -11,6 +11,9 @@ import com.vocamind.app.domain.common.RepoResult;
 import com.vocamind.app.domain.quiz.QuizRepository;
 import com.vocamind.app.domain.quiz.QuizResult;
 import com.vocamind.app.domain.quiz.QuizVocabulary;
+import com.vocamind.app.domain.quiz.QuizSnapshot;
+import com.vocamind.app.domain.quiz.QuizDistractorPolicy;
+import java.util.function.Supplier;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -22,11 +25,29 @@ public final class RoomQuizRepository implements QuizRepository {
     private final CatalogDao catalog;
     private final UserDao user;
     private final ActiveCatalogScope scope;
+    private final Supplier<QuizDistractorPolicy> policy;
 
-    public RoomQuizRepository(CatalogDao catalog, UserDao user) {
+    public RoomQuizRepository(CatalogDao catalog, UserDao user, Supplier<QuizDistractorPolicy> policy) {
+        if (policy == null) throw new IllegalArgumentException("policy loader required");
         this.catalog = catalog;
         this.user = user;
         this.scope = new ActiveCatalogScope(catalog, user);
+        this.policy = policy;
+    }
+
+    @Override public RepoResult<QuizSnapshot> activeSnapshot() {
+        return RepositoryGuard.read(() -> {
+            QuizDistractorPolicy validated;
+            try {
+                validated = policy.get();
+                if (validated == null) throw new IllegalArgumentException("policy required");
+            } catch (IllegalArgumentException invalid) {
+                throw new RepositoryGuard.InvalidDataException(invalid);
+            }
+            RepoResult<List<QuizVocabulary>> read = activeVocabulary();
+            if (!read.isSuccess()) return RepoResult.failure(read.getError());
+            return RepoResult.success(new QuizSnapshot(read.get(), validated));
+        });
     }
 
     @Override public RepoResult<List<QuizVocabulary>> activeVocabulary() {
