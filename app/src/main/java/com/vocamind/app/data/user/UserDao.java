@@ -151,6 +151,19 @@ public abstract class UserDao {
         return readReviewHistory(id, start, end, limit);
     }
     @Insert protected abstract long writeQuiz(QuizAttempt row);
+    @Query("SELECT * FROM QuizAttempt WHERE completionKey=:key")
+    protected abstract QuizAttempt quizByKey(String key);
+    public static final class CompletionConflict extends RuntimeException { }
+    @Transaction public long insertQuizOnce(QuizAttempt row) {
+        require(row != null, "quiz row");
+        id(row.completionKey);
+        QuizAttempt old = quizByKey(row.completionKey);
+        if (old == null) return insertQuiz(row);
+        if (old.completedAt != row.completedAt || old.questionCount != row.questionCount
+                || old.correctCount != row.correctCount || old.scorePercent != row.scorePercent)
+            throw new CompletionConflict();
+        return old.id;
+    }
     public long insertQuiz(QuizAttempt row) {
         require(row != null, "quiz row");
         require(row.questionCount >= 4 && row.questionCount <= 10 && row.correctCount >= 0
