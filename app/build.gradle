@@ -64,6 +64,23 @@ android {
             }
         }
     }
+    if (providers.gradleProperty('quiz03DeviceIsolation').orNull == 'true') {
+        sourceSets.debug.assets.srcDir layout.buildDirectory.dir('quiz03-device-assets')
+        def prepareQuiz03DeviceAssets = tasks.register('prepareQuiz03DeviceAssets', Exec) {
+            workingDir rootProject.projectDir
+            commandLine providers.gradleProperty('quiz03PythonExecutable').getOrElse('python'),
+                    'tools/catalog/build_quiz03_device_fixture.py'
+            inputs.files rootProject.file('tools/catalog/build_quiz03_device_fixture.py'),
+                    rootProject.file('tools/catalog/build_quiz_policy.py'),
+                    rootProject.file('docs/data/voc-data-04/accepted-v1/canonical-preview.json'),
+                    rootProject.file('docs/data/voc-data-04/accepted-v1/quiz-policy.json'),
+                    file('schemas/com.vocamind.app.data.catalog.CatalogDatabase/2.json')
+            outputs.dir layout.buildDirectory.dir('quiz03-device-assets')
+        }
+        tasks.matching { it.name == 'mergeDebugAssets' }.configureEach {
+            dependsOn prepareQuiz03DeviceAssets
+        }
+    }
 
     testOptions {
         unitTests.includeAndroidResources = true

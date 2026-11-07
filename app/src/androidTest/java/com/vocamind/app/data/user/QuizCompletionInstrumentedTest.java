@@ -29,8 +29,8 @@ public class QuizCompletionInstrumentedTest {
                 for (int i=0;i<entities.length();i++) {
                     JSONObject entity=entities.getJSONObject(i);
                     raw.execSQL(entity.getString("createSql").replace("${TABLE_NAME}",entity.getString("tableName")));
-                    JSONArray indices=entity.getJSONArray("indices");
-                    for (int j=0;j<indices.length();j++) raw.execSQL(indices.getJSONObject(j).getString("createSql")
+                    JSONArray indices=entity.optJSONArray("indices");
+                    for (int j=0;indices != null && j<indices.length();j++) raw.execSQL(indices.getJSONObject(j).getString("createSql")
                             .replace("${TABLE_NAME}",entity.getString("tableName")));
                 }
                 JSONArray setup=schema.getJSONArray("setupQueries");

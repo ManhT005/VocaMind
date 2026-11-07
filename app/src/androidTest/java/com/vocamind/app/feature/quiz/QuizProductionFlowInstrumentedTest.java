@@ -21,7 +21,7 @@ import java.io.FileOutputStream;
 import java.util.concurrent.atomic.AtomicReference;
 import static org.junit.Assert.*;
 
-/** Production composition/catalog/Room, restricted to a separate validation installation. */
+/** Production composition/Room with the accepted-corpus test asset in a separate installation. */
 @RunWith(AndroidJUnit4.class)
 public class QuizProductionFlowInstrumentedTest {
     @Test public void offlineFirstOpenThenTenQuestionsRotateReopenAndOneHistoryRow() throws Exception {
@@ -38,7 +38,9 @@ public class QuizProductionFlowInstrumentedTest {
                 scenario.onActivity(a -> a.findViewById(R.id.open_quiz).performClick());
                 await(scenario,QuizViewModel.Phase.EMPTY);
                 screenshot(context,"01-offline-empty");
-                user.userDao().activatePack(catalog.catalogDao().packs().get(0).id,System.currentTimeMillis());
+                assertEquals(150,catalog.catalogDao().allVocabulary().size());
+                for (var pack : catalog.catalogDao().packs())
+                    user.userDao().activatePack(pack.id,System.currentTimeMillis());
                 scenario.onActivity(a -> a.findViewById(R.id.quiz_action).performClick());
                 await(scenario,QuizViewModel.Phase.ANSWERING);
                 assertEquals(10,state(scenario).session.getQuestions().size());
@@ -101,5 +103,12 @@ public class QuizProductionFlowInstrumentedTest {
         try (FileOutputStream output=new FileOutputStream(new File(directory,name+".png"))) {
             image.compress(Bitmap.CompressFormat.PNG,100,output);
         } finally { image.recycle(); }
+        // Shell-owned copy survives connected-test uninstall of the isolated app.
+        try (java.io.InputStream command=new android.os.ParcelFileDescriptor.AutoCloseInputStream(
+                InstrumentationRegistry.getInstrumentation().getUiAutomation().executeShellCommand(
+                        "screencap -p /data/local/tmp/quiz03-"+name+".png"))) {
+            byte[] buffer=new byte[1024];
+            while (command.read(buffer) != -1) { /* Wait for the screenshot command. */ }
+        }
     }
 }
