@@ -13,12 +13,12 @@ public final class ExternalLinks {
     private ExternalLinks() { }
 
     public static boolean isWebUrl(String value) {
-        if (value == null || value.isBlank()) return false;
+        if (value == null || value.codePoints().allMatch(Character::isWhitespace)) return false;
         try {
             URI uri = new URI(value);
             return ("https".equalsIgnoreCase(uri.getScheme())
                     || "http".equalsIgnoreCase(uri.getScheme()))
-                    && uri.getHost() != null && !uri.getHost().isBlank()
+                    && uri.getHost() != null && !uri.getHost().codePoints().allMatch(Character::isWhitespace)
                     && uri.getRawUserInfo() == null && uri.getPort() >= -1
                     && uri.getPort() <= 65535;
         } catch (URISyntaxException invalid) {

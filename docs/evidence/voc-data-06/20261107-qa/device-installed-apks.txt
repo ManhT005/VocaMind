@@ -1,0 +1,2 @@
+72aca5f9ce1a8506a0e5654505300706a7c02d2bfd20a925be654e28d9035ef2  app-catalogQa.apk
+478620d5daa00d0eeb02a5f8cbdc3515d5791df260d1bef94740c0c3dbb8fbf7  app-catalogQa-androidTest.apk

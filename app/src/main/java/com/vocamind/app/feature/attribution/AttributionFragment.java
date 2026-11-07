@@ -39,12 +39,16 @@ public final class AttributionFragment extends Fragment {
                 row.title.setText(display(source.title));
                 row.authors.setText(getString(R.string.attribution_authors, source.authors.isEmpty()
                         ? getString(R.string.attribution_authors_missing) : String.join("; ", source.authors)));
-                row.credit.setVisibility(source.creditText == null || source.creditText.isBlank()
+                row.credit.setVisibility(source.creditText == null || source.creditText.codePoints().allMatch(Character::isWhitespace)
                         ? View.GONE : View.VISIBLE);
                 row.credit.setText(source.creditText);
                 ViewCompat.setAccessibilityHeading(row.title, true);
                 row.sourceUrl.setText(getString(R.string.attribution_source_url, display(source.url)));
-                row.license.setText(getString(R.string.attribution_license, display(source.licenseCode)));
+                boolean projectUse = "PROJECT-USE-OWNER-ACCEPTED".equals(source.licenseCode);
+                row.license.setText(projectUse ? getString(R.string.attribution_project_use)
+                        : getString(R.string.attribution_license, display(source.licenseCode)));
+                row.licenseUrl.setVisibility(projectUse ? View.GONE : View.VISIBLE);
+                row.openLicense.setVisibility(projectUse ? View.GONE : View.VISIBLE);
                 row.licenseUrl.setText(getString(R.string.attribution_license_url, display(source.licenseUrl)));
                 row.snapshot.setText(getString(R.string.attribution_snapshot, display(source.snapshotDate)));
                 row.openSource.setOnClickListener(v -> ExternalLinks.open(requireContext(), source.url));
@@ -55,6 +59,6 @@ public final class AttributionFragment extends Fragment {
     }
 
     private String display(String value) {
-        return value == null || value.isBlank() ? getString(R.string.attribution_missing) : value;
+        return value == null || value.codePoints().allMatch(Character::isWhitespace) ? getString(R.string.attribution_missing) : value;
     }
 }

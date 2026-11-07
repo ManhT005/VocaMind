@@ -1,5 +1,7 @@
 # VOC-DATA-06 — Catalog candidate validation
 
+For the current installed-app QA profile, see [VOC-DATA-06 QA validation](voc-data-06-qa-validation.md). This report records the original candidate-only baseline.
+
 Date: 2026-11-07. Owner implementation: Thi; intended reviewer: Nhân.
 
 Base: `8209ef75bc882ca10367abd40900e44e537571cb` (`origin/develop`, fetched before

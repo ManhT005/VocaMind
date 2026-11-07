@@ -44,6 +44,17 @@ def prepareReleaseCatalogTests = tasks.register('prepareReleaseCatalogTests', Ex
     outputs.dir(releaseTestAssets)
 }
 
+// Opt-in QA application ID keeps the internal corpus and its installed DB separate.
+def catalogQaEnabled = providers.gradleProperty('catalogQa').map { it == 'true' }.getOrElse(false)
+def catalogQaDirectory = layout.buildDirectory.dir('generated/voc06-qa')
+def prepareCatalogQa = tasks.register('prepareCatalogQa', Exec) {
+    workingDir rootProject.projectDir
+    commandLine providers.gradleProperty('catalogPython').getOrElse('python'),
+            rootProject.file('tools/catalog/package_qa.py').absolutePath, '--prepare'
+    // Re-verify the snapshot and bundle even when a generated output already exists.
+    outputs.upToDateWhen { false }
+}
+
 android {
     namespace 'com.vocamind.app'
     compileSdk 35
@@ -62,7 +73,21 @@ android {
         }
     }
 
+    if (catalogQaEnabled) {
+        buildTypes {
+            catalogQa {
+                initWith debug
+                applicationIdSuffix '.qa'
+                resValue 'string', 'app_name', 'VocaMind QA'
+            }
+        }
+        testBuildType 'catalogQa'
+    }
+
     sourceSets {
+        if (catalogQaEnabled) {
+            catalogQa.assets.srcDir catalogQaDirectory.map { it.dir('assets') }
+        }
         test.java.srcDir "src/catalogTest/java"
         test.resources.srcDir "src/catalogTest/assets"
         test.resources.srcDir releaseTestAssets
@@ -106,6 +131,9 @@ android {
 }
 
 tasks.configureEach {
+    if (catalogQaEnabled && name == 'mergeCatalogQaAssets') {
+        dependsOn prepareCatalogQa
+    }
     if (name.endsWith('UnitTestJavaRes') || name.endsWith('AndroidTestAssets')
             || name.toLowerCase(Locale.ROOT).contains('lint')) {
         dependsOn prepareReleaseCatalogTests

@@ -53,12 +53,16 @@ jobs:
       - name: Test catalog builder and credit consistency validator
         run: python -m unittest discover -s tools/catalog -p 'test_*.py' -v
 
-      - name: Verify third-party rights provenance (not release authorization)
+      - name: Verify historical provenance and the app release hold
         run: |
-          python docs/licensing/voc-data-06/validate_rights.py
-          if python docs/licensing/voc-data-06/validate_rights.py --require-release; then
-            echo "Rights release gate unexpectedly passed"; exit 1
-          fi
+          python docs/licensing/voc-data-06/validate_rights.py --verify-audit
+          set +e
+          python docs/licensing/voc-data-06/validate_rights.py --verify-app-release > build-rights-gate.log 2>&1
+          gate_status=$?
+          set -e
+          test "$gate_status" -eq 1
+          grep -q 'APP_RELEASE_BLOCKED' build-rights-gate.log
+          rm build-rights-gate.log
 
       - name: Validate Gradle Wrapper
         uses: gradle/actions/wrapper-validation@v4
@@ -158,7 +162,13 @@ jobs:
       - name: Run Android lint
         run: ./gradlew lintDebug
 
-      - name: Upload test reports, APKs and ingestion proof
+      - name: Verify APK asset profiles
+        run: |
+          python tools/catalog/package_qa.py --verify-apk app/build/outputs/apk/debug/app-debug.apk --fixture
+          ./gradlew -PcatalogQa=true assembleCatalogQa assembleCatalogQaAndroidTest
+          python tools/catalog/package_qa.py --verify-apk app/build/outputs/apk/catalogQa/app-catalogQa.apk > build/voc06-qa-apk-report.json
+
+      - name: Upload test reports, fixture APK and verification summaries
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -167,12 +177,8 @@ jobs:
             app/build/reports/tests/
             app/build/test-results/
             app/build/reports/lint-results-debug.*
-            app/build/outputs/apk/
+            app/build/outputs/apk/debug/app-debug.apk
+            build/voc06-qa-apk-report.json
             build/vocabulary-ingestion/ci-proof/
-            build/vocabulary-quality/ci-*/
-            build/vocabulary-corpus/ci-*/
-            build/vocabulary-ingestion/editorial-approval-check/
-            build/vocabulary-ingestion/accepted-ci/
-            build/catalog-release/ci-*/
           if-no-files-found: warn
           retention-days: 14

@@ -18,6 +18,7 @@
     <string name="attribution_retry">Thử lại</string>
     <string name="attribution_missing">Chưa có thông tin</string>
     <string name="attribution_source_url">URL nguồn: %1$s</string>
+    <string name="attribution_project_use">Phạm vi: sử dụng trong dự án</string>
     <string name="attribution_license">Giấy phép: %1$s</string>
     <string name="attribution_license_url">URL giấy phép: %1$s</string>
     <string name="attribution_snapshot">Ngày snapshot: %1$s</string>
@@ -54,7 +55,16 @@
     <string name="word_unreviewed">Chưa có lượt ôn</string>
     <string name="word_relearn">Học lại</string>
     <string name="word_level">Cấp ôn %1$d</string>
-    <string name="word_route_pending">Đã nhận vocabularyId: %1$s\nPack: %2$s\nNội dung chi tiết đang chờ VOCAB-02.</string>
     <string name="word_route_invalid">Thiếu hoặc sai mã từ/gói. Hãy quay lại danh sách.</string>
     <string name="word_route_loading">Đang kiểm tra mã từ…</string>
+    <string name="detail_ready">Chi tiết từ vựng</string>
+    <string name="detail_save">Lưu</string>
+    <string name="detail_unsave">Bỏ lưu</string>
+    <string name="detail_saving">Đang lưu…</string>
+    <string name="detail_error">Không thể xác nhận dữ liệu. Thử lại để đọc trạng thái đã lưu trước khi thao tác tiếp.</string>
+    <string name="detail_meaning_label">NGHĨA TIẾNG VIỆT</string>
+    <string name="detail_example_label">VÍ DỤ</string>
+    <string name="detail_english_label">Tiếng Anh</string>
+    <string name="detail_vietnamese_label">Tiếng Việt</string>
+    <string name="detail_missing">Chưa có dữ liệu</string>
 </resources>

@@ -20,6 +20,7 @@ sys.path.insert(0, str(ROOT / 'tools/vocabulary'))
 import accept_editorial
 import build_quiz_policy
 import check_credits
+import catalog_snapshot
 import ingest
 import quality
 
@@ -61,21 +62,16 @@ def require(condition, message):
         raise ValueError(message)
 
 
-def load_inputs(qc_dir, root=ROOT):
+def load_inputs(qc_dir, root=ROOT, snapshot_dir=None):
     """Check the QC consumer, frozen acceptance and current source authorization."""
     qc_dir, root = Path(qc_dir).resolve(), Path(root).resolve()
-    snapshot = root / accept_editorial.ACCEPTED
-    data, policy = accept_editorial.load_handoff(qc_dir, snapshot)
+    snapshot = Path(snapshot_dir or root / accept_editorial.ACCEPTED).resolve()
+    frozen = catalog_snapshot.load(root, snapshot)
+    data, policy = accept_editorial.verify_handoff(quality.load_validated(qc_dir), snapshot, root)
 
     errors = ingest.contract.validate(data, release=True)
     require(not errors, 'Release contract failed: ' + '\n'.join(errors))
 
-    # A completion marker alone must not let a rewritten QC batch change the
-    # accepted wording, identity registry, source metadata or review decisions.
-    frozen = accept_editorial.compile_accepted(root)
-    for name, expected in frozen.items():
-        require((snapshot / name).read_bytes() == expected,
-                'Frozen accepted artifact changed: ' + name)
     require(data == json.loads(frozen['canonical-preview.json']),
             'QC dataset differs from frozen owner acceptance')
 
@@ -97,6 +93,9 @@ def load_inputs(qc_dir, root=ROOT):
     schema = read_json(schema_path)['database']
     binding = {
         'datasetSha256': build_quiz_policy.dataset_digest(data),
+        **({'snapshotId': 'editorial-qa-v2', 'distributionScope': 'internal-qa',
+            'snapshotManifestSha256': checksum(snapshot / 'snapshot-manifest.json')}
+           if snapshot == root / catalog_snapshot.QA_PATH else {}),
         'canonicalSha256': checksum(qc_dir / 'canonical-catalog.json'),
         'qcManifestSha256': checksum(qc_dir / 'manifest.json'),
         'roomSchemaSha256': checksum(schema_path),
@@ -217,22 +216,26 @@ def inspect_database(path, data, schema):
         }
 
 
-def credits_for(data):
+def credits_for(data, *, internal_qa=False):
     # The accepted dossier names an approver, not a verified human author.
     # Keep the authors explicitly missing instead of inventing a credit grant.
     return {
         'schemaVersion': 1,
         'sources': [
             {'sourceId': source['id'], 'snapshotDate': source['snapshotDate'],
-             'authors': [], 'creditText': source['attributionText']}
+             'authors': [], 'creditText': source['attributionText'] + (
+                 ' Bản QA nội bộ. Hồ sơ lịch sử ghi nhận 135 tham chiếu lemma/rank NGSL 1.2 '
+                 '(Charles Browne, Brent Culligan, Joseph Phillips) và 15 mục không có tham chiếu NGSL. '
+                 'Dữ liệu nghĩa và ví dụ thuộc bản biên soạn của dự án.' if internal_qa else '')}
             for source in sorted(data['sources'], key=lambda source: source['id'])
         ],
     }
 
 
-def gate_report(counts, credit_status):
+def gate_report(counts, credit_status, *, internal_qa=False):
     return {
         'technicalStatus': 'pass',
+        **({'contentRightsStatus': 'hold', 'packagingScope': 'internal-qa'} if internal_qa else {}),
         'releaseStatus': 'blocked',
         'releaseAuthorized': False,
         'blockers': RELEASE_BLOCKERS,
@@ -246,13 +249,14 @@ def gate_report(counts, credit_status):
     }
 
 
-def build(qc_dir, output_dir, *, root=ROOT):
+def build(qc_dir, output_dir, *, root=ROOT, snapshot_dir=None):
     root, output_dir = Path(root).resolve(), Path(output_dir).resolve()
     allowed = root / 'build/catalog-release'
     require(output_dir.is_relative_to(allowed) and output_dir != allowed and not output_dir.exists(),
             'Output must be a fresh directory below build/catalog-release')
-    data, policy, schema, binding = load_inputs(qc_dir, root)
-    credits = credits_for(data)
+    data, policy, schema, binding = load_inputs(qc_dir, root, snapshot_dir)
+    internal_qa = binding.get('distributionScope') == 'internal-qa'
+    credits = credits_for(data, internal_qa=internal_qa)
     pairs = {(source['id'], source['snapshotDate']) for source in data['sources']}
     credit_status = check_credits.validate(credits, pairs)
 
@@ -276,7 +280,7 @@ def build(qc_dir, output_dir, *, root=ROOT):
         write_json(stage / 'catalog.metadata.json', metadata)
         write_json(stage / 'quiz-policy.json', policy)
         write_json(stage / 'content-credits.json', credits)
-        write_json(stage / 'release-gate-report.json', gate_report(counts, credit_status))
+        write_json(stage / 'release-gate-report.json', gate_report(counts, credit_status, internal_qa=internal_qa))
         write_json(stage / 'manifest.json', {
             'schemaVersion': 1,
             'status': 'candidate-ready',
@@ -284,15 +288,16 @@ def build(qc_dir, output_dir, *, root=ROOT):
             'outputHashes': {name: checksum(stage / name) for name in sorted(OUTPUTS)},
         })
         # Verify the complete set before publishing the directory in one rename.
-        verify(qc_dir, stage, root=root)
+        verify(qc_dir, stage, root=root, snapshot_dir=snapshot_dir)
         require(not output_dir.exists(), 'Output appeared during build; refusing overwrite')
         os.rename(stage, output_dir)
     return metadata
 
 
-def verify(qc_dir, directory, *, root=ROOT):
+def verify(qc_dir, directory, *, root=ROOT, snapshot_dir=None):
     directory = Path(directory)
-    data, policy, schema, binding = load_inputs(qc_dir, root)
+    data, policy, schema, binding = load_inputs(qc_dir, root, snapshot_dir)
+    internal_qa = binding.get('distributionScope') == 'internal-qa'
     manifest = read_json(directory / 'manifest.json')
     require(manifest.get('schemaVersion') == 1 and manifest.get('status') == 'candidate-ready'
             and manifest.get('releaseAuthorized') is False, 'Invalid candidate completion marker')
@@ -315,23 +320,24 @@ def verify(qc_dir, directory, *, root=ROOT):
             'Candidate metadata binding mismatch')
     require(read_json(directory / 'quiz-policy.json') == policy, 'Candidate quiz policy mismatch')
     credits = read_json(directory / 'content-credits.json')
-    require(credits == credits_for(data), 'Candidate source/credit mismatch')
+    require(credits == credits_for(data, internal_qa=internal_qa), 'Candidate source/credit mismatch')
     pairs = {(source['id'], source['snapshotDate']) for source in data['sources']}
     require(read_json(directory / 'release-gate-report.json') ==
-            gate_report(counts, check_credits.validate(credits, pairs)), 'Candidate release report mismatch')
+            gate_report(counts, check_credits.validate(credits, pairs), internal_qa=internal_qa), 'Candidate release report mismatch')
     return metadata
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--qc-dir', required=True, type=Path)
+    parser.add_argument('--snapshot-dir', type=Path)
     mode = parser.add_mutually_exclusive_group(required=True)
     mode.add_argument('--output-dir', type=Path)
     mode.add_argument('--verify-dir', type=Path)
     args = parser.parse_args()
     try:
-        metadata = (build(args.qc_dir, args.output_dir) if args.output_dir else
-                    verify(args.qc_dir, args.verify_dir))
+        metadata = (build(args.qc_dir, args.output_dir, snapshot_dir=args.snapshot_dir) if args.output_dir else
+                    verify(args.qc_dir, args.verify_dir, snapshot_dir=args.snapshot_dir))
         print(json.dumps({'status': 'candidate-ready', 'releaseStatus': 'blocked',
                           'datasetSha256': metadata['datasetSha256'],
                           'uniqueVocabularyCount': metadata['uniqueVocabularyCount'],

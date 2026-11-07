@@ -105,7 +105,7 @@ public abstract class ReleaseCatalogContract {
             assertEquals(expected.getString("exampleVi"), actual.exampleVi);
             assertEquals(expected.getString("sourceId"), actual.sourceId);
             assertEquals(expected.getString("contentVersion"), actual.contentVersion);
-            assertNull(actual.ipa);
+            assertEquals(expected.isNull("ipa") ? null : expected.getString("ipa"), actual.ipa);
         }
 
         var packs = read(repository::getPacks);

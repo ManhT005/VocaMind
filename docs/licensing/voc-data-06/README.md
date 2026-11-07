@@ -11,11 +11,33 @@ This folder reconstructs 135 historical NGSL 1.2 lexical/rank references and 15 
 - `APPROVAL_CHECKLIST.md`: decisions/signatures that must exist before promotion.
 - `validate_rights.py`: read-only validation, with a fail-closed release mode.
 
-Run from repository root:
+Run the provenance audit and the separate app release gate from the repository root.
 
 ```sh
-python docs/licensing/voc-data-06/validate_rights.py
-python docs/licensing/voc-data-06/validate_rights.py --require-release # Must fail until approvals and all release blockers are resolved
+python docs/licensing/voc-data-06/validate_rights.py --verify-audit
+python docs/licensing/voc-data-06/validate_rights.py --verify-app-release
 ```
 
-Do not replace `accepted-v1` or `app/src/main/assets/database/catalog.db` just to pass checks. A new signed snapshot, ContentSource, offline attribution and separate Android QA gates must be produced before release. The SRS obligations remain BR-12, DATA-06, AC-12, NFR-VM-12 and DEC-09.
+The app release gate currently exits 1 with `APP_RELEASE_BLOCKED`. To validate a real decision against the QA snapshot, prepare the snapshot and supply the decision and intended channel.
+
+```sh
+python tools/catalog/package_qa.py --prepare
+python docs/licensing/voc-data-06/validate_rights.py --verify-content-rights \
+  --snapshot build/vocabulary-corpus/voc06-qa-v2 \
+  --approval /path/to/approval.json --channel internal-qa
+```
+
+The approval record binds its PO or Content Lead, date, review and channels to
+the snapshot manifest and dataset SHA-256. `signedDecision` and `reviewedNotice`
+reference sibling evidence files and their hashes. The `components` ledger
+covers editorial lexical material, meanings, paired examples and the NGSL
+reference. A redistribution decision for NGSL requires attribution, license,
+change notice and ShareAlike treatment. `sourceCredits` identifies verified
+authors or a responsible publisher with an explicit authorship status. Supported
+channels are `internal-qa`, `public-repository` and `public-apk`.
+
+The verifier checks the evidence binding and record consistency. The PO or
+Content Lead verifies the signer's authority and supplies the genuine decision.
+The recorded project-use decision allows internal QA. A public decision and
+editorial sign-off on the four revised pack descriptions are still pending.
+See [QA validation](../../voc-data-06-qa-validation.md) for the packaged profile.
