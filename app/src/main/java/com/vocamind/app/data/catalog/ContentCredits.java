@@ -5,6 +5,7 @@ import com.vocamind.app.domain.catalog.CatalogSource;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import java.util.Collections;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ByteArrayOutputStream;
@@ -21,8 +22,8 @@ public final class ContentCredits {
     private record Credit(List<String> authors, String text) { }
     private final Map<Key, Credit> credits;
 
-    private ContentCredits(Map<Key, Credit> credits) { this.credits = Map.copyOf(credits); }
-    public static ContentCredits empty() { return new ContentCredits(Map.of()); }
+    private ContentCredits(Map<Key, Credit> credits) { this.credits = Collections.unmodifiableMap(credits); }
+    public static ContentCredits empty() { return new ContentCredits(Collections.emptyMap()); }
 
     public static ContentCredits load(AssetManager assets) {
         try (var input = assets.open(ASSET)) {
@@ -53,7 +54,7 @@ public final class ContentCredits {
                 JSONArray values = row.getJSONArray("authors");
                 for (int j = 0; j < values.length(); j++) authors.add(text(values.get(j)));
                 String notice = row.isNull("creditText") ? null : text(row.get("creditText"));
-                if (out.put(key, new Credit(List.copyOf(authors), notice)) != null) {
+                if (out.put(key, new Credit(Collections.unmodifiableList(authors), notice)) != null) {
                     throw new IllegalArgumentException("Duplicate source/snapshot credit");
                 }
             }
@@ -64,7 +65,7 @@ public final class ContentCredits {
     }
 
     private static String text(Object value) {
-        if (!(value instanceof String) || ((String) value).isBlank()) {
+        if (!(value instanceof String) || ((String) value).codePoints().allMatch(Character::isWhitespace)) {
             throw new IllegalArgumentException("Credit strings must be nonblank");
         }
         return (String) value;

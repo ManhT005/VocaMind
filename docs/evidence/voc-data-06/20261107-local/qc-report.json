@@ -1,0 +1,62 @@
+{
+  "toolVersion": "1.0.0",
+  "fixtureOnly": false,
+  "command": "python tools/vocabulary/quality.py --input build/vocabulary-ingestion/voc-data-06-verified --config docs/data/voc-data-04/accepted-v1/ingestion-config.json --reviews docs/data/voc-data-04/accepted-v1/reviews.json --output <new-directory>",
+  "python": "3.14.0",
+  "unicode": "16.0.0",
+  "toolSha256": "9639218c5045f4762091a2cb975aabb12f941b60290699c4dc516fdb766e6da6",
+  "inputSha256": "f27e9d2de700fadf13b480df26933c61333ce6261ed872d285e5a111a88110c1",
+  "manifestSha256": "e5fce29de50bd77a08e34cd386c30c1954b9ff5a442a4ca9cb1dda332c17726f",
+  "reviewSha256": "fd6dac369b9f3502351404da01f840526b4ba97953dcdccc8ec4cff2b6b4a68e",
+  "configSha256": "64745a271b6eb373137d09701bbe319c4a1364e442a8c7883399e2f974ad76df",
+  "snapshots": [
+    {
+      "registryId": "vocamind-ai-editorial",
+      "snapshotId": "editorial-accepted-v1",
+      "canonicalId": "vocamind-ai-editorial-v1",
+      "artifact": "docs/data/voc-data-04/accepted-v1/staging.jsonl",
+      "sha256": "b588844e1f1228acaeed139efe08a5d9d53dcb5a9da8e4f056a23bea3ed959c9"
+    }
+  ],
+  "status": "pass",
+  "counts": {
+    "input": 150,
+    "accepted": 150,
+    "rejected": 0,
+    "withheld": 0
+  },
+  "errorsByCode": {},
+  "warningsByCode": {},
+  "packs": [
+    {
+      "packId": "pack_toeic_basic",
+      "memberships": 40,
+      "distinctMeanings": 40,
+      "quizGate": true
+    },
+    {
+      "packId": "pack_toeic_office",
+      "memberships": 40,
+      "distinctMeanings": 40,
+      "quizGate": true
+    },
+    {
+      "packId": "pack_daily_life",
+      "memberships": 40,
+      "distinctMeanings": 40,
+      "quizGate": true
+    },
+    {
+      "packId": "pack_academic",
+      "memberships": 30,
+      "distinctMeanings": 30,
+      "quizGate": true
+    }
+  ],
+  "issues": [],
+  "normalization": [],
+  "limitations": [
+    "Human decisions supplied by review sidecar",
+    "No release quotas, database build or Android acceptance; review by Trường remains required"
+  ]
+}

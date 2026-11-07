@@ -18,6 +18,7 @@
     <string name="attribution_retry">Thử lại</string>
     <string name="attribution_missing">Chưa có thông tin</string>
     <string name="attribution_source_url">URL nguồn: %1$s</string>
+    <string name="attribution_project_use">Phạm vi: sử dụng trong dự án</string>
     <string name="attribution_license">Giấy phép: %1$s</string>
     <string name="attribution_license_url">URL giấy phép: %1$s</string>
     <string name="attribution_snapshot">Ngày snapshot: %1$s</string>

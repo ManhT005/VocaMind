@@ -134,6 +134,10 @@ def load_handoff(qc_directory, snapshot=ROOT / ACCEPTED):
     snapshot = Path(snapshot).resolve()
     root = snapshot.parents[3]
     ingest.require(snapshot == root / ACCEPTED, 'Accepted snapshot location required')
+    return verify_handoff(data, snapshot, root)
+
+
+def verify_handoff(data, snapshot, root):
     registry = ingest.contract.load_json(snapshot / 'source-registry.json')
     source = authorize(registry, REGISTRY_ID, root)
     ingest.require(len(data['sources']) == 1 and

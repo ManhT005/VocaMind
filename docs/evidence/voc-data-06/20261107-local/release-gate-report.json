@@ -1,0 +1,46 @@
+{
+  "technicalStatus": "pass",
+  "releaseStatus": "blocked",
+  "releaseAuthorized": false,
+  "blockers": [
+    "PO/Content Lead distribution rights and verified author ledger required",
+    "Reference-device offline UI, APK checksum/size and 5000-word benchmark required",
+    "DATA-08 installed-catalog upgrade/rollback and userdata preservation required"
+  ],
+  "sqlQa": {
+    "uniqueVocabularyCount": 150,
+    "membershipCount": 150,
+    "packCounts": {
+      "pack_toeic_basic": 40,
+      "pack_toeic_office": 40,
+      "pack_daily_life": 40,
+      "pack_academic": 30
+    },
+    "distinctMeaningsPerPack": {
+      "pack_toeic_basic": 40,
+      "pack_toeic_office": 40,
+      "pack_daily_life": 40,
+      "pack_academic": 30
+    },
+    "examplePairCount": 150,
+    "nullableIpaCount": 150,
+    "ftsMappedRows": 150,
+    "ftsSearchChecks": 300,
+    "integrityCheck": "ok",
+    "foreignKeyViolations": 0,
+    "logicalDumpSha256": "20203a9cb9ab61180fc9f78ff3ad8adcfbdac602636caffe351d4af19885e71c"
+  },
+  "credits": {
+    "matchedPairs": 1,
+    "missingAuthors": [
+      [
+        "vocamind-ai-editorial-v1",
+        "2026-11-05"
+      ]
+    ],
+    "releaseCreditComplete": false,
+    "licenseApprovalVerified": false
+  },
+  "deviceAcceptance": "not-run",
+  "upgradeRollbackAcceptance": "not-run"
+}

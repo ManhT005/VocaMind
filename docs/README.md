@@ -5,6 +5,8 @@ project entry point; generated build outputs stay in ignored build directories.
 
 | Document | Purpose |
 | --- | --- |
+| [VOC-DATA-06 QA validation](voc-data-06-qa-validation.md) | Versioned QA catalog in the main QA APK, asset verification, and acceptance gates |
+| [VOC-DATA-06 validation](voc-data-06-validation.md) | Verified production QC to staged 150-word Room catalog, bundle/FTS gates, reproducibility and release limitations |
 | [DATA-07 plan](plans/data-07-progress-aggregation-queries.md) | Five-hour plan, distinct counts, six-box and quiz history acceptance |
 | [DATA-07 validation](data-07-validation.md) | Transactional snapshot reads, fixtures, error mapping and integration evidence |
 | [DATA-07 PR #26 fix validation](data-07-fix-validation.md) | DATA-05/06 integration, scope audit, atomic review/progress regression and AC-11 handoff |
@@ -81,3 +83,5 @@ validation records separate from the current setup and foundation guides.
 - [VOCAB-02 first-save contract acceptance](vocab-02-first-save-validation.md)
 - [VOCAB-02 DATA-06/DATA-07 integration](vocab-02-data0607-integration.md)
 - [VOCAB-02 focused emulator QA](vocab-02-device-qa.md)
+
+- [VOCAB-02 integration and probe binding recheck](vocab-02-recheck-993e70a.md)

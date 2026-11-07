@@ -1,0 +1,20 @@
+[
+  {
+    "suite": "catalog",
+    "tests": 21,
+    "seconds": 51.631,
+    "status": "pass"
+  },
+  {
+    "suite": "vocabulary",
+    "tests": 112,
+    "seconds": 30.006,
+    "status": "pass"
+  },
+  {
+    "suite": "contract",
+    "tests": 39,
+    "seconds": 1.949,
+    "status": "pass"
+  }
+]

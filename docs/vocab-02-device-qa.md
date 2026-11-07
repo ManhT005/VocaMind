@@ -1,5 +1,7 @@
 # VOCAB-02 — focused emulator QA sau review
 
+> **Recheck 07/11/2026 — source binding chưa được xác minh:** Hash `VocabularyDeviceQa.java` trong metadata lịch sử không khớp bản source được commit, không giải thích được bằng LF/CRLF/BOM hay biến đổi EOF thường gặp. Các kết quả PASS bên dưới là evidence của lượt chạy lịch sử, chưa chứng minh đúng bản probe đang lưu. Xem [probe-binding-review.json](validation/vocab-02/device-9f2dfd9-20261107/probe-binding-review.json) và [kết quả tích hợp/recheck](vocab-02-recheck-993e70a.md). Metadata/log cũ được giữ nguyên; chưa chạy lại emulator trong recheck này. Chưa dùng bản ghi này để chốt Done.
+
 Ngày chạy: **07/11/2026, Asia/Saigon**. Phụ trách: Lê Mạnh Trường; reviewer: Vương Quang Thành.
 Theo vocab-02-focused-fix-plan.md do người dùng cung cấp. Không sửa SRS/phân công, không tự Done/merge.
 

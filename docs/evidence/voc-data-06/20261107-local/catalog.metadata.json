@@ -1,0 +1,54 @@
+{
+  "kind": "owner-accepted-release-candidate-not-authorized-for-distribution",
+  "fixtureOnly": false,
+  "sqliteVersion": "3.50.4",
+  "schemaVersion": 2,
+  "identityHash": "6704c4cc4f3db1ef916af009d7de4b98",
+  "contentVersion": "1.0.0",
+  "datasetSha256": "c066d4a363d58c4c7226b716f1080b25a9e47b124a4007f4c3d16d67283a7fb8",
+  "canonicalSha256": "f27e9d2de700fadf13b480df26933c61333ce6261ed872d285e5a111a88110c1",
+  "qcManifestSha256": "3274c70f41fac51b95bb63379f87c6d7f096bb4ce787f30e3b35f9fe89f55160",
+  "roomSchemaSha256": "b557a4fd3ed48ebfed1a1dbb7150f45a4aa177716d698509062d730bc6891443",
+  "acceptedInputHashes": {
+    "acceptance.json": "242069fe359d6b95c67916d5f5de734fd6f3bf2fb87844fac1fb423ae0b23ada",
+    "attribution.txt": "cdd461d191938f1865c5112c32bf5bf91a4e2fecacc524792dc5f8cac125801f",
+    "canonical-preview.json": "f27e9d2de700fadf13b480df26933c61333ce6261ed872d285e5a111a88110c1",
+    "identity-registry.json": "156e6dc876ea2e7619b46d91d7fa2e408480c64384c25dce3f35b6329003f418",
+    "ingestion-config.json": "64745a271b6eb373137d09701bbe319c4a1364e442a8c7883399e2f974ad76df",
+    "inventory.json": "164dae622ae8145a40a25fb96bc6579801faf399a3dbcdeae619954bc3125684",
+    "quiz-policy.json": "592094d9f78aeb2b0bc74e9092445afeed6c4cb77c53d138e60d4d5f31ef5172",
+    "reviews.json": "fd6dac369b9f3502351404da01f840526b4ba97953dcdccc8ec4cff2b6b4a68e",
+    "source-registry.json": "6e1d430ac769058d6f68c5b24804c792316d0946095db52412f526ca5fbd111e",
+    "staging.jsonl": "b588844e1f1228acaeed139efe08a5d9d53dcb5a9da8e4f056a23bea3ed959c9"
+  },
+  "sourceSnapshots": [
+    {
+      "id": "vocamind-ai-editorial-v1",
+      "snapshotDate": "2026-11-05",
+      "snapshotSha256": "b588844e1f1228acaeed139efe08a5d9d53dcb5a9da8e4f056a23bea3ed959c9",
+      "licenseCode": "PROJECT-USE-OWNER-ACCEPTED"
+    }
+  ],
+  "sha256": "d44d948dda83febcc1907bb1e995d9d5c6ceac969485f7eea9d6b885f2c3d86c",
+  "uniqueVocabularyCount": 150,
+  "membershipCount": 150,
+  "packCounts": {
+    "pack_toeic_basic": 40,
+    "pack_toeic_office": 40,
+    "pack_daily_life": 40,
+    "pack_academic": 30
+  },
+  "distinctMeaningsPerPack": {
+    "pack_toeic_basic": 40,
+    "pack_toeic_office": 40,
+    "pack_daily_life": 40,
+    "pack_academic": 30
+  },
+  "examplePairCount": 150,
+  "nullableIpaCount": 150,
+  "ftsMappedRows": 150,
+  "ftsSearchChecks": 300,
+  "integrityCheck": "ok",
+  "foreignKeyViolations": 0,
+  "logicalDumpSha256": "20203a9cb9ab61180fc9f78ff3ad8adcfbdac602636caffe351d4af19885e71c"
+}
