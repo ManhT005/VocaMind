@@ -25,6 +25,36 @@ def prepareRobolectricSdks = tasks.register('prepareRobolectricSdks', Sync) {
     into robolectricSdkDirectory
 }
 
+// Candidate content is visible only to the test classpath/test APK. Main APK
+// assets keep their current snapshot until the separate release gates pass.
+def releaseTestAssets = layout.buildDirectory.dir('generated/catalog-release-test-assets')
+def prepareReleaseCatalogTests = tasks.register('prepareReleaseCatalogTests', Exec) {
+    workingDir rootProject.projectDir
+    commandLine providers.gradleProperty('catalogPython').getOrElse('python'),
+            rootProject.file('tools/catalog/prepare_release_tests.py').absolutePath,
+            '--output-dir', releaseTestAssets.get().asFile.absolutePath
+
+    inputs.files(rootProject.fileTree('tools/catalog') { include '*.py' })
+    inputs.files(rootProject.fileTree('tools/vocabulary') { include '*.py' })
+    inputs.files(rootProject.fileTree('docs/data/voc-data-04'))
+    inputs.files(rootProject.fileTree('docs/data/vocabulary-contract-v1') {
+        include '*.py', '*.json'
+    })
+    inputs.file('schemas/com.vocamind.app.data.catalog.CatalogDatabase/2.json')
+    outputs.dir(releaseTestAssets)
+}
+
+// Opt-in QA application ID keeps the internal corpus and its installed DB separate.
+def catalogQaEnabled = providers.gradleProperty('catalogQa').map { it == 'true' }.getOrElse(false)
+def catalogQaDirectory = layout.buildDirectory.dir('generated/voc06-qa')
+def prepareCatalogQa = tasks.register('prepareCatalogQa', Exec) {
+    workingDir rootProject.projectDir
+    commandLine providers.gradleProperty('catalogPython').getOrElse('python'),
+            rootProject.file('tools/catalog/package_qa.py').absolutePath, '--prepare'
+    // Re-verify the snapshot and bundle even when a generated output already exists.
+    outputs.upToDateWhen { false }
+}
+
 android {
     namespace 'com.vocamind.app'
     compileSdk 35
@@ -43,12 +73,28 @@ android {
         }
     }
 
+    if (catalogQaEnabled) {
+        buildTypes {
+            catalogQa {
+                initWith debug
+                applicationIdSuffix '.qa'
+                resValue 'string', 'app_name', 'VocaMind QA'
+            }
+        }
+        testBuildType 'catalogQa'
+    }
+
     sourceSets {
+        if (catalogQaEnabled) {
+            catalogQa.assets.srcDir catalogQaDirectory.map { it.dir('assets') }
+        }
         test.java.srcDir "src/catalogTest/java"
         test.resources.srcDir "src/catalogTest/assets"
+        test.resources.srcDir releaseTestAssets
         debug.assets.srcDir rootProject.file('docs/data/vocabulary-contract-v1/fixtures/valid')
         androidTest.java.srcDir "src/catalogTest/java"
         androidTest.assets.srcDir "src/catalogTest/assets"
+        androidTest.assets.srcDir releaseTestAssets
         test.java.srcDir "src/attributionTest/java"
         androidTest.java.srcDir "src/attributionTest/java"
     }
@@ -81,6 +127,16 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+tasks.configureEach {
+    if (catalogQaEnabled && name == 'mergeCatalogQaAssets') {
+        dependsOn prepareCatalogQa
+    }
+    if (name.endsWith('UnitTestJavaRes') || name.endsWith('AndroidTestAssets')
+            || name.toLowerCase(Locale.ROOT).contains('lint')) {
+        dependsOn prepareReleaseCatalogTests
     }
 }
 

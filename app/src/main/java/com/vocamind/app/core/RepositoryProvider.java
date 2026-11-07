@@ -20,6 +20,8 @@ import com.vocamind.app.domain.learning.RecordReviewUseCase;
 import com.vocamind.app.domain.progress.ProgressRepository;
 import com.vocamind.app.domain.progress.GetProgressUseCase;
 import com.vocamind.app.domain.quiz.QuizVocabulary;
+import com.vocamind.app.domain.vocabulary.VocabularyRepository;
+import com.vocamind.app.data.repository.RoomVocabularyRepository;
 
 /**
  * Composition root for DATA-04. Hands out domain contracts only; DAOs and Room stay private.
@@ -32,6 +34,7 @@ public final class RepositoryProvider implements AutoCloseable {
     private final ReviewRepository reviews;
     private final QuizRepository quizzes;
     private final ProgressRepository progress;
+    private final VocabularyRepository vocabulary;
 
     public RepositoryProvider(Context context, CatalogProvider catalog) {
         userDatabase = UserDatabase.open(context);
@@ -47,6 +50,7 @@ public final class RepositoryProvider implements AutoCloseable {
                 vocabulary.add(UserDataMapper.quizVocabulary(CatalogMapper.vocabulary(row)));
             return QuizPolicyAsset.load(context.getApplicationContext().getAssets(), vocabulary);
         });
+        vocabulary = new RoomVocabularyRepository(catalog.repository(), userDatabase);
     }
 
     public PackRepository packs() { return packs; }
@@ -60,6 +64,7 @@ public final class RepositoryProvider implements AutoCloseable {
     public ProgressRepository progress() { return progress; }
     /** Reads the same application-owned userdata DB as review/Quiz writes; run on a worker. */
     public GetProgressUseCase progressUseCase() { return progress::readProgress; }
+    public VocabularyRepository vocabulary() { return vocabulary; }
 
     /** The catalog database is owned and closed by CatalogProvider. */
     @Override public void close() { userDatabase.close(); }

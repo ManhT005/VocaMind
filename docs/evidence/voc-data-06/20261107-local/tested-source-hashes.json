@@ -1,0 +1,11 @@
+{
+  ".github/workflows/android-ci.yml": "33f3c21e69ab7dea7d7709bc160a3212bd516d66364ccb25eb7491b5847be987",
+  "app/build.gradle": "474f50b1f2ca6ef7320fe33e9450d512797023a8c4673dd2ed6cbc63f915493a",
+  "tools/catalog/build_release.py": "4806c33009872310a130512650cfdf6d8a6ffc8602f13106d61c18924126d9e1",
+  "tools/catalog/prepare_release_tests.py": "b35835e95f2a0ffcced517f52e83206989ab3e3715d3062163981acb98a58847",
+  "tools/catalog/test_build_release.py": "f3a72f9e79c425d98fa0e72b5813fbcafcbbb476e22df4752816cb2f60a5ebe6",
+  "tools/catalog/test_release_gates.py": "e6972b5491c8520ceb495ade0ca1a13857a157b3dbc83c625937d9ef4e7d5634",
+  "app/src/catalogTest/java/com/vocamind/app/data/catalog/ReleaseCatalogContract.java": "500b6b866fe45ead1040883995e88b61c64b04f645eb5de5565502c342d5f046",
+  "app/src/test/java/com/vocamind/app/data/catalog/ReleaseCatalogTest.java": "02539987fa2594599978010c8ac7bbe360a222281771ee14a5607856d4e705c8",
+  "app/src/androidTest/java/com/vocamind/app/data/catalog/ReleaseCatalogInstrumentedTest.java": "b50ff6989341fe22997ddca421d4b1d92653a8de4cc7c821dc2362ea555b9503"
+}

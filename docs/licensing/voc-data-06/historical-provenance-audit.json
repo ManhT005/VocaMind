@@ -1,0 +1,4969 @@
+{
+  "schemaVersion": 1,
+  "purpose": "AUDIT_ONLY_HISTORICAL_PROVENANCE_RESTORATION",
+  "reviewStatus": "HOLD",
+  "releaseAuthorized": false,
+  "acceptedSnapshot": "editorial-accepted-v1",
+  "acceptedDatasetDigest": "c066d4a363d58c4c7226b716f1080b25a9e47b124a4007f4c3d16d67283a7fb8",
+  "historicalSnapshot": "corpus-v1",
+  "explanation": "Historical lexical source links from corpus-v1; the frozen accepted-v1 canonical source IDs have NOT been rewritten. This is not an authorization or automatic conclusion of derivative status.",
+  "count": {
+    "entries": 150,
+    "ngslHistoricalLexicalReferences": 135,
+    "noNgslHistoricalReference": 15,
+    "editorialMeanings": 150,
+    "editorialExamplePairs": 150
+  },
+  "rows": [
+    {
+      "stableId": "010b4ac271bcee7c",
+      "lemma": "luggage",
+      "packId": "pack_toeic_basic",
+      "packOrder": 16,
+      "lexicalReference": {
+        "origin": "no-ngsl-reference-recorded",
+        "sourceId": null,
+        "rank": null,
+        "locator": null,
+        "licenseCode": null,
+        "evidence": null
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#luggage/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#luggage/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#luggage/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "0143ae3ced507401",
+      "lemma": "mother",
+      "packId": "pack_daily_life",
+      "packOrder": 2,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 338,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=338",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#mother/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#mother/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#mother/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "0207c263f8c49060",
+      "lemma": "careful",
+      "packId": "pack_daily_life",
+      "packOrder": 39,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1637,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1637",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#careful/adjective/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#careful/adjective/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#careful/adjective/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "04f6267e6210a62b",
+      "lemma": "neighbor",
+      "packId": "pack_daily_life",
+      "packOrder": 8,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1222,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1222",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#neighbor/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#neighbor/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#neighbor/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "0699e8c16aeb2c75",
+      "lemma": "package",
+      "packId": "pack_toeic_office",
+      "packOrder": 31,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1319,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1319",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#package/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#package/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#package/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "08e316e478a1cb48",
+      "lemma": "eat",
+      "packId": "pack_daily_life",
+      "packOrder": 24,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 476,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=476",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#eat/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#eat/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#eat/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "094d6eb38436449c",
+      "lemma": "father",
+      "packId": "pack_daily_life",
+      "packOrder": 3,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 448,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=448",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#father/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#father/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#father/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "09ccd86563216372",
+      "lemma": "training",
+      "packId": "pack_toeic_office",
+      "packOrder": 19,
+      "lexicalReference": {
+        "origin": "no-ngsl-reference-recorded",
+        "sourceId": null,
+        "rank": null,
+        "locator": null,
+        "licenseCode": null,
+        "evidence": null
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#training/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#training/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#training/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "0a498cc4cc82ed55",
+      "lemma": "meeting",
+      "packId": "pack_toeic_office",
+      "packOrder": 5,
+      "lexicalReference": {
+        "origin": "no-ngsl-reference-recorded",
+        "sourceId": null,
+        "rank": null,
+        "locator": null,
+        "licenseCode": null,
+        "evidence": null
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#meeting/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#meeting/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#meeting/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "12ad019497d6252b",
+      "lemma": "schedule",
+      "packId": "pack_toeic_office",
+      "packOrder": 20,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1240,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1240",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#schedule/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#schedule/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#schedule/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "13b658cda964e2fc",
+      "lemma": "improve",
+      "packId": "pack_academic",
+      "packOrder": 29,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 508,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=508",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#improve/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#improve/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#improve/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "154ad3c75bd7a6f6",
+      "lemma": "define",
+      "packId": "pack_academic",
+      "packOrder": 26,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 930,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=930",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#define/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#define/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#define/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "1816f4bcf0432990",
+      "lemma": "departure",
+      "packId": "pack_toeic_basic",
+      "packOrder": 19,
+      "lexicalReference": {
+        "origin": "no-ngsl-reference-recorded",
+        "sourceId": null,
+        "rank": null,
+        "locator": null,
+        "licenseCode": null,
+        "evidence": null
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#departure/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#departure/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#departure/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "18c8c1664b1f0e78",
+      "lemma": "phone",
+      "packId": "pack_toeic_office",
+      "packOrder": 9,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 479,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=479",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#phone/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#phone/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#phone/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "1ea16d6488d32531",
+      "lemma": "describe",
+      "packId": "pack_academic",
+      "packOrder": 25,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 457,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=457",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#describe/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#describe/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#describe/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "1f431cc21a98d12f",
+      "lemma": "product",
+      "packId": "pack_toeic_basic",
+      "packOrder": 2,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 304,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=304",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#product/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#product/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#product/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "1fdd05db52c836d6",
+      "lemma": "flight",
+      "packId": "pack_toeic_basic",
+      "packOrder": 14,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1219,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1219",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#flight/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#flight/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#flight/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "21be5e8881d7cab1",
+      "lemma": "speak",
+      "packId": "pack_daily_life",
+      "packOrder": 32,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 284,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=284",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#speak/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#speak/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#speak/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "2219291add402728",
+      "lemma": "payment",
+      "packId": "pack_toeic_basic",
+      "packOrder": 4,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1268,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1268",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#payment/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#payment/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#payment/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "28df1baa0ff1f8ad",
+      "lemma": "passport",
+      "packId": "pack_toeic_basic",
+      "packOrder": 15,
+      "lexicalReference": {
+        "origin": "no-ngsl-reference-recorded",
+        "sourceId": null,
+        "rank": null,
+        "locator": null,
+        "licenseCode": null,
+        "evidence": null
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#passport/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#passport/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#passport/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "2a0bd49d29501e9d",
+      "lemma": "parent",
+      "packId": "pack_daily_life",
+      "packOrder": 1,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 297,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=297",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#parent/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#parent/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#parent/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "2a1a65c13e33bc68",
+      "lemma": "hungry",
+      "packId": "pack_daily_life",
+      "packOrder": 37,
+      "lexicalReference": {
+        "origin": "no-ngsl-reference-recorded",
+        "sourceId": null,
+        "rank": null,
+        "locator": null,
+        "licenseCode": null,
+        "evidence": null
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#hungry/adjective/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#hungry/adjective/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#hungry/adjective/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "2a341b4ec105c143",
+      "lemma": "drink",
+      "packId": "pack_daily_life",
+      "packOrder": 25,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 655,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=655",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#drink/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#drink/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#drink/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "2a509f121003cd06",
+      "lemma": "sugar",
+      "packId": "pack_toeic_basic",
+      "packOrder": 32,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 2234,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=2234",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sugar/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sugar/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sugar/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "2fde3352568ed7fe",
+      "lemma": "computer",
+      "packId": "pack_toeic_office",
+      "packOrder": 10,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 429,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=429",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#computer/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#computer/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#computer/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "3142d729b72035da",
+      "lemma": "family",
+      "packId": "pack_daily_life",
+      "packOrder": 0,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 172,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=172",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#family/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#family/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#family/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "339a41a30122525c",
+      "lemma": "concept",
+      "packId": "pack_academic",
+      "packOrder": 12,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1213,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1213",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#concept/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#concept/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#concept/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "3586522dac0ead10",
+      "lemma": "cook",
+      "packId": "pack_daily_life",
+      "packOrder": 22,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1196,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1196",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cook/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cook/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cook/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "35d609ed98afcb6f",
+      "lemma": "develop",
+      "packId": "pack_academic",
+      "packOrder": 22,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 350,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=350",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#develop/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#develop/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#develop/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "363c503bebd37391",
+      "lemma": "reservation",
+      "packId": "pack_toeic_basic",
+      "packOrder": 17,
+      "lexicalReference": {
+        "origin": "no-ngsl-reference-recorded",
+        "sourceId": null,
+        "rank": null,
+        "locator": null,
+        "licenseCode": null,
+        "evidence": null
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#reservation/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#reservation/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#reservation/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "36fd889573de8c99",
+      "lemma": "contract",
+      "packId": "pack_toeic_office",
+      "packOrder": 14,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 714,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=714",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#contract/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#contract/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#contract/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "3d5117748d4c5141",
+      "lemma": "data",
+      "packId": "pack_academic",
+      "packOrder": 7,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 556,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=556",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#data/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#data/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#data/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "3dbaed5c338b2b1c",
+      "lemma": "receipt",
+      "packId": "pack_toeic_basic",
+      "packOrder": 5,
+      "lexicalReference": {
+        "origin": "no-ngsl-reference-recorded",
+        "sourceId": null,
+        "rank": null,
+        "locator": null,
+        "licenseCode": null,
+        "evidence": null
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#receipt/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#receipt/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#receipt/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "4a756afdff0f53ac",
+      "lemma": "employee",
+      "packId": "pack_toeic_office",
+      "packOrder": 2,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 624,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=624",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#employee/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#employee/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#employee/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "4c4abdecc46493b5",
+      "lemma": "menu",
+      "packId": "pack_toeic_basic",
+      "packOrder": 23,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 2597,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=2597",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#menu/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#menu/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#menu/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "4dbafd4ecdb3dacc",
+      "lemma": "function",
+      "packId": "pack_academic",
+      "packOrder": 16,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 702,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=702",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#function/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#function/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#function/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "4e6431a4739ab29e",
+      "lemma": "clean",
+      "packId": "pack_daily_life",
+      "packOrder": 23,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 842,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=842",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#clean/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#clean/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#clean/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "4fae627dc5b73414",
+      "lemma": "effect",
+      "packId": "pack_academic",
+      "packOrder": 19,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 315,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=315",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#effect/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#effect/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#effect/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "524b9dddc2876a46",
+      "lemma": "research",
+      "packId": "pack_academic",
+      "packOrder": 0,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 423,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=423",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#research/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#research/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#research/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "53184184e303b46b",
+      "lemma": "interview",
+      "packId": "pack_toeic_office",
+      "packOrder": 18,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 784,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=784",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#interview/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#interview/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#interview/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "55d9e63344378006",
+      "lemma": "email",
+      "packId": "pack_toeic_office",
+      "packOrder": 7,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1169,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1169",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#email/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#email/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#email/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "57e8f34166e86602",
+      "lemma": "support",
+      "packId": "pack_academic",
+      "packOrder": 28,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 272,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=272",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#support/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#support/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#support/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "5911ac176d3f214c",
+      "lemma": "dinner",
+      "packId": "pack_toeic_basic",
+      "packOrder": 22,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1117,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1117",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#dinner/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#dinner/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#dinner/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "6330e75b7661e248",
+      "lemma": "buy",
+      "packId": "pack_toeic_basic",
+      "packOrder": 36,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 242,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=242",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#buy/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#buy/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#buy/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "633188448bb2750d",
+      "lemma": "company",
+      "packId": "pack_toeic_office",
+      "packOrder": 1,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 107,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=107",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#company/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#company/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#company/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "634bc7b326fdfddd",
+      "lemma": "theory",
+      "packId": "pack_academic",
+      "packOrder": 2,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 876,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=876",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#theory/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#theory/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#theory/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "643eefd4035066d7",
+      "lemma": "restaurant",
+      "packId": "pack_toeic_basic",
+      "packOrder": 24,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 919,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=919",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#restaurant/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#restaurant/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#restaurant/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "65f0859e4989297a",
+      "lemma": "prepare",
+      "packId": "pack_toeic_office",
+      "packOrder": 35,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 604,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=604",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#prepare/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#prepare/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#prepare/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "66248220016a4c4f",
+      "lemma": "cause",
+      "packId": "pack_academic",
+      "packOrder": 20,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 319,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=319",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cause/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cause/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cause/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "680f5d8d8ea18784",
+      "lemma": "listen",
+      "packId": "pack_daily_life",
+      "packOrder": 31,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 573,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=573",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#listen/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#listen/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#listen/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "6878a6bfd1203dfe",
+      "lemma": "warehouse",
+      "packId": "pack_toeic_office",
+      "packOrder": 32,
+      "lexicalReference": {
+        "origin": "no-ngsl-reference-recorded",
+        "sourceId": null,
+        "rank": null,
+        "locator": null,
+        "licenseCode": null,
+        "evidence": null
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#warehouse/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#warehouse/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#warehouse/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "68cf70d8331dfeb3",
+      "lemma": "budget",
+      "packId": "pack_toeic_office",
+      "packOrder": 16,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1016,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1016",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#budget/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#budget/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#budget/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "6c1fea0390defc05",
+      "lemma": "expensive",
+      "packId": "pack_toeic_basic",
+      "packOrder": 39,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1061,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1061",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#expensive/adjective/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#expensive/adjective/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#expensive/adjective/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "6dddf2d3e33455f9",
+      "lemma": "fruit",
+      "packId": "pack_toeic_basic",
+      "packOrder": 30,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1640,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1640",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#fruit/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#fruit/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#fruit/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "6efc89d4b3a8f007",
+      "lemma": "door",
+      "packId": "pack_daily_life",
+      "packOrder": 15,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 490,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=490",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#door/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#door/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#door/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "732c533f208ab60d",
+      "lemma": "result",
+      "packId": "pack_academic",
+      "packOrder": 4,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 233,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=233",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#result/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#result/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#result/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "743fc4aebc74dc29",
+      "lemma": "sell",
+      "packId": "pack_toeic_basic",
+      "packOrder": 37,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 418,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=418",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sell/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sell/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sell/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "749505edb46ed2e9",
+      "lemma": "office",
+      "packId": "pack_toeic_office",
+      "packOrder": 0,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 343,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=343",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#office/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#office/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#office/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "74fb0128cec1c90a",
+      "lemma": "method",
+      "packId": "pack_academic",
+      "packOrder": 3,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 755,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=755",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#method/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#method/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#method/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "75bc1957c2522c98",
+      "lemma": "salary",
+      "packId": "pack_toeic_office",
+      "packOrder": 17,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1816,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1816",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#salary/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#salary/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#salary/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "76fafba7114e9592",
+      "lemma": "chair",
+      "packId": "pack_daily_life",
+      "packOrder": 17,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1060,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1060",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#chair/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#chair/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#chair/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "7a24bdf094914ffb",
+      "lemma": "walk",
+      "packId": "pack_daily_life",
+      "packOrder": 28,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 339,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=339",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#walk/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#walk/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#walk/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "7d18d115c89193ca",
+      "lemma": "printer",
+      "packId": "pack_toeic_office",
+      "packOrder": 11,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 2664,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=2664",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#printer/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#printer/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#printer/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "7e09d3489f1b4832",
+      "lemma": "coffee",
+      "packId": "pack_toeic_basic",
+      "packOrder": 27,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1395,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1395",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#coffee/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#coffee/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#coffee/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "7ed4eab7db38de9e",
+      "lemma": "stock",
+      "packId": "pack_toeic_office",
+      "packOrder": 33,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 691,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=691",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#stock/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#stock/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#stock/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "7fe46ad7d9da1204",
+      "lemma": "room",
+      "packId": "pack_toeic_basic",
+      "packOrder": 8,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 254,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=254",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#room/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#room/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#room/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "814c072810abf7a2",
+      "lemma": "sign",
+      "packId": "pack_toeic_office",
+      "packOrder": 37,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 500,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=500",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sign/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sign/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sign/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "832bc62cf611ef76",
+      "lemma": "friend",
+      "packId": "pack_daily_life",
+      "packOrder": 7,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 208,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=208",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#friend/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#friend/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#friend/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "8427eccd5d4c4df4",
+      "lemma": "water",
+      "packId": "pack_toeic_basic",
+      "packOrder": 26,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 322,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=322",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#water/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#water/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#water/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "84b99b98d945db07",
+      "lemma": "house",
+      "packId": "pack_daily_life",
+      "packOrder": 10,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 165,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=165",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#house/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#house/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#house/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "84d7ff576a0352d7",
+      "lemma": "ticket",
+      "packId": "pack_toeic_basic",
+      "packOrder": 6,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1249,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1249",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#ticket/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#ticket/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#ticket/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "8a29babd28b7431b",
+      "lemma": "arrival",
+      "packId": "pack_toeic_basic",
+      "packOrder": 18,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 2058,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=2058",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#arrival/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#arrival/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#arrival/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "8a76a2f0dc14014f",
+      "lemma": "analysis",
+      "packId": "pack_academic",
+      "packOrder": 6,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 756,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=756",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#analysis/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#analysis/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#analysis/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "8c46632cf2e617d2",
+      "lemma": "delivery",
+      "packId": "pack_toeic_office",
+      "packOrder": 30,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1428,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1428",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#delivery/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#delivery/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#delivery/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "8ca8a2a4ae0ed0bd",
+      "lemma": "equipment",
+      "packId": "pack_toeic_office",
+      "packOrder": 34,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1055,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1055",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#equipment/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#equipment/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#equipment/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "8d57e94d31e48520",
+      "lemma": "document",
+      "packId": "pack_toeic_office",
+      "packOrder": 12,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 882,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=882",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#document/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#document/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#document/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "8d87e61afc56f490",
+      "lemma": "explain",
+      "packId": "pack_academic",
+      "packOrder": 24,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 489,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=489",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#explain/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#explain/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#explain/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "8dfb40053188d6e2",
+      "lemma": "sister",
+      "packId": "pack_daily_life",
+      "packOrder": 6,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 964,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=964",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sister/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sister/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sister/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "923d45253cc2c67c",
+      "lemma": "airport",
+      "packId": "pack_toeic_basic",
+      "packOrder": 13,
+      "lexicalReference": {
+        "origin": "no-ngsl-reference-recorded",
+        "sourceId": null,
+        "rank": null,
+        "locator": null,
+        "licenseCode": null,
+        "evidence": null
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#airport/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#airport/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#airport/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "926cb2c7b70e55dd",
+      "lemma": "principle",
+      "packId": "pack_academic",
+      "packOrder": 13,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1071,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1071",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#principle/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#principle/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#principle/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "9533b3a23d1c4fe0",
+      "lemma": "wake",
+      "packId": "pack_daily_life",
+      "packOrder": 27,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1508,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1508",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#wake/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#wake/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#wake/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "961ef9a79a039621",
+      "lemma": "cheap",
+      "packId": "pack_toeic_basic",
+      "packOrder": 38,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1095,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1095",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cheap/adjective/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cheap/adjective/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cheap/adjective/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "966322961d7b2a54",
+      "lemma": "tea",
+      "packId": "pack_toeic_basic",
+      "packOrder": 28,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1599,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1599",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#tea/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#tea/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#tea/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "966dc6001179f77a",
+      "lemma": "home",
+      "packId": "pack_daily_life",
+      "packOrder": 9,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 161,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=161",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#home/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#home/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#home/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "97b60271c7847cec",
+      "lemma": "skill",
+      "packId": "pack_academic",
+      "packOrder": 11,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 685,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=685",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#skill/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#skill/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#skill/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "98475b4ca08e0ad8",
+      "lemma": "wash",
+      "packId": "pack_daily_life",
+      "packOrder": 21,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1368,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1368",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#wash/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#wash/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#wash/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "98b58efbaa0a7f1f",
+      "lemma": "invoice",
+      "packId": "pack_toeic_office",
+      "packOrder": 15,
+      "lexicalReference": {
+        "origin": "no-ngsl-reference-recorded",
+        "sourceId": null,
+        "rank": null,
+        "locator": null,
+        "licenseCode": null,
+        "evidence": null
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#invoice/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#invoice/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#invoice/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "9b2457a96a18cc6a",
+      "lemma": "happy",
+      "packId": "pack_daily_life",
+      "packOrder": 35,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 513,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=513",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#happy/adjective/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#happy/adjective/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#happy/adjective/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "9d68ebb49ea25a87",
+      "lemma": "discuss",
+      "packId": "pack_toeic_office",
+      "packOrder": 39,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 605,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=605",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#discuss/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#discuss/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#discuss/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "9e4319249efff080",
+      "lemma": "supplier",
+      "packId": "pack_toeic_office",
+      "packOrder": 28,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 2004,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=2004",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#supplier/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#supplier/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#supplier/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "9e50e0d149f9b83c",
+      "lemma": "factor",
+      "packId": "pack_academic",
+      "packOrder": 18,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 636,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=636",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#factor/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#factor/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#factor/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "9e5de132fc3085f9",
+      "lemma": "table",
+      "packId": "pack_toeic_basic",
+      "packOrder": 25,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 450,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=450",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#table/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#table/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#table/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "9e61c13dbd55c590",
+      "lemma": "compare",
+      "packId": "pack_academic",
+      "packOrder": 23,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 614,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=614",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#compare/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#compare/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#compare/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "9e6450caee747c20",
+      "lemma": "shoe",
+      "packId": "pack_daily_life",
+      "packOrder": 20,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1476,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1476",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#shoe/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#shoe/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#shoe/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "9e84e8ebe9e2a529",
+      "lemma": "travel",
+      "packId": "pack_toeic_basic",
+      "packOrder": 9,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 503,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=503",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#travel/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#travel/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#travel/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "9eee80ccf844e456",
+      "lemma": "attend",
+      "packId": "pack_toeic_office",
+      "packOrder": 38,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 820,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=820",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#attend/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#attend/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#attend/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "a0adea31b35a7f42",
+      "lemma": "client",
+      "packId": "pack_toeic_office",
+      "packOrder": 29,
+      "lexicalReference": {
+        "origin": "no-ngsl-reference-recorded",
+        "sourceId": null,
+        "rank": null,
+        "locator": null,
+        "licenseCode": null,
+        "evidence": null
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#client/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#client/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#client/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "a22879209e8e0506",
+      "lemma": "order",
+      "packId": "pack_toeic_basic",
+      "packOrder": 3,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 215,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=215",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#order/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#order/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#order/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "a5568d2ba7bee3e4",
+      "lemma": "manager",
+      "packId": "pack_toeic_office",
+      "packOrder": 3,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 661,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=661",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#manager/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#manager/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#manager/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "a744e451d1bdad3d",
+      "lemma": "science",
+      "packId": "pack_academic",
+      "packOrder": 8,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 905,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=905",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#science/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#science/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#science/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "b0d465f82f26660c",
+      "lemma": "bedroom",
+      "packId": "pack_daily_life",
+      "packOrder": 12,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1432,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1432",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bedroom/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bedroom/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bedroom/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "b6386bc208da0874",
+      "lemma": "deadline",
+      "packId": "pack_toeic_office",
+      "packOrder": 21,
+      "lexicalReference": {
+        "origin": "no-ngsl-reference-recorded",
+        "sourceId": null,
+        "rank": null,
+        "locator": null,
+        "licenseCode": null,
+        "evidence": null
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#deadline/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#deadline/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#deadline/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "b7834c1148baa64a",
+      "lemma": "task",
+      "packId": "pack_toeic_office",
+      "packOrder": 23,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 854,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=854",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#task/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#task/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#task/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "b7bcc9dcf3586381",
+      "lemma": "bread",
+      "packId": "pack_toeic_basic",
+      "packOrder": 29,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 2262,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=2262",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bread/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bread/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bread/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "b8eeeb568b74a80b",
+      "lemma": "file",
+      "packId": "pack_toeic_office",
+      "packOrder": 13,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 835,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=835",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#file/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#file/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#file/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "be14412e62bb09fa",
+      "lemma": "hotel",
+      "packId": "pack_toeic_basic",
+      "packOrder": 7,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 759,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=759",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#hotel/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#hotel/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#hotel/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "be5192ae23f51730",
+      "lemma": "structure",
+      "packId": "pack_academic",
+      "packOrder": 15,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 667,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=667",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#structure/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#structure/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#structure/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "becb25b23f9ee952",
+      "lemma": "kitchen",
+      "packId": "pack_daily_life",
+      "packOrder": 11,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1307,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1307",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#kitchen/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#kitchen/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#kitchen/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "bf0be5b61866f965",
+      "lemma": "change",
+      "packId": "pack_academic",
+      "packOrder": 21,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 113,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=113",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#change/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#change/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#change/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "c09530564094b0ac",
+      "lemma": "study",
+      "packId": "pack_academic",
+      "packOrder": 1,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 187,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=187",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#study/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#study/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#study/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "c16e2c85165e9642",
+      "lemma": "breakfast",
+      "packId": "pack_toeic_basic",
+      "packOrder": 20,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1819,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1819",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#breakfast/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#breakfast/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#breakfast/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "c3c40e610a088175",
+      "lemma": "healthy",
+      "packId": "pack_daily_life",
+      "packOrder": 38,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1362,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1362",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#healthy/adjective/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#healthy/adjective/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#healthy/adjective/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "c3f4a0f8569f129e",
+      "lemma": "bathroom",
+      "packId": "pack_daily_life",
+      "packOrder": 13,
+      "lexicalReference": {
+        "origin": "no-ngsl-reference-recorded",
+        "sourceId": null,
+        "rank": null,
+        "locator": null,
+        "licenseCode": null,
+        "evidence": null
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bathroom/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bathroom/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bathroom/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "c50193865412fbdd",
+      "lemma": "train",
+      "packId": "pack_toeic_basic",
+      "packOrder": 10,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 289,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=289",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#train/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#train/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#train/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "c50f97678af2c3b0",
+      "lemma": "brother",
+      "packId": "pack_daily_life",
+      "packOrder": 5,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 821,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=821",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#brother/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#brother/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#brother/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "c61d1941e83e9805",
+      "lemma": "window",
+      "packId": "pack_daily_life",
+      "packOrder": 16,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 734,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=734",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#window/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#window/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#window/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "cc93c43a835e8bd3",
+      "lemma": "service",
+      "packId": "pack_toeic_office",
+      "packOrder": 27,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 223,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=223",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#service/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#service/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#service/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "ccb4c475e4c5374f",
+      "lemma": "project",
+      "packId": "pack_toeic_office",
+      "packOrder": 22,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 518,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=518",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#project/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#project/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#project/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "cdb9f58f4061c249",
+      "lemma": "bus",
+      "packId": "pack_toeic_basic",
+      "packOrder": 11,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 810,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=810",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bus/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bus/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bus/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "d121b12bf674524c",
+      "lemma": "evidence",
+      "packId": "pack_academic",
+      "packOrder": 5,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 592,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=592",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#evidence/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#evidence/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#evidence/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "d1c881300fa31491",
+      "lemma": "message",
+      "packId": "pack_toeic_office",
+      "packOrder": 8,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 863,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=863",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#message/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#message/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#message/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "d42cd44739b0e370",
+      "lemma": "education",
+      "packId": "pack_academic",
+      "packOrder": 9,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 531,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=531",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#education/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#education/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#education/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "d4cefbbdfda250ce",
+      "lemma": "write",
+      "packId": "pack_daily_life",
+      "packOrder": 30,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 121,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=121",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#write/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#write/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#write/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "d67b0acba33b2c64",
+      "lemma": "help",
+      "packId": "pack_daily_life",
+      "packOrder": 33,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 133,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=133",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#help/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#help/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#help/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "d70a8da417e1518c",
+      "lemma": "process",
+      "packId": "pack_academic",
+      "packOrder": 14,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 286,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=286",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#process/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#process/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#process/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "d7aed07271411f20",
+      "lemma": "cash",
+      "packId": "pack_toeic_basic",
+      "packOrder": 33,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1339,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1339",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cash/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cash/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#cash/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "d93c6ed2429a25b6",
+      "lemma": "team",
+      "packId": "pack_toeic_office",
+      "packOrder": 24,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 407,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=407",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#team/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#team/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#team/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "d9502a131e68548d",
+      "lemma": "child",
+      "packId": "pack_daily_life",
+      "packOrder": 4,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 102,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=102",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#child/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#child/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#child/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "daba18657d6679e8",
+      "lemma": "confirm",
+      "packId": "pack_toeic_office",
+      "packOrder": 36,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1206,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1206",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#confirm/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#confirm/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#confirm/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "de8fb7c19de25ba6",
+      "lemma": "report",
+      "packId": "pack_toeic_office",
+      "packOrder": 6,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 166,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=166",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#report/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#report/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#report/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "df679670d76cbece",
+      "lemma": "card",
+      "packId": "pack_toeic_basic",
+      "packOrder": 34,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 781,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=781",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#card/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#card/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#card/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "df89f71e93a58312",
+      "lemma": "bed",
+      "packId": "pack_daily_life",
+      "packOrder": 18,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 694,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=694",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bed/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bed/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#bed/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "e2497882de1443c6",
+      "lemma": "shop",
+      "packId": "pack_toeic_basic",
+      "packOrder": 35,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 437,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=437",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#shop/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#shop/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#shop/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "e519d3c5c741a451",
+      "lemma": "read",
+      "packId": "pack_daily_life",
+      "packOrder": 29,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 207,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=207",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#read/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#read/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#read/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "e60be53a143266a0",
+      "lemma": "clothes",
+      "packId": "pack_daily_life",
+      "packOrder": 19,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 956,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=956",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#clothes/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#clothes/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#clothes/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "e812fbe52f19fdad",
+      "lemma": "lunch",
+      "packId": "pack_toeic_basic",
+      "packOrder": 21,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1334,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1334",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#lunch/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#lunch/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#lunch/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "e879f569a68bd61c",
+      "lemma": "business",
+      "packId": "pack_toeic_office",
+      "packOrder": 26,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 211,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=211",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#business/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#business/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#business/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "e89a6829b7badb63",
+      "lemma": "station",
+      "packId": "pack_toeic_basic",
+      "packOrder": 12,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 709,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=709",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#station/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#station/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#station/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "ea0e961551c98538",
+      "lemma": "knowledge",
+      "packId": "pack_academic",
+      "packOrder": 10,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 619,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=619",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#knowledge/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#knowledge/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#knowledge/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "ecf6c310590530e8",
+      "lemma": "colleague",
+      "packId": "pack_toeic_office",
+      "packOrder": 4,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1251,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1251",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#colleague/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#colleague/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#colleague/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "ecfb366e8e09fd2c",
+      "lemma": "system",
+      "packId": "pack_academic",
+      "packOrder": 17,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 179,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=179",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#system/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#system/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#system/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "edcc67afb8658f36",
+      "lemma": "price",
+      "packId": "pack_toeic_basic",
+      "packOrder": 1,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 296,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=296",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#price/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#price/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#price/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "ee46fdf826f53ce2",
+      "lemma": "customer",
+      "packId": "pack_toeic_basic",
+      "packOrder": 0,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 487,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=487",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#customer/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#customer/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#customer/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "f14c1376c41412d6",
+      "lemma": "milk",
+      "packId": "pack_toeic_basic",
+      "packOrder": 31,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 1789,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=1789",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#milk/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#milk/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#milk/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "f44bdd7635550987",
+      "lemma": "visit",
+      "packId": "pack_daily_life",
+      "packOrder": 34,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 333,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=333",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#visit/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#visit/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#visit/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "f4a89b4c349dda7f",
+      "lemma": "evaluate",
+      "packId": "pack_academic",
+      "packOrder": 27,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 2139,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=2139",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#evaluate/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#evaluate/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#evaluate/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "f672afbf13be68df",
+      "lemma": "tired",
+      "packId": "pack_daily_life",
+      "packOrder": 36,
+      "lexicalReference": {
+        "origin": "no-ngsl-reference-recorded",
+        "sourceId": null,
+        "rank": null,
+        "locator": null,
+        "licenseCode": null,
+        "evidence": null
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#tired/adjective/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#tired/adjective/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#tired/adjective/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "f99fcd7b01315093",
+      "lemma": "sleep",
+      "packId": "pack_daily_life",
+      "packOrder": 26,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 827,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=827",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sleep/verb/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sleep/verb/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#sleep/verb/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "fc63a682aa35b611",
+      "lemma": "department",
+      "packId": "pack_toeic_office",
+      "packOrder": 25,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 736,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=736",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#department/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#department/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#department/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    },
+    {
+      "stableId": "feb842c0ca22355c",
+      "lemma": "garden",
+      "packId": "pack_daily_life",
+      "packOrder": 14,
+      "lexicalReference": {
+        "origin": "historical-ngsl-1.2-reference",
+        "sourceId": "ngsl-12-20261025",
+        "rank": 972,
+        "locator": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv#rank=972",
+        "licenseCode": "CC-BY-SA-4.0",
+        "evidence": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv"
+      },
+      "historicalEditorialComponents": [
+        {
+          "component": "examplePair",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#garden/noun/1"
+        },
+        {
+          "component": "lexical",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#garden/noun/1"
+        },
+        {
+          "component": "meaningVi",
+          "sourceId": "vocamind-editorial-draft-v1",
+          "locator": "docs/data/voc-data-04/corpus-v1/staging.jsonl#garden/noun/1"
+        }
+      ],
+      "acceptedSourceId": "vocamind-ai-editorial-v1",
+      "rightsStatus": "PENDING_PO_CONTENT_LEAD_SCOPE_REVIEW"
+    }
+  ]
+}

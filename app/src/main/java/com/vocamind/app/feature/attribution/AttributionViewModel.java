@@ -5,6 +5,9 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import com.vocamind.app.domain.catalog.CatalogSource;
 import com.vocamind.app.domain.catalog.GetContentSources;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Objects;
 import java.util.List;
 import java.util.concurrent.Executor;
 
@@ -17,7 +20,9 @@ public final class AttributionViewModel extends ViewModel {
 
         private State(Status status, List<CatalogSource> sources) {
             this.status = status;
-            this.sources = List.copyOf(sources);
+            List<CatalogSource> copy = new ArrayList<>(sources);
+            copy.forEach(Objects::requireNonNull);
+            this.sources = Collections.unmodifiableList(copy);
         }
     }
 
@@ -44,14 +49,14 @@ public final class AttributionViewModel extends ViewModel {
     public void retry() {
         if (loading || cleared) return;
         loading = true;
-        state.setValue(new State(Status.LOADING, List.of()));
+        state.setValue(new State(Status.LOADING, Collections.emptyList()));
         worker.execute(() -> {
             State result;
             try {
                 List<CatalogSource> sources = getSources.execute();
                 result = new State(sources.isEmpty() ? Status.EMPTY : Status.CONTENT, sources);
             } catch (RuntimeException failure) {
-                result = new State(Status.ERROR, List.of());
+                result = new State(Status.ERROR, Collections.emptyList());
             }
             State completed = result;
             main.execute(() -> {

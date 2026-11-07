@@ -1,0 +1,28 @@
+test_canonical_round_trip_and_deterministic_checked_in_asset (test_build_fixture.CatalogBuildTests.test_canonical_round_trip_and_deterministic_checked_in_asset) ... ok
+test_invalid_canonical_never_replaces_asset (test_build_fixture.CatalogBuildTests.test_invalid_canonical_never_replaces_asset) ... ok
+test_synthetic_fixture_is_blocked_from_release (test_build_fixture.CatalogBuildTests.test_synthetic_fixture_is_blocked_from_release) ... ok
+test_build_preserves_150_senses_companions_and_real_sql_counts (test_build_release.ReleaseBuildTests.test_build_preserves_150_senses_companions_and_real_sql_counts) ... ok
+test_existing_output_and_packaged_asset_paths_are_refused (test_build_release.ReleaseBuildTests.test_existing_output_and_packaged_asset_paths_are_refused) ... ok
+test_independent_builds_have_identical_bytes_and_logical_dump (test_build_release.ReleaseBuildTests.test_independent_builds_have_identical_bytes_and_logical_dump) ... ok
+test_missing_stale_and_changed_policy_are_refused (test_build_release.ReleaseBuildTests.test_missing_stale_and_changed_policy_are_refused) ... ok
+test_missing_tampered_and_fixture_qc_never_publish (test_build_release.ReleaseBuildTests.test_missing_tampered_and_fixture_qc_never_publish) ... ok
+test_rehashed_invalid_canonical_still_fails_release_or_frozen_gate (test_build_release.ReleaseBuildTests.test_rehashed_invalid_canonical_still_fails_release_or_frozen_gate) ... ok
+test_source_hold_pending_review_and_revoked_acceptance_are_refused (test_build_release.ReleaseBuildTests.test_source_hold_pending_review_and_revoked_acceptance_are_refused) ... ok
+test_sql_or_publication_failure_leaves_no_candidate (test_build_release.ReleaseBuildTests.test_sql_or_publication_failure_leaves_no_candidate) ... ok
+test_bad_pair_duplicate_and_fields_are_rejected (test_check_credits.CreditCheckTest.test_bad_pair_duplicate_and_fields_are_rejected) ... ok
+test_release_missing_is_blocked_but_never_approves_license (test_check_credits.CreditCheckTest.test_release_missing_is_blocked_but_never_approves_license) ... ok
+test_accepted_and_fixture_companions_match_checked_in_files (test_quiz_policy.QuizPolicyExportTests.test_accepted_and_fixture_companions_match_checked_in_files) ... ok
+test_projection_binds_all_quiz_fields_but_not_input_order (test_quiz_policy.QuizPolicyExportTests.test_projection_binds_all_quiz_fields_but_not_input_order) ... ok
+test_real_content_cannot_lose_policy_or_use_a_different_dataset (test_quiz_policy.QuizPolicyExportTests.test_real_content_cannot_lose_policy_or_use_a_different_dataset) ... ok
+test_candidate_credits_are_honest_and_distribution_remains_blocked (test_release_gates.ReleaseGateTests.test_candidate_credits_are_honest_and_distribution_remains_blocked) ... ok
+test_fts_rowid_corruption_is_detected_even_after_rehash (test_release_gates.ReleaseGateTests.test_fts_rowid_corruption_is_detected_even_after_rehash) ... ok
+test_missing_or_extra_artifacts_have_no_valid_completion_marker (test_release_gates.ReleaseGateTests.test_missing_or_extra_artifacts_have_no_valid_completion_marker) ... ok
+test_rehashed_stale_policy_credits_report_and_metadata_are_detected (test_release_gates.ReleaseGateTests.test_rehashed_stale_policy_credits_report_and_metadata_are_detected) ... ok
+test_tampering_any_companion_is_detected (test_release_gates.ReleaseGateTests.test_tampering_any_companion_is_detected) ... ok
+System.Management.Automation.RemoteException
+----------------------------------------------------------------------
+Ran 21 tests in 51.631s
+System.Management.Automation.RemoteException
+OK
+QC pass: 150 input, 0 errors
+QC pass: 150 input, 0 errors

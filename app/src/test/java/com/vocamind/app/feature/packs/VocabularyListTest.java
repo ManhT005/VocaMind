@@ -62,10 +62,15 @@ public class VocabularyListTest {
         androidx.navigation.NavController nav = host.getNavController();
         // Use a catalog pack read from the real local asset on the worker.
         java.util.concurrent.atomic.AtomicReference<String> pack = new java.util.concurrent.atomic.AtomicReference<>();
+        java.util.concurrent.atomic.AtomicReference<com.vocamind.app.domain.catalog.CatalogVocabulary> expectedWord = new java.util.concurrent.atomic.AtomicReference<>();
         final android.content.Context dbContext = activity.getApplicationContext();
         Thread reader = new Thread(() -> {
             com.vocamind.app.data.catalog.CatalogDatabase db = com.vocamind.app.data.catalog.CatalogDatabase.open(dbContext, "nav-fixture.db");
-            try { pack.set(db.catalogDao().packs().get(0).id); } finally { db.close(); }
+            try {
+                pack.set(db.catalogDao().packs().get(0).id);
+                var word = db.catalogDao().words(pack.get()).get(0);
+                expectedWord.set(com.vocamind.app.data.catalog.CatalogMapper.vocabulary(word));
+            } finally { db.close(); }
         });
         reader.start(); reader.join();
         android.os.Bundle args = new android.os.Bundle();
@@ -91,21 +96,56 @@ public class VocabularyListTest {
         assertEquals(expected, nav.getCurrentBackStackEntry().getArguments().getString("vocabularyId"));
         assertEquals(pack.get(), nav.getCurrentBackStackEntry().getArguments().getString("packId"));
         android.widget.TextView received = activity.findViewById(R.id.route_message);
-        for (int n=0; n<200 && !received.getText().toString().contains(expected); n++) {
+        for (int n=0; n<200 && !received.getText().toString().equals(activity.getString(R.string.detail_ready)); n++) {
             Thread.sleep(20); Shadows.shadowOf(Looper.getMainLooper()).idle();
         }
-        assertTrue(received.getText().toString().contains(expected));
+        assertEquals(activity.getString(R.string.detail_ready), received.getText().toString());
+        assertEquals(expectedWord.get().lemma, ((android.widget.TextView)activity.findViewById(R.id.detail_lemma)).getText().toString());
+        activity.findViewById(R.id.detail_save).performClick();
+        assertFalse(activity.findViewById(R.id.detail_save).isEnabled());
+        // Rotate while the mutation is pending: the retained ViewModel must not replay it.
         controller.recreate();
         activity = controller.get();
         host = (androidx.navigation.fragment.NavHostFragment) activity.getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
         nav = host.getNavController();
         assertEquals(expected, nav.getCurrentBackStackEntry().getArguments().getString("vocabularyId"));
+        for (int n=0; n<200 && !((android.widget.TextView)activity.findViewById(R.id.detail_save)).getText().toString().equals(activity.getString(R.string.detail_unsave)); n++) {
+            Thread.sleep(20); Shadows.shadowOf(Looper.getMainLooper()).idle();
+        }
+        assertEquals(activity.getString(R.string.detail_unsave), ((android.widget.TextView)activity.findViewById(R.id.detail_save)).getText().toString());
+        java.util.concurrent.atomic.AtomicReference<Boolean> persistedSaved = new java.util.concurrent.atomic.AtomicReference<>();
+        java.util.concurrent.atomic.AtomicReference<Throwable> verificationFailure = new java.util.concurrent.atomic.AtomicReference<>();
+        Thread verifySaved = new Thread(() -> {
+            var user = com.vocamind.app.data.user.UserDatabase.open(dbContext);
+            try {
+                var progress = user.userDao().progress(expected);
+                persistedSaved.set(progress.isSaved);
+                assertEquals(0, progress.box); assertTrue(progress.dueAt > 0); assertEquals(0, progress.reviewCount);
+                assertNull(progress.learnedAt); assertNull(progress.lastReviewedAt);
+            } catch (Throwable failure) { verificationFailure.set(failure); }
+            finally { user.close(); }
+        });
+        verifySaved.start(); verifySaved.join();
+        if (verificationFailure.get() != null) throw new AssertionError(verificationFailure.get());
+        assertEquals(Boolean.TRUE, persistedSaved.get());
         assertTrue(nav.popBackStack());
         activity.getSupportFragmentManager().executePendingTransactions();
         host.getChildFragmentManager().executePendingTransactions();
         Shadows.shadowOf(Looper.getMainLooper()).idle();
         assertEquals(R.id.packDetailFragment, nav.getCurrentDestination().getId());
         assertEquals(pack.get(), nav.getCurrentBackStackEntry().getArguments().getString("packId"));
+        nav.navigate(R.id.vocabularyDetailFragment, VocabularyDetailFragment.arguments(pack.get(), expected));
+        host.getChildFragmentManager().executePendingTransactions();
+        for (int n=0; n<200 && !((android.widget.TextView)activity.findViewById(R.id.detail_save)).getText().toString().equals(activity.getString(R.string.detail_unsave)); n++) {
+            Thread.sleep(20); Shadows.shadowOf(Looper.getMainLooper()).idle();
+        }
+        assertEquals(activity.getString(R.string.detail_unsave), ((android.widget.TextView)activity.findViewById(R.id.detail_save)).getText().toString());
+        activity.findViewById(R.id.detail_save).performClick();
+        for (int n=0; n<200 && !((android.widget.TextView)activity.findViewById(R.id.detail_save)).getText().toString().equals(activity.getString(R.string.detail_save)); n++) {
+            Thread.sleep(20); Shadows.shadowOf(Looper.getMainLooper()).idle();
+        }
+        assertEquals(activity.getString(R.string.detail_save), ((android.widget.TextView)activity.findViewById(R.id.detail_save)).getText().toString());
+        assertTrue(nav.popBackStack()); host.getChildFragmentManager().executePendingTransactions();
         nav.navigate(R.id.vocabularyDetailFragment, VocabularyDetailFragment.arguments(pack.get(), "unknown-id"));
         host.getChildFragmentManager().executePendingTransactions();
         Shadows.shadowOf(Looper.getMainLooper()).idle();

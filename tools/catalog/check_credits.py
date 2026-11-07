@@ -38,6 +38,25 @@ def validate(document, pairs, release=False):
             'releaseCreditComplete': not missing, 'licenseApprovalVerified': False}
 
 
+
+def validate_rights_credits(rows, pairs):
+    """Validate the credit choices supplied by a snapshot-bound rights decision."""
+    validate({'schemaVersion': 1, 'sources': rows}, pairs)
+    if len(rows) != len(pairs):
+        raise ValueError('Rights decision must cover each source snapshot')
+    for row in rows:
+        notice = row.get('creditText')
+        mode = row.get('creditMode')
+        if not isinstance(notice, str) or not notice.strip():
+            raise ValueError('Reviewed source credit text required')
+        if mode == 'named-authors' and row['authors']:
+            continue
+        publisher = row.get('responsiblePublisher')
+        if mode == 'responsible-publisher' and not row['authors'] and isinstance(publisher, str) and publisher.strip():
+            continue
+        raise ValueError('Source credit requires verified authors or a responsible publisher')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--release', action='store_true', help='Fail on missing authors; does not approve licenses')

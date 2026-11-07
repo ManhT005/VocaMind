@@ -5,4 +5,7 @@
     <color name="shell_text_secondary">#AEC5B9</color>
     <color name="shell_accent">#65D9A9</color>
     <color name="shell_on_accent">#10382B</color>
+    <color name="detail_card_surface">#172D25</color>
+    <color name="detail_tint">#214538</color>
+    <color name="detail_outline">#355044</color>
 </resources>
