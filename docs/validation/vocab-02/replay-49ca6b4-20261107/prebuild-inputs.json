@@ -1,0 +1,904 @@
+{
+    "stage":  "BEFORE_BUILD",
+    "sourceCommit":  "49ca6b4434470443524ebfaeff56406b206dada4",
+    "appTree":  "b2f07dd6f3f807e8ad72f404df377490fbb81b05",
+    "capturedAt":  "2026-11-07T21:25:13.8940982+07:00",
+    "probeArchiveSha256":  "4F1461BEDA68AC415ABFB16CF45C877EAAD29B202B9B8B8DE34AF5BF2C558737",
+    "compilationProbeSha256":  "4F1461BEDA68AC415ABFB16CF45C877EAAD29B202B9B8B8DE34AF5BF2C558737",
+    "initSha256":  "A21089125B450D0494E6EE62165415F04E9C4BBCFBC9CCE68854355978563BE0",
+    "recoveredOriginalSha256":  "089AB4B2171040BFF1DD9D62F4B050CBA3D77487B9E763C2D7AA77730C8393E1",
+    "inputs":  [
+                   {
+                       "path":  "app/build.gradle",
+                       "sha256":  "664346B5DDE3E5DA7234C16898BA1D3384486657598D5D6DE345AC1A94D979E6"
+                   },
+                   {
+                       "path":  "app/schemas/com.vocamind.app.data.catalog.CatalogDatabase/1.json",
+                       "sha256":  "9C5D3E06E344F964AB8233027D6B8D925A0CDB217C6C27B049EC298F9CD1EDA7"
+                   },
+                   {
+                       "path":  "app/schemas/com.vocamind.app.data.catalog.CatalogDatabase/2.json",
+                       "sha256":  "B557A4FD3ED48EBFED1A1DBB7150F45A4AA177716D698509062D730BC6891443"
+                   },
+                   {
+                       "path":  "app/schemas/com.vocamind.app.data.user.UserDatabase/1.json",
+                       "sha256":  "08541272F79A0665443C29AB245A33B9316C9DA61E131F6286DF89925DABC59D"
+                   },
+                   {
+                       "path":  "app/src/androidTest/java/com/vocamind/app/.gitkeep",
+                       "sha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+                   },
+                   {
+                       "path":  "app/src/androidTest/java/com/vocamind/app/data/catalog/CatalogAssetInstrumentedTest.java",
+                       "sha256":  "47C907280584BF5DC41181B4001ECB043768A85C8C55725737923DCB8CCEE81C"
+                   },
+                   {
+                       "path":  "app/src/androidTest/java/com/vocamind/app/data/catalog/FtsSearchBenchmarkInstrumentedTest.java",
+                       "sha256":  "5667423EEDDA1806ED34D41452BA1E32A17CBEEFD79D5908AB9375862535835D"
+                   },
+                   {
+                       "path":  "app/src/androidTest/java/com/vocamind/app/data/catalog/FtsSearchInstrumentedTest.java",
+                       "sha256":  "4F42A296879B8BFCE6DFBD546F8A0CEAB888C6482DEACE2C584576FA75C70209"
+                   },
+                   {
+                       "path":  "app/src/androidTest/java/com/vocamind/app/data/catalog/ReleaseCatalogInstrumentedTest.java",
+                       "sha256":  "B030425B8D75F137FBFDF521435A338AD1DA326EEFE425D90E3CBB0333FF2E59"
+                   },
+                   {
+                       "path":  "app/src/androidTest/java/com/vocamind/app/data/user/AtomicReviewInstrumentedTest.java",
+                       "sha256":  "4D6EC8E024A1B01A5219789C108E868E98FE6CFE7FF10438ABE0ED11DFCADA50"
+                   },
+                   {
+                       "path":  "app/src/androidTest/java/com/vocamind/app/data/user/ProgressAggregationInstrumentedTest.java",
+                       "sha256":  "587A1391BED9F206764774975D2784DB9B47D7E8E4EDE709D82D6101939EBED8"
+                   },
+                   {
+                       "path":  "app/src/androidTest/java/com/vocamind/app/feature/attribution/AttributionRenderingInstrumentedTest.java",
+                       "sha256":  "133421C5F3B888859537C84016789C5696076EBDF9316BBFA3F60BEC4BD0A298"
+                   },
+                   {
+                       "path":  "app/src/androidTest/java/com/vocamind/app/feature/attribution/AttributionScreenInstrumentedTest.java",
+                       "sha256":  "9079E4D0BCD32F6A1FD99DA7C92D051B0F735CABFB087D55AC3F2F4EF7F18B13"
+                   },
+                   {
+                       "path":  "app/src/androidTest/java/com/vocamind/app/feature/packs/PackActivationInstrumentedTest.java",
+                       "sha256":  "004CA25E33CEDA871A94B74750609724EC87791F77577B77F1C0E47225BB3A71"
+                   },
+                   {
+                       "path":  "app/src/androidTestCatalogQa/java/com/vocamind/app/data/catalog/PackagedQaCatalogInstrumentedTest.java",
+                       "sha256":  "FB12A80C98EBCC55C78FEE8C59BF5E89A9207CCBE4D7DC3F7E53C38806A53CFA"
+                   },
+                   {
+                       "path":  "app/src/attributionTest/java/com/vocamind/app/feature/attribution/AttributionRenderingContract.java",
+                       "sha256":  "256359A8D237C84BE858B6C5CC9EE1CBF49C44488B63701CB19CE35D8542E32A"
+                   },
+                   {
+                       "path":  "app/src/attributionTest/java/com/vocamind/app/feature/attribution/AttributionScreenContract.java",
+                       "sha256":  "73079876C90DD4D24163F5C38828CE573366E8DB18B890FDFE8C69DC57C1B0D8"
+                   },
+                   {
+                       "path":  "app/src/attributionTest/java/com/vocamind/app/feature/attribution/FakeCatalogRepository.java",
+                       "sha256":  "DC473417E2AECD0D3227BA94073035A642C63051EB332CA7E7F2EE72F1539C88"
+                   },
+                   {
+                       "path":  "app/src/catalogTest/assets/benchmark/catalog-5000.db",
+                       "sha256":  "5FAC69D4A5776130346BE14747D81AF3354A9220C2F9675ED95740C5058F54A7"
+                   },
+                   {
+                       "path":  "app/src/catalogTest/assets/benchmark/catalog-5000.metadata.json",
+                       "sha256":  "4AF7DD0690AE8A3E5950F5B7DF5D165D4B11451FFD2AC0FD9829A2615EB8EFF7"
+                   },
+                   {
+                       "path":  "app/src/catalogTest/java/com/vocamind/app/data/catalog/CatalogAssetContract.java",
+                       "sha256":  "D5B69DAD7673109161E4DEB469F6B0D6413154C00F3554A668BF3C22447AC9A7"
+                   },
+                   {
+                       "path":  "app/src/catalogTest/java/com/vocamind/app/data/catalog/FtsSearchBenchmarkContract.java",
+                       "sha256":  "E3E6B9F45C94488110B25FAD0912C8B3422AF70F2DC18CE86AAB4DC9BFB77B69"
+                   },
+                   {
+                       "path":  "app/src/catalogTest/java/com/vocamind/app/data/catalog/FtsSearchContract.java",
+                       "sha256":  "B1AD24710D78FDF4E9FBA8E92E93A1171A3B3298742A8731D8C6139B3D0087CD"
+                   },
+                   {
+                       "path":  "app/src/catalogTest/java/com/vocamind/app/data/catalog/ReleaseCatalogContract.java",
+                       "sha256":  "974E960C77762F5F56D2205485DF8A4CC994ECF1C384C23F561426996470637D"
+                   },
+                   {
+                       "path":  "app/src/catalogTest/java/com/vocamind/app/data/user/AtomicReviewContract.java",
+                       "sha256":  "5BB3B69277E90FC8F7AE5F3CB25E32F2B7152F5A9CC727E7298D7BFD8B1398D0"
+                   },
+                   {
+                       "path":  "app/src/catalogTest/java/com/vocamind/app/data/user/ProgressAggregationContract.java",
+                       "sha256":  "0C3BBD5A3B76B7F026805FB69A36F06D58B375EDC2AC7328F7761B2E7CA4FAC2"
+                   },
+                   {
+                       "path":  "app/src/main/AndroidManifest.xml",
+                       "sha256":  "FA5BB7EC444C801EFF9C0D435265D2D48A91CCE560A4B7A523157CCD8948097A"
+                   },
+                   {
+                       "path":  "app/src/main/assets/database/catalog.db",
+                       "sha256":  "7F90D0B11B14CE73932231DC7C4506BDF30AF3788B66D0FDE536D08FA7F753E9"
+                   },
+                   {
+                       "path":  "app/src/main/assets/database/catalog.metadata.json",
+                       "sha256":  "C991E38554460911BE182EC35433D436B762923F13AF6A18DDAF33A6D1B5FC94"
+                   },
+                   {
+                       "path":  "app/src/main/assets/database/content-credits.json",
+                       "sha256":  "6911E4F6A1C80C258E840133430895EE9FD8A1C3C7DE3C88BF4AC79CF915A262"
+                   },
+                   {
+                       "path":  "app/src/main/assets/database/quiz-policy.json",
+                       "sha256":  "97EDC873C0BDD1BB370C57FAEFADCD7EE9AF34BC8158F910975C401F0163ACF8"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/MainActivity.java",
+                       "sha256":  "B140DF1C4BA7267E534252BD54FFD947226890ABFA4065C5FC2D41E5408A85EB"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/core/.gitkeep",
+                       "sha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/core/AttributionViewModelFactory.java",
+                       "sha256":  "464DF54D8D1E28FD962D86B0B36FEB7CDA5CFA056E6A7FD1F28218213F765D01"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/core/CatalogProvider.java",
+                       "sha256":  "4008D76BA6EC3F0D34E585D3347C7A71A965C3409EFECBE778C213C0EB72CCC7"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/core/PacksViewModelFactory.java",
+                       "sha256":  "9713890C911ABD4578462F39A1D2789DD90962CF8A0525777159A65DC480D8FD"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/core/ProgressProvider.java",
+                       "sha256":  "677F4F459EF9128A7B1C6C3D49E162CE7AAB984CD994847020CCA29EA6C4E388"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/core/RepositoryProvider.java",
+                       "sha256":  "DED2C4D82B9AC8646463595E0C613BEBD5898B78BEDF14E9258740A8CE17832D"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/core/ReviewProvider.java",
+                       "sha256":  "D9AEC7D443E68F04BB53EFD44449B053AC38056C42DC54FA7BE4220BB7025A2B"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/core/SearchProvider.java",
+                       "sha256":  "0F5662D89878FA3D1CB04667813C1FE19D149E5708FCC5D79B1E5E59945149B4"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/.gitkeep",
+                       "sha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/catalog/CatalogDao.java",
+                       "sha256":  "6704625E799269A4C6CC27C70E6189A9054354EE806BC7738A6C4F6DEAEBD2E7"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/catalog/CatalogDatabase.java",
+                       "sha256":  "733F93F17E1AF61BE0F91586E8C329FA540AA6DF2F773BB9030E3F90D9AD52C7"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/catalog/CatalogMapper.java",
+                       "sha256":  "84F4920185E551D39C3842EDE3C2764683DAD205EC43193FF3B42ED9AAC126CA"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/catalog/ContentCredits.java",
+                       "sha256":  "C636B19DAE8919F162F92531D7FD538CC8D15DB26EF4E225E6A99AF4A6827FDA"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/catalog/FtsMatchExpression.java",
+                       "sha256":  "E140629308D4D721CEDC1169161DDDDBA82142C3B08CDE24C322D3B4951355DF"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/catalog/PackMembership.java",
+                       "sha256":  "0A58EDB132DE7380915FED828454A4F5A1BEA30F356B4AC93E5281F23901B647"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/catalog/QuizPolicyAsset.java",
+                       "sha256":  "5A35F7C547F1999E5C9CBD4AEE4199303629B01FAB647458009CC2AF2A6E0A43"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/catalog/RoomCatalogRepository.java",
+                       "sha256":  "9F396140C5DD7393EB8762D4B3FCE38DAD80EF3405A1968C52CF64E4BA34388A"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/catalog/RoomVocabularySearchRepository.java",
+                       "sha256":  "529CA296491BA5BF645A1D0E7302DDFC6C964D1CD609E20B0FCDCABE6C8C7F67"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/catalog/entity/ContentSource.java",
+                       "sha256":  "4F563C499D7EB92CD38BE0727836C2B55FC9002BFDABE1EC1ACFC77D6E00D61A"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/catalog/entity/LearningPack.java",
+                       "sha256":  "CFB18DCBA1FA95F7B64C98094B290781BC88EDBDA14DFAB893C6D5B1342E31AB"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/catalog/entity/PackWord.java",
+                       "sha256":  "9F62964F045DE92C6BE20AD0AB4C475948043B044E6F6380BD03AA6DFEBA080B"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/catalog/entity/VocabularyEntry.java",
+                       "sha256":  "9DDC89CB9C96E2DC297F0D636EE0E07D18B53130CF7F96B8F153DCF9BA1AD05D"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/catalog/entity/VocabularyFts.java",
+                       "sha256":  "E69303273A36988C5E493DCFD3502AF8CE0C28F84E6F654F063CC27057127A9B"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/local/DaoInputs.java",
+                       "sha256":  "D84433EDFE359A98BFA6054BAD30EFCA1FC26899289FEFA70A2CF53313EC8F2F"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/repository/ActiveCatalogScope.java",
+                       "sha256":  "0E3C12E5033F21D77D6CB8E9418E2F9B13F0BF85C0C00E4D69467E4CA551C541"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/repository/RepositoryGuard.java",
+                       "sha256":  "B87643EF90D9BE213637C60C129763BD288E00BEEB8DDD039E5A996D6A604EE3"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/repository/RoomPackRepository.java",
+                       "sha256":  "F70CD115F530FA4B8F91369CF746329DECA9EC6302709E4708AC906735FE4693"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/repository/RoomQuizRepository.java",
+                       "sha256":  "A62E2C9C1E396BEAC0EAE840DCF4A55A13EE2F4DC81F647CAEB49683528A0D61"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/repository/RoomReviewRepository.java",
+                       "sha256":  "2E886889BCD5277250D2C635C14A99004D982B21DD6F3FECE27384F8CB9F7D90"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/repository/RoomStudyRepository.java",
+                       "sha256":  "DEBFB5ADE48B925C5763E57A367D3A9F606AA635376D80BCA0D023588D48E032"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/repository/RoomVocabularyRepository.java",
+                       "sha256":  "90B04C2ED2131F2B752AC95DFDA33F04D45F07166E01DFB428186A36D3DDC5C8"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/repository/UserDataMapper.java",
+                       "sha256":  "DAB311FD709683DE4FFF4C3F718E0369D3753EC79557A68EF60EB47D8728455C"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/user/BoxProgressCount.java",
+                       "sha256":  "A475D04380B23DB33F2987C84FAEB8D062A8E4A284836DBE4FF5C14D44BE235C"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/user/ProgressMapper.java",
+                       "sha256":  "F7C8986420C1EDF50C2B191A790063C6C8D7E048EB7EE172052B2DD96F97B978"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/user/ProgressRows.java",
+                       "sha256":  "D95AC0D6CA49428CF98742E469AB3E89EC808C5A231800F9D3F467EAAE7C96B4"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/user/ReviewStateChangedException.java",
+                       "sha256":  "CE3E6CE3BCD09D2E39E6FE9A50CB65885598D95F40C5EED29F9DA3E1F4DA197C"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/user/RoomProgressRepository.java",
+                       "sha256":  "2A92ADE5633AC3FFD65207D84089C3AB358E464D257834EAC7200C6F60A2E03F"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/user/UserDao.java",
+                       "sha256":  "1F3866842406AD40CCA041C839C4EB43E41EBC5EBF652E21807D9FCFFFA68D4B"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/user/UserDatabase.java",
+                       "sha256":  "4B19A224F4EF3F2ABA5FC9D40D8384858F619C02F8165369504B8D738A20B47F"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/user/UserPlanningSnapshot.java",
+                       "sha256":  "9A2F935F6EF51D58312F72C3FD9AE14B7E736BB1C3A1730E23AE1D53DC6F84CB"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/user/entity/QuizAttempt.java",
+                       "sha256":  "4833170D08EE84A84918315430AAF0AB99801B912FD34C7425653E78984FFA0F"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/user/entity/ReviewEvent.java",
+                       "sha256":  "81F2BE53B2DFA3AA54D5E17E7076DA86E5DC61B89CD5B2A0D543A2BC1FC326D1"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/user/entity/UserPack.java",
+                       "sha256":  "21DEE75DC34BC0037C931D06F19F51794CF755828E445BE9BD9D8A2780AC3C06"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/user/entity/UserPreference.java",
+                       "sha256":  "3F91DD1D9791D516C62DCA7AEC71E11958943E4E16198C50A5577780D7CECDF3"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/data/user/entity/UserWordProgress.java",
+                       "sha256":  "B9D079CDD0B94AEF517E69FB142622C2B4ABF7D15277C664BCCF0ED74B632250"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/.gitkeep",
+                       "sha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/catalog/CatalogPack.java",
+                       "sha256":  "0F087D9FD8968655078BFE4F0D710F8B410534C328D0F7B9CE5D687CC6F1F15E"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/catalog/CatalogReadException.java",
+                       "sha256":  "F45CE41E1879F43D66174B6798FB97494AF0E6C83004705355E18984ADB3C387"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/catalog/CatalogRepository.java",
+                       "sha256":  "170FDE2F16F26FE7BCFC9DB379D44DF39E45AEE85999BA25C1F63A7152BBFEAC"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/catalog/CatalogSource.java",
+                       "sha256":  "E198301D9DA3FA86DBA51E44EF1EDA821B679EE5209DBAB8179CD5A5F7F96DCC"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/catalog/CatalogVocabulary.java",
+                       "sha256":  "C815B58AC3A868DCD54C77366D0A0937DA427BDFD305B46348FF5B9332D10D26"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/catalog/GetContentSources.java",
+                       "sha256":  "252416020A64AF9C5D19C5BB2DDE5C60685DC5FD616C06A665B3449B7C27D974"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/catalog/SearchVocabularyUseCase.java",
+                       "sha256":  "34FEFD4EBC8192B9F40BB9D4B61288C99724C6354811AF2F9ADD7DEAD785A18F"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/catalog/VocabularySearchQuery.java",
+                       "sha256":  "889ED2DC7832540BA85886032007AD8D6260EDD19DAA179092B9C5A729B13794"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/catalog/VocabularySearchRepository.java",
+                       "sha256":  "74433E62DA5808A215C94E2CCAE3FAF83664EF2CF1249E51CBFF013532FAA7ED"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/catalog/VocabularySearchResult.java",
+                       "sha256":  "57FF8C1844FF781A3860611FA5F3206C14177EEBF37F92B1E03E9943F4FE8E96"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/common/RepoError.java",
+                       "sha256":  "A55F99547697C36E97F83407507600DB72BB18EB47308C94E55163DA222FDEB7"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/common/RepoResult.java",
+                       "sha256":  "C4DE45E0C308B6B3E276BEA38D573E2E66A61778977CED3365939D18709327C3"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/learning/LeitnerScheduler.java",
+                       "sha256":  "AB0EF8F2E8D6DEFD4E084CD5295B2BE8B21A25CB63DD72887E56EECCCCAB8558"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/learning/LeitnerState.java",
+                       "sha256":  "85580AEACDF53AB5B61AE2EC45C04D603B8418043B9F8DF3D77E8141FEB4F0C4"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/learning/Rating.java",
+                       "sha256":  "EC9D4164A41FA08DED3ADDF73218C75F2CE1C111F45FEF6428C92C43D3795F72"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/learning/RecordReviewUseCase.java",
+                       "sha256":  "1DB75E13B4C0B17295B37758FD37CE4F4A3D1297F69A14FA936F2C79F29400D5"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/learning/ReviewProgress.java",
+                       "sha256":  "8C77FC6AD59851FF78B3D763B03645F02065BD5E809764FB48B627AFA9F089ED"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/learning/ReviewRepository.java",
+                       "sha256":  "33FAE8949E1E7F28DB910B5D5F0B707066C4C7EE3D70844A0BA0B1E9C0AC12FE"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/learning/ReviewWriteException.java",
+                       "sha256":  "3A4AD80D67288E24DD87969EE302D85B4CC69B6ECF4A4DC16CECA2F6EB2BD646"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/learning/ScheduleResult.java",
+                       "sha256":  "E9A0682A6047422BDE3755A5D8C0A8371572C0A6F690A3CA87D22E88FCD5EA3C"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/learning/StudyItem.java",
+                       "sha256":  "12BC150138399E06B3DDDBF7C614F339A45A572EA6ACE6FCAD499341B3CAAB55"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/learning/StudyRepository.java",
+                       "sha256":  "37B2766B255B63CBD1C54C3DCF2F791E51D9E0053C6252A909E48619C648B284"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/learning/WordProgress.java",
+                       "sha256":  "8A643F4E5F2203D8B37BD679EE458AA4C6805DFD08BE43DBEB218503F398222D"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/pack/GetPackWords.java",
+                       "sha256":  "38835E2C5EF1FDCFABAC2720935D67B9A5D163B26D0FDE45AE50F529B46B2740"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/pack/GetPacks.java",
+                       "sha256":  "091BD309BDE061C0822C3E91A39708473FD49D85774C639A966D1D1000E7E244"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/pack/PackRepository.java",
+                       "sha256":  "706158768D9930287F66FBD3AF309FD5D9EFF10C9C9389538473B4B8AABB4C3A"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/pack/PackState.java",
+                       "sha256":  "691E8D70623076B5B7C4569C1DC6D4D62D335F22B2F3796F91C275B882C0BDDC"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/pack/SetPackActive.java",
+                       "sha256":  "661C124A2CFA797EED86C35515B686E3572FF9A0E0D4AAB489B3134966C6E2B4"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/progress/GetProgressUseCase.java",
+                       "sha256":  "BCC67FDC762FF3F50CE281C6D0B69EEC94547A74116DF7329DA8E993450774AA"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/progress/ProgressReadResult.java",
+                       "sha256":  "9913DCB6B7575852AAB485E563F5240B1945E65C9F05BDC2EE897C6EF6943727"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/progress/ProgressRepository.java",
+                       "sha256":  "AFC5B9608F33053B44CD523A80C51682E2FEAA1A94429750F3A0A272AB217A2F"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/progress/ProgressSnapshot.java",
+                       "sha256":  "8452DE82A73B4F6CCAA33C1FD3CB63C83456106FEEF65F47BCAB54BA32DCDA7F"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/progress/ProgressSummary.java",
+                       "sha256":  "228FDFDEFC646FC0567929ECF9FE58952DA8FFE113B330C2E12F0D97F29F8EF1"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/progress/QuizHistoryItem.java",
+                       "sha256":  "EE6C5044230F8B4E03425F09FD9AA9E5F4B254A498C1233E861F1019CEC3EE5B"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/quiz/Checks.java",
+                       "sha256":  "675F2BB973CF89103B2249E7E91652F37E65A3C6A9EFC62E1CA7386D974EE395"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/quiz/DefaultQuizGenerator.java",
+                       "sha256":  "4EF01C331269A55388BA0315F7C15A6DA1429EC9DF9078B501517468304B9C4C"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/quiz/GenerateQuiz.java",
+                       "sha256":  "4A0E4018362EA3FF929DA13A641532593C2463D0CCCF76347D08166F38867B3F"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/quiz/MeaningNormalizer.java",
+                       "sha256":  "29179E137B7BB1811AA9AC1F35F3037A42220AE5E82EA2D1A4939EFBC17B98C2"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/quiz/QuizDistractorPolicy.java",
+                       "sha256":  "31F4F65AE39B8618FF7304FD7B9C69745BB95F54FE31DC07B83F7FD10316EEAF"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/quiz/QuizGenerationOutcome.java",
+                       "sha256":  "68A15EE92353AA7103019647C2D0B3F8B42E1805F0EA59BCF3268D1916562EB6"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/quiz/QuizGenerator.java",
+                       "sha256":  "B7F59A37E58A794B369E272E00E166B8540C52A9C7D69A67FF794E7A91CF2FFC"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/quiz/QuizOption.java",
+                       "sha256":  "A259D5AA103AF3120951DA865ED1BE56AD2BB9B4E939241E820ACBACE3780D3D"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/quiz/QuizPool.java",
+                       "sha256":  "85A815C1CD5459553F9729F5FF755129C7C3ABBA39B573FF6EE93799D64DE361"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/quiz/QuizQuestion.java",
+                       "sha256":  "5B4A0981664FD3BB43A609E48BFA22F1F9FD0B14BCF5106C12BD4DD2396948CA"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/quiz/QuizRepository.java",
+                       "sha256":  "0D6A20304E961AC2B23BEA5E6F71C9D9F9C7A14D840736C8DBA753B3CAB8E613"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/quiz/QuizResult.java",
+                       "sha256":  "7EAAFB2BC3CAACA2C18387649C8CEA59DE3E69B7A797AF384FE6D362E37EF8BE"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/quiz/QuizSession.java",
+                       "sha256":  "4EC03E0BF7A60B6E754CB4FA878D35751578F0BEAF4525A818CF74C659E14802"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/quiz/QuizSnapshot.java",
+                       "sha256":  "D365E0AA16DABF9DA577992934F5A7EADFF29D8861B1BCA07BB002FAC54CAD4E"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/quiz/QuizVocabulary.java",
+                       "sha256":  "E22BAFA3A3C385C68C3E14A46CBAE41F7FC725FA7F397DC3C9CFB75CC128B4C6"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/quiz/UnicodeCaseFold.java",
+                       "sha256":  "2CCECCA103E59993652DCFE52D47D682B14CE433F94093BE69960B8323854053"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/quiz/UnicodeMeaningNormalizer.java",
+                       "sha256":  "82F64FC6C254072E75C5717A5FDDCF5396CE6CB81A253CE8BCB665368A6A9FF4"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/quiz/UnicodeNfc.java",
+                       "sha256":  "4CCE29D2712C4801BC77A6E7189D545CBA277F2009FA40F6369ED9EA0660A763"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/quiz/UnicodeNfcData.java",
+                       "sha256":  "F1EBA1883D52FCD8A2C27AD9F2AB4CE3FE300F8100BD532FED53B08FA108DC7A"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/vocabulary/GetVocabularyDetail.java",
+                       "sha256":  "0631170C39F6BCAAC116E7FDD714A0CBDA1DCA86F7DD64EF847AC74B6FEFACF7"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/vocabulary/ToggleSaved.java",
+                       "sha256":  "D9729D4782AFB8E9E5AE2066843D542493610AFDD9F7E9890364EABF43A2FDB9"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/vocabulary/VocabularyDetail.java",
+                       "sha256":  "3E63826B06103AFBA57DA278457861DFFC7570507A3E506ADFF70401A97BCA7F"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/domain/vocabulary/VocabularyRepository.java",
+                       "sha256":  "FF6EEA65D6AD18D45D13ABEFB7E681B831B9AFA7785654B37DA9EC9A08532175"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/feature/attribution/AttributionFragment.java",
+                       "sha256":  "CC999BEDA9254DC70F330021FD2B6BBF13BC3A8A2BD958ADB75F7A4CB475EAE7"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/feature/attribution/AttributionViewModel.java",
+                       "sha256":  "E762C60DE70B4C36BBCF1968323A340CB5D79BF98010FBFA1ECFB680AD40A0CF"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/feature/attribution/ExternalLinks.java",
+                       "sha256":  "ADBB484AD936821CF5CFA3C6DEB433D056F5273CAA499AE3316BA6F3C97CD61C"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/feature/home/HomeFragment.java",
+                       "sha256":  "5421B5680EC71BC95A8D0F2D876B416338FC81476FFE1FBCFC4517C104C5B9F1"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/feature/packs/AsyncListViewModel.java",
+                       "sha256":  "875E23961195BE52AE9114BE41DF6D44DA9D224CC0671B29972419C7676B8B14"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/feature/packs/PackDetailFragment.java",
+                       "sha256":  "82417A9A7C31732A2B1527AFD8381A7BB5527EDDFC5D6336AE98310FB9DAB3B6"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/feature/packs/PackWordAdapter.java",
+                       "sha256":  "A7AFDB544189B9B8E7082C956A06177FAAC01C7E5A566E88C33F4C38DB4357E9"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/feature/packs/PackWordsViewModel.java",
+                       "sha256":  "FC061F4E919B83BC4B8344DBB3E0643A8AE0F6D593BE14688932BFD0131715C3"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/feature/packs/PacksFragment.java",
+                       "sha256":  "BEEBE37600B842C84F67D3EA7476FC501F2E2E11F85F144BB602C7B6D1900C86"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/feature/packs/PacksViewModel.java",
+                       "sha256":  "440CD3975BAC92036F5E4A12E79F1FD4A56BCE2B575FC913DB726F0137A79245"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/feature/progress/ProgressFragment.java",
+                       "sha256":  "6DD8AD75FD8303C4581392F8201AB33991B7968327256F2FD2F4783F1BF1C8E0"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/feature/progress/ProgressViewState.java",
+                       "sha256":  "BFAAFC95666A22A28CB105E8D9B5EFF6B034EBAAB64D1442823CD7E3296CDA94"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/feature/quiz/QuizFragment.java",
+                       "sha256":  "C68FB22B61E0F631227443E691F20007085AED9D0FB092717BBCF9B644BF35E4"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/feature/today/TodayFragment.java",
+                       "sha256":  "40506CF178F67369076AD498E2E3A4B9B94C7EB4760B5856F8ED7CD273178CBF"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/feature/vocabulary/VocabularyDetailFragment.java",
+                       "sha256":  "120F618881E9D89E865012CE8C193F8154ABD8F554BC92253425D9470A08665E"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/feature/vocabulary/VocabularyDetailViewModel.java",
+                       "sha256":  "BF0E7E26570C3DF604DC2E9212947949572E71BD4BCABAA1E676B76438066075"
+                   },
+                   {
+                       "path":  "app/src/main/java/com/vocamind/app/feature/vocabulary/VocabularyFragment.java",
+                       "sha256":  "14E2F701392312C9771F363CCC4D549DF48227E568CBB99B05D0FC1ACB66590D"
+                   },
+                   {
+                       "path":  "app/src/main/res/drawable/detail_pos_background.xml",
+                       "sha256":  "296A4B6D15F3599AAA2F459844D93E7F4E9F6264E12736A1DF4B8DF0615D5EB2"
+                   },
+                   {
+                       "path":  "app/src/main/res/drawable/ic_detail_back.xml",
+                       "sha256":  "0CC2679B451BEE905DCAD5144DEAAE12E440E932549A9E532DEC9AD986E1817A"
+                   },
+                   {
+                       "path":  "app/src/main/res/drawable/ic_detail_bookmark.xml",
+                       "sha256":  "15D83A4E939A5015B207534D42863524CD875DC75EFB676BCB15D89FD40E762E"
+                   },
+                   {
+                       "path":  "app/src/main/res/layout/activity_main.xml",
+                       "sha256":  "B06A8BA4C465EADF055EA4023477D2AD145328AB7DC5E1FD7CF91D7FB7F24400"
+                   },
+                   {
+                       "path":  "app/src/main/res/layout/fragment_attribution.xml",
+                       "sha256":  "63FC20E27D546022A069993D17643AA666E87F627966699E0ECFDF69CEFBDBF3"
+                   },
+                   {
+                       "path":  "app/src/main/res/layout/fragment_home.xml",
+                       "sha256":  "1CC4AD29B0E34FEE7154035892ABF24E45B6923E075522DB624502A4F60402E4"
+                   },
+                   {
+                       "path":  "app/src/main/res/layout/fragment_pack_detail.xml",
+                       "sha256":  "11D87422AE1B1A3A62848A4483858E45265AFBD9C8516A0F2F304AFE1021B3DF"
+                   },
+                   {
+                       "path":  "app/src/main/res/layout/fragment_packs.xml",
+                       "sha256":  "8625793552322573860F231497B4D5F5EC3D156CED804774CC1B04D3FE19FB59"
+                   },
+                   {
+                       "path":  "app/src/main/res/layout/fragment_progress.xml",
+                       "sha256":  "7F040CE12BDB2877E0F911AD0C903B7ED3F9D80210F53C551512CB832449F159"
+                   },
+                   {
+                       "path":  "app/src/main/res/layout/fragment_quiz.xml",
+                       "sha256":  "35313E600924AA46AEC26731FFE42D7F2857BDB12F65EE45A65C5A3230B10CD8"
+                   },
+                   {
+                       "path":  "app/src/main/res/layout/fragment_today.xml",
+                       "sha256":  "7E3A8EDD8937D56A10684B1BC904C5286DB4B10988D82810E5132D3E48BE3EFD"
+                   },
+                   {
+                       "path":  "app/src/main/res/layout/fragment_vocabulary.xml",
+                       "sha256":  "EC3FFD310B0AC6DEEB3BAB73CEAA6F55DB7D7EB99F1E4228A55E8CB5C8BDA908"
+                   },
+                   {
+                       "path":  "app/src/main/res/layout/fragment_vocabulary_detail.xml",
+                       "sha256":  "FB12FA18F84BA8408EEF0EDBAA79E1C438FC8DED102684763FCB3572D7497E31"
+                   },
+                   {
+                       "path":  "app/src/main/res/layout/item_attribution_source.xml",
+                       "sha256":  "983E3ECF4B4AF2E870BB8F16B8D6BBCC52A7726D88C0F2E1A19DC77E95F7CE09"
+                   },
+                   {
+                       "path":  "app/src/main/res/layout/item_pack.xml",
+                       "sha256":  "ECA4C0AD3926077577EB9F16263C25951FA83B23703E88BFCE972F55B7E17819"
+                   },
+                   {
+                       "path":  "app/src/main/res/layout/item_pack_word.xml",
+                       "sha256":  "FC77B4D53ECF65B8C01AB8303C26B64CBEF6C45C7248073C330A95F329168EB4"
+                   },
+                   {
+                       "path":  "app/src/main/res/navigation/nav_graph.xml",
+                       "sha256":  "607F01D2855BF3FC96C6D73472B5D7DCE57E9A3AC143F473F4FFD51EE37494BF"
+                   },
+                   {
+                       "path":  "app/src/main/res/values-night/bools.xml",
+                       "sha256":  "858C6D8403BE56DC7E3075CDC9784EC51C37D41E5BC14CCCDE3DD21F347885E1"
+                   },
+                   {
+                       "path":  "app/src/main/res/values-night/colors.xml",
+                       "sha256":  "CF0FEEADF371988ACBA8C83DE7D465D1DE699792BC6204DF5E6203E527EEF714"
+                   },
+                   {
+                       "path":  "app/src/main/res/values-sw600dp/dimens.xml",
+                       "sha256":  "A17E5BB4D570D187BBEF3819B98F8CE2B58018AF6612FF3C3A98DEC1BDEF3F97"
+                   },
+                   {
+                       "path":  "app/src/main/res/values/bools.xml",
+                       "sha256":  "840393699DBE9EF8E79C5EEBBD0DC17BE19A47F7CC9875439AA3D44E9EB49884"
+                   },
+                   {
+                       "path":  "app/src/main/res/values/colors.xml",
+                       "sha256":  "D7165114AF4B83390A19517A749B542E3555B6475D4800FCEEC1AECE5935044B"
+                   },
+                   {
+                       "path":  "app/src/main/res/values/dimens.xml",
+                       "sha256":  "AD4648ED0C0ECA682543D07BD95D804E92F2AD8F990966E70F3DC732C5194BB7"
+                   },
+                   {
+                       "path":  "app/src/main/res/values/strings.xml",
+                       "sha256":  "88E6A0C5FE4650D05129081B7C466B6EC565239DFC5C93AAC1BFC982E11AF669"
+                   },
+                   {
+                       "path":  "app/src/main/res/values/styles.xml",
+                       "sha256":  "504F1B4E34B6DD12A9A0033313065AD6E3576E64B1D4EEB5BCF5B9F91D073D7E"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/.gitkeep",
+                       "sha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/data/DaoFoundationTest.java",
+                       "sha256":  "A3A57FB274756BA634EE84FF8F7CFD6DF2A636AD30E7B9DF44B2B18E1195BC45"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/data/DataBoundaryTest.java",
+                       "sha256":  "87B6DD9B3376E333275C8F0AB908EA22BB6238508F427FAEAAD93B29894ABBE0"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/data/catalog/CatalogAssetTest.java",
+                       "sha256":  "46FF0126E0E57F41181AC8CAE98FBC8C6FCFA3A84F79F4626194333CA511FD97"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/data/catalog/ContentCreditsTest.java",
+                       "sha256":  "172503C1D9A72EE8F62597D1C89873045E49E072180295EB6BA81D5B6DC636D1"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/data/catalog/FtsSearchBenchmarkTest.java",
+                       "sha256":  "C7FD2966A37BEE5FF560F8A21EEC0CB52984CE393D2ED90A61CBD9263D7FA2A5"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/data/catalog/FtsSearchTest.java",
+                       "sha256":  "3F83173460A6D1485BF5FBB47F68E2BF8EC8A9E5C19915AF8F61749D3ADAEED1"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/data/catalog/QuizPolicyCompositionTest.java",
+                       "sha256":  "C3C92430E919F579DA3FE7C252A653EB783F3ED11DB4EB3ED7E832CEF9609ED8"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/data/catalog/ReleaseCatalogTest.java",
+                       "sha256":  "CB6103C26442DEAD5A5A224E9574E5708EE4FEECC2077CC929D9F927416A1A7C"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/data/repository/RepositoryIntegrationTest.java",
+                       "sha256":  "45F586297E50F713E91897B365B8F5713D1CABE908F9B7793F3332C25BF01031"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/data/user/AtomicReviewTest.java",
+                       "sha256":  "3EF0C8D68F70A92CB7F9B634948DB2DF629754FC79766CE09A58877645361386"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/data/user/ProgressAggregationTest.java",
+                       "sha256":  "6909C1600823F5113D0C339FFC4A61A61173D838A3FD6FE077601CD521BAB167"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/data/user/ProgressMapperTest.java",
+                       "sha256":  "2F568341B8C923B8D2F5FBDDEDC7DBF7B4697951AFCBF72D498D742BB9898EB8"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/data/user/UserDatabaseTest.java",
+                       "sha256":  "A69F9127C3E4E2D61C26AEF6845CAA6D09C63CFC6C3183D14F8733927C74937C"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/domain/catalog/SearchVocabularyUseCaseTest.java",
+                       "sha256":  "6CB6C183E4CD59AF64CC17CE28B810FFE44DA8A1B06A86D1BE508A808E716FAD"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/domain/learning/LeitnerSchedulerBoundaryTest.java",
+                       "sha256":  "A08972A81E35934219EEC45EC5AC98AD81D80AC9D4D7E971AFCF46307947F077"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/domain/learning/LeitnerSchedulerCalendarTimeTest.java",
+                       "sha256":  "779DAB98753C85644193A397BABFEAAD3627E2AD7A12A8721A868A6348AA289B"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/domain/learning/LeitnerSchedulerSrsTest.java",
+                       "sha256":  "D3ACCEABBE2C31AF92871EC4F5CEC02B789EB765ADF0E75F62A67A038F555239"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/domain/learning/LeitnerSchedulerTest.java",
+                       "sha256":  "7C173FEAA6CA6D06AE171E78040622FB350B97A296BDB9221410951B8A4D9E89"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/domain/learning/RecordReviewUseCaseTest.java",
+                       "sha256":  "DE028925577FD8D9CDE294B1A59F72904EA6A6D98F1E409C1EC9BA9867C1F9E3"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/domain/progress/ProgressDomainTest.java",
+                       "sha256":  "7D4A5F457C4C639AF4D9CF78018787215D64A677F43714A8C31A0DFE9167B4E3"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/domain/quiz/AcceptedQuizPolicyTest.java",
+                       "sha256":  "D230850391744C0FA10BAC6C8A6B112FAF13F43D9EB7BD7F8420D23A9C08D138"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/domain/quiz/AndroidNfcConformanceTest.java",
+                       "sha256":  "27D59793005C4BDF50ED254C7C85AB529F63DA3A860547625A66E0E583F596E5"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/domain/quiz/GenerateQuizTest.java",
+                       "sha256":  "90A4F948AA4F8DF71E49155C6DE88524ABA971736D4281442C8F66E7F827EF58"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/domain/quiz/NfcConformanceTest.java",
+                       "sha256":  "DDF9E85D2F9752A043588330D748B77509E6C619C850514E38CCF63350F6A268"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/domain/quiz/QuizDistractorPolicyTest.java",
+                       "sha256":  "0492033E64909675059D229B811BC1D4D6A266EADDC96D49DF477DD5D0F48E98"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/domain/quiz/QuizDomainTest.java",
+                       "sha256":  "188F037712360A6DF7065220BF012DF587B195089815F8D384D84A376DAB8BC7"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/domain/quiz/QuizGenerationTest.java",
+                       "sha256":  "AB9C346C35315129DF59488E961FD5320A6A111B0DD2D915C15B86FADF642EA2"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/fake/FakePackRepository.java",
+                       "sha256":  "E14D871974ADD337E739EFB2E500E37719042132E94B9505ABE9B4E61B986C9E"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/fake/FakeQuizRepository.java",
+                       "sha256":  "40AC4FD7F65C8611DA3D13453FF16077370F2FA30AFA14D77A652E5064F34049"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/fake/FakeRepositoriesTest.java",
+                       "sha256":  "E7078E927C88C1E171C7C461AC857D05702FAB5A8CBC8A41176D5CBDECECB2B7"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/fake/FakeReviewRepository.java",
+                       "sha256":  "14C6390A0812C68E7209D563485BB787591655C01FDCBDA78BD2182C6D6CAD7E"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/fake/FakeStudyRepository.java",
+                       "sha256":  "1193C9822D0E2107EDBD8A9EB1D4EEE76AB0A1C8E099A8F7D7ED7B56E80AB05F"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/feature/attribution/AttributionRenderingTest.java",
+                       "sha256":  "D5F6F93A5CDF5C9461A112E33ED73DC7713E12B2CE88A56742BE237E443C5FAD"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/feature/attribution/AttributionScreenTest.java",
+                       "sha256":  "1A1324A822BEF1830A4979A6DD04DC9A95D462FFC621333B7F4C8CD4D829D9D9"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/feature/attribution/AttributionViewModelTest.java",
+                       "sha256":  "C05ED2D0AF50C9B95B945EAE4177B3EF099F7F4B65C8C0E904A7DC639BF8912C"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/feature/attribution/ExternalLinksTest.java",
+                       "sha256":  "E827093AFEE727D9C73036AFA0BE83E1BBDC1665483C13948C5B572750A9EBAA"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/feature/attribution/GetContentSourcesTest.java",
+                       "sha256":  "9243C7A08667BD6FEE3FCF7169B6797E13641D1E80B9274B193FD8FE6A03EDA3"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/feature/packs/PackActivationRenderingTest.java",
+                       "sha256":  "6FE609CDDEA5D1FA46C8E42D17A22BE21524C1A0409B23AAD0B47D85FAD8296C"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/feature/packs/PackActivationTest.java",
+                       "sha256":  "4B9DB99C471A1225B82CF9CE03B8F0AFEE879D7CBFDBFC0A6C9BC3A7EC48118F"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/feature/packs/PackVocabularyIntegrationTest.java",
+                       "sha256":  "31CFFA28C90FEB4EAE3533D1FC3C037C6F225D983FB877303102355A2562E6E9"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/feature/packs/PacksViewModelTest.java",
+                       "sha256":  "6269D85B675D7352609AEB774B746209EEF6880EF47AB54927EB1BFB6A35C8D4"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/feature/packs/VocabularyListTest.java",
+                       "sha256":  "0C621F8B240C755DDF3B5E5720E2798DDB46127DE3095BEB5BCEF1B0F063C2AB"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/feature/progress/ProgressViewStateTest.java",
+                       "sha256":  "5A8FB1FFB0BBDB0354DFF217F9138499CC2C346C2ADD9AB8A3C32B3DB2BA904A"
+                   },
+                   {
+                       "path":  "app/src/test/java/com/vocamind/app/feature/vocabulary/VocabularyDetailTest.java",
+                       "sha256":  "CC6FAD9CD09826BB64EB548E576359259E666175FBAA762C28F8952A614941DF"
+                   },
+                   {
+                       "path":  "app/src/test/resources/quiz/accepted-policy.json",
+                       "sha256":  "A24F3426CA534649EBD9E163EB365758578ADF1D39C6346118E7226858275F0D"
+                   }
+               ]
+}

@@ -83,5 +83,6 @@ validation records separate from the current setup and foundation guides.
 - [VOCAB-02 first-save contract acceptance](vocab-02-first-save-validation.md)
 - [VOCAB-02 DATA-06/DATA-07 integration](vocab-02-data0607-integration.md)
 - [VOCAB-02 focused emulator QA](vocab-02-device-qa.md)
+- [VOCAB-02 probe binding replay on 49ca6b4](vocab-02-probe-replay-49ca6b4.md)
 
 - [VOCAB-02 integration and probe binding recheck](vocab-02-recheck-993e70a.md)

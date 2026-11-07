@@ -1,0 +1,1 @@
+PASS: all catalog tables identical to pre-UI baseline, existing learning fields/history identical after Save/Unsave

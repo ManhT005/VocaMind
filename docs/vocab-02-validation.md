@@ -1,5 +1,9 @@
 # VOCAB-02 — validation và handoff
 
+**Recheck binding mới nhất:** [replay trên source49ca6b4](vocab-02-probe-replay-49ca6b4.md)
+đã chạy lại đúng probe Git archive với một bộ APK duy nhất và kiểm tra bytes đã stage.
+Evidence device9f2dfd9 cũ giữ nguyên, không thay expected hash hoặc relabel log.
+
 **Device QA 07/11/2026:** đã chạy bốn nhóm V02-A..D trên model Small_Phone/API30,
 gồm force-stop và hai reboot offline. Xem [focused emulator evidence](vocab-02-device-qa.md).
 Các ghi chú device NOT RUN bên dưới là trạng thái lịch sử trước lượt QA này.
