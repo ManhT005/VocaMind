@@ -1,0 +1,1 @@
+PASS on device: delayed worker pending/double click; ambiguous write completion -> error; read failure -> error; Retry read reconciles saved=true, writes=1. Test-only injected ViewModel, not disk failure. IPA-present synthetic render fixture only, catalog unchanged.

@@ -1,0 +1,43 @@
+{
+    "phase":  "g",
+    "method":  "gExportEvidence",
+    "startedAt":  "2026-11-07T21:31:21.6659542+07:00",
+    "before":  {
+                   "probe":  "4F1461BEDA68AC415ABFB16CF45C877EAAD29B202B9B8B8DE34AF5BF2C558737",
+                   "compilationSource":  "4F1461BEDA68AC415ABFB16CF45C877EAAD29B202B9B8B8DE34AF5BF2C558737",
+                   "hostAppApk":  "44899C8EEEDAAF4F70210E14015A150DBD3975E83544FDEADCB5B56F556B0597",
+                   "hostTestApk":  "9A2C7CD54B57DAE63982AE8DFBADBC31F2AC8883DF6186F03CF8798C53370DB1",
+                   "installedApp":  {
+                                        "package":  "com.vocamind.app.vocab02qa",
+                                        "path":  "/data/app/~~EQvO-H_N7vVc4soFfr1oaQ==/com.vocamind.app.vocab02qa-NrYbsK6XsKDOQ797mwB_6g==/base.apk",
+                                        "sha256":  "44899C8EEEDAAF4F70210E14015A150DBD3975E83544FDEADCB5B56F556B0597"
+                                    },
+                   "installedTest":  {
+                                         "package":  "com.vocamind.app.vocab02qa.test",
+                                         "path":  "/data/app/~~y8NLVP0txUeImnEt3ddArw==/com.vocamind.app.vocab02qa.test-OomwupclQX6la3rrBxvMJQ==/base.apk",
+                                         "sha256":  "9A2C7CD54B57DAE63982AE8DFBADBC31F2AC8883DF6186F03CF8798C53370DB1"
+                                     }
+               },
+    "bootId":  "d66e2f2e-3d33-44cb-bae1-9a886aa5ef37",
+    "airplaneMode":  "1",
+    "exitCode":  0,
+    "jUnitPassed":  true,
+    "after":  {
+                  "probe":  "4F1461BEDA68AC415ABFB16CF45C877EAAD29B202B9B8B8DE34AF5BF2C558737",
+                  "compilationSource":  "4F1461BEDA68AC415ABFB16CF45C877EAAD29B202B9B8B8DE34AF5BF2C558737",
+                  "hostAppApk":  "44899C8EEEDAAF4F70210E14015A150DBD3975E83544FDEADCB5B56F556B0597",
+                  "hostTestApk":  "9A2C7CD54B57DAE63982AE8DFBADBC31F2AC8883DF6186F03CF8798C53370DB1",
+                  "installedApp":  {
+                                       "package":  "com.vocamind.app.vocab02qa",
+                                       "path":  "/data/app/~~EQvO-H_N7vVc4soFfr1oaQ==/com.vocamind.app.vocab02qa-NrYbsK6XsKDOQ797mwB_6g==/base.apk",
+                                       "sha256":  "44899C8EEEDAAF4F70210E14015A150DBD3975E83544FDEADCB5B56F556B0597"
+                                   },
+                  "installedTest":  {
+                                        "package":  "com.vocamind.app.vocab02qa.test",
+                                        "path":  "/data/app/~~y8NLVP0txUeImnEt3ddArw==/com.vocamind.app.vocab02qa.test-OomwupclQX6la3rrBxvMJQ==/base.apk",
+                                        "sha256":  "9A2C7CD54B57DAE63982AE8DFBADBC31F2AC8883DF6186F03CF8798C53370DB1"
+                                    }
+              },
+    "finishedAt":  "2026-11-07T21:31:23.6563556+07:00",
+    "logSha256":  "F6AD76F98782B48A015DE458ACF7A77DB07414A8E5F5CB83899D157D81061976"
+}

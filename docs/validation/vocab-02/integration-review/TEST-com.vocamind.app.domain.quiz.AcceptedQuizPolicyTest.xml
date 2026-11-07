@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-06T13:12:34" hostname="DESKTOP-KUH3S13" time="1.644">
+  <properties/>
+  <testcase name="invalidCompanionCannotBecomeUnrestricted[26]" classname="com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest" time="0.025"/>
+  <testcase name="fullCorpusIncludesSeed60AndNeverEmitsForbiddenPairs[26]" classname="com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest" time="0.745"/>
+  <testcase name="minimalPoolsFailAndSufficientPoolsEnforceBothDirections[26]" classname="com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest" time="0.046"/>
+  <testcase name="invalidCompanionCannotBecomeUnrestricted" classname="com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest" time="0.031"/>
+  <testcase name="fullCorpusIncludesSeed60AndNeverEmitsForbiddenPairs" classname="com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest" time="0.751"/>
+  <testcase name="minimalPoolsFailAndSufficientPoolsEnforceBothDirections" classname="com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest" time="0.045"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

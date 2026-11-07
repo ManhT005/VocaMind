@@ -1,0 +1,375 @@
+{
+    "bindingStatus":  "VERIFIED_REPLAY",
+    "sourceCommit":  "49ca6b4434470443524ebfaeff56406b206dada4",
+    "recordedAt":  "2026-11-07T21:34:35.6450863+07:00",
+    "probeSha256":  "4F1461BEDA68AC415ABFB16CF45C877EAAD29B202B9B8B8DE34AF5BF2C558737",
+    "initSha256":  "A21089125B450D0494E6EE62165415F04E9C4BBCFBC9CCE68854355978563BE0",
+    "appApkSha256":  "44899C8EEEDAAF4F70210E14015A150DBD3975E83544FDEADCB5B56F556B0597",
+    "testApkSha256":  "9A2C7CD54B57DAE63982AE8DFBADBC31F2AC8883DF6186F03CF8798C53370DB1",
+    "functionalPhases":  7,
+    "exportPhase":  "g (not acceptance)",
+    "phaseOrder":  [
+                       "a",
+                       "force-stop",
+                       "b",
+                       "reboot",
+                       "c",
+                       "force-stop",
+                       "d",
+                       "reboot",
+                       "e",
+                       "f",
+                       "h",
+                       "g"
+                   ],
+    "bootIds":  [
+                    "30fff1a1-d65e-4f73-9570-766785cc75d2",
+                    "8d7a0e95-0244-42bb-b17e-73966bb61b82",
+                    "d66e2f2e-3d33-44cb-bae1-9a886aa5ef37"
+                ],
+    "sourceInputsUnchanged":  true,
+    "originalRecoveredHash":  "089AB4B2171040BFF1DD9D62F4B050CBA3D77487B9E763C2D7AA77730C8393E1",
+    "historicalEvidenceUnmodified":  true,
+    "files":  [
+                  {
+                      "path":  "apk-assets.json",
+                      "sha256":  "B3D07A2A9F794063E9E6183312608B7DB48258B769B0051162946B00952D5B28",
+                      "bytes":  2539
+                  },
+                  {
+                      "path":  "build-binding.json",
+                      "sha256":  "493B052793B0E67101C416FE4B560E704049936CC1F4B617E962381C71B10D38",
+                      "bytes":  733
+                  },
+                  {
+                      "path":  "build-python-path-failed.log",
+                      "sha256":  "F0F92B50422B137DFF65B29D3034932D4138D77B46830CC791E1F958612B8476",
+                      "bytes":  8014
+                  },
+                  {
+                      "path":  "build-qa.log",
+                      "sha256":  "993095D08ACF13186785E3C1AF6BCF48B4FE97B7A3739AEA4DF72E4BD95BAF24",
+                      "bytes":  9428
+                  },
+                  {
+                      "path":  "db-snapshot.json",
+                      "sha256":  "B1FEB3404951A18C736A74152B4692C6E3202BC1FFFE71A271C041E7E704FE6E",
+                      "bytes":  10162
+                  },
+                  {
+                      "path":  "device-final.json",
+                      "sha256":  "17F1ED5894B88064B88D73DB37A79D0FC2E9023682D8149287EEE45DC17DBFAB",
+                      "bytes":  325
+                  },
+                  {
+                      "path":  "device-initial.json",
+                      "sha256":  "44CF4C6A80E63882F7184400BD3C64CF84D3A259ED5A22098F6F59E3EB11B757",
+                      "bytes":  122
+                  },
+                  {
+                      "path":  "historical-original-089ab4.java",
+                      "sha256":  "089AB4B2171040BFF1DD9D62F4B050CBA3D77487B9E763C2D7AA77730C8393E1",
+                      "bytes":  19482
+                  },
+                  {
+                      "path":  "logcat.log",
+                      "sha256":  "016F9051E3EAC74A798186B6631DD90D60AA62D0EE8DF269201FD5A9A6312E2F",
+                      "bytes":  7464
+                  },
+                  {
+                      "path":  "original-recovery.json",
+                      "sha256":  "4D9D02FAA05667271F4B3897C588EEB163A9674ACD6BCF34BF5E16F0671E6784",
+                      "bytes":  698
+                  },
+                  {
+                      "path":  "phase-a-stderr.log",
+                      "sha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                      "bytes":  0
+                  },
+                  {
+                      "path":  "phase-a.json",
+                      "sha256":  "540FF8FBA331A800C5E985EFDB8010A1DE7F0501427273C25216C9C6B377A295",
+                      "bytes":  3042
+                  },
+                  {
+                      "path":  "phase-a.log",
+                      "sha256":  "FF9946F21317D550D8190543505A6009227109861DF4B03BF3234FF54A96E148",
+                      "bytes":  799
+                  },
+                  {
+                      "path":  "phase-b-stderr.log",
+                      "sha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                      "bytes":  0
+                  },
+                  {
+                      "path":  "phase-b.json",
+                      "sha256":  "ED306811E084321464558CE11130D76EDAB74A4EA606B0E117B91D6C344EB50D",
+                      "bytes":  3038
+                  },
+                  {
+                      "path":  "phase-b.log",
+                      "sha256":  "5E9737DCCF9C77AAF0F6D555C9C2FE118465ACD6114DB873A328260A94A3CFDC",
+                      "bytes":  791
+                  },
+                  {
+                      "path":  "phase-c-stderr.log",
+                      "sha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                      "bytes":  0
+                  },
+                  {
+                      "path":  "phase-c.json",
+                      "sha256":  "359A1885FBD894C5B980203BE817A037C37B7474DCD0148212829EA759B89350",
+                      "bytes":  3045
+                  },
+                  {
+                      "path":  "phase-c.log",
+                      "sha256":  "BABAD0FF0A42AD0176534C4B1EBAAB95DEAA6930935F4538372856D0FC0E02CA",
+                      "bytes":  805
+                  },
+                  {
+                      "path":  "phase-d-stderr.log",
+                      "sha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                      "bytes":  0
+                  },
+                  {
+                      "path":  "phase-d.json",
+                      "sha256":  "0632CC0197385BCD13F5D464915FC4A7A085A465A73E549727DB6E2A0EDA94FE",
+                      "bytes":  3040
+                  },
+                  {
+                      "path":  "phase-d.log",
+                      "sha256":  "4228430F901CAFCCF3AA6716DC54B8373215E4266D5CE6AFFB524480BE32372C",
+                      "bytes":  795
+                  },
+                  {
+                      "path":  "phase-e-stderr.log",
+                      "sha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                      "bytes":  0
+                  },
+                  {
+                      "path":  "phase-e.json",
+                      "sha256":  "062E1CE45C966654EF966DF845F5B6CE3907BC37F1375FD031C59EC9FA3C2829",
+                      "bytes":  3056
+                  },
+                  {
+                      "path":  "phase-e.log",
+                      "sha256":  "B08B96AC3BD07BEB8AF414A119CB12A6ED0A5B3A0BC2E774353638BD50233BAA",
+                      "bytes":  827
+                  },
+                  {
+                      "path":  "phase-f-stderr.log",
+                      "sha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                      "bytes":  0
+                  },
+                  {
+                      "path":  "phase-f.json",
+                      "sha256":  "3F036AC1AAFB18B2A1BFA77E8960A5A2D6E5CA688048E9367ECC22C09DDF88C5",
+                      "bytes":  3055
+                  },
+                  {
+                      "path":  "phase-f.log",
+                      "sha256":  "474ED62D574D5A0E80BA8A9D90FC200139716C977293FA5BACF92262FBB6BFB6",
+                      "bytes":  825
+                  },
+                  {
+                      "path":  "phase-g-stderr.log",
+                      "sha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                      "bytes":  0
+                  },
+                  {
+                      "path":  "phase-g.json",
+                      "sha256":  "4BE28D9D592D6BCFC62B8CB3C942B8E5CE6775C36C8E847694D43E4E0431A04D",
+                      "bytes":  3033
+                  },
+                  {
+                      "path":  "phase-g.log",
+                      "sha256":  "F6AD76F98782B48A015DE458ACF7A77DB07414A8E5F5CB83899D157D81061976",
+                      "bytes":  781
+                  },
+                  {
+                      "path":  "phase-h-stderr.log",
+                      "sha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                      "bytes":  0
+                  },
+                  {
+                      "path":  "phase-h.json",
+                      "sha256":  "1613F0A3C53A8C3C43505D96FDE66653006A0CC00DEFBEC4D260F4E2F20459A9",
+                      "bytes":  3053
+                  },
+                  {
+                      "path":  "phase-h.log",
+                      "sha256":  "17356BC93C1AE9505E15765BBA660D9845EA2291967D2A294648D211E8360CBF",
+                      "bytes":  821
+                  },
+                  {
+                      "path":  "postrun-inputs.json",
+                      "sha256":  "ED7C3B8693635A46245ED538F89B98E3613AB5C38A215E25641E8CC91BF047CD",
+                      "bytes":  576
+                  },
+                  {
+                      "path":  "prebuild-inputs.json",
+                      "sha256":  "893E9F86B91A04EED50E1684473FC5A3FA936DAE57D8D32B81326D17AB93B717",
+                      "bytes":  56664
+                  },
+                  {
+                      "path":  "qa-databases.tar",
+                      "sha256":  "288183ADD5509AE957556F99129C329071093D3F8063B03D7D5AF079104BA894",
+                      "bytes":  137728
+                  },
+                  {
+                      "path":  "qa.init.gradle",
+                      "sha256":  "A21089125B450D0494E6EE62165415F04E9C4BBCFBC9CCE68854355978563BE0",
+                      "bytes":  265
+                  },
+                  {
+                      "path":  "run-phase.ps1",
+                      "sha256":  "C34CF8AE1AA4947FC367410336BC43D6D2F657D41C680079690915DE45056220",
+                      "bytes":  3691
+                  },
+                  {
+                      "path":  "snapshot-db.py",
+                      "sha256":  "1AE541E97670A3A3865DEBC7C112593B5BA8FBB15DA6BF17248873CC5A242F43",
+                      "bytes":  2039
+                  },
+                  {
+                      "path":  "verify-artifacts.ps1",
+                      "sha256":  "62F9542BDC4E76C1C3CC13D3A59E6CF6AE9D35EFAF2168908E2CC6C2C54AD49B",
+                      "bytes":  1160
+                  },
+                  {
+                      "path":  "VocabularyDeviceQa.java",
+                      "sha256":  "4F1461BEDA68AC415ABFB16CF45C877EAAD29B202B9B8B8DE34AF5BF2C558737",
+                      "bytes":  19481
+                  },
+                  {
+                      "path":  "captures/catalog-before.txt",
+                      "sha256":  "1DDA6EFCD05FC1AF5548964CF8521B7C49696FE601E2DF14EE5BF5163B74058C",
+                      "bytes":  4194
+                  },
+                  {
+                      "path":  "captures/fixture.txt",
+                      "sha256":  "3A9FBAA9A6398D03DFEBDD92B10FF19C3BC70228BCDB13A98B205C3DFE8B87AE",
+                      "bytes":  139
+                  },
+                  {
+                      "path":  "captures/persisted-false.txt",
+                      "sha256":  "47D8EB5DA68ED0997F39579B87E6C49F6B2429EC2B30B5036B777582A8B6EB23",
+                      "bytes":  72
+                  },
+                  {
+                      "path":  "captures/persisted-true.txt",
+                      "sha256":  "F9A2363050CBE8F84098383BA8132F182B4DC34AFD27BEBB9BB487CF710F36D2",
+                      "bytes":  71
+                  },
+                  {
+                      "path":  "captures/V02-A-B-D-phase1.txt",
+                      "sha256":  "C90606CB0C7A6EA93F0BE4A2F113EFFFF290165F2751429CE71009E5A6875382",
+                      "bytes":  122
+                  },
+                  {
+                      "path":  "captures/V02-A-detail-offline.png",
+                      "sha256":  "B27E2D33E847641672D7668DD5E9CAEEE066A87F7388A46592E13CA1C3F52692",
+                      "bytes":  46185
+                  },
+                  {
+                      "path":  "captures/V02-A-ipa-present-test-only-render.png",
+                      "sha256":  "DF2274146806E7E1D4D3CA27CDECE35C8407D7C275ADBF70521561F995D5966E",
+                      "bytes":  44802
+                  },
+                  {
+                      "path":  "captures/V02-A-vietnamese-example-scrolled.png",
+                      "sha256":  "B609E0E26F2D63E00379E80F50673E66581EE38C5B42689D0C15EF439873D48E",
+                      "bytes":  52725
+                  },
+                  {
+                      "path":  "captures/V02-B-saved-force-stop.png",
+                      "sha256":  "49E8F70E4399325FE6ED224BFF4D181F69DADBECC42074CF2264794C03019990",
+                      "bytes":  47527
+                  },
+                  {
+                      "path":  "captures/V02-B-saved-reboot.png",
+                      "sha256":  "7E3F3CD35EF4C1F146E1A27A44F23FD1FBBBDCC272AD4F027F2619E1ED8BCF2A",
+                      "bytes":  47603
+                  },
+                  {
+                      "path":  "captures/V02-B-saved-reopen.png",
+                      "sha256":  "49E8F70E4399325FE6ED224BFF4D181F69DADBECC42074CF2264794C03019990",
+                      "bytes":  47527
+                  },
+                  {
+                      "path":  "captures/V02-B-unsaved-force-stop.png",
+                      "sha256":  "BC1845A121436C15B5D733F03A5048059BA37607865B49523BAD378F2FF133B6",
+                      "bytes":  46386
+                  },
+                  {
+                      "path":  "captures/V02-B-unsaved-reboot.png",
+                      "sha256":  "B1E641A9E094D1ED40F2CCF8CE0D5D6A43765093832CD5B9474ED874EA19598A",
+                      "bytes":  46601
+                  },
+                  {
+                      "path":  "captures/V02-B-unsaved.png",
+                      "sha256":  "8C78C215D518588FF87DB0CE1E4282DA8FB2FDFE636207F1A89C67ED2FCE0B6D",
+                      "bytes":  74915
+                  },
+                  {
+                      "path":  "captures/V02-C-catalog.txt",
+                      "sha256":  "ABA1F12EC6921FA3592E3931364B6C00952285F27F9A265E01BD31DEE932587D",
+                      "bytes":  115
+                  },
+                  {
+                      "path":  "captures/V02-C-existing-saved.png",
+                      "sha256":  "80BE619AEB3A67355631F2960DE733E7F171D688ECC5E51B4E370746588E3888",
+                      "bytes":  48432
+                  },
+                  {
+                      "path":  "captures/V02-C-existing-unsaved.png",
+                      "sha256":  "E9BC1D6EFBCEF40062975EA5B2BB166E0AAB8FFC262502A0F096B642AF9867F0",
+                      "bytes":  47435
+                  },
+                  {
+                      "path":  "captures/V02-C-learning-history.txt",
+                      "sha256":  "822F03C2DF3A00A4632C5143E38599E0243AE235B8E1D7719D7C2E5BAA23C40E",
+                      "bytes":  126
+                  },
+                  {
+                      "path":  "captures/V02-D-confirmed-landscape.png",
+                      "sha256":  "43444F1446879AAAA56CB80603481ADB5DA89A323CD5403F44B966E36599678B",
+                      "bytes":  29081
+                  },
+                  {
+                      "path":  "captures/V02-D-controlled-pending.png",
+                      "sha256":  "D66102D7B0726EFCC46053494C067A5A3BF6C94A3460B929AC699EC2DDD9FC61",
+                      "bytes":  47190
+                  },
+                  {
+                      "path":  "captures/V02-D-hooks.txt",
+                      "sha256":  "6436FA47AFC0B5137574AAB19C215466829E3CBA4C274DAF873F70D0E2FACC8B",
+                      "bytes":  266
+                  },
+                  {
+                      "path":  "captures/V02-D-loading-confirmed.txt",
+                      "sha256":  "A9DD97D6D17D2447C5D840838AA792B257A52163269CC452067DCB0A4ED576F9",
+                      "bytes":  176
+                  },
+                  {
+                      "path":  "captures/V02-D-loading-rotation-stable.png",
+                      "sha256":  "43444F1446879AAAA56CB80603481ADB5DA89A323CD5403F44B966E36599678B",
+                      "bytes":  29081
+                  },
+                  {
+                      "path":  "captures/V02-D-read-error.png",
+                      "sha256":  "612CF016CA37182D79E45040CA55CD5667D0B07FCF15F70779E2533C5947AB7B",
+                      "bytes":  29930
+                  },
+                  {
+                      "path":  "captures/V02-D-save-rotation.png",
+                      "sha256":  "3A13A800517EA5A8D6E24DF3F065B8EA0B4F9B4DE6D8DD2592119F8202D673D1",
+                      "bytes":  113849
+                  },
+                  {
+                      "path":  "captures/V02-D-write-error.png",
+                      "sha256":  "8CC7D25D3E1A91D37F90BA0D35964046F2AB8A5BAD9B96ABF0F48895F160867F",
+                      "bytes":  53296
+                  }
+              ]
+}
