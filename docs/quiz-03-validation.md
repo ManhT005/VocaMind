@@ -8,6 +8,7 @@ Technical implementation and host/device validation are complete. **Assigned hum
 - Tested implementation/test-harness head: `5d546e77d7ce462194c231cb74eac4b71c10a372`.
 - PR merge ref checked out by CI: `cf32146ed48ac4164c11fe930bbd0375706596d6`.
 - [Android CI run 147 — SUCCESS](https://github.com/ManhT005/VocaMind/actions/runs/42342310118), 2026-11-07. Both Build & Test and Quiz device jobs passed. Subsequent documentation-only commits do not change the tested application/test source; current PR checks must still complete on the published head.
+- Documentation head `51b42bb6a9e74191dd4ded2fdb16fd8e419447ff` also passed both jobs in [CI run 149](https://github.com/ManhT005/VocaMind/actions/runs/42342913242).
 
 ## Behavior and completion protocol
 
@@ -29,6 +30,7 @@ SavedStateHandle stores an Android-only Bundle with completion key, fixed comple
 | CI debug APK / instrumentation APK | PASS |
 | CI lintDebug | PASS; 0 errors, 7 existing warnings |
 | CI connectedDebugAndroidTest | 4 tests, 0 failures, 0 errors, 0 skips |
+| User's LDPlayer, direct AndroidJUnitRunner | 4 tests PASS; Wi-Fi retained, functional validation only |
 | git diff --check | PASS |
 | Assigned reviewer approval | PENDING |
 | Persistence/data-owner approval | PENDING |
@@ -80,7 +82,9 @@ Windows can provide Python explicitly with `-Pquiz03PythonExecutable=absolute/pa
 
 ## Local attempts and review gates
 
-LDPlayer (`emulator-5554`, API 28) initially answered property queries, but subsequently reported ADB offline/timeouts. No device PASS is claimed for LDPlayer. Offline-test network changes were requested to be restored; ADB restoration could not yet be confirmed. The user was asked to re-enable Wi-Fi/ADB before a retry. The main VocaMind installation was never replaced or reset.
+LDPlayer (`emulator-5554`, API 28, Android 9, x86_64, model G82U8) initially reported ADB offline/timeouts. After the user restored the connection, all **4 tests passed directly on their LDPlayer**, AndroidJUnitRunner output `OK (4 tests)`, duration 32.366 seconds. The installed app/test APKs were the exact accepted-corpus isolated APKs from the successful CI artifact, with the hashes listed above. Evidence: `docs/evidence/quiz-03/ldplayer/` (instrumentation output, minimum device metadata, network summary and result screenshot).
+
+Wi-Fi remained enabled during this LDPlayer run; despite the existing airplane setting being 1, the active network was 101. Consequently this result proves functionality on LDPlayer, **not offline acceptance**; offline proof comes from the separate CI emulator with no active default network. Afterwards airplane mode was restored to its original 0, Wi-Fi confirmed 1, and ADB confirmed `device`. The main VocaMind installation was never replaced or reset.
 
 A separate local official API 28 emulator executed both four-question UI tests successfully. It exposed a schema-fixture assumption (optional JSON indices) and the ordinary bundled catalog limitation; the schema test was corrected and the accepted-corpus isolation asset added. A later local connection loss did not count as a pass. The successful result is the CI device run documented above.
 
