@@ -26,6 +26,21 @@ public class QuizPolicyCompositionTest {
             worker.submit(() -> {
                 try (CatalogProvider catalog = new CatalogProvider(context);
                      RepositoryProvider repositories = new RepositoryProvider(context, catalog)) {
+                    var pack = catalog.repository().getPacks().get(0);
+                    var word = catalog.repository().getWords(pack.id).get(0);
+                    var detail = new com.vocamind.app.domain.vocabulary.GetVocabularyDetail(repositories.vocabulary());
+                    var save = new com.vocamind.app.domain.vocabulary.ToggleSaved(repositories.vocabulary());
+                    assertEquals(word.stableId, detail.execute(pack.id, word.stableId).get().word.stableId);
+                    assertFalse(detail.execute(pack.id, word.stableId).get().saved);
+                    // First-save from empty userdata through real production composition.
+                    assertTrue(save.execute(pack.id, word.stableId, true).get());
+                    assertNull(repositories.study().getProgress(word.stableId).get().get().getLearnedAtEpochMillis());
+                    assertEquals(0, repositories.study().getProgress(word.stableId).get().get().getReviewCount());
+                    var scheduled = new com.vocamind.app.domain.learning.LeitnerScheduler().schedule(
+                            com.vocamind.app.domain.learning.LeitnerState.newWord(),
+                            com.vocamind.app.domain.learning.Rating.HARD, 1000L, java.time.ZoneOffset.UTC);
+                    assertTrue(repositories.reviews().recordReview(word.stableId, scheduled, 1000L).isSuccess());
+                    assertTrue(save.execute(pack.id, word.stableId, true).get());
                     GenerateQuiz generate = new GenerateQuiz(repositories.quizzes());
                     assertEquals(QuizGenerationOutcome.Status.EMPTY, generate.execute(new Random(60)).get().getStatus());
                     for (var state : repositories.packs().getPackStates().get())
@@ -53,6 +68,39 @@ public class QuizPolicyCompositionTest {
             assertThrows(IllegalArgumentException.class, () -> QuizPolicyAsset.load(withoutAppAssets, List.of()));
         } finally {
             withoutAppAssets.close();
+        }
+    }
+
+    @Test public void firstSaveThroughProductionCompositionPersistsAcrossReopen() throws Exception {
+        Context context = ApplicationProvider.getApplicationContext();
+        ExecutorService worker = Executors.newSingleThreadExecutor();
+        try {
+            worker.submit(() -> {
+                String packId, stableId;
+                try (CatalogProvider catalog = new CatalogProvider(context);
+                     RepositoryProvider repositories = new RepositoryProvider(context, catalog)) {
+                    packId = catalog.repository().getPacks().get(0).id;
+                    stableId = catalog.repository().getWords(packId).get(0).stableId;
+                    assertTrue(repositories.study().getProgress(stableId).get().isEmpty());
+                    assertTrue(new com.vocamind.app.domain.vocabulary.ToggleSaved(repositories.vocabulary())
+                            .execute(packId, stableId, true).get());
+                }
+                try (CatalogProvider catalog = new CatalogProvider(context);
+                     RepositoryProvider repositories = new RepositoryProvider(context, catalog)) {
+                    assertTrue(repositories.vocabulary().getDetail(packId, stableId).get().saved);
+                    assertNull(repositories.study().getProgress(stableId).get().get().getLearnedAtEpochMillis());
+                    assertFalse(repositories.vocabulary().setSaved(packId, stableId, false).get());
+                }
+                try (CatalogProvider catalog = new CatalogProvider(context);
+                     RepositoryProvider repositories = new RepositoryProvider(context, catalog)) {
+                    assertFalse(repositories.vocabulary().getDetail(packId, stableId).get().saved);
+                    assertEquals(0, repositories.study().getProgress(stableId).get().get().getReviewCount());
+                }
+            }).get(60, TimeUnit.SECONDS);
+        } finally {
+            worker.shutdownNow();
+            context.deleteDatabase("catalog.db");
+            context.deleteDatabase("userdata.db");
         }
     }
 }

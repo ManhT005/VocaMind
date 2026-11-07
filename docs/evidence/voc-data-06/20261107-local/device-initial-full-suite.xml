@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" tests="77" failures="1" errors="0" skipped="0" time="117.592" timestamp="2026-11-07T04:27:26" hostname="local-host">
+  <properties>
+    <property name="device" value="Pixel_7_Pro(AVD) - 17" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="unmatchedCreditsPreserveBothRepositoryQueries" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="1.049" />
+  <testcase name="databaseRejectsDuplicateOrdering" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.093" />
+  <testcase name="ftsEnglishAndVietnameseReturnTextStableId" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.117" />
+  <testcase name="reopeningExistingCopyWorks" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.243" />
+  <testcase name="opensAssetAndReadsFourPacks" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.179" />
+  <testcase name="creditReadFailureIsAnErrorAndCanBeRetried" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.183" />
+  <testcase name="wordsRespectMembershipOrderAndStableIds" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.133" />
+  <testcase name="examplesAndNullableIpaSurviveMapping" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.11" />
+  <testcase name="domainListsAreImmutable" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.107" />
+  <testcase name="everyFtsRowMapsToCorrectEntry" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.136" />
+  <testcase name="sourceAttributionIsAvailableOffline" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.073" />
+  <testcase name="missingIdsReturnEmpty" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.081" />
+  <testcase name="creditsEnrichExistingCopyAndBothRepositoryQueriesWithoutChangingDatabase" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.126" />
+  <testcase name="databaseIsConsistent" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.083" />
+  <testcase name="invalidIdentityHashFailsWithoutDeletingCopy" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.95" />
+  <testcase name="canonicalFixtureSurvivesRoomAndRepository" classname="com.vocamind.app.data.catalog.CatalogAssetInstrumentedTest" time="0.288" />
+  <testcase name="profileFiveThousandWordPrepackAndWriteRawSamples" classname="com.vocamind.app.data.catalog.FtsSearchBenchmarkInstrumentedTest" time="18.418" />
+  <testcase name="prefixesCaseAndVietnameseNfdAreNormalized" classname="com.vocamind.app.data.catalog.FtsSearchInstrumentedTest" time="0.125" />
+  <testcase name="allThreeIndexedColumnsAreActuallySearched" classname="com.vocamind.app.data.catalog.FtsSearchInstrumentedTest" time="0.108" />
+  <testcase name="reopeningPreservesSearchAndProviderDisposalRejectsNewWork" classname="com.vocamind.app.data.catalog.FtsSearchInstrumentedTest" time="0.115" />
+  <testcase name="englishAndVietnameseResolveTheSameTextStableId" classname="com.vocamind.app.data.catalog.FtsSearchInstrumentedTest" time="0.115" />
+  <testcase name="blankNoMatchAndOperatorSyntaxAreSafe" classname="com.vocamind.app.data.catalog.FtsSearchInstrumentedTest" time="0.08" />
+  <testcase name="emptyInputDoesNotOpenClosedDatabaseButReadFailuresRemainErrors" classname="com.vocamind.app.data.catalog.FtsSearchInstrumentedTest" time="0.073" />
+  <testcase name="rowidsMayChangeWhileApplicationIdsStayStable" classname="com.vocamind.app.data.catalog.FtsSearchInstrumentedTest" time="0.105" />
+  <testcase name="searchIdsComposeWithFoundationBatchAndMembershipQueries" classname="com.vocamind.app.data.catalog.FtsSearchInstrumentedTest" time="0.107" />
+  <testcase name="differentSensesRemainDistinctAndAreNotDuplicatedByPackMembership" classname="com.vocamind.app.data.catalog.FtsSearchInstrumentedTest" time="0.069" />
+  <testcase name="offlineSourceCreditsKeepProjectAcceptanceAndMissingAuthorsExplicit" classname="com.vocamind.app.data.catalog.ReleaseCatalogInstrumentedTest" time="0.139" />
+  <testcase name="candidatePolicyBindsToRoomProjectionAndExcludesAllThreePairsBothWays" classname="com.vocamind.app.data.catalog.ReleaseCatalogInstrumentedTest" time="0.54" />
+  <testcase name="opensProductionCandidateAndPreservesAllAcceptedFieldsAndPackOrder" classname="com.vocamind.app.data.catalog.ReleaseCatalogInstrumentedTest" time="0.53" />
+  <testcase name="sqliteIntegrityCountsAndBundleChecksumsMatch" classname="com.vocamind.app.data.catalog.ReleaseCatalogInstrumentedTest" time="0.207" />
+  <testcase name="everyEnglishAndVietnamesePhraseFindsItsTextStableId" classname="com.vocamind.app.data.catalog.ReleaseCatalogInstrumentedTest" time="0.6" />
+  <testcase name="mismatchedIdsAndTamperedHistoryCannotWrite" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.42" />
+  <testcase name="legacyAndUseCaseCannotBothInsertFirstReview" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.3" />
+  <testcase name="staleEmptySnapshotCannotOverwriteFirstReview" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.165" />
+  <testcase name="closedDatabaseReadReportsReadFailure" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.126" />
+  <testcase name="existingProgressUpdateFailureRollsBackInsertedEvent" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.329" />
+  <testcase name="malformedProgressIsTypedInvalidDataWithNoWrite" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.214" />
+  <testcase name="eventInsertFailureLeavesExistingProgressUnchanged" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.196" />
+  <testcase name="legacyEventFailureRollsBack" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.153" />
+  <testcase name="legacyAndUseCaseCannotCommitSameSnapshotTwice" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.273" />
+  <testcase name="bothApisUseOneWriterAndLegacyHardReplayIsRejected" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.167" />
+  <testcase name="legacyNewProgressFailureRollsBackEvent" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.198" />
+  <testcase name="persistedDueTimeSurvivesZoneChangeAndReopen" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.264" />
+  <testcase name="existingWordAllRatingsPersistSchedulerOutcome" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.228" />
+  <testcase name="twoDatabaseInstancesCannotCommitSameSnapshotTwice" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.229" />
+  <testcase name="legacyProgressUpdateFailureRollsBackEvent" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.173" />
+  <testcase name="unknownCatalogWordCannotCreateOrphanThroughEitherApi" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.133" />
+  <testcase name="explicitRetryAfterFaultAndReopenPersistsExactlyOneReview" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.208" />
+  <testcase name="savedFlagChangedAfterReadCausesConflictNotOverwrite" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.194" />
+  <testcase name="newProgressInsertFailureRollsBackInsertedEvent" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.266" />
+  <testcase name="firstReviewWritesOneMatchingEventAndProgress" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.141" />
+  <testcase name="catalogReadFailureIsTypedReadFailedWithoutWriting" classname="com.vocamind.app.data.user.AtomicReviewInstrumentedTest" time="0.167" />
+  <testcase name="emptyDatabaseReturnsSixZerosAndEmptyHistory" classname="com.vocamind.app.data.user.ProgressAggregationInstrumentedTest" time="0.116" />
+  <testcase name="invalidStoredScoreIsNotSilentlyRecomputed" classname="com.vocamind.app.data.user.ProgressAggregationInstrumentedTest" time="0.102" />
+  <testcase name="sameVocabularyUpsertMovesBoxWithoutIncreasingDistinctTotal" classname="com.vocamind.app.data.user.ProgressAggregationInstrumentedTest" time="0.148" />
+  <testcase name="invalidPersistedBoxReturnsInvalidDataWithoutRepair" classname="com.vocamind.app.data.user.ProgressAggregationInstrumentedTest" time="0.134" />
+  <testcase name="failedEventInsertDoesNotChangeSummaryOrHistory" classname="com.vocamind.app.data.user.ProgressAggregationInstrumentedTest" time="0.333" />
+  <testcase name="fixtureAcrossAllSixBoxesMatchesSqlAndDomainGroups" classname="com.vocamind.app.data.user.ProgressAggregationInstrumentedTest" time="0.154" />
+  <testcase name="closedDatabaseIsReadFailureNotEmptySuccess" classname="com.vocamind.app.data.user.ProgressAggregationInstrumentedTest" time="0.068" />
+  <testcase name="allQuizHistoryIsOrderedByTimeThenIdWithoutImplicitLimit" classname="com.vocamind.app.data.user.ProgressAggregationInstrumentedTest" time="0.209" />
+  <testcase name="quizOnlyAndProgressOnlyAreNotEntirelyEmpty" classname="com.vocamind.app.data.user.ProgressAggregationInstrumentedTest" time="0.165" />
+  <testcase name="failedFirstProgressInsertRollsBackEventAndKeepsSummary" classname="com.vocamind.app.data.user.ProgressAggregationInstrumentedTest" time="0.25" />
+  <testcase name="atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings" classname="com.vocamind.app.data.user.ProgressAggregationInstrumentedTest" time="0.584" />
+  <testcase name="missingBoxesAreZeroAndNoActiveSavedOrLearnedAtFilterIsApplied" classname="com.vocamind.app.data.user.ProgressAggregationInstrumentedTest" time="0.172" />
+  <testcase name="returnedHistoryAndBoxCountsAreImmutableSnapshots" classname="com.vocamind.app.data.user.ProgressAggregationInstrumentedTest" time="0.083" />
+  <testcase name="reopeningRetainsCountsAndHistory" classname="com.vocamind.app.data.user.ProgressAggregationInstrumentedTest" time="0.135" />
+  <testcase name="atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks" classname="com.vocamind.app.data.user.ProgressAggregationInstrumentedTest" time="0.191" />
+  <testcase name="failedProgressUpdateDoesNotMoveBoxOrChangeHistory" classname="com.vocamind.app.data.user.ProgressAggregationInstrumentedTest" time="0.225" />
+  <testcase name="concurrentWriterCannotMixCountsAndHistoryFromDifferentStates" classname="com.vocamind.app.data.user.ProgressAggregationInstrumentedTest" time="0.117" />
+  <testcase name="rendersLoadingEmptyErrorRetryAndMultipleLongSources" classname="com.vocamind.app.feature.attribution.AttributionRenderingInstrumentedTest" time="12.301" />
+  <testcase name="attributionAvailableBeforeLearningSurvivesRecreationAndBack" classname="com.vocamind.app.feature.attribution.AttributionScreenInstrumentedTest" time="16.648" />
+  <testcase name="rotationWhileWritePendingKeepsSingleMutationAndReconciles" classname="com.vocamind.app.feature.packs.PackActivationInstrumentedTest" time="14.155" />
+  <testcase name="persistenceProbe" classname="com.vocamind.app.feature.packs.PackActivationInstrumentedTest" time="10.057" />
+  <testcase name="backgroundDestinationForProcessRestoration" classname="com.vocamind.app.feature.packs.PackActivationInstrumentedTest" time="5.612" />
+  <testcase name="offlineFirstLaunchCtaActivateVocabularyBackPauseAndConfirmedRotation" classname="com.vocamind.app.feature.packs.PackActivationInstrumentedTest" time="5.899">
+    <failure>java.lang.AssertionError
+at org.junit.Assert.fail(Assert.java:87)
+at org.junit.Assert.assertTrue(Assert.java:42)
+at org.junit.Assert.assertTrue(Assert.java:53)
+at com.vocamind.app.feature.packs.PackActivationInstrumentedTest.offlineFirstLaunchCtaActivateVocabularyBackPauseAndConfirmedRotation(PackActivationInstrumentedTest.java:88)
+</failure>
+  </testcase>
+  <testcase name="exclusiveSharedScopeAndProgressSurvivePauseInDedicatedFixture" classname="com.vocamind.app.feature.packs.PackActivationInstrumentedTest" time="2.704" />
+  <testcase name="writeFailureAndSuccessfulWriteFailedRereadUseReadOnlyRetry" classname="com.vocamind.app.feature.packs.PackActivationInstrumentedTest" time="9.445" />
+</testsuite>

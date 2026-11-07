@@ -1,11 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/shell_background" android:orientation="vertical">
+
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="vertical" android:padding="@dimen/shell_screen_padding">
-        <TextView android:id="@+id/route_message" android:layout_width="match_parent"
-            android:layout_height="wrap_content" style="@style/TextAppearance.VocaMind.Body" />
-        <com.google.android.material.button.MaterialButton android:id="@+id/back"
-            android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/attribution_back" />
+        android:gravity="center_vertical" android:minHeight="64dp" android:paddingStart="12dp" android:paddingEnd="24dp">
+        <androidx.appcompat.widget.AppCompatImageButton android:id="@+id/back"
+            android:layout_width="48dp" android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/attribution_back" android:padding="12dp"
+            app:srcCompat="@drawable/ic_detail_back" app:tint="@color/shell_text_primary" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:layout_marginStart="8dp" android:text="@string/detail_ready"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textColor="@color/shell_text_primary" android:accessibilityHeading="true" />
     </LinearLayout>
-</ScrollView>
+
+    <ScrollView android:id="@+id/detail_scroll" android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:fillViewport="true" android:clipToPadding="false">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:paddingStart="24dp" android:paddingEnd="24dp" android:paddingTop="12dp" android:paddingBottom="24dp">
+            <ProgressBar android:id="@+id/detail_loading" style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent" android:layout_height="4dp" android:indeterminate="true" android:visibility="gone" />
+            <LinearLayout android:id="@+id/detail_content" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+
+                <TextView android:id="@+id/detail_lemma" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge" android:textSize="40sp"
+                    android:textStyle="bold" android:textColor="@color/shell_text_primary" android:accessibilityHeading="true" />
+                <TextView android:id="@+id/detail_pos" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp" android:background="@drawable/detail_pos_background"
+                    android:paddingStart="12dp" android:paddingEnd="12dp" android:paddingTop="5dp" android:paddingBottom="5dp"
+                    android:textAppearance="@style/TextAppearance.Material3.LabelLarge" android:textColor="@color/shell_accent" />
+                <TextView android:id="@+id/detail_ipa" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp" android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                    android:textColor="@color/shell_text_secondary" />
+
+                <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp" app:cardBackgroundColor="@color/detail_card_surface"
+                    app:cardCornerRadius="20dp" app:cardElevation="0dp" app:strokeWidth="1dp" app:strokeColor="@color/detail_outline">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:text="@string/detail_meaning_label" android:textAppearance="@style/TextAppearance.VocaMind.DetailLabel" android:accessibilityHeading="true" />
+                        <TextView android:id="@+id/detail_meaning" android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp" android:textAppearance="@style/TextAppearance.VocaMind.DetailBody" android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp" app:cardBackgroundColor="@color/detail_card_surface"
+                    app:cardCornerRadius="20dp" app:cardElevation="0dp" app:strokeWidth="1dp" app:strokeColor="@color/detail_outline">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:text="@string/detail_example_label" android:textAppearance="@style/TextAppearance.VocaMind.DetailLabel" android:accessibilityHeading="true" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp"
+                            android:text="@string/detail_english_label" android:textAppearance="@style/TextAppearance.Material3.LabelMedium" android:textColor="@color/shell_text_secondary" />
+                        <TextView android:id="@+id/detail_example_en" android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp" android:textAppearance="@style/TextAppearance.VocaMind.DetailBody" />
+                        <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="20dp"
+                            android:layout_marginBottom="16dp" android:background="@color/detail_outline" android:importantForAccessibility="no" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:text="@string/detail_vietnamese_label" android:textAppearance="@style/TextAppearance.Material3.LabelMedium" android:textColor="@color/shell_text_secondary" />
+                        <TextView android:id="@+id/detail_example_vi" android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp" android:textAppearance="@style/TextAppearance.VocaMind.DetailBody" android:textColor="@color/shell_text_secondary" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:paddingStart="24dp" android:paddingEnd="24dp"
+        android:paddingTop="12dp" android:paddingBottom="16dp" android:background="@color/detail_card_surface">
+        <TextView android:id="@+id/route_message" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:textColor="@color/shell_text_secondary" android:lineSpacingExtra="3dp" android:accessibilityLiveRegion="polite" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/detail_retry"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="52dp"
+            android:visibility="gone" android:text="@string/packs_retry" app:cornerRadius="16dp" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/detail_save"
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="56dp"
+            android:paddingTop="14dp" android:paddingBottom="14dp" android:visibility="gone"
+            android:text="@string/detail_save" android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
+            app:icon="@drawable/ic_detail_bookmark" app:iconGravity="textStart" app:cornerRadius="16dp" />
+    </LinearLayout>
+</LinearLayout>

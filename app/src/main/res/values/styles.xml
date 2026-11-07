@@ -29,4 +29,13 @@
         <item name="android:paddingBottom">@dimen/shell_button_padding</item>
         <item name="android:layout_marginTop">@dimen/shell_item_spacing</item>
     </style>
+    <style name="TextAppearance.VocaMind.DetailLabel" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textColor">@color/shell_accent</item>
+        <item name="android:letterSpacing">0.06</item>
+    </style>
+    <style name="TextAppearance.VocaMind.DetailBody" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">@color/shell_text_primary</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">5dp</item>
+    </style>
 </resources>

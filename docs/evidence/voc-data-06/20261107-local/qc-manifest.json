@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "fixtureOnly": false,
+  "toolVersion": "1.0.0",
+  "inputSha256": "f27e9d2de700fadf13b480df26933c61333ce6261ed872d285e5a111a88110c1",
+  "reviewSha256": "fd6dac369b9f3502351404da01f840526b4ba97953dcdccc8ec4cff2b6b4a68e",
+  "outputHashes": {
+    "canonical-catalog.json": "f27e9d2de700fadf13b480df26933c61333ce6261ed872d285e5a111a88110c1",
+    "qc_report.json": "57eafece516a010dd8ca18143e66c68f5e362d24914d6c31a600c4c2b2b6f36f",
+    "qc_report.md": "1fa29553703bd53c4e3ef90a1d087cb9346156e2254a48ece8856fda10c6d983",
+    "rejected_records.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "validated_vocab.jsonl": "d51f12bc86deae7cedacde269272c68ae7d36b72210e503282e7b549fbecf8ef"
+  }
+}

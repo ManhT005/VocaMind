@@ -1,0 +1,5 @@
+com.vocamind.app.data.catalog.PackagedQaCatalogInstrumentedTest:.
+
+Time: 5.01
+
+OK (1 test)
