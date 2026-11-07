@@ -35,6 +35,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.13'
+      - name: Install vocabulary validation dependencies
+        run: python -m pip install -r docs/data/vocabulary-contract-v1/requirements-validation.txt
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
