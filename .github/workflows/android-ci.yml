@@ -53,6 +53,13 @@ jobs:
       - name: Test catalog builder and credit consistency validator
         run: python -m unittest discover -s tools/catalog -p 'test_*.py' -v
 
+      - name: Verify third-party rights provenance (not release authorization)
+        run: |
+          python docs/licensing/voc-data-06/validate_rights.py
+          if python docs/licensing/voc-data-06/validate_rights.py --require-release; then
+            echo "Rights release gate unexpectedly passed"; exit 1
+          fi
+
       - name: Validate Gradle Wrapper
         uses: gradle/actions/wrapper-validation@v4
 
