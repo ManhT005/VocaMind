@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "status": "candidate-ready",
+  "releaseAuthorized": false,
+  "outputHashes": {
+    "catalog.db": "d44d948dda83febcc1907bb1e995d9d5c6ceac969485f7eea9d6b885f2c3d86c",
+    "catalog.metadata.json": "6a780011decc094fce0f84943c962bb863cebd06fffaf395ca5efe5e1b4fdbc9",
+    "content-credits.json": "b769156e366a06c3fa3dd81410a18909275498f5b5c7ba5f6da7c7d810491cf0",
+    "quiz-policy.json": "c3a9bad51a7a2ddcbe73b8388bcdc36fc94a2662441e6ed6c17b2d28c659a368",
+    "release-gate-report.json": "d8281c3ee1b4ecbd40e3d992bd334cb33082b17cbe949cf5101b6b5f42b8ebe1"
+  }
+}

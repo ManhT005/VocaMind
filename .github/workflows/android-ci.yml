@@ -121,6 +121,14 @@ jobs:
           python tools/unicode/generate.py
           git diff --exit-code -- app/src/main/java/com/vocamind/app/domain/quiz/UnicodeCaseFold.java app/src/main/java/com/vocamind/app/domain/quiz/UnicodeNfcData.java tools/unicode/SHA256SUMS
 
+      - name: Build and verify reproducible accepted catalog candidates
+        run: |
+          python tools/catalog/build_release.py --qc-dir build/vocabulary-quality/ci-accepted --output-dir build/catalog-release/ci-a
+          python tools/catalog/build_release.py --qc-dir build/vocabulary-quality/ci-accepted --output-dir build/catalog-release/ci-b
+          diff -r build/catalog-release/ci-a build/catalog-release/ci-b
+          python tools/catalog/build_release.py --qc-dir build/vocabulary-quality/ci-accepted --verify-dir build/catalog-release/ci-a
+          git diff --exit-code -- app/src/main/assets/database app/schemas
+
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
@@ -158,5 +166,6 @@ jobs:
             build/vocabulary-corpus/ci-*/
             build/vocabulary-ingestion/editorial-approval-check/
             build/vocabulary-ingestion/accepted-ci/
+            build/catalog-release/ci-*/
           if-no-files-found: warn
           retention-days: 14

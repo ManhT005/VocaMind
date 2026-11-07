@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.vocamind.app.feature.packs.PackActivationInstrumentedTest" tests="1" failures="0" errors="0" skipped="0" time="26.917" timestamp="2026-11-07T04:53:38" hostname="local-host">
+  <properties>
+    <property name="device" value="Pixel_7_Pro(AVD) - 17" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="offlineFirstLaunchCtaActivateVocabularyBackPauseAndConfirmedRotation" classname="com.vocamind.app.feature.packs.PackActivationInstrumentedTest" time="22.504" />
+</testsuite>

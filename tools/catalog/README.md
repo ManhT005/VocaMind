@@ -1,4 +1,57 @@
-# Canonical catalog integration fixture
+# Catalog builders and integration checks
+
+## Owner-accepted release candidate (VOC-DATA-06)
+
+`build_release.py` consumes `accept_editorial.load_handoff`, validates the release
+contract, reproduces the frozen owner acceptance and rechecks review/config
+bindings. It never accepts a fixture or reads a preview as its QC input.
+
+```powershell
+python tools/vocabulary/ingest.py --config docs/data/voc-data-04/accepted-v1/ingestion-config.json --output build/vocabulary-ingestion/rc-01
+python tools/vocabulary/quality.py --input build/vocabulary-ingestion/rc-01 --config docs/data/voc-data-04/accepted-v1/ingestion-config.json --reviews docs/data/voc-data-04/accepted-v1/reviews.json --output build/vocabulary-quality/rc-01
+python tools/catalog/build_release.py --qc-dir build/vocabulary-quality/rc-01 --output-dir build/catalog-release/rc-01
+python tools/catalog/build_release.py --qc-dir build/vocabulary-quality/rc-01 --verify-dir build/catalog-release/rc-01
+```
+
+Check each command's exit code before continuing in PowerShell. Every output run
+must use a fresh directory. Publication is a single directory rename after SQL,
+FTS and companion verification. The builder refuses paths outside
+`build/catalog-release/`, including packaged main assets. Failed builds leave no
+successful candidate directory. The existing fixture builder keeps its fixture
+guard and is independent of this production route.
+
+The six-file bundle contains SQLite, metadata, Quiz policy, credits, a release
+gate report and a completion manifest. Verification checks every checksum,
+compares all projected SQL rows with accepted canonical content, checks 150
+distinct IDs / 150 memberships / pack counts 40/40/40/30, and runs EN/VI FTS
+queries for every entry. Metadata includes frozen input hashes, schema hash,
+dataset digest, DB checksum, SQLite version and a logical SQL dump digest.
+Two builds on the same SQLite engine must produce identical bundles; compare
+logical content separately when engines differ. No timing claim comes from this
+150-word host check.
+
+Technical success always produces `releaseStatus=blocked` and
+`releaseAuthorized=false`. The accepted source grants project use, and its
+attribution text is preserved. It supplies no verified author list: `authors=[]`
+is intentional, and the release credit completeness check still fails. An
+approver is not inferred to be an author. Distribution rights/ledger, device
+acceptance and DATA-08 upgrade/rollback remain independent release gates.
+
+Gradle generates a separate candidate for `ReleaseCatalogTest` (Robolectric API
+26/35) and `ReleaseCatalogInstrumentedTest`. Host tests use classpath resources;
+instrumented tests use test APK assets. The application APK keeps its current
+fixture. Python with `requirements-validation.txt` installed is required for
+these tests; select a virtual environment with `-PcatalogPython=<python-path>`.
+
+```powershell
+.\gradlew.bat testDebugUnitTest assembleDebug assembleDebugAndroidTest lintDebug
+.\gradlew.bat connectedDebugAndroidTest '-Pandroid.testInstrumentationRunnerArguments.class=com.vocamind.app.data.catalog.ReleaseCatalogInstrumentedTest'
+```
+
+See [VOC-DATA-06 validation](../../docs/voc-data-06-validation.md) for executed
+results and the outstanding release gates.
+
+## Synthetic integration fixture
 
 This is synthetic test content, not approved production vocabulary. The single
 input is `docs/data/vocabulary-contract-v1/fixtures/valid/catalog.json`: four

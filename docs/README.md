@@ -5,6 +5,7 @@ project entry point; generated build outputs stay in ignored build directories.
 
 | Document | Purpose |
 | --- | --- |
+| [VOC-DATA-06 validation](voc-data-06-validation.md) | Verified production QC to staged 150-word Room catalog, bundle/FTS gates, reproducibility and release limitations |
 | [DATA-07 plan](plans/data-07-progress-aggregation-queries.md) | Five-hour plan, distinct counts, six-box and quiz history acceptance |
 | [DATA-07 validation](data-07-validation.md) | Transactional snapshot reads, fixtures, error mapping and integration evidence |
 | [DATA-07 PR #26 fix validation](data-07-fix-validation.md) | DATA-05/06 integration, scope audit, atomic review/progress regression and AC-11 handoff |

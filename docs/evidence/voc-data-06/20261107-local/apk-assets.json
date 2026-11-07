@@ -1,0 +1,10 @@
+{
+  "bytes": 8582673,
+  "containsCandidateAssets": false,
+  "databaseAssetsSha256": {
+    "catalog.db": "7f90d0b11b14ce73932231dc7c4506bdf30af3788b66d0fde536d08fa7f753e9",
+    "catalog.metadata.json": "c991e38554460911be182ec35433d436b762923f13af6a18ddaf33a6d1b5fc94",
+    "content-credits.json": "6911e4f6a1c80c258e840133430895ee9fd8a1c3c7de3c88bf4ac79cf915a262",
+    "quiz-policy.json": "97edc873c0bdd1bb370c57faefadcd7ee9af34bc8158f910975c401f0163acf8"
+  }
+}
