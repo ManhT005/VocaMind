@@ -6,7 +6,7 @@
 
 **Nhánh:** `feature/quiz-03-ui-session`. **Base develop đã kiểm tra:** `8209ef75bc882ca10367abd40900e44e537571cb`.
 
-**Trạng thái:** Đã triển khai UI/session và idempotent persistence; host tests đã chạy. Đang bổ sung device/CI evidence và chờ reviewer/data-owner xác nhận. Chi tiết hiện hành: [QUIZ-03 validation](../quiz-03-validation.md). Chưa đánh dấu Done thay người review.
+**Trạng thái:** Đã triển khai và qua 397 host tests cùng 4 instrumented tests trên emulator CI API 28 offline. CI implementation head xanh; bằng chứng ở [QUIZ-03 validation](../quiz-03-validation.md). Đang chờ Trường/Nhân review, chưa đánh dấu Done thay người review.
 
 ## 1. Căn cứ
 
@@ -137,16 +137,16 @@ git diff --check
 git status --short
 ```
 
-Chỉ chạy connected khi có test device phù hợp, không reset install thật. Ghi commit, toolchain, lệnh, exit status và tests/failures/errors/skips từ report hiện tại. Device evidence ghi API, airplane mode, APK hash, luồng đã chạy. Các lệnh trên là kế hoạch, chưa được chạy cho QUIZ-03.
+Chỉ chạy connected khi có test device phù hợp, không reset install thật. Ghi commit, toolchain, lệnh, exit status và tests/failures/errors/skips từ report hiện tại. Device evidence ghi API, airplane mode, APK hash, luồng đã chạy. Kết quả đã thực thi được ghi riêng trong validation; device happy path dùng APK cách ly với accepted-corpus test asset, không thay catalog mặc định.
 
 ## 11. Done và bàn giao
 
-- [ ] Đúng scope phân công và FR-VM-036/038/039, BR-08/11, NFR-VM-10.
-- [ ] Full flow, empty/error, feedback text/icon, khóa answer, Next và result có test.
-- [ ] Confirm exit hoạt động; abandon không lưu completed attempt.
-- [ ] Idempotent completion/migration được kiểm chứng, không chỉ guard trong RAM.
-- [ ] Lifecycle/retry không generate hoặc lưu trùng; restore theo đúng snapshot/token.
-- [ ] CI đúng head xanh, host và device evidence phân biệt rõ.
+- [x] Đúng scope phân công và FR-VM-036/038/039, BR-08/11, NFR-VM-10.
+- [x] Full flow, empty/error, feedback text/icon, khóa answer, Next và result có test.
+- [x] Confirm exit hoạt động; abandon không lưu completed attempt.
+- [x] Idempotent completion/migration được kiểm chứng, không chỉ guard trong RAM.
+- [x] Lifecycle/retry không generate hoặc lưu trùng; restore theo đúng snapshot/token.
+- [x] CI đúng implementation head xanh, host và device evidence phân biệt rõ.
 - [ ] Trường review; Nhân phối hợp phần persistence/schema; góp ý xử lý trước merge/Done.
 
 Khi bàn giao cho Progress/QA, lịch sử chỉ chứa bài đã hoàn tất; không sửa công thức thống kê để che lỗi lưu. QUIZ-03 không tự xác nhận toàn bộ release gates hoặc nghiệm thu học liệu của ứng dụng.
