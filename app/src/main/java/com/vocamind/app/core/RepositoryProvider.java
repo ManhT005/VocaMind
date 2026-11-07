@@ -10,7 +10,6 @@ import com.vocamind.app.domain.learning.ReviewRepository;
 import com.vocamind.app.domain.learning.StudyRepository;
 import com.vocamind.app.domain.pack.PackRepository;
 import com.vocamind.app.domain.quiz.QuizRepository;
-import com.vocamind.app.data.catalog.QuizPolicyAsset;
 import com.vocamind.app.data.catalog.CatalogMapper;
 import com.vocamind.app.data.repository.UserDataMapper;
 import java.util.ArrayList;
@@ -48,7 +47,7 @@ public final class RepositoryProvider implements AutoCloseable {
             var vocabulary = new ArrayList<QuizVocabulary>();
             for (var row : catalogDao.allVocabulary())
                 vocabulary.add(UserDataMapper.quizVocabulary(CatalogMapper.vocabulary(row)));
-            return QuizPolicyAsset.load(context.getApplicationContext().getAssets(), vocabulary);
+            return catalog.quizPolicy(vocabulary);
         });
         vocabulary = new RoomVocabularyRepository(catalog.repository(), userDatabase);
     }

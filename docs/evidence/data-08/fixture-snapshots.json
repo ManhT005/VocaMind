@@ -1,0 +1,25 @@
+{
+  "fixtureA": "Packaged 4-word/4-pack fixture, schema 2, contentVersion 1.0.0",
+  "fixtureB": "Test-only contentVersion 1.0.1; same schema 2",
+  "snapshot": "Canonical cells of all five user tables including column name, SQLite type and NULL; no real user data",
+  "results": [
+    {
+      "sdk": 26,
+      "generationA": "9f6d41900412a44f6acc2d64ee85431ca76d0cf708ad331ffdbedab4c7a94cb1",
+      "generationB": "79db150873d0b5bae2ce4865d8c165b5730c80da238ed07042f7c639c04da455",
+      "bundleASha256": "7f90d0b11b14ce73932231dc7c4506bdf30af3788b66d0fde536d08fa7f753e9",
+      "bundleBSha256": "a9aebd20fa3421c9a28ea8f7d5e55717777e3883d9cef348a2a5846301744a08",
+      "snapshotBeforeSha256": "9a372ac701cdcffd3463dbbc4910d058fe0d0c4f9f898ec29abf096fd45851e8",
+      "snapshotAfterSha256": "9a372ac701cdcffd3463dbbc4910d058fe0d0c4f9f898ec29abf096fd45851e8"
+    },
+    {
+      "sdk": 35,
+      "generationA": "9f6d41900412a44f6acc2d64ee85431ca76d0cf708ad331ffdbedab4c7a94cb1",
+      "generationB": "5346e47814632a751961c76f93b0f5f014fa95c37fee9776eae917156ef621bb",
+      "bundleASha256": "7f90d0b11b14ce73932231dc7c4506bdf30af3788b66d0fde536d08fa7f753e9",
+      "bundleBSha256": "7cfc2cec42cf2811d48c99a3acbfa20f0c7fba2a36cf0658a09db823b27d86f2",
+      "snapshotBeforeSha256": "9a372ac701cdcffd3463dbbc4910d058fe0d0c4f9f898ec29abf096fd45851e8",
+      "snapshotAfterSha256": "9a372ac701cdcffd3463dbbc4910d058fe0d0c4f9f898ec29abf096fd45851e8"
+    }
+  ]
+}

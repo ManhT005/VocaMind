@@ -1,0 +1,2705 @@
+{
+  "runner": "Robolectric native SQLite",
+  "sdks": [
+    26,
+    35
+  ],
+  "totals": {
+    "tests": 456,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "suites": [
+    {
+      "class": "com.vocamind.app.data.DaoFoundationTest",
+      "timestamp": "2026-11-07T16:15:16",
+      "tests": 32,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "historyUsesTimestampThenIdAndPreservesRepeatedEvents[26]",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "4.312"
+        },
+        {
+          "name": "largeIdBatchesMergeBeforeLimitAndStayUnique[26]",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.541"
+        },
+        {
+          "name": "savedFlagDoesNotInventProgressOrResetLearning[26]",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.066"
+        },
+        {
+          "name": "closedDatabaseErrorsAreNotSilentlyReturnedAsEmpty[26]",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.094"
+        },
+        {
+          "name": "dueFiltersActiveAndOrphanBeforeGlobalLimit[26]",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.064"
+        },
+        {
+          "name": "pausedOrNoActivePacksHaveNoCandidatesAndNeverActivateAutomatically[26]",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.054"
+        },
+        {
+          "name": "catalogOrderEmptyNullableAndAttribution[26]",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.045"
+        },
+        {
+          "name": "planningSnapshotAndFileReopenPreserveState[26]",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.048"
+        },
+        {
+          "name": "firstReviewRollsBackEventWhenNewProgressInsertFails[26]",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.051"
+        },
+        {
+          "name": "reviewTransactionRollsBackOnRealSqlFailureAfterInsert[26]",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.048"
+        },
+        {
+          "name": "newIsAbsenceOfAnyProgressAndLimitComesAfterDedup[26]",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.058"
+        },
+        {
+          "name": "catalogMergesBatchesBeforeOrderingAndDeduplicatingCandidates[26]",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.052"
+        },
+        {
+          "name": "quotaCountsUniqueFirstLearnedTimesNotReviewEvents[26]",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.035"
+        },
+        {
+          "name": "membershipDuplicatesAreIntentionalButVocabularyPoolIsUnique[26]",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.053"
+        },
+        {
+          "name": "progressBoxAndDueTieOrderingAreStable[26]",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.073"
+        },
+        {
+          "name": "invalidAndEmptyInputsCannotBecomeFullTableQueries[26]",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.071"
+        },
+        {
+          "name": "historyUsesTimestampThenIdAndPreservesRepeatedEvents",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "4.199"
+        },
+        {
+          "name": "largeIdBatchesMergeBeforeLimitAndStayUnique",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.429"
+        },
+        {
+          "name": "savedFlagDoesNotInventProgressOrResetLearning",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.069"
+        },
+        {
+          "name": "closedDatabaseErrorsAreNotSilentlyReturnedAsEmpty",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.058"
+        },
+        {
+          "name": "dueFiltersActiveAndOrphanBeforeGlobalLimit",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.065"
+        },
+        {
+          "name": "pausedOrNoActivePacksHaveNoCandidatesAndNeverActivateAutomatically",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.063"
+        },
+        {
+          "name": "catalogOrderEmptyNullableAndAttribution",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.077"
+        },
+        {
+          "name": "planningSnapshotAndFileReopenPreserveState",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.069"
+        },
+        {
+          "name": "firstReviewRollsBackEventWhenNewProgressInsertFails",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.048"
+        },
+        {
+          "name": "reviewTransactionRollsBackOnRealSqlFailureAfterInsert",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.058"
+        },
+        {
+          "name": "newIsAbsenceOfAnyProgressAndLimitComesAfterDedup",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.049"
+        },
+        {
+          "name": "catalogMergesBatchesBeforeOrderingAndDeduplicatingCandidates",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.058"
+        },
+        {
+          "name": "quotaCountsUniqueFirstLearnedTimesNotReviewEvents",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.05"
+        },
+        {
+          "name": "membershipDuplicatesAreIntentionalButVocabularyPoolIsUnique",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.045"
+        },
+        {
+          "name": "progressBoxAndDueTieOrderingAreStable",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.065"
+        },
+        {
+          "name": "invalidAndEmptyInputsCannotBecomeFullTableQueries",
+          "classname": "com.vocamind.app.data.DaoFoundationTest",
+          "time": "0.045"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.data.DataBoundaryTest",
+      "timestamp": "2026-11-07T16:15:27",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "presentationAndDomainDoNotReferenceDataOrRoom",
+          "classname": "com.vocamind.app.data.DataBoundaryTest",
+          "time": "0.047"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.data.catalog.CatalogAssetTest",
+      "timestamp": "2026-11-07T16:15:27",
+      "tests": 32,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "unmatchedCreditsPreserveBothRepositoryQueries[26]",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.042"
+        },
+        {
+          "name": "databaseRejectsDuplicateOrdering[26]",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.022"
+        },
+        {
+          "name": "ftsEnglishAndVietnameseReturnTextStableId[26]",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.026"
+        },
+        {
+          "name": "reopeningExistingCopyWorks[26]",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.04"
+        },
+        {
+          "name": "opensAssetAndReadsFourPacks[26]",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.029"
+        },
+        {
+          "name": "creditReadFailureIsAnErrorAndCanBeRetried[26]",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.029"
+        },
+        {
+          "name": "wordsRespectMembershipOrderAndStableIds[26]",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.038"
+        },
+        {
+          "name": "examplesAndNullableIpaSurviveMapping[26]",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.033"
+        },
+        {
+          "name": "domainListsAreImmutable[26]",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.025"
+        },
+        {
+          "name": "everyFtsRowMapsToCorrectEntry[26]",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.031"
+        },
+        {
+          "name": "sourceAttributionIsAvailableOffline[26]",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.034"
+        },
+        {
+          "name": "missingIdsReturnEmpty[26]",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.027"
+        },
+        {
+          "name": "creditsEnrichExistingCopyAndBothRepositoryQueriesWithoutChangingDatabase[26]",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.033"
+        },
+        {
+          "name": "databaseIsConsistent[26]",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.029"
+        },
+        {
+          "name": "invalidIdentityHashFailsWithoutDeletingCopy[26]",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.542"
+        },
+        {
+          "name": "canonicalFixtureSurvivesRoomAndRepository[26]",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.042"
+        },
+        {
+          "name": "unmatchedCreditsPreserveBothRepositoryQueries",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.041"
+        },
+        {
+          "name": "databaseRejectsDuplicateOrdering",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.036"
+        },
+        {
+          "name": "ftsEnglishAndVietnameseReturnTextStableId",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.034"
+        },
+        {
+          "name": "reopeningExistingCopyWorks",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.035"
+        },
+        {
+          "name": "opensAssetAndReadsFourPacks",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.029"
+        },
+        {
+          "name": "creditReadFailureIsAnErrorAndCanBeRetried",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.034"
+        },
+        {
+          "name": "wordsRespectMembershipOrderAndStableIds",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.031"
+        },
+        {
+          "name": "examplesAndNullableIpaSurviveMapping",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.029"
+        },
+        {
+          "name": "domainListsAreImmutable",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.037"
+        },
+        {
+          "name": "everyFtsRowMapsToCorrectEntry",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.025"
+        },
+        {
+          "name": "sourceAttributionIsAvailableOffline",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.024"
+        },
+        {
+          "name": "missingIdsReturnEmpty",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.035"
+        },
+        {
+          "name": "creditsEnrichExistingCopyAndBothRepositoryQueriesWithoutChangingDatabase",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.033"
+        },
+        {
+          "name": "databaseIsConsistent",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.035"
+        },
+        {
+          "name": "invalidIdentityHashFailsWithoutDeletingCopy",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.537"
+        },
+        {
+          "name": "canonicalFixtureSurvivesRoomAndRepository",
+          "classname": "com.vocamind.app.data.catalog.CatalogAssetTest",
+          "time": "0.046"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.data.catalog.ContentCreditsTest",
+      "timestamp": "2026-11-07T16:15:29",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "onlyExactPairMatchesAndMissingIsTransparent[26]",
+          "classname": "com.vocamind.app.data.catalog.ContentCreditsTest",
+          "time": "0.019"
+        },
+        {
+          "name": "differentSourcesRetainTheirOwnAuthorsAndNotices[26]",
+          "classname": "com.vocamind.app.data.catalog.ContentCreditsTest",
+          "time": "0.018"
+        },
+        {
+          "name": "rejectsDuplicateVersionAndMalformedFields[26]",
+          "classname": "com.vocamind.app.data.catalog.ContentCreditsTest",
+          "time": "0.018"
+        },
+        {
+          "name": "onlyExactPairMatchesAndMissingIsTransparent",
+          "classname": "com.vocamind.app.data.catalog.ContentCreditsTest",
+          "time": "0.026"
+        },
+        {
+          "name": "differentSourcesRetainTheirOwnAuthorsAndNotices",
+          "classname": "com.vocamind.app.data.catalog.ContentCreditsTest",
+          "time": "0.024"
+        },
+        {
+          "name": "rejectsDuplicateVersionAndMalformedFields",
+          "classname": "com.vocamind.app.data.catalog.ContentCreditsTest",
+          "time": "0.021"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.data.catalog.FtsSearchBenchmarkTest",
+      "timestamp": "2026-11-07T16:15:29",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "profileFiveThousandWordPrepackAndWriteRawSamples[26]",
+          "classname": "com.vocamind.app.data.catalog.FtsSearchBenchmarkTest",
+          "time": "3.217"
+        },
+        {
+          "name": "profileFiveThousandWordPrepackAndWriteRawSamples",
+          "classname": "com.vocamind.app.data.catalog.FtsSearchBenchmarkTest",
+          "time": "3.032"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.data.catalog.FtsSearchTest",
+      "timestamp": "2026-11-07T16:15:36",
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "prefixesCaseAndVietnameseNfdAreNormalized[26]",
+          "classname": "com.vocamind.app.data.catalog.FtsSearchTest",
+          "time": "0.032"
+        },
+        {
+          "name": "allThreeIndexedColumnsAreActuallySearched[26]",
+          "classname": "com.vocamind.app.data.catalog.FtsSearchTest",
+          "time": "0.024"
+        },
+        {
+          "name": "reopeningPreservesSearchAndProviderDisposalRejectsNewWork[26]",
+          "classname": "com.vocamind.app.data.catalog.FtsSearchTest",
+          "time": "0.026"
+        },
+        {
+          "name": "englishAndVietnameseResolveTheSameTextStableId[26]",
+          "classname": "com.vocamind.app.data.catalog.FtsSearchTest",
+          "time": "0.02"
+        },
+        {
+          "name": "blankNoMatchAndOperatorSyntaxAreSafe[26]",
+          "classname": "com.vocamind.app.data.catalog.FtsSearchTest",
+          "time": "0.022"
+        },
+        {
+          "name": "emptyInputDoesNotOpenClosedDatabaseButReadFailuresRemainErrors[26]",
+          "classname": "com.vocamind.app.data.catalog.FtsSearchTest",
+          "time": "0.02"
+        },
+        {
+          "name": "rowidsMayChangeWhileApplicationIdsStayStable[26]",
+          "classname": "com.vocamind.app.data.catalog.FtsSearchTest",
+          "time": "0.021"
+        },
+        {
+          "name": "searchIdsComposeWithFoundationBatchAndMembershipQueries[26]",
+          "classname": "com.vocamind.app.data.catalog.FtsSearchTest",
+          "time": "0.036"
+        },
+        {
+          "name": "differentSensesRemainDistinctAndAreNotDuplicatedByPackMembership[26]",
+          "classname": "com.vocamind.app.data.catalog.FtsSearchTest",
+          "time": "0.028"
+        },
+        {
+          "name": "prefixesCaseAndVietnameseNfdAreNormalized",
+          "classname": "com.vocamind.app.data.catalog.FtsSearchTest",
+          "time": "0.032"
+        },
+        {
+          "name": "allThreeIndexedColumnsAreActuallySearched",
+          "classname": "com.vocamind.app.data.catalog.FtsSearchTest",
+          "time": "0.043"
+        },
+        {
+          "name": "reopeningPreservesSearchAndProviderDisposalRejectsNewWork",
+          "classname": "com.vocamind.app.data.catalog.FtsSearchTest",
+          "time": "0.035"
+        },
+        {
+          "name": "englishAndVietnameseResolveTheSameTextStableId",
+          "classname": "com.vocamind.app.data.catalog.FtsSearchTest",
+          "time": "0.027"
+        },
+        {
+          "name": "blankNoMatchAndOperatorSyntaxAreSafe",
+          "classname": "com.vocamind.app.data.catalog.FtsSearchTest",
+          "time": "0.024"
+        },
+        {
+          "name": "emptyInputDoesNotOpenClosedDatabaseButReadFailuresRemainErrors",
+          "classname": "com.vocamind.app.data.catalog.FtsSearchTest",
+          "time": "0.022"
+        },
+        {
+          "name": "rowidsMayChangeWhileApplicationIdsStayStable",
+          "classname": "com.vocamind.app.data.catalog.FtsSearchTest",
+          "time": "0.022"
+        },
+        {
+          "name": "searchIdsComposeWithFoundationBatchAndMembershipQueries",
+          "classname": "com.vocamind.app.data.catalog.FtsSearchTest",
+          "time": "0.03"
+        },
+        {
+          "name": "differentSensesRemainDistinctAndAreNotDuplicatedByPackMembership",
+          "classname": "com.vocamind.app.data.catalog.FtsSearchTest",
+          "time": "0.021"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.data.catalog.QuizPolicyCompositionTest",
+      "timestamp": "2026-11-07T16:15:36",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "firstSaveThroughProductionCompositionPersistsAcrossReopen[26]",
+          "classname": "com.vocamind.app.data.catalog.QuizPolicyCompositionTest",
+          "time": "0.131"
+        },
+        {
+          "name": "absentCompanionAssetIsRejectedInsteadOfUnrestrictedFallback[26]",
+          "classname": "com.vocamind.app.data.catalog.QuizPolicyCompositionTest",
+          "time": "0.017"
+        },
+        {
+          "name": "defaultUseCaseLoadsPolicyBoundToBundledCatalog[26]",
+          "classname": "com.vocamind.app.data.catalog.QuizPolicyCompositionTest",
+          "time": "0.094"
+        },
+        {
+          "name": "firstSaveThroughProductionCompositionPersistsAcrossReopen",
+          "classname": "com.vocamind.app.data.catalog.QuizPolicyCompositionTest",
+          "time": "0.099"
+        },
+        {
+          "name": "absentCompanionAssetIsRejectedInsteadOfUnrestrictedFallback",
+          "classname": "com.vocamind.app.data.catalog.QuizPolicyCompositionTest",
+          "time": "0.02"
+        },
+        {
+          "name": "defaultUseCaseLoadsPolicyBoundToBundledCatalog",
+          "classname": "com.vocamind.app.data.catalog.QuizPolicyCompositionTest",
+          "time": "0.083"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.data.catalog.ReleaseCatalogTest",
+      "timestamp": "2026-11-07T16:15:37",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "offlineSourceCreditsKeepProjectAcceptanceAndMissingAuthorsExplicit[26]",
+          "classname": "com.vocamind.app.data.catalog.ReleaseCatalogTest",
+          "time": "0.045"
+        },
+        {
+          "name": "candidatePolicyBindsToRoomProjectionAndExcludesAllThreePairsBothWays[26]",
+          "classname": "com.vocamind.app.data.catalog.ReleaseCatalogTest",
+          "time": "0.089"
+        },
+        {
+          "name": "opensProductionCandidateAndPreservesAllAcceptedFieldsAndPackOrder[26]",
+          "classname": "com.vocamind.app.data.catalog.ReleaseCatalogTest",
+          "time": "0.102"
+        },
+        {
+          "name": "sqliteIntegrityCountsAndBundleChecksumsMatch[26]",
+          "classname": "com.vocamind.app.data.catalog.ReleaseCatalogTest",
+          "time": "0.042"
+        },
+        {
+          "name": "everyEnglishAndVietnamesePhraseFindsItsTextStableId[26]",
+          "classname": "com.vocamind.app.data.catalog.ReleaseCatalogTest",
+          "time": "0.115"
+        },
+        {
+          "name": "offlineSourceCreditsKeepProjectAcceptanceAndMissingAuthorsExplicit",
+          "classname": "com.vocamind.app.data.catalog.ReleaseCatalogTest",
+          "time": "0.045"
+        },
+        {
+          "name": "candidatePolicyBindsToRoomProjectionAndExcludesAllThreePairsBothWays",
+          "classname": "com.vocamind.app.data.catalog.ReleaseCatalogTest",
+          "time": "0.081"
+        },
+        {
+          "name": "opensProductionCandidateAndPreservesAllAcceptedFieldsAndPackOrder",
+          "classname": "com.vocamind.app.data.catalog.ReleaseCatalogTest",
+          "time": "0.072"
+        },
+        {
+          "name": "sqliteIntegrityCountsAndBundleChecksumsMatch",
+          "classname": "com.vocamind.app.data.catalog.ReleaseCatalogTest",
+          "time": "0.051"
+        },
+        {
+          "name": "everyEnglishAndVietnamesePhraseFindsItsTextStableId",
+          "classname": "com.vocamind.app.data.catalog.ReleaseCatalogTest",
+          "time": "0.079"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+      "timestamp": "2026-11-07T16:15:37",
+      "tests": 38,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "simulatedDeathAtEveryBoundaryRecoversPersistedSelection[26]",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.43"
+        },
+        {
+          "name": "rollbackRejectsNewReferencesWithoutErasingThem[26]",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.125"
+        },
+        {
+          "name": "corruptUserdataIsNeverRecreatedOrDeleted[26]",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.061"
+        },
+        {
+          "name": "partialCopyIoFailureNeverPublishesHalfGeneration[26]",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.095"
+        },
+        {
+          "name": "missingFtsPostingIsRejectedBeforePublication[26]",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.105"
+        },
+        {
+          "name": "pendingCorruptCandidateFallsBackToVerifiedOld[26]",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.133"
+        },
+        {
+          "name": "firstInstallOpensRealBundleWithoutCreatingUserdata[26]",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.059"
+        },
+        {
+          "name": "upgradeAndRollbackKeepAllFiveUserTablesAndBundleBytes[26]",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.106"
+        },
+        {
+          "name": "legacySchemaMismatchFailsWithoutReset[26]",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.079"
+        },
+        {
+          "name": "repeatedPrepareIsIdempotent[26]",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.075"
+        },
+        {
+          "name": "interruptedPublicationRecoversPendingGenerationOnNewCoordinator[26]",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.091"
+        },
+        {
+          "name": "referencedVocabularyRemovalIsRejected[26]",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.109"
+        },
+        {
+          "name": "realCandidateIsLimitedToQaAndNeverPromotesApproval[26]",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.104"
+        },
+        {
+          "name": "failureAtEveryBoundaryPreservesOldAndUserdata[26]",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.274"
+        },
+        {
+          "name": "matchingLegacyIsImportedButMismatchedLegacyIsNotOverwritten[26]",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.069"
+        },
+        {
+          "name": "savedOnlyAndHistoryOnlyReferencesAlsoBlockRemoval[26]",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.091"
+        },
+        {
+          "name": "concurrentStartupSelectsOneGeneration[26]",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.084"
+        },
+        {
+          "name": "pausedPackRemovalAlsoBlocksUpgrade[26]",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.091"
+        },
+        {
+          "name": "invalidMetadataCreditsPolicyAndSchemaAreRejected[26]",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.625"
+        },
+        {
+          "name": "simulatedDeathAtEveryBoundaryRecoversPersistedSelection",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.401"
+        },
+        {
+          "name": "rollbackRejectsNewReferencesWithoutErasingThem",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.132"
+        },
+        {
+          "name": "corruptUserdataIsNeverRecreatedOrDeleted",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.077"
+        },
+        {
+          "name": "partialCopyIoFailureNeverPublishesHalfGeneration",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.067"
+        },
+        {
+          "name": "missingFtsPostingIsRejectedBeforePublication",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.131"
+        },
+        {
+          "name": "pendingCorruptCandidateFallsBackToVerifiedOld",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.126"
+        },
+        {
+          "name": "firstInstallOpensRealBundleWithoutCreatingUserdata",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.069"
+        },
+        {
+          "name": "upgradeAndRollbackKeepAllFiveUserTablesAndBundleBytes",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.111"
+        },
+        {
+          "name": "legacySchemaMismatchFailsWithoutReset",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.077"
+        },
+        {
+          "name": "repeatedPrepareIsIdempotent",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.07"
+        },
+        {
+          "name": "interruptedPublicationRecoversPendingGenerationOnNewCoordinator",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.114"
+        },
+        {
+          "name": "referencedVocabularyRemovalIsRejected",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.122"
+        },
+        {
+          "name": "realCandidateIsLimitedToQaAndNeverPromotesApproval",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.148"
+        },
+        {
+          "name": "failureAtEveryBoundaryPreservesOldAndUserdata",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.633"
+        },
+        {
+          "name": "matchingLegacyIsImportedButMismatchedLegacyIsNotOverwritten",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.145"
+        },
+        {
+          "name": "savedOnlyAndHistoryOnlyReferencesAlsoBlockRemoval",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.165"
+        },
+        {
+          "name": "concurrentStartupSelectsOneGeneration",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.148"
+        },
+        {
+          "name": "pausedPackRemovalAlsoBlocksUpgrade",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.085"
+        },
+        {
+          "name": "invalidMetadataCreditsPolicyAndSchemaAreRejected",
+          "classname": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+          "time": "0.692"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+      "timestamp": "2026-11-07T16:15:44",
+      "tests": 62,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "pack02ValidationNoOpAndFailedWriteNeverCreateOrphan[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.033"
+        },
+        {
+          "name": "generatedQuizUsesFreshActiveSnapshotAndNeverWrites[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.038"
+        },
+        {
+          "name": "reviewedWordLeavesNewListAndBecomesDueByDate[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.032"
+        },
+        {
+          "name": "leechFlagPersistsOnlyAtFourthConsecutiveForgot[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.03"
+        },
+        {
+          "name": "packWordsKeepOrderNoAndMergeProgressByStableId[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.026"
+        },
+        {
+          "name": "pack02PauseSharedAndExclusiveDueAndNewWordsThenReopenPreservesUserdata[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.05"
+        },
+        {
+          "name": "unknownPackIsNotFoundAndNothingIsCreated[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.026"
+        },
+        {
+          "name": "vocab02SaveConcurrentWithReviewRetainsBothAndHistory[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.054"
+        },
+        {
+          "name": "newWordsFollowActivePackOrderWithoutDuplicates[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.032"
+        },
+        {
+          "name": "reviewRejectsUnknownWordStaleBoxAndBadArguments[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.019"
+        },
+        {
+          "name": "vocab02SaveUnsaveReopenOnlyChangesFlagAndCatalogIsReadOnly[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.03"
+        },
+        {
+          "name": "vocab02InvalidFirstSaveNeverCreatesOrphansOrChangesDatabases[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.027"
+        },
+        {
+          "name": "productionNormalizerVectorsOnAndroid[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.03"
+        },
+        {
+          "name": "quizVocabularyWithNonHexStableIdIsInvalidData[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.024"
+        },
+        {
+          "name": "interruptedForgotStreakRestartsTowardLeech[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.028"
+        },
+        {
+          "name": "acceptedPolicyTravelsThroughRoomSnapshotAndGenerationWithoutWrites[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.18"
+        },
+        {
+          "name": "pausedPackProgressIsKeptButNotStudied[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.039"
+        },
+        {
+          "name": "absentOrMalformedPolicyIsRepositoryErrorEvenWhenNoPacksAreActive[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.025"
+        },
+        {
+          "name": "vocab02FirstSaveReopenUnsaveAndBaselinePoolsAndCounts[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.047"
+        },
+        {
+          "name": "forgotKeepsLeechAndHardOrRememberedClearsItInStorage[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.048"
+        },
+        {
+          "name": "vocab02FirstSaveConcurrentWithFirstReviewAcrossConnections[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.049"
+        },
+        {
+          "name": "reviewKeepsLearnedAtAndSavedFlagAndCounts[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.028"
+        },
+        {
+          "name": "vocab02FirstSaveBetweenReviewSnapshotAndCommitRejectsStaleReview[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.025"
+        },
+        {
+          "name": "corruptStoredProgressIsInvalidDataNotEmpty[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.022"
+        },
+        {
+          "name": "vocabularyBrowsingIsReadOnlyAcrossInactivePausedAndFileReopen[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.041"
+        },
+        {
+          "name": "packStatesMergeCatalogWithUserByPackId[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.034"
+        },
+        {
+          "name": "vocab02WriteFailureReadFailureAndIdempotentReconciliation[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.036"
+        },
+        {
+          "name": "failedReviewWriteRollsBackEventAndProgress[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.032"
+        },
+        {
+          "name": "vocab02FirstSaveRollbackAndIgnoredInsertCannotReportSuccess[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.041"
+        },
+        {
+          "name": "quizVocabularyIsActivePacksOnlyAndAttemptsPersist[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.034"
+        },
+        {
+          "name": "learnedCountIsDistinctWordsWithLearnedAt[26]",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.025"
+        },
+        {
+          "name": "pack02ValidationNoOpAndFailedWriteNeverCreateOrphan",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.037"
+        },
+        {
+          "name": "generatedQuizUsesFreshActiveSnapshotAndNeverWrites",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.042"
+        },
+        {
+          "name": "reviewedWordLeavesNewListAndBecomesDueByDate",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.033"
+        },
+        {
+          "name": "leechFlagPersistsOnlyAtFourthConsecutiveForgot",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.031"
+        },
+        {
+          "name": "packWordsKeepOrderNoAndMergeProgressByStableId",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.029"
+        },
+        {
+          "name": "pack02PauseSharedAndExclusiveDueAndNewWordsThenReopenPreservesUserdata",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.045"
+        },
+        {
+          "name": "unknownPackIsNotFoundAndNothingIsCreated",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.02"
+        },
+        {
+          "name": "vocab02SaveConcurrentWithReviewRetainsBothAndHistory",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.055"
+        },
+        {
+          "name": "newWordsFollowActivePackOrderWithoutDuplicates",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.03"
+        },
+        {
+          "name": "reviewRejectsUnknownWordStaleBoxAndBadArguments",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.033"
+        },
+        {
+          "name": "vocab02SaveUnsaveReopenOnlyChangesFlagAndCatalogIsReadOnly",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.032"
+        },
+        {
+          "name": "vocab02InvalidFirstSaveNeverCreatesOrphansOrChangesDatabases",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.025"
+        },
+        {
+          "name": "productionNormalizerVectorsOnAndroid",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.024"
+        },
+        {
+          "name": "quizVocabularyWithNonHexStableIdIsInvalidData",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.033"
+        },
+        {
+          "name": "interruptedForgotStreakRestartsTowardLeech",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.033"
+        },
+        {
+          "name": "acceptedPolicyTravelsThroughRoomSnapshotAndGenerationWithoutWrites",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.103"
+        },
+        {
+          "name": "pausedPackProgressIsKeptButNotStudied",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.027"
+        },
+        {
+          "name": "absentOrMalformedPolicyIsRepositoryErrorEvenWhenNoPacksAreActive",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.023"
+        },
+        {
+          "name": "vocab02FirstSaveReopenUnsaveAndBaselinePoolsAndCounts",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.043"
+        },
+        {
+          "name": "forgotKeepsLeechAndHardOrRememberedClearsItInStorage",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.056"
+        },
+        {
+          "name": "vocab02FirstSaveConcurrentWithFirstReviewAcrossConnections",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.059"
+        },
+        {
+          "name": "reviewKeepsLearnedAtAndSavedFlagAndCounts",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.04"
+        },
+        {
+          "name": "vocab02FirstSaveBetweenReviewSnapshotAndCommitRejectsStaleReview",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.036"
+        },
+        {
+          "name": "corruptStoredProgressIsInvalidDataNotEmpty",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.023"
+        },
+        {
+          "name": "vocabularyBrowsingIsReadOnlyAcrossInactivePausedAndFileReopen",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.034"
+        },
+        {
+          "name": "packStatesMergeCatalogWithUserByPackId",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.029"
+        },
+        {
+          "name": "vocab02WriteFailureReadFailureAndIdempotentReconciliation",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.028"
+        },
+        {
+          "name": "failedReviewWriteRollsBackEventAndProgress",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.023"
+        },
+        {
+          "name": "vocab02FirstSaveRollbackAndIgnoredInsertCannotReportSuccess",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.026"
+        },
+        {
+          "name": "quizVocabularyIsActivePacksOnlyAndAttemptsPersist",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.029"
+        },
+        {
+          "name": "learnedCountIsDistinctWordsWithLearnedAt",
+          "classname": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+          "time": "0.026"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.data.user.AtomicReviewTest",
+      "timestamp": "2026-11-07T16:15:46",
+      "tests": 42,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "mismatchedIdsAndTamperedHistoryCannotWrite[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.03"
+        },
+        {
+          "name": "legacyAndUseCaseCannotBothInsertFirstReview[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.032"
+        },
+        {
+          "name": "staleEmptySnapshotCannotOverwriteFirstReview[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.022"
+        },
+        {
+          "name": "closedDatabaseReadReportsReadFailure[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.02"
+        },
+        {
+          "name": "existingProgressUpdateFailureRollsBackInsertedEvent[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.023"
+        },
+        {
+          "name": "malformedProgressIsTypedInvalidDataWithNoWrite[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.024"
+        },
+        {
+          "name": "eventInsertFailureLeavesExistingProgressUnchanged[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.024"
+        },
+        {
+          "name": "legacyEventFailureRollsBack[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.036"
+        },
+        {
+          "name": "legacyAndUseCaseCannotCommitSameSnapshotTwice[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.032"
+        },
+        {
+          "name": "bothApisUseOneWriterAndLegacyHardReplayIsRejected[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.023"
+        },
+        {
+          "name": "legacyNewProgressFailureRollsBackEvent[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.024"
+        },
+        {
+          "name": "persistedDueTimeSurvivesZoneChangeAndReopen[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.031"
+        },
+        {
+          "name": "existingWordAllRatingsPersistSchedulerOutcome[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.028"
+        },
+        {
+          "name": "twoDatabaseInstancesCannotCommitSameSnapshotTwice[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.025"
+        },
+        {
+          "name": "legacyProgressUpdateFailureRollsBackEvent[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.021"
+        },
+        {
+          "name": "unknownCatalogWordCannotCreateOrphanThroughEitherApi[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.02"
+        },
+        {
+          "name": "explicitRetryAfterFaultAndReopenPersistsExactlyOneReview[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.029"
+        },
+        {
+          "name": "savedFlagChangedAfterReadCausesConflictNotOverwrite[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.022"
+        },
+        {
+          "name": "newProgressInsertFailureRollsBackInsertedEvent[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.02"
+        },
+        {
+          "name": "firstReviewWritesOneMatchingEventAndProgress[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.019"
+        },
+        {
+          "name": "catalogReadFailureIsTypedReadFailedWithoutWriting[26]",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.02"
+        },
+        {
+          "name": "mismatchedIdsAndTamperedHistoryCannotWrite",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.037"
+        },
+        {
+          "name": "legacyAndUseCaseCannotBothInsertFirstReview",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.038"
+        },
+        {
+          "name": "staleEmptySnapshotCannotOverwriteFirstReview",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.03"
+        },
+        {
+          "name": "closedDatabaseReadReportsReadFailure",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.033"
+        },
+        {
+          "name": "existingProgressUpdateFailureRollsBackInsertedEvent",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.032"
+        },
+        {
+          "name": "malformedProgressIsTypedInvalidDataWithNoWrite",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.028"
+        },
+        {
+          "name": "eventInsertFailureLeavesExistingProgressUnchanged",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.032"
+        },
+        {
+          "name": "legacyEventFailureRollsBack",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.042"
+        },
+        {
+          "name": "legacyAndUseCaseCannotCommitSameSnapshotTwice",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.038"
+        },
+        {
+          "name": "bothApisUseOneWriterAndLegacyHardReplayIsRejected",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.032"
+        },
+        {
+          "name": "legacyNewProgressFailureRollsBackEvent",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.045"
+        },
+        {
+          "name": "persistedDueTimeSurvivesZoneChangeAndReopen",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.041"
+        },
+        {
+          "name": "existingWordAllRatingsPersistSchedulerOutcome",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.031"
+        },
+        {
+          "name": "twoDatabaseInstancesCannotCommitSameSnapshotTwice",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.032"
+        },
+        {
+          "name": "legacyProgressUpdateFailureRollsBackEvent",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.028"
+        },
+        {
+          "name": "unknownCatalogWordCannotCreateOrphanThroughEitherApi",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.029"
+        },
+        {
+          "name": "explicitRetryAfterFaultAndReopenPersistsExactlyOneReview",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.027"
+        },
+        {
+          "name": "savedFlagChangedAfterReadCausesConflictNotOverwrite",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.023"
+        },
+        {
+          "name": "newProgressInsertFailureRollsBackInsertedEvent",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.024"
+        },
+        {
+          "name": "firstReviewWritesOneMatchingEventAndProgress",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.027"
+        },
+        {
+          "name": "catalogReadFailureIsTypedReadFailedWithoutWriting",
+          "classname": "com.vocamind.app.data.user.AtomicReviewTest",
+          "time": "0.027"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.data.user.ProgressAggregationTest",
+      "timestamp": "2026-11-07T16:15:47",
+      "tests": 34,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "emptyDatabaseReturnsSixZerosAndEmptyHistory[26]",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.019"
+        },
+        {
+          "name": "invalidStoredScoreIsNotSilentlyRecomputed[26]",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.018"
+        },
+        {
+          "name": "sameVocabularyUpsertMovesBoxWithoutIncreasingDistinctTotal[26]",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.018"
+        },
+        {
+          "name": "invalidPersistedBoxReturnsInvalidDataWithoutRepair[26]",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.024"
+        },
+        {
+          "name": "failedEventInsertDoesNotChangeSummaryOrHistory[26]",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.034"
+        },
+        {
+          "name": "fixtureAcrossAllSixBoxesMatchesSqlAndDomainGroups[26]",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.022"
+        },
+        {
+          "name": "closedDatabaseIsReadFailureNotEmptySuccess[26]",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.019"
+        },
+        {
+          "name": "allQuizHistoryIsOrderedByTimeThenIdWithoutImplicitLimit[26]",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.031"
+        },
+        {
+          "name": "quizOnlyAndProgressOnlyAreNotEntirelyEmpty[26]",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.033"
+        },
+        {
+          "name": "failedFirstProgressInsertRollsBackEventAndKeepsSummary[26]",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.028"
+        },
+        {
+          "name": "atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings[26]",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.063"
+        },
+        {
+          "name": "missingBoxesAreZeroAndNoActiveSavedOrLearnedAtFilterIsApplied[26]",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.022"
+        },
+        {
+          "name": "returnedHistoryAndBoxCountsAreImmutableSnapshots[26]",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.023"
+        },
+        {
+          "name": "reopeningRetainsCountsAndHistory[26]",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.023"
+        },
+        {
+          "name": "atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks[26]",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.025"
+        },
+        {
+          "name": "failedProgressUpdateDoesNotMoveBoxOrChangeHistory[26]",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.029"
+        },
+        {
+          "name": "concurrentWriterCannotMixCountsAndHistoryFromDifferentStates[26]",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.024"
+        },
+        {
+          "name": "emptyDatabaseReturnsSixZerosAndEmptyHistory",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.026"
+        },
+        {
+          "name": "invalidStoredScoreIsNotSilentlyRecomputed",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.023"
+        },
+        {
+          "name": "sameVocabularyUpsertMovesBoxWithoutIncreasingDistinctTotal",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.026"
+        },
+        {
+          "name": "invalidPersistedBoxReturnsInvalidDataWithoutRepair",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.021"
+        },
+        {
+          "name": "failedEventInsertDoesNotChangeSummaryOrHistory",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.035"
+        },
+        {
+          "name": "fixtureAcrossAllSixBoxesMatchesSqlAndDomainGroups",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.028"
+        },
+        {
+          "name": "closedDatabaseIsReadFailureNotEmptySuccess",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.017"
+        },
+        {
+          "name": "allQuizHistoryIsOrderedByTimeThenIdWithoutImplicitLimit",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.025"
+        },
+        {
+          "name": "quizOnlyAndProgressOnlyAreNotEntirelyEmpty",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.019"
+        },
+        {
+          "name": "failedFirstProgressInsertRollsBackEventAndKeepsSummary",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.029"
+        },
+        {
+          "name": "atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.059"
+        },
+        {
+          "name": "missingBoxesAreZeroAndNoActiveSavedOrLearnedAtFilterIsApplied",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.023"
+        },
+        {
+          "name": "returnedHistoryAndBoxCountsAreImmutableSnapshots",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.02"
+        },
+        {
+          "name": "reopeningRetainsCountsAndHistory",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.021"
+        },
+        {
+          "name": "atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.045"
+        },
+        {
+          "name": "failedProgressUpdateDoesNotMoveBoxOrChangeHistory",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.05"
+        },
+        {
+          "name": "concurrentWriterCannotMixCountsAndHistoryFromDifferentStates",
+          "classname": "com.vocamind.app.data.user.ProgressAggregationTest",
+          "time": "0.047"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.data.user.ProgressMapperTest",
+      "timestamp": "2026-11-07T16:15:48",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "aggregationUsesLongRatherThanTruncatingToInt",
+          "classname": "com.vocamind.app.data.user.ProgressMapperTest",
+          "time": "0.002"
+        },
+        {
+          "name": "duplicateOrInvalidGroupsAreNotSilentlyOverwritten",
+          "classname": "com.vocamind.app.data.user.ProgressMapperTest",
+          "time": "0.0"
+        },
+        {
+          "name": "inconsistentDistinctAndGroupedTotalsAreRejected",
+          "classname": "com.vocamind.app.data.user.ProgressMapperTest",
+          "time": "0.0"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.data.user.UserDatabaseTest",
+      "timestamp": "2026-11-07T16:15:48",
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "testOnlySchemaEvolutionPreservesAllFiveTables[26]",
+          "classname": "com.vocamind.app.data.user.UserDatabaseTest",
+          "time": "0.046"
+        },
+        {
+          "name": "allFiveTablesSurviveFileReopen[26]",
+          "classname": "com.vocamind.app.data.user.UserDatabaseTest",
+          "time": "0.021"
+        },
+        {
+          "name": "failureAfterReviewInsertRollsBackBothWrites[26]",
+          "classname": "com.vocamind.app.data.user.UserDatabaseTest",
+          "time": "0.018"
+        },
+        {
+          "name": "invalidIdentityHashDoesNotEraseProgress[26]",
+          "classname": "com.vocamind.app.data.user.UserDatabaseTest",
+          "time": "0.525"
+        },
+        {
+          "name": "concurrentOpenKeepsOnePreference[26]",
+          "classname": "com.vocamind.app.data.user.UserDatabaseTest",
+          "time": "0.032"
+        },
+        {
+          "name": "defaultsAndInitializationPreserveEdits[26]",
+          "classname": "com.vocamind.app.data.user.UserDatabaseTest",
+          "time": "0.021"
+        },
+        {
+          "name": "invalidValuesAreRejectedBeforeWriting[26]",
+          "classname": "com.vocamind.app.data.user.UserDatabaseTest",
+          "time": "0.016"
+        },
+        {
+          "name": "missingMigrationRefusesOpenWithoutErasingData[26]",
+          "classname": "com.vocamind.app.data.user.UserDatabaseTest",
+          "time": "0.526"
+        },
+        {
+          "name": "testOnlySchemaEvolutionPreservesAllFiveTables",
+          "classname": "com.vocamind.app.data.user.UserDatabaseTest",
+          "time": "0.041"
+        },
+        {
+          "name": "allFiveTablesSurviveFileReopen",
+          "classname": "com.vocamind.app.data.user.UserDatabaseTest",
+          "time": "0.022"
+        },
+        {
+          "name": "failureAfterReviewInsertRollsBackBothWrites",
+          "classname": "com.vocamind.app.data.user.UserDatabaseTest",
+          "time": "0.022"
+        },
+        {
+          "name": "invalidIdentityHashDoesNotEraseProgress",
+          "classname": "com.vocamind.app.data.user.UserDatabaseTest",
+          "time": "0.526"
+        },
+        {
+          "name": "concurrentOpenKeepsOnePreference",
+          "classname": "com.vocamind.app.data.user.UserDatabaseTest",
+          "time": "0.029"
+        },
+        {
+          "name": "defaultsAndInitializationPreserveEdits",
+          "classname": "com.vocamind.app.data.user.UserDatabaseTest",
+          "time": "0.029"
+        },
+        {
+          "name": "invalidValuesAreRejectedBeforeWriting",
+          "classname": "com.vocamind.app.data.user.UserDatabaseTest",
+          "time": "0.023"
+        },
+        {
+          "name": "missingMigrationRefusesOpenWithoutErasingData",
+          "classname": "com.vocamind.app.data.user.UserDatabaseTest",
+          "time": "0.531"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.domain.catalog.SearchVocabularyUseCaseTest",
+      "timestamp": "2026-11-07T16:15:51",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "invalidInputAndRejectedExecutorAreExplicitErrors",
+          "classname": "com.vocamind.app.domain.catalog.SearchVocabularyUseCaseTest",
+          "time": "0.003"
+        },
+        {
+          "name": "normalizationPreservesVietnameseAndTreatsOperatorsAsWords",
+          "classname": "com.vocamind.app.domain.catalog.SearchVocabularyUseCaseTest",
+          "time": "0.002"
+        },
+        {
+          "name": "emptyAndPunctuationDoNotScheduleOrRead",
+          "classname": "com.vocamind.app.domain.catalog.SearchVocabularyUseCaseTest",
+          "time": "0.0"
+        },
+        {
+          "name": "databaseRunsOnWorkerAndCallingThreadDoesNotBlock",
+          "classname": "com.vocamind.app.domain.catalog.SearchVocabularyUseCaseTest",
+          "time": "0.001"
+        },
+        {
+          "name": "repositoryFailuresAreNotEmptySuccess",
+          "classname": "com.vocamind.app.domain.catalog.SearchVocabularyUseCaseTest",
+          "time": "0.001"
+        },
+        {
+          "name": "resultSnapshotsAreImmutableAndRejectDuplicateStableIds",
+          "classname": "com.vocamind.app.domain.catalog.SearchVocabularyUseCaseTest",
+          "time": "0.0"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+      "timestamp": "2026-11-07T16:15:51",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "wordBecomesDueAtStoredReviewTime",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+          "time": "0.001"
+        },
+        {
+          "name": "dueAtPreservesLocalTimeForEveryBox",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+          "time": "0.0"
+        },
+        {
+          "name": "mistakeCounterDoesNotOverflow",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+          "time": "0.0"
+        },
+        {
+          "name": "fallBackKeepsCalendarDays",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+          "time": "0.0"
+        },
+        {
+          "name": "lastMillisecondOfDayAndMidnightBelongToDifferentDays",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+          "time": "0.0"
+        },
+        {
+          "name": "sameInstantUsesTheZoneCalendarDay",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+          "time": "0.0"
+        },
+        {
+          "name": "springForwardKeepsCalendarDays",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+          "time": "0.0"
+        },
+        {
+          "name": "intervalTableMatchesPlanAndRejectsInvalidBox",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+          "time": "0.0"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest",
+      "timestamp": "2026-11-07T16:15:51",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "rememberedAt1430KeepsHourMinuteSecondsAndMillis",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest",
+          "time": "0.002"
+        },
+        {
+          "name": "berlinSpringForwardIs23HoursButSameLocalTime",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest",
+          "time": "0.001"
+        },
+        {
+          "name": "hardAt2355KeepsLocalTimeOnNextDay",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest",
+          "time": "0.001"
+        },
+        {
+          "name": "boxFiveRememberedKeepsTimeAfter30CalendarDays",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest",
+          "time": "0.0"
+        },
+        {
+          "name": "forgotAt0005KeepsLocalTimeOnNextDay",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest",
+          "time": "0.0"
+        },
+        {
+          "name": "nonexistentSpringTimeMovesForwardByTheGap",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest",
+          "time": "0.0"
+        },
+        {
+          "name": "berlinFallBackIs25HoursButSameLocalTime",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest",
+          "time": "0.0"
+        },
+        {
+          "name": "overlappingFallTimeRetainsPreviousValidOffset",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest",
+          "time": "0.0"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+      "timestamp": "2026-11-07T16:15:51",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "tcSched10_resultIsDeterministicForSameInput",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+          "time": "0.001"
+        },
+        {
+          "name": "tcSched06_forgotFromAnyBoxResetsToBox0DueTomorrow",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+          "time": "0.0"
+        },
+        {
+          "name": "tcSched09_hardOrRememberedResetsMistakesAndClearsLeech",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+          "time": "0.0"
+        },
+        {
+          "name": "tcSched05_hardAtBox0StaysAtBox0DueTomorrow",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+          "time": "0.0"
+        },
+        {
+          "name": "tcSched04_hardKeepsBoxAndUsesSameBoxInterval",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+          "time": "0.0"
+        },
+        {
+          "name": "tcSched02_rememberedStepsThroughEveryBoxWithItsInterval",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+          "time": "0.0"
+        },
+        {
+          "name": "tcSched08_fourthForgotInARowBecomesLeech",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+          "time": "0.0"
+        },
+        {
+          "name": "tcSched07_threeForgotInARowIsNotLeech",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+          "time": "0.0"
+        },
+        {
+          "name": "tcSched03_rememberedAtBox5StaysAtBox5",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+          "time": "0.0"
+        },
+        {
+          "name": "tcSched01_newWordRememberedGoesToBox1DueTomorrow",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+          "time": "0.0"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.domain.learning.LeitnerSchedulerTest",
+      "timestamp": "2026-11-07T16:15:51",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "rememberedMovesUpOneBox",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerTest",
+          "time": "0.0"
+        },
+        {
+          "name": "forgotResetsToBoxZeroDueTomorrow",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerTest",
+          "time": "0.0"
+        },
+        {
+          "name": "rejectsInvalidInput",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerTest",
+          "time": "0.001"
+        },
+        {
+          "name": "toStateCarriesResultForward",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerTest",
+          "time": "0.0"
+        },
+        {
+          "name": "hardKeepsBox",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerTest",
+          "time": "0.0"
+        },
+        {
+          "name": "newWordStartsInBoxZero",
+          "classname": "com.vocamind.app.domain.learning.LeitnerSchedulerTest",
+          "time": "0.0"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.domain.learning.RecordReviewUseCaseTest",
+      "timestamp": "2026-11-07T16:15:51",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "firstReviewUsesSingleTimestampAndCommitsOnce",
+          "classname": "com.vocamind.app.domain.learning.RecordReviewUseCaseTest",
+          "time": "0.001"
+        },
+        {
+          "name": "invalidCommandDoesNotTouchRepository",
+          "classname": "com.vocamind.app.domain.learning.RecordReviewUseCaseTest",
+          "time": "0.001"
+        },
+        {
+          "name": "countOverflowDoesNotWrite",
+          "classname": "com.vocamind.app.domain.learning.RecordReviewUseCaseTest",
+          "time": "0.0"
+        },
+        {
+          "name": "failedCommitDoesNotReturnSuccessOrMutateSnapshot",
+          "classname": "com.vocamind.app.domain.learning.RecordReviewUseCaseTest",
+          "time": "0.001"
+        },
+        {
+          "name": "allRatingsKeepSavedAndOriginalLearnedTimestamp",
+          "classname": "com.vocamind.app.domain.learning.RecordReviewUseCaseTest",
+          "time": "0.0"
+        },
+        {
+          "name": "savedButUnreviewedWordGetsFirstLearnedTimestamp",
+          "classname": "com.vocamind.app.domain.learning.RecordReviewUseCaseTest",
+          "time": "0.0"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.domain.progress.ProgressDomainTest",
+      "timestamp": "2026-11-07T16:15:51",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "emptySummaryAndSnapshotAreValidSuccessfulData",
+          "classname": "com.vocamind.app.domain.progress.ProgressDomainTest",
+          "time": "0.0"
+        },
+        {
+          "name": "allSixBoxesContributeToTheCorrectGroups",
+          "classname": "com.vocamind.app.domain.progress.ProgressDomainTest",
+          "time": "0.0"
+        },
+        {
+          "name": "snapshotCopiesInputAndReturnsReadOnlyHistory",
+          "classname": "com.vocamind.app.domain.progress.ProgressDomainTest",
+          "time": "0.0"
+        },
+        {
+          "name": "resultEnforcesExclusiveSuccessAndFailurePayloads",
+          "classname": "com.vocamind.app.domain.progress.ProgressDomainTest",
+          "time": "0.001"
+        },
+        {
+          "name": "snapshotRejectsMissingPayloadsAndDuplicateIdsEvenAtDifferentTimes",
+          "classname": "com.vocamind.app.domain.progress.ProgressDomainTest",
+          "time": "0.0"
+        },
+        {
+          "name": "scoresMatchQuizResultRoundingAcrossEverySupportedCount",
+          "classname": "com.vocamind.app.domain.progress.ProgressDomainTest",
+          "time": "0.001"
+        },
+        {
+          "name": "historyValidatesPersistedIdentityTimeCountsAndScore",
+          "classname": "com.vocamind.app.domain.progress.ProgressDomainTest",
+          "time": "0.0"
+        },
+        {
+          "name": "summaryDefensivelyCopiesBothInputAndOutput",
+          "classname": "com.vocamind.app.domain.progress.ProgressDomainTest",
+          "time": "0.0"
+        },
+        {
+          "name": "longCountsDoNotNarrowOrOverflow",
+          "classname": "com.vocamind.app.domain.progress.ProgressDomainTest",
+          "time": "0.0"
+        },
+        {
+          "name": "snapshotOrdersByTimeThenIdWithoutOverflowOrTruncation",
+          "classname": "com.vocamind.app.domain.progress.ProgressDomainTest",
+          "time": "0.0"
+        },
+        {
+          "name": "summaryRejectsNullWrongSizeNegativeAndMismatchedCounts",
+          "classname": "com.vocamind.app.domain.progress.ProgressDomainTest",
+          "time": "0.001"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest",
+      "timestamp": "2026-11-07T16:15:51",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "invalidCompanionCannotBecomeUnrestricted[26]",
+          "classname": "com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest",
+          "time": "0.03"
+        },
+        {
+          "name": "fullCorpusIncludesSeed60AndNeverEmitsForbiddenPairs[26]",
+          "classname": "com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest",
+          "time": "1.085"
+        },
+        {
+          "name": "minimalPoolsFailAndSufficientPoolsEnforceBothDirections[26]",
+          "classname": "com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest",
+          "time": "0.087"
+        },
+        {
+          "name": "invalidCompanionCannotBecomeUnrestricted",
+          "classname": "com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest",
+          "time": "0.027"
+        },
+        {
+          "name": "fullCorpusIncludesSeed60AndNeverEmitsForbiddenPairs",
+          "classname": "com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest",
+          "time": "1.305"
+        },
+        {
+          "name": "minimalPoolsFailAndSufficientPoolsEnforceBothDirections",
+          "classname": "com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest",
+          "time": "0.065"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.domain.quiz.AndroidNfcConformanceTest",
+      "timestamp": "2026-11-07T16:15:53",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "productionAdapterHandlesPostJdkUnicodeCompositions[26]",
+          "classname": "com.vocamind.app.domain.quiz.AndroidNfcConformanceTest",
+          "time": "0.015"
+        },
+        {
+          "name": "allOfficialNfcVectorsAndUnlistedScalars[26]",
+          "classname": "com.vocamind.app.domain.quiz.AndroidNfcConformanceTest",
+          "time": "0.447"
+        },
+        {
+          "name": "productionAdapterHandlesPostJdkUnicodeCompositions",
+          "classname": "com.vocamind.app.domain.quiz.AndroidNfcConformanceTest",
+          "time": "0.02"
+        },
+        {
+          "name": "allOfficialNfcVectorsAndUnlistedScalars",
+          "classname": "com.vocamind.app.domain.quiz.AndroidNfcConformanceTest",
+          "time": "0.532"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.domain.quiz.GenerateQuizTest",
+      "timestamp": "2026-11-07T16:15:54",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "preservesRepositoryErrorsAndInvalidSnapshot",
+          "classname": "com.vocamind.app.domain.quiz.GenerateQuizTest",
+          "time": "0.01"
+        },
+        {
+          "name": "defaultGeneratorUsesPolicyFromEveryFreshSnapshot",
+          "classname": "com.vocamind.app.domain.quiz.GenerateQuizTest",
+          "time": "0.004"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.domain.quiz.NfcConformanceTest",
+      "timestamp": "2026-11-07T16:15:54",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "productionAdapterHandlesPostJdkUnicodeCompositions",
+          "classname": "com.vocamind.app.domain.quiz.NfcConformanceTest",
+          "time": "0.0"
+        },
+        {
+          "name": "allOfficialNfcVectorsAndUnlistedScalars",
+          "classname": "com.vocamind.app.domain.quiz.NfcConformanceTest",
+          "time": "0.406"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.domain.quiz.QuizDistractorPolicyTest",
+      "timestamp": "2026-11-07T16:15:55",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "policyCopiesInputAndAppliesBothDirections",
+          "classname": "com.vocamind.app.domain.quiz.QuizDistractorPolicyTest",
+          "time": "0.001"
+        },
+        {
+          "name": "mixedBucketKeepsOnlySafeRepresentativesAndPoolRejectsForbiddenOptions",
+          "classname": "com.vocamind.app.domain.quiz.QuizDistractorPolicyTest",
+          "time": "0.012"
+        },
+        {
+          "name": "snapshotCopiesVocabularyAndRequiresExplicitPolicy",
+          "classname": "com.vocamind.app.domain.quiz.QuizDistractorPolicyTest",
+          "time": "0.001"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.domain.quiz.QuizDomainTest",
+      "timestamp": "2026-11-07T16:15:55",
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "seededFakePreservesIdTargetWithRepeatedMeanings",
+          "classname": "com.vocamind.app.domain.quiz.QuizDomainTest",
+          "time": "0.003"
+        },
+        {
+          "name": "questionValidatesAllOptionKeysAndNormalizer",
+          "classname": "com.vocamind.app.domain.quiz.QuizDomainTest",
+          "time": "0.001"
+        },
+        {
+          "name": "sessionGuardsAndSnapshots",
+          "classname": "com.vocamind.app.domain.quiz.QuizDomainTest",
+          "time": "0.004"
+        },
+        {
+          "name": "meaningBoundaryAndTargetUsesIds",
+          "classname": "com.vocamind.app.domain.quiz.QuizDomainTest",
+          "time": "0.0"
+        },
+        {
+          "name": "poolQuestionUsesSameNormalizationAndScoresCorrectly",
+          "classname": "com.vocamind.app.domain.quiz.QuizDomainTest",
+          "time": "0.003"
+        },
+        {
+          "name": "seededFakeRepeatsQuestionOrderForSameSeed",
+          "classname": "com.vocamind.app.domain.quiz.QuizDomainTest",
+          "time": "0.0"
+        },
+        {
+          "name": "targetCounts",
+          "classname": "com.vocamind.app.domain.quiz.QuizDomainTest",
+          "time": "0.0"
+        },
+        {
+          "name": "inputGuards",
+          "classname": "com.vocamind.app.domain.quiz.QuizDomainTest",
+          "time": "0.001"
+        },
+        {
+          "name": "generatorContractWithSeededFake",
+          "classname": "com.vocamind.app.domain.quiz.QuizDomainTest",
+          "time": "0.001"
+        },
+        {
+          "name": "seededFakeHandlesFiveIdsWithRepeatedMeaning",
+          "classname": "com.vocamind.app.domain.quiz.QuizDomainTest",
+          "time": "0.0"
+        },
+        {
+          "name": "answersLockAndRejectStaleClicks",
+          "classname": "com.vocamind.app.domain.quiz.QuizDomainTest",
+          "time": "0.0"
+        },
+        {
+          "name": "questionGuardsAndSnapshot",
+          "classname": "com.vocamind.app.domain.quiz.QuizDomainTest",
+          "time": "0.001"
+        },
+        {
+          "name": "dedupConflictsAndSnapshots",
+          "classname": "com.vocamind.app.domain.quiz.QuizDomainTest",
+          "time": "0.0"
+        },
+        {
+          "name": "rejectsCorrectOptionWithWrongTargetMeaning",
+          "classname": "com.vocamind.app.domain.quiz.QuizDomainTest",
+          "time": "0.0"
+        },
+        {
+          "name": "seededFakeRejectsNullInputs",
+          "classname": "com.vocamind.app.domain.quiz.QuizDomainTest",
+          "time": "0.0"
+        },
+        {
+          "name": "abandonmentAndCompletionAreTerminal",
+          "classname": "com.vocamind.app.domain.quiz.QuizDomainTest",
+          "time": "0.001"
+        },
+        {
+          "name": "seededFakeReturnsEmptyForInsufficientPools",
+          "classname": "com.vocamind.app.domain.quiz.QuizDomainTest",
+          "time": "0.0"
+        },
+        {
+          "name": "scoring",
+          "classname": "com.vocamind.app.domain.quiz.QuizDomainTest",
+          "time": "0.0"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.domain.quiz.QuizGenerationTest",
+      "timestamp": "2026-11-07T16:15:55",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "seededPropertiesMembershipAndImmutability",
+          "classname": "com.vocamind.app.domain.quiz.QuizGenerationTest",
+          "time": "0.287"
+        },
+        {
+          "name": "dedupConflictAndAmbiguousSensePolicy",
+          "classname": "com.vocamind.app.domain.quiz.QuizGenerationTest",
+          "time": "0.022"
+        },
+        {
+          "name": "normalizerVectorsAndLocale",
+          "classname": "com.vocamind.app.domain.quiz.QuizGenerationTest",
+          "time": "0.001"
+        },
+        {
+          "name": "countAndInsufficiencyMatrix",
+          "classname": "com.vocamind.app.domain.quiz.QuizGenerationTest",
+          "time": "0.001"
+        },
+        {
+          "name": "generatedTableMatchesEveryOfficialDefaultMapping",
+          "classname": "com.vocamind.app.domain.quiz.QuizGenerationTest",
+          "time": "0.006"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.fake.FakeRepositoriesTest",
+      "timestamp": "2026-11-07T16:15:55",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "mapperRoundTripsAndFlagsInvalidRows",
+          "classname": "com.vocamind.app.fake.FakeRepositoriesTest",
+          "time": "0.001"
+        },
+        {
+          "name": "resultNeverMixesValueAndError",
+          "classname": "com.vocamind.app.fake.FakeRepositoriesTest",
+          "time": "0.001"
+        },
+        {
+          "name": "fakeStudyHonoursLimitAndFailure",
+          "classname": "com.vocamind.app.fake.FakeRepositoriesTest",
+          "time": "0.001"
+        },
+        {
+          "name": "fakeReviewRecordsCallsAndCanFail",
+          "classname": "com.vocamind.app.fake.FakeRepositoriesTest",
+          "time": "0.003"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.feature.attribution.AttributionRenderingTest",
+      "timestamp": "2026-11-07T16:15:55",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "rendersLoadingEmptyErrorRetryAndMultipleLongSources[26]",
+          "classname": "com.vocamind.app.feature.attribution.AttributionRenderingTest",
+          "time": "1.446"
+        },
+        {
+          "name": "rendersLoadingEmptyErrorRetryAndMultipleLongSources",
+          "classname": "com.vocamind.app.feature.attribution.AttributionRenderingTest",
+          "time": "1.623"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.feature.attribution.AttributionScreenTest",
+      "timestamp": "2026-11-07T16:15:58",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "attributionAvailableBeforeLearningSurvivesRecreationAndBack[26]",
+          "classname": "com.vocamind.app.feature.attribution.AttributionScreenTest",
+          "time": "0.786"
+        },
+        {
+          "name": "attributionAvailableBeforeLearningSurvivesRecreationAndBack",
+          "classname": "com.vocamind.app.feature.attribution.AttributionScreenTest",
+          "time": "0.845"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.feature.attribution.AttributionViewModelTest",
+      "timestamp": "2026-11-07T16:16:00",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "clearingClosesAfterReadAndIgnoresLateDelivery",
+          "classname": "com.vocamind.app.feature.attribution.AttributionViewModelTest",
+          "time": "0.027"
+        },
+        {
+          "name": "loadsOffCallerAndDistinguishesEmptyFailureAndSuccessfulRetry",
+          "classname": "com.vocamind.app.feature.attribution.AttributionViewModelTest",
+          "time": "0.019"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.feature.attribution.ExternalLinksTest",
+      "timestamp": "2026-11-07T16:16:00",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "normalizesSchemeForBrowserFilterWithoutChangingCaseSensitiveComponents[26]",
+          "classname": "com.vocamind.app.feature.attribution.ExternalLinksTest",
+          "time": "0.025"
+        },
+        {
+          "name": "onlyValidWebAddressesAreAccepted[26]",
+          "classname": "com.vocamind.app.feature.attribution.ExternalLinksTest",
+          "time": "0.021"
+        },
+        {
+          "name": "handsBrowserIntentToOsAndReportsMissingHandlerOrSecurityFailure[26]",
+          "classname": "com.vocamind.app.feature.attribution.ExternalLinksTest",
+          "time": "0.019"
+        },
+        {
+          "name": "normalizesSchemeForBrowserFilterWithoutChangingCaseSensitiveComponents",
+          "classname": "com.vocamind.app.feature.attribution.ExternalLinksTest",
+          "time": "0.029"
+        },
+        {
+          "name": "onlyValidWebAddressesAreAccepted",
+          "classname": "com.vocamind.app.feature.attribution.ExternalLinksTest",
+          "time": "0.05"
+        },
+        {
+          "name": "handsBrowserIntentToOsAndReportsMissingHandlerOrSecurityFailure",
+          "classname": "com.vocamind.app.feature.attribution.ExternalLinksTest",
+          "time": "0.022"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.feature.attribution.GetContentSourcesTest",
+      "timestamp": "2026-11-07T16:16:00",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "returnsEveryFieldFromRepositoryAndPreservesEmpty",
+          "classname": "com.vocamind.app.feature.attribution.GetContentSourcesTest",
+          "time": "0.001"
+        },
+        {
+          "name": "readFailureIsNotConvertedToEmpty",
+          "classname": "com.vocamind.app.feature.attribution.GetContentSourcesTest",
+          "time": "0.0"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.feature.packs.PackActivationRenderingTest",
+      "timestamp": "2026-11-07T16:16:00",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "detailDisablesWhilePendingThenShowsPersistedActiveAndPaused[26]",
+          "classname": "com.vocamind.app.feature.packs.PackActivationRenderingTest",
+          "time": "0.193"
+        },
+        {
+          "name": "todayShowsCtaOnlyAfterSuccessfulReadAndNeverWrites[26]",
+          "classname": "com.vocamind.app.feature.packs.PackActivationRenderingTest",
+          "time": "0.088"
+        },
+        {
+          "name": "detailDisablesWhilePendingThenShowsPersistedActiveAndPaused",
+          "classname": "com.vocamind.app.feature.packs.PackActivationRenderingTest",
+          "time": "0.15"
+        },
+        {
+          "name": "todayShowsCtaOnlyAfterSuccessfulReadAndNeverWrites",
+          "classname": "com.vocamind.app.feature.packs.PackActivationRenderingTest",
+          "time": "0.062"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.feature.packs.PackActivationTest",
+      "timestamp": "2026-11-07T16:16:01",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "invalidAndUnknownIdsDoNotReadClockOrWrite",
+          "classname": "com.vocamind.app.feature.packs.PackActivationTest",
+          "time": "0.016"
+        },
+        {
+          "name": "doubleTapRefreshAndOldReadCannotReplaceConfirmedWrite",
+          "classname": "com.vocamind.app.feature.packs.PackActivationTest",
+          "time": "0.016"
+        },
+        {
+          "name": "savedWriteFollowedByReadFailureIsReconciledWithoutReplay",
+          "classname": "com.vocamind.app.feature.packs.PackActivationTest",
+          "time": "0.014"
+        },
+        {
+          "name": "explicitActionKeepsZeroFirstTimestampAndLearnedCount",
+          "classname": "com.vocamind.app.feature.packs.PackActivationTest",
+          "time": "0.014"
+        },
+        {
+          "name": "readFailureAndWriteFailureStayErrorAndRetryReconciles",
+          "classname": "com.vocamind.app.feature.packs.PackActivationTest",
+          "time": "0.011"
+        },
+        {
+          "name": "initialLoadAndNewOwnerNeverActivateAndClearingWaitsForWrite",
+          "classname": "com.vocamind.app.feature.packs.PackActivationTest",
+          "time": "0.013"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.feature.packs.PackVocabularyIntegrationTest",
+      "timestamp": "2026-11-07T16:16:01",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "explicitActivationWordRouteBackListAndTodaySharePersistedState[26]",
+          "classname": "com.vocamind.app.feature.packs.PackVocabularyIntegrationTest",
+          "time": "1.559"
+        },
+        {
+          "name": "explicitActivationWordRouteBackListAndTodaySharePersistedState",
+          "classname": "com.vocamind.app.feature.packs.PackVocabularyIntegrationTest",
+          "time": "1.637"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.feature.packs.PacksViewModelTest",
+      "timestamp": "2026-11-07T16:16:04",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "wordsLoadByPackIdInCatalogOrderAndUnknownPackIsError",
+          "classname": "com.vocamind.app.feature.packs.PacksViewModelTest",
+          "time": "0.031"
+        },
+        {
+          "name": "overlappingRetriesAreIgnoredAndThrownErrorsBecomeError",
+          "classname": "com.vocamind.app.feature.packs.PacksViewModelTest",
+          "time": "0.017"
+        },
+        {
+          "name": "clearingClosesAfterReadAndIgnoresLateDelivery",
+          "classname": "com.vocamind.app.feature.packs.PacksViewModelTest",
+          "time": "0.017"
+        },
+        {
+          "name": "packListLoadsOffMainThenShowsContentEmptyAndError",
+          "classname": "com.vocamind.app.feature.packs.PacksViewModelTest",
+          "time": "0.015"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.feature.packs.VocabularyListTest",
+      "timestamp": "2026-11-07T16:16:04",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "recycledHolderReplacesIpaStatusAndClickTargetAfterRefresh[26]",
+          "classname": "com.vocamind.app.feature.packs.VocabularyListTest",
+          "time": "0.028"
+        },
+        {
+          "name": "realGraphDispatchReceiveBackAndRecreation[26]",
+          "classname": "com.vocamind.app.feature.packs.VocabularyListTest",
+          "time": "0.72"
+        },
+        {
+          "name": "refreshDiscardsLateReadAndLoadsDurableStateAgain[26]",
+          "classname": "com.vocamind.app.feature.packs.VocabularyListTest",
+          "time": "0.024"
+        },
+        {
+          "name": "routePreservesOpaqueTextAndRejectsMissingArguments[26]",
+          "classname": "com.vocamind.app.feature.packs.VocabularyListTest",
+          "time": "0.016"
+        },
+        {
+          "name": "recycledHolderReplacesIpaStatusAndClickTargetAfterRefresh",
+          "classname": "com.vocamind.app.feature.packs.VocabularyListTest",
+          "time": "0.044"
+        },
+        {
+          "name": "realGraphDispatchReceiveBackAndRecreation",
+          "classname": "com.vocamind.app.feature.packs.VocabularyListTest",
+          "time": "0.907"
+        },
+        {
+          "name": "refreshDiscardsLateReadAndLoadsDurableStateAgain",
+          "classname": "com.vocamind.app.feature.packs.VocabularyListTest",
+          "time": "0.023"
+        },
+        {
+          "name": "routePreservesOpaqueTextAndRejectsMissingArguments",
+          "classname": "com.vocamind.app.feature.packs.VocabularyListTest",
+          "time": "0.022"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.feature.progress.ProgressViewStateTest",
+      "timestamp": "2026-11-07T16:16:06",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "progressAloneIsContentWithAnEmptyHistorySection",
+          "classname": "com.vocamind.app.feature.progress.ProgressViewStateTest",
+          "time": "0.001"
+        },
+        {
+          "name": "invalidStoredDataIsErrorRatherThanEmptyOrRepairedHistory",
+          "classname": "com.vocamind.app.feature.progress.ProgressViewStateTest",
+          "time": "0.0"
+        },
+        {
+          "name": "historyAloneIsContentWithAnEmptyProgressSection",
+          "classname": "com.vocamind.app.feature.progress.ProgressViewStateTest",
+          "time": "0.001"
+        },
+        {
+          "name": "fakeUseCaseDelegatesEachReadIncludingRetryAndDoesNotConvertErrorsToEmpty",
+          "classname": "com.vocamind.app.feature.progress.ProgressViewStateTest",
+          "time": "0.0"
+        },
+        {
+          "name": "labelsExplainEveryBoxGroupMasteredAndRecovery",
+          "classname": "com.vocamind.app.feature.progress.ProgressViewStateTest",
+          "time": "0.0"
+        },
+        {
+          "name": "bothSectionsWithDataRemainContent",
+          "classname": "com.vocamind.app.feature.progress.ProgressViewStateTest",
+          "time": "0.0"
+        },
+        {
+          "name": "loadingHasNoInventedZeroSnapshotOrError",
+          "classname": "com.vocamind.app.feature.progress.ProgressViewStateTest",
+          "time": "0.001"
+        }
+      ]
+    },
+    {
+      "class": "com.vocamind.app.feature.vocabulary.VocabularyDetailTest",
+      "timestamp": "2026-11-07T16:16:06",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "longExamplesRemainScrollableAtLargeFontOnSmallScreen[26]",
+          "classname": "com.vocamind.app.feature.vocabulary.VocabularyDetailTest",
+          "time": "2.978"
+        },
+        {
+          "name": "captureDetailLayoutsWithFixedActionAndWriteErrorFeedback[26]",
+          "classname": "com.vocamind.app.feature.vocabulary.VocabularyDetailTest",
+          "time": "0.412"
+        },
+        {
+          "name": "longExamplesRemainScrollableAtLargeFontOnSmallScreen",
+          "classname": "com.vocamind.app.feature.vocabulary.VocabularyDetailTest",
+          "time": "4.15"
+        },
+        {
+          "name": "captureDetailLayoutsWithFixedActionAndWriteErrorFeedback",
+          "classname": "com.vocamind.app.feature.vocabulary.VocabularyDetailTest",
+          "time": "0.547"
+        },
+        {
+          "name": "renderAllFieldsNullBlankIpaAndReplacePreviousWordWithoutInventingContent[26]",
+          "classname": "com.vocamind.app.feature.vocabulary.VocabularyDetailTest",
+          "time": "0.088"
+        },
+        {
+          "name": "pendingBlocksDoubleTapAndResumeRetryReconcilesAmbiguousCommitWithoutReplay[26]",
+          "classname": "com.vocamind.app.feature.vocabulary.VocabularyDetailTest",
+          "time": "0.017"
+        },
+        {
+          "name": "refreshGenerationAndClearedOwnerRejectLateReadsAndWrites[26]",
+          "classname": "com.vocamind.app.feature.vocabulary.VocabularyDetailTest",
+          "time": "0.013"
+        },
+        {
+          "name": "renderAllFieldsNullBlankIpaAndReplacePreviousWordWithoutInventingContent",
+          "classname": "com.vocamind.app.feature.vocabulary.VocabularyDetailTest",
+          "time": "0.085"
+        },
+        {
+          "name": "pendingBlocksDoubleTapAndResumeRetryReconcilesAmbiguousCommitWithoutReplay",
+          "classname": "com.vocamind.app.feature.vocabulary.VocabularyDetailTest",
+          "time": "0.017"
+        },
+        {
+          "name": "refreshGenerationAndClearedOwnerRejectLateReadsAndWrites",
+          "classname": "com.vocamind.app.feature.vocabulary.VocabularyDetailTest",
+          "time": "0.014"
+        }
+      ]
+    }
+  ]
+}

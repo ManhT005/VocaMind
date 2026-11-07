@@ -5,6 +5,8 @@ project entry point; generated build outputs stay in ignored build directories.
 
 | Document | Purpose |
 | --- | --- |
+| [DATA-08 plan](plans/data-08-catalog-upgrade-rollback.md) | Milestone-based catalog upgrade, bundle rollback, userdata preservation and migration test plan |
+| [DATA-08 validation](data-08-validation.md) | Startup generation publication/recovery, shared tests, migration component evidence and device gates |
 | [VOC-DATA-06 QA validation](voc-data-06-qa-validation.md) | Versioned QA catalog in the main QA APK, asset verification, and acceptance gates |
 | [VOC-DATA-06 validation](voc-data-06-validation.md) | Verified production QC to staged 150-word Room catalog, bundle/FTS gates, reproducibility and release limitations |
 | [DATA-07 plan](plans/data-07-progress-aggregation-queries.md) | Five-hour plan, distinct counts, six-box and quiz history acceptance |

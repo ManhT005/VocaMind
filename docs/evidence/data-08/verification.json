@@ -1,0 +1,229 @@
+{
+  "recordedAtUtc": "2026-11-07T16:16:34.714104+00:00",
+  "branch": "feature/data-08-catalog-upgrade-rollback",
+  "baseCommit": "993e70a07a05c50c5de8099edcdf50b92c91c5e9",
+  "workingTree": "Uncommitted DATA-08 implementation; no push",
+  "commands": [
+    {
+      "command": "bash gradlew :app:testDebugUnitTest :app:assembleDebug :app:assembleDebugAndroidTest :app:lintDebug --max-workers=2 --console=plain",
+      "result": "BUILD SUCCESSFUL",
+      "tail": [
+        "",
+        "BUILD SUCCESSFUL in 1m 7s",
+        "81 actionable tasks: 18 executed, 63 up-to-date"
+      ]
+    },
+    {
+      "command": "bash gradlew :app:assembleCatalogQa -PcatalogQa=true --max-workers=2 --console=plain",
+      "result": "BUILD SUCCESSFUL",
+      "tail": [
+        "",
+        "BUILD SUCCESSFUL in 4s",
+        "36 actionable tasks: 5 executed, 31 up-to-date"
+      ]
+    }
+  ],
+  "unitTests": {
+    "tests": 456,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "data08Tests": {
+    "tests": 38,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 10,
+    "baselineWarnings": 10
+  },
+  "apks": {
+    "debug": {
+      "path": "app/build/outputs/apk/debug/app-debug.apk",
+      "sha256": "af14eeacd576e8f4ea1ea722072a3172973b36a6dd762b53de15ab76067bb312",
+      "bytes": 9460835,
+      "catalogAssetNames": [
+        "catalog.db",
+        "catalog.metadata.json",
+        "content-credits.json",
+        "quiz-policy.json"
+      ],
+      "metadata": {
+        "kind": "synthetic-test-fixture-not-production",
+        "sqliteVersion": "3.50.4",
+        "schemaVersion": 2,
+        "identityHash": "6704c4cc4f3db1ef916af009d7de4b98",
+        "contentVersion": "1.0.0",
+        "canonicalSha256": "c2b7c643c4b61c865f4b34bbc9d875d2661a33739ef7efd5b1f4e1ac221636a8",
+        "sha256": "7f90d0b11b14ce73932231dc7c4506bdf30af3788b66d0fde536d08fa7f753e9",
+        "uniqueVocabularyCount": 4,
+        "membershipCount": 16,
+        "packCounts": {
+          "pack_toeic_basic": 4,
+          "pack_toeic_office": 4,
+          "pack_daily_life": 4,
+          "pack_academic": 4
+        }
+      }
+    },
+    "instrumentation": {
+      "path": "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+      "sha256": "9ffd8c058e4bc905a0aa29e5b54e9253b380728999d57d972a1c890ab8be0850",
+      "bytes": 927599,
+      "catalogAssetNames": []
+    },
+    "catalogQa": {
+      "path": "app/build/outputs/apk/catalogQa/app-catalogQa.apk",
+      "sha256": "48d1d019aa21e20343926e3e71a2d9fd078b99806ee7dec918f02fcf77d3445d",
+      "bytes": 7691382,
+      "catalogAssetNames": [
+        "catalog.db",
+        "catalog.metadata.json",
+        "content-credits.json",
+        "manifest.json",
+        "quiz-policy.json",
+        "release-gate-report.json"
+      ],
+      "metadata": {
+        "kind": "owner-accepted-release-candidate-not-authorized-for-distribution",
+        "fixtureOnly": false,
+        "sqliteVersion": "3.53.1",
+        "schemaVersion": 2,
+        "identityHash": "6704c4cc4f3db1ef916af009d7de4b98",
+        "contentVersion": "1.0.1",
+        "datasetSha256": "12aac7bfbe037c9136c3973cc724eee68205b88673ad25f40f7881de50d5398e",
+        "snapshotId": "editorial-qa-v2",
+        "distributionScope": "internal-qa",
+        "snapshotManifestSha256": "b3b1bd8ab5bdf6518782040ba68ff3352c600286e75f0aea78ace3441b8dedea",
+        "canonicalSha256": "1a4b3da8396834868b82955a1e03384e6263876302a82774e6677f786e27b60d",
+        "qcManifestSha256": "78c9b4d4efac63c5c515f827343b3fb51e061377bb61b24fc60151f3098bd1c8",
+        "roomSchemaSha256": "a0fe8058a2649cc3eb55c0675d019ada0e7404c385d856d111b4db7726eb9e97",
+        "acceptedInputHashes": {
+          "acceptance.json": "242069fe359d6b95c67916d5f5de734fd6f3bf2fb87844fac1fb423ae0b23ada",
+          "attribution.txt": "cdd461d191938f1865c5112c32bf5bf91a4e2fecacc524792dc5f8cac125801f",
+          "canonical-preview.json": "1a4b3da8396834868b82955a1e03384e6263876302a82774e6677f786e27b60d",
+          "identity-registry.json": "156e6dc876ea2e7619b46d91d7fa2e408480c64384c25dce3f35b6329003f418",
+          "ingestion-config.json": "96f6891fdec24c9f9659dc67be2721cbd516d6b80dcf77e9ef4d0c15b8ad6c46",
+          "inventory.json": "1de971675bbc8e271acf0de054b20b5cec68199f832eb7a8d97e77ddac42e5d1",
+          "quiz-policy.json": "0a644d0fb6088a77140e53bbf99cbaf82e970fa0ebe840a2f7ea81b63129b21d",
+          "reviews.json": "634f7d3caf79b163101aaba642acd6a19fa6521dcafc0d45c33f32f33f5b410a",
+          "snapshot-manifest.json": "b3b1bd8ab5bdf6518782040ba68ff3352c600286e75f0aea78ace3441b8dedea",
+          "source-registry.json": "867fe4fabd64a0b72b5db6a26d946235369d1e5bc567d844fef6798958e44023",
+          "staging.jsonl": "b588844e1f1228acaeed139efe08a5d9d53dcb5a9da8e4f056a23bea3ed959c9"
+        },
+        "sourceSnapshots": [
+          {
+            "id": "vocamind-ai-editorial-v1",
+            "snapshotDate": "2026-11-05",
+            "snapshotSha256": "b588844e1f1228acaeed139efe08a5d9d53dcb5a9da8e4f056a23bea3ed959c9",
+            "licenseCode": "PROJECT-USE-OWNER-ACCEPTED"
+          }
+        ],
+        "sha256": "56bfbbbc8f39c957aaf73b6b8c43706fe7c6d2cdd40420912369cb9331e853ed",
+        "uniqueVocabularyCount": 150,
+        "membershipCount": 150,
+        "packCounts": {
+          "pack_toeic_basic": 40,
+          "pack_toeic_office": 40,
+          "pack_daily_life": 40,
+          "pack_academic": 30
+        },
+        "distinctMeaningsPerPack": {
+          "pack_toeic_basic": 40,
+          "pack_toeic_office": 40,
+          "pack_daily_life": 40,
+          "pack_academic": 30
+        },
+        "examplePairCount": 150,
+        "nullableIpaCount": 150,
+        "ftsMappedRows": 150,
+        "ftsSearchChecks": 300,
+        "integrityCheck": "ok",
+        "foreignKeyViolations": 0,
+        "logicalDumpSha256": "85644c12afac36f80cb233a353280c40edc53241eb36ebce493e42462e1f6a6a"
+      },
+      "manifest": {
+        "schemaVersion": 1,
+        "status": "candidate-ready",
+        "releaseAuthorized": false,
+        "outputHashes": {
+          "catalog.db": "56bfbbbc8f39c957aaf73b6b8c43706fe7c6d2cdd40420912369cb9331e853ed",
+          "catalog.metadata.json": "6f85da9aa82ef4440fae64674296faabd308e350000948b8350ef8e8dbc0b003",
+          "content-credits.json": "4dfc32924b655fe8e276cfb9bdf6d408213f78e15ac3202cf354ed84067bfd5c",
+          "quiz-policy.json": "88168d65b114a02a5934eb429c75820482ad77e1ebab7f500c30fc6c09d8c617",
+          "release-gate-report.json": "9a4e79a711751fb335e76eb5c7f805398c66a9684f675c1a27e36ce8667327d9"
+        }
+      }
+    }
+  },
+  "unchangedProductionAssetsAndSchemasSha256": {
+    "app/src/main/assets/database/catalog.db": "7f90d0b11b14ce73932231dc7c4506bdf30af3788b66d0fde536d08fa7f753e9",
+    "app/src/main/assets/database/catalog.metadata.json": "c991e38554460911be182ec35433d436b762923f13af6a18ddaf33a6d1b5fc94",
+    "app/src/main/assets/database/content-credits.json": "2307c1117e3eb68d512773ac9b36b8b1079c41681b02694654fa677171ea6d61",
+    "app/src/main/assets/database/quiz-policy.json": "dbe6886ec5a7eecbb7a062e372ac3d7d5677add30e91d65f44b4707aee9eb7a5",
+    "app/schemas/com.vocamind.app.data.catalog.CatalogDatabase/1.json": "74fe0cebde1db0db6c1ba93a7fc60b00dee3bce75cdc8d501f48c3b03a12468a",
+    "app/schemas/com.vocamind.app.data.catalog.CatalogDatabase/2.json": "a0fe8058a2649cc3eb55c0675d019ada0e7404c385d856d111b4db7726eb9e97",
+    "app/schemas/com.vocamind.app.data.user.UserDatabase/1.json": "9befb93f43b3f64624608a209af914043aef0d2307ce7b6579bee4b111742545"
+  },
+  "testedChangedSourcesSha256": {
+    "app/src/androidTest/java/com/vocamind/app/data/catalog/upgrade/CatalogUpgradeInstrumentedTest.java": "c2460736a04ae567e8af086038a659e42fdae24e12af3a6404c14c1bcd92e257",
+    "app/src/catalogTest/java/com/vocamind/app/data/catalog/upgrade/CatalogUpgradeContract.java": "7fa505075b4cffbbf260d59958048ff2f755743ad389d381938b2c4fb9c2f97b",
+    "app/src/main/java/com/vocamind/app/core/AttributionViewModelFactory.java": "3f0aea4ab953daa435e40a3a0a00bb75bb45da137c67747d94f4bc9c94974839",
+    "app/src/main/java/com/vocamind/app/core/CatalogProvider.java": "90099083f5438cadfb3eefe8df67f529c4fcab6cdcc0ea4d6f0112c06277f213",
+    "app/src/main/java/com/vocamind/app/core/RepositoryProvider.java": "4b4aaaabdcbc60c206dd70e1f4a46944be6200ad138397607f13b34de6e1ca27",
+    "app/src/main/java/com/vocamind/app/data/catalog/ContentCredits.java": "eda96ab8f1612415d97f8ecbc147cb7e5dd8d8cca46f5bc8a9d6645e71adc42b",
+    "app/src/main/java/com/vocamind/app/data/catalog/upgrade/CatalogBundleValidator.java": "b2a5d1d0b5f7b8b2ca92827cdf5988c46a08a2e71ee24cff22a8b63230f4b612",
+    "app/src/main/java/com/vocamind/app/data/catalog/upgrade/CatalogGeneration.java": "0cc85f6056ad4f92a6b623bcf8b31b2ce4f63363d8ff8ed6b3d904c4a54df5c7",
+    "app/src/main/java/com/vocamind/app/data/catalog/upgrade/CatalogGenerationStore.java": "9b02227a788b67bd8ac1eb9efa7a62d58bc69b2bb3bfeb8c4424e067680d868e",
+    "app/src/main/java/com/vocamind/app/data/catalog/upgrade/CatalogReferenceChecker.java": "7f67b3645559766c1070c1dc87019933cd90b7a34c2fd6d2df83ce8057ef99a5",
+    "app/src/main/java/com/vocamind/app/data/catalog/upgrade/CatalogStartupCoordinator.java": "28c49e32a1b1c44764b3c4f8248d3ed03dfc904209aa0fc76c67a305ebf54608",
+    "app/src/main/java/com/vocamind/app/data/catalog/upgrade/CatalogUpgradeException.java": "190ca4e5ef4d7c81db48967ad9b8cc0da579a0bccd6ab012887e64263eca4fd7",
+    "app/src/main/java/com/vocamind/app/feature/attribution/AttributionViewModel.java": "92c55f1503270b09d3115cdca8d9ecc46a2fcddda7a009edb3f81b087670116d",
+    "app/src/test/java/com/vocamind/app/data/catalog/upgrade/CatalogUpgradeTest.java": "953ed743da84c7e03de0ba08dba43ee1f17f9eed11a571c3a0e8a4b07f678a9e"
+  },
+  "userReferenceDocuments": [
+    {
+      "fileName": "VocaMind_SRS_Baseline_v1.1.docx",
+      "sha256": "bc2d687bb1a70f28fe0e4566f77d07dc877d08269a6265c361a06fb816c0c7ec"
+    },
+    {
+      "fileName": "VocaMind — Phân công.xlsx",
+      "sha256": "638011a2e245575af2eb5744574fd05660de4a0099b6c0afb06e25a15cbcf5c3"
+    },
+    {
+      "fileName": "Văn bản đã dán.txt",
+      "sha256": "7ff2896b360f597e82f2c03ffa42dc21497b2fb6cf4b7a991be4d24073c2f906"
+    }
+  ],
+  "device": {
+    "instrumentationExecution": "not-run",
+    "realForceStopReboot": "not-run",
+    "devKvmPresent": false,
+    "emulatorInstalled": false,
+    "adbProbe": "adb devices -l: exit 134, Cannot mkdir /home/agent/.android: Read-only file system"
+  },
+  "diagnosticsResolved": [
+    {
+      "run": "Initial full regression",
+      "tests": 444,
+      "failures": 2,
+      "reason": "Attribution factory bootstrapped Room on main thread",
+      "fix": "Lazy provider initialized by serial worker"
+    },
+    {
+      "run": "Expanded DATA-08 fixture",
+      "tests": 34,
+      "failures": 2,
+      "reason": "New fixture used unsupported GOOD review rating",
+      "fix": "Use existing REMEMBERED contract rating"
+    }
+  ],
+  "remainingGates": [
+    "Combined real userdata schema 1-to-2 migration after QUIZ-03 integration",
+    "Actual process kill/force-stop/reboot and storage failure evidence on Android device",
+    "Thi review; no release approval inferred"
+  ]
+}
