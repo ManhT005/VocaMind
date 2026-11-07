@@ -89,3 +89,14 @@ Wi-Fi remained enabled during this LDPlayer run; despite the existing airplane s
 A separate local official API 28 emulator executed both four-question UI tests successfully. It exposed a schema-fixture assumption (optional JSON indices) and the ordinary bundled catalog limitation; the schema test was corrected and the accepted-corpus isolation asset added. A later local connection loss did not count as a pass. The successful result is the CI device run documented above.
 
 Review was requested on PR #33 from **Letruong18 (Trường)** and **nhandanghoc (Nhân)**. As of this validation no review submission has been received. Only those reviewers can supply their actual sign-off; no approval was fabricated and the PR has not been merged.
+
+## Re-review corrections
+
+Two P2 findings were reproduced and corrected after the historical results above:
+
+- The snapshot now retains `lastAnswerElapsed`. A restored ViewModel rejects a tap at 599ms after the previous accepted answer and accepts at 600ms. A monotonic clock moving behind the marker discards that old boundary, then establishes a new boundary only on a valid answer. Older snapshots without a marker remain readable; malformed markers fail restoration explicitly.
+- Offline validation now fails closed unless airplane mode is 1, Wi-Fi is 0 and the active default network is exactly `none`. The disposable-emulator script waits at most 20 polls for those conditions and refuses to start instrumentation on failure. The instrumented test independently checks the conditions before opening, at the empty screen and at the result screen.
+
+The production-flow test has a neutral name, `firstOpenThenTenQuestionsRotateReopenAndOneHistoryRow`. Its `quiz03RequireOffline` argument defaults to `true`, and CI explicitly supplies `true`. A functional run on a user's connected LDPlayer must explicitly supply `-e quiz03RequireOffline false`; it is not offline acceptance evidence. Do not turn off the user's LDPlayer network to run the disposable-emulator script.
+
+Correction verification: 15 targeted host tests passed (13 ViewModel, 2 real-NavHost UI), including four new snapshot/clock cases; four Python offline-gate tests passed. The previously retained online LDPlayer evidence is now rejected by the gate, while the recorded disconnected CI evidence passes. Bash syntax validation passed. Fresh targeted JUnit XML and command output are retained in `docs/evidence/quiz-03/review-fix/`. The full host/device CI on the correction is tracked by the current [PR checks](https://github.com/ManhT005/VocaMind/pull/33/checks); earlier 397-test and device records remain tied to their original commits.

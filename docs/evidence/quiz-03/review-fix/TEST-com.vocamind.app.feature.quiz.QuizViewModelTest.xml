@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.quiz.QuizViewModelTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2026-11-07T05:49:54" hostname="DESKTOP-SB4BN4D" time="1.085">
+  <properties/>
+  <testcase name="restoredSessionRejectsAt599msAndAcceptsAt600ms" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.227"/>
+  <testcase name="locksAnswersAndDebouncesAcrossQuestions" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.09"/>
+  <testcase name="closingScreenDuringSaveDoesNotAbandonCompletedPayload" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.108"/>
+  <testcase name="malformedClockMarkerProducesRestoreError" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.122"/>
+  <testcase name="snapshotKeepsOrderFeedbackAndCompletedKey" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.058"/>
+  <testcase name="abandonDoesNotSaveAndCompletedCannotAbandon" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.077"/>
+  <testcase name="invalidSnapshotShowsErrorWithoutGeneratingOrSaving" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.048"/>
+  <testcase name="restoredClockResetDoesNotLockAnswersAndStartsANewBoundary" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.069"/>
+  <testcase name="legacySnapshotWithoutClockMarkerStillRestores" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.066"/>
+  <testcase name="repositoryErrorAndInvalidInputAreNotEmpty" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.049"/>
+  <testcase name="clearingDuringGenerationDropsLateCallback" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.043"/>
+  <testcase name="emptyPoolIsNotAnErrorAndRetryReadsAgain" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.06"/>
+  <testcase name="completesOnLastAnswerAndRetriesSamePayload" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.056"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

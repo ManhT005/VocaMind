@@ -24,11 +24,14 @@ import static org.junit.Assert.*;
 /** Production composition/Room with the accepted-corpus test asset in a separate installation. */
 @RunWith(AndroidJUnit4.class)
 public class QuizProductionFlowInstrumentedTest {
-    @Test public void offlineFirstOpenThenTenQuestionsRotateReopenAndOneHistoryRow() throws Exception {
+    @Test public void firstOpenThenTenQuestionsRotateReopenAndOneHistoryRow() throws Exception {
         Context context=ApplicationProvider.getApplicationContext();
         Assume.assumeTrue("Requires -Pquiz03DeviceIsolation=true",context.getPackageName().endsWith(".quiz03validation"));
-        assertEquals("Enable airplane mode for offline acceptance",1,
-                Settings.Global.getInt(context.getContentResolver(),Settings.Global.AIRPLANE_MODE_ON,0));
+        String offlineArgument=InstrumentationRegistry.getArguments().getString("quiz03RequireOffline","true");
+        assertTrue("quiz03RequireOffline must be true or false",
+                "true".equals(offlineArgument) || "false".equals(offlineArgument));
+        boolean requireOffline="true".equals(offlineArgument);
+        if (requireOffline) assertOffline(context);
         UserDatabase user=UserDatabase.open(context);
         CatalogDatabase catalog=CatalogDatabase.open(context,"catalog.db");
         try {
@@ -37,6 +40,7 @@ public class QuizProductionFlowInstrumentedTest {
             try (ActivityScenario<MainActivity> scenario=ActivityScenario.launch(MainActivity.class)) {
                 scenario.onActivity(a -> a.findViewById(R.id.open_quiz).performClick());
                 await(scenario,QuizViewModel.Phase.EMPTY);
+                if (requireOffline) assertOffline(context);
                 screenshot(context,"01-offline-empty");
                 assertEquals(150,catalog.catalogDao().allVocabulary().size());
                 for (var pack : catalog.catalogDao().packs())
@@ -63,6 +67,7 @@ public class QuizProductionFlowInstrumentedTest {
                     }
                 }
                 await(scenario,QuizViewModel.Phase.RESULT);
+                if (requireOffline) assertOffline(context);
                 QuizResult result=state(scenario).session.getResult().get();
                 assertEquals(10,result.getQuestionCount()); screenshot(context,"03-result");
                 scenario.recreate(); await(scenario,QuizViewModel.Phase.RESULT);
@@ -78,6 +83,24 @@ public class QuizProductionFlowInstrumentedTest {
             user.close(); user=UserDatabase.open(context);
             assertEquals(1,user.userDao().quizzes().size());
         } finally { user.close(); catalog.close(); }
+    }
+    private static void assertOffline(Context context) throws Exception {
+        assertEquals("Airplane mode required",1,
+                Settings.Global.getInt(context.getContentResolver(),Settings.Global.AIRPLANE_MODE_ON,0));
+        assertEquals("Wi-Fi must be disabled",0,
+                Settings.Global.getInt(context.getContentResolver(),"wifi_on",-1));
+        java.io.ByteArrayOutputStream bytes=new java.io.ByteArrayOutputStream();
+        try (java.io.InputStream input=new android.os.ParcelFileDescriptor.AutoCloseInputStream(
+                InstrumentationRegistry.getInstrumentation().getUiAutomation().executeShellCommand("dumpsys connectivity"))) {
+            byte[] buffer=new byte[4096]; int count;
+            while ((count=input.read(buffer)) != -1) bytes.write(buffer,0,count);
+        }
+        java.util.regex.Matcher active=java.util.regex.Pattern.compile(
+                "(?m)^\\s*Active default network:\\s*(\\S+)\\s*$")
+                .matcher(new String(bytes.toByteArray(),java.nio.charset.StandardCharsets.UTF_8));
+        assertTrue("Missing active-default-network evidence",active.find());
+        assertEquals("Device still has an active network","none",active.group(1));
+        assertFalse("Ambiguous active-default-network evidence",active.find());
     }
     private static QuizViewModel.State state(ActivityScenario<MainActivity> scenario) {
         AtomicReference<QuizViewModel.State> out=new AtomicReference<>();

@@ -45,6 +45,12 @@ public final class QuizViewModel extends ViewModel {
             UUID.fromString(key);
             session = QuizSnapshotMapper.decode(snapshot.getBundle("session"));
             completedAt = snapshot.getLong("completedAt", -1);
+            if (snapshot.containsKey("lastAnswerElapsed")) {
+                lastAnswer = snapshot.getLong("lastAnswerElapsed", -1);
+                if (lastAnswer < 0 || session.getAnswers().isEmpty())
+                    throw new IllegalArgumentException("answer clock");
+                hasLastAnswer = true;
+            }
             if (session.getState() == QuizSession.State.COMPLETED) {
                 if (completedAt < 0) throw new IllegalArgumentException("completion time");
                 save();
@@ -82,7 +88,12 @@ public final class QuizViewModel extends ViewModel {
     public void answer(String questionId, String optionId) {
         if (!isInProgress()) return;
         long now=monotonic.getAsLong();
-        if (hasLastAnswer && now-lastAnswer < 600) return;
+        if (hasLastAnswer) {
+            // elapsedRealtime is shared across processes, but resets after reboot.
+            // A marker ahead of the current clock cannot be used as a deadline.
+            if (now < lastAnswer) hasLastAnswer = false;
+            else if (now-lastAnswer < 600) return;
+        }
         QuizSession.Transition transition=session.answer(questionId,optionId);
         if (transition.getOutcome() != QuizSession.Outcome.ACCEPTED) return;
         session=transition.getSession(); lastAnswer=now; hasLastAnswer=true;
@@ -120,6 +131,7 @@ public final class QuizViewModel extends ViewModel {
     }
     private void persist() {
         Bundle out=new Bundle(); out.putString("key",key); out.putLong("completedAt",completedAt);
+        if (hasLastAnswer) out.putLong("lastAnswerElapsed",lastAnswer);
         out.putBundle("session",QuizSnapshotMapper.encode(session)); saved.set("quiz",out);
     }
     private void publishQuestion() {

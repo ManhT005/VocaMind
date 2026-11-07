@@ -50,6 +50,42 @@ public class QuizViewModelTest {
     void complete(int n, int correct) {
         for (int i=0;i<n;i++) { now+=600; answer(i<correct ? "a" : "b"); if (i<n-1) model.next(); }
     }
+    SavedStateHandle restoredHandle() {
+        android.os.Parcel parcel=android.os.Parcel.obtain();
+        try {
+            parcel.writeBundle(handle.get("quiz")); parcel.setDataPosition(0);
+            return new SavedStateHandle(Collections.singletonMap("quiz",parcel.readBundle(getClass().getClassLoader())));
+        } finally { parcel.recycle(); }
+    }
+    @Test public void restoredSessionRejectsAt599msAndAcceptsAt600ms() {
+        model=create(handle,4); worker.run(); answer("a"); model.next();
+        now=1599; model=create(restoredHandle(),4);
+        answer("b"); assertEquals(QuizViewModel.Phase.ANSWERING,phase());
+        assertEquals(1,session().getAnswers().size());
+        now=1600; answer("b"); assertEquals(QuizViewModel.Phase.ANSWERED,phase());
+        assertEquals(2,session().getAnswers().size()); assertEquals(1,reads); assertEquals(0,writes);
+    }
+    @Test public void restoredClockResetDoesNotLockAnswersAndStartsANewBoundary() {
+        model=create(handle,4); worker.run(); answer("a"); model.next();
+        now=10; model=create(restoredHandle(),4);
+        answer("a"); assertEquals(QuizViewModel.Phase.ANSWERED,phase()); model.next();
+        now=609; answer("a"); assertEquals(QuizViewModel.Phase.ANSWERING,phase());
+        now=610; answer("a"); assertEquals(QuizViewModel.Phase.ANSWERED,phase());
+    }
+    @Test public void legacySnapshotWithoutClockMarkerStillRestores() {
+        model=create(handle,4); worker.run(); answer("a"); model.next();
+        Bundle snapshot=handle.get("quiz"); snapshot.remove("lastAnswerElapsed");
+        model=create(restoredHandle(),4);
+        assertEquals(QuizViewModel.Phase.ANSWERING,phase()); assertEquals(1,reads);
+        now=1600; answer("a"); assertEquals(QuizViewModel.Phase.ANSWERED,phase());
+    }
+    @Test public void malformedClockMarkerProducesRestoreError() {
+        model=create(handle,4); worker.run(); answer("a"); model.next();
+        Bundle snapshot=handle.get("quiz"); snapshot.putLong("lastAnswerElapsed",-1);
+        model=create(restoredHandle(),4);
+        assertEquals(QuizViewModel.Phase.ERROR,phase());
+        assertEquals("RESTORE_INVALID",model.state().getValue().error); assertEquals(0,writes);
+    }
     @Test public void locksAnswersAndDebouncesAcrossQuestions() {
         model=create(handle,4); model.start(); assertEquals(1,worker.tasks.size()); worker.run();
         model.next(); assertEquals(0,session().getPosition());
