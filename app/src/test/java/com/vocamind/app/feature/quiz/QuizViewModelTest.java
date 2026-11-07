@@ -79,6 +79,14 @@ public class QuizViewModelTest {
         assertEquals(QuizViewModel.Phase.ANSWERING,phase()); assertEquals(1,reads);
         now=1600; answer("a"); assertEquals(QuizViewModel.Phase.ANSWERED,phase());
     }
+    @Test public void resetMarkerStaysDiscardedAfterClockCatchesUpAndAnotherRestore() {
+        model=create(handle,4); worker.run(); answer("a"); model.next();
+        SavedStateHandle restored=restoredHandle();
+        now=10; model=create(restored,4);
+        now=1100; model=create(restored,4);
+        answer("a"); assertEquals(QuizViewModel.Phase.ANSWERED,phase());
+        assertEquals(1,reads); assertEquals(0,writes);
+    }
     @Test public void malformedClockMarkerProducesRestoreError() {
         model=create(handle,4); worker.run(); answer("a"); model.next();
         Bundle snapshot=handle.get("quiz"); snapshot.putLong("lastAnswerElapsed",-1);

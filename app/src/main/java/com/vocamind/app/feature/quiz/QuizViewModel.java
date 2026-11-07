@@ -45,14 +45,22 @@ public final class QuizViewModel extends ViewModel {
             UUID.fromString(key);
             session = QuizSnapshotMapper.decode(snapshot.getBundle("session"));
             completedAt = snapshot.getLong("completedAt", -1);
+            if (session.getState() == QuizSession.State.COMPLETED && completedAt < 0)
+                throw new IllegalArgumentException("completion time");
             if (snapshot.containsKey("lastAnswerElapsed")) {
                 lastAnswer = snapshot.getLong("lastAnswerElapsed", -1);
                 if (lastAnswer < 0 || session.getAnswers().isEmpty())
                     throw new IllegalArgumentException("answer clock");
-                hasLastAnswer = true;
+                hasLastAnswer = monotonic.getAsLong() >= lastAnswer;
+                if (!hasLastAnswer) {
+                    // Forget a pre-reset marker immediately, even if another restore
+                    // occurs after the new clock has caught up with its old value.
+                    Bundle normalized = new Bundle(snapshot);
+                    normalized.remove("lastAnswerElapsed");
+                    saved.set("quiz", normalized);
+                }
             }
             if (session.getState() == QuizSession.State.COMPLETED) {
-                if (completedAt < 0) throw new IllegalArgumentException("completion time");
                 save();
             } else publishQuestion();
         } catch (RuntimeException invalid) { session=null; publish(Phase.ERROR, "RESTORE_INVALID"); }

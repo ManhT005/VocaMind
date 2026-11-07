@@ -18,7 +18,7 @@ QuizViewModel handles immutable domain transitions on main. A serial worker perf
 
 Screen and system Back share confirmation. Cancel keeps the attempt; confirmed exit abandons without history. The Activity owns the model, so rotation/navigation retain the current session and save state. A confirmed abandoned attempt starts fresh on the next visit. A new attempt reads a fresh active-pack snapshot.
 
-SavedStateHandle stores an Android-only Bundle with completion key, fixed completion timestamp, shuffled questions/options, position and answers. Restoration reconstructs questions with the Unicode normalizer and replays validated domain transitions. Invalid state produces an explicit restore error. Completed restoration reconciles with the original key instead of creating a new attempt. Rendering never inserts history.
+SavedStateHandle stores an Android-only Bundle with completion key, fixed completion timestamp, shuffled questions/options, position, answers and the last accepted answer's monotonic marker. Restoration reconstructs questions with the Unicode normalizer and replays validated domain transitions. Invalid state produces an explicit restore error. Completed restoration reconciles with the original key instead of creating a new attempt. Rendering never inserts history.
 
 `saveAttemptOnce(key, result, completedAt)` returns the same attempt ID for an identical key/payload and CONFLICT for a changed payload. UserDatabase v2 adds nullable QuizAttempt.completionKey plus a unique index. MIGRATION_1_2 adds column/index without resetting data; legacy keys remain NULL. Lookup, comparison and insert share one Room transaction. The previous saveAttempt API remains available. Generate/abandon do not update progress, catalog or ReviewEvent.
 
@@ -26,7 +26,7 @@ SavedStateHandle stores an Android-only Bundle with completion key, fixed comple
 
 | Check | Result |
 |---|---|
-| CI host/JVM suite | 397 tests, 0 failures, 0 errors, 0 skips |
+| Baseline CI host/JVM suite (5d546e7) | 397 tests, 0 failures, 0 errors, 0 skips |
 | CI debug APK / instrumentation APK | PASS |
 | CI lintDebug | PASS; 0 errors, 7 existing warnings |
 | CI connectedDebugAndroidTest | 4 tests, 0 failures, 0 errors, 0 skips |
@@ -99,4 +99,4 @@ Two P2 findings were reproduced and corrected after the historical results above
 
 The production-flow test has a neutral name, `firstOpenThenTenQuestionsRotateReopenAndOneHistoryRow`. Its `quiz03RequireOffline` argument defaults to `true`, and CI explicitly supplies `true`. A functional run on a user's connected LDPlayer must explicitly supply `-e quiz03RequireOffline false`; it is not offline acceptance evidence. Do not turn off the user's LDPlayer network to run the disposable-emulator script.
 
-Correction verification: 15 targeted host tests passed (13 ViewModel, 2 real-NavHost UI), including four new snapshot/clock cases; four Python offline-gate tests passed. The previously retained online LDPlayer evidence is now rejected by the gate, while the recorded disconnected CI evidence passes. Bash syntax validation passed. Fresh targeted JUnit XML and command output are retained in `docs/evidence/quiz-03/review-fix/`. The full host/device CI on the correction is tracked by the current [PR checks](https://github.com/ManhT005/VocaMind/pull/33/checks); earlier 397-test and device records remain tied to their original commits.
+Correction verification passed **16 targeted host tests** (14 ViewModel, 2 real-NavHost UI), including five snapshot/clock regressions, and four Python offline-gate tests. Reset markers are removed from saved state as soon as the reset is observed, including clock catch-up followed by a second restoration. The previously retained online LDPlayer evidence is rejected by the gate, while the recorded disconnected CI evidence passes. Bash syntax validation passed. Fresh targeted JUnit XML and command output are retained in `docs/evidence/quiz-03/review-fix/`. The full host/device CI on the correction is tracked by the current [PR checks](https://github.com/ManhT005/VocaMind/pull/33/checks); earlier 397-test and device records remain tied to their original commits.

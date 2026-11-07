@@ -51,5 +51,5 @@ Note: Recompile with -Xlint:deprecation for details.
 > Task :app:processDebugUnitTestJavaRes UP-TO-DATE
 > Task :app:testDebugUnitTest
 
-BUILD SUCCESSFUL in 1m 11s
+BUILD SUCCESSFUL in 1m 10s
 29 actionable tasks: 5 executed, 24 up-to-date
