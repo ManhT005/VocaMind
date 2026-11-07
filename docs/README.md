@@ -62,6 +62,7 @@ project entry point; generated build outputs stay in ignored build directories.
 | [LEARN-02 validation](learn-02-validation.md) | TC-SCHED-01..10 and boundary test coverage for the Leitner scheduler |
 | [UI sketch](sketchs.png) | Visual reference for future feature screens |
 | [QUIZ-03 plan](plans/quiz-03-ui-session.md) | Quiz UI/session, answer locking, idempotent completion and planned validation |
+| [QUIZ-03 validation](quiz-03-validation.md) | Quiz UI/session implementation, migration, host/device evidence and review gates |
 | [QUIZ-02 plan](plans/quiz-02-generation.md) | Production Quiz generation, normalization, sampling and planned validation |
 | [QUIZ-02 validation](quiz-02-validation.md) | Generator, pinned Unicode NFC/casefold, test evidence and QUIZ-03 handoff |
 

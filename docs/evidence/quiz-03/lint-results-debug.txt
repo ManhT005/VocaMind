@@ -1,0 +1,92 @@
+D:\hoc\android\demo\Vocamind\app\build.gradle:95: Warning: A newer version of com.google.android.material:material than 1.13.0 is available: 1.14.0 [GradleDependency]
+    implementation 'com.google.android.material:material:1.13.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+D:\hoc\android\demo\Vocamind\app\src\main\res\layout\item_pack.xml:4: Warning: Possible overdraw: Root element paints background ?attr/selectableItemBackground with a theme that also paints a background (inferred theme is @style/Theme.VocaMind) [Overdraw]
+    android:layout_marginTop="@dimen/shell_section_spacing" android:background="?attr/selectableItemBackground"
+                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\hoc\android\demo\Vocamind\app\src\main\res\layout\item_pack_word.xml:5: Warning: Possible overdraw: Root element paints background ?attr/selectableItemBackground with a theme that also paints a background (inferred theme is @style/Theme.VocaMind) [Overdraw]
+    android:orientation="vertical" android:minHeight="48dp" android:background="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "Overdraw":
+   If you set a background drawable on a root view, then you should use a
+   custom theme where the theme background is null. Otherwise, the theme
+   background will be painted first, only to have your custom background
+   completely cover it; this is called "overdraw".
+
+   NOTE: This detector relies on figuring out which layouts are associated
+   with which activities based on scanning the Java code, and it's currently
+   doing that using an inexact pattern matching algorithm. Therefore, it can
+   incorrectly conclude which activity the layout is associated with and then
+   wrongly complain that a background-theme is hidden.
+
+   If you want your custom background on multiple pages, then you should
+   consider making a custom theme with your custom background and just using
+   that theme instead of a root element background.
+
+   Of course it's possible that your custom drawable is translucent and you
+   want it to be mixed with the background. However, you will get better
+   performance if you pre-mix the background with your drawable and use that
+   resulting image or color as a custom theme background instead.
+
+D:\hoc\android\demo\Vocamind\app\src\main\res\values\strings.xml:42: Warning: The resource R.string.pack_word_new appears to be unused [UnusedResources]
+    <string name="pack_word_new">Chưa học</string>
+            ~~~~~~~~~~~~~~~~~~~~
+D:\hoc\android\demo\Vocamind\app\src\main\res\values\strings.xml:43: Warning: The resource R.string.pack_word_box appears to be unused [UnusedResources]
+    <string name="pack_word_box">Hộp %1$d</string>
+            ~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+D:\hoc\android\demo\Vocamind\app\src\main\AndroidManifest.xml:4: Warning: Should explicitly set android:icon, there is no default [MissingApplicationIcon]
+    <application
+     ~~~~~~~~~~~
+
+   Explanation for issues of type "MissingApplicationIcon":
+   You should set an icon for the application as whole because there is no
+   default. This attribute must be set as a reference to a drawable resource
+   containing the image (for example @drawable/icon).
+
+   https://developer.android.com/studio/publish/preparing#publishing-configure
+
+D:\hoc\android\demo\Vocamind\app\src\main\java\com\vocamind\app\feature\quiz\QuizFragment.java:66: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                    status.setText(getString(R.string.quiz_result,r.getQuestionCount(),r.getCorrectCount(),r.getWrongCount(),r.getScorePercent())
+                                   ^
+D:\hoc\android\demo\Vocamind\app\src\main\java\com\vocamind\app\feature\quiz\QuizFragment.java:74: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        ((TextView)view.findViewById(R.id.quiz_context)).setText(vocabulary.getPos()+"\n"+vocabulary.getContext());
+                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+0 errors, 8 warnings

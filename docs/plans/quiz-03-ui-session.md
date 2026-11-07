@@ -6,7 +6,7 @@
 
 **Nhánh:** `feature/quiz-03-ui-session`. **Base develop đã kiểm tra:** `8209ef75bc882ca10367abd40900e44e537571cb`.
 
-**Trạng thái:** Kế hoạch; chưa triển khai UI/session coordinator, thay persistence hoặc chạy test QUIZ-03.
+**Trạng thái:** Đã triển khai UI/session và idempotent persistence; host tests đã chạy. Đang bổ sung device/CI evidence và chờ reviewer/data-owner xác nhận. Chi tiết hiện hành: [QUIZ-03 validation](../quiz-03-validation.md). Chưa đánh dấu Done thay người review.
 
 ## 1. Căn cứ
 

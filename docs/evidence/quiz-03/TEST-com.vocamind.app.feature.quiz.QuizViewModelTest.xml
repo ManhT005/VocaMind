@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.quiz.QuizViewModelTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-11-07T04:49:15" hostname="DESKTOP-SB4BN4D" time="0.636">
+  <properties/>
+  <testcase name="locksAnswersAndDebouncesAcrossQuestions" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.055"/>
+  <testcase name="closingScreenDuringSaveDoesNotAbandonCompletedPayload" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.09"/>
+  <testcase name="snapshotKeepsOrderFeedbackAndCompletedKey" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.06"/>
+  <testcase name="abandonDoesNotSaveAndCompletedCannotAbandon" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.15"/>
+  <testcase name="invalidSnapshotShowsErrorWithoutGeneratingOrSaving" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.061"/>
+  <testcase name="repositoryErrorAndInvalidInputAreNotEmpty" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.047"/>
+  <testcase name="clearingDuringGenerationDropsLateCallback" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.054"/>
+  <testcase name="emptyPoolIsNotAnErrorAndRetryReadsAgain" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.058"/>
+  <testcase name="completesOnLastAnswerAndRetriesSamePayload" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.059"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

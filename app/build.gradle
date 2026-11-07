@@ -51,6 +51,18 @@ android {
         androidTest.assets.srcDir "src/catalogTest/assets"
         test.java.srcDir "src/attributionTest/java"
         androidTest.java.srcDir "src/attributionTest/java"
+        test.java.srcDir "src/quizTest/java"
+        androidTest.java.srcDir "src/quizTest/java"
+        androidTest.assets.srcDir "schemas"
+    }
+
+    // Opt-in device validation uses separate app storage; never replace a real user's install.
+    buildTypes {
+        debug {
+            if (providers.gradleProperty('quiz03DeviceIsolation').orNull == 'true') {
+                applicationIdSuffix '.quiz03validation'
+            }
+        }
     }
 
     testOptions {
