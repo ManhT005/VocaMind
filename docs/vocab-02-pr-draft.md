@@ -31,7 +31,11 @@ actual composition và accepted Quiz policy. Không dùng số liệu cũ 287 te
 
 [Validation sau resolve](vocab-02-data0607-integration.md) · [Contract saved-only](vocab-02-saved-only-decision.md)
 
-AC-04 có acceptance host detail/save/unsave/reopen/catalog bất biến; **device QA NOT RUN** vì ADB
-không có thiết bị: Airplane Mode, process restart/reboot, TalkBack. Host recreation/Room reopen không
-thay device QA; build test APK không phải chạy instrumentation. Không xác nhận content QA toàn catalog
-hoặc AC-12/13 từ task này. Không thêm search UI, Flashcard, TTS hay danh sách saved.
+AC-04 có host acceptance và [focused emulator QA 07/11/2026](vocab-02-device-qa.md) trên Small_Phone/API30:
+V02-A..D PASS, gồm detail offline, Save/Unsave, real force-stop/relaunch, hai reboot offline,
+bảo toàn existing progress/history/catalog, pending/rotation/loading và controlled error/Retry.
+QA dùng package riêng và external instrumentation probe, không sửa production source.
+
+IPA-present và lỗi đọc/ghi trên device có fixture/test hook ghi rõ, không bịa catalog QA hoặc disk failure.
+Ma trận emulator API26/35, thiết bị vật lý và TalkBack toàn diện chưa chạy trong lượt này.
+Không xác nhận content QA toàn catalog hoặc AC-12/13 toàn phần; chờ Thành nghiệm thu, không tự Done/merge.

@@ -1,0 +1,1 @@
+PASS: offline actual list/detail fields, null IPA, Back; first-save multi-click pending lock and rotation, persisted saved

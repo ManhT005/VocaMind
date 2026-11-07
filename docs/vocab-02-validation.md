@@ -1,5 +1,9 @@
 # VOCAB-02 — validation và handoff
 
+**Device QA 07/11/2026:** đã chạy bốn nhóm V02-A..D trên model Small_Phone/API30,
+gồm force-stop và hai reboot offline. Xem [focused emulator evidence](vocab-02-device-qa.md).
+Các ghi chú device NOT RUN bên dưới là trạng thái lịch sử trước lượt QA này.
+
 **Tích hợp mới nhất:** develop `8209ef7` với DATA-06/DATA-07; xem
 [validation sau resolve hiện hành](vocab-02-data0607-integration.md). Các số liệu trên base45db604 là lịch sử.
 

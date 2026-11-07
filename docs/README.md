@@ -80,3 +80,4 @@ validation records separate from the current setup and foundation guides.
 - [VOCAB-02 review follow-up / develop integration](vocab-02-review-followup.md)
 - [VOCAB-02 first-save contract acceptance](vocab-02-first-save-validation.md)
 - [VOCAB-02 DATA-06/DATA-07 integration](vocab-02-data0607-integration.md)
+- [VOCAB-02 focused emulator QA](vocab-02-device-qa.md)
