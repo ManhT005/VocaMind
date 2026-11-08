@@ -1,0 +1,17 @@
+{
+  "serial": "emulator-5554",
+  "head": "e12f0ee2064b672921a976b3f80ad64227e1cd24",
+  "apk": "build\\search-performance-baseline.apk",
+  "apkSha256": "805cf000c7df757dd3dbb397ccfb47ee800fc276cae20f57ee361fafd0fec673",
+  "classes": "com.vocamind.app.data.catalog.FtsSearchBenchmarkInstrumentedTest",
+  "latencyAssertionsEnabled": false,
+  "referenceHardwareVerified": false,
+  "fixtureSha256": "5fac69d4a5776130346be14747d81af3354a9220c2f9675ed95740c5058f54a7",
+  "install": "Performing Streamed Install\r\nSuccess\r\n",
+  "instrumentationApkSha256": "a507991d11a0c3678a2513e0d9372340ef3ea1c176f8050bacd7aa9fa5dcaf7d",
+  "ro.product.model": "sdk_gphone_x86",
+  "ro.hardware": "ranchu",
+  "ro.build.version.sdk": "30",
+  "ro.build.fingerprint": "google/sdk_gphone_x86/generic_x86_arm:11/RSR1.201013.001/6903271:user/release-keys",
+  "meminfo": "MemTotal:        2028236 kB\r\nMemFree:          235264 kB\r\nMemAvailable:    1174072 kB\r\nBuffers:           38372 kB\r\nCached:           936620 kB\r\nSwapCached:         6008 kB\r\nActive:           886932 kB\r\nInactive:         621464 kB\r\nActive(anon):     334584 kB\r\nInactive(anon):   214392 kB\r\nActive(file):     552348 kB\r\nInactive(file):   407072 kB\r\nUnevictable:        3068 kB\r\nMlocked:            3068 kB\r\nSwapTotal:       1521172 kB\r\nSwapFree:        1335060 kB\r\nDirty:              8924 kB\r\nWriteback:             0 kB\r\nAnonPages:        531236 kB\r\nMapped:           536396 kB\r\nShmem:             13056 kB\r\nKReclaimable:      44200 kB\r\nSlab:             124344 kB\r\nSReclaimable:      44200 kB\r\nSUnreclaim:        80144 kB\r\nKernelStack:       24720 kB\r\nPageTables:        36684 kB\r\nNFS_Unstable:          0 kB\r\nBounce:                0 kB\r\nWritebackTmp:          0 kB\r\nCommitLimit:     2535288 kB\r\nCommitted_AS:   28571260 kB\r\nVmallocTotal:   34359738367 kB\r\nVmallocUsed:       38000 kB\r\nVmallocChunk:          0 kB\r\nPercpu:             3264 kB\r\nCmaTotal:              0 kB\r\nCmaFree:               0 kB\r\nDirectMap4k:      134992 kB\r\nDirectMap2M:     1961984 kB\r\nDirectMap1G:           0 kB\r\n"
+}

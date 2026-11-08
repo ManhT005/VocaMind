@@ -1,0 +1,1753 @@
+INSTRUMENTATION_STATUS: class=com.vocamind.app.feature.packs.PackActivationInstrumentedTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+com.vocamind.app.feature.packs.PackActivationInstrumentedTest:
+INSTRUMENTATION_STATUS: test=rotationWhileWritePendingKeepsSingleMutationAndReconciles
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.feature.packs.PackActivationInstrumentedTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=rotationWhileWritePendingKeepsSingleMutationAndReconciles
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.feature.packs.PackActivationInstrumentedTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=persistenceProbe
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.feature.packs.PackActivationInstrumentedTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.vocamind.app.feature.packs.PackActivationInstrumentedTest.persistenceProbe(PackActivationInstrumentedTest.java:182)
+
+INSTRUMENTATION_STATUS: stream=
+Error in persistenceProbe(com.vocamind.app.feature.packs.PackActivationInstrumentedTest):
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.vocamind.app.feature.packs.PackActivationInstrumentedTest.persistenceProbe(PackActivationInstrumentedTest.java:182)
+
+INSTRUMENTATION_STATUS: test=persistenceProbe
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.feature.packs.PackActivationInstrumentedTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=backgroundDestinationForProcessRestoration
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.feature.packs.PackActivationInstrumentedTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=backgroundDestinationForProcessRestoration
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.feature.packs.PackActivationInstrumentedTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=offlineFirstLaunchCtaActivateVocabularyBackPauseAndConfirmedRotation
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.feature.packs.PackActivationInstrumentedTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.vocamind.app.feature.packs.PackActivationInstrumentedTest.offlineFirstLaunchCtaActivateVocabularyBackPauseAndConfirmedRotation(PackActivationInstrumentedTest.java:88)
+
+INSTRUMENTATION_STATUS: stream=
+Error in offlineFirstLaunchCtaActivateVocabularyBackPauseAndConfirmedRotation(com.vocamind.app.feature.packs.PackActivationInstrumentedTest):
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.vocamind.app.feature.packs.PackActivationInstrumentedTest.offlineFirstLaunchCtaActivateVocabularyBackPauseAndConfirmedRotation(PackActivationInstrumentedTest.java:88)
+
+INSTRUMENTATION_STATUS: test=offlineFirstLaunchCtaActivateVocabularyBackPauseAndConfirmedRotation
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.feature.packs.PackActivationInstrumentedTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=exclusiveSharedScopeAndProgressSurvivePauseInDedicatedFixture
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.feature.packs.PackActivationInstrumentedTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=exclusiveSharedScopeAndProgressSurvivePauseInDedicatedFixture
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.feature.packs.PackActivationInstrumentedTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=writeFailureAndSuccessfulWriteFailedRereadUseReadOnlyRetry
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.feature.packs.PackActivationInstrumentedTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=writeFailureAndSuccessfulWriteFailedRereadUseReadOnlyRetry
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.feature.quiz.QuizScreenInstrumentedTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+com.vocamind.app.feature.quiz.QuizScreenInstrumentedTest:
+INSTRUMENTATION_STATUS: test=toolbarAndSystemBackShareCancelAndConfirmExit
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.feature.quiz.QuizScreenInstrumentedTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=toolbarAndSystemBackShareCancelAndConfirmExit
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.feature.quiz.QuizScreenInstrumentedTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=fullFlowKeepsFeedbackThroughRecreationAndSavesOnce
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.feature.quiz.QuizScreenInstrumentedTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=fullFlowKeepsFeedbackThroughRecreationAndSavesOnce
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+com.vocamind.app.data.user.AtomicReviewInstrumentedTest:
+INSTRUMENTATION_STATUS: test=mismatchedIdsAndTamperedHistoryCannotWrite
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$mismatchedIdsAndTamperedHistoryCannotWrite$31(AtomicReviewContract.java:306)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$bId56s8Y_1vlk-x6qhAY9WotgE8(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda13.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in mismatchedIdsAndTamperedHistoryCannotWrite(com.vocamind.app.data.user.AtomicReviewInstrumentedTest):
+com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$mismatchedIdsAndTamperedHistoryCannotWrite$31(AtomicReviewContract.java:306)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$bId56s8Y_1vlk-x6qhAY9WotgE8(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda13.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=mismatchedIdsAndTamperedHistoryCannotWrite
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=legacyAndUseCaseCannotBothInsertFirstReview
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: java.lang.AssertionError: Expected conflict, got NOT_FOUND
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.race(AtomicReviewContract.java:165)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyAndUseCaseCannotBothInsertFirstReview(AtomicReviewContract.java:162)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Expected conflict, got NOT_FOUND
+	at org.junit.Assert.fail(Assert.java:89)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$race$17(AtomicReviewContract.java:207)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$NUw8ccELPj2xk6KD77FZHFZYYqA(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda11.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in legacyAndUseCaseCannotBothInsertFirstReview(com.vocamind.app.data.user.AtomicReviewInstrumentedTest):
+java.lang.AssertionError: java.lang.AssertionError: Expected conflict, got NOT_FOUND
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.race(AtomicReviewContract.java:165)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyAndUseCaseCannotBothInsertFirstReview(AtomicReviewContract.java:162)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Expected conflict, got NOT_FOUND
+	at org.junit.Assert.fail(Assert.java:89)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$race$17(AtomicReviewContract.java:207)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$NUw8ccELPj2xk6KD77FZHFZYYqA(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda11.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=legacyAndUseCaseCannotBothInsertFirstReview
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=11
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=staleEmptySnapshotCannotOverwriteFirstReview
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=11
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$staleEmptySnapshotCannotOverwriteFirstReview$15(AtomicReviewContract.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$Zrp6uQW3U0J06-CdZeMECk0kA5k(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda32.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in staleEmptySnapshotCannotOverwriteFirstReview(com.vocamind.app.data.user.AtomicReviewInstrumentedTest):
+com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$staleEmptySnapshotCannotOverwriteFirstReview$15(AtomicReviewContract.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$Zrp6uQW3U0J06-CdZeMECk0kA5k(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda32.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=staleEmptySnapshotCannotOverwriteFirstReview
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=12
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=closedDatabaseReadReportsReadFailure
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=12
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: java.lang.AssertionError: expected:<READ_FAILED> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.closedDatabaseReadReportsReadFailure(AtomicReviewContract.java:323)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<READ_FAILED> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$closedDatabaseReadReportsReadFailure$33(AtomicReviewContract.java:326)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$XPpEpwsH4lncp607BAASFaxMorU(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda5.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in closedDatabaseReadReportsReadFailure(com.vocamind.app.data.user.AtomicReviewInstrumentedTest):
+java.lang.AssertionError: java.lang.AssertionError: expected:<READ_FAILED> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.closedDatabaseReadReportsReadFailure(AtomicReviewContract.java:323)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<READ_FAILED> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$closedDatabaseReadReportsReadFailure$33(AtomicReviewContract.java:326)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$XPpEpwsH4lncp607BAASFaxMorU(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda5.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=closedDatabaseReadReportsReadFailure
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=13
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=existingProgressUpdateFailureRollsBackInsertedEvent
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=13
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=existingProgressUpdateFailureRollsBackInsertedEvent
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=14
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=malformedProgressIsTypedInvalidDataWithNoWrite
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=14
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: java.lang.AssertionError: expected:<INVALID_DATA> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.malformedProgressIsTypedInvalidDataWithNoWrite(AtomicReviewContract.java:278)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<INVALID_DATA> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$malformedProgressIsTypedInvalidDataWithNoWrite$26(AtomicReviewContract.java:281)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$mUUavi8bu-DVW8eROd4ODuC9djA(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda1.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in malformedProgressIsTypedInvalidDataWithNoWrite(com.vocamind.app.data.user.AtomicReviewInstrumentedTest):
+java.lang.AssertionError: java.lang.AssertionError: expected:<INVALID_DATA> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.malformedProgressIsTypedInvalidDataWithNoWrite(AtomicReviewContract.java:278)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<INVALID_DATA> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$malformedProgressIsTypedInvalidDataWithNoWrite$26(AtomicReviewContract.java:281)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$mUUavi8bu-DVW8eROd4ODuC9djA(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda1.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=malformedProgressIsTypedInvalidDataWithNoWrite
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=15
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=eventInsertFailureLeavesExistingProgressUnchanged
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=15
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: java.lang.AssertionError: expected:<STORAGE> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.eventInsertFailureLeavesExistingProgressUnchanged(AtomicReviewContract.java:99)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<STORAGE> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$eventInsertFailureLeavesExistingProgressUnchanged$5(AtomicReviewContract.java:102)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$Yyn2K6q5ftqlkg6A-bY7m-ENuwg(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda29.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in eventInsertFailureLeavesExistingProgressUnchanged(com.vocamind.app.data.user.AtomicReviewInstrumentedTest):
+java.lang.AssertionError: java.lang.AssertionError: expected:<STORAGE> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.eventInsertFailureLeavesExistingProgressUnchanged(AtomicReviewContract.java:99)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<STORAGE> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$eventInsertFailureLeavesExistingProgressUnchanged$5(AtomicReviewContract.java:102)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$Yyn2K6q5ftqlkg6A-bY7m-ENuwg(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda29.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=eventInsertFailureLeavesExistingProgressUnchanged
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=16
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=legacyEventFailureRollsBack
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=16
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: java.lang.AssertionError: expected:<WRITE_FAILED> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyFailure(AtomicReviewContract.java:264)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyEventFailureRollsBack(AtomicReviewContract.java:260)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<WRITE_FAILED> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$legacyFailure$24(AtomicReviewContract.java:269)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$LU2oIaJdRUm8iQUfE2qp1wJvAJQ(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda20.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in legacyEventFailureRollsBack(com.vocamind.app.data.user.AtomicReviewInstrumentedTest):
+java.lang.AssertionError: java.lang.AssertionError: expected:<WRITE_FAILED> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyFailure(AtomicReviewContract.java:264)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyEventFailureRollsBack(AtomicReviewContract.java:260)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<WRITE_FAILED> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$legacyFailure$24(AtomicReviewContract.java:269)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$LU2oIaJdRUm8iQUfE2qp1wJvAJQ(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda20.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=legacyEventFailureRollsBack
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=17
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=legacyAndUseCaseCannotCommitSameSnapshotTwice
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=17
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: java.lang.AssertionError: Expected conflict, got NOT_FOUND
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.race(AtomicReviewContract.java:165)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyAndUseCaseCannotCommitSameSnapshotTwice(AtomicReviewContract.java:159)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Expected conflict, got NOT_FOUND
+	at org.junit.Assert.fail(Assert.java:89)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$race$17(AtomicReviewContract.java:207)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$NUw8ccELPj2xk6KD77FZHFZYYqA(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda11.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in legacyAndUseCaseCannotCommitSameSnapshotTwice(com.vocamind.app.data.user.AtomicReviewInstrumentedTest):
+java.lang.AssertionError: java.lang.AssertionError: Expected conflict, got NOT_FOUND
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.race(AtomicReviewContract.java:165)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyAndUseCaseCannotCommitSameSnapshotTwice(AtomicReviewContract.java:159)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Expected conflict, got NOT_FOUND
+	at org.junit.Assert.fail(Assert.java:89)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$race$17(AtomicReviewContract.java:207)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$NUw8ccELPj2xk6KD77FZHFZYYqA(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda11.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=legacyAndUseCaseCannotCommitSameSnapshotTwice
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=18
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=bothApisUseOneWriterAndLegacyHardReplayIsRejected
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=18
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: java.lang.AssertionError
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.bothApisUseOneWriterAndLegacyHardReplayIsRejected(AtomicReviewContract.java:218)
+	... 34 trimmed
+Caused by: java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$bothApisUseOneWriterAndLegacyHardReplayIsRejected$18(AtomicReviewContract.java:221)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$0N7vG_Q9qJRijNfCSXZPhD4cNYI(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda19.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in bothApisUseOneWriterAndLegacyHardReplayIsRejected(com.vocamind.app.data.user.AtomicReviewInstrumentedTest):
+java.lang.AssertionError: java.lang.AssertionError
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.bothApisUseOneWriterAndLegacyHardReplayIsRejected(AtomicReviewContract.java:218)
+	... 34 trimmed
+Caused by: java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$bothApisUseOneWriterAndLegacyHardReplayIsRejected$18(AtomicReviewContract.java:221)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$0N7vG_Q9qJRijNfCSXZPhD4cNYI(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda19.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=bothApisUseOneWriterAndLegacyHardReplayIsRejected
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=19
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=legacyNewProgressFailureRollsBackEvent
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=19
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: java.lang.AssertionError: expected:<WRITE_FAILED> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyFailure(AtomicReviewContract.java:264)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyNewProgressFailureRollsBackEvent(AtomicReviewContract.java:261)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<WRITE_FAILED> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$legacyFailure$24(AtomicReviewContract.java:269)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$LU2oIaJdRUm8iQUfE2qp1wJvAJQ(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda20.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in legacyNewProgressFailureRollsBackEvent(com.vocamind.app.data.user.AtomicReviewInstrumentedTest):
+java.lang.AssertionError: java.lang.AssertionError: expected:<WRITE_FAILED> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyFailure(AtomicReviewContract.java:264)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyNewProgressFailureRollsBackEvent(AtomicReviewContract.java:261)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<WRITE_FAILED> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$legacyFailure$24(AtomicReviewContract.java:269)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$LU2oIaJdRUm8iQUfE2qp1wJvAJQ(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda20.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=legacyNewProgressFailureRollsBackEvent
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=20
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=persistedDueTimeSurvivesZoneChangeAndReopen
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=20
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$persistedDueTimeSurvivesZoneChangeAndReopen$27(AtomicReviewContract.java:288)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$xE5erdDWNx8KGsFUcc9eOt75v-Y(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda26.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in persistedDueTimeSurvivesZoneChangeAndReopen(com.vocamind.app.data.user.AtomicReviewInstrumentedTest):
+com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$persistedDueTimeSurvivesZoneChangeAndReopen$27(AtomicReviewContract.java:288)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$xE5erdDWNx8KGsFUcc9eOt75v-Y(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda26.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=persistedDueTimeSurvivesZoneChangeAndReopen
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=21
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=existingWordAllRatingsPersistSchedulerOutcome
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=21
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$existingWordAllRatingsPersistSchedulerOutcome$3(AtomicReviewContract.java:87)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$8vRT6DiddhS1C9mVRv8J1GO5lK4(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda18.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in existingWordAllRatingsPersistSchedulerOutcome(com.vocamind.app.data.user.AtomicReviewInstrumentedTest):
+com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$existingWordAllRatingsPersistSchedulerOutcome$3(AtomicReviewContract.java:87)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$8vRT6DiddhS1C9mVRv8J1GO5lK4(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda18.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=existingWordAllRatingsPersistSchedulerOutcome
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=22
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=twoDatabaseInstancesCannotCommitSameSnapshotTwice
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=22
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: java.lang.AssertionError: Expected conflict, got NOT_FOUND
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.race(AtomicReviewContract.java:165)
+	at com.vocamind.app.data.user.AtomicReviewContract.twoDatabaseInstancesCannotCommitSameSnapshotTwice(AtomicReviewContract.java:156)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Expected conflict, got NOT_FOUND
+	at org.junit.Assert.fail(Assert.java:89)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$race$17(AtomicReviewContract.java:207)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$NUw8ccELPj2xk6KD77FZHFZYYqA(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda11.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in twoDatabaseInstancesCannotCommitSameSnapshotTwice(com.vocamind.app.data.user.AtomicReviewInstrumentedTest):
+java.lang.AssertionError: java.lang.AssertionError: Expected conflict, got NOT_FOUND
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.race(AtomicReviewContract.java:165)
+	at com.vocamind.app.data.user.AtomicReviewContract.twoDatabaseInstancesCannotCommitSameSnapshotTwice(AtomicReviewContract.java:156)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Expected conflict, got NOT_FOUND
+	at org.junit.Assert.fail(Assert.java:89)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$race$17(AtomicReviewContract.java:207)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$NUw8ccELPj2xk6KD77FZHFZYYqA(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda11.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=twoDatabaseInstancesCannotCommitSameSnapshotTwice
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=23
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=legacyProgressUpdateFailureRollsBackEvent
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=23
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: java.lang.AssertionError: expected:<WRITE_FAILED> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyFailure(AtomicReviewContract.java:264)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyProgressUpdateFailureRollsBackEvent(AtomicReviewContract.java:262)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<WRITE_FAILED> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$legacyFailure$24(AtomicReviewContract.java:269)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$LU2oIaJdRUm8iQUfE2qp1wJvAJQ(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda20.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in legacyProgressUpdateFailureRollsBackEvent(com.vocamind.app.data.user.AtomicReviewInstrumentedTest):
+java.lang.AssertionError: java.lang.AssertionError: expected:<WRITE_FAILED> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyFailure(AtomicReviewContract.java:264)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyProgressUpdateFailureRollsBackEvent(AtomicReviewContract.java:262)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<WRITE_FAILED> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$legacyFailure$24(AtomicReviewContract.java:269)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$LU2oIaJdRUm8iQUfE2qp1wJvAJQ(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda20.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=legacyProgressUpdateFailureRollsBackEvent
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=24
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=unknownCatalogWordCannotCreateOrphanThroughEitherApi
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=24
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=unknownCatalogWordCannotCreateOrphanThroughEitherApi
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=25
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=explicitRetryAfterFaultAndReopenPersistsExactlyOneReview
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=25
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$explicitRetryAfterFaultAndReopenPersistsExactlyOneReview$11(AtomicReviewContract.java:125)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$UkvAcfAnnBlOH64hdWPi2_WG9UU(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda16.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in explicitRetryAfterFaultAndReopenPersistsExactlyOneReview(com.vocamind.app.data.user.AtomicReviewInstrumentedTest):
+com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$explicitRetryAfterFaultAndReopenPersistsExactlyOneReview$11(AtomicReviewContract.java:125)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$UkvAcfAnnBlOH64hdWPi2_WG9UU(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda16.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=explicitRetryAfterFaultAndReopenPersistsExactlyOneReview
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=26
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=savedFlagChangedAfterReadCausesConflictNotOverwrite
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=26
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$savedFlagChangedAfterReadCausesConflictNotOverwrite$13(AtomicReviewContract.java:134)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$zv2JFgSpuPGVdro1Cygrq2rxpqA(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda14.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in savedFlagChangedAfterReadCausesConflictNotOverwrite(com.vocamind.app.data.user.AtomicReviewInstrumentedTest):
+com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$savedFlagChangedAfterReadCausesConflictNotOverwrite$13(AtomicReviewContract.java:134)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$zv2JFgSpuPGVdro1Cygrq2rxpqA(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda14.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=savedFlagChangedAfterReadCausesConflictNotOverwrite
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=27
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=newProgressInsertFailureRollsBackInsertedEvent
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=27
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=newProgressInsertFailureRollsBackInsertedEvent
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=28
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=firstReviewWritesOneMatchingEventAndProgress
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=28
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$firstReviewWritesOneMatchingEventAndProgress$2(AtomicReviewContract.java:72)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$zCOOlvTB4uNKCO-Ou8b2kGp9enE(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda30.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in firstReviewWritesOneMatchingEventAndProgress(com.vocamind.app.data.user.AtomicReviewInstrumentedTest):
+com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$firstReviewWritesOneMatchingEventAndProgress$2(AtomicReviewContract.java:72)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$zCOOlvTB4uNKCO-Ou8b2kGp9enE(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda30.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=firstReviewWritesOneMatchingEventAndProgress
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=29
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=catalogReadFailureIsTypedReadFailedWithoutWriting
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.AtomicReviewInstrumentedTest
+INSTRUMENTATION_STATUS: current=29
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=catalogReadFailureIsTypedReadFailedWithoutWriting
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=30
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+com.vocamind.app.data.user.ProgressAggregationInstrumentedTest:
+INSTRUMENTATION_STATUS: test=emptyDatabaseReturnsSixZerosAndEmptyHistory
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=30
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=emptyDatabaseReturnsSixZerosAndEmptyHistory
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=31
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=invalidStoredScoreIsNotSilentlyRecomputed
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=31
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=invalidStoredScoreIsNotSilentlyRecomputed
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=32
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=sameVocabularyUpsertMovesBoxWithoutIncreasingDistinctTotal
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=32
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=sameVocabularyUpsertMovesBoxWithoutIncreasingDistinctTotal
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=33
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=invalidPersistedBoxReturnsInvalidDataWithoutRepair
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=33
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=invalidPersistedBoxReturnsInvalidDataWithoutRepair
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=34
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=failedEventInsertDoesNotChangeSummaryOrHistory
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=34
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$reviewRollback$22(ProgressAggregationContract.java:277)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$rgd3Jof9-hbLt_M02JEWeoJ8FAE(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda3.accept(D8$$SyntheticClass:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract.withCatalog(ProgressAggregationContract.java:212)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$reviewRollback$23(ProgressAggregationContract.java:275)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$4bkGJ66YfTCcC4eBmBBK4eYnX7U(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda21.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in failedEventInsertDoesNotChangeSummaryOrHistory(com.vocamind.app.data.user.ProgressAggregationInstrumentedTest):
+com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$reviewRollback$22(ProgressAggregationContract.java:277)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$rgd3Jof9-hbLt_M02JEWeoJ8FAE(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda3.accept(D8$$SyntheticClass:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract.withCatalog(ProgressAggregationContract.java:212)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$reviewRollback$23(ProgressAggregationContract.java:275)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$4bkGJ66YfTCcC4eBmBBK4eYnX7U(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda21.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=failedEventInsertDoesNotChangeSummaryOrHistory
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=35
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=fixtureAcrossAllSixBoxesMatchesSqlAndDomainGroups
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=35
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=fixtureAcrossAllSixBoxesMatchesSqlAndDomainGroups
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=36
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=closedDatabaseIsReadFailureNotEmptySuccess
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=36
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=closedDatabaseIsReadFailureNotEmptySuccess
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=37
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=allQuizHistoryIsOrderedByTimeThenIdWithoutImplicitLimit
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=37
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=allQuizHistoryIsOrderedByTimeThenIdWithoutImplicitLimit
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=38
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=quizOnlyAndProgressOnlyAreNotEntirelyEmpty
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=38
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=quizOnlyAndProgressOnlyAreNotEntirelyEmpty
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=39
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=failedFirstProgressInsertRollsBackEventAndKeepsSummary
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=39
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: java.lang.AssertionError: expected:<STORAGE> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.ProgressAggregationContract.run(ProgressAggregationContract.java:40)
+	at com.vocamind.app.data.user.ProgressAggregationContract.reviewRollback(ProgressAggregationContract.java:274)
+	at com.vocamind.app.data.user.ProgressAggregationContract.failedFirstProgressInsertRollsBackEventAndKeepsSummary(ProgressAggregationContract.java:268)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<STORAGE> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$reviewRollback$22(ProgressAggregationContract.java:286)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$rgd3Jof9-hbLt_M02JEWeoJ8FAE(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda3.accept(D8$$SyntheticClass:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract.withCatalog(ProgressAggregationContract.java:212)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$reviewRollback$23(ProgressAggregationContract.java:275)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$4bkGJ66YfTCcC4eBmBBK4eYnX7U(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda21.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in failedFirstProgressInsertRollsBackEventAndKeepsSummary(com.vocamind.app.data.user.ProgressAggregationInstrumentedTest):
+java.lang.AssertionError: java.lang.AssertionError: expected:<STORAGE> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.ProgressAggregationContract.run(ProgressAggregationContract.java:40)
+	at com.vocamind.app.data.user.ProgressAggregationContract.reviewRollback(ProgressAggregationContract.java:274)
+	at com.vocamind.app.data.user.ProgressAggregationContract.failedFirstProgressInsertRollsBackEventAndKeepsSummary(ProgressAggregationContract.java:268)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<STORAGE> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$reviewRollback$22(ProgressAggregationContract.java:286)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$rgd3Jof9-hbLt_M02JEWeoJ8FAE(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda3.accept(D8$$SyntheticClass:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract.withCatalog(ProgressAggregationContract.java:212)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$reviewRollback$23(ProgressAggregationContract.java:275)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$4bkGJ66YfTCcC4eBmBBK4eYnX7U(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda21.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=failedFirstProgressInsertRollsBackEventAndKeepsSummary
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=40
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=40
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=java.lang.RuntimeException: com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings$29(ProgressAggregationContract.java:350)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$cCPxMMXyYOCCVRHQjs5YjSw1Lx8(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda15.accept(D8$$SyntheticClass:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract.withCatalog(ProgressAggregationContract.java:212)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings$30(ProgressAggregationContract.java:303)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$OW2swD3zTbIPOhfNzR14DeIv1Kk(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda0.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+Caused by: com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings$29(ProgressAggregationContract.java:324)
+	... 10 more
+
+INSTRUMENTATION_STATUS: stream=
+Error in atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings(com.vocamind.app.data.user.ProgressAggregationInstrumentedTest):
+java.lang.RuntimeException: com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings$29(ProgressAggregationContract.java:350)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$cCPxMMXyYOCCVRHQjs5YjSw1Lx8(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda15.accept(D8$$SyntheticClass:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract.withCatalog(ProgressAggregationContract.java:212)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings$30(ProgressAggregationContract.java:303)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$OW2swD3zTbIPOhfNzR14DeIv1Kk(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda0.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+Caused by: com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings$29(ProgressAggregationContract.java:324)
+	... 10 more
+
+INSTRUMENTATION_STATUS: test=atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=41
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=missingBoxesAreZeroAndNoActiveSavedOrLearnedAtFilterIsApplied
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=41
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=missingBoxesAreZeroAndNoActiveSavedOrLearnedAtFilterIsApplied
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=42
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=returnedHistoryAndBoxCountsAreImmutableSnapshots
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=42
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=returnedHistoryAndBoxCountsAreImmutableSnapshots
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=43
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=reopeningRetainsCountsAndHistory
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=43
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=reopeningRetainsCountsAndHistory
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=44
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=44
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: java.lang.AssertionError
+	at com.vocamind.app.data.user.ProgressAggregationContract.run(ProgressAggregationContract.java:40)
+	at com.vocamind.app.data.user.ProgressAggregationContract.atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks(ProgressAggregationContract.java:241)
+	... 34 trimmed
+Caused by: java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks$19(ProgressAggregationContract.java:247)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$BcfMs7M07i51ChtaC18JGnk01pA(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda14.accept(D8$$SyntheticClass:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract.withCatalog(ProgressAggregationContract.java:212)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks$20(ProgressAggregationContract.java:242)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$aCcv_tdo9NLeipquAGjDIRq6UVs(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda31.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks(com.vocamind.app.data.user.ProgressAggregationInstrumentedTest):
+java.lang.AssertionError: java.lang.AssertionError
+	at com.vocamind.app.data.user.ProgressAggregationContract.run(ProgressAggregationContract.java:40)
+	at com.vocamind.app.data.user.ProgressAggregationContract.atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks(ProgressAggregationContract.java:241)
+	... 34 trimmed
+Caused by: java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks$19(ProgressAggregationContract.java:247)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$BcfMs7M07i51ChtaC18JGnk01pA(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda14.accept(D8$$SyntheticClass:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract.withCatalog(ProgressAggregationContract.java:212)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks$20(ProgressAggregationContract.java:242)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$aCcv_tdo9NLeipquAGjDIRq6UVs(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda31.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=45
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=failedProgressUpdateDoesNotMoveBoxOrChangeHistory
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=45
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stack=com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$reviewRollback$22(ProgressAggregationContract.java:277)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$rgd3Jof9-hbLt_M02JEWeoJ8FAE(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda3.accept(D8$$SyntheticClass:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract.withCatalog(ProgressAggregationContract.java:212)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$reviewRollback$23(ProgressAggregationContract.java:275)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$4bkGJ66YfTCcC4eBmBBK4eYnX7U(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda21.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: stream=
+Error in failedProgressUpdateDoesNotMoveBoxOrChangeHistory(com.vocamind.app.data.user.ProgressAggregationInstrumentedTest):
+com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$reviewRollback$22(ProgressAggregationContract.java:277)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$rgd3Jof9-hbLt_M02JEWeoJ8FAE(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda3.accept(D8$$SyntheticClass:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract.withCatalog(ProgressAggregationContract.java:212)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$reviewRollback$23(ProgressAggregationContract.java:275)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$4bkGJ66YfTCcC4eBmBBK4eYnX7U(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda21.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+INSTRUMENTATION_STATUS: test=failedProgressUpdateDoesNotMoveBoxOrChangeHistory
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=46
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=concurrentWriterCannotMixCountsAndHistoryFromDifferentStates
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.ProgressAggregationInstrumentedTest
+INSTRUMENTATION_STATUS: current=46
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=concurrentWriterCannotMixCountsAndHistoryFromDifferentStates
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.QuizCompletionInstrumentedTest
+INSTRUMENTATION_STATUS: current=47
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=
+com.vocamind.app.data.user.QuizCompletionInstrumentedTest:
+INSTRUMENTATION_STATUS: test=exportedV1MigratesWithoutLosingHistoryAndRetryIsIdempotent
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.vocamind.app.data.user.QuizCompletionInstrumentedTest
+INSTRUMENTATION_STATUS: current=47
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=47
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=exportedV1MigratesWithoutLosingHistoryAndRetryIsIdempotent
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 15.996
+There were 24 failures:
+1) persistenceProbe(com.vocamind.app.feature.packs.PackActivationInstrumentedTest)
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.vocamind.app.feature.packs.PackActivationInstrumentedTest.persistenceProbe(PackActivationInstrumentedTest.java:182)
+2) offlineFirstLaunchCtaActivateVocabularyBackPauseAndConfirmedRotation(com.vocamind.app.feature.packs.PackActivationInstrumentedTest)
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.vocamind.app.feature.packs.PackActivationInstrumentedTest.offlineFirstLaunchCtaActivateVocabularyBackPauseAndConfirmedRotation(PackActivationInstrumentedTest.java:88)
+3) mismatchedIdsAndTamperedHistoryCannotWrite(com.vocamind.app.data.user.AtomicReviewInstrumentedTest)
+com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$mismatchedIdsAndTamperedHistoryCannotWrite$31(AtomicReviewContract.java:306)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$bId56s8Y_1vlk-x6qhAY9WotgE8(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda13.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+4) legacyAndUseCaseCannotBothInsertFirstReview(com.vocamind.app.data.user.AtomicReviewInstrumentedTest)
+java.lang.AssertionError: java.lang.AssertionError: Expected conflict, got NOT_FOUND
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.race(AtomicReviewContract.java:165)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyAndUseCaseCannotBothInsertFirstReview(AtomicReviewContract.java:162)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Expected conflict, got NOT_FOUND
+	at org.junit.Assert.fail(Assert.java:89)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$race$17(AtomicReviewContract.java:207)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$NUw8ccELPj2xk6KD77FZHFZYYqA(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda11.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+5) staleEmptySnapshotCannotOverwriteFirstReview(com.vocamind.app.data.user.AtomicReviewInstrumentedTest)
+com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$staleEmptySnapshotCannotOverwriteFirstReview$15(AtomicReviewContract.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$Zrp6uQW3U0J06-CdZeMECk0kA5k(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda32.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+6) closedDatabaseReadReportsReadFailure(com.vocamind.app.data.user.AtomicReviewInstrumentedTest)
+java.lang.AssertionError: java.lang.AssertionError: expected:<READ_FAILED> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.closedDatabaseReadReportsReadFailure(AtomicReviewContract.java:323)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<READ_FAILED> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$closedDatabaseReadReportsReadFailure$33(AtomicReviewContract.java:326)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$XPpEpwsH4lncp607BAASFaxMorU(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda5.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+7) malformedProgressIsTypedInvalidDataWithNoWrite(com.vocamind.app.data.user.AtomicReviewInstrumentedTest)
+java.lang.AssertionError: java.lang.AssertionError: expected:<INVALID_DATA> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.malformedProgressIsTypedInvalidDataWithNoWrite(AtomicReviewContract.java:278)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<INVALID_DATA> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$malformedProgressIsTypedInvalidDataWithNoWrite$26(AtomicReviewContract.java:281)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$mUUavi8bu-DVW8eROd4ODuC9djA(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda1.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+8) eventInsertFailureLeavesExistingProgressUnchanged(com.vocamind.app.data.user.AtomicReviewInstrumentedTest)
+java.lang.AssertionError: java.lang.AssertionError: expected:<STORAGE> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.eventInsertFailureLeavesExistingProgressUnchanged(AtomicReviewContract.java:99)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<STORAGE> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$eventInsertFailureLeavesExistingProgressUnchanged$5(AtomicReviewContract.java:102)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$Yyn2K6q5ftqlkg6A-bY7m-ENuwg(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda29.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+9) legacyEventFailureRollsBack(com.vocamind.app.data.user.AtomicReviewInstrumentedTest)
+java.lang.AssertionError: java.lang.AssertionError: expected:<WRITE_FAILED> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyFailure(AtomicReviewContract.java:264)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyEventFailureRollsBack(AtomicReviewContract.java:260)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<WRITE_FAILED> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$legacyFailure$24(AtomicReviewContract.java:269)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$LU2oIaJdRUm8iQUfE2qp1wJvAJQ(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda20.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+10) legacyAndUseCaseCannotCommitSameSnapshotTwice(com.vocamind.app.data.user.AtomicReviewInstrumentedTest)
+java.lang.AssertionError: java.lang.AssertionError: Expected conflict, got NOT_FOUND
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.race(AtomicReviewContract.java:165)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyAndUseCaseCannotCommitSameSnapshotTwice(AtomicReviewContract.java:159)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Expected conflict, got NOT_FOUND
+	at org.junit.Assert.fail(Assert.java:89)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$race$17(AtomicReviewContract.java:207)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$NUw8ccELPj2xk6KD77FZHFZYYqA(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda11.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+11) bothApisUseOneWriterAndLegacyHardReplayIsRejected(com.vocamind.app.data.user.AtomicReviewInstrumentedTest)
+java.lang.AssertionError: java.lang.AssertionError
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.bothApisUseOneWriterAndLegacyHardReplayIsRejected(AtomicReviewContract.java:218)
+	... 34 trimmed
+Caused by: java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$bothApisUseOneWriterAndLegacyHardReplayIsRejected$18(AtomicReviewContract.java:221)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$0N7vG_Q9qJRijNfCSXZPhD4cNYI(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda19.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+12) legacyNewProgressFailureRollsBackEvent(com.vocamind.app.data.user.AtomicReviewInstrumentedTest)
+java.lang.AssertionError: java.lang.AssertionError: expected:<WRITE_FAILED> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyFailure(AtomicReviewContract.java:264)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyNewProgressFailureRollsBackEvent(AtomicReviewContract.java:261)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<WRITE_FAILED> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$legacyFailure$24(AtomicReviewContract.java:269)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$LU2oIaJdRUm8iQUfE2qp1wJvAJQ(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda20.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+13) persistedDueTimeSurvivesZoneChangeAndReopen(com.vocamind.app.data.user.AtomicReviewInstrumentedTest)
+com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$persistedDueTimeSurvivesZoneChangeAndReopen$27(AtomicReviewContract.java:288)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$xE5erdDWNx8KGsFUcc9eOt75v-Y(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda26.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+14) existingWordAllRatingsPersistSchedulerOutcome(com.vocamind.app.data.user.AtomicReviewInstrumentedTest)
+com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$existingWordAllRatingsPersistSchedulerOutcome$3(AtomicReviewContract.java:87)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$8vRT6DiddhS1C9mVRv8J1GO5lK4(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda18.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+15) twoDatabaseInstancesCannotCommitSameSnapshotTwice(com.vocamind.app.data.user.AtomicReviewInstrumentedTest)
+java.lang.AssertionError: java.lang.AssertionError: Expected conflict, got NOT_FOUND
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.race(AtomicReviewContract.java:165)
+	at com.vocamind.app.data.user.AtomicReviewContract.twoDatabaseInstancesCannotCommitSameSnapshotTwice(AtomicReviewContract.java:156)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Expected conflict, got NOT_FOUND
+	at org.junit.Assert.fail(Assert.java:89)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$race$17(AtomicReviewContract.java:207)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$NUw8ccELPj2xk6KD77FZHFZYYqA(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda11.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+16) legacyProgressUpdateFailureRollsBackEvent(com.vocamind.app.data.user.AtomicReviewInstrumentedTest)
+java.lang.AssertionError: java.lang.AssertionError: expected:<WRITE_FAILED> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.AtomicReviewContract.run(AtomicReviewContract.java:45)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyFailure(AtomicReviewContract.java:264)
+	at com.vocamind.app.data.user.AtomicReviewContract.legacyProgressUpdateFailureRollsBackEvent(AtomicReviewContract.java:262)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<WRITE_FAILED> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$legacyFailure$24(AtomicReviewContract.java:269)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$LU2oIaJdRUm8iQUfE2qp1wJvAJQ(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda20.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+17) explicitRetryAfterFaultAndReopenPersistsExactlyOneReview(com.vocamind.app.data.user.AtomicReviewInstrumentedTest)
+com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$explicitRetryAfterFaultAndReopenPersistsExactlyOneReview$11(AtomicReviewContract.java:125)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$UkvAcfAnnBlOH64hdWPi2_WG9UU(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda16.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+18) savedFlagChangedAfterReadCausesConflictNotOverwrite(com.vocamind.app.data.user.AtomicReviewInstrumentedTest)
+com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$savedFlagChangedAfterReadCausesConflictNotOverwrite$13(AtomicReviewContract.java:134)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$zv2JFgSpuPGVdro1Cygrq2rxpqA(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda14.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+19) firstReviewWritesOneMatchingEventAndProgress(com.vocamind.app.data.user.AtomicReviewInstrumentedTest)
+com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.AtomicReviewContract.lambda$firstReviewWritesOneMatchingEventAndProgress$2(AtomicReviewContract.java:72)
+	at com.vocamind.app.data.user.AtomicReviewContract.$r8$lambda$zCOOlvTB4uNKCO-Ou8b2kGp9enE(Unknown Source:0)
+	at com.vocamind.app.data.user.AtomicReviewContract$$ExternalSyntheticLambda30.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+20) failedEventInsertDoesNotChangeSummaryOrHistory(com.vocamind.app.data.user.ProgressAggregationInstrumentedTest)
+com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$reviewRollback$22(ProgressAggregationContract.java:277)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$rgd3Jof9-hbLt_M02JEWeoJ8FAE(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda3.accept(D8$$SyntheticClass:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract.withCatalog(ProgressAggregationContract.java:212)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$reviewRollback$23(ProgressAggregationContract.java:275)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$4bkGJ66YfTCcC4eBmBBK4eYnX7U(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda21.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+21) failedFirstProgressInsertRollsBackEventAndKeepsSummary(com.vocamind.app.data.user.ProgressAggregationInstrumentedTest)
+java.lang.AssertionError: java.lang.AssertionError: expected:<STORAGE> but was:<NOT_FOUND>
+	at com.vocamind.app.data.user.ProgressAggregationContract.run(ProgressAggregationContract.java:40)
+	at com.vocamind.app.data.user.ProgressAggregationContract.reviewRollback(ProgressAggregationContract.java:274)
+	at com.vocamind.app.data.user.ProgressAggregationContract.failedFirstProgressInsertRollsBackEventAndKeepsSummary(ProgressAggregationContract.java:268)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: expected:<STORAGE> but was:<NOT_FOUND>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$reviewRollback$22(ProgressAggregationContract.java:286)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$rgd3Jof9-hbLt_M02JEWeoJ8FAE(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda3.accept(D8$$SyntheticClass:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract.withCatalog(ProgressAggregationContract.java:212)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$reviewRollback$23(ProgressAggregationContract.java:275)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$4bkGJ66YfTCcC4eBmBBK4eYnX7U(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda21.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+22) atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings(com.vocamind.app.data.user.ProgressAggregationInstrumentedTest)
+java.lang.RuntimeException: com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings$29(ProgressAggregationContract.java:350)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$cCPxMMXyYOCCVRHQjs5YjSw1Lx8(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda15.accept(D8$$SyntheticClass:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract.withCatalog(ProgressAggregationContract.java:212)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings$30(ProgressAggregationContract.java:303)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$OW2swD3zTbIPOhfNzR14DeIv1Kk(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda0.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+Caused by: com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings$29(ProgressAggregationContract.java:324)
+	... 10 more
+23) atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks(com.vocamind.app.data.user.ProgressAggregationInstrumentedTest)
+java.lang.AssertionError: java.lang.AssertionError
+	at com.vocamind.app.data.user.ProgressAggregationContract.run(ProgressAggregationContract.java:40)
+	at com.vocamind.app.data.user.ProgressAggregationContract.atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks(ProgressAggregationContract.java:241)
+	... 34 trimmed
+Caused by: java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks$19(ProgressAggregationContract.java:247)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$BcfMs7M07i51ChtaC18JGnk01pA(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda14.accept(D8$$SyntheticClass:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract.withCatalog(ProgressAggregationContract.java:212)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks$20(ProgressAggregationContract.java:242)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$aCcv_tdo9NLeipquAGjDIRq6UVs(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda31.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+24) failedProgressUpdateDoesNotMoveBoxOrChangeHistory(com.vocamind.app.data.user.ProgressAggregationInstrumentedTest)
+com.vocamind.app.domain.learning.ReviewWriteException: Review failed: NOT_FOUND
+	at com.vocamind.app.data.repository.RoomReviewRepository.requireCatalogWord(RoomReviewRepository.java:28)
+	at com.vocamind.app.data.repository.RoomReviewRepository.getProgress(RoomReviewRepository.java:36)
+	at com.vocamind.app.domain.learning.RecordReviewUseCase.execute(RecordReviewUseCase.java:25)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$reviewRollback$22(ProgressAggregationContract.java:277)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$rgd3Jof9-hbLt_M02JEWeoJ8FAE(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda3.accept(D8$$SyntheticClass:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract.withCatalog(ProgressAggregationContract.java:212)
+	at com.vocamind.app.data.user.ProgressAggregationContract.lambda$reviewRollback$23(ProgressAggregationContract.java:275)
+	at com.vocamind.app.data.user.ProgressAggregationContract.$r8$lambda$4bkGJ66YfTCcC4eBmBBK4eYnX7U(Unknown Source:0)
+	at com.vocamind.app.data.user.ProgressAggregationContract$$ExternalSyntheticLambda21.call(D8$$SyntheticClass:0)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.lang.Thread.run(Thread.java:923)
+
+FAILURES!!!
+Tests run: 47,  Failures: 24
+
+
+INSTRUMENTATION_CODE: -1

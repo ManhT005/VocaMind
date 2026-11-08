@@ -1,5 +1,21 @@
 # SEARCH-01 validation và bàn giao
 
+**C?p nh?t publish:** source/test ?? ki?m ch?ng t?i commit `8b06d1a8287f1571120f6889e4ba4b8616a79241`.
+Regression cu?i: 46/46 instrumentation fixture4 PASS (first-launch ch?y ri?ng 1/1 PASS),
+QA150 search/full detail/retry/5000 rows ch?y l?i 3/3 PASS. Ng??i d?ng y?u c?u commit/push;
+kh?ng t?o PR/merge. C?c ghi ch? ch?a commit b?n d??i l? tr?ng th?i l?c thu evidence.
+AC-05/NFR-VM-03 v?n HOLD.
+
+**Regression sau VOCAB-02:** [coverage các task liên quan](search-01-cross-task-regression.md).
+Đã kiểm tra thêm pack/quiz/review/progress trên emulator và sửa assertion preview cũ trong test pack;
+kết quả từng lượt PASS/FAIL và giới hạn first-launch được ghi riêng.
+
+**Cập nhật hiệu năng local 08/11/2026:** [Điều tra và tối ưu 5.000 kết quả](search-01-performance-validation.md).
+Cursor hydration giữ nguyên contract DATA-05; 519 host tests và 4 QA instrumentation PASS.
+Mean emulator gộp giảm44,10→37,79ms, nhưng max52,98ms (3/200 mẫu ≥50ms).
+AC-05/NFR-VM-03 **HOLD**: chưa có reference-device evidence, không lấy lượt emulator tốt nhất để nghiệm thu.
+Source tối ưu đang local trên HEAD `e12f0ee`; manifest/hashes trong báo cáo mới.
+
 **Bản tích hợp local mới nhất (08/11/2026):** [SEARCH-01 + VOCAB-02](search-01-vocab02-integration.md).
 Đã dùng full detail/Save của VOCAB-02, chạy QA150, real Room Error/Retry và UI5000
 matches. Các ghi chú preview/NOT RUN bên dưới là lịch sử theo SHA đã ghi.
@@ -9,7 +25,7 @@ người dùng đã yêu cầu commit/push kèm evidence, không yêu cầu tạ
 
 Phụ trách: Trường. Reviewer dự kiến: Thành. Phụ thuộc: DATA-05.
 Trạng thái bàn giao: có triển khai và evidence local để review; **không tự đánh dấu Hoàn thành**.
-AC-05 / NFR-VM-03: **HOLD** do thiếu benchmark thiết bị tham chiếu và kiểm thử UI trên thiết bị.
+AC-05 / NFR-VM-03: **HOLD** do thiếu benchmark thiết bị tham chiếu; QA chức năng emulator đã chạy theo báo cáo mới.
 
 ## Nền tích hợp và SHA
 

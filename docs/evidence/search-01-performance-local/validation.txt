@@ -1,0 +1,300 @@
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preCatalogQaBuild UP-TO-DATE
+> Task :app:mergeCatalogQaNativeDebugMetadata NO-SOURCE
+> Task :app:dataBindingMergeDependencyArtifactsCatalogQa UP-TO-DATE
+> Task :app:generateCatalogQaResValues UP-TO-DATE
+> Task :app:generateCatalogQaResources UP-TO-DATE
+> Task :app:mergeCatalogQaResources UP-TO-DATE
+> Task :app:packageCatalogQaResources UP-TO-DATE
+> Task :app:parseCatalogQaLocalResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesCatalogQa UP-TO-DATE
+> Task :app:generateCatalogQaBuildConfig UP-TO-DATE
+> Task :app:javaPreCompileCatalogQa UP-TO-DATE
+> Task :app:checkCatalogQaAarMetadata UP-TO-DATE
+> Task :app:mapCatalogQaSourceSetPaths UP-TO-DATE
+> Task :app:createCatalogQaCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksCatalogQa UP-TO-DATE
+> Task :app:processCatalogQaMainManifest UP-TO-DATE
+> Task :app:processCatalogQaManifest UP-TO-DATE
+> Task :app:processCatalogQaManifestForPackage UP-TO-DATE
+> Task :app:processCatalogQaResources UP-TO-DATE
+
+> Task :app:compileCatalogQaJavaWithJavac
+gradle.bat : Note: C:\Users\LMT\Documents\University\Nam4\N4_HK1\PTUDTBDT\BLT\VocaMind\app\src\main\java\com\vocamind\a
+pp\core\QuizViewModelFactory.java uses or overrides a deprecated API.
+At line:2 char:194
++ ... P='C:\tvm'; & 'C:\Users\LMT\.gradle\wrapper\dists\gradle-8.9-bin\90cn ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Note: C:\Users\...deprecated API.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:mergeCatalogQaShaders
+> Task :app:compileCatalogQaShaders NO-SOURCE
+> Task :app:generateCatalogQaAssets UP-TO-DATE
+
+> Task :app:prepareCatalogQa
+QC pass: 150 input, 0 errors
+C:\Users\LMT\Documents\University\Nam4\N4_HK1\PTUDTBDT\BLT\VocaMind\app\build\generated\voc06-qa
+
+> Task :app:mergeCatalogQaAssets
+> Task :app:desugarCatalogQaFileDependencies
+> Task :app:compressCatalogQaAssets
+> Task :app:dexBuilderCatalogQa
+> Task :app:mergeCatalogQaGlobalSynthetics
+> Task :app:processCatalogQaJavaRes
+> Task :app:mergeCatalogQaJniLibFolders UP-TO-DATE
+> Task :app:mergeCatalogQaNativeLibs NO-SOURCE
+> Task :app:stripCatalogQaDebugSymbols NO-SOURCE
+> Task :app:validateSigningCatalogQa
+> Task :app:writeCatalogQaAppMetadata
+> Task :app:checkCatalogQaDuplicateClasses
+> Task :app:writeCatalogQaSigningConfigVersions
+> Task :app:mergeLibDexCatalogQa
+> Task :app:preCatalogQaAndroidTestBuild SKIPPED
+> Task :app:dataBindingMergeDependencyArtifactsCatalogQaAndroidTest UP-TO-DATE
+> Task :app:generateCatalogQaAndroidTestResValues UP-TO-DATE
+> Task :app:generateCatalogQaAndroidTestResources UP-TO-DATE
+> Task :app:mergeCatalogQaAndroidTestResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesCatalogQaAndroidTest UP-TO-DATE
+> Task :app:processCatalogQaAndroidTestManifest UP-TO-DATE
+> Task :app:generateCatalogQaAndroidTestBuildConfig UP-TO-DATE
+> Task :app:javaPreCompileCatalogQaAndroidTest UP-TO-DATE
+> Task :app:checkCatalogQaAndroidTestAarMetadata UP-TO-DATE
+> Task :app:mapCatalogQaAndroidTestSourceSetPaths UP-TO-DATE
+> Task :app:bundleCatalogQaClassesToCompileJar
+> Task :app:processCatalogQaAndroidTestResources UP-TO-DATE
+> Task :app:mergeProjectDexCatalogQa
+
+> Task :app:compileCatalogQaAndroidTestJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:mergeCatalogQaAndroidTestShaders UP-TO-DATE
+> Task :app:compileCatalogQaAndroidTestShaders NO-SOURCE
+> Task :app:prepareReleaseCatalogTests UP-TO-DATE
+> Task :app:generateCatalogQaAndroidTestAssets UP-TO-DATE
+> Task :app:mergeCatalogQaAndroidTestAssets UP-TO-DATE
+> Task :app:compressCatalogQaAndroidTestAssets UP-TO-DATE
+> Task :app:desugarCatalogQaAndroidTestFileDependencies UP-TO-DATE
+> Task :app:dexBuilderCatalogQaAndroidTest
+> Task :app:mergeCatalogQaAndroidTestGlobalSynthetics UP-TO-DATE
+> Task :app:processCatalogQaAndroidTestJavaRes NO-SOURCE
+> Task :app:mergeCatalogQaAndroidTestJavaResource UP-TO-DATE
+> Task :app:checkCatalogQaAndroidTestDuplicateClasses UP-TO-DATE
+> Task :app:mergeExtDexCatalogQaAndroidTest UP-TO-DATE
+> Task :app:mergeLibDexCatalogQaAndroidTest UP-TO-DATE
+> Task :app:mergeCatalogQaAndroidTestJniLibFolders UP-TO-DATE
+> Task :app:mergeCatalogQaAndroidTestNativeLibs NO-SOURCE
+> Task :app:stripCatalogQaAndroidTestDebugSymbols NO-SOURCE
+> Task :app:validateSigningCatalogQaAndroidTest UP-TO-DATE
+> Task :app:writeCatalogQaAndroidTestSigningConfigVersions UP-TO-DATE
+> Task :app:mergeProjectDexCatalogQaAndroidTest
+> Task :app:mergeExtDexCatalogQa
+> Task :app:mergeCatalogQaJavaResource
+> Task :app:generateCatalogQaAndroidTestLintModel
+> Task :app:extractProguardFiles
+> Task :app:generateCatalogQaLintReportModel
+> Task :app:preCatalogQaUnitTestBuild UP-TO-DATE
+> Task :app:generateCatalogQaUnitTestLintModel
+> Task :app:packageCatalogQa
+> Task :app:createCatalogQaApkListingFileRedirect
+> Task :app:assembleCatalogQa
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsDebug
+> Task :app:generateDebugResValues
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:generateDebugBuildConfig
+> Task :app:javaPreCompileDebug
+> Task :app:checkDebugAarMetadata
+> Task :app:mapDebugSourceSetPaths
+> Task :app:parseDebugLocalResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileDebugUnitTest
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets
+> Task :app:prepareRobolectricSdks
+> Task :app:processDebugUnitTestJavaRes
+> Task :app:processDebugManifestForPackage
+> Task :app:packageCatalogQaAndroidTest
+> Task :app:createCatalogQaAndroidTestApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleCatalogQaAndroidTest
+> Task :app:mergeDebugResources
+> Task :app:dataBindingGenBaseClassesDebug
+> Task :app:processDebugResources
+
+> Task :app:compileDebugJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:packageDebugUnitTestForUnitTest
+> Task :app:generateDebugUnitTestConfig
+> Task :app:bundleDebugClassesToRuntimeJar
+> Task :app:bundleDebugClassesToCompileJar
+> Task :app:processDebugJavaRes
+
+> Task :app:compileDebugUnitTestJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:lintAnalyzeCatalogQa
+> Task :app:lintAnalyzeCatalogQaAndroidTest
+> Task :app:lintAnalyzeCatalogQaUnitTest
+> Task :app:testDebugUnitTest
+
+FtsSearchTest > emptyInputDoesNotOpenClosedDatabaseButReadFailuresRemainErrors[26] FAILED
+    java.lang.AssertionError
+        at org.junit.Assert.fail(Assert.java:87)
+        at org.junit.Assert.assertTrue(Assert.java:42)
+        at org.junit.Assert.assertFalse(Assert.java:65)
+        at org.junit.Assert.assertFalse(Assert.java:75)
+        at com.vocamind.app.data.catalog.FtsSearchContract.emptyInputDoesNotOpenClosedDatabaseButReadFailuresRemainErrors(FtsSearchContract.java:143)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+        at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+        at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+        at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+        at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+        at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+        at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+        at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+        at org.robolectric.RobolectricTestRunner$HelperTestRunner$1.evaluate(RobolectricTestRunner.java:524)
+        at org.robolectric.internal.SandboxTestRunner.executeInSandbox(SandboxTestRunner.java:494)
+        at org.robolectric.internal.SandboxTestRunner.access$900(SandboxTestRunner.java:67)
+        at org.robolectric.internal.SandboxTestRunner$7.evaluate(SandboxTestRunner.java:442)
+        at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+        at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+        at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+        at org.robolectric.internal.SandboxTestRunner.access$600(SandboxTestRunner.java:67)
+        at org.robolectric.internal.SandboxTestRunner$6.evaluate(SandboxTestRunner.java:333)
+        at org.robolectric.internal.SandboxTestRunner$3.evaluate(SandboxTestRunner.java:233)
+        at org.robolectric.internal.SandboxTestRunner$5.lambda$evaluate$0(SandboxTestRunner.java:317)
+        at org.robolectric.internal.bytecode.Sandbox.lambda$runOnMainThread$0(Sandbox.java:101)
+        at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+        at java.base/java.lang.Thread.run(Thread.java:840)
+
+FtsSearchTest > emptyInputDoesNotOpenClosedDatabaseButReadFailuresRemainErrors FAILED
+    java.lang.AssertionError
+        at org.junit.Assert.fail(Assert.java:87)
+        at org.junit.Assert.assertTrue(Assert.java:42)
+        at org.junit.Assert.assertFalse(Assert.java:65)
+        at org.junit.Assert.assertFalse(Assert.java:75)
+        at com.vocamind.app.data.catalog.FtsSearchContract.emptyInputDoesNotOpenClosedDatabaseButReadFailuresRemainErrors(FtsSearchContract.java:143)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+        at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+        at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+        at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+        at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+        at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+        at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+        at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+        at org.robolectric.RobolectricTestRunner$HelperTestRunner$1.evaluate(RobolectricTestRunner.java:524)
+        at org.robolectric.internal.SandboxTestRunner.executeInSandbox(SandboxTestRunner.java:494)
+        at org.robolectric.internal.SandboxTestRunner.access$900(SandboxTestRunner.java:67)
+        at org.robolectric.internal.SandboxTestRunner$7.evaluate(SandboxTestRunner.java:442)
+        at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+        at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+        at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+        at org.robolectric.internal.SandboxTestRunner.access$600(SandboxTestRunner.java:67)
+        at org.robolectric.internal.SandboxTestRunner$6.evaluate(SandboxTestRunner.java:333)
+        at org.robolectric.internal.SandboxTestRunner$3.evaluate(SandboxTestRunner.java:233)
+        at org.robolectric.internal.SandboxTestRunner$5.lambda$evaluate$0(SandboxTestRunner.java:317)
+        at org.robolectric.internal.bytecode.Sandbox.lambda$runOnMainThread$0(Sandbox.java:101)
+        at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+        at java.base/java.lang.Thread.run(Thread.java:840)
+
+SearchReadRecoveryTest > realRoomReadFailureShowsErrorAndRetryRecoversCurrentQuery[26] FAILED
+    java.lang.AssertionError: Recovery UI did not settle
+        at org.junit.Assert.fail(Assert.java:89)
+        at com.vocamind.app.feature.search.SearchReadRecoveryContract.await(SearchReadRecoveryContract.java:35)
+        at com.vocamind.app.feature.search.SearchReadRecoveryContract.realRoomReadFailureShowsErrorAndRetryRecoversCurrentQuery(SearchReadRecoveryContract.java:75)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+        at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+        at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+        at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+        at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+        at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+        at org.robolectric.RobolectricTestRunner$HelperTestRunner$1.evaluate(RobolectricTestRunner.java:524)
+        at org.robolectric.internal.SandboxTestRunner.executeInSandbox(SandboxTestRunner.java:494)
+        at org.robolectric.internal.SandboxTestRunner.access$900(SandboxTestRunner.java:67)
+        at org.robolectric.internal.SandboxTestRunner$7.evaluate(SandboxTestRunner.java:442)
+        at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+        at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+        at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+        at org.robolectric.internal.SandboxTestRunner.access$600(SandboxTestRunner.java:67)
+        at org.robolectric.internal.SandboxTestRunner$6.evaluate(SandboxTestRunner.java:333)
+        at org.robolectric.internal.SandboxTestRunner$3.evaluate(SandboxTestRunner.java:233)
+        at org.robolectric.internal.SandboxTestRunner$5.lambda$evaluate$0(SandboxTestRunner.java:317)
+        at org.robolectric.internal.bytecode.Sandbox.lambda$runOnMainThread$0(Sandbox.java:101)
+        at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+        at java.base/java.lang.Thread.run(Thread.java:840)
+
+SearchReadRecoveryTest > realRoomReadFailureShowsErrorAndRetryRecoversCurrentQuery FAILED
+    java.lang.AssertionError: Recovery UI did not settle
+        at org.junit.Assert.fail(Assert.java:89)
+        at com.vocamind.app.feature.search.SearchReadRecoveryContract.await(SearchReadRecoveryContract.java:35)
+        at com.vocamind.app.feature.search.SearchReadRecoveryContract.realRoomReadFailureShowsErrorAndRetryRecoversCurrentQuery(SearchReadRecoveryContract.java:75)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+        at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+        at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+        at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+        at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+        at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+        at org.robolectric.RobolectricTestRunner$HelperTestRunner$1.evaluate(RobolectricTestRunner.java:524)
+        at org.robolectric.internal.SandboxTestRunner.executeInSandbox(SandboxTestRunner.java:494)
+        at org.robolectric.internal.SandboxTestRunner.access$900(SandboxTestRunner.java:67)
+        at org.robolectric.internal.SandboxTestRunner$7.evaluate(SandboxTestRunner.java:442)
+        at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+        at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+        at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+        at org.robolectric.internal.SandboxTestRunner.access$600(SandboxTestRunner.java:67)
+        at org.robolectric.internal.SandboxTestRunner$6.evaluate(SandboxTestRunner.java:333)
+        at org.robolectric.internal.SandboxTestRunner$3.evaluate(SandboxTestRunner.java:233)
+        at org.robolectric.internal.SandboxTestRunner$5.lambda$evaluate$0(SandboxTestRunner.java:317)
+        at org.robolectric.internal.bytecode.Sandbox.lambda$runOnMainThread$0(Sandbox.java:101)
+        at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+        at java.base/java.lang.Thread.run(Thread.java:840)
+
+519 tests completed, 4 failed
+
+> Task :app:testDebugUnitTest FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:testDebugUnitTest'.
+> There were failing tests. See the report at: file:///C:/Users/LMT/Documents/University/Nam4/N4_HK1/PTUDTBDT/BLT/VocaM
+ind/app/build/reports/tests/testDebugUnitTest/index.html
+
+* Try:
+> Run with --scan to get full insights.
+
+BUILD FAILED in 2m 49s
+104 actionable tasks: 61 executed, 43 up-to-date

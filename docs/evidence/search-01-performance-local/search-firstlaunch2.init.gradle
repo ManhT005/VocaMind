@@ -1,0 +1,5 @@
+gradle.projectsEvaluated {
+    def a = gradle.rootProject.project(':app').extensions.getByName('android')
+    a.buildTypes.catalogQa.applicationIdSuffix = '.searchfirstlaunch2'
+    a.sourceSets.catalogQa.assets.setSrcDirs([gradle.rootProject.file('docs/data/vocabulary-contract-v1/fixtures/valid')])
+}

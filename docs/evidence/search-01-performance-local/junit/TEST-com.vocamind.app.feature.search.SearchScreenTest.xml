@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.search.SearchScreenTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-08T15:10:15" hostname="DESKTOP-KUH3S13" time="2.096">
+  <properties/>
+  <testcase name="catalogSearchEnglishVietnameseDetailBackRecreateClearAndNoWrites[26]" classname="com.vocamind.app.feature.search.SearchScreenTest" time="0.469"/>
+  <testcase name="opaqueNavigationArgumentsAndReboundHolder[26]" classname="com.vocamind.app.feature.search.SearchScreenTest" time="0.026"/>
+  <testcase name="catalogDetailSaveRequiresExplicitClickAndPersistsAcrossBack[26]" classname="com.vocamind.app.feature.search.SearchScreenTest" time="0.432"/>
+  <testcase name="catalogSearchEnglishVietnameseDetailBackRecreateClearAndNoWrites" classname="com.vocamind.app.feature.search.SearchScreenTest" time="0.678"/>
+  <testcase name="opaqueNavigationArgumentsAndReboundHolder" classname="com.vocamind.app.feature.search.SearchScreenTest" time="0.032"/>
+  <testcase name="catalogDetailSaveRequiresExplicitClickAndPersistsAcrossBack" classname="com.vocamind.app.feature.search.SearchScreenTest" time="0.454"/>
+  <system-out><![CDATA[SEARCH01_HOST_TRACE generation=1 bind_to_post_ms=13.0351
+SEARCH01_HOST_TRACE generation=2 bind_to_post_ms=4.2964
+SEARCH01_HOST_TRACE generation=2 debounce_ms=4.4081
+SEARCH01_HOST_TRACE queue_ms=0.4207
+SEARCH01_HOST_TRACE query_hydration_ms=21.2494
+SEARCH01_HOST_TRACE generation=2 submit_to_main_ms=22.4745
+SEARCH01_HOST_TRACE generation=2 bind_to_post_ms=9.0153
+SEARCH01_HOST_TRACE generation=3 bind_to_post_ms=2.5549
+SEARCH01_HOST_TRACE generation=3 debounce_ms=2.3545
+SEARCH01_HOST_TRACE queue_ms=0.0513
+SEARCH01_HOST_TRACE query_hydration_ms=0.4962
+SEARCH01_HOST_TRACE generation=3 submit_to_main_ms=0.8343
+SEARCH01_HOST_TRACE generation=3 bind_to_post_ms=9.2845
+SEARCH01_HOST_TRACE generation=3 bind_to_post_ms=23.3398
+SEARCH01_HOST_TRACE generation=3 bind_to_post_ms=19.0124
+SEARCH01_HOST_TRACE generation=4 bind_to_post_ms=2.7602
+SEARCH01_HOST_TRACE generation=4 debounce_ms=2.3908
+SEARCH01_HOST_TRACE queue_ms=0.0552
+SEARCH01_HOST_TRACE query_hydration_ms=0.4816
+SEARCH01_HOST_TRACE generation=4 submit_to_main_ms=0.6742
+SEARCH01_HOST_TRACE generation=4 bind_to_post_ms=13.2308
+SEARCH01_HOST_TRACE generation=6 bind_to_post_ms=4.1091
+SEARCH01_HOST_TRACE generation=1 bind_to_post_ms=14.5781
+SEARCH01_HOST_TRACE generation=2 bind_to_post_ms=2.4181
+SEARCH01_HOST_TRACE generation=2 debounce_ms=2.4401
+SEARCH01_HOST_TRACE queue_ms=0.0538
+SEARCH01_HOST_TRACE query_hydration_ms=0.6408
+SEARCH01_HOST_TRACE generation=2 submit_to_main_ms=0.8627
+SEARCH01_HOST_TRACE generation=2 bind_to_post_ms=9.3334
+SEARCH01_HOST_TRACE generation=2 bind_to_post_ms=25.1646
+SEARCH01_HOST_TRACE generation=1 bind_to_post_ms=28.6891
+SEARCH01_HOST_TRACE generation=2 bind_to_post_ms=9.7758
+SEARCH01_HOST_TRACE generation=2 debounce_ms=9.4587
+SEARCH01_HOST_TRACE queue_ms=0.4587
+SEARCH01_HOST_TRACE query_hydration_ms=30.3452
+SEARCH01_HOST_TRACE generation=2 submit_to_main_ms=31.6716
+SEARCH01_HOST_TRACE generation=2 bind_to_post_ms=16.2152
+SEARCH01_HOST_TRACE generation=3 bind_to_post_ms=5.1177
+SEARCH01_HOST_TRACE generation=3 debounce_ms=4.5844
+SEARCH01_HOST_TRACE queue_ms=0.0805
+SEARCH01_HOST_TRACE query_hydration_ms=0.8114
+SEARCH01_HOST_TRACE generation=3 submit_to_main_ms=1.1541
+SEARCH01_HOST_TRACE generation=3 bind_to_post_ms=13.0516
+SEARCH01_HOST_TRACE generation=3 bind_to_post_ms=41.0106
+SEARCH01_HOST_TRACE generation=3 bind_to_post_ms=32.1498
+SEARCH01_HOST_TRACE generation=4 bind_to_post_ms=4.8978
+SEARCH01_HOST_TRACE generation=4 debounce_ms=4.361
+SEARCH01_HOST_TRACE queue_ms=0.0477
+SEARCH01_HOST_TRACE query_hydration_ms=0.5092
+SEARCH01_HOST_TRACE generation=4 submit_to_main_ms=0.6851
+SEARCH01_HOST_TRACE generation=4 bind_to_post_ms=14.2552
+SEARCH01_HOST_TRACE generation=6 bind_to_post_ms=11.4605
+SEARCH01_HOST_TRACE generation=1 bind_to_post_ms=17.9762
+SEARCH01_HOST_TRACE generation=2 bind_to_post_ms=4.6676
+SEARCH01_HOST_TRACE generation=2 debounce_ms=4.5459
+SEARCH01_HOST_TRACE queue_ms=0.067
+SEARCH01_HOST_TRACE query_hydration_ms=0.4598
+SEARCH01_HOST_TRACE generation=2 submit_to_main_ms=1.3742
+SEARCH01_HOST_TRACE generation=2 bind_to_post_ms=12.4994
+SEARCH01_HOST_TRACE generation=2 bind_to_post_ms=26.7835
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,5 +1,9 @@
 # SEARCH-01 tích hợp VOCAB-02 và kiểm chứng local
 
+**Hiệu năng sau báo cáo này:** xem [điều tra/tối ưu 5.000 kết quả](search-01-performance-validation.md).
+Bản tối ưu local có evidence source riêng, 519 host tests/4 QA tests PASS; AC-05/NFR-VM-03 vẫn HOLD.
+Các SHA, số đo và 517 tests bên dưới là lịch sử bản tích hợp trước tối ưu.
+
 Ngày 08/11/2026. Phụ trách Trường, reviewer Thành. Bản này để người dùng kiểm tra
 và đề xuất tiếp. Sau kiểm chứng local, người dùng yêu cầu commit/push lên nhánh
 SEARCH-01; **không tạo PR hoặc merge lên develop/main**.

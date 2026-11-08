@@ -1,7 +1,20 @@
 # feat(search): add offline search UI with generation-safe results
 
+**C?p nh?t publish:** source/test ?? ki?m ch?ng t?i commit `8b06d1a8287f1571120f6889e4ba4b8616a79241`.
+Regression cu?i: 46/46 instrumentation fixture4 PASS (first-launch ch?y ri?ng 1/1 PASS),
+QA150 search/full detail/retry/5000 rows ch?y l?i 3/3 PASS. Ng??i d?ng y?u c?u commit/push;
+kh?ng t?o PR/merge. C?c ghi ch? ch?a commit b?n d??i l? tr?ng th?i l?c thu evidence.
+AC-05/NFR-VM-03 v?n HOLD.
+
 Base dự kiến: develop. Head: feature/search-01-search-ui.
 Tác giả phụ trách: Trường. Reviewer đề nghị: Thành. **Chỉ là bản nháp; chưa tạo PR.**
+
+Phần tối ưu local tiếp theo giữ SQL/result contract DATA-05, đọc đủ entity qua Cursor
+và Room close barrier. Validation mới: 519 tests/51 suites, QA instrumentation4/4,
+build/lint QA0 lỗi/13warnings. Hai cặp emulator giảm mean44,10→37,79ms cho5000 hits,
+nhưng max52,98ms/3 trong200 mẫu vượt50ms. **AC-05/NFR-VM-03 HOLD**, chưa có thiết bị
+Helio G85/3GB/Android10; xem [báo cáo hiệu năng](search-01-performance-validation.md).
+Phần tối ưu chưa commit/push; SHA/517 tests bên dưới thuộc bản tích hợp trước đó.
 
 Search ở Home → Vocabulary tìm Anh–Việt qua use case/repository/FTS4 của DATA-05.
 Debounce 600 ms theo handoff, invalidate generation ngay khi input đổi/clear/retry
