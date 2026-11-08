@@ -81,6 +81,7 @@ validation records separate from the current setup and foundation guides.
 - [PACK-02 / VOCAB-01 local integration and device QA](pack-02-integration-validation.md)
 - [SEARCH-01 validation và handoff](search-01-validation.md)
 - [SEARCH-01 PR draft](search-01-pr-draft.md)
+- [SEARCH-01 tích hợp VOCAB-02 và QA150 local](search-01-vocab02-integration.md)
 - [VOCAB-02 validation và handoff](vocab-02-validation.md)
 - [VOCAB-02 saved-only decision pending](vocab-02-saved-only-decision.md)
 - [VOCAB-02 PR draft](vocab-02-pr-draft.md)

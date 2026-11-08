@@ -1,5 +1,12 @@
 # SEARCH-01 validation và bàn giao
 
+**Bản tích hợp local mới nhất (08/11/2026):** [SEARCH-01 + VOCAB-02](search-01-vocab02-integration.md).
+Đã dùng full detail/Save của VOCAB-02, chạy QA150, real Room Error/Retry và UI5000
+matches. Các ghi chú preview/NOT RUN bên dưới là lịch sử theo SHA đã ghi.
+Reference performance AC-05/NFR-VM-03 vẫn HOLD.
+Code sau đó được ghi tại merge commit `7cf9519` (tree khớp bản đã test);
+người dùng đã yêu cầu commit/push kèm evidence, không yêu cầu tạo PR/merge lên develop.
+
 Phụ trách: Trường. Reviewer dự kiến: Thành. Phụ thuộc: DATA-05.
 Trạng thái bàn giao: có triển khai và evidence local để review; **không tự đánh dấu Hoàn thành**.
 AC-05 / NFR-VM-03: **HOLD** do thiếu benchmark thiết bị tham chiếu và kiểm thử UI trên thiết bị.

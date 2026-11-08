@@ -1,0 +1,40 @@
+{
+  "com.vocamind.app": {
+    "apk": "package:/data/app/~~-YGfqSMrpZhACnMY8bkirA==/com.vocamind.app-xgEKxhYgPN-bJKsssXOHQg==/base.apk",
+    "dbReadExit": 0,
+    "words": 4,
+    "first": [
+      [
+        "90562a98e8686267",
+        "book"
+      ],
+      [
+        "d17314a48504e2ac",
+        "book"
+      ],
+      [
+        "5aecfbf5b9a23aee",
+        "bank"
+      ]
+    ]
+  },
+  "com.vocamind.app.quiz03validation": {
+    "apk": "package:/data/app/~~c9wFefeIGFSpIBUQ1j_giw==/com.vocamind.app.quiz03validation-RRx-XM8BtY9Atdrci3vhSw==/base.apk",
+    "dbReadExit": 0,
+    "words": 150,
+    "first": [
+      [
+        "010b4ac271bcee7c",
+        "luggage"
+      ],
+      [
+        "0143ae3ced507401",
+        "mother"
+      ],
+      [
+        "0207c263f8c49060",
+        "careful"
+      ]
+    ]
+  }
+}

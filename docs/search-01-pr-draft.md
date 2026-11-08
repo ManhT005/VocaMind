@@ -11,20 +11,25 @@ NoMatch, Error, retry/reset; raw query giữ qua Back/recreate/SavedStateHandle.
 Process composition tái sử dụng SearchProvider và catalog trên worker, callback
 main, không đóng shared catalog theo view lifecycle. Catalog-search detail route
 nhận stableId TEXT không cần packId; pack route vẫn validate membership. Search
-và preview không activate pack hoặc ghi userdata/catalog. Full detail/save cần
-VOCAB-02 tiếp tục; SEARCH-02 tiếp tục hardening empty/error và device UI QA.
+và navigation không activate pack hoặc ghi business state. Route catalog hiện
+dùng full detail/Save của VOCAB-02 qua các API explicit không packId; Lưu/Bỏ lưu
+chỉ ghi theo click và policy VOCAB-02. Route pack vẫn kiểm tra membership.
+SEARCH-02 tiếp tục hardening empty/error và accessibility theo scope riêng.
 
-Validation local trên code SHA `67c06d4aca3b237d7eb8565dfbb410b5acafd674`:
+Validation local mới nhất trên tree
+`463e424998e23b0f89f6da21b1d15b77e5e33306`, đã ghi tại merge commit
+`7cf9519fa476e10f604ad88c5fbef668228169f2` (HEAD371d9ec + develop78b9add):
 
-- 406 Android/JVM tests pass, gồm 26 lượt SEARCH-01 trên API26/35.
-- assembleDebug, assembleDebugAndroidTest, lintDebug pass; lint 0 errors/7 warnings.
-- 22 Python/data steps pass, gồm 159 unittest tests và expected refusal gates.
+- 517 Android/JVM tests / 51 suites pass trên API26/35; 199 Python unittest tests pass.
+- debug và QA150 APK/test APK build pass; lint mỗi profile 0 errors/13 warnings.
+- Small Phone API30 offline: 4 instrumentation tests pass, gồm full detail/Save,
+  read failure thật → Error/Retry, FTS5000 → UI/cuộn và benchmark telemetry.
 - Host native FTS/UI→detail→Back/recreate/read-only snapshot pass. Môi trường Windows
   cần TEMP ngắn C:\tvm cho SQLite tests có tên dài; giữ log attempts thất bại.
-- Có phase trace và raw DATA-05 host benchmark; **AC-05/NFR-VM-03 HOLD**.
-  Không có connected device; Airplane Mode thực/reference-device performance NOT RUN.
+- Có phase trace và 500 raw samples emulator; broad-query max99.1540ms trong lượt mới.
+  **AC-05/NFR-VM-03 HOLD**, benchmark cấu hình tham chiếu chưa chạy.
 
-Xem [validation và handoff](search-01-validation.md) để biết SHA, môi trường,
+Xem [validation tích hợp](search-01-vocab02-integration.md) để biết tree/SHA, môi trường,
 commands, scope timing, test mapping và các phần NOT RUN/BLOCKED. Không sửa
 SRS/phân công, không tự đánh dấu task Hoàn thành. CI trên pushed head và ít nhất
 một reviewer khác tác giả vẫn cần trước merge; chưa có yêu cầu tạo PR/merge.

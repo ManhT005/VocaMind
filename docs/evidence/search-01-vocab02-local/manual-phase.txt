@@ -1,0 +1,15 @@
+--------- beginning of main
+11-08 20:20:17.561  6327  6327 D SearchTiming: generation=1 bind_to_post_ms=51.3187
+11-08 20:20:20.633  6327  6327 D SearchTiming: generation=2 bind_to_post_ms=28.5073
+11-08 20:20:20.656  6327  6327 D SearchTiming: generation=3 bind_to_post_ms=9.6924
+11-08 20:20:20.686  6327  6327 D SearchTiming: generation=4 bind_to_post_ms=19.768
+11-08 20:20:20.762  6327  6327 D SearchTiming: generation=5 bind_to_post_ms=17.262
+11-08 20:20:20.828  6327  6327 D SearchTiming: generation=6 bind_to_post_ms=32.2351
+11-08 20:20:21.272  6327  6327 D SearchTiming: generation=7 bind_to_post_ms=11.276
+11-08 20:20:21.304  6327  6327 D SearchTiming: generation=8 bind_to_post_ms=23.1813
+11-08 20:20:21.359  6327  6327 D SearchTiming: generation=9 bind_to_post_ms=27.7393
+11-08 20:20:21.936  6327  6327 D SearchTiming: generation=9 debounce_ms=603.9103
+11-08 20:20:21.937  6327  6481 D SearchTiming: queue_ms=0.5833
+11-08 20:20:21.992  6327  6481 D SearchTiming: query_hydration_ms=55.5148
+11-08 20:20:21.993  6327  6327 D SearchTiming: generation=9 submit_to_main_ms=57.1719
+11-08 20:20:22.033  6327  6327 D SearchTiming: generation=9 bind_to_post_ms=39.6008
