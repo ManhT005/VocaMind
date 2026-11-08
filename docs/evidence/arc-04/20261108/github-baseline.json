@@ -1,0 +1,75 @@
+{
+  "baseline": "cd83f1ce874a899029a85879c3c40c97343683d6",
+  "runId": 42385571766,
+  "jobs": [
+    {
+      "id": 128442110377,
+      "name": "Build & Test",
+      "conclusion": "success",
+      "steps": [
+        [
+          "Run unit tests",
+          "success"
+        ],
+        [
+          "Run Android lint",
+          "success"
+        ],
+        [
+          "Verify APK asset profiles",
+          "success"
+        ]
+      ]
+    },
+    {
+      "id": 128442110677,
+      "name": "Quiz device (API 28, offline)",
+      "conclusion": "success",
+      "steps": [
+        [
+          "Run offline Quiz instrumentation on a disposable emulator",
+          "success"
+        ],
+        [
+          "Upload Quiz device evidence",
+          "success"
+        ]
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 13579781192,
+      "name": "android-validation-cd83f1ce874a899029a85879c3c40c97343683d6",
+      "expired": false
+    },
+    {
+      "id": 13579127947,
+      "name": "quiz-device-cd83f1ce874a899029a85879c3c40c97343683d6",
+      "expired": false
+    }
+  ],
+  "pullRequests": [
+    {
+      "number": 32,
+      "merged": false,
+      "state": "open",
+      "head": "9808d623d6f5204314b676cdcddd6efbcbf96ffd",
+      "merge": null
+    },
+    {
+      "number": 33,
+      "merged": true,
+      "state": "closed",
+      "head": "f34b4ea72d81062d231ae75433c9ad4fefa1963a",
+      "merge": "cd83f1ce874a899029a85879c3c40c97343683d6"
+    },
+    {
+      "number": 35,
+      "merged": true,
+      "state": "closed",
+      "head": "14631eaa8aa7264a24a5f4e5d4d5aa928645eee0",
+      "merge": "993e70a07a05c50c5de8099edcdf50b92c91c5e9"
+    }
+  ]
+}
