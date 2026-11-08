@@ -62,6 +62,7 @@ public class LearningFlowIntegrationTest {
         void nextDay() { now += DAY + 3_600_000L; }
     }
 
+    private long monotonic;
     private final TestClock clock = new TestClock();
     private final Queue<Runnable> worker = new ArrayDeque<>();
     private final Queue<Runnable> main = new ArrayDeque<>();
@@ -118,7 +119,7 @@ public class LearningFlowIntegrationTest {
                 (item, rating) -> {
                     clock.tick();
                     return useCase.execute(item.getVocabulary().stableId, rating);
-                });
+                }, () -> monotonic);
         settle();
         return model;
     }
@@ -135,7 +136,8 @@ public class LearningFlowIntegrationTest {
 
     private void review(FlashcardViewModel model, Rating rating) {
         model.flip();
-        model.rate(rating);
+        monotonic += 600;
+        model.rate(model.state().getValue().presentationId, rating);
         settle();
     }
 
@@ -223,9 +225,9 @@ public class LearningFlowIntegrationTest {
     @Test public void doubleTapWritesExactlyOneEventAndNextCardWorks() throws Exception {
         FlashcardViewModel model = startSession();
         model.flip();
-        model.rate(Rating.REMEMBERED);
-        model.rate(Rating.REMEMBERED);
-        model.rate(Rating.FORGOT);
+        model.rate(model.state().getValue().presentationId, Rating.REMEMBERED);
+        model.rate(model.state().getValue().presentationId, Rating.REMEMBERED);
+        model.rate(model.state().getValue().presentationId, Rating.FORGOT);
         assertEquals(1, worker.size());
         settle();
         assertEquals(1, events().size());
@@ -236,7 +238,7 @@ public class LearningFlowIntegrationTest {
 
     @Test public void ratingBeforeFlipWritesNothing() throws Exception {
         FlashcardViewModel model = startSession();
-        model.rate(Rating.REMEMBERED);
+        model.rate(model.state().getValue().presentationId, Rating.REMEMBERED);
         assertTrue(worker.isEmpty());
         assertTrue(events().isEmpty());
     }
@@ -294,4 +296,33 @@ public class LearningFlowIntegrationTest {
         settle();
         assertEquals(FlashcardViewModel.Status.NO_ACTIVE_PACK, model.state().getValue().status);
     }
+    @Test public void fastCommittedTripleTapDoesNotUpdateNextWordsProgress() {
+        FlashcardViewModel model = startSession();
+        model.flip();
+        long first = model.state().getValue().presentationId;
+        model.rate(first, Rating.REMEMBERED);
+        settle();
+        model.flip(); // expose the answer before the rest of the burst
+        long second = model.state().getValue().presentationId;
+        monotonic = 150;
+        model.rate(second, Rating.FORGOT);
+        monotonic = 300;
+        model.rate(second, Rating.HARD);
+        assertTrue(worker.isEmpty());
+        assertEquals(1, events().size());
+        assertEquals("REMEMBERED", events().get(0).rating);
+        assertEquals(1, progress(W1).getReviewCount());
+        assertEquals(1, progress(W1).getBox());
+        assertFalse(io(() -> study.getProgress(W2)).get().isPresent());
+        monotonic = 600;
+        model.rate(first, Rating.FORGOT); // stale even outside the time window
+        assertTrue(worker.isEmpty());
+        model.rate(second, Rating.HARD);
+        settle();
+        assertEquals(2, events().size());
+        assertEquals(1, progress(W2).getReviewCount());
+        assertEquals(0, progress(W2).getBox());
+        assertEquals(0, progress(W2).getConsecutiveMistakes());
+    }
+
 }

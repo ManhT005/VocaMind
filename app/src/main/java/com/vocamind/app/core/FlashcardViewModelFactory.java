@@ -3,6 +3,7 @@ package com.vocamind.app.core;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.SystemClock;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
@@ -37,7 +38,8 @@ public final class FlashcardViewModelFactory implements ViewModelProvider.Factor
             return new PlanToday(repositories.packs(), repositories.study(), clock, zone).execute();
         }, worker, main::post, close,
                 // Commits ReviewEvent + progress in one transaction (DATA-06) via the review use case.
-                (item, rating) -> lazy.get().recordReview(clock, zone).execute(item.getVocabulary().stableId, rating)));
+                (item, rating) -> lazy.get().recordReview(clock, zone).execute(item.getVocabulary().stableId, rating),
+                SystemClock::elapsedRealtime));
     }
 
     /** Touched only from the serial worker (get and close), so no locking is needed. */
