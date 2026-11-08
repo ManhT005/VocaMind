@@ -1,0 +1,11 @@
+{
+  "sqliteVersion": "3.50.4",
+  "identicalBytes": {
+    "catalog.db": true,
+    "catalog.metadata.json": true,
+    "content-credits.json": true,
+    "manifest.json": true,
+    "quiz-policy.json": true,
+    "release-gate-report.json": true
+  }
+}

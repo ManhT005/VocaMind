@@ -9,6 +9,7 @@ import com.vocamind.app.data.user.entity.UserWordProgress;
 import com.vocamind.app.domain.catalog.CatalogVocabulary;
 import com.vocamind.app.domain.common.RepoError;
 import com.vocamind.app.domain.common.RepoResult;
+import com.vocamind.app.domain.learning.DailyQuota;
 import com.vocamind.app.domain.learning.StudyItem;
 import com.vocamind.app.domain.learning.StudyRepository;
 import com.vocamind.app.domain.learning.WordProgress;
@@ -65,6 +66,15 @@ public final class RoomStudyRepository implements StudyRepository {
                 if (v != null) out.add(CatalogMapper.vocabulary(v));
             }
             return RepoResult.success(Collections.unmodifiableList(out));
+        });
+    }
+
+    @Override public RepoResult<DailyQuota> dailyQuota(long dayStart, long nextDayStart) {
+        if (dayStart < 0 || nextDayStart <= dayStart) return RepoResult.failure(RepoError.INVALID_ARGUMENT);
+        return RepositoryGuard.read(() -> {
+            var preference = user.preference();
+            if (preference == null) return RepoResult.failure(RepoError.NOT_FOUND);
+            return RepoResult.success(new DailyQuota(preference.dailyNewWords, user.learnedCount(dayStart, nextDayStart)));
         });
     }
 

@@ -1,0 +1,1 @@
+PASS: orientation requested while loading indicator visible, state reconciles unsaved after rotation; confirmed landscape stable; Vietnamese example reachable by actual scroll.

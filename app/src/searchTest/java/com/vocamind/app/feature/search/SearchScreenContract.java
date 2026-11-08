@@ -42,6 +42,10 @@ public abstract class SearchScreenContract {
     }
     @Test public void catalogSearchEnglishVietnameseDetailBackRecreateClearAndNoWrites() throws Exception {
         Context context = ApplicationProvider.getApplicationContext();
+        // Schema bootstrap is distinct from search/navigation business writes.
+        ExecutorService bootstrap = Executors.newSingleThreadExecutor();
+        try { bootstrap.submit(() -> { var db = com.vocamind.app.data.user.UserDatabase.open(context); db.close(); }).get(15, TimeUnit.SECONDS); }
+        finally { bootstrap.shutdown(); }
         File userdata = context.getDatabasePath("userdata.db");
         boolean existed = userdata.exists();
         try (ActivityScenario<MainActivity> scenario = ActivityScenario.launch(MainActivity.class)) {
@@ -57,11 +61,16 @@ public abstract class SearchScreenContract {
                 SearchAdapter.Holder holder = adapter.onCreateViewHolder(list, 0);
                 adapter.onBindViewHolder(holder, 0); holder.itemView.performClick();
             });
-            await(scenario, a -> a.findViewById(R.id.route_message) != null
-                    && ((TextView)a.findViewById(R.id.route_message)).getText().toString().contains("5aecfbf5b9a23aee"));
+            await(scenario, a -> a.findViewById(R.id.detail_lemma) != null
+                    && ((TextView)a.findViewById(R.id.detail_lemma)).getText().toString().equals("bank")
+                    && a.findViewById(R.id.detail_save).isEnabled());
             scenario.onActivity(a -> {
                 var nav = ((NavHostFragment)a.getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment)).getNavController();
                 assertNull(nav.getCurrentBackStackEntry().getArguments().getString("packId"));
+                assertEquals("5aecfbf5b9a23aee", nav.getCurrentBackStackEntry().getArguments().getString("vocabularyId"));
+                assertEquals("ngân hàng", ((TextView)a.findViewById(R.id.detail_meaning)).getText().toString());
+                assertFalse(((TextView)a.findViewById(R.id.detail_example_en)).getText().toString().trim().isEmpty());
+                assertFalse(((TextView)a.findViewById(R.id.detail_example_vi)).getText().toString().trim().isEmpty());
                 a.findViewById(R.id.back).performClick();
             });
             await(scenario, a -> a.findViewById(R.id.search) != null);
@@ -78,6 +87,36 @@ public abstract class SearchScreenContract {
             });
             assertEquals(before, snapshot(context));
             assertEquals(existed, userdata.exists());
+        }
+    }
+    @Test public void catalogDetailSaveRequiresExplicitClickAndPersistsAcrossBack() throws Exception {
+        try (ActivityScenario<MainActivity> scenario = ActivityScenario.launch(MainActivity.class)) {
+            scenario.onActivity(a -> a.findViewById(R.id.open_vocabulary).performClick());
+            query(scenario, "bank", 1);
+            scenario.onActivity(a -> {
+                var nav = ((NavHostFragment)a.getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment)).getNavController();
+                nav.navigate(R.id.vocabularyDetailFragment, VocabularyDetailFragment.searchArguments("5aecfbf5b9a23aee"));
+            });
+            await(scenario, a -> a.findViewById(R.id.detail_save) != null && a.findViewById(R.id.detail_save).isEnabled());
+            boolean[] initiallySaved = {false};
+            scenario.onActivity(a -> {
+                initiallySaved[0] = ((TextView)a.findViewById(R.id.detail_save)).getText().toString().equals(a.getString(R.string.detail_unsave));
+                a.findViewById(R.id.detail_save).performClick();
+            });
+            await(scenario, a -> a.findViewById(R.id.detail_save).isEnabled()
+                    && ((TextView)a.findViewById(R.id.detail_save)).getText().toString().equals(a.getString(initiallySaved[0] ? R.string.detail_save : R.string.detail_unsave)));
+            scenario.onActivity(a -> a.findViewById(R.id.back).performClick());
+            query(scenario, "bank", 1);
+            scenario.onActivity(a -> ((NavHostFragment)a.getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment))
+                    .getNavController().navigate(R.id.vocabularyDetailFragment, VocabularyDetailFragment.searchArguments("5aecfbf5b9a23aee")));
+            await(scenario, a -> a.findViewById(R.id.detail_save) != null && a.findViewById(R.id.detail_save).isEnabled());
+            scenario.onActivity(a -> {
+                assertEquals(a.getString(initiallySaved[0] ? R.string.detail_save : R.string.detail_unsave),
+                        ((TextView)a.findViewById(R.id.detail_save)).getText().toString());
+                a.findViewById(R.id.detail_save).performClick(); // Restore the original saved flag.
+            });
+            await(scenario, a -> a.findViewById(R.id.detail_save).isEnabled()
+                    && ((TextView)a.findViewById(R.id.detail_save)).getText().toString().equals(a.getString(initiallySaved[0] ? R.string.detail_unsave : R.string.detail_save)));
         }
     }
     private String snapshot(Context context) throws Exception {

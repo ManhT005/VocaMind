@@ -1,0 +1,5 @@
+ro.build.version.sdk=28
+ro.build.version.release=9
+ro.product.model=G82U8
+ro.product.cpu.abi=x86_64
+ro.build.fingerprint=Android/graceltexx/gracelte:9/PQ3A.190705.10211540/G9700FXXU1APFO:user/release-keys

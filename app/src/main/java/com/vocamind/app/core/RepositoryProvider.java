@@ -10,6 +10,8 @@ import com.vocamind.app.domain.learning.ReviewRepository;
 import com.vocamind.app.domain.learning.StudyRepository;
 import com.vocamind.app.domain.pack.PackRepository;
 import com.vocamind.app.domain.quiz.QuizRepository;
+import com.vocamind.app.domain.vocabulary.VocabularyRepository;
+import com.vocamind.app.data.repository.RoomVocabularyRepository;
 import com.vocamind.app.data.catalog.QuizPolicyAsset;
 import com.vocamind.app.data.catalog.CatalogMapper;
 import com.vocamind.app.data.repository.UserDataMapper;
@@ -31,6 +33,7 @@ public final class RepositoryProvider implements AutoCloseable {
     private final StudyRepository study;
     private final ReviewRepository reviews;
     private final QuizRepository quizzes;
+    private final VocabularyRepository vocabulary;
     private final ProgressRepository progress;
 
     public RepositoryProvider(Context context, CatalogProvider catalog) {
@@ -47,6 +50,7 @@ public final class RepositoryProvider implements AutoCloseable {
                 vocabulary.add(UserDataMapper.quizVocabulary(CatalogMapper.vocabulary(row)));
             return QuizPolicyAsset.load(context.getApplicationContext().getAssets(), vocabulary);
         });
+        vocabulary = new RoomVocabularyRepository(catalog.repository(), userDatabase);
     }
 
     public PackRepository packs() { return packs; }
@@ -57,6 +61,7 @@ public final class RepositoryProvider implements AutoCloseable {
         return ReviewProvider.create(reviews, clock, zone);
     }
     public QuizRepository quizzes() { return quizzes; }
+    public VocabularyRepository vocabulary() { return vocabulary; }
     public ProgressRepository progress() { return progress; }
     /** Reads the same application-owned userdata DB as review/Quiz writes; run on a worker. */
     public GetProgressUseCase progressUseCase() { return progress::readProgress; }

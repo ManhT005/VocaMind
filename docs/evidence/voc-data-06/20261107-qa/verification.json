@@ -1,0 +1,69 @@
+{
+  "androidJvm": {
+    "tests": 418,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "python": {
+    "vocabulary": 112,
+    "contract": 39,
+    "catalog": 27
+  },
+  "lint": {
+    "debug": {
+      "errors": 0,
+      "warnings": 11
+    },
+    "catalogQa": {
+      "errors": 0,
+      "warnings": 10
+    }
+  },
+  "build": {
+    "debug": "BUILD SUCCESSFUL in 1m 22s",
+    "catalogQa": "BUILD SUCCESSFUL in 41s"
+  },
+  "repeatQaApkAndAssets": "BYTE_IDENTICAL",
+  "device": {
+    "api": 26,
+    "apkSha256": "72aca5f9ce1a8506a0e5654505300706a7c02d2bfd20a925be654e28d9035ef2",
+    "instrumentation": "PASS",
+    "offline": true,
+    "uiSmoke": "PASS",
+    "api35Device": "PENDING",
+    "quizUi": "WAITING_QUIZ_03"
+  },
+  "provenance": {
+    "status": "AUDIT_PASS_RELEASE_HOLD",
+    "entries": 150,
+    "historicalNgslVerified": 135,
+    "editorialOnly": 15,
+    "packStats": {
+      "pack_toeic_basic": [
+        40,
+        34
+      ],
+      "pack_toeic_office": [
+        40,
+        34
+      ],
+      "pack_daily_life": [
+        40,
+        37
+      ],
+      "pack_academic": [
+        30,
+        30
+      ]
+    },
+    "releaseAuthorized": false
+  },
+  "snapshotManifestSha256": "b3b1bd8ab5bdf6518782040ba68ff3352c600286e75f0aea78ace3441b8dedea",
+  "appReleaseGate": {
+    "status": 1,
+    "output": "RIGHTS_AUDIT_BLOCKED: APP_RELEASE_BLOCKED: distribution decision, device QA, DATA-08 and DATA-09 pending"
+  },
+  "packDescriptionReview": "PENDING",
+  "rightsDecision": "PENDING"
+}

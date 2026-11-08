@@ -1,0 +1,186 @@
+{
+  "result": "PASS_ENRICHMENT_CHECKS",
+  "targetSnapshotId": "editorial-accepted-v1",
+  "targetSnapshotCommit": "cd83f1ce874a899029a85879c3c40c97343683d6",
+  "targetDatasetSha256": "c066d4a363d58c4c7226b716f1080b25a9e47b124a4007f4c3d16d67283a7fb8",
+  "targetCanonicalSha256": "f27e9d2de700fadf13b480df26933c61333ce6261ed872d285e5a111a88110c1",
+  "enrichmentVersion": "0.1.0",
+  "taxonomyVersion": "topic-taxonomy-v1",
+  "coverage": {
+    "total": 150,
+    "cefr": {
+      "unknown": 150,
+      "suggested": 0,
+      "verified": 0
+    },
+    "topic": {
+      "unknown": 150,
+      "suggested": 0,
+      "verified": 0
+    },
+    "review": {
+      "pending": 150,
+      "approved": 0,
+      "rejected": 0
+    }
+  },
+  "byPack": {
+    "pack_toeic_basic": {
+      "total": 40,
+      "cefr": {
+        "unknown": 40,
+        "suggested": 0,
+        "verified": 0
+      },
+      "topic": {
+        "unknown": 40,
+        "suggested": 0,
+        "verified": 0
+      },
+      "review": {
+        "pending": 40,
+        "approved": 0,
+        "rejected": 0
+      }
+    },
+    "pack_toeic_office": {
+      "total": 40,
+      "cefr": {
+        "unknown": 40,
+        "suggested": 0,
+        "verified": 0
+      },
+      "topic": {
+        "unknown": 40,
+        "suggested": 0,
+        "verified": 0
+      },
+      "review": {
+        "pending": 40,
+        "approved": 0,
+        "rejected": 0
+      }
+    },
+    "pack_daily_life": {
+      "total": 40,
+      "cefr": {
+        "unknown": 40,
+        "suggested": 0,
+        "verified": 0
+      },
+      "topic": {
+        "unknown": 40,
+        "suggested": 0,
+        "verified": 0
+      },
+      "review": {
+        "pending": 40,
+        "approved": 0,
+        "rejected": 0
+      }
+    },
+    "pack_academic": {
+      "total": 30,
+      "cefr": {
+        "unknown": 30,
+        "suggested": 0,
+        "verified": 0
+      },
+      "topic": {
+        "unknown": 30,
+        "suggested": 0,
+        "verified": 0
+      },
+      "review": {
+        "pending": 30,
+        "approved": 0,
+        "rejected": 0
+      }
+    }
+  },
+  "byPos": {
+    "adjective": {
+      "total": 7,
+      "cefr": {
+        "unknown": 7,
+        "suggested": 0,
+        "verified": 0
+      },
+      "topic": {
+        "unknown": 7,
+        "suggested": 0,
+        "verified": 0
+      },
+      "review": {
+        "pending": 7,
+        "approved": 0,
+        "rejected": 0
+      }
+    },
+    "noun": {
+      "total": 113,
+      "cefr": {
+        "unknown": 113,
+        "suggested": 0,
+        "verified": 0
+      },
+      "topic": {
+        "unknown": 113,
+        "suggested": 0,
+        "verified": 0
+      },
+      "review": {
+        "pending": 113,
+        "approved": 0,
+        "rejected": 0
+      }
+    },
+    "verb": {
+      "total": 30,
+      "cefr": {
+        "unknown": 30,
+        "suggested": 0,
+        "verified": 0
+      },
+      "topic": {
+        "unknown": 30,
+        "suggested": 0,
+        "verified": 0
+      },
+      "review": {
+        "pending": 30,
+        "approved": 0,
+        "rejected": 0
+      }
+    }
+  },
+  "byCanonicalSource": {
+    "vocamind-ai-editorial-v1": {
+      "total": 150,
+      "cefr": {
+        "unknown": 150,
+        "suggested": 0,
+        "verified": 0
+      },
+      "topic": {
+        "unknown": 150,
+        "suggested": 0,
+        "verified": 0
+      },
+      "review": {
+        "pending": 150,
+        "approved": 0,
+        "rejected": 0
+      }
+    }
+  },
+  "labelSources": {},
+  "conflicts": 0,
+  "errors": 0,
+  "inputSha256": {
+    "input": "44216f8c9e61199418b2345fe7c04265e514fb821f0c88114e6e1cae4b261c31",
+    "taxonomy": "1e1e9703df5d8448cfa8dacf859e1db48d6dc8d716322ae49c7091b68b6e7e41",
+    "sources": "202b6f895db8004afd630fb03f502a5fdd9451b62f5c97dffb9e766d1041876a",
+    "reviews": "c598d929285468e49674145d8fcef5a3df1e525877815096b04b12742f4b602a"
+  }
+}

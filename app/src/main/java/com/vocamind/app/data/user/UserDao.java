@@ -112,10 +112,28 @@ public abstract class UserDao {
         DaoInputs.range(dayStart, nextDayStart);
         return new UserPlanningSnapshot(activePacks(), allProgress(), preference(), readLearnedCount(dayStart, nextDayStart));
     }
-    /** Existing progress only; creation semantics for saved-only words require progress contract review. */
+    /** Existing progress only: never overwrites learning fields. */
     @Query("UPDATE UserWordProgress SET isSaved=:saved WHERE vocabularyId=:id")
     protected abstract int writeSaved(String id, boolean saved);
     public int setSaved(String id, boolean saved) { id(id); return writeSaved(id, saved); }
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    protected abstract long insertSavedProgress(UserWordProgress row);
+    /** VOCAB-02 saved-only contract: due now, no fabricated learning/review timestamps. */
+    public long insertSavedProgressIfAbsent(String vocabularyId, long savedAt) {
+        id(vocabularyId);
+        require(savedAt >= 0, "savedAt");
+        UserWordProgress row = new UserWordProgress();
+        row.vocabularyId = vocabularyId;
+        row.isSaved = true;
+        row.box = 0;
+        row.dueAt = savedAt;
+        row.learnedAt = null;
+        row.lastReviewedAt = null;
+        row.reviewCount = 0;
+        row.consecutiveMistakes = 0;
+        row.isLeech = false;
+        return insertSavedProgress(row);
+    }
     @Insert protected abstract long writeReview(ReviewEvent row);
     public long insertReview(ReviewEvent row) {
         require(row != null, "review row");
@@ -133,6 +151,19 @@ public abstract class UserDao {
         return readReviewHistory(id, start, end, limit);
     }
     @Insert protected abstract long writeQuiz(QuizAttempt row);
+    @Query("SELECT * FROM QuizAttempt WHERE completionKey=:key")
+    protected abstract QuizAttempt quizByKey(String key);
+    public static final class CompletionConflict extends RuntimeException { }
+    @Transaction public long insertQuizOnce(QuizAttempt row) {
+        require(row != null, "quiz row");
+        id(row.completionKey);
+        QuizAttempt old = quizByKey(row.completionKey);
+        if (old == null) return insertQuiz(row);
+        if (old.completedAt != row.completedAt || old.questionCount != row.questionCount
+                || old.correctCount != row.correctCount || old.scorePercent != row.scorePercent)
+            throw new CompletionConflict();
+        return old.id;
+    }
     public long insertQuiz(QuizAttempt row) {
         require(row != null, "quiz row");
         require(row.questionCount >= 4 && row.questionCount <= 10 && row.correctCount >= 0

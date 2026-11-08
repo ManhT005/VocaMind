@@ -2,7 +2,6 @@ package com.vocamind.app.core;
 
 import android.content.Context;
 import com.vocamind.app.domain.catalog.*;
-import java.util.Optional;
 import java.util.concurrent.*;
 
 /** Process owner: initializes on worker, reuses DATA-05 provider, never opens userdata.
@@ -42,8 +41,5 @@ public final class SearchComposition {
             });
         });
         return result;
-    }
-    public CompletableFuture<Optional<CatalogVocabulary>> detail(String id) {
-        return provider.thenApplyAsync(p -> catalog.repository().getVocabulary(id), worker);
     }
 }

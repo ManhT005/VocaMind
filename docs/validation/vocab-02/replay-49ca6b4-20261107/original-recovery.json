@@ -1,0 +1,11 @@
+{
+    "originalLocation":  "Recovered byte-for-byte from pre-existing ignored build/vocab02-device/src/.../VocabularyDeviceQa.java before replay",
+    "originalSha256":  "089AB4B2171040BFF1DD9D62F4B050CBA3D77487B9E763C2D7AA77730C8393E1",
+    "historicalExpectedSha256":  "089AB4B2171040BFF1DD9D62F4B050CBA3D77487B9E763C2D7AA77730C8393E1",
+    "archivedGitBlobSha256":  "4F1461BEDA68AC415ABFB16CF45C877EAAD29B202B9B8B8DE34AF5BF2C558737",
+    "originalCrLfCount":  1,
+    "archivedCrLfCount":  0,
+    "textEqualAfterCrLfToLf":  true,
+    "historicalMetadataChanged":  false,
+    "newReplayUses":  "archived Git blob 4F1461... without editing assertions; one newly built app/test APK pair"
+}

@@ -1,12 +1,13 @@
 package com.vocamind.app.data.user.entity;
 
-import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 /** Internal Room row; references to catalog are logical stable IDs. */
-@Entity
+@Entity(indices = {@androidx.room.Index(value = "completionKey", unique = true)})
 public class QuizAttempt {
+    @androidx.annotation.Nullable
+    public String completionKey;
     @PrimaryKey(autoGenerate = true)
     public long id;
     public long completedAt;

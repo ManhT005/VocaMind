@@ -1,0 +1,10 @@
+{
+  "profile": "debug-fixture",
+  "apkSha256": "1bb8941b6eb8252cb9c8bf7e5175be7a05bd344243cf992c4d7617cea80e31cb",
+  "assetHashes": {
+    "catalog.db": "7f90d0b11b14ce73932231dc7c4506bdf30af3788b66d0fde536d08fa7f753e9",
+    "catalog.metadata.json": "c991e38554460911be182ec35433d436b762923f13af6a18ddaf33a6d1b5fc94",
+    "content-credits.json": "2307c1117e3eb68d512773ac9b36b8b1079c41681b02694654fa677171ea6d61",
+    "quiz-policy.json": "dbe6886ec5a7eecbb7a062e372ac3d7d5677add30e91d65f44b4707aee9eb7a5"
+  }
+}

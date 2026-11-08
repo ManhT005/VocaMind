@@ -1,0 +1,3 @@
+PASS: Home → Packs → pack word list → Detail → offline credits.
+PASS: Detail lemma, meaning, EN/VI examples, IPA placeholder.
+PASS: Credits show internal QA scope; project-use license button hidden.

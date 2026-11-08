@@ -1,0 +1,26 @@
+{
+  "catalog.db": {
+    "baseGitBlobSha256": "7f90d0b11b14ce73932231dc7c4506bdf30af3788b66d0fde536d08fa7f753e9",
+    "baseCheckoutSha256": "7f90d0b11b14ce73932231dc7c4506bdf30af3788b66d0fde536d08fa7f753e9",
+    "currentSha256": "7f90d0b11b14ce73932231dc7c4506bdf30af3788b66d0fde536d08fa7f753e9",
+    "unchanged": true
+  },
+  "catalog.metadata.json": {
+    "baseGitBlobSha256": "c991e38554460911be182ec35433d436b762923f13af6a18ddaf33a6d1b5fc94",
+    "baseCheckoutSha256": "c991e38554460911be182ec35433d436b762923f13af6a18ddaf33a6d1b5fc94",
+    "currentSha256": "c991e38554460911be182ec35433d436b762923f13af6a18ddaf33a6d1b5fc94",
+    "unchanged": true
+  },
+  "content-credits.json": {
+    "baseGitBlobSha256": "2307c1117e3eb68d512773ac9b36b8b1079c41681b02694654fa677171ea6d61",
+    "baseCheckoutSha256": "6911e4f6a1c80c258e840133430895ee9fd8a1c3c7de3c88bf4ac79cf915a262",
+    "currentSha256": "6911e4f6a1c80c258e840133430895ee9fd8a1c3c7de3c88bf4ac79cf915a262",
+    "unchanged": true
+  },
+  "quiz-policy.json": {
+    "baseGitBlobSha256": "dbe6886ec5a7eecbb7a062e372ac3d7d5677add30e91d65f44b4707aee9eb7a5",
+    "baseCheckoutSha256": "97edc873c0bdd1bb370c57faefadcd7ee9af34bc8158f910975c401f0163acf8",
+    "currentSha256": "97edc873c0bdd1bb370c57faefadcd7ee9af34bc8158f910975c401f0163acf8",
+    "unchanged": true
+  }
+}

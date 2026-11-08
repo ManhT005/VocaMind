@@ -1,0 +1,8 @@
+{
+    "model":  "sdk_gphone_x86",
+    "api":  "30",
+    "fingerprint":  "google/sdk_gphone_x86/generic_x86_arm:11/RSR1.201013.001/6903271:user/release-keys",
+    "airplane":  "enabled",
+    "wifi":  "Wifi is disabled; Wifi scanning is only available when wifi is enabled",
+    "date":  "Sat Nov  7 21:33:07 +07 2026"
+}

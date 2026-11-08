@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/shell_background" android:orientation="vertical">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center_vertical" android:minHeight="64dp" android:paddingStart="12dp" android:paddingEnd="24dp">
+        <androidx.appcompat.widget.AppCompatImageButton android:id="@+id/back"
+            android:layout_width="48dp" android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/attribution_back" android:padding="12dp"
+            app:srcCompat="@drawable/ic_detail_back" app:tint="@color/shell_text_primary" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:layout_marginStart="8dp" android:text="@string/flashcard_title"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:id="@+id/title"
+            android:textColor="@color/shell_text_primary" />
+        <TextView android:id="@+id/progress_label" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
+            android:textColor="@color/shell_text_secondary" />
+    </LinearLayout>
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:paddingStart="24dp" android:paddingEnd="24dp" android:paddingTop="12dp" android:paddingBottom="12dp">
+
+        <ProgressBar android:id="@+id/loading" android:layout_width="48dp" android:layout_height="48dp"
+            android:layout_gravity="center" android:visibility="gone" />
+
+        <LinearLayout android:id="@+id/state_panel" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_gravity="center" android:gravity="center_horizontal" android:orientation="vertical" android:visibility="gone">
+            <TextView android:id="@+id/message" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textAlignment="center" android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                android:textColor="@color/shell_text_primary" android:accessibilityLiveRegion="polite" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/retry"
+                android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp"
+                android:layout_marginTop="16dp" android:text="@string/packs_retry" android:visibility="gone" />
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView android:id="@+id/card"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:clickable="true" android:focusable="true" android:visibility="gone"
+            app:cardBackgroundColor="@color/detail_card_surface" app:cardCornerRadius="20dp"
+            app:cardElevation="0dp" app:strokeWidth="1dp" app:strokeColor="@color/detail_outline">
+            <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_gravity="center" android:gravity="center_horizontal" android:orientation="vertical" android:padding="24dp">
+                    <TextView android:id="@+id/card_lemma" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:textAlignment="center" android:textSize="36sp" android:textStyle="bold"
+                        android:textColor="@color/shell_text_primary" />
+                    <TextView android:id="@+id/card_pos" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp" android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
+                        android:textColor="@color/shell_accent" />
+                    <TextView android:id="@+id/card_hint" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp" android:textAlignment="center"
+                        android:text="@string/flashcard_tap_hint" android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                        android:textColor="@color/shell_text_secondary" />
+                    <LinearLayout android:id="@+id/card_back" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp" android:gravity="center_horizontal" android:orientation="vertical" android:visibility="gone">
+                        <TextView android:id="@+id/card_ipa" android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:textAlignment="center" android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                            android:textColor="@color/shell_text_secondary" />
+                        <TextView android:id="@+id/card_meaning" android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp" android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.VocaMind.DetailBody" android:textStyle="bold" />
+                        <TextView android:id="@+id/card_example_en" android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp" android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.VocaMind.DetailBody" />
+                        <TextView android:id="@+id/card_example_vi" android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp" android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.VocaMind.DetailBody"
+                            android:textColor="@color/shell_text_secondary" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </com.google.android.material.card.MaterialCardView>
+    </FrameLayout>
+
+    <TextView android:id="@+id/result_hint" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingStart="24dp" android:paddingEnd="24dp" android:paddingBottom="8dp" android:visibility="gone"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        android:textColor="@color/shell_text_secondary" android:accessibilityLiveRegion="polite" />
+
+    <LinearLayout android:id="@+id/rating_bar" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:paddingStart="24dp" android:paddingEnd="24dp"
+        android:paddingTop="12dp" android:paddingBottom="16dp" android:background="@color/detail_card_surface"
+        android:visibility="gone">
+        <com.google.android.material.button.MaterialButton android:id="@+id/rate_forgot"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:minHeight="56dp" android:minWidth="48dp" android:enabled="false"
+            android:text="@string/flashcard_forgot" app:cornerRadius="16dp" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/rate_hard"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:layout_marginStart="8dp" android:minHeight="56dp" android:minWidth="48dp" android:enabled="false"
+            android:text="@string/flashcard_hard" app:cornerRadius="16dp" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/rate_remembered"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:layout_marginStart="8dp" android:minHeight="56dp" android:minWidth="48dp" android:enabled="false"
+            android:text="@string/flashcard_remembered" app:cornerRadius="16dp" />
+    </LinearLayout>
+</LinearLayout>

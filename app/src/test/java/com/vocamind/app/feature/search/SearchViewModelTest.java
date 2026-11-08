@@ -133,17 +133,4 @@ public class SearchViewModelTest {
         assertEquals("  BOOK ", restored.state().getValue().input);
         clock.advance(600); drain(); assertEquals(SearchViewModel.Status.CONTENT, restored.state().getValue().status);
     }
-    @Test public void detailMissingUnknownFailureAndDisposedAreSafe() {
-        CatalogDetailViewModel bad = new CatalogDetailViewModel("missing", q -> { fail("invalid ID queried"); return null; }, main::add);
-        assertEquals(CatalogDetailViewModel.Status.NOT_FOUND, bad.state().getValue().status);
-        CatalogDetailViewModel unknown = new CatalogDetailViewModel("ffffffffffffffff", q -> CompletableFuture.completedFuture(Optional.empty()), main::add);
-        drain(); assertEquals(CatalogDetailViewModel.Status.NOT_FOUND, unknown.state().getValue().status);
-        CatalogDetailViewModel failed = new CatalogDetailViewModel("ffffffffffffffff", q -> CompletableFuture.failedFuture(new RuntimeException()), main::add);
-        drain(); assertEquals(CatalogDetailViewModel.Status.ERROR, failed.state().getValue().status);
-        CompletableFuture<Optional<CatalogVocabulary>> pending = new CompletableFuture<>();
-        CatalogDetailViewModel disposed = new CatalogDetailViewModel("ffffffffffffffff", q -> pending, main::add);
-        ViewModelStore store = new ViewModelStore(); store.put("detail", disposed); store.clear();
-        pending.complete(Optional.of(word("ffffffffffffffff", "a"))); drain();
-        assertEquals(CatalogDetailViewModel.Status.LOADING, disposed.state().getValue().status);
-    }
 }

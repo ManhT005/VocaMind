@@ -5,6 +5,9 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import com.vocamind.app.domain.common.RepoResult;
 import com.vocamind.app.domain.common.RepoError;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Objects;
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.function.Supplier;
@@ -27,7 +30,9 @@ public class AsyncListViewModel<T> extends ViewModel {
             this.pending = pending;
             this.error = error;
             this.status = status;
-            this.items = List.copyOf(items);
+            List<T> copy = new ArrayList<>(items);
+            copy.forEach(Objects::requireNonNull);
+            this.items = Collections.unmodifiableList(copy);
         }
     }
 
@@ -72,12 +77,14 @@ public class AsyncListViewModel<T> extends ViewModel {
         long ticket = ++generation;
         writing = write;
         loading = true;
-        List<T> previous = state.getValue() == null ? List.of() : state.getValue().items;
+        List<T> previous = state.getValue() == null ? Collections.emptyList() : state.getValue().items;
         state.setValue(new State<>(Status.LOADING, previous, write, null));
         worker.execute(() -> {
             RepoResult<List<T>> result;
+            // Throwable, not RuntimeException: an Error from storage must still reach the main
+            // thread, otherwise the screen would stay on LOADING forever.
             try { result = operation.get(); }
-            catch (RuntimeException failure) {
+            catch (Throwable failure) {
                 result = RepoResult.failure(write ? RepoError.WRITE_FAILED : RepoError.READ_FAILED);
             }
             RepoResult<List<T>> completed = result;
@@ -86,7 +93,7 @@ public class AsyncListViewModel<T> extends ViewModel {
                 loading = false;
                 writing = false;
                 if (!completed.isSuccess()) {
-                    state.setValue(new State<>(Status.ERROR, List.of(), false, completed.getError()));
+                    state.setValue(new State<>(Status.ERROR, Collections.emptyList(), false, completed.getError()));
                 } else {
                     List<T> items = completed.get();
                     state.setValue(new State<>(items.isEmpty() ? Status.EMPTY : Status.CONTENT, items));

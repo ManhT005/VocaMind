@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.domain.quiz.GenerateQuizTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-11-06T13:12:13" hostname="DESKTOP-KUH3S13" time="0.018">
+  <properties/>
+  <testcase name="preservesRepositoryErrorsAndInvalidSnapshot" classname="com.vocamind.app.domain.quiz.GenerateQuizTest" time="0.012"/>
+  <testcase name="defaultGeneratorUsesPolicyFromEveryFreshSnapshot" classname="com.vocamind.app.domain.quiz.GenerateQuizTest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

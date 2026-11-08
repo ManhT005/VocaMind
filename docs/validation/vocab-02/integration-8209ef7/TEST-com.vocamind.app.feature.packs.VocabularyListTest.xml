@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.packs.VocabularyListTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-11-06T16:36:46" hostname="DESKTOP-KUH3S13" time="1.612">
+  <properties/>
+  <testcase name="recycledHolderReplacesIpaStatusAndClickTargetAfterRefresh[26]" classname="com.vocamind.app.feature.packs.VocabularyListTest" time="0.031"/>
+  <testcase name="realGraphDispatchReceiveBackAndRecreation[26]" classname="com.vocamind.app.feature.packs.VocabularyListTest" time="0.598"/>
+  <testcase name="refreshDiscardsLateReadAndLoadsDurableStateAgain[26]" classname="com.vocamind.app.feature.packs.VocabularyListTest" time="0.018"/>
+  <testcase name="routePreservesOpaqueTextAndRejectsMissingArguments[26]" classname="com.vocamind.app.feature.packs.VocabularyListTest" time="0.018"/>
+  <testcase name="recycledHolderReplacesIpaStatusAndClickTargetAfterRefresh" classname="com.vocamind.app.feature.packs.VocabularyListTest" time="0.031"/>
+  <testcase name="realGraphDispatchReceiveBackAndRecreation" classname="com.vocamind.app.feature.packs.VocabularyListTest" time="0.856"/>
+  <testcase name="refreshDiscardsLateReadAndLoadsDurableStateAgain" classname="com.vocamind.app.feature.packs.VocabularyListTest" time="0.027"/>
+  <testcase name="routePreservesOpaqueTextAndRejectsMissingArguments" classname="com.vocamind.app.feature.packs.VocabularyListTest" time="0.027"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

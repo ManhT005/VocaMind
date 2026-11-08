@@ -48,4 +48,7 @@
         <argument android:name="vocabularyId" app:argType="string" app:nullable="true" android:defaultValue="@null" />
         <argument android:name="packId" app:argType="string" app:nullable="true" android:defaultValue="@null" />
     </fragment>
+    <fragment android:id="@+id/flashcardFragment"
+        android:name="com.vocamind.app.feature.flashcard.FlashcardFragment"
+        android:label="@string/flashcard_title" />
 </navigation>

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "decisionId": "VOC-DATA-06-RIGHTS-2026-11-07",
+  "status": "HOLD",
+  "releaseAuthorized": false,
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvedSnapshot": null,
+  "currentSource": "vocamind-ai-editorial-v1",
+  "acceptedDatasetSha256": "c066d4a363d58c4c7226b716f1080b25a9e47b124a4007f4c3d16d67283a7fb8",
+  "sourceSnapshots": [
+    {
+      "sourceId": "ngsl",
+      "scope": "135 historical lemma/rank references; exact extent of legal reuse subject to review",
+      "snapshotId": "ngsl-1.2-retrieved-20261025",
+      "dataSha256": "2098bab8955a120a9766c6282a51d7d578c6cb0a7d946600d2ffb73ba25a0b44",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://www.newgeneralservicelist.com/new-general-service-list",
+      "legalCode": "https://creativecommons.org/licenses/by-sa/4.0/legalcode",
+      "registryDecision": "hold",
+      "rightsClearance": "pending"
+    },
+    {
+      "sourceId": "vocamind-ai-editorial-v1",
+      "scope": "150 Vietnamese meanings and 150 English–Vietnamese example pairs, plus historical lexical/editorial entries",
+      "snapshotId": "editorial-accepted-v1",
+      "dataSha256": "b588844e1f1228acaeed139efe08a5d9d53dcb5a9da8e4f056a23bea3ed959c9",
+      "license": "PROJECT-USE-OWNER-ACCEPTED (internal decision, not public license)",
+      "registryDecision": "include-for-project",
+      "rightsClearance": "pending-public-distribution"
+    }
+  ],
+  "notUsedByAcceptedDataset": [
+    "tsl",
+    "kaikki-viwiktionary",
+    "tatoeba-text",
+    "tatoeba-audio",
+    "commons-audio",
+    "fvdp"
+  ],
+  "blockers": [
+    "Content Lead must validate historical NGSL ranks and editorial origin, and decide whether any protected selection/adaptation is redistributed",
+    "PO must approve the editorial public redistribution scope, AI provenance evidence and author/rights-holder information or adopt an accurately limited notice",
+    "Create new accepted content snapshot before changing actual canonical per-component provenance; keep accepted-v1 immutable",
+    "Update application ContentSource/credits and verify offline UI; QA + DATA-08 gates remain before APK release"
+  ],
+  "distributionScope": {
+    "repositoryPublicData": "not-cleared",
+    "apk": "not-cleared",
+    "derivativeData": "not-cleared"
+  },
+  "noLicenseGrantedByThisFile": true
+}

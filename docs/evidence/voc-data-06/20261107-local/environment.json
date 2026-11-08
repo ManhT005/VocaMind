@@ -1,0 +1,21 @@
+{
+  "capturedAtUtc": "2026-11-07T05:06:49.574177+00:00",
+  "baseCommit": "8209ef75bc882ca10367abd40900e44e537571cb",
+  "branch": "feature/voc-data-06-release-catalog",
+  "python": "3.14.0",
+  "sqlite": "3.50.4",
+  "jsonschema": "4.26.0",
+  "java": "Oracle JDK 22.0.2",
+  "gradle": "8.9",
+  "hostRobolectricApis": [
+    26,
+    35
+  ],
+  "hostTemporaryDirectory": "<workspace>/.tools/tmp via JAVA_TOOL_OPTIONS",
+  "device": {
+    "avd": "Pixel_7_Pro",
+    "api": "37",
+    "airplaneMode": "1",
+    "physicalReferenceDevice": false
+  }
+}
