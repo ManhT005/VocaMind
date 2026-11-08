@@ -23,6 +23,7 @@ public class TodayFragment extends Fragment {
         model = new ViewModelProvider(requireActivity(), new PacksViewModelFactory(requireContext(), null))
                 .get(PacksViewModel.class);
         binding.retry.setOnClickListener(v -> model.retry());
+        binding.start.setOnClickListener(v -> NavHostFragment.findNavController(this).navigate(R.id.flashcardFragment));
         binding.explore.setOnClickListener(v -> NavHostFragment.findNavController(this).navigate(R.id.packsFragment));
         model.state().observe(getViewLifecycleOwner(), state -> {
             boolean loading = state.status == AsyncListViewModel.Status.LOADING;
@@ -31,6 +32,7 @@ public class TodayFragment extends Fragment {
             binding.loading.setVisibility(loading ? View.VISIBLE : View.GONE);
             binding.retry.setVisibility(error ? View.VISIBLE : View.GONE);
             binding.explore.setVisibility(noActive ? View.VISIBLE : View.GONE);
+            binding.start.setVisibility(!loading && !error && !noActive ? View.VISIBLE : View.GONE);
             binding.message.setText(loading ? R.string.pack_activation_pending : error ? R.string.packs_error
                     : noActive ? R.string.today_choose_pack : R.string.today_active_boundary);
         });

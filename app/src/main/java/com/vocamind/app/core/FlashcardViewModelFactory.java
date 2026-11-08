@@ -30,12 +30,14 @@ public final class FlashcardViewModelFactory implements ViewModelProvider.Factor
             try { lazy.close(); }
             finally { worker.shutdown(); }
         };
-        // Rating persistence is wired in FLASH-02; until then a rating only advances the card.
+        Clock clock = Clock.systemDefaultZone();
+        ZoneId zone = ZoneId.systemDefault();
         return modelClass.cast(new FlashcardViewModel(() -> {
             RepositoryProvider repositories = lazy.get();
-            return new PlanToday(repositories.packs(), repositories.study(), Clock.systemDefaultZone(),
-                    ZoneId.systemDefault()).execute();
-        }, worker, main::post, close, null));
+            return new PlanToday(repositories.packs(), repositories.study(), clock, zone).execute();
+        }, worker, main::post, close,
+                // Commits ReviewEvent + progress in one transaction (DATA-06) via the review use case.
+                (item, rating) -> lazy.get().recordReview(clock, zone).execute(item.getVocabulary().stableId, rating)));
     }
 
     /** Touched only from the serial worker (get and close), so no locking is needed. */

@@ -98,4 +98,8 @@
     <string name="flashcard_nothing">Hôm nay không còn từ nào cần học.</string>
     <string name="flashcard_finished">Bạn đã hoàn thành phiên học.</string>
     <string name="flashcard_error">Không tải được phiên học. Vui lòng thử lại.</string>
+    <string name="flashcard_save_failed">Không lưu được kết quả. Hãy chọn lại mức độ.</string>
+    <string name="flashcard_result">Hộp %1$d · ôn lại từ %2$s</string>
+    <string name="flashcard_leech">Bạn đã quên từ này nhiều lần nên nó được đánh dấu là từ khó.</string>
+    <string name="today_start">Bắt đầu học</string>
 </resources>

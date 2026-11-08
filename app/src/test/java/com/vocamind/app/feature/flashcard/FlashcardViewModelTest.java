@@ -8,18 +8,20 @@ import static org.junit.Assert.assertTrue;
 import com.vocamind.app.domain.catalog.CatalogPack;
 import com.vocamind.app.domain.catalog.CatalogVocabulary;
 import com.vocamind.app.domain.common.RepoError;
+import com.vocamind.app.domain.learning.LeitnerScheduler;
 import com.vocamind.app.domain.learning.PlanToday;
 import com.vocamind.app.domain.learning.Rating;
-import com.vocamind.app.domain.learning.StudyItem;
+import com.vocamind.app.domain.learning.RecordReviewUseCase;
+import com.vocamind.app.domain.learning.ReviewProgress;
 import com.vocamind.app.domain.pack.PackState;
 import com.vocamind.app.fake.FakePackRepository;
+import com.vocamind.app.fake.FakeReviewRepository;
 import com.vocamind.app.fake.FakeStudyRepository;
 import java.time.Clock;
 import java.time.Instant;
 import java.time.ZoneOffset;
 import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Optional;
 import java.util.Queue;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,11 +30,16 @@ import org.robolectric.annotation.Config;
 
 @RunWith(RobolectricTestRunner.class) @Config(sdk = 35)
 public class FlashcardViewModelTest {
+    private static final Clock CLOCK = Clock.fixed(Instant.parse("2026-11-05T10:00:00Z"), ZoneOffset.UTC);
     private final Queue<Runnable> worker = new ArrayDeque<>();
     private final Queue<Runnable> main = new ArrayDeque<>();
     private final FakePackRepository packs = new FakePackRepository();
     private final FakeStudyRepository study = new FakeStudyRepository();
-    private final List<String> rated = new ArrayList<>();
+    private final FakeReviewRepository reviews = new FakeReviewRepository();
+    private final RecordReviewUseCase useCase =
+            new RecordReviewUseCase(reviews, new LeitnerScheduler(), CLOCK, ZoneOffset.UTC);
+
+    private static final String A = "aaaaaaaaaaaaaaaa", B = "bbbbbbbbbbbbbbbb";
 
     private static CatalogVocabulary word(String id) {
         return new CatalogVocabulary(id, id, id, "noun", "nghia " + id, "ex " + id, "vd " + id, null, "src", "v1");
@@ -42,111 +49,193 @@ public class FlashcardViewModelTest {
         packs.states.add(new PackState(new CatalogPack("p", "p", "d", "c", 1, "v1", 10), true, 1L, 0));
     }
 
-    private FlashcardViewModel model(FlashcardViewModel.RatingListener listener) {
-        PlanToday planner = new PlanToday(packs, study,
-                Clock.fixed(Instant.parse("2026-11-05T10:00:00Z"), ZoneOffset.UTC), ZoneOffset.UTC);
-        FlashcardViewModel model = new FlashcardViewModel(planner::execute, worker::add, main::add, () -> { }, listener);
+    private void settle() {
         worker.remove().run();
         main.remove().run();
+    }
+
+    /** Production wiring: the review use case commits through the repository. */
+    private FlashcardViewModel model() {
+        PlanToday planner = new PlanToday(packs, study, CLOCK, ZoneOffset.UTC);
+        FlashcardViewModel model = new FlashcardViewModel(planner::execute, worker::add, main::add, () -> { },
+                (item, rating) -> useCase.execute(item.getVocabulary().stableId, rating));
+        settle();
         return model;
     }
 
     private static FlashcardViewModel.State state(FlashcardViewModel model) { return model.state().getValue(); }
 
-    @Test public void frontShowsOnlyTheWordAndRatingIsDisabled() {
+    private void twoNewWords() {
         activePack();
-        study.fresh.add(word("a"));
-        study.fresh.add(word("b"));
-        FlashcardViewModel model = model(null);
-        FlashcardViewModel.State s = state(model);
+        study.fresh.add(word(A));
+        study.fresh.add(word(B));
+    }
+
+    @Test public void frontShowsOnlyTheWordAndRatingIsDisabled() {
+        twoNewWords();
+        FlashcardViewModel.State s = state(model());
         assertEquals(FlashcardViewModel.Status.READY, s.status);
         assertFalse(s.flipped);
         assertFalse(s.ratingEnabled());
         assertEquals(1, s.position);
         assertEquals(2, s.total);
-        assertEquals("a", s.card.getVocabulary().stableId);
+        assertEquals(A, s.card.getVocabulary().stableId);
     }
 
-    @Test public void ratingBeforeFlipIsIgnored() {
-        activePack();
-        study.fresh.add(word("a"));
-        FlashcardViewModel model = model((item, rating) -> rated.add(item.getVocabulary().stableId));
+    @Test public void ratingBeforeFlipWritesNothing() {
+        twoNewWords();
+        FlashcardViewModel model = model();
         model.rate(Rating.REMEMBERED);
-        assertTrue(rated.isEmpty());
+        assertTrue(worker.isEmpty());
+        assertTrue(reviews.calls.isEmpty());
         assertEquals(1, state(model).position);
     }
 
-    @Test public void flipEnablesRatingAndRatingAdvancesToNextCardFront() {
-        activePack();
-        study.fresh.add(word("a"));
-        study.fresh.add(word("b"));
-        FlashcardViewModel model = model((item, rating) -> rated.add(item.getVocabulary().stableId + ":" + rating));
-        model.flip();
-        assertTrue(state(model).ratingEnabled());
-        model.rate(Rating.HARD);
-        assertEquals(List.of("a:HARD"), rated);
-        FlashcardViewModel.State next = state(model);
-        assertEquals("b", next.card.getVocabulary().stableId);
-        assertFalse(next.flipped);
-        assertFalse(next.ratingEnabled());
-    }
-
-    @Test public void doubleRatingOnOneFaceCountsOnce() {
-        activePack();
-        study.fresh.add(word("a"));
-        study.fresh.add(word("b"));
-        FlashcardViewModel model = model((item, rating) -> rated.add(item.getVocabulary().stableId));
-        model.flip();
-        model.rate(Rating.FORGOT);
-        model.rate(Rating.FORGOT); // second tap lands on the unflipped next card
-        assertEquals(List.of("a"), rated);
-    }
-
-    @Test public void lastRatingFinishesSession() {
-        activePack();
-        study.fresh.add(word("a"));
-        FlashcardViewModel model = model(null);
+    @Test public void rememberedCommitsBoxOneAndAdvancesAfterTheWrite() {
+        twoNewWords();
+        FlashcardViewModel model = model();
         model.flip();
         model.rate(Rating.REMEMBERED);
+        // Write in flight: still on card A, ratings locked.
+        assertTrue(state(model).saving);
+        assertFalse(state(model).ratingEnabled());
+        assertEquals(A, state(model).card.getVocabulary().stableId);
+        settle();
+        FlashcardViewModel.State next = state(model);
+        assertEquals(B, next.card.getVocabulary().stableId);
+        assertFalse(next.flipped);
+        assertFalse(next.saving);
+        assertEquals(1, reviews.calls.size());
+        ReviewProgress saved = reviews.calls.get(0);
+        assertEquals(A, saved.vocabularyId);
+        assertEquals(1, saved.box);
+        assertEquals(0, saved.consecutiveMistakes);
+        assertEquals(1, next.lastResult.getBoxAfter());
+    }
+
+    @Test public void forgotAndHardEachCommitOneReview() {
+        twoNewWords();
+        FlashcardViewModel model = model();
+        model.flip();
+        model.rate(Rating.FORGOT);
+        settle();
+        assertEquals(0, reviews.calls.get(0).box);
+        assertEquals(1, reviews.calls.get(0).consecutiveMistakes);
+        model.flip();
+        model.rate(Rating.HARD);
+        settle();
+        assertEquals(2, reviews.calls.size());
+        assertEquals(0, reviews.calls.get(1).box);
+        assertEquals(0, reviews.calls.get(1).consecutiveMistakes);
+    }
+
+    @Test public void tapsWhileSavingDoNotWriteTwice() {
+        twoNewWords();
+        FlashcardViewModel model = model();
+        model.flip();
+        model.rate(Rating.FORGOT);
+        model.rate(Rating.FORGOT);
+        model.rate(Rating.REMEMBERED);
+        assertEquals(1, worker.size());
+        settle();
+        assertEquals(1, reviews.calls.size());
+        assertEquals(B, state(model).card.getVocabulary().stableId);
+    }
+
+    @Test public void failedWriteKeepsCardAndFaceAndWritesNothing() {
+        twoNewWords();
+        FlashcardViewModel model = model();
+        model.flip();
+        reviews.failure = RepoError.WRITE_FAILED;
+        model.rate(Rating.REMEMBERED);
+        settle();
+        FlashcardViewModel.State s = state(model);
+        assertTrue(s.saveFailed);
+        assertFalse(s.saving);
+        assertTrue(s.flipped);
+        assertTrue(s.ratingEnabled());
+        assertEquals(A, s.card.getVocabulary().stableId);
+        assertTrue(reviews.calls.isEmpty());
+
+        // The learner decides again; nothing was retried automatically.
+        reviews.failure = null;
+        model.rate(Rating.REMEMBERED);
+        settle();
+        assertEquals(1, reviews.calls.size());
+        assertFalse(state(model).saveFailed);
+        assertEquals(B, state(model).card.getVocabulary().stableId);
+    }
+
+    @Test public void conflictIsReportedAsFailureNotCommitted() {
+        twoNewWords();
+        FlashcardViewModel model = model();
+        model.flip();
+        reviews.failure = RepoError.CONFLICT;
+        model.rate(Rating.HARD);
+        settle();
+        assertTrue(state(model).saveFailed);
+        assertEquals(1, state(model).position);
+    }
+
+    @Test public void fourthForgotMarksLeechAndHintExposesIt() {
+        activePack();
+        study.fresh.add(word(A));
+        FlashcardViewModel model = model();
+        for (int round = 1; round <= 4; round++) {
+            model.flip();
+            model.rate(Rating.FORGOT);
+            settle();
+            FlashcardViewModel.State done = state(model);
+            assertEquals(FlashcardViewModel.Status.FINISHED, done.status);
+            assertEquals(round == 4, done.lastResult.becameLeech());
+            assertEquals(round, reviews.calls.get(round - 1).consecutiveMistakes);
+            if (round < 4) { model.retry(); settle(); } // replan: the fake still offers A
+        }
+        assertTrue(reviews.calls.get(3).isLeech);
+    }
+
+    @Test public void lastRatingFinishesSessionAndKeepsResult() {
+        activePack();
+        study.fresh.add(word(A));
+        FlashcardViewModel model = model();
+        model.flip();
+        model.rate(Rating.REMEMBERED);
+        settle();
         assertEquals(FlashcardViewModel.Status.FINISHED, state(model).status);
         assertNull(state(model).card);
+        assertEquals(1, state(model).lastResult.getBoxAfter());
         model.flip();
         assertEquals(FlashcardViewModel.Status.FINISHED, state(model).status);
     }
 
     @Test public void noActivePackAndNothingToStudyAreDistinct() {
-        FlashcardViewModel none = model(null);
-        assertEquals(FlashcardViewModel.Status.NO_ACTIVE_PACK, state(none).status);
-
+        assertEquals(FlashcardViewModel.Status.NO_ACTIVE_PACK, state(model()).status);
         packs.states.clear();
         activePack();
         study.learnedToday = 5;
-        FlashcardViewModel done = model(null);
-        assertEquals(FlashcardViewModel.Status.NOTHING_TO_STUDY, state(done).status);
+        assertEquals(FlashcardViewModel.Status.NOTHING_TO_STUDY, state(model()).status);
     }
 
-    @Test public void failureShowsErrorAndRetryRecovers() {
+    @Test public void loadFailureShowsErrorAndRetryRecovers() {
         activePack();
-        study.fresh.add(word("a"));
+        study.fresh.add(word(A));
         study.failure = RepoError.READ_FAILED;
-        FlashcardViewModel model = model(null);
+        FlashcardViewModel model = model();
         assertEquals(FlashcardViewModel.Status.ERROR, state(model).status);
         study.failure = null;
         model.retry();
-        worker.remove().run();
-        main.remove().run();
+        settle();
         assertEquals(FlashcardViewModel.Status.READY, state(model).status);
     }
 
     @Test public void stateSurvivesRecreationBecauseViewModelIsRetained() {
         activePack();
-        study.fresh.add(word("a"));
-        FlashcardViewModel model = model(null);
+        study.fresh.add(word(A));
+        FlashcardViewModel model = model();
         model.flip();
-        FlashcardViewModel.State before = state(model);
-        // A rotated Fragment re-observes the same retained ViewModel.
         FlashcardViewModel.State after = model.state().getValue();
         assertTrue(after.flipped);
-        assertEquals(before.card, after.card);
+        assertEquals(A, after.card.getVocabulary().stableId);
+        assertEquals(Optional.empty(), Optional.ofNullable(after.lastResult));
     }
 }

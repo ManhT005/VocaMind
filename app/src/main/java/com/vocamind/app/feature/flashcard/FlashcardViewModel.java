@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import com.vocamind.app.domain.common.RepoResult;
 import com.vocamind.app.domain.learning.Rating;
+import com.vocamind.app.domain.learning.ScheduleResult;
 import com.vocamind.app.domain.learning.StudyItem;
 import com.vocamind.app.domain.learning.TodayPlan;
 import java.util.Collections;
@@ -14,15 +15,17 @@ import java.util.function.Supplier;
 
 /**
  * UI state of one flashcard session: which card is shown and whether it is flipped.
- * It never computes scheduling. Persisting a rating is the job of the {@link RatingListener}
- * (FLASH-02); without one the card is simply advanced.
+ * It never computes scheduling: a rating is committed by the {@link ReviewWriter} (the
+ * review use case) on the worker, and the card only advances after that commit succeeded.
+ * While a write is in flight ratings are disabled; a failed write keeps the same card and
+ * face so the learner decides again (never retried automatically).
  * The ViewModel survives rotation, so card, face and position are kept.
  */
 public final class FlashcardViewModel extends ViewModel {
     public enum Status { LOADING, READY, FINISHED, NO_ACTIVE_PACK, NOTHING_TO_STUDY, ERROR }
 
-    /** Called on the main thread when the learner rates the flipped card. */
-    public interface RatingListener { void onRated(StudyItem item, Rating rating); }
+    /** Commits one review and returns its schedule; runs on the worker and throws on failure. */
+    public interface ReviewWriter { ScheduleResult write(StudyItem item, Rating rating); }
 
     public static final class State {
         public final Status status;
@@ -31,17 +34,31 @@ public final class FlashcardViewModel extends ViewModel {
         /** 1-based position of the current card; 0 when there is no card. */
         public final int position;
         public final int total;
+        /** A review is being committed; ratings are locked. */
+        public final boolean saving;
+        /** The last rating could not be saved; the same card is shown again. */
+        public final boolean saveFailed;
+        /** Outcome of the most recent committed review, for the result/leech hint. Null at start. */
+        public final ScheduleResult lastResult;
 
-        State(Status status, StudyItem card, boolean flipped, int position, int total) {
+        State(Status status, StudyItem card, boolean flipped, int position, int total,
+              boolean saving, boolean saveFailed, ScheduleResult lastResult) {
             this.status = status;
             this.card = card;
             this.flipped = flipped;
             this.position = position;
             this.total = total;
+            this.saving = saving;
+            this.saveFailed = saveFailed;
+            this.lastResult = lastResult;
         }
 
-        /** Rating buttons are usable only while a card is shown with its answer. */
-        public boolean ratingEnabled() { return status == Status.READY && flipped; }
+        State(Status status, StudyItem card, boolean flipped, int position, int total) {
+            this(status, card, flipped, position, total, false, false, null);
+        }
+
+        /** Rating buttons are usable only while a card is shown with its answer and nothing is saving. */
+        public boolean ratingEnabled() { return status == Status.READY && flipped && !saving; }
     }
 
     private final MutableLiveData<State> state = new MutableLiveData<>();
@@ -49,7 +66,10 @@ public final class FlashcardViewModel extends ViewModel {
     private final Executor worker;
     private final Executor main;
     private final Runnable close;
-    private final RatingListener listener;
+    private final ReviewWriter writer;
+    private ScheduleResult lastResult;
+    private boolean saving;
+    private boolean saveFailed;
     private List<StudyItem> queue = Collections.emptyList();
     private int index;
     private boolean flipped;
@@ -57,12 +77,12 @@ public final class FlashcardViewModel extends ViewModel {
     private boolean cleared;
 
     public FlashcardViewModel(Supplier<RepoResult<TodayPlan>> loader, Executor worker, Executor main,
-                              Runnable close, RatingListener listener) {
+                              Runnable close, ReviewWriter writer) {
         this.loader = loader;
         this.worker = worker;
         this.main = main;
         this.close = close;
-        this.listener = listener;
+        this.writer = writer;
         retry();
     }
 
@@ -100,6 +120,9 @@ public final class FlashcardViewModel extends ViewModel {
                 queue = loaded;
                 index = 0;
                 flipped = false;
+                saving = false;
+                saveFailed = false;
+                lastResult = null;
                 publish();
             });
         });
@@ -112,14 +135,37 @@ public final class FlashcardViewModel extends ViewModel {
         publish();
     }
 
-    /** Ignored before the card is flipped, so ratings can never skip the answer. */
+    /**
+     * Ignored before the card is flipped and while another rating is being saved, so one card
+     * receives at most one rating. Main thread only.
+     */
     public void rate(Rating rating) {
-        if (rating == null || !isShowingCard() || !flipped) return;
+        if (rating == null || !isShowingCard() || !flipped || saving) return;
         StudyItem item = queue.get(index);
-        if (listener != null) listener.onRated(item, rating);
-        index++;
-        flipped = false;
+        saving = true;
+        saveFailed = false;
         publish();
+        worker.execute(() -> {
+            ScheduleResult result = null;
+            try {
+                result = writer.write(item, rating);
+            } catch (Throwable failure) {
+                result = null;
+            }
+            ScheduleResult committed = result;
+            main.execute(() -> {
+                saving = false;
+                if (cleared) return;
+                if (committed == null) {
+                    saveFailed = true;
+                } else {
+                    lastResult = committed;
+                    index++;
+                    flipped = false;
+                }
+                publish();
+            });
+        });
     }
 
     private boolean isShowingCard() {
@@ -129,9 +175,10 @@ public final class FlashcardViewModel extends ViewModel {
 
     private void publish() {
         if (index >= queue.size()) {
-            state.setValue(new State(Status.FINISHED, null, false, 0, queue.size()));
+            state.setValue(new State(Status.FINISHED, null, false, 0, queue.size(), false, false, lastResult));
         } else {
-            state.setValue(new State(Status.READY, queue.get(index), flipped, index + 1, queue.size()));
+            state.setValue(new State(Status.READY, queue.get(index), flipped, index + 1, queue.size(),
+                    saving, saveFailed, lastResult));
         }
     }
 
