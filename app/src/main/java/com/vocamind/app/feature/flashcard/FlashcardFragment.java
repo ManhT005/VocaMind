@@ -1,6 +1,7 @@
 package com.vocamind.app.feature.flashcard;
 
 import android.os.Bundle;
+import android.text.format.DateUtils;
 import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,6 +13,7 @@ import com.vocamind.app.core.FlashcardViewModelFactory;
 import com.vocamind.app.databinding.FragmentFlashcardBinding;
 import com.vocamind.app.domain.catalog.CatalogVocabulary;
 import com.vocamind.app.domain.learning.Rating;
+import com.vocamind.app.domain.learning.ScheduleResult;
 
 /** Front shows only the word; the answer and the three rating buttons appear after the flip. */
 public class FlashcardFragment extends Fragment {
@@ -41,6 +43,8 @@ public class FlashcardFragment extends Fragment {
         b.statePanel.setVisibility(message == 0 ? View.GONE : View.VISIBLE);
         if (message != 0) b.message.setText(message);
         b.retry.setVisibility(state.status == FlashcardViewModel.Status.ERROR ? View.VISIBLE : View.GONE);
+        b.resultHint.setText(hintFor(state));
+        b.resultHint.setVisibility(b.resultHint.length() == 0 ? View.GONE : View.VISIBLE);
         if (!ready) return;
 
         CatalogVocabulary word = state.card.getVocabulary();
@@ -58,6 +62,15 @@ public class FlashcardFragment extends Fragment {
         b.rateForgot.setEnabled(state.ratingEnabled());
         b.rateHard.setEnabled(state.ratingEnabled());
         b.rateRemembered.setEnabled(state.ratingEnabled());
+    }
+
+    private String hintFor(FlashcardViewModel.State state) {
+        if (state.saveFailed) return getString(R.string.flashcard_save_failed);
+        ScheduleResult result = state.lastResult;
+        if (result == null) return "";
+        if (result.becameLeech()) return getString(R.string.flashcard_leech);
+        return getString(R.string.flashcard_result, result.getBoxAfter(),
+                DateUtils.formatDateTime(requireContext(), result.getDueAtEpochMillis(), DateUtils.FORMAT_SHOW_DATE));
     }
 
     private static int messageFor(FlashcardViewModel.Status status) {
