@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-11-06T16:36:48" hostname="DESKTOP-KUH3S13" time="10.423">
+  <properties/>
+  <testcase name="longExamplesRemainScrollableAtLargeFontOnSmallScreen[26]" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="4.34"/>
+  <testcase name="captureDetailLayoutsWithFixedActionAndWriteErrorFeedback[26]" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.333"/>
+  <testcase name="longExamplesRemainScrollableAtLargeFontOnSmallScreen" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="5.091"/>
+  <testcase name="captureDetailLayoutsWithFixedActionAndWriteErrorFeedback" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.421"/>
+  <testcase name="renderAllFieldsNullBlankIpaAndReplacePreviousWordWithoutInventingContent[26]" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.065"/>
+  <testcase name="pendingBlocksDoubleTapAndResumeRetryReconcilesAmbiguousCommitWithoutReplay[26]" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.019"/>
+  <testcase name="refreshGenerationAndClearedOwnerRejectLateReadsAndWrites[26]" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.019"/>
+  <testcase name="renderAllFieldsNullBlankIpaAndReplacePreviousWordWithoutInventingContent" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.063"/>
+  <testcase name="pendingBlocksDoubleTapAndResumeRetryReconcilesAmbiguousCommitWithoutReplay" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.021"/>
+  <testcase name="refreshGenerationAndClearedOwnerRejectLateReadsAndWrites" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.023"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

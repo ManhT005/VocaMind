@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-11-06T12:32:14" hostname="DESKTOP-KUH3S13" time="8.452">
+  <properties/>
+  <testcase name="longExamplesRemainScrollableAtLargeFontOnSmallScreen[26]" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="3.715"/>
+  <testcase name="longExamplesRemainScrollableAtLargeFontOnSmallScreen" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="4.554"/>
+  <testcase name="renderAllFieldsNullBlankIpaAndReplacePreviousWordWithoutInventingContent[26]" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.035"/>
+  <testcase name="pendingBlocksDoubleTapAndResumeRetryReconcilesAmbiguousCommitWithoutReplay[26]" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.018"/>
+  <testcase name="refreshGenerationAndClearedOwnerRejectLateReadsAndWrites[26]" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.018"/>
+  <testcase name="renderAllFieldsNullBlankIpaAndReplacePreviousWordWithoutInventingContent" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.044"/>
+  <testcase name="pendingBlocksDoubleTapAndResumeRetryReconcilesAmbiguousCommitWithoutReplay" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.023"/>
+  <testcase name="refreshGenerationAndClearedOwnerRejectLateReadsAndWrites" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.02"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

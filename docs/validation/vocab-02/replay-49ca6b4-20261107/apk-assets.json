@@ -1,0 +1,76 @@
+{
+  "app": [
+    {
+      "entry": "assets/catalog.json",
+      "sha256": "c2b7c643c4b61c865f4b34bbc9d875d2661a33739ef7efd5b1f4e1ac221636a8",
+      "bytes": 8057
+    },
+    {
+      "entry": "assets/database/catalog.db",
+      "sha256": "7f90d0b11b14ce73932231dc7c4506bdf30af3788b66d0fde536d08fa7f753e9",
+      "bytes": 81920
+    },
+    {
+      "entry": "assets/database/catalog.metadata.json",
+      "sha256": "c991e38554460911be182ec35433d436b762923f13af6a18ddaf33a6d1b5fc94",
+      "bytes": 539
+    },
+    {
+      "entry": "assets/database/content-credits.json",
+      "sha256": "6911e4f6a1c80c258e840133430895ee9fd8a1c3c7de3c88bf4ac79cf915a262",
+      "bytes": 197
+    },
+    {
+      "entry": "assets/database/quiz-policy.json",
+      "sha256": "97edc873c0bdd1bb370c57faefadcd7ee9af34bc8158f910975c401f0163acf8",
+      "bytes": 242
+    }
+  ],
+  "test": [
+    {
+      "entry": "assets/benchmark/catalog-5000.db",
+      "sha256": "5fac69d4a5776130346be14747d81af3354a9220c2f9675ed95740c5058f54a7",
+      "bytes": 1703936
+    },
+    {
+      "entry": "assets/benchmark/catalog-5000.metadata.json",
+      "sha256": "4af7dd0690ae8a3e5950f5b7df5d165d4b11451ffd2ac0fd9829a2615eb8eff7",
+      "bytes": 264
+    },
+    {
+      "entry": "assets/release-candidate/canonical-catalog.json",
+      "sha256": "f27e9d2de700fadf13b480df26933c61333ce6261ed872d285e5a111a88110c1",
+      "bytes": 216843
+    },
+    {
+      "entry": "assets/release-candidate/catalog.db",
+      "sha256": "5b21f3d19db9f6b2e909eb7483a12dc2ddb3ed2f95cd220d350a5d0c6233fdc8",
+      "bytes": 155648
+    },
+    {
+      "entry": "assets/release-candidate/catalog.metadata.json",
+      "sha256": "3822c3d34b7e046e40326f8c42d2b45565dc3ec9b1931bd73ce5594cdb431e11",
+      "bytes": 2477
+    },
+    {
+      "entry": "assets/release-candidate/content-credits.json",
+      "sha256": "b769156e366a06c3fa3dd81410a18909275498f5b5c7ba5f6da7c7d810491cf0",
+      "bytes": 459
+    },
+    {
+      "entry": "assets/release-candidate/manifest.json",
+      "sha256": "5a860ef53b9b930af452459b64e7711f0b38de3f366339c38c086e7fe3178636",
+      "bytes": 581
+    },
+    {
+      "entry": "assets/release-candidate/quiz-policy.json",
+      "sha256": "c3a9bad51a7a2ddcbe73b8388bcdc36fc94a2662441e6ed6c17b2d28c659a368",
+      "bytes": 430
+    },
+    {
+      "entry": "assets/release-candidate/release-gate-report.json",
+      "sha256": "d8281c3ee1b4ecbd40e3d992bd334cb33082b17cbe949cf5101b6b5f42b8ebe1",
+      "bytes": 1300
+    }
+  ]
+}

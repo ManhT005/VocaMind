@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.data.user.ProgressAggregationTest" tests="34" skipped="0" failures="0" errors="0" timestamp="2026-11-06T16:36:30" hostname="DESKTOP-KUH3S13" time="1.982">
+  <properties/>
+  <testcase name="emptyDatabaseReturnsSixZerosAndEmptyHistory[26]" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.038"/>
+  <testcase name="invalidStoredScoreIsNotSilentlyRecomputed[26]" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.036"/>
+  <testcase name="sameVocabularyUpsertMovesBoxWithoutIncreasingDistinctTotal[26]" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.039"/>
+  <testcase name="invalidPersistedBoxReturnsInvalidDataWithoutRepair[26]" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.036"/>
+  <testcase name="failedEventInsertDoesNotChangeSummaryOrHistory[26]" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.062"/>
+  <testcase name="fixtureAcrossAllSixBoxesMatchesSqlAndDomainGroups[26]" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.044"/>
+  <testcase name="closedDatabaseIsReadFailureNotEmptySuccess[26]" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.037"/>
+  <testcase name="allQuizHistoryIsOrderedByTimeThenIdWithoutImplicitLimit[26]" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.046"/>
+  <testcase name="quizOnlyAndProgressOnlyAreNotEntirelyEmpty[26]" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.038"/>
+  <testcase name="failedFirstProgressInsertRollsBackEventAndKeepsSummary[26]" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.058"/>
+  <testcase name="atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings[26]" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.158"/>
+  <testcase name="missingBoxesAreZeroAndNoActiveSavedOrLearnedAtFilterIsApplied[26]" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.04"/>
+  <testcase name="returnedHistoryAndBoxCountsAreImmutableSnapshots[26]" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.045"/>
+  <testcase name="reopeningRetainsCountsAndHistory[26]" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.059"/>
+  <testcase name="atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks[26]" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.078"/>
+  <testcase name="failedProgressUpdateDoesNotMoveBoxOrChangeHistory[26]" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.076"/>
+  <testcase name="concurrentWriterCannotMixCountsAndHistoryFromDifferentStates[26]" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.072"/>
+  <testcase name="emptyDatabaseReturnsSixZerosAndEmptyHistory" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.046"/>
+  <testcase name="invalidStoredScoreIsNotSilentlyRecomputed" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.045"/>
+  <testcase name="sameVocabularyUpsertMovesBoxWithoutIncreasingDistinctTotal" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.051"/>
+  <testcase name="invalidPersistedBoxReturnsInvalidDataWithoutRepair" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.043"/>
+  <testcase name="failedEventInsertDoesNotChangeSummaryOrHistory" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.095"/>
+  <testcase name="fixtureAcrossAllSixBoxesMatchesSqlAndDomainGroups" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.05"/>
+  <testcase name="closedDatabaseIsReadFailureNotEmptySuccess" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.042"/>
+  <testcase name="allQuizHistoryIsOrderedByTimeThenIdWithoutImplicitLimit" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.048"/>
+  <testcase name="quizOnlyAndProgressOnlyAreNotEntirelyEmpty" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.045"/>
+  <testcase name="failedFirstProgressInsertRollsBackEventAndKeepsSummary" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.085"/>
+  <testcase name="atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.139"/>
+  <testcase name="missingBoxesAreZeroAndNoActiveSavedOrLearnedAtFilterIsApplied" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.041"/>
+  <testcase name="returnedHistoryAndBoxCountsAreImmutableSnapshots" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.039"/>
+  <testcase name="reopeningRetainsCountsAndHistory" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.049"/>
+  <testcase name="atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.061"/>
+  <testcase name="failedProgressUpdateDoesNotMoveBoxOrChangeHistory" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.078"/>
+  <testcase name="concurrentWriterCannotMixCountsAndHistoryFromDifferentStates" classname="com.vocamind.app.data.user.ProgressAggregationTest" time="0.058"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
