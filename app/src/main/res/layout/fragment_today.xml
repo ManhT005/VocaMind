@@ -32,6 +32,9 @@
         <com.google.android.material.button.MaterialButton android:id="@+id/retry"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:text="@string/packs_retry" android:visibility="gone" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/start"
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp"
+            android:text="@string/today_start" android:visibility="gone" />
         <com.google.android.material.button.MaterialButton android:id="@+id/explore"
             android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp"
             android:text="@string/today_explore" android:visibility="gone" />
