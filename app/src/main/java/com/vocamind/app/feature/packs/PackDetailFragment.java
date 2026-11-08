@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.vocamind.app.R;
 import com.vocamind.app.core.PacksViewModelFactory;
 import com.vocamind.app.databinding.FragmentPackDetailBinding;
+import com.vocamind.app.domain.common.RepoError;
 
 /** Words of one pack in PackWord.orderNo order, with per-word progress. */
 public final class PackDetailFragment extends Fragment {
@@ -63,9 +64,12 @@ public final class PackDetailFragment extends Fragment {
             binding.loading.setVisibility(state.status == AsyncListViewModel.Status.LOADING ? View.VISIBLE : View.GONE);
             boolean error = state.status == AsyncListViewModel.Status.ERROR;
             boolean empty = state.status == AsyncListViewModel.Status.EMPTY;
+            // An unknown or missing pack will not appear by retrying: say so and offer no retry.
+            boolean missing = error && (state.error == RepoError.NOT_FOUND || state.error == RepoError.INVALID_ARGUMENT);
             binding.message.setVisibility(error || empty ? View.VISIBLE : View.GONE);
-            binding.message.setText(error ? R.string.pack_detail_error : R.string.pack_detail_empty);
-            binding.retry.setVisibility(error || empty ? View.VISIBLE : View.GONE);
+            binding.message.setText(missing ? R.string.pack_detail_not_found
+                    : error ? R.string.pack_detail_error : R.string.pack_detail_empty);
+            binding.retry.setVisibility((error && !missing) || empty ? View.VISIBLE : View.GONE);
             if (state.status != AsyncListViewModel.Status.LOADING) adapter.submitList(state.items);
             binding.words.setVisibility(state.status == AsyncListViewModel.Status.CONTENT ? View.VISIBLE : View.INVISIBLE);
         });
