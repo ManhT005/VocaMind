@@ -57,16 +57,17 @@ jobs:
           disable-animations: true
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
           script: bash tools/catalog/validate_quiz03_device.sh
-      - name: Upload Quiz device evidence
+      - name: Upload Quiz device verification summaries
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: quiz-device-${{ github.sha }}
+          # The isolated app/test APKs and screenshots can contain internal catalog content.
           path: |
-            app/build/quiz03-device-evidence/
-            app/build/outputs/androidTest-results/
-            app/build/reports/androidTests/
-            app/build/outputs/apk/
+            app/build/quiz03-device-evidence/tested-checkout.txt
+            app/build/quiz03-device-evidence/exit-status.txt
+            app/build/quiz03-device-evidence/offline-check.txt
+            app/build/quiz03-device-evidence/apk-sha256.txt
             app/build/quiz03-device-assets/database/quiz03-fixture-metadata.json
           if-no-files-found: warn
           retention-days: 14
@@ -123,6 +124,17 @@ jobs:
         run: |
           python -m unittest discover -s docs/data/vocabulary-contract-v1 -p 'test_contract.py' -v
           python docs/data/vocabulary-contract-v1/validate_contract.py docs/data/vocabulary-contract-v1/fixtures/valid/catalog.json
+
+      - name: Validate optional VOC-DATA-05 enrichment
+        run: |
+          mkdir -p build
+          python tools/vocabulary/validate_enrichment.py \
+            --input docs/data/voc-data-05/enrichment-v1.json \
+            --canonical docs/data/voc-data-04/accepted-v1/canonical-preview.json \
+            --taxonomy docs/data/voc-data-05/topic-taxonomy-v1.json \
+            --sources docs/data/voc-data-05/label-sources.json \
+            --reviews docs/data/voc-data-05/review-decisions.json > build/voc-data-05-coverage.tmp
+          mv build/voc-data-05-coverage.tmp build/voc-data-05-coverage.json
 
       - name: Verify ingestion reproducibility and fixture release rejection
         run: |
@@ -231,6 +243,7 @@ jobs:
             app/build/reports/lint-results-debug.*
             app/build/outputs/apk/debug/app-debug.apk
             build/voc06-qa-apk-report.json
+            build/voc-data-05-coverage.json
             build/vocabulary-ingestion/ci-proof/
           if-no-files-found: warn
           retention-days: 14
