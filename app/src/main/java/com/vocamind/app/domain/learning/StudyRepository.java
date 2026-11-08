@@ -16,5 +16,8 @@ public interface StudyRepository {
     /** Never-reviewed words in pack order, no duplicates across packs, at most limit. */
     RepoResult<List<CatalogVocabulary>> newWords(int limit);
 
+    /** Daily new-word target and words first learned in [dayStart, nextDayStart). */
+    RepoResult<DailyQuota> dailyQuota(long dayStartEpochMillis, long nextDayStartEpochMillis);
+
     RepoResult<Optional<WordProgress>> getProgress(String vocabularyId);
 }
