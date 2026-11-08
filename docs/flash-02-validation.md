@@ -4,7 +4,7 @@
 
 Rating flow end to end: Flashcard UI -> `FlashcardViewModel` -> `RecordReviewUseCase` ->
 `LeitnerScheduler` -> atomic transaction (DATA-06) -> next card. Today now has a
-"Bat dau hoc" button that opens the flashcard session.
+"Bắt đầu học" button that opens the flashcard session.
 
 ## Behaviour
 

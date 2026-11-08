@@ -88,9 +88,12 @@ public final class FlashcardViewModel extends ViewModel {
 
     public LiveData<State> state() { return state; }
 
-    /** Main thread only. Loads (or reloads) the session queue; overlapping loads are ignored. */
+    /**
+     * Main thread only. Loads (or reloads) the session queue; overlapping loads are ignored.
+     * Ignored while a rating is being saved, so a late commit can never advance a rebuilt queue.
+     */
     public void retry() {
-        if (loading || cleared) return;
+        if (loading || saving || cleared) return;
         loading = true;
         state.setValue(new State(Status.LOADING, null, false, 0, 0));
         worker.execute(() -> {
