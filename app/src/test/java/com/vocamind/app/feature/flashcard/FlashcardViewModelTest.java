@@ -142,6 +142,19 @@ public class FlashcardViewModelTest {
         assertEquals(B, state(model).card.getVocabulary().stableId);
     }
 
+    @Test public void retryWhileSavingIsIgnoredSoLateCommitCannotAdvanceARebuiltQueue() {
+        twoNewWords();
+        FlashcardViewModel model = model();
+        model.flip();
+        model.rate(Rating.REMEMBERED);
+        model.retry(); // must not start a reload while the write is in flight
+        assertEquals(1, worker.size());
+        settle();
+        assertEquals(1, reviews.calls.size());
+        assertEquals(B, state(model).card.getVocabulary().stableId);
+        assertEquals(2, state(model).total);
+    }
+
     @Test public void failedWriteKeepsCardAndFaceAndWritesNothing() {
         twoNewWords();
         FlashcardViewModel model = model();
