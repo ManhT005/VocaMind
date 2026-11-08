@@ -1,0 +1,11 @@
+# PROGRESS-02: progress dashboard and completed Quiz history
+
+Base: `develop` at `b299cab`. Initial implementation: `5872cff`; review corrections: `90de7d9`, runner readback verification: `8c52c0b`.
+
+Learners can now open Progress to see real local userdata metrics, all six Leitner boxes, the Mastered disclaimer and the complete persisted Quiz history. Empty sections remain independent; loading hides old values and read errors expose retry. The retained ViewModel reads through the existing production use case off main, refreshes on resume, coalesces overlapping requests, and discards superseded/cleared completions. A RecyclerView/ListAdapter keeps stable attempt identities and device-local completion dates. Content is revealed only after the matching history diff commits; late callbacks cannot cover newer states or touch destroyed views.
+
+The opt-in `progress02DeviceIsolation` flag reuses the existing accepted-corpus device fixture under its own application ID. Normal APK catalog assets, database schemas, DAO SQL, Quiz scoring/writer and CI catalog preparation are unchanged.
+
+Validation: 487 host tests and 8 runner Python tests passed (including native Room screen coverage on API 26/35); ordinary debug APK, AndroidTest APK and lint passed. LDPlayer Android 9/API 28 passed production fixture/UI, saved-only/paused/cross-pack counts, review and Today/Flashcard writes, real ten-question Quiz completion, completed-only history, corruption/retry, recreation, actual landscape/portrait transitions, force-stop/reopen and reboot persistence. Small-screen/dark/200% font screenshots were reviewed after rejecting an initial System UI ANR overlay. Logs, APK hashes and screenshots are linked from [validation](progress-02-validation.md).
+
+The real Quiz happy path uses the opt-in accepted 150-word QA catalog, as QUIZ-03 does; it does not claim a production catalog release. The runner validates packages before writes and restores captured device settings in finally on success, failure or interruption, with readback verification and a durable recovery snapshot. Fresh correction evidence is linked from [review-fix validation](progress-02-review-fix-validation.md). Final reviewer acceptance is still required. No reviewer approval is represented by automated tests or this description.
