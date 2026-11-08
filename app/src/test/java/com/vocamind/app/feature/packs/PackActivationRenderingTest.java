@@ -17,6 +17,7 @@ import com.vocamind.app.domain.pack.PackState;
 import com.vocamind.app.domain.pack.SetPackActive;
 import com.vocamind.app.fake.FakePackRepository;
 import com.vocamind.app.feature.today.TodayFragment;
+import com.vocamind.app.feature.today.TodayPlanViewModel;
 import java.util.ArrayDeque;
 import java.util.List;
 import java.util.Queue;
@@ -55,10 +56,22 @@ public class PackActivationRenderingTest {
         new ViewModelProvider(activity, new ViewModelProvider.Factory() {
             @Override public <T extends ViewModel> T create(Class<T> type) {
                 if (type == PacksViewModel.class) return type.cast(packs);
+                if (type == TodayPlanViewModel.class) {
+                    return type.cast(new TodayPlanViewModel(() -> RepoResult.failure(RepoError.READ_FAILED),
+                            worker::add, main::add, () -> {}));
+                }
                 return type.cast(new PackWordsViewModel(() -> RepoResult.success(List.of()),
                         worker::add, main::add, () -> {}));
             }
         }).get(PacksViewModel.class);
+        if (fragment instanceof TodayFragment) {
+            new ViewModelProvider(activity, new ViewModelProvider.Factory() {
+                @Override public <T extends ViewModel> T create(Class<T> type) {
+                    return type.cast(new TodayPlanViewModel(() -> RepoResult.failure(RepoError.READ_FAILED),
+                            worker::add, main::add, () -> {}));
+                }
+            }).get(TodayPlanViewModel.class);
+        }
         if (fragment instanceof PackDetailFragment) {
             new ViewModelProvider(fragment, new ViewModelProvider.Factory() {
                 @Override public <T extends ViewModel> T create(Class<T> type) {
