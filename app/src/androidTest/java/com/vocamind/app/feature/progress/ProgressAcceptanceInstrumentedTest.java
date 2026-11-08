@@ -264,4 +264,16 @@ public class ProgressAcceptanceInstrumentedTest {
   if(view instanceof ViewGroup) for(int i=0;i<((ViewGroup)view).getChildCount();i++) assertNoEllipsis(((ViewGroup)view).getChildAt(i));
  }
 
+ @Test public void dActualLandscapeRotation() throws Exception {
+  try(ActivityScenario<MainActivity> s=ActivityScenario.launch(MainActivity.class)) {
+   s.onActivity(a -> a.findViewById(R.id.open_progress).performClick());waitFor(() -> content(s,14));
+   s.onActivity(a -> a.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE));
+   waitFor(() -> { boolean[] landscape={false};s.onActivity(a -> landscape[0]=a.getResources().getConfiguration().orientation==android.content.res.Configuration.ORIENTATION_LANDSCAPE);return landscape[0]; });
+   waitFor(() -> content(s,14));metrics(s,12,2,6,4,2,0,4,2,1,3);row(s,13);screenshot("13-landscape-history");
+   s.onActivity(a -> a.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT));
+   waitFor(() -> { boolean[] portrait={false};s.onActivity(a -> portrait[0]=a.getResources().getConfiguration().orientation==android.content.res.Configuration.ORIENTATION_PORTRAIT);return portrait[0]; });
+   waitFor(() -> content(s,14));metrics(s,12,2,6,4,2,0,4,2,1,3);
+  }
+ }
+
 }

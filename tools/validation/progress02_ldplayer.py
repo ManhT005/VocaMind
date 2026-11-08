@@ -3,7 +3,7 @@ Uses device-side background instrumentation because toggling LD Wi-Fi interrupts
 """
 import argparse,subprocess,time,os,json,hashlib
 from pathlib import Path
-parser=argparse.ArgumentParser();parser.add_argument('--adb',required=True);parser.add_argument('--serial',default='emulator-5554');parser.add_argument('--stage',choices=['flow','probe','appearance','collect','restore'],required=True)
+parser=argparse.ArgumentParser();parser.add_argument('--adb',required=True);parser.add_argument('--serial',default='emulator-5554');parser.add_argument('--stage',choices=['flow','probe','appearance','rotation','collect','restore'],required=True)
 a=parser.parse_args();root=Path(__file__).resolve().parents[2];out=root/'docs/evidence/progress-02/ldplayer';out.mkdir(parents=True,exist_ok=True)
 pkg='com.vocamind.app.progress02validation'
 def adb(*args,timeout=60,check=True):
@@ -15,14 +15,14 @@ if a.stage=='restore':
  for cmd in ['settings put global airplane_mode_on 0','svc wifi enable','settings put global wifi_on 1','settings delete system font_scale','cmd uimode night no','settings delete secure ui_night_mode','wm size reset','wm density reset']:
   print(cmd,shell(cmd))
  raise SystemExit(0)
-if a.stage in ['flow','probe','appearance']:
+if a.stage in ['flow','probe','appearance','rotation']:
  # Start online. The @Before/@After hooks disconnect and restore from inside Android.
  shell('settings put global airplane_mode_on 0');shell('svc wifi enable')
  if a.stage=='appearance':
   for cmd in ['wm size 720x1280','wm density 360','settings put system font_scale 2.0','cmd uimode night yes']:
    print(cmd,shell(cmd))
   time.sleep(5)
- method={'flow':'aFullProductionFlow','probe':'bPersistenceProbe','appearance':'cSmallDarkLargeFont'}[a.stage]
+ method={'flow':'aFullProductionFlow','probe':'bPersistenceProbe','appearance':'cSmallDarkLargeFont','rotation':'dActualLandscapeRotation'}[a.stage]
  record={'stage':a.stage,'method':method,'serial':a.serial,'base_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'device_apks':{}}
  for package in [pkg,pkg+'.test']:
   paths=shell('pm path '+package).strip().splitlines()
