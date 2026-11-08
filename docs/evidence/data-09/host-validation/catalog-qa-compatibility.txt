@@ -1,0 +1,133 @@
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preCatalogQaBuild UP-TO-DATE
+> Task :app:mergeCatalogQaNativeDebugMetadata NO-SOURCE
+> Task :app:dataBindingMergeDependencyArtifactsCatalogQa
+> Task :app:generateCatalogQaResValues
+> Task :app:generateCatalogQaResources
+> Task :app:javaPreCompileCatalogQa
+> Task :app:checkCatalogQaAarMetadata
+> Task :app:mapCatalogQaSourceSetPaths
+> Task :app:createCatalogQaCompatibleScreenManifests
+> Task :app:extractDeepLinksCatalogQa
+> Task :app:processCatalogQaMainManifest
+> Task :app:processCatalogQaManifest
+> Task :app:processCatalogQaManifestForPackage
+> Task :app:mergeCatalogQaShaders
+> Task :app:compileCatalogQaShaders NO-SOURCE
+> Task :app:generateCatalogQaAssets UP-TO-DATE
+> Task :app:mergeCatalogQaResources
+
+> Task :app:prepareCatalogQa
+QC pass: 150 input, 0 errors
+/workspace/work/VocaMind/app/build/generated/voc06-qa
+
+> Task :app:packageCatalogQaResources
+> Task :app:mergeCatalogQaAssets
+> Task :app:parseCatalogQaLocalResources
+> Task :app:compressCatalogQaAssets
+> Task :app:dataBindingGenBaseClassesCatalogQa
+> Task :app:desugarCatalogQaFileDependencies
+> Task :app:checkCatalogQaDuplicateClasses
+> Task :app:processCatalogQaResources
+> Task :app:mergeExtDexCatalogQa
+
+> Task :app:compileCatalogQaJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:dexBuilderCatalogQa
+> Task :app:mergeCatalogQaGlobalSynthetics
+> Task :app:processCatalogQaJavaRes
+> Task :app:mergeLibDexCatalogQa
+> Task :app:mergeCatalogQaJavaResource
+> Task :app:mergeProjectDexCatalogQa
+> Task :app:mergeCatalogQaJniLibFolders
+> Task :app:mergeCatalogQaNativeLibs NO-SOURCE
+> Task :app:stripCatalogQaDebugSymbols NO-SOURCE
+> Task :app:validateSigningCatalogQa
+> Task :app:writeCatalogQaAppMetadata
+> Task :app:writeCatalogQaSigningConfigVersions
+> Task :app:bundleCatalogQaClassesToCompileJar
+> Task :app:preCatalogQaAndroidTestBuild SKIPPED
+> Task :app:dataBindingMergeDependencyArtifactsCatalogQaAndroidTest
+> Task :app:generateCatalogQaAndroidTestResValues
+> Task :app:generateCatalogQaAndroidTestResources
+> Task :app:mergeCatalogQaAndroidTestResources
+> Task :app:dataBindingGenBaseClassesCatalogQaAndroidTest
+> Task :app:javaPreCompileCatalogQaAndroidTest
+> Task :app:checkCatalogQaAndroidTestAarMetadata
+> Task :app:mapCatalogQaAndroidTestSourceSetPaths
+> Task :app:processCatalogQaAndroidTestManifest
+> Task :app:processCatalogQaAndroidTestResources
+
+> Task :app:compileCatalogQaAndroidTestJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:mergeCatalogQaAndroidTestShaders
+> Task :app:compileCatalogQaAndroidTestShaders NO-SOURCE
+> Task :app:prepareReleaseCatalogTests UP-TO-DATE
+> Task :app:generateCatalogQaAndroidTestAssets UP-TO-DATE
+> Task :app:mergeCatalogQaAndroidTestAssets
+> Task :app:packageCatalogQa
+> Task :app:compressCatalogQaAndroidTestAssets
+> Task :app:createCatalogQaApkListingFileRedirect
+> Task :app:assembleCatalogQa
+> Task :app:desugarCatalogQaAndroidTestFileDependencies
+> Task :app:dexBuilderCatalogQaAndroidTest
+> Task :app:processCatalogQaAndroidTestJavaRes NO-SOURCE
+> Task :app:mergeCatalogQaAndroidTestGlobalSynthetics
+> Task :app:checkCatalogQaAndroidTestDuplicateClasses
+> Task :app:mergeCatalogQaAndroidTestJavaResource
+> Task :app:mergeLibDexCatalogQaAndroidTest
+> Task :app:mergeExtDexCatalogQaAndroidTest
+> Task :app:mergeCatalogQaAndroidTestJniLibFolders
+> Task :app:mergeCatalogQaAndroidTestNativeLibs NO-SOURCE
+> Task :app:stripCatalogQaAndroidTestDebugSymbols NO-SOURCE
+> Task :app:validateSigningCatalogQaAndroidTest
+> Task :app:writeCatalogQaAndroidTestSigningConfigVersions
+> Task :app:mergeProjectDexCatalogQaAndroidTest
+> Task :app:packageCatalogQaAndroidTest
+> Task :app:createCatalogQaAndroidTestApkListingFileRedirect
+> Task :app:assembleCatalogQaAndroidTest
+
+BUILD SUCCESSFUL in 12s
+65 actionable tasks: 64 executed, 1 up-to-date
+{
+  "profile": "internal-qa",
+  "apkSha256": "3baec54e4df805ff743dc3035a6a62b61a5c488c660643669c96cb8910aebe4d",
+  "apkBytes": 7697153,
+  "assetHashes": {
+    "catalog.db": "56bfbbbc8f39c957aaf73b6b8c43706fe7c6d2cdd40420912369cb9331e853ed",
+    "catalog.metadata.json": "6f85da9aa82ef4440fae64674296faabd308e350000948b8350ef8e8dbc0b003",
+    "content-credits.json": "4dfc32924b655fe8e276cfb9bdf6d408213f78e15ac3202cf354ed84067bfd5c",
+    "manifest.json": "87fe31729f2ff2bfe31849290d97e617fedd69c789e5b50d3e77a80586acce18",
+    "quiz-policy.json": "88168d65b114a02a5934eb429c75820482ad77e1ebab7f500c30fc6c09d8c617",
+    "release-gate-report.json": "9a4e79a711751fb335e76eb5c7f805398c66a9684f675c1a27e36ce8667327d9"
+  },
+  "sqlQa": {
+    "uniqueVocabularyCount": 150,
+    "membershipCount": 150,
+    "packCounts": {
+      "pack_toeic_basic": 40,
+      "pack_toeic_office": 40,
+      "pack_daily_life": 40,
+      "pack_academic": 30
+    },
+    "distinctMeaningsPerPack": {
+      "pack_toeic_basic": 40,
+      "pack_toeic_office": 40,
+      "pack_daily_life": 40,
+      "pack_academic": 30
+    },
+    "examplePairCount": 150,
+    "nullableIpaCount": 150,
+    "ftsMappedRows": 150,
+    "ftsSearchChecks": 300,
+    "integrityCheck": "ok",
+    "foreignKeyViolations": 0,
+    "logicalDumpSha256": "85644c12afac36f80cb233a353280c40edc53241eb36ebce493e42462e1f6a6a"
+  },
+  "datasetSha256": "12aac7bfbe037c9136c3973cc724eee68205b88673ad25f40f7881de50d5398e",
+  "releaseAuthorized": false
+}

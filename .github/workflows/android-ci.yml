@@ -214,6 +214,9 @@ jobs:
           java -version
           ./gradlew --version
 
+      - name: Test DATA-09 evidence collectors
+        run: python -m unittest discover -s tools/validation -p 'test_data09*.py' -v
+
       - name: Run unit tests
         run: ./gradlew testDebugUnitTest
 
@@ -232,6 +235,12 @@ jobs:
           ./gradlew -PcatalogQa=true assembleCatalogQa assembleCatalogQaAndroidTest
           python tools/catalog/package_qa.py --verify-apk app/build/outputs/apk/catalogQa/app-catalogQa.apk > build/voc06-qa-apk-report.json
 
+      - name: Validate DATA-09 release-based internal QA profile
+        run: |
+          ./gradlew -Pdata09Profile=true -Pdata09Qa=true assembleData09 assembleData09AndroidTest lintData09
+          python tools/validation/data09_apk_size.py --apk app/build/outputs/apk/data09/app-data09.apk --variant data09 --asset-profile internal-qa --output build/data09-apk-size.json
+          python tools/validation/data09_performance.py summary --apk-size build/data09-apk-size.json --output build/data09-summary.json
+
       - name: Upload test reports, fixture APK and verification summaries
         if: always()
         uses: actions/upload-artifact@v4
@@ -243,6 +252,8 @@ jobs:
             app/build/reports/lint-results-debug.*
             app/build/outputs/apk/debug/app-debug.apk
             build/voc06-qa-apk-report.json
+            build/data09-apk-size.json
+            build/data09-summary.json
             build/voc-data-05-coverage.json
             build/vocabulary-ingestion/ci-proof/
           if-no-files-found: warn

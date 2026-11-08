@@ -1,0 +1,9 @@
+{
+  "app/build.gradle": "bb487a8e9372fee1572d0bdf76d11bd2d13b5299921caf04bac95f77db60afe3",
+  ".github/workflows/android-ci.yml": "9d4064d0ae1a70cf6f8643a762b5fa094bf5df6f3a16ad61ec246a5b3ce32de1",
+  "app/src/catalogTest/java/com/vocamind/app/data/catalog/FtsSearchBenchmarkContract.java": "a48b3add88d71c7eb3f3567873be4c3abb1e995dda8c4641d41a04977a1fcd27",
+  "app/src/androidTest/java/com/vocamind/app/data/catalog/FtsSearchBenchmarkInstrumentedTest.java": "9963a4294fc2dbd6e2ea37b57628731d504634d1fa28b79f6705ff79b0b78eb6",
+  "tools/validation/data09_performance.py": "0cb25d601e77d434f6e2924785c36ced1130a869ea4d06fe822992ed1d2950a1",
+  "tools/validation/data09_apk_size.py": "f03cf2c1e686967369d5259b006c44c8e9b42f73bea6ca02c17d7370b516c71b",
+  "tools/validation/test_data09_performance.py": "f5c2ab0a2cbbb515bbb087b88cb239899a57df90e90ede2e06699ef910ae96e5"
+}

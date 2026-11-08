@@ -9,6 +9,7 @@ import org.json.*;
 import org.junit.Test;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
 import java.util.*;
 import java.util.concurrent.*;
 import static org.junit.Assert.*;
@@ -18,6 +19,18 @@ public abstract class FtsSearchBenchmarkContract {
     protected abstract InputStream benchmarkAsset() throws IOException;
     protected boolean enforceLatency() { return false; }
     protected abstract String runnerKind();
+    /** Device wrapper can export the complete report through instrumentation before assertions. */
+    protected void reportReady(JSONObject report) throws Exception { }
+    private String datasetSha256() throws Exception {
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        try (InputStream stream = benchmarkAsset()) {
+            byte[] bytes = new byte[8192]; int count;
+            while ((count = stream.read(bytes)) != -1) digest.update(bytes, 0, count);
+        }
+        StringBuilder result = new StringBuilder();
+        for (byte value : digest.digest()) result.append(String.format(Locale.ROOT, "%02x", value & 255));
+        return result.toString();
+    }
     @Test public void profileFiveThousandWordPrepackAndWriteRawSamples() throws Exception {
         Context context = ApplicationProvider.getApplicationContext();
         String name = "data05-benchmark-" + UUID.randomUUID() + ".db";
@@ -33,6 +46,9 @@ public abstract class FtsSearchBenchmarkContract {
                     JSONObject report = new JSONObject();
                     report.put("runner", runnerKind()); report.put("api", Build.VERSION.SDK_INT);
                     report.put("model", Build.MODEL); report.put("hardware", Build.HARDWARE);
+                    report.put("datasetSha256", datasetSha256());
+                    report.put("fingerprint", Build.FINGERPRINT);
+                    report.put("warmupIterations", 20); report.put("sampleCount", 100);
                     report.put("datasetWords", 5000); report.put("referenceHardwareVerified", false);
                     report.put("latencyAssertionsEnabled", enforceLatency());
                     report.put("timingScope", "DAO MATCH query plus entity materialization; excludes asset opening, expression preparation, executor queue, domain mapping and UI");
@@ -61,6 +77,7 @@ public abstract class FtsSearchBenchmarkContract {
                     try (Writer writer = new OutputStreamWriter(new FileOutputStream(output), StandardCharsets.UTF_8)) {
                         writer.write(report.toString(2));
                     }
+                    reportReady(report);
                     System.out.println("DATA05_BENCHMARK_JSON=" + report);
                     if (enforceLatency()) for (int i = 0; i < cases.length(); i++)
                         assertTrue("Query exceeded required 50ms: " + cases.getJSONObject(i).getString("query"),

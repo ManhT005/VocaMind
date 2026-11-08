@@ -1,0 +1,141 @@
+{
+  "metric": "fts",
+  "srsGate": "PENDING",
+  "reason": "Host Robolectric/native SQLite is not a reference device",
+  "reports": [
+    {
+      "api": 26,
+      "raw": "fts-host-api26.json",
+      "cases": [
+        {
+          "query": "benchword04999",
+          "matches": 1,
+          "count": 100,
+          "minMs": 0.145349,
+          "meanMs": 0.19277948,
+          "p50Ms": 0.158489,
+          "p95Ms": 0.330158,
+          "maxMs": 0.574856,
+          "observedGate": "PASS",
+          "meanBelow15MsTarget": true
+        },
+        {
+          "query": "nghĩa kiểm thử 04999",
+          "matches": 1,
+          "count": 100,
+          "minMs": 0.159089,
+          "meanMs": 0.21259926,
+          "p50Ms": 0.176647,
+          "p95Ms": 0.336727,
+          "maxMs": 0.734397,
+          "observedGate": "PASS",
+          "meanBelow15MsTarget": true
+        },
+        {
+          "query": "benchword000",
+          "matches": 100,
+          "count": 100,
+          "minMs": 0.983913,
+          "meanMs": 1.50033786,
+          "p50Ms": 1.495734,
+          "p95Ms": 1.954195,
+          "maxMs": 4.42026,
+          "observedGate": "PASS",
+          "meanBelow15MsTarget": true
+        },
+        {
+          "query": "notpresentbenchmark",
+          "matches": 0,
+          "count": 100,
+          "minMs": 0.105349,
+          "meanMs": 0.14664163,
+          "p50Ms": 0.117227,
+          "p95Ms": 0.255455,
+          "maxMs": 0.568687,
+          "observedGate": "PASS",
+          "meanBelow15MsTarget": true
+        },
+        {
+          "query": "benchword",
+          "matches": 5000,
+          "count": 100,
+          "minMs": 14.183011,
+          "meanMs": 15.95287412,
+          "p50Ms": 15.661899,
+          "p95Ms": 18.10525,
+          "maxMs": 20.399318,
+          "observedGate": "PASS",
+          "meanBelow15MsTarget": false
+        }
+      ],
+      "observedGate": "PASS"
+    },
+    {
+      "api": 35,
+      "raw": "fts-host-api35.json",
+      "cases": [
+        {
+          "query": "benchword04999",
+          "matches": 1,
+          "count": 100,
+          "minMs": 0.129595,
+          "meanMs": 0.16433891,
+          "p50Ms": 0.13924,
+          "p95Ms": 0.243637,
+          "maxMs": 0.697561,
+          "observedGate": "PASS",
+          "meanBelow15MsTarget": true
+        },
+        {
+          "query": "nghĩa kiểm thử 04999",
+          "matches": 1,
+          "count": 100,
+          "minMs": 0.148944,
+          "meanMs": 0.16655183,
+          "p50Ms": 0.156326,
+          "p95Ms": 0.19912,
+          "maxMs": 0.279751,
+          "observedGate": "PASS",
+          "meanBelow15MsTarget": true
+        },
+        {
+          "query": "benchword000",
+          "matches": 100,
+          "count": 100,
+          "minMs": 0.906355,
+          "meanMs": 1.29416115,
+          "p50Ms": 1.119427,
+          "p95Ms": 1.649635,
+          "maxMs": 11.112274,
+          "observedGate": "PASS",
+          "meanBelow15MsTarget": true
+        },
+        {
+          "query": "notpresentbenchmark",
+          "matches": 0,
+          "count": 100,
+          "minMs": 0.089886,
+          "meanMs": 0.10938537,
+          "p50Ms": 0.096044,
+          "p95Ms": 0.13944,
+          "maxMs": 0.426422,
+          "observedGate": "PASS",
+          "meanBelow15MsTarget": true
+        },
+        {
+          "query": "benchword",
+          "matches": 5000,
+          "count": 100,
+          "minMs": 11.075638,
+          "meanMs": 11.75158622,
+          "p50Ms": 11.493248,
+          "p95Ms": 13.121431,
+          "maxMs": 15.719516,
+          "observedGate": "PASS",
+          "meanBelow15MsTarget": true
+        }
+      ],
+      "observedGate": "PASS"
+    }
+  ]
+}

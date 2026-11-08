@@ -46,12 +46,22 @@ def prepareReleaseCatalogTests = tasks.register('prepareReleaseCatalogTests', Ex
 
 // Opt-in QA application ID keeps the internal corpus and its installed DB separate.
 def catalogQaEnabled = providers.gradleProperty('catalogQa').map { it == 'true' }.getOrElse(false)
+def data09ProfileEnabled = providers.gradleProperty('data09Profile').orNull == 'true'
+def data09QaEnabled = providers.gradleProperty('data09Qa').orNull == 'true'
+if (data09QaEnabled && !data09ProfileEnabled) throw new GradleException('data09Qa requires data09Profile')
 def catalogQaDirectory = layout.buildDirectory.dir('generated/voc06-qa')
 def prepareCatalogQa = tasks.register('prepareCatalogQa', Exec) {
     workingDir rootProject.projectDir
     commandLine providers.gradleProperty('catalogPython').getOrElse('python'),
             rootProject.file('tools/catalog/package_qa.py').absolutePath, '--prepare'
     // Re-verify the snapshot and bundle even when a generated output already exists.
+    outputs.dir catalogQaDirectory
+    // Gradle precreates declared output directories. The atomic QA publisher accepts
+    // only an absent target or an identical bundle; remove only that empty shell.
+    doFirst {
+        def generated = catalogQaDirectory.get().asFile
+        if (generated.isDirectory() && generated.listFiles().length == 0) generated.delete()
+    }
     outputs.upToDateWhen { false }
 }
 
@@ -84,7 +94,25 @@ android {
         testBuildType 'catalogQa'
     }
 
+    // Opt-in DATA-09 install: release settings, test signing, separate app storage.
+    // This diagnostic artifact is never an authorization to publish the catalog.
+    if (data09ProfileEnabled) {
+        if (catalogQaEnabled) throw new GradleException('Choose data09Profile or catalogQa, not both')
+        buildTypes {
+            data09 {
+                initWith release
+                applicationIdSuffix '.data09validation'
+                signingConfig signingConfigs.debug
+                matchingFallbacks = ['release']
+            }
+        }
+        testBuildType 'data09'
+    }
+
     sourceSets {
+        if (data09ProfileEnabled && data09QaEnabled) {
+            data09.assets.srcDir project.files(catalogQaDirectory.map { it.dir('assets') }).builtBy(prepareCatalogQa)
+        }
         if (catalogQaEnabled) {
             catalogQa.assets.srcDir catalogQaDirectory.map { it.dir('assets') }
         }
@@ -163,7 +191,9 @@ android {
 }
 
 tasks.configureEach {
-    if (catalogQaEnabled && name == 'mergeCatalogQaAssets') {
+    if ((catalogQaEnabled && name == 'mergeCatalogQaAssets')
+            || (data09QaEnabled && name == 'mergeData09Assets')
+            || ((catalogQaEnabled || data09QaEnabled) && name.toLowerCase(Locale.ROOT).contains('lint'))) {
         dependsOn prepareCatalogQa
     }
     if (name.endsWith('UnitTestJavaRes') || name.endsWith('AndroidTestAssets')

@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "metric": "apk-size",
+  "variant": "data09",
+  "assetProfile": "internal-qa",
+  "dataset": {
+    "uniqueWords": 150,
+    "packs": 4,
+    "catalogSha256": "56bfbbbc8f39c957aaf73b6b8c43706fe7c6d2cdd40420912369cb9331e853ed"
+  },
+  "apkSha256": "b033c4ac67cccda3a0b58c0721528b5aa23db1c245f84bc1236b94901df5de98",
+  "apkBytes": 6126378,
+  "apkMB": 6.126378,
+  "apkMiB": 5.842569351196289,
+  "limitBytes": 25000000,
+  "nativeAbis": [],
+  "databaseAssets": [
+    {
+      "path": "assets/database/catalog.db",
+      "compressedBytes": 39933,
+      "uncompressedBytes": 155648,
+      "sha256": "56bfbbbc8f39c957aaf73b6b8c43706fe7c6d2cdd40420912369cb9331e853ed"
+    },
+    {
+      "path": "assets/database/catalog.metadata.json",
+      "compressedBytes": 1336,
+      "uncompressedBytes": 2744,
+      "sha256": "6f85da9aa82ef4440fae64674296faabd308e350000948b8350ef8e8dbc0b003"
+    },
+    {
+      "path": "assets/database/content-credits.json",
+      "compressedBytes": 494,
+      "uncompressedBytes": 717,
+      "sha256": "4dfc32924b655fe8e276cfb9bdf6d408213f78e15ac3202cf354ed84067bfd5c"
+    },
+    {
+      "path": "assets/database/manifest.json",
+      "compressedBytes": 366,
+      "uncompressedBytes": 581,
+      "sha256": "87fe31729f2ff2bfe31849290d97e617fedd69c789e5b50d3e77a80586acce18"
+    },
+    {
+      "path": "assets/database/quiz-policy.json",
+      "compressedBytes": 262,
+      "uncompressedBytes": 430,
+      "sha256": "88168d65b114a02a5934eb429c75820482ad77e1ebab7f500c30fc6c09d8c617"
+    },
+    {
+      "path": "assets/database/release-gate-report.json",
+      "compressedBytes": 646,
+      "uncompressedBytes": 1368,
+      "sha256": "9a4e79a711751fb335e76eb5c7f805398c66a9684f675c1a27e36ce8667327d9"
+    }
+  ],
+  "compressedDatabaseShare": 0.007024868527537804,
+  "assetVerification": {
+    "profile": "internal-qa",
+    "apkSha256": "b033c4ac67cccda3a0b58c0721528b5aa23db1c245f84bc1236b94901df5de98",
+    "apkBytes": 6126378,
+    "assetHashes": {
+      "catalog.db": "56bfbbbc8f39c957aaf73b6b8c43706fe7c6d2cdd40420912369cb9331e853ed",
+      "catalog.metadata.json": "6f85da9aa82ef4440fae64674296faabd308e350000948b8350ef8e8dbc0b003",
+      "content-credits.json": "4dfc32924b655fe8e276cfb9bdf6d408213f78e15ac3202cf354ed84067bfd5c",
+      "manifest.json": "87fe31729f2ff2bfe31849290d97e617fedd69c789e5b50d3e77a80586acce18",
+      "quiz-policy.json": "88168d65b114a02a5934eb429c75820482ad77e1ebab7f500c30fc6c09d8c617",
+      "release-gate-report.json": "9a4e79a711751fb335e76eb5c7f805398c66a9684f675c1a27e36ce8667327d9"
+    },
+    "sqlQa": {
+      "uniqueVocabularyCount": 150,
+      "membershipCount": 150,
+      "packCounts": {
+        "pack_toeic_basic": 40,
+        "pack_toeic_office": 40,
+        "pack_daily_life": 40,
+        "pack_academic": 30
+      },
+      "distinctMeaningsPerPack": {
+        "pack_toeic_basic": 40,
+        "pack_toeic_office": 40,
+        "pack_daily_life": 40,
+        "pack_academic": 30
+      },
+      "examplePairCount": 150,
+      "nullableIpaCount": 150,
+      "ftsMappedRows": 150,
+      "ftsSearchChecks": 300,
+      "integrityCheck": "ok",
+      "foreignKeyViolations": 0,
+      "logicalDumpSha256": "85644c12afac36f80cb233a353280c40edc53241eb36ebce493e42462e1f6a6a"
+    },
+    "datasetSha256": "12aac7bfbe037c9136c3973cc724eee68205b88673ad25f40f7881de50d5398e",
+    "releaseAuthorized": false
+  },
+  "observedGate": "PASS",
+  "srsGate": "PENDING",
+  "reason": "Requires measurement of the final release artifact; fixture/internal QA is diagnostic.",
+  "releaseAuthorized": false
+}
