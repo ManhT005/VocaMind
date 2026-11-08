@@ -81,8 +81,10 @@ public class AsyncListViewModel<T> extends ViewModel {
         state.setValue(new State<>(Status.LOADING, previous, write, null));
         worker.execute(() -> {
             RepoResult<List<T>> result;
+            // Throwable, not RuntimeException: an Error from storage must still reach the main
+            // thread, otherwise the screen would stay on LOADING forever.
             try { result = operation.get(); }
-            catch (RuntimeException failure) {
+            catch (Throwable failure) {
                 result = RepoResult.failure(write ? RepoError.WRITE_FAILED : RepoError.READ_FAILED);
             }
             RepoResult<List<T>> completed = result;
