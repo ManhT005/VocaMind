@@ -1,0 +1,28 @@
+{
+  "stage": "appearance",
+  "method": "cSmallDarkLargeFont",
+  "serial": "127.0.0.1:5555",
+  "base_commit": "8c52c0b69074ab2260dbb1422bfc30ad75b26a41",
+  "device_apks": {
+    "com.vocamind.app.progress02validation": {
+      "path": "/data/app/com.vocamind.app.progress02validation-BrO3fGkFTfXT8rU9CpxzNw==/base.apk",
+      "sha256": "7dba5d95aa3b99655d32535d49aab06fd6d80c66e6ddb6050d47dbd6216f38ef"
+    },
+    "com.vocamind.app.progress02validation.test": {
+      "path": "/data/app/com.vocamind.app.progress02validation.test-q6G06XWxHvVMtgsusDX7RQ==/base.apk",
+      "sha256": "735dd7661517e00faff7c99a21977b6dfcd9a368affbf5a0f3a568d09e9dea22"
+    }
+  },
+  "original_configuration": {
+    "serial": "127.0.0.1:5555",
+    "values": {
+      "global/airplane_mode_on": "0",
+      "global/wifi_on": "1",
+      "system/font_scale": "1.0",
+      "secure/ui_night_mode": "null",
+      "size": "reset",
+      "density": "reset",
+      "night_service": "no"
+    }
+  }
+}

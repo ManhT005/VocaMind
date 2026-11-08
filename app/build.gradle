@@ -105,12 +105,15 @@ android {
     // Opt-in device validation uses separate app storage; never replace a real user's install.
     buildTypes {
         debug {
-            if (providers.gradleProperty('quiz03DeviceIsolation').orNull == 'true') {
-                applicationIdSuffix '.quiz03validation'
+            if (providers.gradleProperty('quiz03DeviceIsolation').orNull == 'true'
+                    || providers.gradleProperty('progress02DeviceIsolation').orNull == 'true') {
+                applicationIdSuffix providers.gradleProperty('progress02DeviceIsolation').orNull == 'true'
+                        ? '.progress02validation' : '.quiz03validation'
             }
         }
     }
-    if (providers.gradleProperty('quiz03DeviceIsolation').orNull == 'true') {
+    if (providers.gradleProperty('quiz03DeviceIsolation').orNull == 'true'
+                    || providers.gradleProperty('progress02DeviceIsolation').orNull == 'true') {
         sourceSets.debug.assets.srcDir layout.buildDirectory.dir('quiz03-device-assets')
         def prepareQuiz03DeviceAssets = tasks.register('prepareQuiz03DeviceAssets', Exec) {
             workingDir rootProject.projectDir

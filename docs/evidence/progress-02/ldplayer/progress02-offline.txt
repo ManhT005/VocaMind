@@ -1,0 +1,248 @@
+airplane=1
+wifi=0
+NetworkFactories for: PhoneSwitcherNetworkRequstListener WIFI Ethernet TelephonyNetworkFactory[0] WIFI_AWARE_FACTORY WIFI_UT
+
+Active default network: none
+
+Current Networks:
+
+Network Requests:
+  uid/pid:10016/2037 NetworkRequest [ TRACK_DEFAULT id=28, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10016] ]
+  uid/pid:10016/2037 NetworkRequest [ LISTEN id=12, [ Capabilities: INTERNET&TRUSTED Unwanted:  Uid: 10016] ]
+  uid/pid:10018/4271 NetworkRequest [ TRACK_DEFAULT id=26, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10018] ]
+  uid/pid:10010/7390 NetworkRequest [ TRACK_DEFAULT id=32, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10010] ]
+  uid/pid:10016/2037 NetworkRequest [ LISTEN id=34, [ Transports: WIFI Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 10016] ]
+  uid/pid:10016/2037 NetworkRequest [ LISTEN id=23, [ Transports: CELLULAR|WIFI Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 10016] ]
+  uid/pid:10018/4271 NetworkRequest [ LISTEN id=27, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 10018] ]
+  uid/pid:10010/7390 NetworkRequest [ LISTEN id=33, [] ]
+  uid/pid:1000/1567 NetworkRequest [ LISTEN id=4, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 1000] ]
+  uid/pid:10016/2037 NetworkRequest [ LISTEN id=21, [ Transports: WIFI Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 10016] ]
+  uid/pid:10016/2037 NetworkRequest [ TRACK_DEFAULT id=24, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10016] ]
+  uid/pid:1000/1567 NetworkRequest [ TRACK_DEFAULT id=6, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 1000] ]
+  uid/pid:10016/2037 NetworkRequest [ TRACK_DEFAULT id=29, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10016] ]
+  uid/pid:10016/2037 NetworkRequest [ LISTEN id=30, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10016] ]
+  uid/pid:10010/7390 NetworkRequest [ LISTEN id=31, [ Transports: WIFI Capabilities: NOT_VPN Unwanted: ] ]
+  uid/pid:1000/1567 NetworkRequest [ BACKGROUND_REQUEST id=2, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted: ] ]
+  uid/pid:1000/1567 NetworkRequest [ REQUEST id=1, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted: ] ]
+  uid/pid:1000/1567 NetworkRequest [ LISTEN id=5, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 1000] ]
+  uid/pid:1000/1567 NetworkRequest [ LISTEN id=3, [] ]
+  uid/pid:10027/3776 NetworkRequest [ TRACK_DEFAULT id=16, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10027] ]
+  uid/pid:10027/3776 NetworkRequest [ LISTEN id=17, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10027] ]
+  uid/pid:10016/2037 NetworkRequest [ LISTEN id=22, [ Transports: WIFI Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 10016] ]
+  uid/pid:1000/1567 NetworkRequest [ LISTEN id=7, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&VALIDATED Unwanted:  Uid: 1000] ]
+  uid/pid:10016/2037 NetworkRequest [ TRACK_DEFAULT id=13, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10016] ]
+  uid/pid:10027/3869 NetworkRequest [ TRACK_DEFAULT id=18, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10027] ]
+  uid/pid:10027/3869 NetworkRequest [ TRACK_DEFAULT id=20, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10027] ]
+  uid/pid:10018/4271 NetworkRequest [ TRACK_DEFAULT id=25, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10018] ]
+  uid/pid:10016/2037 NetworkRequest [ TRACK_DEFAULT id=19, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10016] ]
+  
+mLegacyTypeTracker:
+  Supported types: 0 1 2 3 4 5 9 10 11 12 13 14 15 17
+  Current state:
+
+
+Tethering:
+  Configuration:
+    tetherableUsbRegexs: []
+    tetherableWifiRegexs: []
+    tetherableBluetoothRegexs: []
+    isDunRequired: false
+    chooseUpstreamAutomatically: false
+    preferredUpstreamIfaceTypes: [ETHERNET, WIFI, BLUETOOTH, MOBILE]
+    dhcpRanges: [192.168.42.2, 192.168.42.254, 192.168.43.2, 192.168.43.254, 192.168.44.2, 192.168.44.254, 192.168.45.2, 192.168.45.254, 192.168.46.2, 192.168.46.254, 192.168.47.2, 192.168.47.254, 192.168.48.2, 192.168.48.254, 192.168.49.2, 192.168.49.254]
+    defaultIPv4DNS: [8.8.4.4, 8.8.8.8]
+    provisioningApp: []
+    provisioningAppNoUi: 
+  Tether state:
+    Upstream wanted: false
+    Current upstream interface(s): null
+  Hardware offload:
+    Offload HALs not started
+    Current upstream: null
+    Exempt prefixes: []
+    NAT timeout update callbacks received during the last offload session: 0
+    NAT timeout update netlink errors during the last offload session: 0
+  Log:
+    2026-11-08T18:48:46.370 - MARK constructed
+    2026-11-08T18:48:46.371 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:48:46.371 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:48:47.452 - wlan0 is not a tetherable iface, ignoring
+    2026-11-08T18:48:52.472 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-08T18:49:19.663 - USB bcast connected:false configured:false rndis:false
+    2026-11-08T18:49:19.757 - OBSERVED configuration changed
+    2026-11-08T18:49:19.758 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:49:19.758 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:49:26.161 - OBSERVED configuration changed
+    2026-11-08T18:49:26.180 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:49:26.181 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:49:59.042 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-08T18:50:10.724 - OBSERVED carrier config change
+    2026-11-08T18:50:10.798 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:50:10.819 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:50:29.564 - OBSERVED carrier config change
+    2026-11-08T18:50:29.581 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:50:29.585 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:51:13.120 - wlan0 is not a tetherable iface, ignoring
+    2026-11-08T18:51:17.788 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-08T18:52:07.190 - OBSERVED configuration changed
+    2026-11-08T18:52:07.554 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:52:07.562 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:52:07.564 - OBSERVED configuration changed
+    2026-11-08T18:52:07.569 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:52:07.569 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:52:08.031 - OBSERVED configuration changed
+    2026-11-08T18:52:08.040 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:52:08.047 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:52:08.048 - OBSERVED configuration changed
+    2026-11-08T18:52:08.082 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:52:08.082 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:52:14.373 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-08T18:52:22.350 - wlan0 is not a tetherable iface, ignoring
+    2026-11-08T18:52:25.366 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-08T18:53:01.326 - OBSERVED configuration changed
+    2026-11-08T18:53:01.360 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:53:01.361 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:53:01.812 - OBSERVED configuration changed
+    2026-11-08T18:53:01.817 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:53:01.817 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:53:02.824 - OBSERVED configuration changed
+    2026-11-08T18:53:02.893 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:53:02.894 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:54:49.126 - OBSERVED configuration changed
+    2026-11-08T18:54:49.274 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:54:49.314 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:54:49.314 - OBSERVED configuration changed
+    2026-11-08T18:54:49.315 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:54:49.316 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:54:50.011 - OBSERVED configuration changed
+    2026-11-08T18:54:50.012 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:54:50.012 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:54:50.012 - OBSERVED configuration changed
+    2026-11-08T18:54:50.028 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:54:50.030 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:54:59.926 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-08T18:55:35.977 - wlan0 is not a tetherable iface, ignoring
+    2026-11-08T18:55:38.581 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-08T18:56:50.081 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-08T18:56:59.034 - wlan0 is not a tetherable iface, ignoring
+    2026-11-08T18:57:02.440 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-08T18:58:11.177 - OBSERVED configuration changed
+    2026-11-08T18:58:11.198 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:58:11.211 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:58:11.211 - OBSERVED configuration changed
+    2026-11-08T18:58:11.215 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:58:11.215 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:58:11.837 - OBSERVED configuration changed
+    2026-11-08T18:58:11.840 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:58:11.840 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:58:12.086 - OBSERVED configuration changed
+    2026-11-08T18:58:12.088 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:58:12.088 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:58:20.244 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-08T18:58:22.314 - OBSERVED configuration changed
+    2026-11-08T18:58:22.375 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T18:58:22.376 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T18:58:50.030 - wlan0 is not a tetherable iface, ignoring
+    2026-11-08T18:58:53.452 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-08T19:00:14.127 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-08T19:00:25.762 - wlan0 is not a tetherable iface, ignoring
+    2026-11-08T19:00:32.546 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-08T19:01:34.988 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-08T19:01:42.490 - wlan0 is not a tetherable iface, ignoring
+    2026-11-08T19:01:46.431 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-08T19:05:01.771 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-08T19:05:07.346 - OBSERVED configuration changed
+    2026-11-08T19:05:07.379 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T19:05:07.380 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T19:05:11.347 - OBSERVED configuration changed
+    2026-11-08T19:05:11.386 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T19:05:11.386 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T19:05:16.618 - wlan0 is not a tetherable iface, ignoring
+    2026-11-08T19:05:20.521 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-08T19:06:08.272 - OBSERVED configuration changed
+    2026-11-08T19:06:08.315 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T19:06:08.318 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T19:06:09.007 - OBSERVED configuration changed
+    2026-11-08T19:06:09.011 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T19:06:09.018 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T19:06:09.545 - OBSERVED configuration changed
+    2026-11-08T19:06:09.556 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T19:06:09.556 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T19:06:09.613 - OBSERVED configuration changed
+    2026-11-08T19:06:09.622 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-08T19:06:09.623 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-08T19:06:19.864 - InitialState got CMD_UPSTREAM_CHANGED
+
+Packet keepalives:
+
+Bad Wi-Fi avoidance: unrestricted
+
+MultipathPolicyTracker:
+
+mValidationLogs (most recent first):
+108 - ""garden-dpaYtH""
+  2026-11-08T19:05:19.930 - Validation disabled.
+107 - ""garden-dpaYtH""
+  2026-11-08T19:01:45.974 - Validation disabled.
+106 - ""garden-dpaYtH""
+  2026-11-08T19:00:31.766 - Validation disabled.
+105 - ""garden-dpaYtH""
+  2026-11-08T18:58:52.372 - Validation disabled.
+104 - ""garden-dpaYtH""
+  2026-11-08T18:57:01.848 - Validation disabled.
+103 - ""garden-dpaYtH""
+  2026-11-08T18:55:38.439 - Validation disabled.
+102 - ""garden-dpaYtH""
+  2026-11-08T18:52:24.941 - Validation disabled.
+101 - ""garden-dpaYtH""
+  2026-11-08T18:51:17.205 - Validation disabled.
+100 - ""garden-dpaYtH""
+  2026-11-08T18:48:52.308 - Validation disabled.
+
+mNetworkRequestInfoLogs (most recent first):
+  2026-11-08T18:56:46.789 - REGISTER uid/pid:10016/2037 NetworkRequest [ LISTEN id=34, [ Transports: WIFI Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 10016] ]
+  2026-11-08T18:56:43.995 - REGISTER uid/pid:10010/7390 NetworkRequest [ LISTEN id=33, [] ]
+  2026-11-08T18:56:42.087 - REGISTER uid/pid:10010/7390 NetworkRequest [ TRACK_DEFAULT id=32, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10010] ]
+  2026-11-08T18:56:42.042 - REGISTER uid/pid:10010/7390 NetworkRequest [ LISTEN id=31, [ Transports: WIFI Capabilities: NOT_VPN Unwanted: ] ]
+  2026-11-08T18:56:39.039 - RELEASE uid/pid:10010/1722 NetworkRequest [ LISTEN id=10, [] ]
+  2026-11-08T18:56:39.036 - RELEASE uid/pid:10010/1722 NetworkRequest [ TRACK_DEFAULT id=9, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10010] ]
+  2026-11-08T18:56:39.034 - RELEASE uid/pid:10010/1722 NetworkRequest [ LISTEN id=8, [ Transports: WIFI Capabilities: NOT_VPN Unwanted: ] ]
+  2026-11-08T18:51:26.504 - REGISTER uid/pid:10016/2037 NetworkRequest [ LISTEN id=30, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10016] ]
+  2026-11-08T18:51:26.361 - REGISTER uid/pid:10016/2037 NetworkRequest [ TRACK_DEFAULT id=29, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10016] ]
+  2026-11-08T18:51:20.727 - REGISTER uid/pid:10016/2037 NetworkRequest [ TRACK_DEFAULT id=28, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10016] ]
+  2026-11-08T18:51:16.238 - REGISTER uid/pid:10018/4271 NetworkRequest [ LISTEN id=27, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 10018] ]
+  2026-11-08T18:51:13.791 - REGISTER uid/pid:10018/4271 NetworkRequest [ TRACK_DEFAULT id=26, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10018] ]
+  2026-11-08T18:51:12.250 - REGISTER uid/pid:10018/4271 NetworkRequest [ TRACK_DEFAULT id=25, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10018] ]
+  2026-11-08T18:50:57.744 - REGISTER uid/pid:10016/2037 NetworkRequest [ TRACK_DEFAULT id=24, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10016] ]
+  2026-11-08T18:50:56.741 - REGISTER uid/pid:10016/2037 NetworkRequest [ LISTEN id=23, [ Transports: CELLULAR|WIFI Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 10016] ]
+  2026-11-08T18:50:53.397 - RELEASE uid/pid:10018/3288 NetworkRequest [ LISTEN id=15, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 10018] ]
+  2026-11-08T18:50:53.397 - RELEASE uid/pid:10018/3288 NetworkRequest [ TRACK_DEFAULT id=14, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10018] ]
+  2026-11-08T18:50:51.820 - REGISTER uid/pid:10016/2037 NetworkRequest [ LISTEN id=22, [ Transports: WIFI Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 10016] ]
+  2026-11-08T18:50:49.922 - REGISTER uid/pid:10016/2037 NetworkRequest [ LISTEN id=21, [ Transports: WIFI Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 10016] ]
+  2026-11-08T18:50:49.249 - REGISTER uid/pid:10027/3869 NetworkRequest [ TRACK_DEFAULT id=20, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10027] ]
+
+mNetworkInfoBlockingLogs (most recent first):
+
+NetTransition WakeLock activity (most recent first):
+  total acquisitions: 9
+  total releases: 8
+  cumulative duration: 231s
+  longest duration: 60s
+  currently holding WakeLock for: 1s
+  2026-11-08T19:06:19.295 - ACQUIRE for NetworkAgentInfo [WIFI () - 108]
+  2026-11-08T19:05:25.708 - RELEASE (EVENT_CLEAR_NET_TRANSITION_WAKELOCK)
+  2026-11-08T19:05:01.540 - ACQUIRE for NetworkAgentInfo [WIFI () - 107]
+  2026-11-08T19:01:51.371 - RELEASE (EVENT_CLEAR_NET_TRANSITION_WAKELOCK)
+  2026-11-08T19:01:34.381 - ACQUIRE for NetworkAgentInfo [WIFI () - 106]
+  2026-11-08T19:00:35.994 - RELEASE (EVENT_CLEAR_NET_TRANSITION_WAKELOCK)
+  2026-11-08T19:00:13.677 - ACQUIRE for NetworkAgentInfo [WIFI () - 105]
+  2026-11-08T18:58:57.164 - RELEASE (EVENT_CLEAR_NET_TRANSITION_WAKELOCK)
+  2026-11-08T18:58:19.954 - ACQUIRE for NetworkAgentInfo [WIFI () - 104]
+  2026-11-08T18:57:05.528 - RELEASE (EVENT_CLEAR_NET_TRANSITION_WAKELOCK)
+  2026-11-08T18:56:49.749 - ACQUIRE for NetworkAgentInfo [WIFI () - 103]
+  2026-11-08T18:55:40.684 - RELEASE (EVENT_CLEAR_NET_TRANSITION_WAKELOCK)
+  2026-11-08T18:54:59.396 - ACQUIRE for NetworkAgentInfo [WIFI () - 102]
+  2026-11-08T18:52:27.399 - RELEASE (EVENT_CLEAR_NET_TRANSITION_WAKELOCK)
+  2026-11-08T18:52:13.722 - ACQUIRE for NetworkAgentInfo [WIFI () - 101]
+  2026-11-08T18:50:58.385 - RELEASE (EVENT_EXPIRE_NET_TRANSITION_WAKELOCK)
+  2026-11-08T18:49:58.379 - ACQUIRE for NetworkAgentInfo [WIFI () - 100]
