@@ -1,6 +1,8 @@
 # PROGRESS-02: progress dashboard and completed Quiz history
 
-Base: `develop` at `b299cab`. Initial implementation: `5872cff`; review corrections: `90de7d9`, runner readback verification: `8c52c0b`.
+Base: `develop` at `78b9add`, integrated into this feature branch by `9b56623`. Initial implementation: `5872cff`; review corrections: `90de7d9`, runner readback verification: `8c52c0b`.
+
+Post-integration validation on `9b56623`: 501 JVM tests passed with no failures, errors or skips; debug APK, AndroidTest APK and lint passed (`BUILD SUCCESSFUL in 5m 1s`). The strings conflict was resolved by retaining both Progress and upstream Today resources. Device evidence below remains tied to its historical commits; device checks were not rerun for this integration. See [integration validation](progress-02-integration-validation.md).
 
 Learners can now open Progress to see real local userdata metrics, all six Leitner boxes, the Mastered disclaimer and the complete persisted Quiz history. Empty sections remain independent; loading hides old values and read errors expose retry. The retained ViewModel reads through the existing production use case off main, refreshes on resume, coalesces overlapping requests, and discards superseded/cleared completions. A RecyclerView/ListAdapter keeps stable attempt identities and device-local completion dates. Content is revealed only after the matching history diff commits; late callbacks cannot cover newer states or touch destroyed views.
 
