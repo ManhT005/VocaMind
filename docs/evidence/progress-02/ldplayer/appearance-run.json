@@ -1,0 +1,16 @@
+{
+  "stage": "appearance",
+  "method": "cSmallDarkLargeFont",
+  "serial": "127.0.0.1:5555",
+  "base_commit": "8c91fbd38b91c1e525841755d773ee5c0bff5602",
+  "device_apks": {
+    "com.vocamind.app.progress02validation": {
+      "path": "/data/app/com.vocamind.app.progress02validation-Wh61WDiEMDRa8uq4JvxagA==/base.apk",
+      "sha256": "cb0743c23bdb90b2ecc5f6d92cc8fcab00889a068091e7f4a5281f5db45965f8"
+    },
+    "com.vocamind.app.progress02validation.test": {
+      "path": "/data/app/com.vocamind.app.progress02validation.test-2zdU5EjRkjVONJgUrswfuw==/base.apk",
+      "sha256": "735dd7661517e00faff7c99a21977b6dfcd9a368affbf5a0f3a568d09e9dea22"
+    }
+  }
+}

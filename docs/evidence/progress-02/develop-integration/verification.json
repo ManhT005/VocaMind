@@ -1,0 +1,55 @@
+{
+  "tested_merge": "2cbf05254c0e66d183a84db60f3d0b5b4d4d3394",
+  "upstream_develop": "78b9add",
+  "totals": {
+    "tests": 501,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "ordinary_apks": {
+    "app\\build\\outputs\\apk\\debug\\app-debug.apk": "c2c3020fa1837f4cf32d503ab07623941240bc7a1a51662e6825d60472629ff9",
+    "app\\build\\outputs\\apk\\androidTest\\debug\\app-debug-androidTest.apk": "ca264fd525efac0fa4835ef5906a97840c8553d9acbae46d80d22244f7a99e8e"
+  },
+  "ldplayer": {
+    "stage": "flow",
+    "method": "aFullProductionFlow",
+    "serial": "127.0.0.1:5555",
+    "base_commit": "2cbf05254c0e66d183a84db60f3d0b5b4d4d3394",
+    "device_apks": {
+      "com.vocamind.app.progress02validation": {
+        "path": "/data/app/com.vocamind.app.progress02validation-98zuTxWURQ5_qP5JUhRq-Q==/base.apk",
+        "sha256": "18d64702b787b7b7bba6a1fea6db7802f384d7ade4de242c8e84ba4a44c8b9d2"
+      },
+      "com.vocamind.app.progress02validation.test": {
+        "path": "/data/app/com.vocamind.app.progress02validation.test-cKS5Kp7xk-mJtTBhy6ydxw==/base.apk",
+        "sha256": "735dd7661517e00faff7c99a21977b6dfcd9a368affbf5a0f3a568d09e9dea22"
+      }
+    },
+    "original_configuration": {
+      "serial": "127.0.0.1:5555",
+      "values": {
+        "global/airplane_mode_on": "0",
+        "global/wifi_on": "1",
+        "system/font_scale": "1.0",
+        "secure/ui_night_mode": "null",
+        "size": "reset",
+        "density": "reset",
+        "night_service": "no"
+      }
+    }
+  },
+  "configuration_restored": true,
+  "evidence_sha256": {
+    "docs/evidence/progress-02/develop-integration/host/junit-reports.zip": "96f51cf7238a89db3b2794b099d166869863e21fa1ccb880f2a868a053f5608f",
+    "docs/evidence/progress-02/develop-integration/host/lint-results-debug.xml": "8a5094c25d8e0b94c972127f5ee1a36ad04b02fde8a776e808445279a9100254",
+    "docs/evidence/progress-02/develop-integration/host/regression.log": "1767b317059ba5e6b09c7ef665474aa5ba1a0ea4097a752a4571ddc3d095f6ae",
+    "docs/evidence/progress-02/develop-integration/ldplayer/fixture.png": "43ad1575698c204d95d3b35c9b1f5d7858fbed23caecd775cf55dbb6be56b533",
+    "docs/evidence/progress-02/develop-integration/ldplayer/flashcard.png": "33597166c041112209ed99ff3bce034e01dabf35da5ebaa4eeb934de6cae8ec4",
+    "docs/evidence/progress-02/develop-integration/ldplayer/flow-restored.json": "47a03b76ddeab28d9ea409f71496e3df1524839d177a5ec21f8ee12b629e971e",
+    "docs/evidence/progress-02/develop-integration/ldplayer/flow-run.json": "a5be09a925fba7790201b6c3b62e27158b3fefd99eb047e541eb54e5c2e6294e",
+    "docs/evidence/progress-02/develop-integration/ldplayer/flow.log": "92c0bddc60ff74d75126ce3a1f5a8aaac8206d23aff683a0aaee8ca7b3d0a615",
+    "docs/evidence/progress-02/develop-integration/ldplayer/offline.txt": "eb63e9de152b25b38581cf79f0744613846a5320a322d20e62eaee699900ab28",
+    "docs/evidence/progress-02/develop-integration/ldplayer/quiz.png": "990dcc961730fbe445b459405c463310d4239e186a38a1e3572702a0d92b49dc"
+  }
+}

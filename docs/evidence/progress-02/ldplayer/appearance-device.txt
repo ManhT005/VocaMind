@@ -1,0 +1,26 @@
+getprop ro.build.version.sdk
+28
+
+getprop ro.product.model
+G82U8
+
+getprop ro.build.fingerprint
+Android/graceltexx/gracelte:9/PQ3A.190705.10211540/G9700FXXU1APFO:user/release-keys
+
+getprop persist.sys.timezone
+Asia/Ho_Chi_Minh
+
+settings get global airplane_mode_on
+0
+
+settings get global wifi_on
+1
+
+wm size
+Physical size: 1080x1920
+Override size: 720x1280
+
+wm density
+Physical density: 480
+Override density: 360
+

@@ -1,0 +1,16 @@
+{
+  "stage": "flow",
+  "method": "aFullProductionFlow",
+  "serial": "127.0.0.1:5555",
+  "base_commit": "b299cab09cca18a2a5b3bc26fa0facd67f1421ab",
+  "device_apks": {
+    "com.vocamind.app.progress02validation": {
+      "path": "/data/app/com.vocamind.app.progress02validation-Wh61WDiEMDRa8uq4JvxagA==/base.apk",
+      "sha256": "cb0743c23bdb90b2ecc5f6d92cc8fcab00889a068091e7f4a5281f5db45965f8"
+    },
+    "com.vocamind.app.progress02validation.test": {
+      "path": "/data/app/com.vocamind.app.progress02validation.test-dZtADF3BYgda4S6AgPhzdQ==/base.apk",
+      "sha256": "f992ff13377e8ce3af8c114d3a9d9dc7aea21f147e43f0ab2515e50914da7533"
+    }
+  }
+}
