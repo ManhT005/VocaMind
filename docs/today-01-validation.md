@@ -24,3 +24,16 @@ Domain-level Today Planner (`PlanToday`, `TodayPlan`, `DailyQuota`). UI wiring o
 
 `PlanTodayTest`: no pack, ordering, quota limit, quota overrun, duplicates,
 not-yet-due, done state, repository failures. `./gradlew testDebugUnitTest` passes.
+
+## Today screen (UI part of TODAY-01)
+
+- `TodayPlanViewModel` (activity scoped like `PacksViewModel`) reads `PlanToday` and exposes due
+  count, new count and READY / DONE / NO_ACTIVE_PACK / ERROR.
+- Pack state still decides loading, pack-read error and the "choose a pack" CTA (`explore`), so the
+  PACK-02 contract and tests are unchanged.
+- With an active pack: READY shows "Cần ôn: X từ · Từ mới: Y từ" and Start; DONE shows a
+  message with Quiz and Explore buttons (`done_quiz`, `done_explore`); a plan failure shows retry.
+- The counts reload on resume, so they are fresh after returning from a session.
+- Removed the stale "feature under development" string.
+- Tests: `TodayRenderingTest`; `PackActivationRenderingTest` now seeds a plan ViewModel.
+  `./gradlew lintDebug testDebugUnitTest assembleDebug` passes. Device tests were not run.
