@@ -1,5 +1,7 @@
 # PROGRESS-02 validation and handoff
 
+Current review corrections are documented in [PROGRESS-02 review-fix validation](progress-02-review-fix-validation.md). The 483-test/APK/device records below remain historical evidence for their original commits; they have not been relabeled as proof of the corrections.
+
 Date: 2026-11-08, Asia/Saigon. Implementation: `5872cffbed20e9808eaaa375cbd0e81067768790`; final test/source head: `8c91fbd` on `feature/progress-02-ui-history`. Updated base: `develop b299cab09cca18a2a5b3bc26fa0facd67f1421ab` (PR #42). The original base `08a182f` was 11 commits behind; it was fast-forwarded, the strings conflict was resolved preserving upstream Flashcard/Today strings, and validation was repeated.
 
 **Technical implementation and acceptance checks are complete. Publication/assigned-reviewer acceptance remain pending.** This document does not mark the assignment or a PR approved on someone else's behalf.

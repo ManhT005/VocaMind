@@ -1,0 +1,546 @@
+{
+  "source_head": "8c52c0b69074ab2260dbb1422bfc30ad75b26a41",
+  "application_fix_commit": "90de7d908cc2f92e15d5c44f664457e8fc30f99f",
+  "totals": {
+    "tests": 487,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "suites": [
+    {
+      "suite": "com.vocamind.app.data.catalog.CatalogAssetTest",
+      "tests": 32,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "e32a41fe85a49dc88a29c7a1ebad8d335bdc4c3ac45ee71cc34207b2ee56278e"
+    },
+    {
+      "suite": "com.vocamind.app.data.catalog.ContentCreditsTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "1e16d5c05da16e9667c02e6b7554cc4891a18285a75412c61097364001d4a93b"
+    },
+    {
+      "suite": "com.vocamind.app.data.catalog.FtsSearchBenchmarkTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "9d68a5e227b27bfe4de9488b219bccb678e495b4e3ea773c747611f7a4d05178"
+    },
+    {
+      "suite": "com.vocamind.app.data.catalog.FtsSearchTest",
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "5d67643cecbc6b84432b76cebe766fbc622bb848abf1f3607a76e64ad670617e"
+    },
+    {
+      "suite": "com.vocamind.app.data.catalog.QuizPolicyCompositionTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "49952b23f56b630a3ee8b18c328516494861c6a05f42b12f7cf666391abaa636"
+    },
+    {
+      "suite": "com.vocamind.app.data.catalog.ReleaseCatalogTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "134fed8b2177ed299f8ca27dcb36034abc86dea228fe44ef04d98c5a1e6d5ac1"
+    },
+    {
+      "suite": "com.vocamind.app.data.DaoFoundationTest",
+      "tests": 32,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "9f45c7827dc48ddb48ac358444b1e282dfaba25ddf8cd217024ce444034c3697"
+    },
+    {
+      "suite": "com.vocamind.app.data.DataBoundaryTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "f69289973237f46855955c9ef499ed697dd7997eb920462afe24b0a905ce48ae"
+    },
+    {
+      "suite": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+      "tests": 62,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "f1f73bf8afd2dbf7c00b92d6eb6c4c33669ce4fee983facbb77b8c9569d420bd"
+    },
+    {
+      "suite": "com.vocamind.app.data.user.AtomicReviewTest",
+      "tests": 42,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "34d77a2fe1c9e4e5acd35f48f59fdcaf76c726878b956e0e84b20f6174fe7335"
+    },
+    {
+      "suite": "com.vocamind.app.data.user.ProgressAggregationTest",
+      "tests": 34,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "1b9c20786e066d536e6987e32abfdb1382cdc62d91f9fe98f8f32c10e852897f"
+    },
+    {
+      "suite": "com.vocamind.app.data.user.ProgressMapperTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "8ffeb40bd2c7af02f1c8779fd634f379d908bd1291f830df842297f36393d32c"
+    },
+    {
+      "suite": "com.vocamind.app.data.user.UserDatabaseTest",
+      "tests": 22,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "056c039fbb8e842e788ba54f32019ffa008946f6c6f525d7855d449fb4a3e345"
+    },
+    {
+      "suite": "com.vocamind.app.domain.catalog.SearchVocabularyUseCaseTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "65d2932335725655d76a4718bf324e6383a7f0bfaea588584988dba9f6a59f83"
+    },
+    {
+      "suite": "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "0bac6f7d6664d4090736698820f2e00e81e63ff7c1335d8d07ee49c40f76e46b"
+    },
+    {
+      "suite": "com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "05ea721acb263a7ad4b1dfe729a32fd9e241115193d546958ae08e073c4e2f3a"
+    },
+    {
+      "suite": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "7c0f55055465dd1a05fe4cb544026a5c59535319a6d7e24b3fd2e6a81e87312e"
+    },
+    {
+      "suite": "com.vocamind.app.domain.learning.LeitnerSchedulerTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "ebde902f4ff37613e0462dd7600853b3e6fe0fef5d797148194e12f9087add2c"
+    },
+    {
+      "suite": "com.vocamind.app.domain.learning.PlanTodayTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "eb37385ca611e4cde630ad31427b5bf8d2895bc8d63fcc70bac16531d54fef14"
+    },
+    {
+      "suite": "com.vocamind.app.domain.learning.RecordReviewUseCaseTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "6119ba350638cba20f18c0db530eb5dc6f6205641784f8676aa94c0b5b7c2a3a"
+    },
+    {
+      "suite": "com.vocamind.app.domain.learning.SessionQueueTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "ab3cd9f54adf7ab049ff54c03099a31936d05ae901966aa4c5299d60a8328d65"
+    },
+    {
+      "suite": "com.vocamind.app.domain.progress.ProgressDomainTest",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "3fedf9cc15d732dcc78bea28b359e333b4a3b2cdfd577bf45e04cc77ebd23cd0"
+    },
+    {
+      "suite": "com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "ec9a9f14ffc6ab68328ade569e62923b5629c385d340613878f841f8cef9a5b7"
+    },
+    {
+      "suite": "com.vocamind.app.domain.quiz.AndroidNfcConformanceTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "c4efe52041a1aa206751cee01c4625ebf76d35e5095e7498eb2d69f323aa8193"
+    },
+    {
+      "suite": "com.vocamind.app.domain.quiz.GenerateQuizTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "605e75a368f21c0b994489ccf17a534e18282a83094843ae023306861f412a0c"
+    },
+    {
+      "suite": "com.vocamind.app.domain.quiz.NfcConformanceTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "af730042053eb92d1043f689eae21e3f2f5c9ab79b5b1bea1cb489684d5e656f"
+    },
+    {
+      "suite": "com.vocamind.app.domain.quiz.QuizDistractorPolicyTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "b808c543f0c703cf6de7fd975c1a20ca74d5473c6d55a91c71d67d2e6ace308b"
+    },
+    {
+      "suite": "com.vocamind.app.domain.quiz.QuizDomainTest",
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "0817d398564914e6f707209ad8c9da3690f2142617da09328ffdaa8e694d5829"
+    },
+    {
+      "suite": "com.vocamind.app.domain.quiz.QuizGenerationTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "2b5d72ef3535e8168e8e4a86da59ceb541718de572efcbfca1b6ae0302a522db"
+    },
+    {
+      "suite": "com.vocamind.app.fake.FakeRepositoriesTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "d1fb599a16399846a3dd1a1f55a01d875794766311554895e1b5ae0e772ad7d9"
+    },
+    {
+      "suite": "com.vocamind.app.feature.attribution.AttributionRenderingTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "178f08b26d3eec5fb997d0007bbcf30b1bf77d94329eb2af6cacaa071ea46799"
+    },
+    {
+      "suite": "com.vocamind.app.feature.attribution.AttributionScreenTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "38113d5f217bf9820abf2a19267a883ce60c4327b308efc9bcc566c3e6909bec"
+    },
+    {
+      "suite": "com.vocamind.app.feature.attribution.AttributionViewModelTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "a752ba07918b2cf8586e231ec0fab631eba90ae26271da58dec8625bfa69709d"
+    },
+    {
+      "suite": "com.vocamind.app.feature.attribution.ExternalLinksTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "50f3deeb7174470a4ae15b5d07f6ad9a43cbe1d8a7a0e341129ea3579d71c028"
+    },
+    {
+      "suite": "com.vocamind.app.feature.attribution.GetContentSourcesTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "e3540937221dec278d0be864d8241799665e516cdf307b69f64061a6784c0344"
+    },
+    {
+      "suite": "com.vocamind.app.feature.flashcard.FlashcardLayoutTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "a5e6497f1d2e6fcbb875528cfeabef3a0ad63e4c1aa2176f8676a47b660ca664"
+    },
+    {
+      "suite": "com.vocamind.app.feature.flashcard.FlashcardViewModelTest",
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "e709827b4cf11998e12232a9b5fa5bda6f45d6858184ee8d936063a8f7af5099"
+    },
+    {
+      "suite": "com.vocamind.app.feature.packs.PackActivationRenderingTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "0bedf8dbd6c72159e3829d0faa570ba58acf22748edb85fe22f92e0425beed72"
+    },
+    {
+      "suite": "com.vocamind.app.feature.packs.PackActivationTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "7377e95d507d4ea1b2346bf3d2609fa166a808b3f0401c11771bbf23516acae6"
+    },
+    {
+      "suite": "com.vocamind.app.feature.packs.PacksViewModelTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "245af834f5150a21398049d97b62443ba5f19e159c17f1e9c9ea70d4a1c1daab"
+    },
+    {
+      "suite": "com.vocamind.app.feature.packs.PackVocabularyIntegrationTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "a78b6648065e4bb5d235e0162576fd4d914667d6b720ad6239bf426622466397"
+    },
+    {
+      "suite": "com.vocamind.app.feature.packs.VocabularyListTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "36fff31a4c7c971d9e702f203af24a5c3782634b71d1a64a09182b0a8b5058e7"
+    },
+    {
+      "suite": "com.vocamind.app.feature.progress.ProgressRenderingTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "8fa651105713c85d6e81228fa6877af9625c7479adc899d2751b7fd8be8d547a"
+    },
+    {
+      "suite": "com.vocamind.app.feature.progress.ProgressScreenTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "b27b23a7afe992e076b5df65baf050127c3a91b5eef6b0d53d3b027efee4f424"
+    },
+    {
+      "suite": "com.vocamind.app.feature.progress.ProgressViewModelTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "ad2dd08bd4569faaec87738c5639a44868f50b3c46c0a2747b8d1daaa304e5c9"
+    },
+    {
+      "suite": "com.vocamind.app.feature.progress.ProgressViewStateTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "b6ef3be588caf67ce058364d6b3a19b72c510a1d2dffeb54a2b7eaf10f8d594e"
+    },
+    {
+      "suite": "com.vocamind.app.feature.quiz.QuizScreenTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "9e2bc9f60bdb9d7bb70d243fc898ea22ddb60ea196893c42c6d6e9fd08e8f547"
+    },
+    {
+      "suite": "com.vocamind.app.feature.quiz.QuizViewModelTest",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "ba23f7b388865356a3446782c2c2ec1bd0fe75fee0adc384464c7bf69fb08e5a"
+    },
+    {
+      "suite": "com.vocamind.app.feature.vocabulary.VocabularyDetailTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "6dbf3fd25b754115bd0a80cd1a110261dbed42e363a05199a48ac71a745421b1"
+    }
+  ],
+  "python_tests": 8,
+  "ldplayer_passes": 3,
+  "ldplayer_runs": [
+    {
+      "stage": "flow",
+      "method": "aFullProductionFlow",
+      "serial": "127.0.0.1:5555",
+      "base_commit": "8c52c0b69074ab2260dbb1422bfc30ad75b26a41",
+      "device_apks": {
+        "com.vocamind.app.progress02validation": {
+          "path": "/data/app/com.vocamind.app.progress02validation-BrO3fGkFTfXT8rU9CpxzNw==/base.apk",
+          "sha256": "7dba5d95aa3b99655d32535d49aab06fd6d80c66e6ddb6050d47dbd6216f38ef"
+        },
+        "com.vocamind.app.progress02validation.test": {
+          "path": "/data/app/com.vocamind.app.progress02validation.test-q6G06XWxHvVMtgsusDX7RQ==/base.apk",
+          "sha256": "735dd7661517e00faff7c99a21977b6dfcd9a368affbf5a0f3a568d09e9dea22"
+        }
+      },
+      "original_configuration": {
+        "serial": "127.0.0.1:5555",
+        "values": {
+          "global/airplane_mode_on": "0",
+          "global/wifi_on": "1",
+          "system/font_scale": "1.0",
+          "secure/ui_night_mode": "null",
+          "size": "reset",
+          "density": "reset",
+          "night_service": "no"
+        }
+      }
+    },
+    {
+      "stage": "rotation",
+      "method": "dActualLandscapeRotation",
+      "serial": "127.0.0.1:5555",
+      "base_commit": "8c52c0b69074ab2260dbb1422bfc30ad75b26a41",
+      "device_apks": {
+        "com.vocamind.app.progress02validation": {
+          "path": "/data/app/com.vocamind.app.progress02validation-BrO3fGkFTfXT8rU9CpxzNw==/base.apk",
+          "sha256": "7dba5d95aa3b99655d32535d49aab06fd6d80c66e6ddb6050d47dbd6216f38ef"
+        },
+        "com.vocamind.app.progress02validation.test": {
+          "path": "/data/app/com.vocamind.app.progress02validation.test-q6G06XWxHvVMtgsusDX7RQ==/base.apk",
+          "sha256": "735dd7661517e00faff7c99a21977b6dfcd9a368affbf5a0f3a568d09e9dea22"
+        }
+      },
+      "original_configuration": {
+        "serial": "127.0.0.1:5555",
+        "values": {
+          "global/airplane_mode_on": "0",
+          "global/wifi_on": "1",
+          "system/font_scale": "1.0",
+          "secure/ui_night_mode": "null",
+          "size": "reset",
+          "density": "reset",
+          "night_service": "no"
+        }
+      }
+    },
+    {
+      "stage": "appearance",
+      "method": "cSmallDarkLargeFont",
+      "serial": "127.0.0.1:5555",
+      "base_commit": "8c52c0b69074ab2260dbb1422bfc30ad75b26a41",
+      "device_apks": {
+        "com.vocamind.app.progress02validation": {
+          "path": "/data/app/com.vocamind.app.progress02validation-BrO3fGkFTfXT8rU9CpxzNw==/base.apk",
+          "sha256": "7dba5d95aa3b99655d32535d49aab06fd6d80c66e6ddb6050d47dbd6216f38ef"
+        },
+        "com.vocamind.app.progress02validation.test": {
+          "path": "/data/app/com.vocamind.app.progress02validation.test-q6G06XWxHvVMtgsusDX7RQ==/base.apk",
+          "sha256": "735dd7661517e00faff7c99a21977b6dfcd9a368affbf5a0f3a568d09e9dea22"
+        }
+      },
+      "original_configuration": {
+        "serial": "127.0.0.1:5555",
+        "values": {
+          "global/airplane_mode_on": "0",
+          "global/wifi_on": "1",
+          "system/font_scale": "1.0",
+          "secure/ui_night_mode": "null",
+          "size": "reset",
+          "density": "reset",
+          "night_service": "no"
+        }
+      }
+    }
+  ],
+  "source_sha256": {
+    "app/src/main/java/com/vocamind/app/feature/progress/ProgressFragment.java": "4124564f3070c9d77aefd7328babce9f67fe3ff6098cb3a35bd9204828cb6a24",
+    "app/src/main/java/com/vocamind/app/feature/progress/QuizHistoryAdapter.java": "7a0f0906c64012916e27ac9e19bcdf7b53339aecb7aafcab35f1017793c84d21",
+    "app/src/test/java/com/vocamind/app/feature/progress/ProgressRenderingTest.java": "be2f306575bed26b4521b44d5c1545b11e8c3b27860555937e9edc728bcd622c",
+    "app/src/test/java/com/vocamind/app/feature/progress/ProgressScreenTest.java": "537bd055c617ef17f998d0e0a86d23b54223cb1cb9e64f25ec37009544918158",
+    "tools/validation/progress02_ldplayer.py": "9d27901922bdaef6535fc539ec7d7a51e57beaf59d6a144163aef0418049ab8e",
+    "tools/validation/test_progress02_ldplayer.py": "63f7866f57338b78b55c243aedddafb69c92e9b9350e9e550f70959158646ccd"
+  },
+  "artifact_sha256": {
+    ".tools/progress02-review-fix-apks/app.apk": "7dba5d95aa3b99655d32535d49aab06fd6d80c66e6ddb6050d47dbd6216f38ef",
+    ".tools/progress02-review-fix-apks/test.apk": "735dd7661517e00faff7c99a21977b6dfcd9a368affbf5a0f3a568d09e9dea22",
+    "app/build/outputs/apk/debug/app-debug.apk": "2ca960e211cf848e08e563b1baff91bf8805970441f2089b8ffa73052ef41d3d",
+    "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": "ca264fd525efac0fa4835ef5906a97840c8553d9acbae46d80d22244f7a99e8e"
+  },
+  "evidence_sha256": {
+    "docs/evidence/progress-02/review-fix/host/final-build.log": "b1471d01e2f318bd4096610de7899310d2fd659ff0ac058a2b7c092a0763f8d5",
+    "docs/evidence/progress-02/review-fix/host/junit-reports.zip": "3dae239fbb00ed3ad2204ab3afbb22e34c119f5c4bb2bd349f746a9aca253171",
+    "docs/evidence/progress-02/review-fix/host/lint-results-debug.xml": "52f6f1b37e49de71362cfa52dc29ae7bd4c0b775cf8decab918697ccb534ed94",
+    "docs/evidence/progress-02/review-fix/host/python-tests.log": "5cb21059b97adc88e003d173be5162ffa180b3e8db9860894c2ddecee2fb9758",
+    "docs/evidence/progress-02/review-fix/host/qa-build.log": "ac53649ad1bc48de5d619cf72717e7362f2fbd64b8a0197410944fe8c85c5213",
+    "docs/evidence/progress-02/review-fix/host/regression.log": "33bfe8b31df1f6127f7f6b1686e1faae392fcf8fed84addd58e879a8c4269f01",
+    "docs/evidence/progress-02/review-fix/host/targeted.log": "52239aaaf6a0a471d48b34342a49070758ba0a461051c11dde6a674143fe31c7",
+    "docs/evidence/progress-02/review-fix/ldplayer/appearance-restored.json": "47a03b76ddeab28d9ea409f71496e3df1524839d177a5ec21f8ee12b629e971e",
+    "docs/evidence/progress-02/review-fix/ldplayer/appearance-run.json": "cca028efe779aa1b6b52e45e9fd254507f8af94cbae0b7b9ce721de5a5f93e48",
+    "docs/evidence/progress-02/review-fix/ldplayer/appearance.log": "b4513bdcf3811a5c067f57aba24a56138ecce64efab698a97a2b2ef139f8e9e2",
+    "docs/evidence/progress-02/review-fix/ldplayer/device.txt": "6db35a8901ea8f9621806fc0112f0e67321a69b18d11775de21078da2e911011",
+    "docs/evidence/progress-02/review-fix/ldplayer/flow-restored.json": "47a03b76ddeab28d9ea409f71496e3df1524839d177a5ec21f8ee12b629e971e",
+    "docs/evidence/progress-02/review-fix/ldplayer/flow-run.json": "c4f93d9ccc1e66a0a2ef8f6f7f18518ef606af7c386411c614b01f1b745b122e",
+    "docs/evidence/progress-02/review-fix/ldplayer/flow.log": "daabe574c472fc065c259abedd105bc61103e25e037c02ef055cec679b1146da",
+    "docs/evidence/progress-02/review-fix/ldplayer/progress02-01-empty.png": "05e683e8320d2cfb4fb3473d1c3b25081c08bd854e73f78046236c672b7df09d",
+    "docs/evidence/progress-02/review-fix/ldplayer/progress02-02-history-only.png": "05e683e8320d2cfb4fb3473d1c3b25081c08bd854e73f78046236c672b7df09d",
+    "docs/evidence/progress-02/review-fix/ldplayer/progress02-03-progress-only.png": "c77ae00430476c67551a33142acbb25bbfeb05c823a357c219dcd911960c4ae3",
+    "docs/evidence/progress-02/review-fix/ldplayer/progress02-04-fixture-top.png": "c77ae00430476c67551a33142acbb25bbfeb05c823a357c219dcd911960c4ae3",
+    "docs/evidence/progress-02/review-fix/ldplayer/progress02-05-history-last.png": "eb0e27c4f3ed4d373816c0201e5103bf8ac92b8f52e6e3862aa2ccc94ba78e68",
+    "docs/evidence/progress-02/review-fix/ldplayer/progress02-06-error.png": "1c5270672885fcec4f8389aff514d2136c86b29947cad68c73df9357db35d55c",
+    "docs/evidence/progress-02/review-fix/ldplayer/progress02-06a-flashcard-saved.png": "245199702efedff42e1e053f14fe3916ac39606790f15a06ae2193de45e35e4a",
+    "docs/evidence/progress-02/review-fix/ldplayer/progress02-07-quiz-result.png": "2ffd88bba842ea3c8fa091e2ad9af8179adf0bfdee7d6e49b09995651e0cff78",
+    "docs/evidence/progress-02/review-fix/ldplayer/progress02-08-completed-only.png": "55d5ace96c993ae9ae9c912630a00470d72c801b97aa235caec1e4b5deed6333",
+    "docs/evidence/progress-02/review-fix/ldplayer/progress02-09-persisted-history.png": "452c32e7c10446a2bf357ee018b1b02a97b49241749a688cab7ca12f422563d9",
+    "docs/evidence/progress-02/review-fix/ldplayer/progress02-10-dark-large-top.png": "c17fb1e4dbefc39c13713828252598aac3242f1411825d9e73abd0da68375959",
+    "docs/evidence/progress-02/review-fix/ldplayer/progress02-11-dark-large-boxes.png": "7a76a779e90d97b8ad912c3f3b833b8bbba219aea148ea8ac9afa314cf9abe2a",
+    "docs/evidence/progress-02/review-fix/ldplayer/progress02-12-dark-large-history.png": "807b0aebc7c74dd0c56e39df3b34c776548f2a63fcde122d8cb1b35a84f604c8",
+    "docs/evidence/progress-02/review-fix/ldplayer/progress02-13-landscape-history.png": "fd06731f6b9e7ee965afd46b5dbd8ac570e7ef0c12001fcc9a8b68c14dc2508a",
+    "docs/evidence/progress-02/review-fix/ldplayer/progress02-expected.txt": "b073371fdf1e7b87e3a114f9f4049689becf78eedf9592805dbb17c7d8ccd740",
+    "docs/evidence/progress-02/review-fix/ldplayer/progress02-offline.txt": "933dbeec31c0d4a4b0585c01a29107a89b13683ddfc8f6fe8e36c33c74f7d9cc",
+    "docs/evidence/progress-02/review-fix/ldplayer/rotation-restored.json": "47a03b76ddeab28d9ea409f71496e3df1524839d177a5ec21f8ee12b629e971e",
+    "docs/evidence/progress-02/review-fix/ldplayer/rotation-run.json": "a7924aefe546f2ee908e674852625cc0793b29b3223a3e7df0fde14bb3187725",
+    "docs/evidence/progress-02/review-fix/ldplayer/rotation.log": "b864ae7a6908289d0bc6153142c5a4cffa0d633405baebf4037f7ac04f5795a1"
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 14
+  },
+  "scope": "Corrected Java sources validated in full JVM run; later commit adds only Python readback verification/tests. Actual LD APKs bound per run; historical acceptance was not overwritten."
+}
