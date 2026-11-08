@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel;
 import com.vocamind.app.domain.common.RepoResult;
 import com.vocamind.app.domain.learning.Rating;
 import com.vocamind.app.domain.learning.ScheduleResult;
+import com.vocamind.app.domain.learning.SessionQueue;
 import com.vocamind.app.domain.learning.StudyItem;
 import com.vocamind.app.domain.learning.TodayPlan;
 import java.util.Collections;
@@ -70,8 +71,7 @@ public final class FlashcardViewModel extends ViewModel {
     private ScheduleResult lastResult;
     private boolean saving;
     private boolean saveFailed;
-    private List<StudyItem> queue = Collections.emptyList();
-    private int index;
+    private SessionQueue queue = new SessionQueue(Collections.emptyList());
     private boolean flipped;
     private boolean loading;
     private boolean cleared;
@@ -117,8 +117,7 @@ public final class FlashcardViewModel extends ViewModel {
                 loading = false;
                 if (cleared) return;
                 if (terminal != null) { state.setValue(terminal); return; }
-                queue = loaded;
-                index = 0;
+                queue = new SessionQueue(loaded);
                 flipped = false;
                 saving = false;
                 saveFailed = false;
@@ -141,7 +140,7 @@ public final class FlashcardViewModel extends ViewModel {
      */
     public void rate(Rating rating) {
         if (rating == null || !isShowingCard() || !flipped || saving) return;
-        StudyItem item = queue.get(index);
+        StudyItem item = queue.current();
         saving = true;
         saveFailed = false;
         publish();
@@ -160,7 +159,7 @@ public final class FlashcardViewModel extends ViewModel {
                     saveFailed = true;
                 } else {
                     lastResult = committed;
-                    index++;
+                    queue.advance(rating); // FORGOT may queue the card again (relearn once)
                     flipped = false;
                 }
                 publish();
@@ -174,10 +173,10 @@ public final class FlashcardViewModel extends ViewModel {
     }
 
     private void publish() {
-        if (index >= queue.size()) {
+        if (queue.isFinished()) {
             state.setValue(new State(Status.FINISHED, null, false, 0, queue.size(), false, false, lastResult));
         } else {
-            state.setValue(new State(Status.READY, queue.get(index), flipped, index + 1, queue.size(),
+            state.setValue(new State(Status.READY, queue.current(), flipped, queue.position(), queue.size(),
                     saving, saveFailed, lastResult));
         }
     }

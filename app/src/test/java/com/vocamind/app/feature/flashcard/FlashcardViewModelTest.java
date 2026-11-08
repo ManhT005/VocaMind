@@ -177,21 +177,72 @@ public class FlashcardViewModelTest {
         assertEquals(1, state(model).position);
     }
 
+    @Test public void forgotRelearnsOnceAfterTwoOtherCardsThenFinishes() {
+        activePack();
+        study.fresh.add(word(A));
+        study.fresh.add(word(B));
+        study.fresh.add(word("cccccccccccccccc"));
+        FlashcardViewModel model = model();
+        model.flip();
+        model.rate(Rating.FORGOT); // A forgotten: queue becomes B, C, A
+        settle();
+        assertEquals(4, state(model).total);
+        String[] expected = {B, "cccccccccccccccc", A};
+        for (String id : expected) {
+            assertEquals(id, state(model).card.getVocabulary().stableId);
+            model.flip();
+            model.rate(Rating.REMEMBERED);
+            settle();
+        }
+        assertEquals(FlashcardViewModel.Status.FINISHED, state(model).status);
+        assertEquals(4, reviews.calls.size()); // A twice, B, C
+        assertEquals(1, reviews.calls.get(3).box); // relearn remembered: due tomorrow, not lost
+    }
+
+    @Test public void repeatedForgotDoesNotLoopTheSession() {
+        activePack();
+        study.fresh.add(word(A));
+        FlashcardViewModel model = model();
+        int shown = 0;
+        while (state(model).status == FlashcardViewModel.Status.READY) {
+            assertTrue("loop guard", ++shown < 10);
+            model.flip();
+            model.rate(Rating.FORGOT);
+            settle();
+        }
+        assertEquals(2, shown);
+        assertEquals(FlashcardViewModel.Status.FINISHED, state(model).status);
+    }
+
+    @Test public void failedSaveDoesNotQueueRelearn() {
+        twoNewWords();
+        FlashcardViewModel model = model();
+        model.flip();
+        reviews.failure = RepoError.WRITE_FAILED;
+        model.rate(Rating.FORGOT);
+        settle();
+        assertEquals(2, state(model).total);
+        assertEquals(A, state(model).card.getVocabulary().stableId);
+    }
+
     @Test public void fourthForgotMarksLeechAndHintExposesIt() {
         activePack();
         study.fresh.add(word(A));
         FlashcardViewModel model = model();
-        for (int round = 1; round <= 4; round++) {
-            model.flip();
-            model.rate(Rating.FORGOT);
-            settle();
-            FlashcardViewModel.State done = state(model);
-            assertEquals(FlashcardViewModel.Status.FINISHED, done.status);
-            assertEquals(round == 4, done.lastResult.becameLeech());
-            assertEquals(round, reviews.calls.get(round - 1).consecutiveMistakes);
-            if (round < 4) { model.retry(); settle(); } // replan: the fake still offers A
+        // Each session: FORGOT, then FORGOT again on the relearn copy (which ends the session).
+        for (int session = 0; session < 2; session++) {
+            for (int card = 0; card < 2; card++) {
+                model.flip();
+                model.rate(Rating.FORGOT);
+                settle();
+            }
+            assertEquals(FlashcardViewModel.Status.FINISHED, state(model).status);
+            if (session == 0) { model.retry(); settle(); } // replan: the fake still offers A
         }
+        assertEquals(4, reviews.calls.size());
+        assertEquals(4, reviews.calls.get(3).consecutiveMistakes);
         assertTrue(reviews.calls.get(3).isLeech);
+        assertTrue(state(model).lastResult.becameLeech());
     }
 
     @Test public void lastRatingFinishesSessionAndKeepsResult() {
