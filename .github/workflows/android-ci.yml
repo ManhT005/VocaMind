@@ -57,16 +57,17 @@ jobs:
           disable-animations: true
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
           script: bash tools/catalog/validate_quiz03_device.sh
-      - name: Upload Quiz device evidence
+      - name: Upload Quiz device verification summaries
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: quiz-device-${{ github.sha }}
+          # The isolated app/test APKs and screenshots can contain internal catalog content.
           path: |
-            app/build/quiz03-device-evidence/
-            app/build/outputs/androidTest-results/
-            app/build/reports/androidTests/
-            app/build/outputs/apk/
+            app/build/quiz03-device-evidence/tested-checkout.txt
+            app/build/quiz03-device-evidence/exit-status.txt
+            app/build/quiz03-device-evidence/offline-check.txt
+            app/build/quiz03-device-evidence/apk-sha256.txt
             app/build/quiz03-device-assets/database/quiz03-fixture-metadata.json
           if-no-files-found: warn
           retention-days: 14

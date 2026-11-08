@@ -1,0 +1,17 @@
+cd83f1ce874a899029a85879c3c40c97343683d6
+
+$ git merge-tree --write-tree origin/develop origin/feature/vocab-02-vocabulary-detail
+02dc61714e01640ec5bb63f7e44b86a9ba99c725
+
+$ git merge-tree --write-tree origin/develop origin/feature/data-08-catalog-upgrade-rollback
+71e81e7f62dea13191ad5b15e23d604e4027164b
+
+$ git grep -nE \^\[\[:space:\]\]\*import\ \(android\\.\|androidx\\.\|com\\.vocamind\\.app\\.\(data\|feature\|core\)\\.\) -- domain
+[exit 1]
+
+$ git grep -nE \^\[\[:space:\]\]\*import\ \(androidx\\.\(room\|sqlite\)\|android\\.database\|com\\.vocamind\\.app\\.data\\.\)\|rawQuery\\\(\|databaseBuilder\\\( -- feature
+[exit 1]
+
+$ python docs/licensing/voc-data-06/validate_rights.py --verify-app-release
+RIGHTS_AUDIT_BLOCKED: APP_RELEASE_BLOCKED: distribution decision, device QA, DATA-08 and DATA-09 pending
+[exit 1]
