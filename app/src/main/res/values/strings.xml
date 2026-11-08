@@ -87,4 +87,15 @@
     <string name="detail_english_label">Tiếng Anh</string>
     <string name="detail_vietnamese_label">Tiếng Việt</string>
     <string name="detail_missing">Chưa có dữ liệu</string>
+    <string name="flashcard_title">Thẻ ghi nhớ</string>
+    <string name="flashcard_progress">%1$d/%2$d</string>
+    <string name="flashcard_tap_hint">Chạm vào thẻ để xem nghĩa</string>
+    <string name="flashcard_flip_action">Lật thẻ để xem nghĩa</string>
+    <string name="flashcard_forgot">Quên</string>
+    <string name="flashcard_hard">Khó</string>
+    <string name="flashcard_remembered">Nhớ</string>
+    <string name="flashcard_no_pack">Chưa có gói đang học. Hãy chọn một gói để bắt đầu.</string>
+    <string name="flashcard_nothing">Hôm nay không còn từ nào cần học.</string>
+    <string name="flashcard_finished">Bạn đã hoàn thành phiên học.</string>
+    <string name="flashcard_error">Không tải được phiên học. Vui lòng thử lại.</string>
 </resources>
