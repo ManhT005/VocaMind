@@ -5,6 +5,8 @@ project entry point; generated build outputs stay in ignored build directories.
 
 | Document | Purpose |
 | --- | --- |
+| [PROGRESS-02 plan](plans/progress-02-ui-history.md) | User-provided progress UI/history scope and acceptance matrix |
+| [PROGRESS-02 validation](progress-02-validation.md) | Implementation, executed tests and remaining device acceptance gates |
 | [VOC-DATA-05 validation](voc-data-05-validation.md) | Optional CEFR and topic metadata, evidence gates, and coverage |
 | [ARC-04 integration review](arc-04-validation.md) | Week 2 architecture audit, CI evidence, findings and handoff |
 | [VOC-DATA-06 QA validation](voc-data-06-qa-validation.md) | Versioned QA catalog in the main QA APK, asset verification, and acceptance gates |
