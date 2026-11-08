@@ -51,7 +51,6 @@
     <string name="pack_activation_error">Không thể xác nhận trạng thái đã lưu. Thử lại để đọc trạng thái trước khi thao tác tiếp.</string>
     <string name="today_choose_pack">Chọn gói học</string>
     <string name="today_explore">Khám phá</string>
-    <string name="today_active_boundary">Đã có gói đang học. Tính năng phiên học Hôm nay đang được phát triển.</string>
     <string name="word_ipa_missing">Chưa có phiên âm</string>
     <string name="word_unreviewed">Chưa có lượt ôn</string>
     <string name="word_relearn">Học lại</string>
@@ -103,4 +102,8 @@
     <string name="flashcard_result">Hộp %1$d · ôn lại từ %2$s</string>
     <string name="flashcard_leech">Bạn đã quên từ này nhiều lần nên nó được đánh dấu là từ khó.</string>
     <string name="today_start">Bắt đầu học</string>
+    <string name="today_preparing">Đang chuẩn bị phiên học…</string>
+    <string name="today_summary">Cần ôn: %1$d từ · Từ mới: %2$d từ</string>
+    <string name="today_done">Hôm nay bạn đã học xong. Hãy làm Quiz hoặc khám phá thêm gói.</string>
+    <string name="today_done_quiz">Làm Quiz</string>
 </resources>
