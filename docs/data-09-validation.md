@@ -192,3 +192,32 @@ performance acceptance trên thiết bị.
 - Đã kiểm chuyển fixture → QA khi xóa thư mục generated, xác minh checksum và
   corpus ngay trên artifact sau build. `initial-qa-asset-mismatch.json` giữ lần
   phát hiện sai asset trước khi sửa dependency producer của Gradle.
+
+
+## Rà soát sau triển khai
+
+Đã tái hiện ba lỗi bằng regression test thất bại trước sửa:
+
+- Startup samples thiếu/không hợp lệ có thể được coi là PASS vì missing timing
+  mặc định thành 0. Chỉ chấp nhận thời gian nguyên không âm, loại bool/NaN và
+  giữ PENDING khi thiếu dữ liệu.
+- System Displayed duration dạng `+1s` bị từ chối do parser bắt buộc phần `ms`.
+  Parser nhận đầy đủ đơn vị h/m/s/ms và vẫn reject duration sai định dạng.
+- Summary tin cờ PASS mà chưa kiểm evidence. Nay PASS phải có inventory trước/sau
+  offline và fingerprint khớp, APK hash, qualification của reviewer; startup
+  phải có first-data + ít nhất 10 cold reopens, log launch/display có SHA-256
+  và số đo trùng log. FTS phải có raw JSON đúng checksum/protocol/dataset,
+  fingerprint và ngưỡng 50ms. QA size report không được tự nhận PASS release.
+
+Bổ sung giữ partial stdout/stderr khi timeout/nonzero command, kể cả trường hợp
+Python trả bytes dù `text=True`. Thiết bị không hỗ trợ thermalservice vẫn lưu
+thông báo dịch vụ thay vì hủy phép đo; pin/nhiệt độ khả dụng vẫn nằm trong inventory.
+
+Kết quả review: 33 Python tests đạt (25 DATA-09 + 8 validation hiện có),
+`testDebugUnitTest`, build app/test APK và lint đạt; Java tasks UP-TO-DATE với
+501 test reports đã xác minh vì không sửa Android production code. Không có
+số đo thiết bị tham chiếu mới; các gate acceptance vẫn PENDING.
+
+Evidence: [evidence/data-09/review](evidence/data-09/review), gồm log regression
+trước sửa, kết quả kiểm tra và SHA-256 source sau sửa. Evidence host-validation
+ban đầu được giữ nguyên để phân biệt hai lần xác minh.

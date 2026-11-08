@@ -123,7 +123,7 @@ class Data09Test(unittest.TestCase):
                 self.assertEqual(1, perf.main())
             self.assertFalse(json.loads(path.read_text())["allPassed"])
 
-    def collect_with_fake(self, directory, command="startup", failed_start=None, fts_failure=False, fresh=False, existing=False):
+    def collect_with_fake(self, directory, command="startup", failed_start=None, fts_failure=False, fresh=False, existing=False, timeout=False):
         raw = self.fts_report()
         raw.update(fingerprint="device", latencyAssertionsEnabled=True)
         if fts_failure: raw["cases"][0]["samplesNs"][0] = 50_000_000
@@ -144,7 +144,10 @@ class Data09Test(unittest.TestCase):
                 if args[0] == "log": self.marker = args[-1]
                 if args[:2] == ("am", "start"):
                     self.starts += 1
-                    if self.starts == failed_start: raise RuntimeError("device timeout")
+                    if self.starts == failed_start:
+                        if timeout:
+                            raise perf.subprocess.TimeoutExpired("am start", 60, output=b"partial launch", stderr=b"timeout diagnostic")
+                        raise RuntimeError("device timeout")
                     return "Status: ok\nTotalTime: 1000\n"
                 if args[0] == "logcat": return self.marker + "\nDisplayed " + perf.COMPONENT + ": +1s0ms"
                 if args[:2] == ("am", "instrument"):
@@ -219,6 +222,85 @@ class Data09Test(unittest.TestCase):
                 perf.main()
             self.assertEqual(2, error.exception.code)
             self.assertFalse((root/"summary.json").exists())
+
+    def test_startup_missing_or_invalid_timing_cannot_pass(self):
+        for missing in ({}, {"launchToInitialDisplayMs": True},
+                        {"launchToInitialDisplayMs": -1}, {"launchToInitialDisplayMs": float("nan")}):
+            self.assertEqual("PENDING", perf.observed_gate([missing] * 10, 10))
+
+    def test_startup_accepts_android_duration_without_millisecond_component(self):
+        output = "Status: ok\nLaunchState: COLD\nTotalTime: 1000\n"
+        self.assertEqual(1000, perf.startup_sample(output,
+            "Displayed " + perf.COMPONENT + ": +1s")["displayedActivityMs"])
+
+    def test_summary_rejects_pass_flag_without_supporting_evidence(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); report = root/"startup.json"
+            report.write_text(json.dumps(dict(metric="startup", srsGate="PASS")))
+            with patch("sys.argv", ["runner", "summary", "--startup", str(report),
+                                    "--output", str(root/"summary.json")]), self.assertRaises(SystemExit) as error:
+                perf.main()
+            self.assertEqual(2, error.exception.code)
+            self.assertFalse((root/"summary.json").exists())
+
+    def valid_summary_report(self, metric):
+        artifact = "a" * 64
+        inventory = dict(fingerprint="device", emulator=False, offlineVerified=True)
+        declaration = dict(kind="reference", fingerprint="device", apkSha256=artifact,
+                           reviewer="reviewer", evidenceRef="verified-inventory", metrics=[metric])
+        return dict(metric=metric, srsGate="PASS", observedGate="PASS", measurementValidated=True,
+                    apk={"sha256":artifact}, installedApk={"sha256":artifact},
+                    inventoryBefore=inventory.copy(), inventoryAfter=inventory.copy(),
+                    qualification={"verified":True,"reviewerDeclaration":declaration})
+
+    def test_summary_validates_startup_against_hashed_system_logs(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); report = self.valid_summary_report("startup")
+            report.update(dataState="fresh-install-then-cold-reopens", samples=[])
+            for i in range(1, 12):
+                launch, display = root/f"startup-{i:02}-launch.txt", root/f"startup-{i:02}-display.txt"
+                launch.write_text("Status: ok\nTotalTime: 1000\n")
+                display.write_text("Displayed " + perf.COMPONENT + ": +1s")
+                report["samples"].append(dict(index=i,firstDataLaunch=i==1,launchToInitialDisplayMs=1000,
+                    displayedActivityMs=1000,launchLogSha256=perf.sha256(launch),displayLogSha256=perf.sha256(display)))
+            perf.validate_summary_pass(report,"startup",root/"report.json")
+            report["samples"][0]["launchToInitialDisplayMs"] = 10
+            with self.assertRaisesRegex(ValueError, "contradicts"):
+                perf.validate_summary_pass(report,"startup",root/"report.json")
+            report["samples"][0]["launchToInitialDisplayMs"] = 1000
+            (root/"startup-01-launch.txt").write_text("modified")
+            with self.assertRaisesRegex(ValueError, "matching"):
+                perf.validate_summary_pass(report,"startup",root/"report.json")
+
+    def test_summary_rechecks_fts_raw_samples_instead_of_pass_flags(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); report = self.valid_summary_report("fts")
+            raw = self.fts_report()
+            raw.update(datasetSha256=perf.sha256(perf.ROOT/"app/src/catalogTest/assets/benchmark/catalog-5000.db"),
+                       fingerprint="device",latencyAssertionsEnabled=True)
+            perf.write_json(root/"fts-raw.json",raw)
+            report["rawReportSha256"] = perf.sha256(root/"fts-raw.json")
+            perf.validate_summary_pass(report,"fts",root/"report.json")
+            raw["cases"][0]["samplesNs"][0] = 50_000_000
+            perf.write_json(root/"fts-raw.json",raw)
+            report["rawReportSha256"] = perf.sha256(root/"fts-raw.json")
+            with self.assertRaisesRegex(ValueError,"contradicts"):
+                perf.validate_summary_pass(report,"fts",root/"report.json")
+
+    def test_timeout_keeps_partial_command_output_as_bytes_or_text(self):
+        with tempfile.TemporaryDirectory() as directory:
+            code, report = self.collect_with_fake(directory,failed_start=3,timeout=True)
+            self.assertEqual(1,code)
+            self.assertEqual("PENDING",report["srsGate"])
+            self.assertIn("partial launch",(Path(directory)/"run/startup-03-partial.txt").read_text())
+            self.assertIn("timeout diagnostic",(Path(directory)/"run/startup-03-partial.txt").read_text())
+
+    @patch.object(perf.subprocess,"run")
+    def test_nonzero_device_command_retains_raw_output(self, run):
+        run.return_value.returncode=1;run.return_value.stdout="partial status";run.return_value.stderr="failure"
+        with self.assertRaises(perf.DeviceCommandError) as error:
+            perf.Device("adb","device").shell("am","instrument")
+        self.assertIn("partial status",error.exception.output)
 
 
 if __name__ == "__main__":

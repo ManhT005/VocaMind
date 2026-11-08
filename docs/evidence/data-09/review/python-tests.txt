@@ -1,0 +1,64 @@
+test_adb_remote_arguments_are_shell_quoted (test_data09_performance.Data09Test.test_adb_remote_arguments_are_shell_quoted) ... ok
+test_apk_reports_compressed_db_and_keeps_release_pending (test_data09_performance.Data09Test.test_apk_reports_compressed_db_and_keeps_release_pending) ... ok
+test_cold_reopens_do_not_certify_missing_first_data_launch (test_data09_performance.Data09Test.test_cold_reopens_do_not_certify_missing_first_data_launch) ... ok
+test_collector_retains_failed_start_without_replacing_it (test_data09_performance.Data09Test.test_collector_retains_failed_start_without_replacing_it) ... ok
+test_distribution_retains_outliers_and_rejects_nonfinite (test_data09_performance.Data09Test.test_distribution_retains_outliers_and_rejects_nonfinite) ... ok
+test_first_data_launch_is_separate_from_ten_cold_reopens (test_data09_performance.Data09Test.test_first_data_launch_is_separate_from_ten_cold_reopens) ... ok
+test_fresh_mode_never_clears_an_existing_installation (test_data09_performance.Data09Test.test_fresh_mode_never_clears_an_existing_installation) ... ok
+test_fts_15ms_target_is_separate_from_mandatory_gate (test_data09_performance.Data09Test.test_fts_15ms_target_is_separate_from_mandatory_gate) ... ok
+test_fts_50ms_boundary_fails_even_when_mean_is_fast (test_data09_performance.Data09Test.test_fts_50ms_boundary_fails_even_when_mean_is_fast) ... ok
+test_fts_failure_exports_raw_data_and_stays_fail_on_qualified_device (test_data09_performance.Data09Test.test_fts_failure_exports_raw_data_and_stays_fail_on_qualified_device) ... ok
+test_fts_rejects_missing_samples_wrong_hits_hash_or_workload (test_data09_performance.Data09Test.test_fts_rejects_missing_samples_wrong_hits_hash_or_workload) ... ok
+test_fts_success_can_pass_only_when_qualified_and_complete (test_data09_performance.Data09Test.test_fts_success_can_pass_only_when_qualified_and_complete) ... ok
+test_nonzero_device_command_retains_raw_output (test_data09_performance.Data09Test.test_nonzero_device_command_retains_raw_output) ... ok
+test_qualification_is_bound_to_physical_device_metric_and_apk (test_data09_performance.Data09Test.test_qualification_is_bound_to_physical_device_metric_and_apk) ... ok
+test_startup_accepts_android_duration_without_millisecond_component (test_data09_performance.Data09Test.test_startup_accepts_android_duration_without_millisecond_component) ... ok
+test_startup_all_samples_and_strict_1500ms_boundary (test_data09_performance.Data09Test.test_startup_all_samples_and_strict_1500ms_boundary) ... ok
+test_startup_missing_or_invalid_timing_cannot_pass (test_data09_performance.Data09Test.test_startup_missing_or_invalid_timing_cannot_pass) ... ok
+test_startup_requires_system_first_frame_and_new_launch (test_data09_performance.Data09Test.test_startup_requires_system_first_frame_and_new_launch) ... ok
+test_summary_cannot_pass_when_evidence_is_absent (test_data09_performance.Data09Test.test_summary_cannot_pass_when_evidence_is_absent) ... ok
+test_summary_rechecks_fts_raw_samples_instead_of_pass_flags (test_data09_performance.Data09Test.test_summary_rechecks_fts_raw_samples_instead_of_pass_flags) ... ok
+test_summary_rejects_pass_flag_without_supporting_evidence (test_data09_performance.Data09Test.test_summary_rejects_pass_flag_without_supporting_evidence) ... usage: runner [-h] {startup,fts,summary} ...
+runner: error: PASS lacks complete device/artifact evidence
+ok
+test_summary_rejects_reports_for_different_apks (test_data09_performance.Data09Test.test_summary_rejects_reports_for_different_apks) ... usage: runner [-h] {startup,fts,summary} ...
+runner: error: Reports refer to different APKs; do not combine different artifacts into one acceptance summary
+ok
+test_summary_validates_startup_against_hashed_system_logs (test_data09_performance.Data09Test.test_summary_validates_startup_against_hashed_system_logs) ... ok
+test_timeout_keeps_partial_command_output_as_bytes_or_text (test_data09_performance.Data09Test.test_timeout_keeps_partial_command_output_as_bytes_or_text) ... ok
+test_wrong_package_is_rejected_before_any_install (test_data09_performance.Data09Test.test_wrong_package_is_rejected_before_any_install) ... ok
+test_failure_restores_custom_values_and_keeps_original_offline (test_progress02_ldplayer.RestorationTests.test_failure_restores_custom_values_and_keeps_original_offline) ... ok
+test_incomplete_restore_attempts_remaining_commands_and_retains_recovery (test_progress02_ldplayer.RestorationTests.test_incomplete_restore_attempts_remaining_commands_and_retains_recovery) ... ok
+test_keyboard_interrupt_restores_and_stops_background_test (test_progress02_ldplayer.RestorationTests.test_keyboard_interrupt_restores_and_stops_background_test) ... ok
+test_missing_package_does_not_change_configuration (test_progress02_ldplayer.RestorationTests.test_missing_package_does_not_change_configuration) ... ok
+test_null_settings_and_physical_defaults_are_preserved (test_progress02_ldplayer.RestorationTests.test_null_settings_and_physical_defaults_are_preserved) ... ok
+test_pending_recovery_is_never_overwritten (test_progress02_ldplayer.RestorationTests.test_pending_recovery_is_never_overwritten) ... ok
+test_silent_restore_mismatch_retains_recovery (test_progress02_ldplayer.RestorationTests.test_silent_restore_mismatch_retains_recovery) ... ok
+test_success_also_restores_configuration (test_progress02_ldplayer.RestorationTests.test_success_also_restores_configuration) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 0.081s
+
+OK
+{
+  "schemaVersion": 1,
+  "gates": {
+    "startup": {
+      "gate": "PENDING",
+      "reportSha256": null,
+      "reason": "No device/artifact measurement"
+    },
+    "fts": {
+      "gate": "PENDING",
+      "reportSha256": null,
+      "reason": "No device/artifact measurement"
+    },
+    "apk-size": {
+      "gate": "PENDING",
+      "reportSha256": null,
+      "reason": "No device/artifact measurement"
+    }
+  },
+  "releaseAuthorized": false,
+  "allPassed": false
+}

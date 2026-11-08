@@ -44,11 +44,13 @@ def startup_sample(output, display_log):
     if not total:
         raise ValueError("Missing TotalTime; host command duration is not startup latency")
     component = re.escape(PACKAGE) + r"/(?:\.MainActivity|com\.vocamind\.app\.MainActivity)"
-    displayed = re.search(r"Displayed " + component + r"(?:\s+for user \d+)?:\s*\+((?:\d+m)?(?:\d+s)?\d+ms)", display_log)
+    displayed = re.search(r"Displayed " + component + r"(?:\s+for user \d+)?:\s*\+([^\s]+)", display_log)
     if not displayed:
         raise ValueError("Missing system Displayed frame evidence for MainActivity")
-    parts = re.fullmatch(r"(?:(\d+)m)?(?:(\d+)s)?(\d+)ms", displayed[1])
-    rendered = int(parts[1] or 0) * 60000 + int(parts[2] or 0) * 1000 + int(parts[3])
+    parts = re.fullmatch(r"(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?(?:(\d+)ms)?", displayed[1])
+    if not parts or not any(x is not None for x in parts.groups()):
+        raise ValueError("Malformed system Displayed duration")
+    rendered = sum(int(x or 0) * scale for x, scale in zip(parts.groups(), (3600000, 60000, 1000, 1)))
     return {"launchToInitialDisplayMs": int(total[1]), "displayedActivityMs": rendered}
 
 
@@ -56,15 +58,19 @@ def qualification(path, inventory, metric, apk_hash):
     if path is None:
         return {"verified": False, "reason": "No reviewer-confirmed device/configuration evidence"}
     data = json.loads(Path(path).read_text(encoding="utf-8"))
-    valid = (data.get("kind") in ("reference", "approved-substitute")
+    valid = qualification_data(data, inventory, metric, apk_hash)
+    return {"verified": bool(valid), "reviewerDeclaration": data,
+            "reason": "Reviewer declaration matched inventory" if valid else "Qualification does not match device/metric"}
+
+
+def qualification_data(data, inventory, metric, apk_hash):
+    return (data.get("kind") in ("reference", "approved-substitute")
              and data.get("fingerprint") == inventory.get("fingerprint")
              and bool(inventory.get("fingerprint")) and inventory.get("emulator") is False
              and data.get("apkSha256") == apk_hash
              and isinstance(data.get("reviewer"), str) and bool(data["reviewer"].strip())
              and isinstance(data.get("evidenceRef"), str) and bool(data["evidenceRef"].strip())
              and isinstance(data.get("metrics"), list) and metric in data["metrics"])
-    return {"verified": bool(valid), "reviewerDeclaration": data,
-            "reason": "Reviewer declaration matched inventory" if valid else "Qualification does not match device/metric"}
 
 
 def fts_analysis(report, expected_hash):
@@ -89,6 +95,12 @@ def fts_analysis(report, expected_hash):
     return {"cases": results, "observedGate": "PASS" if all(x["observedGate"] == "PASS" for x in results) else "FAIL"}
 
 
+class DeviceCommandError(RuntimeError):
+    def __init__(self, output):
+        super().__init__(output)
+        self.output = output
+
+
 class Device:
     def __init__(self, adb, serial):
         self.adb, self.serial = adb, serial
@@ -98,7 +110,7 @@ class Device:
         result = subprocess.run([self.adb, "-s", self.serial, "shell", shlex.join(args)],
                                 capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=timeout)
         if result.returncode and not allow_nonzero:
-            raise RuntimeError(result.stdout + result.stderr)
+            raise DeviceCommandError(result.stdout + result.stderr)
         return result.stdout + result.stderr
 
     def inventory(self):
@@ -113,7 +125,7 @@ class Device:
         return {"serial": self.serial, "properties": props, "fingerprint": props["ro.build.fingerprint"],
                 "emulator": props["ro.kernel.qemu"] == "1", "meminfo": mem,
                 "battery": self.shell("dumpsys", "battery"),
-                "thermal": self.shell("dumpsys", "thermalservice"),
+                "thermal": self.shell("dumpsys", "thermalservice", allow_nonzero=True),
                 "airplaneMode": airplane, "wifi": wifi, "connectivity": connectivity,
                 "offlineVerified": airplane == "1" and wifi == "0" and active == ["none"]}
 
@@ -156,9 +168,71 @@ def source_manifest():
 
 
 def observed_gate(samples, expected):
-    if any(x.get("launchToInitialDisplayMs", 0) >= 1500 for x in samples):
+    valid = [x for x in samples if isinstance(x, dict) and "error" not in x
+             and type(x.get("launchToInitialDisplayMs")) is int and x["launchToInitialDisplayMs"] >= 0]
+    if any(x["launchToInitialDisplayMs"] >= 1500 for x in valid):
         return "FAIL"
-    return "PASS" if len(samples) == expected and all("error" not in x for x in samples) else "PENDING"
+    return "PASS" if len(samples) == expected and len(valid) == expected else "PENDING"
+
+
+def preserve_command_output(directory, name, error):
+    """TimeoutExpired may contain bytes even when subprocess was called with text=True."""
+    parts = []
+    for field in ("output", "stderr"):
+        value = getattr(error, field, None)
+        if value:
+            parts.append(value.decode("utf-8", errors="replace") if isinstance(value, bytes) else str(value))
+    if parts:
+        (Path(directory) / name).write_text("\n".join(parts), encoding="utf-8")
+
+
+def validate_summary_pass(report, metric, path):
+    """Never promote a claimed PASS without complete, consistent raw evidence."""
+    if report.get("srsGate") != "PASS":
+        return
+    if metric == "apk-size":
+        raise ValueError("Diagnostic QA size report cannot certify the final release APK")
+    before, after = report.get("inventoryBefore", {}), report.get("inventoryAfter", {})
+    apk_hash = report.get("apk", {}).get("sha256", "")
+    if (report.get("error") or not report.get("measurementValidated")
+            or not re.fullmatch(r"[0-9a-f]{64}", apk_hash)
+            or not before.get("offlineVerified") or not after.get("offlineVerified")
+            or not before.get("fingerprint") or before.get("fingerprint") != after.get("fingerprint")
+            or before.get("emulator") is not False
+            or report.get("installedApk", {}).get("sha256") != apk_hash):
+        raise ValueError("PASS lacks complete device/artifact evidence")
+    declared = report.get("qualification", {}).get("reviewerDeclaration", {})
+    if not qualification_data(declared, before, metric, apk_hash):
+        raise ValueError("PASS lacks matching reviewer qualification")
+    if metric == "startup":
+        samples = report.get("samples", [])
+        if (report.get("dataState") != "fresh-install-then-cold-reopens" or len(samples) < 11
+                or not samples[0].get("firstDataLaunch")
+                or any(x.get("firstDataLaunch") for x in samples[1:])
+                or observed_gate(samples, len(samples)) != "PASS"):
+            raise ValueError("Startup PASS lacks first-data and ten valid cold reopens")
+        for index, sample in enumerate(samples, 1):
+            if sample.get("index") != index or type(sample.get("firstDataLaunch")) is not bool:
+                raise ValueError("Invalid startup sample identity")
+            launch = Path(path).parent / f"startup-{index:02}-launch.txt"
+            display = Path(path).parent / f"startup-{index:02}-display.txt"
+            if (not launch.is_file() or not display.is_file()
+                    or sha256(launch) != sample.get("launchLogSha256")
+                    or sha256(display) != sample.get("displayLogSha256")):
+                raise ValueError("Startup PASS lacks matching system launch/display logs")
+            parsed = startup_sample(launch.read_text(encoding="utf-8"), display.read_text(encoding="utf-8"))
+            if any(sample.get(key) != value for key, value in parsed.items()):
+                raise ValueError("Startup PASS contradicts system timing logs")
+    else:
+        raw_path = Path(path).parent / "fts-raw.json"
+        if not raw_path.is_file() or report.get("rawReportSha256") != sha256(raw_path):
+            raise ValueError("FTS PASS lacks matching raw samples")
+        raw = json.loads(raw_path.read_text(encoding="utf-8"))
+        expected = sha256(ROOT / "app/src/catalogTest/assets/benchmark/catalog-5000.db")
+        if (fts_analysis(raw, expected)["observedGate"] != "PASS"
+                or raw.get("fingerprint") != before["fingerprint"]
+                or raw.get("latencyAssertionsEnabled") is not True):
+            raise ValueError("FTS PASS contradicts raw measurements")
 
 
 def collect(args):
@@ -215,6 +289,8 @@ def collect(args):
                         (out / f"startup-{index + 1:02}-display.txt").write_text(logs, encoding="utf-8")
                         try:
                             sample.update(startup_sample(launched, logs))
+                            sample["launchLogSha256"] = sha256(out / f"startup-{index + 1:02}-launch.txt")
+                            sample["displayLogSha256"] = sha256(out / f"startup-{index + 1:02}-display.txt")
                             break
                         except ValueError:
                             if time.monotonic() >= deadline:
@@ -222,6 +298,7 @@ def collect(args):
                             time.sleep(.2)
                 except Exception as error:
                     sample["error"] = str(error)
+                    preserve_command_output(out, f"startup-{index + 1:02}-partial.txt", error)
                 write_json(out / "report.json", report)
             values = [x["launchToInitialDisplayMs"] for x in report["samples"] if "error" not in x]
             report["distribution"] = distribution(values) if values else None
@@ -241,6 +318,7 @@ def collect(args):
                 raise ValueError("Missing or ambiguous raw FTS report")
             raw = json.loads(matches[0])
             write_json(out / "fts-raw.json", raw)
+            report["rawReportSha256"] = sha256(out / "fts-raw.json")
             fixture = ROOT / "app/src/catalogTest/assets/benchmark/catalog-5000.db"
             report.update(fts_analysis(raw, sha256(fixture)))
             if raw.get("fingerprint") != inventory["fingerprint"] or not raw.get("latencyAssertionsEnabled"):
@@ -261,6 +339,7 @@ def collect(args):
             code = 1
     except Exception as error:
         report["error"] = str(error)
+        preserve_command_output(out, "command-partial.txt", error)
         report["srsGate"] = ("FAIL" if report.get("observedGate") == "FAIL"
                              and report.get("measurementValidated")
                              and report.get("qualification", {}).get("verified") else "PENDING")
@@ -313,6 +392,11 @@ def main():
         gate = report.get("srsGate", "PENDING") if report else "PENDING"
         if gate not in ("PASS", "FAIL", "PENDING"):
             parser.error("Invalid gate: " + name)
+        if report:
+            try:
+                validate_summary_pass(report, name, path)
+            except (ValueError, KeyError, TypeError, AttributeError) as error:
+                parser.error(str(error))
         gates[name] = {"gate": gate, "reportSha256": sha256(path) if path else None,
                        "reason": report.get("reason", report.get("error")) if report else "No device/artifact measurement"}
     if len(artifacts) > 1:
