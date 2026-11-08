@@ -71,7 +71,7 @@ Espresso riêng lẻ. Tap dùng MotionEvent tại cùng vị trí nút rating, c
 `reviewCount`, box, mistakes, timestamps/dueAt, thẻ kế tiếp, và giữ cùng ViewModel,
 occurrence/mặt thẻ sau `ActivityScenario.recreate()`.
 
-## Kết quả chạy
+## Kết quả chạy ban đầu (commit 5e407f8)
 
 - JVM/Robolectric/Room: **508 tests, 51 suites; 0 failures/errors/skipped**.
 - Riêng FlashcardViewModelTest: 22; LearningFlowIntegrationTest: 7;
@@ -85,3 +85,37 @@ occurrence/mặt thẻ sau `ActivityScenario.recreate()`.
 - Log lần thử: [device-attempt.txt](evidence/flash-03/device-attempt.txt).
   Cần chạy lại lệnh `connectedDebugAndroidTest` ở trên trên thiết bị/emulator
   có đủ tài nguyên trước khi đóng phần device acceptance của FLASH-03.
+
+
+## Rà soát và sửa lỗi sau triển khai
+
+**Lỗi tái hiện:** `ScrollView` bên trong thẻ nhận sự kiện chạm trước outer card.
+Listener chỉ đặt trên `card` khiến thao tác chạm vào nội dung không lật được thẻ,
+và rating tiếp tục bị khóa ở mặt trước.
+
+**Bản sửa:** thêm ID cho content container và chuyển click của content về
+`card.performClick()`. Dùng click thông thường để ScrollView vẫn có thể hủy
+click khi nhận cử chỉ cuộn; không chặn touch event hay tự xử lý tọa độ trong
+production. Content container không thêm accessibility node trùng; các TextView
+con và hành động accessibility của outer card được giữ nguyên.
+
+Bổ sung `FlashcardFragmentTest` dùng Fragment/Fragment ViewModel thật, có worker
+và clock kiểm soát được, chạy Robolectric API 35:
+
+1. Dispatch DOWN/UP vào nội dung ScrollView: lật thẻ và mở nút rating.
+2. Giữ listener từ state cũ, chuyển thẻ và chờ đủ 600ms: listener cũ không ghi;
+   listener mới vẫn chấm được. Cả ba nút bị disable ngay khi bắt đầu lưu.
+3. `ActivityController.configurationChange()` trong lúc lưu: giữ đúng ViewModel,
+   occurrence, mặt thẻ và khóa rating; commit đúng một lần rồi chuyển thẻ.
+
+Regression (1) **FAIL khi bỏ forwarding listener** và **PASS khi có bản sửa**.
+Log tái hiện nằm tại [review/before-fix.txt](evidence/flash-03/review/before-fix.txt).
+
+Kiểm chứng sau sửa:
+
+- Toàn bộ **511 tests / 52 suites, 0 failures/errors/skipped**.
+- `assembleDebug`, `assembleDebugAndroidTest`, `lintDebug`: **PASS**.
+- Evidence và SHA-256 của các file sửa:
+  [evidence/flash-03/review](evidence/flash-03/review).
+- Đây là kết quả JVM/Robolectric và build/lint. Espresso trên thiết bị vẫn chưa
+  xác nhận PASS do giới hạn emulator ghi ở mục lần chạy ban đầu.

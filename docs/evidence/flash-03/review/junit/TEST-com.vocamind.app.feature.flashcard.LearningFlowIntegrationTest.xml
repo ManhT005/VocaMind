@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.flashcard.LearningFlowIntegrationTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-11-08T18:14:59" hostname="864f75645320" time="0.343">
+  <properties/>
+  <testcase name="dueWordsComeBeforeNewWordsOnTheNextDay" classname="com.vocamind.app.feature.flashcard.LearningFlowIntegrationTest" time="0.046"/>
+  <testcase name="ratingBeforeFlipWritesNothing" classname="com.vocamind.app.feature.flashcard.LearningFlowIntegrationTest" time="0.035"/>
+  <testcase name="pausedPackWordsAreNeverPlanned" classname="com.vocamind.app.feature.flashcard.LearningFlowIntegrationTest" time="0.051"/>
+  <testcase name="repeatedForgotAcrossDaysTurnsLeechAndRememberedClearsIt" classname="com.vocamind.app.feature.flashcard.LearningFlowIntegrationTest" time="0.067"/>
+  <testcase name="fastCommittedTripleTapDoesNotUpdateNextWordsProgress" classname="com.vocamind.app.feature.flashcard.LearningFlowIntegrationTest" time="0.045"/>
+  <testcase name="doubleTapWritesExactlyOneEventAndNextCardWorks" classname="com.vocamind.app.feature.flashcard.LearningFlowIntegrationTest" time="0.035"/>
+  <testcase name="fullSessionDueOrderRatingsRelearnOnceAndFinish" classname="com.vocamind.app.feature.flashcard.LearningFlowIntegrationTest" time="0.064"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

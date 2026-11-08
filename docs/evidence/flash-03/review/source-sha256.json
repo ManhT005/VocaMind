@@ -1,0 +1,5 @@
+{
+  "app/src/main/java/com/vocamind/app/feature/flashcard/FlashcardFragment.java": "94438391b74b9c36029b7745cdda43a706f54ab9bc0d94f540bd217c367b2032",
+  "app/src/main/res/layout/fragment_flashcard.xml": "21db6a0cfab0db4ab4e425767c2ab2edbac7557c2401701ef9fcefeae0f7e957",
+  "app/src/test/java/com/vocamind/app/feature/flashcard/FlashcardFragmentTest.java": "76f03a93dd1bd68af9ec101940d34ce7df3c9447dc5d800aab6b59ee05c2e0f4"
+}

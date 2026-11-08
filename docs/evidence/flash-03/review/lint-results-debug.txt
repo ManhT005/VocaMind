@@ -1,0 +1,133 @@
+/workspace/work/VocaMind/app/src/main/res/layout/fragment_vocabulary_detail.xml:17: Warning: Attribute accessibilityHeading is only used in API level 28 and higher (current min is 26) [UnusedAttribute]
+            android:textColor="@color/shell_text_primary" android:accessibilityHeading="true" />
+                                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/work/VocaMind/app/src/main/res/layout/fragment_vocabulary_detail.xml:31: Warning: Attribute accessibilityHeading is only used in API level 28 and higher (current min is 26) [UnusedAttribute]
+                    android:textStyle="bold" android:textColor="@color/shell_text_primary" android:accessibilityHeading="true" />
+                                                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/work/VocaMind/app/src/main/res/layout/fragment_vocabulary_detail.xml:45: Warning: Attribute accessibilityHeading is only used in API level 28 and higher (current min is 26) [UnusedAttribute]
+                            android:text="@string/detail_meaning_label" android:textAppearance="@style/TextAppearance.VocaMind.DetailLabel" android:accessibilityHeading="true" />
+                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/work/VocaMind/app/src/main/res/layout/fragment_vocabulary_detail.xml:56: Warning: Attribute accessibilityHeading is only used in API level 28 and higher (current min is 26) [UnusedAttribute]
+                            android:text="@string/detail_example_label" android:textAppearance="@style/TextAppearance.VocaMind.DetailLabel" android:accessibilityHeading="true" />
+                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedAttribute":
+   This check finds attributes set in XML files that were introduced in a
+   version newer than the oldest version targeted by your application (with
+   the minSdkVersion attribute).
+
+   This is not an error; the application will simply ignore the attribute.
+   However, if the attribute is important to the appearance or functionality
+   of your application, you should consider finding an alternative way to
+   achieve the same result with only available attributes, and then you can
+   optionally create a copy of the layout in a layout-vNN folder which will be
+   used on API NN or higher where you can take advantage of the newer
+   attribute.
+
+   Note: This check does not only apply to attributes. For example, some tags
+   can be unused too, such as the new <tag> element in layouts introduced in
+   API 21.
+
+/workspace/work/VocaMind/app/build.gradle:184: Warning: A newer version of com.google.android.material:material than 1.13.0 is available: 1.14.0 [GradleDependency]
+    implementation 'com.google.android.material:material:1.13.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+/workspace/work/VocaMind/app/src/main/res/values/strings.xml:122: Warning: Formatting %d followed by words ("câu"): This should probably be a plural rather than a string [PluralsCandidate]
+    <string name="progress_quiz_result">%1$d câu · Đúng: %2$d · Sai: %3$d · Điểm: %4$d%%</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "PluralsCandidate":
+   This lint check looks for potential errors in internationalization where
+   you have translated a message which involves a quantity and it looks like
+   other parts of the string may need grammatical changes.
+
+   For example, rather than something like this:
+     <string name="try_again">Try again in %d seconds.</string>
+   you should be using a plural:
+      <plurals name="try_again">
+           <item quantity="one">Try again in %d second</item>
+           <item quantity="other">Try again in %d seconds</item>
+       </plurals>
+   This will ensure that in other languages the right set of translations are
+   provided for the different quantity classes.
+
+   (This check depends on some heuristics, so it may not accurately determine
+   whether a string really should be a quantity. You can use tools:ignore to
+   filter out false positives.
+
+   https://developer.android.com/guide/topics/resources/string-resource.html#Plurals
+
+/workspace/work/VocaMind/app/src/main/res/layout/fragment_flashcard.xml:5: Warning: Possible overdraw: Root element paints background @color/shell_background with a theme that also paints a background (inferred theme is @style/Theme.VocaMind) [Overdraw]
+    android:background="@color/shell_background" android:orientation="vertical">
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/work/VocaMind/app/src/main/res/layout/fragment_vocabulary_detail.xml:5: Warning: Possible overdraw: Root element paints background @color/shell_background with a theme that also paints a background (inferred theme is @style/Theme.VocaMind) [Overdraw]
+    android:background="@color/shell_background" android:orientation="vertical">
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/work/VocaMind/app/src/main/res/layout/item_pack.xml:4: Warning: Possible overdraw: Root element paints background ?attr/selectableItemBackground with a theme that also paints a background (inferred theme is @style/Theme.VocaMind) [Overdraw]
+    android:layout_marginTop="@dimen/shell_section_spacing" android:background="?attr/selectableItemBackground"
+                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/work/VocaMind/app/src/main/res/layout/item_pack_word.xml:5: Warning: Possible overdraw: Root element paints background ?attr/selectableItemBackground with a theme that also paints a background (inferred theme is @style/Theme.VocaMind) [Overdraw]
+    android:orientation="vertical" android:minHeight="48dp" android:background="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "Overdraw":
+   If you set a background drawable on a root view, then you should use a
+   custom theme where the theme background is null. Otherwise, the theme
+   background will be painted first, only to have your custom background
+   completely cover it; this is called "overdraw".
+
+   NOTE: This detector relies on figuring out which layouts are associated
+   with which activities based on scanning the Java code, and it's currently
+   doing that using an inexact pattern matching algorithm. Therefore, it can
+   incorrectly conclude which activity the layout is associated with and then
+   wrongly complain that a background-theme is hidden.
+
+   If you want your custom background on multiple pages, then you should
+   consider making a custom theme with your custom background and just using
+   that theme instead of a root element background.
+
+   Of course it's possible that your custom drawable is translucent and you
+   want it to be mixed with the background. However, you will get better
+   performance if you pre-mix the background with your drawable and use that
+   resulting image or color as a custom theme background instead.
+
+/workspace/work/VocaMind/app/src/main/res/values/strings.xml:44: Warning: The resource R.string.pack_word_new appears to be unused [UnusedResources]
+    <string name="pack_word_new">Chưa học</string>
+            ~~~~~~~~~~~~~~~~~~~~
+/workspace/work/VocaMind/app/src/main/res/values/strings.xml:45: Warning: The resource R.string.pack_word_box appears to be unused [UnusedResources]
+    <string name="pack_word_box">Hộp %1$d</string>
+            ~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+/workspace/work/VocaMind/app/src/main/AndroidManifest.xml:4: Warning: Should explicitly set android:icon, there is no default [MissingApplicationIcon]
+    <application
+     ~~~~~~~~~~~
+
+   Explanation for issues of type "MissingApplicationIcon":
+   You should set an icon for the application as whole because there is no
+   default. This attribute must be set as a reference to a drawable resource
+   containing the image (for example @drawable/icon).
+
+   https://developer.android.com/studio/publish/preparing#publishing-configure
+
+0 errors, 13 warnings

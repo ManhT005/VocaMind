@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.flashcard.FlashcardFragmentTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-11-08T18:14:23" hostname="864f75645320" time="6.307">
+  <properties/>
+  <testcase name="configurationChangeWhileSavingKeepsLockAndOccurrence" classname="com.vocamind.app.feature.flashcard.FlashcardFragmentTest" time="5.763"/>
+  <testcase name="realTapInsideScrollViewFlipsCardAndEnablesRatings" classname="com.vocamind.app.feature.flashcard.FlashcardFragmentTest" time="0.405"/>
+  <testcase name="oldRenderedListenerCannotRateNextCardAfterDebounce" classname="com.vocamind.app.feature.flashcard.FlashcardFragmentTest" time="0.139"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[[Robolectric] WARN: Android SDK 36 requires Java 21 (have Java 17). Tests won't be run on SDK 36 unless explicitly requested.
+]]></system-err>
+</testsuite>

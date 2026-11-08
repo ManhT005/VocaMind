@@ -28,6 +28,9 @@ public class FlashcardFragment extends Fragment {
         binding.back.setOnClickListener(v -> NavHostFragment.findNavController(this).popBackStack());
         binding.retry.setOnClickListener(v -> model.retry());
         binding.card.setOnClickListener(v -> model.flip());
+        // The ScrollView consumes taps before they reach the outer card. Its content
+        // forwards clicks; a scroll gesture still cancels the child click normally.
+        binding.cardContent.setOnClickListener(v -> binding.card.performClick());
         model.state().observe(getViewLifecycleOwner(), state -> render(binding, model, state));
     }
 
