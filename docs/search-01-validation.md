@@ -261,3 +261,6 @@ vẫn thuộc VOCAB-02. Không thay source sản phẩm.
 Xem [báo cáo và evidence Small Phone](evidence/search-01-small-phone-local/REPORT.md).
 Sau phiên kiểm thử chỉ tạo evidence local, người dùng đã yêu cầu commit/push
 báo cáo này lên nhánh SEARCH-01; không có yêu cầu tạo PR hoặc merge.
+
+## PR47: develop integration sau publish
+Source `feed39ade6607293be2d3e97c6734e2dabd0c6e6`, develop `0afcdd6`:533 tests/54 suites PASS, build debug PASS, lint0errors/14warnings. [Evidence](evidence/search-01-pr47-merge/). Conflict docs index resolved gi? c? SEARCH-01/PROGRESS-02. Emulator kh?ng ch?y l?i sau merge n?y; tham chi?u evidence tr??c ?? theo SHA. AC-05/NFR-VM-03 HOLD; kh?ng d?ng emulator/LDPlayer ho?c host thay thi?t b? SRS n?u ch?a ???c ch?p thu?n.

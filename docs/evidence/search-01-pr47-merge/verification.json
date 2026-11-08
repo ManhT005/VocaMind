@@ -1,0 +1,11 @@
+{
+  "testedSourceCommit": "feed39ade6607293be2d3e97c6734e2dabd0c6e6",
+  "mergedDevelop": "0afcdd6609cd505ed488f0be454f35f2906b6ac2",
+  "environment": "Windows/Temurin17/Gradle8.9/SDK35, Robolectric API26/35; TEMP C:/tvm",
+  "command": "Gradle8.9 testDebugUnitTest assembleDebug lintDebug --offline",
+  "debugApkSha256": "767b2b5ccc91fba9ddd0fa5a806327b11f9a497ea023025a612714e064acd3d9",
+  "referencePerformance": "HOLD; no new reference-device run",
+  "deviceQa": "Prior source8b06d1a evidence retained; not rerun after latest PROGRESS-02 merge",
+  "CI": "Pending GitHub run; not claimed PASS",
+  "wrapperUnchangedSha256": "d2f49c3066b70477ab982a78495f20c04f46d0054e0653428d484f68664de8b5"
+}
