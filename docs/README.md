@@ -5,6 +5,7 @@ project entry point; generated build outputs stay in ignored build directories.
 
 | Document | Purpose |
 | --- | --- |
+| [PROGRESS-02 develop integration](progress-02-develop-integration.md) | Updated develop merge, 501 tests and fresh LD production-flow verification |
 | [PROGRESS-02 plan](plans/progress-02-ui-history.md) | User-provided progress UI/history scope and acceptance matrix |
 | [PROGRESS-02 validation](progress-02-validation.md) | Original acceptance and publication/review status |
 | [PROGRESS-02 review corrections](progress-02-review-fix-validation.md) | Atomic UI snapshots, exact LD configuration rollback and fresh regression evidence |
