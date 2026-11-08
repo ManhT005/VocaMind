@@ -32,6 +32,10 @@ public class ProgressScreenTest {
   void run() { tasks.remove().run(); }
  }
  public static class FixtureFragment extends ProgressFragment {
+  @Override protected QuizHistoryAdapter historyAdapter() {
+   return new QuizHistoryAdapter(new androidx.recyclerview.widget.AsyncDifferConfig.Builder<>(QuizHistoryAdapter.DIFF)
+    .setBackgroundThreadExecutor(Runnable::run).setMainThreadExecutor(Runnable::run).build());
+  }
   @Override protected ViewModelProvider.Factory viewModelFactory() {
    return new ViewModelProvider.Factory() {
     @NonNull public <T extends ViewModel> T create(@NonNull Class<T> type) { return type.cast(model); }

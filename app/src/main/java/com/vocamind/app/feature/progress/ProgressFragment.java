@@ -9,28 +9,39 @@ import androidx.recyclerview.widget.*;
 import com.vocamind.app.R;
 import com.vocamind.app.core.ProgressViewModelFactory;
 import com.vocamind.app.domain.progress.ProgressSummary;
-import java.util.Collections;
 public class ProgressFragment extends Fragment {
  private ProgressViewModel model;
  public ProgressFragment() { super(R.layout.fragment_progress); }
+ protected QuizHistoryAdapter historyAdapter() { return new QuizHistoryAdapter(); }
  protected ViewModelProvider.Factory viewModelFactory() { return new ProgressViewModelFactory(requireContext()); }
  @Override public void onViewCreated(@NonNull View view,@Nullable Bundle savedState) {
   model=new ViewModelProvider(this,viewModelFactory()).get(ProgressViewModel.class);
-  QuizHistoryAdapter history=new QuizHistoryAdapter();SummaryAdapter summary=new SummaryAdapter();
+  QuizHistoryAdapter history=historyAdapter();SummaryAdapter summary=new SummaryAdapter();
   RecyclerView list=view.findViewById(R.id.progress_list);
   list.setLayoutManager(new LinearLayoutManager(requireContext()));list.setAdapter(new ConcatAdapter(new ConcatAdapter.Config.Builder()
    .setStableIdMode(ConcatAdapter.Config.StableIdMode.SHARED_STABLE_IDS).build(),summary,history));
   view.findViewById(R.id.progress_refresh).setOnClickListener(v -> model.refresh());
   view.findViewById(R.id.progress_retry).setOnClickListener(v -> model.refresh());
-  model.state().observe(getViewLifecycleOwner(),state -> {
+  androidx.lifecycle.LifecycleOwner owner=getViewLifecycleOwner();
+  long[] renderGeneration={0};
+  model.state().observe(owner,state -> {
+   long generation=++renderGeneration[0];
    boolean loading=state.getStatus()==ProgressViewState.Status.LOADING;
    boolean error=state.getStatus()==ProgressViewState.Status.ERROR;
-   view.findViewById(R.id.progress_loading).setVisibility(loading?View.VISIBLE:View.GONE);
+   // Hide the entire snapshot until both adapters represent the same successful read.
+   list.setVisibility(View.GONE);
+   view.findViewById(R.id.progress_loading).setVisibility(loading || state.hasSnapshot()?View.VISIBLE:View.GONE);
    view.findViewById(R.id.progress_error).setVisibility(error?View.VISIBLE:View.GONE);
-   view.findViewById(R.id.progress_refresh).setEnabled(!loading);
-   list.setVisibility(state.hasSnapshot()?View.VISIBLE:View.GONE);
-   summary.update(state);
-   history.submitList(state.hasSnapshot()?state.getSnapshot().getQuizHistory():Collections.emptyList());
+   view.findViewById(R.id.progress_refresh).setEnabled(!loading && !state.hasSnapshot());
+   if (!state.hasSnapshot()) return;
+   history.submitList(state.getSnapshot().getQuizHistory(),() -> {
+    if (owner.getLifecycle().getCurrentState()==androidx.lifecycle.Lifecycle.State.DESTROYED
+        || generation!=renderGeneration[0] || model.state().getValue()!=state) return;
+    summary.update(state);
+    list.setVisibility(View.VISIBLE);
+    view.findViewById(R.id.progress_loading).setVisibility(View.GONE);
+    view.findViewById(R.id.progress_refresh).setEnabled(true);
+   });
   });
  }
  @Override public void onResume() { super.onResume();model.refresh(); }

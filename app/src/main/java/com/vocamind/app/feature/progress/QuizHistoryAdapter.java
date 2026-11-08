@@ -7,14 +7,17 @@ import com.vocamind.app.R;
 import com.vocamind.app.domain.progress.QuizHistoryItem;
 import java.util.TimeZone;
 final class QuizHistoryAdapter extends ListAdapter<QuizHistoryItem,QuizHistoryAdapter.Holder> {
- QuizHistoryAdapter() {
-  super(new DiffUtil.ItemCallback<QuizHistoryItem>() {
+ static final DiffUtil.ItemCallback<QuizHistoryItem> DIFF=new DiffUtil.ItemCallback<QuizHistoryItem>() {
    public boolean areItemsTheSame(@NonNull QuizHistoryItem a,@NonNull QuizHistoryItem b) { return a.getAttemptId()==b.getAttemptId(); }
    public boolean areContentsTheSame(@NonNull QuizHistoryItem a,@NonNull QuizHistoryItem b) {
     return a.getCompletedAtEpochMillis()==b.getCompletedAtEpochMillis() && a.getQuestionCount()==b.getQuestionCount()
      && a.getCorrectCount()==b.getCorrectCount() && a.getScorePercent()==b.getScorePercent();
    }
-  });setHasStableIds(true);
+  };
+ QuizHistoryAdapter() { this(new AsyncDifferConfig.Builder<>(DIFF).build()); }
+ QuizHistoryAdapter(AsyncDifferConfig<QuizHistoryItem> config) {
+  super(config);
+  setHasStableIds(true);
  }
  @Override public long getItemId(int position) { return getItem(position).getAttemptId(); }
  @NonNull @Override public Holder onCreateViewHolder(@NonNull ViewGroup parent,int type) {
