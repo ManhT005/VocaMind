@@ -39,6 +39,7 @@
     <string name="pack_detail_title">Danh sách từ</string>
     <string name="pack_detail_empty">Gói này chưa có từ nào.</string>
     <string name="pack_detail_error">Không đọc được danh sách từ. Vui lòng thử lại.</string>
+    <string name="pack_detail_not_found">Không tìm thấy gói này.</string>
     <string name="pack_detail_loading">Đang đọc danh sách từ</string>
     <string name="pack_word_new">Chưa học</string>
     <string name="pack_word_box">Hộp %1$d</string>
@@ -50,7 +51,6 @@
     <string name="pack_activation_error">Không thể xác nhận trạng thái đã lưu. Thử lại để đọc trạng thái trước khi thao tác tiếp.</string>
     <string name="today_choose_pack">Chọn gói học</string>
     <string name="today_explore">Khám phá</string>
-    <string name="today_active_boundary">Đã có gói đang học. Tính năng phiên học Hôm nay đang được phát triển.</string>
     <string name="word_ipa_missing">Chưa có phiên âm</string>
     <string name="word_unreviewed">Chưa có lượt ôn</string>
     <string name="word_relearn">Học lại</string>
@@ -120,4 +120,8 @@
     <string name="progress_box_4">Cấp ôn 4</string>
     <string name="progress_box_5">Cấp ôn 5</string>
     <string name="progress_quiz_result">%1$d câu · Đúng: %2$d · Sai: %3$d · Điểm: %4$d%%</string>
+    <string name="today_preparing">Đang chuẩn bị phiên học…</string>
+    <string name="today_summary">Cần ôn: %1$d từ · Từ mới: %2$d từ</string>
+    <string name="today_done">Hôm nay bạn đã học xong. Hãy làm Quiz hoặc khám phá thêm gói.</string>
+    <string name="today_done_quiz">Làm Quiz</string>
 </resources>

@@ -5,6 +5,7 @@ import android.text.format.DateUtils;
 import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
@@ -23,6 +24,7 @@ public class FlashcardFragment extends Fragment {
         FragmentFlashcardBinding binding = FragmentFlashcardBinding.bind(view);
         FlashcardViewModel model = new ViewModelProvider(this,
                 new FlashcardViewModelFactory(requireContext())).get(FlashcardViewModel.class);
+        ViewCompat.setAccessibilityHeading(binding.title, true);
         binding.back.setOnClickListener(v -> NavHostFragment.findNavController(this).popBackStack());
         binding.retry.setOnClickListener(v -> model.retry());
         binding.card.setOnClickListener(v -> model.flip());

@@ -14,7 +14,8 @@
         <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
             android:layout_marginStart="8dp" android:text="@string/flashcard_title"
             android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-            android:textColor="@color/shell_text_primary" android:accessibilityHeading="true" />
+            android:id="@+id/title"
+            android:textColor="@color/shell_text_primary" />
         <TextView android:id="@+id/progress_label" android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
             android:textColor="@color/shell_text_secondary" />

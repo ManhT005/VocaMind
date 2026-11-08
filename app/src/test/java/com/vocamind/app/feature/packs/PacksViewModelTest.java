@@ -61,6 +61,15 @@ public class PacksViewModelTest {
         assertEquals(AsyncListViewModel.Status.ERROR, model.state().getValue().status);
     }
 
+    @Test public void thrownErrorStillLeavesLoadingAndBecomesError() {
+        PacksViewModel model = new PacksViewModel(() -> { throw new AssertionError("storage Error"); },
+                worker::add, main::add, () -> { });
+        assertEquals(AsyncListViewModel.Status.LOADING, model.state().getValue().status);
+        settle();
+        assertEquals(AsyncListViewModel.Status.ERROR, model.state().getValue().status);
+        assertEquals(RepoError.READ_FAILED, model.state().getValue().error);
+    }
+
     @Test public void wordsLoadByPackIdInCatalogOrderAndUnknownPackIsError() {
         FakePackRepository repo = new FakePackRepository();
         CatalogVocabulary v = new CatalogVocabulary("0000000000000001", "apple", "apple", "noun", "quả táo", "e", "v", null, "s", "1");

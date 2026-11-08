@@ -17,6 +17,7 @@ import com.vocamind.app.domain.pack.PackState;
 import com.vocamind.app.domain.pack.SetPackActive;
 import com.vocamind.app.fake.FakePackRepository;
 import com.vocamind.app.feature.today.TodayFragment;
+import com.vocamind.app.feature.today.TodayPlanViewModel;
 import java.util.ArrayDeque;
 import java.util.List;
 import java.util.Queue;
@@ -32,6 +33,7 @@ public class PackActivationRenderingTest {
     private final Queue<Runnable> worker = new ArrayDeque<>(), main = new ArrayDeque<>();
     private final FakePackRepository repo = new FakePackRepository();
     private int writes;
+    private RepoResult<List<com.vocamind.app.domain.learning.StudyItem>> wordsResult = RepoResult.success(List.of());
     private final PacksViewModel packs = new PacksViewModel(repo::getPackStates, (id, active) -> {
         writes++;
         return new SetPackActive(repo, () -> 0).execute(id, active);
@@ -55,14 +57,26 @@ public class PackActivationRenderingTest {
         new ViewModelProvider(activity, new ViewModelProvider.Factory() {
             @Override public <T extends ViewModel> T create(Class<T> type) {
                 if (type == PacksViewModel.class) return type.cast(packs);
-                return type.cast(new PackWordsViewModel(() -> RepoResult.success(List.of()),
+                if (type == TodayPlanViewModel.class) {
+                    return type.cast(new TodayPlanViewModel(() -> RepoResult.failure(RepoError.READ_FAILED),
+                            worker::add, main::add, () -> {}));
+                }
+                return type.cast(new PackWordsViewModel(() -> wordsResult,
                         worker::add, main::add, () -> {}));
             }
         }).get(PacksViewModel.class);
+        if (fragment instanceof TodayFragment) {
+            new ViewModelProvider(activity, new ViewModelProvider.Factory() {
+                @Override public <T extends ViewModel> T create(Class<T> type) {
+                    return type.cast(new TodayPlanViewModel(() -> RepoResult.failure(RepoError.READ_FAILED),
+                            worker::add, main::add, () -> {}));
+                }
+            }).get(TodayPlanViewModel.class);
+        }
         if (fragment instanceof PackDetailFragment) {
             new ViewModelProvider(fragment, new ViewModelProvider.Factory() {
                 @Override public <T extends ViewModel> T create(Class<T> type) {
-                    return type.cast(new PackWordsViewModel(() -> RepoResult.success(List.of()),
+                    return type.cast(new PackWordsViewModel(() -> wordsResult,
                             worker::add, main::add, () -> {}));
                 }
             }).get(PackWordsViewModel.class);
@@ -111,6 +125,19 @@ public class PackActivationRenderingTest {
         button.performClick(); settle();
         assertFalse(repo.states.get(0).isActive());
         assertEquals(activity.getString(R.string.pack_activate), button.getText());
+        activity.finish();
+    }
+
+    @Test public void unknownPackShowsNotFoundWithoutRetry() {
+        repo.states.add(new PackState(new CatalogPack("A", "A", "d", "c", 1, "1", 0), false, null, 0));
+        PackDetailFragment fragment = new PackDetailFragment();
+        Bundle args = new Bundle(); args.putString(PacksFragment.ARG_PACK_ID, "zzz"); fragment.setArguments(args);
+        wordsResult = RepoResult.failure(RepoError.NOT_FOUND);
+        AppCompatActivity activity = show(fragment);
+        settle();
+        View view = fragment.requireView();
+        assertEquals(activity.getString(R.string.pack_detail_not_found), ((TextView) view.findViewById(R.id.message)).getText());
+        assertEquals(View.GONE, view.findViewById(R.id.retry).getVisibility());
         activity.finish();
     }
 }
