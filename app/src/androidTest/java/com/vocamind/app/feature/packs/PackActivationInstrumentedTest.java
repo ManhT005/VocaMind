@@ -118,9 +118,16 @@ public class PackActivationInstrumentedTest {
                 holder.itemView.performClick();
             });
             String id = expected.get(0).getVocabulary().stableId;
-            await(scenario, a -> a.findViewById(R.id.route_message) != null
-                    && ((TextView)a.findViewById(R.id.route_message)).getText().toString().contains(id));
-            scenario.onActivity(a -> assertEquals(id, nav(a).getCurrentBackStackEntry().getArguments().getString("vocabularyId")));
+            await(scenario, a -> a.findViewById(R.id.detail_lemma) != null
+                    && ((TextView)a.findViewById(R.id.detail_lemma)).getText().toString()
+                    .equals(expected.get(0).getVocabulary().lemma)
+                    && a.findViewById(R.id.detail_save).isEnabled());
+            scenario.onActivity(a -> {
+                assertEquals(id, nav(a).getCurrentBackStackEntry().getArguments().getString("vocabularyId"));
+                assertEquals(pack, nav(a).getCurrentBackStackEntry().getArguments().getString("packId"));
+                assertEquals(expected.get(0).getVocabulary().meaningVi,
+                        ((TextView)a.findViewById(R.id.detail_meaning)).getText().toString());
+            });
             scenario.onActivity(a -> a.findViewById(R.id.back).performClick());
             await(scenario, a -> text(a, R.id.activation, R.string.pack_pause) && a.findViewById(R.id.activation).isEnabled());
             scenario.onActivity(a -> a.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE));
