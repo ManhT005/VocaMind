@@ -25,3 +25,5 @@ docs/evidence/voc-data-03/** text eol=lf
 docs/evidence/voc-data-06/** text eol=lf
 app/src/main/assets/database/*.metadata.json text eol=lf
 app/src/main/assets/database/*.db binary
+docs/data/voc-data-05/** text eol=lf
+docs/evidence/voc-data-05/** text eol=lf
