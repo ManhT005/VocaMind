@@ -148,9 +148,9 @@ public class UserDatabaseTest {
         // Synthetic future-version fixture only: an auxiliary table is removed by downgrade.
         // This does not claim a production upgrade migration exists.
         db.getOpenHelper().getWritableDatabase().execSQL("CREATE TABLE FixtureOnly (id INTEGER PRIMARY KEY)");
-        db.getOpenHelper().getWritableDatabase().setVersion(2); db.close();
+        db.getOpenHelper().getWritableDatabase().setVersion(3); db.close();
         db = androidx.room.Room.databaseBuilder(context, UserDatabase.class, name)
-                .addMigrations(new androidx.room.migration.Migration(2, 1) {
+                .addMigrations(new androidx.room.migration.Migration(3, 2) {
                     @Override public void migrate(androidx.sqlite.db.SupportSQLiteDatabase connection) {
                         connection.execSQL("DROP TABLE FixtureOnly");
                     }
@@ -171,16 +171,64 @@ public class UserDatabaseTest {
         }
         return result.toString();
     }
+    @Test public void completionKeyIsIdempotentAndConflictingPayloadFails() {
+        QuizAttempt row = new QuizAttempt(); row.completionKey = "session-one";
+        row.questionCount = 4; row.correctCount = 3; row.scorePercent = 75; row.completedAt = 41;
+        long id = db.userDao().insertQuizOnce(row);
+        assertEquals(id, db.userDao().insertQuizOnce(row));
+        reopen(); assertEquals(id, db.userDao().insertQuizOnce(row));
+        row.completedAt++;
+        assertThrows(UserDao.CompletionConflict.class, () -> db.userDao().insertQuizOnce(row));
+        row.completedAt--; row.completionKey = "session-two";
+        assertNotEquals(id, db.userDao().insertQuizOnce(row));
+        assertEquals(2, db.userDao().quizzes().size());
+        assertTrue(db.userDao().allProgress().isEmpty()); assertTrue(db.userDao().reviews().isEmpty());
+    }
+    @Test public void productionMigrationPreservesLegacyHistoryAndProgress() {
+        db.userDao().saveProgress(progress());
+        QuizAttempt row = new QuizAttempt(); row.questionCount = 4; row.correctCount = 3;
+        row.scorePercent = 75; row.completedAt = 41;
+        db.userDao().insertQuiz(row); db.userDao().insertQuiz(row);
+        var sql = db.getOpenHelper().getWritableDatabase();
+        // Reconstruct the actual version-1 table shape; other four tables did not change.
+        sql.execSQL("CREATE TABLE QuizAttempt_v1 (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, completedAt INTEGER NOT NULL, questionCount INTEGER NOT NULL, correctCount INTEGER NOT NULL, scorePercent INTEGER NOT NULL)");
+        sql.execSQL("INSERT INTO QuizAttempt_v1 SELECT id,completedAt,questionCount,correctCount,scorePercent FROM QuizAttempt");
+        sql.execSQL("DROP TABLE QuizAttempt");
+        sql.execSQL("ALTER TABLE QuizAttempt_v1 RENAME TO QuizAttempt");
+        sql.execSQL("DELETE FROM room_master_table");
+        sql.setVersion(1); reopen();
+        assertEquals(2, db.userDao().quizzes().size());
+        for (QuizAttempt legacy : db.userDao().quizzes()) {
+            assertNull(legacy.completionKey); assertEquals(41, legacy.completedAt); assertEquals(75, legacy.scorePercent);
+        }
+        assertEquals(3, db.userDao().progress("stable-1").reviewCount);
+        row.completionKey = "after-upgrade";
+        assertEquals(db.userDao().insertQuizOnce(row), db.userDao().insertQuizOnce(row));
+        assertEquals(3, db.userDao().quizzes().size());
+    }
+    @Test public void concurrentCompletionWritersReturnOneAttempt() throws Exception {
+        QuizAttempt row = new QuizAttempt(); row.completionKey = "concurrent-completion";
+        row.questionCount = 4; row.correctCount = 0; row.scorePercent = 0; row.completedAt = 41;
+        var pool = java.util.concurrent.Executors.newFixedThreadPool(2);
+        UserDatabase second = UserDatabase.open(context, name);
+        try {
+            var first = pool.submit(() -> db.userDao().insertQuizOnce(row));
+            var other = pool.submit(() -> second.userDao().insertQuizOnce(row));
+            assertEquals(first.get(20, java.util.concurrent.TimeUnit.SECONDS),
+                    other.get(20, java.util.concurrent.TimeUnit.SECONDS));
+            assertEquals(1, db.userDao().quizzes().size());
+        } finally { pool.shutdownNow(); second.close(); }
+    }
     @Test public void missingMigrationRefusesOpenWithoutErasingData() {
         db.userDao().saveProgress(progress());
-        db.getOpenHelper().getWritableDatabase().setVersion(2); db.close();
+        db.getOpenHelper().getWritableDatabase().setVersion(3); db.close();
         assertThrows(IllegalStateException.class, () -> UserDatabase.open(context, name));
         android.database.sqlite.SQLiteDatabase raw = android.database.sqlite.SQLiteDatabase.openDatabase(
                 context.getDatabasePath(name).getPath(), null, android.database.sqlite.SQLiteDatabase.OPEN_READWRITE);
         try (android.database.Cursor c = raw.rawQuery("SELECT reviewCount FROM UserWordProgress WHERE vocabularyId='stable-1'", null)) {
             assertTrue(c.moveToFirst()); assertEquals(3, c.getInt(0));
         }
-        raw.setVersion(1); raw.close(); db = UserDatabase.open(context, name);
+        raw.setVersion(2); raw.close(); db = UserDatabase.open(context, name);
         assertEquals(3, db.userDao().progress("stable-1").reviewCount);
     }
 }

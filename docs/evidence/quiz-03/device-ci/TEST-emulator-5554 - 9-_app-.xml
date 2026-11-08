@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.vocamind.app.feature.quiz.QuizScreenInstrumentedTest" tests="4" failures="0" errors="0" skipped="0" time="10.71" timestamp="2026-11-07T05:23:07" hostname="localhost">
+  <properties>
+    <property name="device" value="emulator-5554 - 9" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="toolbarAndSystemBackShareCancelAndConfirmExit" classname="com.vocamind.app.feature.quiz.QuizScreenInstrumentedTest" time="1.287" />
+  <testcase name="fullFlowKeepsFeedbackThroughRecreationAndSavesOnce" classname="com.vocamind.app.feature.quiz.QuizScreenInstrumentedTest" time="0.928" />
+  <testcase name="exportedV1MigratesWithoutLosingHistoryAndRetryIsIdempotent" classname="com.vocamind.app.data.user.QuizCompletionInstrumentedTest" time="0.15" />
+  <testcase name="offlineFirstOpenThenTenQuestionsRotateReopenAndOneHistoryRow" classname="com.vocamind.app.feature.quiz.QuizProductionFlowInstrumentedTest" time="7.504" />
+</testsuite>

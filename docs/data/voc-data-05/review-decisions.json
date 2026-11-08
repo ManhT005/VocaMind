@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "enrichmentVersion": "0.1.0",
+  "targetSnapshotId": "editorial-accepted-v1",
+  "targetSnapshotCommit": "cd83f1ce874a899029a85879c3c40c97343683d6",
+  "targetDatasetSha256": "c066d4a363d58c4c7226b716f1080b25a9e47b124a4007f4c3d16d67283a7fb8",
+  "targetCanonicalSha256": "f27e9d2de700fadf13b480df26933c61333ce6261ed872d285e5a111a88110c1",
+  "decisions": []
+}

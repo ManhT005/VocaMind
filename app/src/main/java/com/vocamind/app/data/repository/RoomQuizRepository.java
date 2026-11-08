@@ -70,4 +70,14 @@ public final class RoomQuizRepository implements QuizRepository {
         if (result == null || completedAt < 0) return RepoResult.failure(RepoError.INVALID_ARGUMENT);
         return RepositoryGuard.write(() -> RepoResult.success(user.insertQuiz(UserDataMapper.quizAttempt(result, completedAt))));
     }
+    @Override public RepoResult<Long> saveAttemptOnce(String key, QuizResult result, long completedAt) {
+        if (key == null || key.trim().isEmpty() || result == null || completedAt < 0)
+            return RepoResult.failure(RepoError.INVALID_ARGUMENT);
+        return RepositoryGuard.write(() -> {
+            var row = UserDataMapper.quizAttempt(result, completedAt);
+            row.completionKey = key;
+            try { return RepoResult.success(user.insertQuizOnce(row)); }
+            catch (UserDao.CompletionConflict conflict) { return RepoResult.failure(RepoError.CONFLICT); }
+        });
+    }
 }

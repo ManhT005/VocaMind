@@ -29,3 +29,5 @@ app/src/main/assets/database/*.db binary
 docs/validation/vocab-02/replay-49ca6b4-20261107/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 docs/validation/vocab-02/replay-49ca6b4-20261107/*.log binary
 docs/validation/vocab-02/replay-49ca6b4-20261107/historical-original-089ab4.java binary
+docs/data/voc-data-05/** text eol=lf
+docs/evidence/voc-data-05/** text eol=lf

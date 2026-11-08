@@ -11,6 +11,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class FakeQuizRepository implements QuizRepository {
+    private final java.util.Map<String, String> payloads = new java.util.HashMap<>();
+    private final java.util.Map<String, Long> attemptIds = new java.util.HashMap<>();
+    @Override public RepoResult<Long> saveAttemptOnce(String key, QuizResult result, long completedAt) {
+        if (failure != null) return RepoResult.failure(failure);
+        if (key == null || key.trim().isEmpty() || result == null || completedAt < 0)
+            return RepoResult.failure(RepoError.INVALID_ARGUMENT);
+        String payload = result.getQuestionCount() + ":" + result.getCorrectCount() + ":" + completedAt;
+        if (payloads.containsKey(key)) return payload.equals(payloads.get(key))
+                ? RepoResult.success(attemptIds.get(key)) : RepoResult.failure(RepoError.CONFLICT);
+        RepoResult<Long> inserted = saveAttempt(result, completedAt);
+        payloads.put(key, payload); attemptIds.put(key, inserted.get());
+        return inserted;
+    }
     @Override public RepoResult<QuizSnapshot> activeSnapshot() {
         if (failure != null) return RepoResult.failure(failure);
         return RepoResult.success(new QuizSnapshot(vocabulary, QuizDistractorPolicy.unrestricted()));

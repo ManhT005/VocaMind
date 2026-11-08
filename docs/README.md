@@ -5,6 +5,8 @@ project entry point; generated build outputs stay in ignored build directories.
 
 | Document | Purpose |
 | --- | --- |
+| [VOC-DATA-05 validation](voc-data-05-validation.md) | Optional CEFR and topic metadata, evidence gates, and coverage |
+| [ARC-04 integration review](arc-04-validation.md) | Week 2 architecture audit, CI evidence, findings and handoff |
 | [VOC-DATA-06 QA validation](voc-data-06-qa-validation.md) | Versioned QA catalog in the main QA APK, asset verification, and acceptance gates |
 | [VOC-DATA-06 validation](voc-data-06-validation.md) | Verified production QC to staged 150-word Room catalog, bundle/FTS gates, reproducibility and release limitations |
 | [DATA-07 plan](plans/data-07-progress-aggregation-queries.md) | Five-hour plan, distinct counts, six-box and quiz history acceptance |
@@ -63,6 +65,8 @@ project entry point; generated build outputs stay in ignored build directories.
 | [LEARN-01 validation](learn-01-validation.md) | Implemented scheduler rules, test evidence and handoff |
 | [LEARN-02 validation](learn-02-validation.md) | TC-SCHED-01..10 and boundary test coverage for the Leitner scheduler |
 | [UI sketch](sketchs.png) | Visual reference for future feature screens |
+| [QUIZ-03 plan](plans/quiz-03-ui-session.md) | Quiz UI/session, answer locking, idempotent completion and planned validation |
+| [QUIZ-03 validation](quiz-03-validation.md) | Quiz UI/session implementation, migration, host/device evidence and review gates |
 | [QUIZ-02 plan](plans/quiz-02-generation.md) | Production Quiz generation, normalization, sampling and planned validation |
 | [QUIZ-02 validation](quiz-02-validation.md) | Generator, pinned Unicode NFC/casefold, test evidence and QUIZ-03 handoff |
 

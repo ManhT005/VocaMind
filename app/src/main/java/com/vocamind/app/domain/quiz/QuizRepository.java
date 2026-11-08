@@ -13,4 +13,6 @@ public interface QuizRepository {
 
     /** Persists one completed attempt and returns its ID. Abandoned sessions are never saved. */
     RepoResult<Long> saveAttempt(QuizResult result, long completedAtEpochMillis);
+    /** Same key/payload returns the same ID; changed payload must fail with CONFLICT. */
+    RepoResult<Long> saveAttemptOnce(String key, QuizResult result, long completedAt);
 }
