@@ -85,6 +85,8 @@ def restore(device, saved):
             errors.append(str(error))  # Attempt every restoration even when one command fails.
     if errors:
         raise RuntimeError("Restoration incomplete; retry --stage restore: " + "; ".join(errors))
+    if snapshot(device) != saved:
+        raise RuntimeError("Restored configuration differs; recovery snapshot retained")
 
 
 def run_instrumentation(device, method, remote):

@@ -122,6 +122,19 @@ class RestorationTests(unittest.TestCase):
         driver.restore(self.device, json.loads(self.state.read_text()))
         self.assertEqual(self.original, driver.snapshot(self.device))
 
+    def test_silent_restore_mismatch_retains_recovery(self):
+        original_shell = self.device.shell
+        def silently_ignore_size(command, **kwargs):
+            if command == "wm size 800x1400":
+                return ""
+            return original_shell(command, **kwargs)
+        with patch.object(self.device, "shell", side_effect=silently_ignore_size):
+            with self.assertRaisesRegex(RuntimeError, "Restored configuration differs"):
+                self.run_stage()
+        self.assertTrue(self.state.exists())
+        driver.restore(self.device, json.loads(self.state.read_text()))
+        self.assertEqual(self.original, driver.snapshot(self.device))
+
     def test_pending_recovery_is_never_overwritten(self):
         self.state.write_text(json.dumps(self.original))
         with self.assertRaisesRegex(RuntimeError, "Pending configuration"):
