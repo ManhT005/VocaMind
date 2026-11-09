@@ -1,0 +1,14 @@
+{
+  "reviewDate": "2026-11-07",
+  "historicalEvidenceHead": "ecbe356f1f0cf91cef2fe7f4d96369face07bd42",
+  "historicalTestedHead": "9f2dfd9a50b3af4b23ec7943d315f6a709442311",
+  "probeFile": "VocabularyDeviceQa.java",
+  "historicallyRecordedProbeSha256": "089ab4b2171040bff1dd9d62f4b050cba3d77487b9e763c2d7aa77730c8393e1",
+  "archivedProbeSha256": "4f1461beda68ac415abfb16cf45c877eaad29b202b9b8b8de34af5bf2c558737",
+  "sourceBindingStatus": "UNVERIFIED_HISTORICAL_BINDING",
+  "matchedAfterCommonLineEndingBomOrEofConversions": false,
+  "historicalMetadataModified": false,
+  "deviceReplayPerformedByThisReview": false,
+  "resolution": "Preserve historical metadata. Re-run the archived probe against the newly integrated app on an isolated QA emulator, or supply the original tested source whose bytes match the historical digest. Record a separate run with source/APK/probe hashes captured before execution. Do not relabel old logs as the new run.",
+  "blocksFinalDoneSignoff": true
+}

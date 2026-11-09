@@ -1,0 +1,464 @@
+--------- beginning of main
+--------- beginning of system
+11-07 00:14:31.632  5464  5464 D SearchTiming: generation=1 bind_to_post_ms=55.914639
+11-07 00:14:32.263  5464  5464 D SearchTiming: generation=2 bind_to_post_ms=31.356225
+11-07 00:14:32.833  5464  5464 D SearchTiming: generation=2 debounce_ms=600.864059
+11-07 00:14:32.834  5464  5506 D SearchTiming: queue_ms=0.320162
+11-07 00:14:32.859  5464  5506 D SearchTiming: query_hydration_ms=24.990687
+11-07 00:14:32.859  5464  5464 D SearchTiming: generation=2 submit_to_main_ms=25.866481
+11-07 00:14:32.901  5464  5464 D SearchTiming: generation=2 bind_to_post_ms=41.73451
+11-07 00:14:32.945  5464  5464 D SearchTiming: generation=3 bind_to_post_ms=23.224067
+11-07 00:14:33.524  5464  5464 D SearchTiming: generation=3 debounce_ms=601.515162
+11-07 00:14:33.524  5464  5506 D SearchTiming: queue_ms=0.173214
+11-07 00:14:33.525  5464  5506 D SearchTiming: query_hydration_ms=1.258457
+11-07 00:14:33.525  5464  5464 D SearchTiming: generation=3 submit_to_main_ms=1.86975
+11-07 00:14:33.568  5464  5464 D SearchTiming: generation=3 bind_to_post_ms=42.32503
+11-07 00:14:33.664  5464  5464 D SearchTiming: generation=3 bind_to_post_ms=20.147961
+11-07 00:14:33.794  5464  5464 D SearchTiming: generation=3 bind_to_post_ms=51.488176
+11-07 00:14:33.830  5464  5464 D SearchTiming: generation=4 bind_to_post_ms=27.541782
+11-07 00:14:34.404  5464  5464 D SearchTiming: generation=4 debounce_ms=601.015701
+11-07 00:14:34.405  5464  5506 D SearchTiming: queue_ms=0.156311
+11-07 00:14:34.406  5464  5506 D SearchTiming: query_hydration_ms=1.745037
+11-07 00:14:34.407  5464  5464 D SearchTiming: generation=4 submit_to_main_ms=2.286569
+11-07 00:14:34.437  5464  5464 D SearchTiming: generation=4 bind_to_post_ms=30.05569
+11-07 00:14:34.480  5464  5464 D SearchTiming: generation=6 bind_to_post_ms=31.310341
+11-07 00:14:34.785  5464  5544 D SearchTiming: queue_ms=4.497074
+11-07 00:14:34.804  5464  5544 D SearchTiming: query_hydration_ms=18.784484
+11-07 00:14:34.804  5464  5544 D SearchTiming: queue_ms=0.136959
+11-07 00:14:34.805  5464  5544 D SearchTiming: query_hydration_ms=0.735304
+11-07 00:14:34.805  5464  5544 D SearchTiming: queue_ms=0.185123
+11-07 00:14:34.806  5464  5544 D SearchTiming: query_hydration_ms=0.939559
+11-07 00:14:34.833  5464  5546 D SearchTiming: queue_ms=0.17961
+11-07 00:14:34.835  5464  5546 D SearchTiming: query_hydration_ms=1.212129
+11-07 00:14:34.835  5464  5546 D SearchTiming: queue_ms=0.111258
+11-07 00:14:34.836  5464  5546 D SearchTiming: query_hydration_ms=0.64374
+11-07 00:14:34.836  5464  5546 D SearchTiming: queue_ms=0.092204
+11-07 00:14:34.836  5464  5546 D SearchTiming: query_hydration_ms=0.553441
+11-07 00:14:34.845  5464  5547 D SearchTiming: queue_ms=0.63602
+11-07 00:14:34.856  5464  5547 D SearchTiming: query_hydration_ms=11.418692
+11-07 00:14:34.872  5464  5548 D SearchTiming: queue_ms=10.851428
+11-07 00:14:34.878  5464  5548 D SearchTiming: query_hydration_ms=5.476677
+11-07 00:14:34.882  5464  5549 D SearchTiming: queue_ms=0.164315
+11-07 00:14:34.897  5464  5549 D SearchTiming: query_hydration_ms=15.002319
+11-07 00:14:34.897  5464  5549 D SearchTiming: queue_ms=0.227349
+11-07 00:14:34.901  5464  5549 D SearchTiming: query_hydration_ms=3.055049
+11-07 00:14:34.924  5464  5550 D SearchTiming: queue_ms=10.271923
+11-07 00:14:34.953  5464  5550 D SearchTiming: query_hydration_ms=28.535949
+11-07 00:14:34.953  5464  5550 D SearchTiming: queue_ms=0.047558
+11-07 00:14:34.955  5464  5550 D SearchTiming: query_hydration_ms=1.254923
+11-07 00:14:34.955  5464  5550 D SearchTiming: queue_ms=0.097945
+11-07 00:14:34.958  5464  5550 D SearchTiming: query_hydration_ms=2.675036
+11-07 00:14:34.958  5464  5550 D SearchTiming: queue_ms=0.052935
+11-07 00:14:34.960  5464  5550 D SearchTiming: query_hydration_ms=1.657525
+11-07 00:14:34.977  5464  5551 D SearchTiming: queue_ms=1.407113
+11-07 00:14:35.004  5464  5551 D SearchTiming: query_hydration_ms=27.327802
+11-07 00:14:35.013  5464  5551 D SearchTiming: queue_ms=0.937021
+11-07 00:14:35.014  5464  5551 D SearchTiming: query_hydration_ms=1.029235
+11-07 00:14:35.053  5464  5558 D SearchTiming: queue_ms=0.269186
+11-07 00:14:35.054  5464  5558 D SearchTiming: query_hydration_ms=1.295603
+11-07 00:14:35.074  5464  5559 D SearchTiming: queue_ms=0.471015
+11-07 00:14:35.098  5464  5559 D SearchTiming: query_hydration_ms=23.313895
+11-07 00:14:35.133  5464  5564 D SearchTiming: queue_ms=3.028353
+11-07 00:14:35.149  5464  5564 D SearchTiming: query_hydration_ms=15.462592
+11-07 00:15:47.966  5666  5666 D SearchTiming: generation=1 bind_to_post_ms=36.046203
+11-07 00:15:48.130  5666  5666 D SearchTiming: generation=2 bind_to_post_ms=30.870667
+11-07 00:15:48.700  5666  5666 D SearchTiming: generation=2 debounce_ms=600.481516
+11-07 00:15:48.728  5666  5666 D SearchTiming: generation=3 bind_to_post_ms=11.316733
+11-07 00:15:49.320  5666  5666 D SearchTiming: generation=3 debounce_ms=602.448225
+11-07 00:15:49.346  5666  5666 D SearchTiming: generation=4 bind_to_post_ms=13.023446
+11-07 00:15:49.934  5666  5666 D SearchTiming: generation=4 debounce_ms=600.875954
+11-07 00:15:49.945  5666  5666 D SearchTiming: generation=4 submit_to_main_ms=10.650307
+11-07 00:15:49.986  5666  5666 D SearchTiming: generation=4 bind_to_post_ms=40.39318
+11-07 00:15:50.029  5666  5666 D SearchTiming: generation=5 bind_to_post_ms=29.248731
+11-07 00:15:50.601  5666  5666 D SearchTiming: generation=5 debounce_ms=601.611774
+11-07 00:15:50.634  5666  5666 D SearchTiming: generation=7 bind_to_post_ms=18.218869
+11-07 00:15:50.662  5666  5666 D SearchTiming: generation=8 bind_to_post_ms=25.462325
+11-07 00:15:51.238  5666  5666 D SearchTiming: generation=8 debounce_ms=600.841089
+11-07 00:15:51.243  5666  5666 D SearchTiming: generation=8 submit_to_main_ms=5.252697
+11-07 00:15:51.278  5666  5666 D SearchTiming: generation=8 bind_to_post_ms=34.54967
+11-07 00:15:51.480  5666  5666 D SearchTiming: generation=9 bind_to_post_ms=34.547362
+11-07 00:15:52.048  5666  5666 D SearchTiming: generation=9 debounce_ms=601.844624
+11-07 00:15:52.059  5666  5666 D SearchTiming: generation=9 submit_to_main_ms=10.132674
+11-07 00:15:52.101  5666  5666 D SearchTiming: generation=9 bind_to_post_ms=41.773211
+11-07 00:15:52.766  5666  5666 D SearchTiming: generation=1 bind_to_post_ms=24.894205
+11-07 00:15:52.814  5666  5666 D SearchTiming: generation=2 bind_to_post_ms=27.161333
+11-07 00:15:53.389  5666  5666 D SearchTiming: generation=2 debounce_ms=601.666727
+11-07 00:15:53.405  5666  5666 D SearchTiming: generation=2 submit_to_main_ms=14.897749
+11-07 00:15:53.440  5666  5666 D SearchTiming: generation=2 bind_to_post_ms=35.076186
+11-07 00:15:54.177  5666  5666 D SearchTiming: generation=1 bind_to_post_ms=33.239079
+11-07 00:15:54.214  5666  5666 D SearchTiming: generation=5 bind_to_post_ms=14.828209
+11-07 00:15:54.802  5666  5666 D SearchTiming: generation=5 debounce_ms=602.531572
+11-07 00:15:54.802  5666  5732 D SearchTiming: queue_ms=0.313949
+11-07 00:15:54.821  5666  5732 D SearchTiming: query_hydration_ms=17.995342
+11-07 00:15:54.821  5666  5666 D SearchTiming: generation=5 submit_to_main_ms=18.728206
+11-07 00:15:54.852  5666  5666 D SearchTiming: generation=5 bind_to_post_ms=31.18645
+11-07 00:15:54.899  5666  5666 D SearchTiming: generation=6 bind_to_post_ms=32.505882
+11-07 00:15:55.468  5666  5666 D SearchTiming: generation=6 debounce_ms=600.715753
+11-07 00:15:55.469  5666  5732 D SearchTiming: queue_ms=0.161245
+11-07 00:15:55.470  5666  5732 D SearchTiming: query_hydration_ms=1.362732
+11-07 00:15:55.470  5666  5666 D SearchTiming: generation=6 submit_to_main_ms=1.837634
+11-07 00:15:55.501  5666  5666 D SearchTiming: generation=6 bind_to_post_ms=30.494897
+11-07 00:15:55.546  5666  5666 D SearchTiming: generation=7 bind_to_post_ms=32.606453
+11-07 00:15:56.115  5666  5666 D SearchTiming: generation=7 debounce_ms=600.379929
+11-07 00:15:56.115  5666  5732 D SearchTiming: queue_ms=0.085641
+11-07 00:15:56.117  5666  5732 D SearchTiming: query_hydration_ms=1.576418
+11-07 00:15:56.117  5666  5666 D SearchTiming: generation=7 submit_to_main_ms=2.004324
+11-07 00:15:56.151  5666  5666 D SearchTiming: generation=7 bind_to_post_ms=33.76042
+11-07 00:15:56.179  5666  5666 D SearchTiming: generation=8 bind_to_post_ms=25.12244
+11-07 00:15:56.755  5666  5666 D SearchTiming: generation=8 debounce_ms=600.479936
+11-07 00:15:56.755  5666  5732 D SearchTiming: queue_ms=0.165595
+11-07 00:15:56.756  5666  5732 D SearchTiming: query_hydration_ms=1.199141
+11-07 00:15:56.757  5666  5666 D SearchTiming: generation=8 submit_to_main_ms=1.659587
+11-07 00:15:56.781  5666  5666 D SearchTiming: generation=8 bind_to_post_ms=24.025993
+11-07 00:15:56.814  5666  5666 D SearchTiming: generation=11 bind_to_post_ms=24.24939
+11-07 00:15:57.713  5666  5666 D SearchTiming: generation=15 bind_to_post_ms=9.36739
+11-07 00:15:58.305  5666  5666 D SearchTiming: generation=15 debounce_ms=601.006013
+11-07 00:15:58.306  5666  5732 D SearchTiming: queue_ms=0.180043
+11-07 00:15:58.307  5666  5732 D SearchTiming: query_hydration_ms=1.119953
+11-07 00:15:58.307  5666  5666 D SearchTiming: generation=15 submit_to_main_ms=1.734868
+11-07 00:15:58.331  5666  5666 D SearchTiming: generation=15 bind_to_post_ms=23.856895
+11-07 00:15:58.363  5666  5666 D SearchTiming: generation=16 bind_to_post_ms=28.515572
+11-07 00:15:58.937  5666  5666 D SearchTiming: generation=16 debounce_ms=601.05026
+11-07 00:15:58.937  5666  5732 D SearchTiming: queue_ms=0.156303
+11-07 00:15:58.939  5666  5732 D SearchTiming: query_hydration_ms=1.579316
+11-07 00:15:58.939  5666  5666 D SearchTiming: generation=16 submit_to_main_ms=2.05149
+11-07 00:15:58.967  5666  5666 D SearchTiming: generation=16 bind_to_post_ms=27.77253
+11-07 00:15:58.995  5666  5666 D SearchTiming: generation=17 bind_to_post_ms=25.88142
+11-07 00:15:59.572  5666  5666 D SearchTiming: generation=17 debounce_ms=602.001293
+11-07 00:15:59.573  5666  5732 D SearchTiming: queue_ms=0.127855
+11-07 00:15:59.575  5666  5732 D SearchTiming: query_hydration_ms=2.1281
+11-07 00:15:59.575  5666  5666 D SearchTiming: generation=17 submit_to_main_ms=2.649445
+11-07 00:15:59.598  5666  5666 D SearchTiming: generation=17 bind_to_post_ms=22.956647
+11-07 00:15:59.630  5666  5666 D SearchTiming: generation=18 bind_to_post_ms=28.914503
+11-07 00:16:00.205  5666  5666 D SearchTiming: generation=18 debounce_ms=602.402325
+11-07 00:16:00.205  5666  5732 D SearchTiming: queue_ms=0.18028
+11-07 00:16:00.206  5666  5732 D SearchTiming: query_hydration_ms=1.445136
+11-07 00:16:00.207  5666  5666 D SearchTiming: generation=18 submit_to_main_ms=1.97501
+11-07 00:16:00.230  5666  5666 D SearchTiming: generation=18 bind_to_post_ms=23.458991
+11-07 00:16:00.263  5666  5666 D SearchTiming: generation=21 bind_to_post_ms=25.48869
+11-07 00:16:01.162  5666  5666 D SearchTiming: generation=25 bind_to_post_ms=13.484727
+11-07 00:16:01.751  5666  5666 D SearchTiming: generation=25 debounce_ms=602.28138
+11-07 00:16:01.751  5666  5732 D SearchTiming: queue_ms=0.178375
+11-07 00:16:01.753  5666  5732 D SearchTiming: query_hydration_ms=1.039704
+11-07 00:16:01.753  5666  5666 D SearchTiming: generation=25 submit_to_main_ms=1.543543
+11-07 00:16:01.781  5666  5666 D SearchTiming: generation=25 bind_to_post_ms=27.699854
+11-07 00:16:01.811  5666  5666 D SearchTiming: generation=26 bind_to_post_ms=26.771156
+11-07 00:16:02.388  5666  5666 D SearchTiming: generation=26 debounce_ms=602.251127
+11-07 00:16:02.388  5666  5732 D SearchTiming: queue_ms=0.135185
+11-07 00:16:02.389  5666  5732 D SearchTiming: query_hydration_ms=1.258242
+11-07 00:16:02.389  5666  5666 D SearchTiming: generation=26 submit_to_main_ms=1.729351
+11-07 00:16:02.417  5666  5666 D SearchTiming: generation=26 bind_to_post_ms=27.758247
+11-07 00:16:02.446  5666  5666 D SearchTiming: generation=27 bind_to_post_ms=26.340113
+11-07 00:16:03.021  5666  5666 D SearchTiming: generation=27 debounce_ms=600.327507
+11-07 00:16:03.021  5666  5732 D SearchTiming: queue_ms=0.121801
+11-07 00:16:03.023  5666  5732 D SearchTiming: query_hydration_ms=1.544972
+11-07 00:16:03.023  5666  5666 D SearchTiming: generation=27 submit_to_main_ms=1.947333
+11-07 00:16:03.048  5666  5666 D SearchTiming: generation=27 bind_to_post_ms=24.549478
+11-07 00:16:03.078  5666  5666 D SearchTiming: generation=28 bind_to_post_ms=26.773539
+11-07 00:16:03.652  5666  5666 D SearchTiming: generation=28 debounce_ms=599.810501
+11-07 00:16:03.653  5666  5732 D SearchTiming: queue_ms=0.161324
+11-07 00:16:03.655  5666  5732 D SearchTiming: query_hydration_ms=1.902784
+11-07 00:16:03.655  5666  5666 D SearchTiming: generation=28 submit_to_main_ms=2.499792
+11-07 00:16:03.681  5666  5666 D SearchTiming: generation=28 bind_to_post_ms=25.951802
+11-07 00:16:03.713  5666  5666 D SearchTiming: generation=31 bind_to_post_ms=24.086451
+11-07 00:16:04.629  5666  5666 D SearchTiming: generation=35 bind_to_post_ms=29.079588
+11-07 00:16:05.202  5666  5666 D SearchTiming: generation=35 debounce_ms=601.317975
+11-07 00:16:05.202  5666  5732 D SearchTiming: queue_ms=0.166136
+11-07 00:16:05.203  5666  5732 D SearchTiming: query_hydration_ms=1.286966
+11-07 00:16:05.204  5666  5666 D SearchTiming: generation=35 submit_to_main_ms=1.853841
+11-07 00:16:05.231  5666  5666 D SearchTiming: generation=35 bind_to_post_ms=26.845625
+11-07 00:16:05.262  5666  5666 D SearchTiming: generation=36 bind_to_post_ms=29.667571
+11-07 00:16:05.834  5666  5666 D SearchTiming: generation=36 debounce_ms=600.741245
+11-07 00:16:05.834  5666  5732 D SearchTiming: queue_ms=0.101615
+11-07 00:16:05.836  5666  5732 D SearchTiming: query_hydration_ms=1.231496
+11-07 00:16:05.836  5666  5666 D SearchTiming: generation=36 submit_to_main_ms=1.821229
+11-07 00:16:05.863  5666  5666 D SearchTiming: generation=36 bind_to_post_ms=27.159561
+11-07 00:16:05.895  5666  5666 D SearchTiming: generation=37 bind_to_post_ms=29.286889
+11-07 00:16:06.468  5666  5666 D SearchTiming: generation=37 debounce_ms=601.250412
+11-07 00:16:06.468  5666  5732 D SearchTiming: queue_ms=0.046887
+11-07 00:16:06.469  5666  5732 D SearchTiming: query_hydration_ms=1.069894
+11-07 00:16:06.469  5666  5666 D SearchTiming: generation=37 submit_to_main_ms=1.42005
+11-07 00:16:06.498  5666  5666 D SearchTiming: generation=37 bind_to_post_ms=28.101084
+11-07 00:16:06.529  5666  5666 D SearchTiming: generation=38 bind_to_post_ms=28.054419
+11-07 00:16:07.104  5666  5666 D SearchTiming: generation=38 debounce_ms=601.557883
+11-07 00:16:07.104  5666  5732 D SearchTiming: queue_ms=0.124037
+11-07 00:16:07.108  5666  5732 D SearchTiming: query_hydration_ms=4.194866
+11-07 00:16:07.109  5666  5666 D SearchTiming: generation=38 submit_to_main_ms=4.656064
+11-07 00:16:07.131  5666  5666 D SearchTiming: generation=38 bind_to_post_ms=22.30935
+11-07 00:16:07.161  5666  5666 D SearchTiming: generation=41 bind_to_post_ms=25.684432
+11-07 00:16:08.063  5666  5666 D SearchTiming: generation=45 bind_to_post_ms=14.406494
+11-07 00:16:08.650  5666  5666 D SearchTiming: generation=45 debounce_ms=601.534874
+11-07 00:16:08.651  5666  5732 D SearchTiming: queue_ms=0.169356
+11-07 00:16:08.652  5666  5732 D SearchTiming: query_hydration_ms=1.272058
+11-07 00:16:08.652  5666  5666 D SearchTiming: generation=45 submit_to_main_ms=1.746427
+11-07 00:16:08.682  5666  5666 D SearchTiming: generation=45 bind_to_post_ms=29.313556
+11-07 00:16:08.712  5666  5666 D SearchTiming: generation=46 bind_to_post_ms=28.641834
+11-07 00:16:09.285  5666  5666 D SearchTiming: generation=46 debounce_ms=600.624655
+11-07 00:16:09.285  5666  5732 D SearchTiming: queue_ms=0.1605
+11-07 00:16:09.287  5666  5732 D SearchTiming: query_hydration_ms=1.100043
+11-07 00:16:09.287  5666  5666 D SearchTiming: generation=46 submit_to_main_ms=1.550448
+11-07 00:16:09.313  5666  5666 D SearchTiming: generation=46 bind_to_post_ms=26.598759
+11-07 00:16:09.346  5666  5666 D SearchTiming: generation=47 bind_to_post_ms=28.579966
+11-07 00:16:09.919  5666  5666 D SearchTiming: generation=47 debounce_ms=600.871576
+11-07 00:16:09.919  5666  5732 D SearchTiming: queue_ms=0.187772
+11-07 00:16:09.920  5666  5732 D SearchTiming: query_hydration_ms=1.136264
+11-07 00:16:09.920  5666  5666 D SearchTiming: generation=47 submit_to_main_ms=1.653162
+11-07 00:16:09.948  5666  5666 D SearchTiming: generation=47 bind_to_post_ms=27.501351
+11-07 00:16:09.978  5666  5666 D SearchTiming: generation=48 bind_to_post_ms=26.566538
+11-07 00:16:10.553  5666  5666 D SearchTiming: generation=48 debounce_ms=600.611825
+11-07 00:16:10.553  5666  5732 D SearchTiming: queue_ms=0.055233
+11-07 00:16:10.555  5666  5732 D SearchTiming: query_hydration_ms=1.866244
+11-07 00:16:10.555  5666  5666 D SearchTiming: generation=48 submit_to_main_ms=2.167085
+11-07 00:16:10.580  5666  5666 D SearchTiming: generation=48 bind_to_post_ms=25.141112
+11-07 00:16:10.611  5666  5666 D SearchTiming: generation=51 bind_to_post_ms=24.995187
+11-07 00:16:12.123  5666  5666 D SearchTiming: generation=1 bind_to_post_ms=22.292019
+11-07 00:16:12.210  5666  5666 D SearchTiming: generation=2 bind_to_post_ms=28.004054
+11-07 00:16:12.783  5666  5666 D SearchTiming: generation=2 debounce_ms=600.396627
+11-07 00:16:12.783  5666  5732 D SearchTiming: queue_ms=0.194328
+11-07 00:16:12.785  5666  5732 D SearchTiming: query_hydration_ms=1.571857
+11-07 00:16:12.785  5666  5666 D SearchTiming: generation=2 submit_to_main_ms=2.213688
+11-07 00:16:12.818  5666  5666 D SearchTiming: generation=2 bind_to_post_ms=32.5669
+11-07 00:16:12.864  5666  5666 D SearchTiming: generation=3 bind_to_post_ms=32.12992
+11-07 00:16:13.433  5666  5666 D SearchTiming: generation=3 debounce_ms=600.201148
+11-07 00:16:13.433  5666  5732 D SearchTiming: queue_ms=0.131115
+11-07 00:16:13.434  5666  5732 D SearchTiming: query_hydration_ms=1.250357
+11-07 00:16:13.435  5666  5666 D SearchTiming: generation=3 submit_to_main_ms=1.736593
+11-07 00:16:13.467  5666  5666 D SearchTiming: generation=3 bind_to_post_ms=32.506702
+11-07 00:16:13.513  5666  5666 D SearchTiming: generation=4 bind_to_post_ms=32.551187
+11-07 00:16:14.084  5666  5666 D SearchTiming: generation=4 debounce_ms=602.56509
+11-07 00:16:14.084  5666  5732 D SearchTiming: queue_ms=0.092222
+11-07 00:16:14.085  5666  5732 D SearchTiming: query_hydration_ms=1.206594
+11-07 00:16:14.085  5666  5666 D SearchTiming: generation=4 submit_to_main_ms=1.549291
+11-07 00:16:14.112  5666  5666 D SearchTiming: generation=4 bind_to_post_ms=27.315391
+11-07 00:16:14.147  5666  5666 D SearchTiming: generation=5 bind_to_post_ms=30.822067
+11-07 00:16:14.716  5666  5666 D SearchTiming: generation=5 debounce_ms=599.532859
+11-07 00:16:14.717  5666  5732 D SearchTiming: queue_ms=0.230627
+11-07 00:16:14.718  5666  5732 D SearchTiming: query_hydration_ms=1.296214
+11-07 00:16:14.718  5666  5666 D SearchTiming: generation=5 submit_to_main_ms=1.851552
+11-07 00:16:14.746  5666  5666 D SearchTiming: generation=5 bind_to_post_ms=27.766332
+11-07 00:16:14.779  5666  5666 D SearchTiming: generation=6 bind_to_post_ms=28.887715
+11-07 00:16:15.352  5666  5666 D SearchTiming: generation=6 debounce_ms=601.280992
+11-07 00:16:15.353  5666  5732 D SearchTiming: queue_ms=0.135318
+11-07 00:16:15.355  5666  5732 D SearchTiming: query_hydration_ms=2.43846
+11-07 00:16:15.355  5666  5666 D SearchTiming: generation=6 submit_to_main_ms=2.882358
+11-07 00:16:15.382  5666  5666 D SearchTiming: generation=6 bind_to_post_ms=26.391719
+11-07 00:16:15.461  5666  5666 D SearchTiming: generation=7 bind_to_post_ms=28.20023
+11-07 00:16:16.036  5666  5666 D SearchTiming: generation=7 debounce_ms=602.418265
+11-07 00:16:16.036  5666  5732 D SearchTiming: queue_ms=0.16657
+11-07 00:16:16.038  5666  5732 D SearchTiming: query_hydration_ms=1.331351
+11-07 00:16:16.038  5666  5666 D SearchTiming: generation=7 submit_to_main_ms=1.860425
+11-07 00:16:16.044  5666  5666 D SearchTiming: generation=7 bind_to_post_ms=5.967922
+11-07 00:16:16.096  5666  5666 D SearchTiming: generation=8 bind_to_post_ms=4.124768
+11-07 00:16:16.162  5666  5666 D SearchTiming: generation=9 bind_to_post_ms=14.382795
+11-07 00:16:16.180  5666  5666 D SearchTiming: generation=10 bind_to_post_ms=16.338914
+11-07 00:16:16.194  5666  5666 D SearchTiming: generation=11 bind_to_post_ms=11.243073
+11-07 00:16:16.558  5666  5666 D SearchTiming: generation=1 bind_to_post_ms=23.093061
+11-07 00:16:16.594  5666  5666 D SearchTiming: generation=2 bind_to_post_ms=25.054857
+11-07 00:16:17.170  5666  5666 D SearchTiming: generation=2 debounce_ms=600.431459
+11-07 00:16:17.170  5666  5732 D SearchTiming: queue_ms=0.160336
+11-07 00:16:17.172  5666  5732 D SearchTiming: query_hydration_ms=1.175363
+11-07 00:16:17.172  5666  5666 D SearchTiming: generation=2 submit_to_main_ms=1.638298
+11-07 00:16:17.201  5666  5666 D SearchTiming: generation=2 bind_to_post_ms=28.912823
+11-07 00:16:17.858  5666  5666 D SearchTiming: generation=2 bind_to_post_ms=23.830168
+11-07 00:16:18.033  5666  5666 D SearchTiming: generation=2 bind_to_post_ms=58.190154
+11-07 00:17:27.031  6090  6090 D SearchTiming: generation=1 bind_to_post_ms=31.720075
+11-07 00:17:27.182  6090  6090 D SearchTiming: generation=2 bind_to_post_ms=26.189411
+11-07 00:17:27.757  6090  6090 D SearchTiming: generation=2 debounce_ms=600.652953
+11-07 00:17:27.780  6090  6090 D SearchTiming: generation=3 bind_to_post_ms=13.39725
+11-07 00:17:28.369  6090  6090 D SearchTiming: generation=3 debounce_ms=601.467311
+11-07 00:17:28.395  6090  6090 D SearchTiming: generation=4 bind_to_post_ms=14.316071
+11-07 00:17:28.982  6090  6090 D SearchTiming: generation=4 debounce_ms=600.490747
+11-07 00:17:28.995  6090  6090 D SearchTiming: generation=4 submit_to_main_ms=12.414723
+11-07 00:17:29.039  6090  6090 D SearchTiming: generation=4 bind_to_post_ms=44.083588
+11-07 00:17:29.081  6090  6090 D SearchTiming: generation=5 bind_to_post_ms=32.653029
+11-07 00:17:29.650  6090  6090 D SearchTiming: generation=5 debounce_ms=600.847933
+11-07 00:17:29.683  6090  6090 D SearchTiming: generation=7 bind_to_post_ms=17.020372
+11-07 00:17:29.712  6090  6090 D SearchTiming: generation=8 bind_to_post_ms=26.434565
+11-07 00:17:30.287  6090  6090 D SearchTiming: generation=8 debounce_ms=601.031257
+11-07 00:17:30.289  6090  6090 D SearchTiming: generation=8 submit_to_main_ms=2.372451
+11-07 00:17:30.313  6090  6090 D SearchTiming: generation=8 bind_to_post_ms=23.428108
+11-07 00:17:30.795  6090  6090 D SearchTiming: generation=9 bind_to_post_ms=29.407227
+11-07 00:17:31.368  6090  6090 D SearchTiming: generation=9 debounce_ms=601.335414
+11-07 00:17:31.378  6090  6090 D SearchTiming: generation=9 submit_to_main_ms=8.974898
+11-07 00:17:31.417  6090  6090 D SearchTiming: generation=9 bind_to_post_ms=39.496548
+11-07 00:17:32.432  6090  6090 D SearchTiming: generation=1 bind_to_post_ms=25.078888
+11-07 00:17:32.464  6090  6090 D SearchTiming: generation=2 bind_to_post_ms=25.778137
+11-07 00:17:33.039  6090  6090 D SearchTiming: generation=2 debounce_ms=600.623428
+11-07 00:17:33.052  6090  6090 D SearchTiming: generation=2 submit_to_main_ms=12.722939
+11-07 00:17:33.088  6090  6090 D SearchTiming: generation=2 bind_to_post_ms=35.669599
+11-07 00:17:34.437  6090  6090 D SearchTiming: generation=1 bind_to_post_ms=26.880351
+11-07 00:17:34.478  6090  6090 D SearchTiming: generation=5 bind_to_post_ms=19.716451
+11-07 00:17:35.062  6090  6090 D SearchTiming: generation=5 debounce_ms=603.352739
+11-07 00:17:35.064  6090  6184 D SearchTiming: queue_ms=0.436405
+11-07 00:17:35.086  6090  6184 D SearchTiming: query_hydration_ms=21.395037
+11-07 00:17:35.086  6090  6090 D SearchTiming: generation=5 submit_to_main_ms=23.285981
+11-07 00:17:35.120  6090  6090 D SearchTiming: generation=5 bind_to_post_ms=34.25812
+11-07 00:17:35.163  6090  6090 D SearchTiming: generation=6 bind_to_post_ms=30.693074
+11-07 00:17:35.733  6090  6090 D SearchTiming: generation=6 debounce_ms=600.603904
+11-07 00:17:35.733  6090  6184 D SearchTiming: queue_ms=0.053785
+11-07 00:17:35.735  6090  6184 D SearchTiming: query_hydration_ms=1.682037
+11-07 00:17:35.735  6090  6090 D SearchTiming: generation=6 submit_to_main_ms=2.085025
+11-07 00:17:35.769  6090  6090 D SearchTiming: generation=6 bind_to_post_ms=33.394226
+11-07 00:17:35.812  6090  6090 D SearchTiming: generation=7 bind_to_post_ms=29.68098
+11-07 00:17:36.384  6090  6090 D SearchTiming: generation=7 debounce_ms=600.604514
+11-07 00:17:36.384  6090  6184 D SearchTiming: queue_ms=0.114614
+11-07 00:17:36.386  6090  6184 D SearchTiming: query_hydration_ms=1.568488
+11-07 00:17:36.386  6090  6090 D SearchTiming: generation=7 submit_to_main_ms=2.121359
+11-07 00:17:36.416  6090  6090 D SearchTiming: generation=7 bind_to_post_ms=29.344527
+11-07 00:17:36.447  6090  6090 D SearchTiming: generation=8 bind_to_post_ms=28.282606
+11-07 00:17:37.021  6090  6090 D SearchTiming: generation=8 debounce_ms=601.543048
+11-07 00:17:37.021  6090  6184 D SearchTiming: queue_ms=0.071019
+11-07 00:17:37.023  6090  6184 D SearchTiming: query_hydration_ms=1.25303
+11-07 00:17:37.023  6090  6090 D SearchTiming: generation=8 submit_to_main_ms=1.664576
+11-07 00:17:37.049  6090  6090 D SearchTiming: generation=8 bind_to_post_ms=26.050106
+11-07 00:17:37.080  6090  6090 D SearchTiming: generation=11 bind_to_post_ms=24.69105
+11-07 00:17:37.979  6090  6090 D SearchTiming: generation=15 bind_to_post_ms=12.473937
+11-07 00:17:38.568  6090  6090 D SearchTiming: generation=15 debounce_ms=600.817988
+11-07 00:17:38.568  6090  6184 D SearchTiming: queue_ms=0.074225
+11-07 00:17:38.570  6090  6184 D SearchTiming: query_hydration_ms=1.405795
+11-07 00:17:38.570  6090  6090 D SearchTiming: generation=15 submit_to_main_ms=1.669477
+11-07 00:17:38.601  6090  6090 D SearchTiming: generation=15 bind_to_post_ms=30.948554
+11-07 00:17:38.629  6090  6090 D SearchTiming: generation=16 bind_to_post_ms=23.831422
+11-07 00:17:39.206  6090  6090 D SearchTiming: generation=16 debounce_ms=601.027725
+11-07 00:17:39.207  6090  6184 D SearchTiming: queue_ms=0.145953
+11-07 00:17:39.208  6090  6184 D SearchTiming: query_hydration_ms=1.331325
+11-07 00:17:39.208  6090  6090 D SearchTiming: generation=16 submit_to_main_ms=2.067498
+11-07 00:17:39.231  6090  6090 D SearchTiming: generation=16 bind_to_post_ms=22.660715
+11-07 00:17:39.266  6090  6090 D SearchTiming: generation=17 bind_to_post_ms=31.977899
+11-07 00:17:39.836  6090  6090 D SearchTiming: generation=17 debounce_ms=600.725428
+11-07 00:17:39.836  6090  6184 D SearchTiming: queue_ms=0.168576
+11-07 00:17:39.839  6090  6184 D SearchTiming: query_hydration_ms=2.290547
+11-07 00:17:39.839  6090  6090 D SearchTiming: generation=17 submit_to_main_ms=2.771354
+11-07 00:17:39.863  6090  6090 D SearchTiming: generation=17 bind_to_post_ms=24.427165
+11-07 00:17:39.897  6090  6090 D SearchTiming: generation=18 bind_to_post_ms=30.28063
+11-07 00:17:40.468  6090  6090 D SearchTiming: generation=18 debounce_ms=600.821171
+11-07 00:17:40.468  6090  6184 D SearchTiming: queue_ms=0.170162
+11-07 00:17:40.470  6090  6184 D SearchTiming: query_hydration_ms=1.238919
+11-07 00:17:40.470  6090  6090 D SearchTiming: generation=18 submit_to_main_ms=1.745234
+11-07 00:17:40.497  6090  6090 D SearchTiming: generation=18 bind_to_post_ms=26.852927
+11-07 00:17:40.528  6090  6090 D SearchTiming: generation=21 bind_to_post_ms=21.276563
+11-07 00:17:41.445  6090  6090 D SearchTiming: generation=25 bind_to_post_ms=22.878389
+11-07 00:17:42.023  6090  6090 D SearchTiming: generation=25 debounce_ms=600.876791
+11-07 00:17:42.024  6090  6184 D SearchTiming: queue_ms=0.233903
+11-07 00:17:42.026  6090  6184 D SearchTiming: query_hydration_ms=1.99385
+11-07 00:17:42.026  6090  6090 D SearchTiming: generation=25 submit_to_main_ms=3.036426
+11-07 00:17:42.049  6090  6090 D SearchTiming: generation=25 bind_to_post_ms=22.143948
+11-07 00:17:42.082  6090  6090 D SearchTiming: generation=26 bind_to_post_ms=30.5096
+11-07 00:17:42.653  6090  6090 D SearchTiming: generation=26 debounce_ms=601.068553
+11-07 00:17:42.654  6090  6184 D SearchTiming: queue_ms=0.242825
+11-07 00:17:42.655  6090  6184 D SearchTiming: query_hydration_ms=1.321128
+11-07 00:17:42.655  6090  6090 D SearchTiming: generation=26 submit_to_main_ms=2.007131
+11-07 00:17:42.682  6090  6090 D SearchTiming: generation=26 bind_to_post_ms=26.844718
+11-07 00:17:42.713  6090  6090 D SearchTiming: generation=27 bind_to_post_ms=29.012466
+11-07 00:17:43.288  6090  6090 D SearchTiming: generation=27 debounce_ms=601.923482
+11-07 00:17:43.288  6090  6184 D SearchTiming: queue_ms=0.183111
+11-07 00:17:43.290  6090  6184 D SearchTiming: query_hydration_ms=1.755843
+11-07 00:17:43.290  6090  6090 D SearchTiming: generation=27 submit_to_main_ms=2.270462
+11-07 00:17:43.315  6090  6090 D SearchTiming: generation=27 bind_to_post_ms=25.162518
+11-07 00:17:43.346  6090  6090 D SearchTiming: generation=28 bind_to_post_ms=26.300775
+11-07 00:17:43.922  6090  6090 D SearchTiming: generation=28 debounce_ms=600.853376
+11-07 00:17:43.923  6090  6184 D SearchTiming: queue_ms=0.251219
+11-07 00:17:43.924  6090  6184 D SearchTiming: query_hydration_ms=1.494312
+11-07 00:17:43.924  6090  6090 D SearchTiming: generation=28 submit_to_main_ms=2.027811
+11-07 00:17:43.948  6090  6090 D SearchTiming: generation=28 bind_to_post_ms=23.203993
+11-07 00:17:43.980  6090  6090 D SearchTiming: generation=31 bind_to_post_ms=23.98442
+11-07 00:17:44.898  6090  6090 D SearchTiming: generation=35 bind_to_post_ms=27.084749
+11-07 00:17:45.473  6090  6090 D SearchTiming: generation=35 debounce_ms=601.59743
+11-07 00:17:45.473  6090  6184 D SearchTiming: queue_ms=0.212972
+11-07 00:17:45.475  6090  6184 D SearchTiming: query_hydration_ms=2.093434
+11-07 00:17:45.476  6090  6090 D SearchTiming: generation=35 submit_to_main_ms=2.746779
+11-07 00:17:45.501  6090  6090 D SearchTiming: generation=35 bind_to_post_ms=25.377166
+11-07 00:17:45.535  6090  6090 D SearchTiming: generation=36 bind_to_post_ms=30.611742
+11-07 00:17:46.105  6090  6090 D SearchTiming: generation=36 debounce_ms=600.411215
+11-07 00:17:46.106  6090  6184 D SearchTiming: queue_ms=0.212092
+11-07 00:17:46.108  6090  6184 D SearchTiming: query_hydration_ms=2.141009
+11-07 00:17:46.108  6090  6090 D SearchTiming: generation=36 submit_to_main_ms=2.756289
+11-07 00:17:46.131  6090  6090 D SearchTiming: generation=36 bind_to_post_ms=22.968802
+11-07 00:17:46.163  6090  6090 D SearchTiming: generation=37 bind_to_post_ms=29.582427
+11-07 00:17:46.735  6090  6090 D SearchTiming: generation=37 debounce_ms=600.095441
+11-07 00:17:46.735  6090  6184 D SearchTiming: queue_ms=0.289676
+11-07 00:17:46.737  6090  6184 D SearchTiming: query_hydration_ms=1.558705
+11-07 00:17:46.737  6090  6090 D SearchTiming: generation=37 submit_to_main_ms=2.272421
+11-07 00:17:46.764  6090  6090 D SearchTiming: generation=37 bind_to_post_ms=27.273435
+11-07 00:17:46.796  6090  6090 D SearchTiming: generation=38 bind_to_post_ms=27.059118
+11-07 00:17:47.373  6090  6090 D SearchTiming: generation=38 debounce_ms=603.41355
+11-07 00:17:47.374  6090  6184 D SearchTiming: queue_ms=0.302559
+11-07 00:17:47.377  6090  6184 D SearchTiming: query_hydration_ms=2.652724
+11-07 00:17:47.377  6090  6090 D SearchTiming: generation=38 submit_to_main_ms=3.689093
+11-07 00:17:47.412  6090  6090 D SearchTiming: generation=38 bind_to_post_ms=34.972421
+11-07 00:17:47.447  6090  6090 D SearchTiming: generation=41 bind_to_post_ms=27.658593
+11-07 00:17:48.345  6090  6090 D SearchTiming: generation=45 bind_to_post_ms=16.515233
+11-07 00:17:48.930  6090  6090 D SearchTiming: generation=45 debounce_ms=601.025897
+11-07 00:17:48.930  6090  6184 D SearchTiming: queue_ms=0.169057
+11-07 00:17:48.932  6090  6184 D SearchTiming: query_hydration_ms=1.855279
+11-07 00:17:48.933  6090  6090 D SearchTiming: generation=45 submit_to_main_ms=2.421281
+11-07 00:17:48.964  6090  6090 D SearchTiming: generation=45 bind_to_post_ms=31.793806
+11-07 00:17:48.998  6090  6090 D SearchTiming: generation=46 bind_to_post_ms=30.556379
+11-07 00:17:49.568  6090  6090 D SearchTiming: generation=46 debounce_ms=599.963752
+11-07 00:17:49.568  6090  6184 D SearchTiming: queue_ms=0.196746
+11-07 00:17:49.569  6090  6184 D SearchTiming: query_hydration_ms=1.079246
+11-07 00:17:49.569  6090  6090 D SearchTiming: generation=46 submit_to_main_ms=1.61068
+11-07 00:17:49.597  6090  6090 D SearchTiming: generation=46 bind_to_post_ms=27.59053
+11-07 00:17:49.629  6090  6090 D SearchTiming: generation=47 bind_to_post_ms=29.296477
+11-07 00:17:50.201  6090  6090 D SearchTiming: generation=47 debounce_ms=600.416291
+11-07 00:17:50.201  6090  6184 D SearchTiming: queue_ms=0.048401
+11-07 00:17:50.202  6090  6184 D SearchTiming: query_hydration_ms=1.041543
+11-07 00:17:50.202  6090  6090 D SearchTiming: generation=47 submit_to_main_ms=1.281204
+11-07 00:17:50.232  6090  6090 D SearchTiming: generation=47 bind_to_post_ms=29.780502
+11-07 00:17:50.268  6090  6090 D SearchTiming: generation=48 bind_to_post_ms=32.13236
+11-07 00:17:50.838  6090  6090 D SearchTiming: generation=48 debounce_ms=601.367871
+11-07 00:17:50.838  6090  6184 D SearchTiming: queue_ms=0.150381
+11-07 00:17:50.839  6090  6184 D SearchTiming: query_hydration_ms=1.016469
+11-07 00:17:50.839  6090  6090 D SearchTiming: generation=48 submit_to_main_ms=1.510699
+11-07 00:17:50.863  6090  6090 D SearchTiming: generation=48 bind_to_post_ms=23.603639
+11-07 00:17:50.897  6090  6090 D SearchTiming: generation=51 bind_to_post_ms=27.318022
+11-07 00:17:52.529  6090  6090 D SearchTiming: generation=1 bind_to_post_ms=15.988266
+11-07 00:17:52.914  6090  6090 D SearchTiming: generation=2 bind_to_post_ms=30.556428
+11-07 00:17:53.484  6090  6090 D SearchTiming: generation=2 debounce_ms=600.130473
+11-07 00:17:53.485  6090  6184 D SearchTiming: queue_ms=0.17865
+11-07 00:17:53.486  6090  6184 D SearchTiming: query_hydration_ms=1.278535
+11-07 00:17:53.486  6090  6090 D SearchTiming: generation=2 submit_to_main_ms=1.743872
+11-07 00:17:53.517  6090  6090 D SearchTiming: generation=2 bind_to_post_ms=30.918575
+11-07 00:17:53.560  6090  6090 D SearchTiming: generation=3 bind_to_post_ms=28.347052
+11-07 00:17:54.133  6090  6090 D SearchTiming: generation=3 debounce_ms=600.867312
+11-07 00:17:54.134  6090  6184 D SearchTiming: queue_ms=0.157878
+11-07 00:17:54.135  6090  6184 D SearchTiming: query_hydration_ms=1.088505
+11-07 00:17:54.135  6090  6090 D SearchTiming: generation=3 submit_to_main_ms=1.688514
+11-07 00:17:54.166  6090  6090 D SearchTiming: generation=3 bind_to_post_ms=31.044166
+11-07 00:17:54.210  6090  6090 D SearchTiming: generation=4 bind_to_post_ms=30.547234
+11-07 00:17:54.783  6090  6090 D SearchTiming: generation=4 debounce_ms=602.731035
+11-07 00:17:54.783  6090  6184 D SearchTiming: queue_ms=0.090048
+11-07 00:17:54.784  6090  6184 D SearchTiming: query_hydration_ms=1.191899
+11-07 00:17:54.785  6090  6090 D SearchTiming: generation=4 submit_to_main_ms=1.69527
+11-07 00:17:54.813  6090  6090 D SearchTiming: generation=4 bind_to_post_ms=28.055118
+11-07 00:17:54.845  6090  6090 D SearchTiming: generation=5 bind_to_post_ms=28.767006
+11-07 00:17:55.419  6090  6090 D SearchTiming: generation=5 debounce_ms=601.709294
+11-07 00:17:55.419  6090  6184 D SearchTiming: queue_ms=0.069318
+11-07 00:17:55.421  6090  6184 D SearchTiming: query_hydration_ms=1.719854
+11-07 00:17:55.421  6090  6090 D SearchTiming: generation=5 submit_to_main_ms=2.326669
+11-07 00:17:55.449  6090  6090 D SearchTiming: generation=5 bind_to_post_ms=27.432314
+11-07 00:17:55.479  6090  6090 D SearchTiming: generation=6 bind_to_post_ms=25.401404
+11-07 00:17:56.054  6090  6090 D SearchTiming: generation=6 debounce_ms=600.529736
+11-07 00:17:56.055  6090  6184 D SearchTiming: queue_ms=0.165466
+11-07 00:17:56.056  6090  6184 D SearchTiming: query_hydration_ms=1.816936
+11-07 00:17:56.057  6090  6090 D SearchTiming: generation=6 submit_to_main_ms=2.354126
+11-07 00:17:56.082  6090  6090 D SearchTiming: generation=6 bind_to_post_ms=24.974568
+11-07 00:17:56.463  6090  6090 D SearchTiming: generation=7 bind_to_post_ms=34.641383
+11-07 00:17:57.030  6090  6090 D SearchTiming: generation=7 debounce_ms=600.169737
+11-07 00:17:57.030  6090  6184 D SearchTiming: queue_ms=0.151724
+11-07 00:17:57.032  6090  6184 D SearchTiming: query_hydration_ms=1.654001
+11-07 00:17:57.032  6090  6090 D SearchTiming: generation=7 submit_to_main_ms=2.30494
+11-07 00:17:57.045  6090  6090 D SearchTiming: generation=7 bind_to_post_ms=13.030443
+11-07 00:17:57.397  6090  6090 D SearchTiming: generation=8 bind_to_post_ms=3.247267
+11-07 00:17:57.747  6090  6090 D SearchTiming: generation=9 bind_to_post_ms=2.82628
+11-07 00:17:57.764  6090  6090 D SearchTiming: generation=10 bind_to_post_ms=14.90127
+11-07 00:17:57.779  6090  6090 D SearchTiming: generation=11 bind_to_post_ms=11.967454
+11-07 00:17:58.176  6090  6090 D SearchTiming: generation=1 bind_to_post_ms=20.530118
+11-07 00:17:58.212  6090  6090 D SearchTiming: generation=2 bind_to_post_ms=24.782015
+11-07 00:17:58.789  6090  6090 D SearchTiming: generation=2 debounce_ms=601.159332
+11-07 00:17:58.790  6090  6184 D SearchTiming: queue_ms=0.145956
+11-07 00:17:58.792  6090  6184 D SearchTiming: query_hydration_ms=2.062685
+11-07 00:17:58.792  6090  6090 D SearchTiming: generation=2 submit_to_main_ms=2.794939
+11-07 00:17:58.821  6090  6090 D SearchTiming: generation=2 bind_to_post_ms=28.611153
+11-07 00:17:59.910  6090  6090 D SearchTiming: generation=2 bind_to_post_ms=27.360737
+11-07 00:18:00.055  6090  6090 D SearchTiming: generation=2 bind_to_post_ms=54.968288

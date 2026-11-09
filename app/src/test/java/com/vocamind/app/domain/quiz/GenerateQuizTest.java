@@ -21,6 +21,9 @@ public class GenerateQuizTest {
         @Override public RepoResult<Long> saveAttempt(QuizResult result, long time) {
             throw new AssertionError("generation must not save");
         }
+        @Override public RepoResult<Long> saveAttemptOnce(String key, QuizResult result, long time) {
+            throw new AssertionError("generation must not save");
+        }
     }
 
     @Test public void defaultGeneratorUsesPolicyFromEveryFreshSnapshot() {

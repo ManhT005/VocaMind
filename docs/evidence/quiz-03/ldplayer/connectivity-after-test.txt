@@ -1,0 +1,2 @@
+Functional LDPlayer run retained Wi-Fi; this is not offline acceptance evidence.
+Active default network: 101

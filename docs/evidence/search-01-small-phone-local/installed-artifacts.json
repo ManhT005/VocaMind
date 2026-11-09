@@ -1,0 +1,12 @@
+{
+  "app": {
+    "path": "build\\search01-small-phone-apk\\outputs\\apk\\debug\\app-debug.apk",
+    "sha256": "7b59b146137828a94db0f79fa73a38d538b95f80874ccebdc65dd4f30a6425a1",
+    "install": "Performing Streamed Install\r\nSuccess\r\n"
+  },
+  "tests": {
+    "path": "build\\search01-small-phone-apk\\outputs\\apk\\androidTest\\debug\\app-debug-androidTest.apk",
+    "sha256": "025c40c48050ef26d2c294e492bfe2a8417f0d7a385cc50ffa8d756134b67f99",
+    "install": "Performing Streamed Install\r\nSuccess\r\n"
+  }
+}

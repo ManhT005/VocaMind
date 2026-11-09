@@ -1,0 +1,114 @@
+{
+  "verifiedAtUtc": "2026-11-06T17:28:41.509975+00:00",
+  "head": "1aad5653c801224316e1bdaec096b2a9b7582607",
+  "branch": "feature/search-01-search-ui",
+  "productionSourceChanged": false,
+  "trackedFilesChanged": false,
+  "sourceCodeCommit": "67c06d4aca3b237d7eb8565dfbb410b5acafd674",
+  "repoState": "Only this untracked evidence directory added; no staging/commit/push/PR/merge",
+  "emulator": {
+    "ro.product.model": "sdk_gphone_x86",
+    "ro.product.device": "generic_x86_arm",
+    "ro.product.cpu.abi": "x86",
+    "ro.build.version.release": "11",
+    "ro.build.version.sdk": "30",
+    "ro.build.fingerprint": "google/sdk_gphone_x86/generic_x86_arm:11/RSR1.201013.001/6903271:user/release-keys",
+    "ro.hardware": "ranchu",
+    "avd": "Small_Phone\r\r\nOK",
+    "meminfo": "MemTotal:        2028236 kB\r\nMemFree:          420932 kB\r\nMemAvailable:    1206160 kB\r\nBuffers:           28020 kB\r\nCached:           790372 kB\r\nSwapCached:         3500 kB\r\nActive:           768640 kB\r\nInactive:         551320 kB\r\nActive(anon):     302576 kB\r\nInactive(anon):   210720 kB\r\nActive(file):     466064 kB\r\nInactive(file):   340600 kB\r\nUnevictable:        2988 kB\r\nMlocked:            2988 kB\r\nSwapTotal:       1521172 kB\r\nSwapFree:        1326100 kB\r\nDirty:                 0 kB\r\nWriteback:             0 kB\r\nAnonPages:        501904 kB\r\nMapped:           463956 kB\r\nShmem:              9288 kB\r\nKReclaimable:      43376 kB\r\nSlab:             124184 kB\r\nSReclaimable:      43376 kB\r\nSUnreclaim:        80808 kB\r\nKernelStack:       24240 kB\r\nPageTables:        36916 kB\r\nNFS_Unstable:          0 kB\r\nBounce:                0 kB\r\nWritebackTmp:          0 kB\r\nCommitLimit:     2535288 kB\r\nCommitted_AS:   29220888 kB\r\nVmallocTotal:   34359738367 kB\r\nVmallocUsed:       37576 kB\r\nVmallocChunk:          0 kB\r\nPercpu:             3264 kB\r\nCmaTotal:              0 kB\r\nCmaFree:               0 kB\r\nDirectMap4k:      145232 kB\r\nDirectMap2M:     1951744 kB\r\nDirectMap1G:           0 kB",
+    "size": "Physical size: 720x1280",
+    "density": "Physical density: 320",
+    "emulatorConfigRamMb": 1024,
+    "head": "1aad5653c801224316e1bdaec096b2a9b7582607",
+    "initialSettings": {
+      "global.airplane_mode_on": "1",
+      "global.wifi_on": "2",
+      "system.font_scale": "null",
+      "system.accelerometer_rotation": "1",
+      "system.user_rotation": "0"
+    }
+  },
+  "runtimeRamMb": 2048,
+  "ramNote": "Emulator log explicitly raises configured 1024 MB to 2048 MB; /proc/meminfo MemTotal=2028236 kB",
+  "sourceFixtureHashes": {
+    "app/src/catalogTest/assets/benchmark/catalog-5000.db": "5fac69d4a5776130346be14747d81af3354a9220c2f9675ed95740c5058f54a7",
+    "app/src/main/assets/database/catalog.db": "7f90d0b11b14ce73932231dc7c4506bdf30af3788b66d0fde536d08fa7f753e9"
+  },
+  "instrumentation": {
+    "existing-instrumentation": {
+      "status": "PASS",
+      "invocations": 12,
+      "log": "existing-instrumentation.txt"
+    },
+    "local-ui-final": {
+      "status": "PASS",
+      "invocations": 5,
+      "log": "local-ui-final.txt"
+    },
+    "large-font-150": {
+      "status": "PASS",
+      "invocations": 3,
+      "log": "large-font-150.txt"
+    },
+    "offline-first-launch": {
+      "status": "PASS",
+      "invocations": 1,
+      "log": "offline-first-launch.txt"
+    }
+  },
+  "acceptedRunInvocations": 21,
+  "uniqueTestMethods": 17,
+  "earlierSupplementalRun": "local-ui-instrumentation.txt: 5 PASS, repeated after fixing screenshot timing/IME evidence; not counted again",
+  "manualAdb": {
+    "result": "PASS",
+    "scope": "Real ADB taps/text, keyboard, result detail stableId, Back, physical rotation, clear"
+  },
+  "originalAppDataUnchanged": true,
+  "settingsRestored": true,
+  "installedQaArtifacts": {
+    "app": {
+      "path": "build\\search01-small-phone-apk\\outputs\\apk\\debug\\app-debug.apk",
+      "sha256": "7b59b146137828a94db0f79fa73a38d538b95f80874ccebdc65dd4f30a6425a1",
+      "install": "Performing Streamed Install\r\nSuccess\r\n"
+    },
+    "tests": {
+      "path": "build\\search01-small-phone-apk\\outputs\\apk\\androidTest\\debug\\app-debug-androidTest.apk",
+      "sha256": "025c40c48050ef26d2c294e492bfe2a8417f0d7a385cc50ffa8d756134b67f99",
+      "install": "Performing Streamed Install\r\nSuccess\r\n"
+    }
+  },
+  "offlineQaArtifacts": {
+    "app": {
+      "path": "build\\search01-small-phone-offline-apk\\outputs\\apk\\debug\\app-debug.apk",
+      "sha256": "b35a30fe7c58a03ab1e107b04ddad9a707dcc6244be75c4c40ec7d6a9f3df77e",
+      "install": "Performing Streamed Install\r\nSuccess\r\n"
+    },
+    "tests": {
+      "path": "build\\search01-small-phone-offline-apk\\outputs\\apk\\androidTest\\debug\\app-debug-androidTest.apk",
+      "sha256": "5b3f5698a9d72a7822294ed5435960d81cbe2d203d1de75ccddd8cfe140635ab",
+      "install": "Performing Streamed Install\r\nSuccess\r\n"
+    }
+  },
+  "benchmark": {
+    "status": "COLLECTED - emulator only",
+    "raw": "data05-fts-benchmark-api30.json",
+    "warmupsPerWorkload": 20,
+    "samplesPerWorkload": 100,
+    "totalRawSamples": 500,
+    "scope": "DAO MATCH query plus entity materialization; excludes asset opening, expression preparation, executor queue, domain mapping and UI",
+    "latencyAssertionsEnabled": false,
+    "referenceHardwareVerified": false,
+    "observedAllSamplesBelow50Ms": true,
+    "observedAllWorkloadMeansBelow15Ms": false
+  },
+  "notRun": [
+    "Reference Helio G85/3GB/Android10 benchmark",
+    "UI Error/Retry driven by a real repository read failure (closed-DB repository contract tested separately)",
+    "Full VOCAB-02 detail/Save",
+    "Physical handset QA",
+    "Host tests/full lint/CI rerun in this emulator-only session",
+    "5000-row real FTS-to-UI render stress"
+  ],
+  "AC05": "HOLD - emulator QA supplement; reference performance unproven",
+  "NFR_VM_03": "HOLD"
+}

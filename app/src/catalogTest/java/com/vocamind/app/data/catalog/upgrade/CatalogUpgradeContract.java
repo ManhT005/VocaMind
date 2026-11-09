@@ -21,6 +21,7 @@ import static org.junit.Assert.*;
 /** All files and SQLite writes are isolated from real catalog/userdata and source assets. */
 public abstract class CatalogUpgradeContract {
     protected abstract InputStream openCandidate(String name) throws IOException;
+    protected abstract InputStream openUserSchema() throws IOException;
     private Context context;
     private File root, generations, userdata, legacy, a, b;
     private String userName;
@@ -162,6 +163,29 @@ public abstract class CatalogUpgradeContract {
             return null;
         });
     }
+    @Test public void exportedUserdataV1SurvivesCatalogUpgradeMigrationAndRollback() throws Exception {
+        run(() -> {
+            var coordinator = coordinator();
+            var old = coordinator.prepare(source(a));
+            LegacyUserdataFixture.create(context, userName, openUserSchema(), ID);
+            String before = LegacyUserdataFixture.snapshot(context, userName, 1, true);
+            var upgraded = coordinator.prepare(source(b));
+            assertNotEquals(old.id, upgraded.id);
+            assertEquals(before, LegacyUserdataFixture.snapshot(context, userName, 1, true));
+
+            UserDatabase migrated = UserDatabase.open(context, userName);
+            migrated.close();
+            assertEquals(before, LegacyUserdataFixture.snapshot(context, userName, 2, true));
+            LegacyUserdataFixture.verifyCompletionKey(context, userName);
+            String after = LegacyUserdataFixture.snapshot(context, userName, 2, false);
+
+            assertEquals(old.id, coordinator.rollback().id);
+            assertEquals(old.id, coordinator().recover().id);
+            assertEquals(after, LegacyUserdataFixture.snapshot(context, userName, 2, false));
+            return null;
+        });
+    }
+
     @Test public void repeatedPrepareIsIdempotent() throws Exception {
         run(() -> { var c=coordinator();var first=c.prepare(source(a));seed();String before=snapshot();
             var noStage=coordinator(step -> {throw new AssertionError("Identical bundle must not be staged: "+step);});

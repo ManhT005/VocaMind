@@ -29,6 +29,36 @@ public abstract class FtsSearchContract {
     private VocabularySearchResult search(String input) throws Exception {
         return provider.search().execute(input).get(15, TimeUnit.SECONDS);
     }
+    @Test public void cursorHydrationPreservesEveryFieldAndOrdering() throws Exception {
+        worker.submit(() -> {
+            var dao = db.catalogDao();
+            for (var expected : dao.allVocabulary()) {
+                String expression = FtsMatchExpression.from(VocabularySearchQuery.parse(expected.lemma));
+                var matches = dao.searchVocabulary(expression);
+                // Original Room entity mapper remains available through the fixture probe.
+                var originals = dao.matchFixture(expression);
+                Map<String, com.vocamind.app.data.catalog.entity.VocabularyEntry> byId = new HashMap<>();
+                for (var row : originals) byId.put(row.id, row);
+                assertEquals(originals.size(), matches.size());
+                String previous = null;
+                for (var actual : matches) {
+                    var original = byId.remove(actual.id); assertNotNull(original);
+                    assertEquals(original.lemma, actual.lemma);
+                    assertEquals(original.normalizedLemma, actual.normalizedLemma);
+                    assertEquals(original.pos, actual.pos); assertEquals(original.meaningVi, actual.meaningVi);
+                    assertEquals(original.exampleEn, actual.exampleEn); assertEquals(original.exampleVi, actual.exampleVi);
+                    assertEquals(original.ipa, actual.ipa); assertEquals(original.sourceId, actual.sourceId);
+                    assertEquals(original.contentVersion, actual.contentVersion);
+                    // All fixture lemmas are normalized ASCII, consistent with SQLite NOCASE.
+                    String key = actual.normalizedLemma + "\u0000" + actual.id;
+                    if (previous != null) assertTrue(previous.compareTo(key) <= 0);
+                    previous = key;
+                }
+                assertTrue(byId.isEmpty());
+            }
+            return null;
+        }).get(15, TimeUnit.SECONDS);
+    }
     @Test public void englishAndVietnameseResolveTheSameTextStableId() throws Exception {
         var en = search("bank"); var vi = search("ngân hàng");
         assertTrue(en.isSuccess()); assertTrue(vi.isSuccess());

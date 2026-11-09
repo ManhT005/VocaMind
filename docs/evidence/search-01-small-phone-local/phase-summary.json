@@ -1,0 +1,49 @@
+{
+  "process": {
+    "pid": "7120",
+    "package": "com.vocamind.app.search01qa"
+  },
+  "samplesMs": {
+    "bind_to_post_ms": [
+      45.456671,
+      22.765835,
+      13.935345,
+      30.007069,
+      9.683083,
+      41.264273,
+      23.382361,
+      51.584254,
+      45.542368,
+      23.189166,
+      30.074114,
+      10.052576,
+      30.198755,
+      20.977526,
+      33.769456
+    ],
+    "debounce_ms": [
+      602.27696,
+      600.201442
+    ],
+    "queue_ms": [
+      0.321545,
+      0.236015
+    ],
+    "query_hydration_ms": [
+      19.128544,
+      2.586658
+    ],
+    "submit_to_main_ms": [
+      20.150044,
+      3.310717
+    ]
+  },
+  "scope": {
+    "debounce_ms": "input to scheduled start; actual emulator clock",
+    "queue_ms": "SearchProvider executor submit to worker start",
+    "query_hydration_ms": "Repository FTS read + entity/domain hydration",
+    "submit_to_main_ms": "VM submit to main delivery; overlaps queue/query",
+    "bind_to_post_ms": "state observation to diff commit + posted callback, not GPU present"
+  },
+  "rawLog": "manual-phase-logcat.txt"
+}

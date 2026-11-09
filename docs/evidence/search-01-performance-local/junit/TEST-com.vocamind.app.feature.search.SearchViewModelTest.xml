@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.search.SearchViewModelTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2026-11-08T15:10:17" hostname="DESKTOP-KUH3S13" time="0.446">
+  <properties/>
+  <testcase name="clearRejectsQueuedCompletionAndError[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.029"/>
+  <testcase name="outOfOrderContentAndOldErrorCannotStopNewLoading[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.019"/>
+  <testcase name="invalidInputDoesNotSubmitOrBecomeNoMatch[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.021"/>
+  <testcase name="debounce600AndImmediateInvalidation[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.023"/>
+  <testcase name="aToBToAUsesGenerationNotQueryEquality[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.025"/>
+  <testcase name="disposedOwnerIgnoresLateCompletionAndCancelsDebounce[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.019"/>
+  <testcase name="immediateExceptionalAndRejectedFuturesUseMainDelivery[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.023"/>
+  <testcase name="savedRawQueryRestoresAndNavigationUsesOpaqueId[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.018"/>
+  <testcase name="errorsAreDistinctFromNoMatchRetryUsesCurrentInput[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.019"/>
+  <testcase name="clearWhitespaceTokenlessInvalidateRunningAndPending[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.018"/>
+  <testcase name="clearRejectsQueuedCompletionAndError" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.027"/>
+  <testcase name="outOfOrderContentAndOldErrorCannotStopNewLoading" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.02"/>
+  <testcase name="invalidInputDoesNotSubmitOrBecomeNoMatch" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.019"/>
+  <testcase name="debounce600AndImmediateInvalidation" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.019"/>
+  <testcase name="aToBToAUsesGenerationNotQueryEquality" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.018"/>
+  <testcase name="disposedOwnerIgnoresLateCompletionAndCancelsDebounce" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.024"/>
+  <testcase name="immediateExceptionalAndRejectedFuturesUseMainDelivery" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.027"/>
+  <testcase name="savedRawQueryRestoresAndNavigationUsesOpaqueId" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.029"/>
+  <testcase name="errorsAreDistinctFromNoMatchRetryUsesCurrentInput" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.023"/>
+  <testcase name="clearWhitespaceTokenlessInvalidateRunningAndPending" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.02"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

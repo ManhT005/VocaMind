@@ -1,0 +1,1 @@
+Restored airplane_mode_on=0; wifi_on=1; ADB state=device.

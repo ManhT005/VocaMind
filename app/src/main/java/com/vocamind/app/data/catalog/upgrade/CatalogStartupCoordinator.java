@@ -1,6 +1,7 @@
 package com.vocamind.app.data.catalog.upgrade;
 
 import android.content.Context;
+import com.vocamind.app.data.user.UserDatabase;
 import org.json.*;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -33,7 +34,8 @@ public final class CatalogStartupCoordinator {
         if (pinned != null && pinned.directory.exists()) return pinned;
         try {
             CatalogStartupCoordinator coordinator = new CatalogStartupCoordinator(context, root,
-                    context.getDatabasePath("userdata.db"), context.getDatabasePath("catalog.db"), step -> {});
+                    context.getDatabasePath(UserDatabase.NAME),
+                    context.getDatabasePath("catalog.db"), step -> {});
             CatalogGeneration selected = coordinator.prepare(name -> context.getAssets().open("database/" + name));
             PINNED.put(key, selected);
             return selected;

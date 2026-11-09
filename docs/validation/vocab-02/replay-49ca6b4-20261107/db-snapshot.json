@@ -1,0 +1,368 @@
+{
+  "catalog.db": {
+    "sha256": "5cb8b0e3078854daafb6a8bd4582a4032743c0f7e547228b0ab4e3d16c987070",
+    "tables": {
+      "ContentSource": [
+        {
+          "id": "fixture-authored-20261023",
+          "title": "Học liệu tổng hợp chỉ dùng test contract",
+          "url": "https://example.invalid/vocamind/fixtures",
+          "licenseCode": "FIXTURE-ONLY",
+          "licenseUrl": "https://example.invalid/vocamind/fixtures/license",
+          "snapshotDate": "2026-10-23",
+          "attributionText": "Synthetic fixture authored for contract validation; not a verified source dataset."
+        }
+      ],
+      "LearningPack": [
+        {
+          "id": "pack_academic",
+          "title": "Từ vựng Học thuật Thiết yếu",
+          "description": "Gói fixture nhỏ chỉ dùng kiểm tra contract.",
+          "category": "academic",
+          "orderNo": 3,
+          "version": "1.0.0"
+        },
+        {
+          "id": "pack_daily_life",
+          "title": "Tiếng Anh Đời sống Hàng ngày",
+          "description": "Gói fixture nhỏ chỉ dùng kiểm tra contract.",
+          "category": "general",
+          "orderNo": 2,
+          "version": "1.0.0"
+        },
+        {
+          "id": "pack_toeic_basic",
+          "title": "TOEIC Căn bản",
+          "description": "Gói fixture nhỏ chỉ dùng kiểm tra contract.",
+          "category": "toeic",
+          "orderNo": 0,
+          "version": "1.0.0"
+        },
+        {
+          "id": "pack_toeic_office",
+          "title": "TOEIC Công sở & Giao dịch",
+          "description": "Gói fixture nhỏ chỉ dùng kiểm tra contract.",
+          "category": "toeic",
+          "orderNo": 1,
+          "version": "1.0.0"
+        }
+      ],
+      "PackWord": [
+        {
+          "packId": "pack_academic",
+          "vocabularyId": "90562a98e8686267",
+          "orderNo": 0
+        },
+        {
+          "packId": "pack_daily_life",
+          "vocabularyId": "90562a98e8686267",
+          "orderNo": 0
+        },
+        {
+          "packId": "pack_toeic_basic",
+          "vocabularyId": "90562a98e8686267",
+          "orderNo": 0
+        },
+        {
+          "packId": "pack_toeic_office",
+          "vocabularyId": "90562a98e8686267",
+          "orderNo": 0
+        },
+        {
+          "packId": "pack_academic",
+          "vocabularyId": "d17314a48504e2ac",
+          "orderNo": 1
+        },
+        {
+          "packId": "pack_daily_life",
+          "vocabularyId": "d17314a48504e2ac",
+          "orderNo": 1
+        },
+        {
+          "packId": "pack_toeic_basic",
+          "vocabularyId": "d17314a48504e2ac",
+          "orderNo": 1
+        },
+        {
+          "packId": "pack_toeic_office",
+          "vocabularyId": "d17314a48504e2ac",
+          "orderNo": 1
+        },
+        {
+          "packId": "pack_academic",
+          "vocabularyId": "5aecfbf5b9a23aee",
+          "orderNo": 2
+        },
+        {
+          "packId": "pack_daily_life",
+          "vocabularyId": "5aecfbf5b9a23aee",
+          "orderNo": 2
+        },
+        {
+          "packId": "pack_toeic_basic",
+          "vocabularyId": "5aecfbf5b9a23aee",
+          "orderNo": 2
+        },
+        {
+          "packId": "pack_toeic_office",
+          "vocabularyId": "5aecfbf5b9a23aee",
+          "orderNo": 2
+        },
+        {
+          "packId": "pack_academic",
+          "vocabularyId": "923d45253cc2c67c",
+          "orderNo": 3
+        },
+        {
+          "packId": "pack_daily_life",
+          "vocabularyId": "923d45253cc2c67c",
+          "orderNo": 3
+        },
+        {
+          "packId": "pack_toeic_basic",
+          "vocabularyId": "923d45253cc2c67c",
+          "orderNo": 3
+        },
+        {
+          "packId": "pack_toeic_office",
+          "vocabularyId": "923d45253cc2c67c",
+          "orderNo": 3
+        }
+      ],
+      "VocabularyEntry": [
+        {
+          "id": "90562a98e8686267",
+          "lemma": "book",
+          "normalizedLemma": "book",
+          "pos": "noun",
+          "meaningVi": "cuốn sách",
+          "exampleEn": "I put the book on the desk.",
+          "exampleVi": "Tôi đặt cuốn sách lên bàn.",
+          "ipa": null,
+          "sourceId": "fixture-authored-20261023",
+          "contentVersion": "1.0.0"
+        },
+        {
+          "id": "5aecfbf5b9a23aee",
+          "lemma": "bank",
+          "normalizedLemma": "bank",
+          "pos": "noun",
+          "meaningVi": "ngân hàng",
+          "exampleEn": "She works at a local bank.",
+          "exampleVi": "Cô ấy làm việc tại một ngân hàng địa phương.",
+          "ipa": null,
+          "sourceId": "fixture-authored-20261023",
+          "contentVersion": "1.0.0"
+        },
+        {
+          "id": "923d45253cc2c67c",
+          "lemma": "airport",
+          "normalizedLemma": "airport",
+          "pos": "noun",
+          "meaningVi": "sân bay",
+          "exampleEn": "They arrived at the airport early.",
+          "exampleVi": "Họ đến sân bay sớm.",
+          "ipa": null,
+          "sourceId": "fixture-authored-20261023",
+          "contentVersion": "1.0.0"
+        },
+        {
+          "id": "d17314a48504e2ac",
+          "lemma": "book",
+          "normalizedLemma": "book",
+          "pos": "verb",
+          "meaningVi": "đặt trước",
+          "exampleEn": "We will book a room tomorrow.",
+          "exampleVi": "Chúng tôi sẽ đặt phòng vào ngày mai.",
+          "ipa": null,
+          "sourceId": "fixture-authored-20261023",
+          "contentVersion": "1.0.0"
+        }
+      ],
+      "VocabularyFts": [
+        {
+          "lemma": "airport",
+          "normalizedLemma": "airport",
+          "meaningVi": "sân bay"
+        },
+        {
+          "lemma": "bank",
+          "normalizedLemma": "bank",
+          "meaningVi": "ngân hàng"
+        },
+        {
+          "lemma": "book",
+          "normalizedLemma": "book",
+          "meaningVi": "đặt trước"
+        },
+        {
+          "lemma": "book",
+          "normalizedLemma": "book",
+          "meaningVi": "cuốn sách"
+        }
+      ],
+      "VocabularyFts_content": [
+        {
+          "docid": 4,
+          "c0lemma": "airport",
+          "c1normalizedLemma": "airport",
+          "c2meaningVi": "sân bay"
+        },
+        {
+          "docid": 3,
+          "c0lemma": "bank",
+          "c1normalizedLemma": "bank",
+          "c2meaningVi": "ngân hàng"
+        },
+        {
+          "docid": 2,
+          "c0lemma": "book",
+          "c1normalizedLemma": "book",
+          "c2meaningVi": "đặt trước"
+        },
+        {
+          "docid": 1,
+          "c0lemma": "book",
+          "c1normalizedLemma": "book",
+          "c2meaningVi": "cuốn sách"
+        }
+      ],
+      "VocabularyFts_docsize": [
+        {
+          "docid": 1,
+          "size": {
+            "base64": "AQEC"
+          }
+        },
+        {
+          "docid": 2,
+          "size": {
+            "base64": "AQEC"
+          }
+        },
+        {
+          "docid": 3,
+          "size": {
+            "base64": "AQEC"
+          }
+        },
+        {
+          "docid": 4,
+          "size": {
+            "base64": "AQEC"
+          }
+        }
+      ],
+      "VocabularyFts_segdir": [
+        {
+          "level": 0,
+          "idx": 0,
+          "start_block": 0,
+          "leaves_end_block": 0,
+          "end_block": "0 149",
+          "root": {
+            "base64": "AAdhaXJwb3J0BgQCAQECAAAEYmFuawYDAgEBAgACAXkFBAECAwABA29vawwBAgEBAgABAgEBAgAABmN14buRbgUBAQICAAAFaMOgbmcFAwECAwAABW5nw6JuBQMBAgIAAAVzw6FjaAUBAQIDAAICom4FBAECAgAACHRyxrDhu5tjBQIBAgMAAAbEkeG6t3QFAgECAgA="
+          }
+        }
+      ],
+      "VocabularyFts_segments": [],
+      "VocabularyFts_stat": [
+        {
+          "id": 0,
+          "value": {
+            "base64": "BAQECFQ="
+          }
+        }
+      ],
+      "android_metadata": [
+        {
+          "locale": "en_US"
+        }
+      ],
+      "room_master_table": [
+        {
+          "id": 42,
+          "identity_hash": "6704c4cc4f3db1ef916af009d7de4b98"
+        }
+      ]
+    }
+  },
+  "userdata.db": {
+    "sha256": "c9dbd95fb51b3297fe2990aa21847f89ac2be2837e913032f9a1e9c2939f9afa",
+    "tables": {
+      "QuizAttempt": [],
+      "ReviewEvent": [
+        {
+          "id": 1,
+          "vocabularyId": "d17314a48504e2ac",
+          "rating": "HARD",
+          "reviewedAt": 1700001000000,
+          "boxBefore": 3,
+          "boxAfter": 3,
+          "nextDueAt": 1800000000000
+        }
+      ],
+      "UserPack": [],
+      "UserPreference": [
+        {
+          "id": 1,
+          "dailyNewWords": 5,
+          "dailyGoalMinutes": 10,
+          "reminderEnabled": 0,
+          "reminderHour": 20
+        }
+      ],
+      "UserWordProgress": [
+        {
+          "vocabularyId": "90562a98e8686267",
+          "box": 0,
+          "dueAt": 1794061747724,
+          "learnedAt": null,
+          "lastReviewedAt": null,
+          "consecutiveMistakes": 0,
+          "isLeech": 0,
+          "reviewCount": 0,
+          "isSaved": 0
+        },
+        {
+          "vocabularyId": "d17314a48504e2ac",
+          "box": 3,
+          "dueAt": 1800000000000,
+          "learnedAt": 1700000000000,
+          "lastReviewedAt": 1700001000000,
+          "consecutiveMistakes": 3,
+          "isLeech": 1,
+          "reviewCount": 9,
+          "isSaved": 0
+        }
+      ],
+      "android_metadata": [
+        {
+          "locale": "en_US"
+        }
+      ],
+      "room_master_table": [
+        {
+          "id": 42,
+          "identity_hash": "daa247b8faf3dd8a10e448a242018a6c"
+        }
+      ]
+    }
+  },
+  "baselineCounts": {
+    "total": 2,
+    "boxes": [
+      [
+        0,
+        1
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    "reviewEvents": 1,
+    "userPacks": 0,
+    "learnedToday": 0
+  }
+}

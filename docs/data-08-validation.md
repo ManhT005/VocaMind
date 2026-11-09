@@ -6,11 +6,11 @@
 | --- | --- |
 | Task / Người thực hiện / Reviewer | DATA-08 / Nhân / Thi |
 | Nhánh | `feature/data-08-catalog-upgrade-rollback` |
-| Base | `origin/develop` tại `993e70a07a05c50c5de8099edcdf50b92c91c5e9` |
+| Base tích hợp | `origin/develop` tại `a5ff1dd354c35f942123a9067dc121072b584737` |
 | Căn cứ | SRS Baseline v1.1, bảng phân công đính kèm và [plan](plans/data-08-catalog-upgrade-rollback.md) |
 | Truy vết | FR-VM-003/010, AC-13, NFR-VM-06, §7.4, DEC-04/05/13 |
-| Schema production trên nhánh | CatalogDatabase **2**, UserDatabase **1** — giữ nguyên |
-| Kết luận | Catalog implementation và host regression đã kiểm chứng; chưa đóng toàn bộ gate nghiệm thu |
+| Schema trên nhánh sau tích hợp | CatalogDatabase **2**, UserDatabase **2**, dùng migration 1 → 2 từ QUIZ-03 |
+| Kết luận | Mục 4 ghi nhận kết quả lịch sử. Mục 5–6 mô tả các kiểm tra cho bản tích hợp |
 
 Không tăng schema để có test, không thêm bản sao migration khác production,
 không sửa asset/schema JSON/quyền phát hành của sản phẩm. Thời gian thực hiện
@@ -134,51 +134,48 @@ Các lỗi gặp và đã sửa: Android API không hỗ trợ cờ directory-op
 directory; screen Attribution bootstrap trên main thread; fixture review dùng
 rating không thuộc contract. Báo cáo cuối được lấy sau khi sửa và chạy lại.
 
-## 5. Migration userdata thật và phần còn mở
+## 5. Migration userdata tích hợp
 
-Nhánh này vẫn schema 1. Đã chạy test production sẵn có
-`UserDatabaseTest.productionMigrationPreservesLegacyHistoryAndProgress` trong
-checkout tách biệt của `origin/feature/quiz-03-ui-session` tại
-`f34b4ea72d81062d231ae75433c9ad4fefa1963a`: **2/2 lượt SDK 26/35 pass**.
-Test gọi chính UserDatabase v2 với MIGRATION_1_2 của nhánh đó; kiểm progress,
-quiz cũ/NULL completionKey và unique completion behavior.
+`CatalogUpgradeContract.exportedUserdataV1SurvivesCatalogUpgradeMigrationAndRollback`
+dựng userdata từ Room schema 1 đã export, seed cả năm bảng, nâng catalog A → B,
+rồi mở qua `UserDatabase.open` với migration production của QUIZ-03. Snapshot
+so sánh từng dòng và từng cột legacy, bao gồm hai quiz cũ có `completionKey`
+NULL sau migration. Test ghi một quiz có khóa, thử lại cùng payload và xác
+minh payload khác bị từ chối. Rollback chỉ đổi catalog về A, còn userdata
+giữ schema 2 và snapshot sau migration.
 
-[Migration component evidence](evidence/data-08/migration-component.json) ghi
-đúng source và phạm vi. Kết quả này không thay integration sau merge: chưa có
-MigrationTestHelper/schema-1→2 cùng catalog upgrade và snapshot cả năm bảng trên
-nhánh DATA-08. Không chép migration hay schema 2 qua chỉ để làm gate xanh.
-
-Để tái lập component test, checkout riêng đúng SHA trên rồi chạy:
+[Migration component evidence](evidence/data-08/migration-component.json)
+và các log ở mục 4 thuộc checkout trước tích hợp. Để chạy lại contract trên
+SDK 26/35:
 
 ```bash
-bash gradlew :app:testDebugUnitTest \
-  --tests '*UserDatabaseTest.productionMigrationPreservesLegacyHistoryAndProgress*' \
-  --max-workers=2 --console=plain
+./gradlew :app:testDebugUnitTest --tests '*CatalogUpgradeTest*'
 ```
 
-## 6. Gate thiết bị và bàn giao
-
-Cloud hiện không có emulator/system image hoặc `/dev/kvm`; ADB không khởi động
-được do `/home/agent/.android` read-only. Không sửa permission/thư mục hệ thống
-hay dùng host tests để thay bằng chứng thiết bị.
-
-Trên máy Android Studio có thiết bị/emulator API26+ kết nối, chạy shared suite:
+## 6. Kiểm tra xuyên tiến trình và reboot
 
 ```bash
-./gradlew :app:connectedDebugAndroidTest \
-  -Pandroid.testInstrumentationRunnerArguments.class=com.vocamind.app.data.catalog.upgrade.CatalogUpgradeInstrumentedTest
+bash tools/catalog/validate_data08_reboot.sh
 ```
 
-Suite tự tạo/xóa DB riêng. Chạy lại suite sau reboot không đủ chứng minh dữ liệu
-của lần trước tồn tại: cần một phiên kiểm thử giữ state xuyên process, với A/B
-cùng application ID, seed năm bảng, ghi logical snapshot/generation, upgrade,
-force-stop/relaunch rồi reboot/relaunch và đối chiếu snapshot. Lưu model/API,
-APK SHA, commands và trước/sau; lặp sau rollback. Việc này còn cần thực hiện
-trên thiết bị trước khi đóng T15/AC-13.
+Chạy trên emulator dùng riêng cho QA. Script build hai APK synthetic A/B
+cùng ID `com.vocamind.app.data08validation`, lưu SHA-256, sau đó:
 
-Gate còn mở: migration tích hợp sau merge schema 2, real process/device reboot,
-fault trên storage thật, legacy khác nội dung cần bộ companion cũ, và review Thi.
-Không tự cập nhật bảng phân công thành hoàn thành hoặc phê duyệt release.
+1. Cài A, dựng userdata v1 từ schema Room đã export và lưu snapshot năm bảng.
+2. Cài đè B, mở bằng `CatalogProvider` và `RepositoryProvider` production,
+   kiểm catalog B, migration 1 → 2 và completion key của quiz.
+3. Force-stop và khởi động tiến trình instrumentation mới, rồi chạy lại sau
+   `adb reboot`. Hai lần đều đối chiếu generation B và toàn bộ snapshot v2.
+4. Rollback con trỏ về A, cài lại A và reboot. Đối chiếu generation A và
+   đúng snapshot v2, bao gồm quiz có completion key.
+
+ADB ghi lại boot ID trước/sau từng lần reboot. Chỉ khi đủ các pha và boot
+ID thực sự đổi thì job mới đạt. GitHub Actions lưu SHA checkout/APK, model,
+SDK, boot ID và digest snapshot theo pha. Hai APK dùng cùng source tích hợp,
+khác catalog đóng gói. Dữ liệu v1 được dựng bằng schema đã export.
+
+Ca fault storage thật, legacy catalog khác nội dung với asset và xác nhận
+reviewer vẫn là các gate riêng.
 
 ## 7. Rà soát bổ sung sau triển khai
 

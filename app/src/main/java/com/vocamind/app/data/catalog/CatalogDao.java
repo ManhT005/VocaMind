@@ -2,6 +2,7 @@ package com.vocamind.app.data.catalog;
 
 import androidx.room.Dao;
 import androidx.room.Query;
+import android.database.Cursor;
 import com.vocamind.app.data.catalog.entity.*;
 import java.util.List;
 import java.util.ArrayList;
@@ -74,7 +75,45 @@ public interface CatalogDao {
     /** Production FTS4 path; the expression is generated from literal tokens, not raw UI syntax. */
     @Query("SELECT v.* FROM VocabularyEntry v JOIN VocabularyFts f ON f.rowid = v.rowid "
             + "WHERE VocabularyFts MATCH :expression ORDER BY v.normalizedLemma COLLATE NOCASE, v.id")
-    List<VocabularyEntry> searchVocabulary(String expression);
+    Cursor readSearchCursor(String expression);
+
+    // Generated scalar queries use Room's connection/close barrier. The legacy
+    // Cursor query alone can reopen a closed SupportSQLiteOpenHelper in Room 2.8.
+    // Preserve READ_FAILED after owner close, and Room's worker-thread checks.
+    @Query("SELECT 1")
+    int checkSearchConnection();
+
+    /**
+     * Keep the complete DATA-05 projection/order. Reading the cursor directly avoids
+     * the compatibility statement adapter's extra per-column isNull/getText calls
+     * for large result sets. The cursor belongs to this call, never to UI consumers.
+     */
+    default List<VocabularyEntry> searchVocabulary(String expression) {
+        checkSearchConnection();
+        try (Cursor cursor = readSearchCursor(expression)) {
+            int id = cursor.getColumnIndexOrThrow("id");
+            int lemma = cursor.getColumnIndexOrThrow("lemma");
+            int normalized = cursor.getColumnIndexOrThrow("normalizedLemma");
+            int pos = cursor.getColumnIndexOrThrow("pos");
+            int meaning = cursor.getColumnIndexOrThrow("meaningVi");
+            int en = cursor.getColumnIndexOrThrow("exampleEn");
+            int vi = cursor.getColumnIndexOrThrow("exampleVi");
+            int ipa = cursor.getColumnIndexOrThrow("ipa");
+            int source = cursor.getColumnIndexOrThrow("sourceId");
+            int version = cursor.getColumnIndexOrThrow("contentVersion");
+            List<VocabularyEntry> rows = new ArrayList<>(cursor.getCount());
+            while (cursor.moveToNext()) {
+                VocabularyEntry row = new VocabularyEntry();
+                row.id = cursor.getString(id); row.lemma = cursor.getString(lemma);
+                row.normalizedLemma = cursor.getString(normalized); row.pos = cursor.getString(pos);
+                row.meaningVi = cursor.getString(meaning); row.exampleEn = cursor.getString(en);
+                row.exampleVi = cursor.getString(vi); row.ipa = cursor.getString(ipa);
+                row.sourceId = cursor.getString(source); row.contentVersion = cursor.getString(version);
+                rows.add(row);
+            }
+            return rows;
+        }
+    }
     // Compatibility probe for DATA-01 fixtures.
     @Query("SELECT v.* FROM VocabularyEntry v JOIN VocabularyFts f ON f.rowid = v.rowid WHERE VocabularyFts MATCH :expression ORDER BY v.id")
     List<VocabularyEntry> matchFixture(String expression);

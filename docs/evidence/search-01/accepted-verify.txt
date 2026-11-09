@@ -1,0 +1,20 @@
+{
+  "status": "pass",
+  "entries": 150,
+  "datasetSha256": "c066d4a363d58c4c7226b716f1080b25a9e47b124a4007f4c3d16d67283a7fb8",
+  "forbiddenDistractorPairs": [
+    [
+      "524b9dddc2876a46",
+      "c09530564094b0ac"
+    ],
+    [
+      "966dc6001179f77a",
+      "84b99b98d945db07"
+    ],
+    [
+      "ee46fdf826f53ce2",
+      "a0adea31b35a7f42"
+    ]
+  ],
+  "fixtureOnly": false
+}

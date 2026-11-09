@@ -7,6 +7,13 @@ project entry point; generated build outputs stay in ignored build directories.
 | --- | --- |
 | [DATA-08 plan](plans/data-08-catalog-upgrade-rollback.md) | Milestone-based catalog upgrade, bundle rollback, userdata preservation and migration test plan |
 | [DATA-08 validation](data-08-validation.md) | Startup generation publication/recovery, shared tests, migration component evidence and device gates |
+| [SEARCH-01 performance validation](search-01-performance-validation.md) | Full-result cursor hydration optimization, emulator A/B raw samples, regression and reference-device HOLD |
+| [PROGRESS-02 develop integration](progress-02-develop-integration.md) | Updated develop merge, 501 tests and fresh LD production-flow verification |
+| [PROGRESS-02 plan](plans/progress-02-ui-history.md) | User-provided progress UI/history scope and acceptance matrix |
+| [PROGRESS-02 validation](progress-02-validation.md) | Original acceptance and publication/review status |
+| [PROGRESS-02 review corrections](progress-02-review-fix-validation.md) | Atomic UI snapshots, exact LD configuration rollback and fresh regression evidence |
+| [VOC-DATA-05 validation](voc-data-05-validation.md) | Optional CEFR and topic metadata, evidence gates, and coverage |
+| [ARC-04 integration review](arc-04-validation.md) | Week 2 architecture audit, CI evidence, findings and handoff |
 | [VOC-DATA-06 QA validation](voc-data-06-qa-validation.md) | Versioned QA catalog in the main QA APK, asset verification, and acceptance gates |
 | [VOC-DATA-06 validation](voc-data-06-validation.md) | Verified production QC to staged 150-word Room catalog, bundle/FTS gates, reproducibility and release limitations |
 | [DATA-07 plan](plans/data-07-progress-aggregation-queries.md) | Five-hour plan, distinct counts, six-box and quiz history acceptance |
@@ -65,6 +72,8 @@ project entry point; generated build outputs stay in ignored build directories.
 | [LEARN-01 validation](learn-01-validation.md) | Implemented scheduler rules, test evidence and handoff |
 | [LEARN-02 validation](learn-02-validation.md) | TC-SCHED-01..10 and boundary test coverage for the Leitner scheduler |
 | [UI sketch](sketchs.png) | Visual reference for future feature screens |
+| [QUIZ-03 plan](plans/quiz-03-ui-session.md) | Quiz UI/session, answer locking, idempotent completion and planned validation |
+| [QUIZ-03 validation](quiz-03-validation.md) | Quiz UI/session implementation, migration, host/device evidence and review gates |
 | [QUIZ-02 plan](plans/quiz-02-generation.md) | Production Quiz generation, normalization, sampling and planned validation |
 | [QUIZ-02 validation](quiz-02-validation.md) | Generator, pinned Unicode NFC/casefold, test evidence and QUIZ-03 handoff |
 
@@ -77,3 +86,17 @@ validation records separate from the current setup and foundation guides.
 - [PACK-02 activation validation and handoff](pack-02-validation.md)
 - [VOCAB-01 validation và handoff](vocab-01-validation.md)
 - [PACK-02 / VOCAB-01 local integration and device QA](pack-02-integration-validation.md)
+- [SEARCH-01 validation và handoff](search-01-validation.md)
+- [SEARCH-01 PR draft](search-01-pr-draft.md)
+- [SEARCH-01 tích hợp VOCAB-02 và QA150 local](search-01-vocab02-integration.md)
+- [VOCAB-02 validation và handoff](vocab-02-validation.md)
+- [VOCAB-02 saved-only decision pending](vocab-02-saved-only-decision.md)
+- [VOCAB-02 PR draft](vocab-02-pr-draft.md)
+- [VOCAB-02 UI refresh validation](vocab-02-ui-validation.md)
+- [VOCAB-02 review follow-up / develop integration](vocab-02-review-followup.md)
+- [VOCAB-02 first-save contract acceptance](vocab-02-first-save-validation.md)
+- [VOCAB-02 DATA-06/DATA-07 integration](vocab-02-data0607-integration.md)
+- [VOCAB-02 focused emulator QA](vocab-02-device-qa.md)
+- [VOCAB-02 probe binding replay on 49ca6b4](vocab-02-probe-replay-49ca6b4.md)
+
+- [VOCAB-02 integration and probe binding recheck](vocab-02-recheck-993e70a.md)

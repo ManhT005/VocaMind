@@ -1,0 +1,1361 @@
+{
+  "schemaVersion": 1,
+  "enrichmentVersion": "0.1.0",
+  "targetSnapshotId": "editorial-accepted-v1",
+  "targetSnapshotCommit": "cd83f1ce874a899029a85879c3c40c97343683d6",
+  "targetDatasetSha256": "c066d4a363d58c4c7226b716f1080b25a9e47b124a4007f4c3d16d67283a7fb8",
+  "targetCanonicalSha256": "f27e9d2de700fadf13b480df26933c61333ce6261ed872d285e5a111a88110c1",
+  "taxonomyVersion": "topic-taxonomy-v1",
+  "records": [
+    {
+      "stableId": "010b4ac271bcee7c",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "0143ae3ced507401",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "0207c263f8c49060",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "04f6267e6210a62b",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "0699e8c16aeb2c75",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "08e316e478a1cb48",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "094d6eb38436449c",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "09ccd86563216372",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "0a498cc4cc82ed55",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "12ad019497d6252b",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "13b658cda964e2fc",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "154ad3c75bd7a6f6",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "1816f4bcf0432990",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "18c8c1664b1f0e78",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "1ea16d6488d32531",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "1f431cc21a98d12f",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "1fdd05db52c836d6",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "21be5e8881d7cab1",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "2219291add402728",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "28df1baa0ff1f8ad",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "2a0bd49d29501e9d",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "2a1a65c13e33bc68",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "2a341b4ec105c143",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "2a509f121003cd06",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "2fde3352568ed7fe",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "3142d729b72035da",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "339a41a30122525c",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "3586522dac0ead10",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "35d609ed98afcb6f",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "363c503bebd37391",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "36fd889573de8c99",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "3d5117748d4c5141",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "3dbaed5c338b2b1c",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "4a756afdff0f53ac",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "4c4abdecc46493b5",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "4dbafd4ecdb3dacc",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "4e6431a4739ab29e",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "4fae627dc5b73414",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "524b9dddc2876a46",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "53184184e303b46b",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "55d9e63344378006",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "57e8f34166e86602",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "5911ac176d3f214c",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "6330e75b7661e248",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "633188448bb2750d",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "634bc7b326fdfddd",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "643eefd4035066d7",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "65f0859e4989297a",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "66248220016a4c4f",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "680f5d8d8ea18784",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "6878a6bfd1203dfe",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "68cf70d8331dfeb3",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "6c1fea0390defc05",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "6dddf2d3e33455f9",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "6efc89d4b3a8f007",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "732c533f208ab60d",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "743fc4aebc74dc29",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "749505edb46ed2e9",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "74fb0128cec1c90a",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "75bc1957c2522c98",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "76fafba7114e9592",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "7a24bdf094914ffb",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "7d18d115c89193ca",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "7e09d3489f1b4832",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "7ed4eab7db38de9e",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "7fe46ad7d9da1204",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "814c072810abf7a2",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "832bc62cf611ef76",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "8427eccd5d4c4df4",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "84b99b98d945db07",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "84d7ff576a0352d7",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "8a29babd28b7431b",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "8a76a2f0dc14014f",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "8c46632cf2e617d2",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "8ca8a2a4ae0ed0bd",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "8d57e94d31e48520",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "8d87e61afc56f490",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "8dfb40053188d6e2",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "923d45253cc2c67c",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "926cb2c7b70e55dd",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "9533b3a23d1c4fe0",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "961ef9a79a039621",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "966322961d7b2a54",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "966dc6001179f77a",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "97b60271c7847cec",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "98475b4ca08e0ad8",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "98b58efbaa0a7f1f",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "9b2457a96a18cc6a",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "9d68ebb49ea25a87",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "9e4319249efff080",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "9e50e0d149f9b83c",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "9e5de132fc3085f9",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "9e61c13dbd55c590",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "9e6450caee747c20",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "9e84e8ebe9e2a529",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "9eee80ccf844e456",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "a0adea31b35a7f42",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "a22879209e8e0506",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "a5568d2ba7bee3e4",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "a744e451d1bdad3d",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "b0d465f82f26660c",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "b6386bc208da0874",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "b7834c1148baa64a",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "b7bcc9dcf3586381",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "b8eeeb568b74a80b",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "be14412e62bb09fa",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "be5192ae23f51730",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "becb25b23f9ee952",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "bf0be5b61866f965",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "c09530564094b0ac",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "c16e2c85165e9642",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "c3c40e610a088175",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "c3f4a0f8569f129e",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "c50193865412fbdd",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "c50f97678af2c3b0",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "c61d1941e83e9805",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "cc93c43a835e8bd3",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "ccb4c475e4c5374f",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "cdb9f58f4061c249",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "d121b12bf674524c",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "d1c881300fa31491",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "d42cd44739b0e370",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "d4cefbbdfda250ce",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "d67b0acba33b2c64",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "d70a8da417e1518c",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "d7aed07271411f20",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "d93c6ed2429a25b6",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "d9502a131e68548d",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "daba18657d6679e8",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "de8fb7c19de25ba6",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "df679670d76cbece",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "df89f71e93a58312",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "e2497882de1443c6",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "e519d3c5c741a451",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "e60be53a143266a0",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "e812fbe52f19fdad",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "e879f569a68bd61c",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "e89a6829b7badb63",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "ea0e961551c98538",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "ecf6c310590530e8",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "ecfb366e8e09fd2c",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "edcc67afb8658f36",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "ee46fdf826f53ce2",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "f14c1376c41412d6",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "f44bdd7635550987",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "f4a89b4c349dda7f",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "f672afbf13be68df",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "f99fcd7b01315093",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "fc63a682aa35b611",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    },
+    {
+      "stableId": "feb842c0ca22355c",
+      "cefrLevel": null,
+      "cefrStatus": "unknown",
+      "topicIds": [],
+      "topicStatus": "unknown",
+      "evidenceRefs": [],
+      "reviewDecision": "pending"
+    }
+  ]
+}

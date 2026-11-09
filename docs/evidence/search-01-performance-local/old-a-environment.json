@@ -1,0 +1,16 @@
+{
+  "serial": "emulator-5554",
+  "head": "e12f0ee2064b672921a976b3f80ad64227e1cd24",
+  "apk": "build\\search-performance-baseline.apk",
+  "apkSha256": "805cf000c7df757dd3dbb397ccfb47ee800fc276cae20f57ee361fafd0fec673",
+  "classes": "com.vocamind.app.data.catalog.FtsSearchBenchmarkInstrumentedTest",
+  "latencyAssertionsEnabled": false,
+  "referenceHardwareVerified": false,
+  "fixtureSha256": "5fac69d4a5776130346be14747d81af3354a9220c2f9675ed95740c5058f54a7",
+  "install": "Performing Streamed Install\r\nSuccess\r\n",
+  "ro.product.model": "sdk_gphone_x86",
+  "ro.hardware": "ranchu",
+  "ro.build.version.sdk": "30",
+  "ro.build.fingerprint": "google/sdk_gphone_x86/generic_x86_arm:11/RSR1.201013.001/6903271:user/release-keys",
+  "meminfo": "MemTotal:        2028236 kB\r\nMemFree:          239316 kB\r\nMemAvailable:    1172972 kB\r\nBuffers:           37220 kB\r\nCached:           932256 kB\r\nSwapCached:         5968 kB\r\nActive:           884176 kB\r\nInactive:         619316 kB\r\nActive(anon):     335364 kB\r\nInactive(anon):   213824 kB\r\nActive(file):     548812 kB\r\nInactive(file):   405492 kB\r\nUnevictable:        3068 kB\r\nMlocked:            3068 kB\r\nSwapTotal:       1521172 kB\r\nSwapFree:        1334548 kB\r\nDirty:              7776 kB\r\nWriteback:             0 kB\r\nAnonPages:        531924 kB\r\nMapped:           534708 kB\r\nShmem:             12652 kB\r\nKReclaimable:      44164 kB\r\nSlab:             124508 kB\r\nSReclaimable:      44164 kB\r\nSUnreclaim:        80344 kB\r\nKernelStack:       24656 kB\r\nPageTables:        36756 kB\r\nNFS_Unstable:          0 kB\r\nBounce:                0 kB\r\nWritebackTmp:          0 kB\r\nCommitLimit:     2535288 kB\r\nCommitted_AS:   28572208 kB\r\nVmallocTotal:   34359738367 kB\r\nVmallocUsed:       37920 kB\r\nVmallocChunk:          0 kB\r\nPercpu:             3264 kB\r\nCmaTotal:              0 kB\r\nCmaFree:               0 kB\r\nDirectMap4k:      132944 kB\r\nDirectMap2M:     1964032 kB\r\nDirectMap1G:           0 kB\r\n"
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.data.user.UserDatabaseTest" tests="22" skipped="0" failures="0" errors="0" timestamp="2026-11-07T04:48:26" hostname="DESKTOP-SB4BN4D" time="6.305">
+  <properties/>
+  <testcase name="testOnlySchemaEvolutionPreservesAllFiveTables[26]" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.253"/>
+  <testcase name="concurrentCompletionWritersReturnOneAttempt[26]" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.147"/>
+  <testcase name="completionKeyIsIdempotentAndConflictingPayloadFails[26]" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.138"/>
+  <testcase name="allFiveTablesSurviveFileReopen[26]" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.121"/>
+  <testcase name="productionMigrationPreservesLegacyHistoryAndProgress[26]" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.235"/>
+  <testcase name="failureAfterReviewInsertRollsBackBothWrites[26]" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.102"/>
+  <testcase name="invalidIdentityHashDoesNotEraseProgress[26]" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.632"/>
+  <testcase name="concurrentOpenKeepsOnePreference[26]" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.126"/>
+  <testcase name="defaultsAndInitializationPreserveEdits[26]" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.166"/>
+  <testcase name="invalidValuesAreRejectedBeforeWriting[26]" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.09"/>
+  <testcase name="missingMigrationRefusesOpenWithoutErasingData[26]" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.672"/>
+  <testcase name="testOnlySchemaEvolutionPreservesAllFiveTables" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.385"/>
+  <testcase name="concurrentCompletionWritersReturnOneAttempt" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.185"/>
+  <testcase name="completionKeyIsIdempotentAndConflictingPayloadFails" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.247"/>
+  <testcase name="allFiveTablesSurviveFileReopen" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.366"/>
+  <testcase name="productionMigrationPreservesLegacyHistoryAndProgress" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.364"/>
+  <testcase name="failureAfterReviewInsertRollsBackBothWrites" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.206"/>
+  <testcase name="invalidIdentityHashDoesNotEraseProgress" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.679"/>
+  <testcase name="concurrentOpenKeepsOnePreference" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.166"/>
+  <testcase name="defaultsAndInitializationPreserveEdits" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.191"/>
+  <testcase name="invalidValuesAreRejectedBeforeWriting" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.13"/>
+  <testcase name="missingMigrationRefusesOpenWithoutErasingData" classname="com.vocamind.app.data.user.UserDatabaseTest" time="0.695"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

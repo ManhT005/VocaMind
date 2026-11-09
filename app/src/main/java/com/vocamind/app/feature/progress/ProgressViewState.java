@@ -3,7 +3,7 @@ package com.vocamind.app.feature.progress;
 import com.vocamind.app.domain.progress.ProgressReadResult;
 import com.vocamind.app.domain.progress.ProgressSnapshot;
 
-/** Plain presentation contract. PROGRESS-02 moves copy into resources and binds UI/lifecycle. */
+/** Immutable presentation state. UI copy lives in Android resources; constants remain for compatibility. */
 public final class ProgressViewState {
     public enum Status { LOADING, EMPTY, CONTENT, ERROR }
     public static final String TOTAL_LABEL = "Tổng từ đã học";

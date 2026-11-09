@@ -1,0 +1,209 @@
+{
+    "testedHead":  "9f2dfd9a50b3af4b23ec7943d315f6a709442311",
+    "productionCodeSha":  "a99e742c67edda2ecbd0f3629f47ff551af1a972",
+    "date":  "2026-11-07T13:30:32.2428347+07:00",
+    "device":  {
+                   "model":  "sdk_gphone_x86",
+                   "serial":  "emulator-5554",
+                   "android":  "11",
+                   "avd":  "Small_Phone",
+                   "api":  30,
+                   "density":  320,
+                   "fingerprint":  "google/sdk_gphone_x86/generic_x86_arm:11/RSR1.201013.001/6903271:user/release-keys",
+                   "resolution":  "720x1280"
+               },
+    "testPackage":  "com.vocamind.app.vocab02qa",
+    "isolation":  "debug applicationIdSuffix via external Gradle init; no src/schema/catalog asset edits; QA package only cleared for retest; existing com.vocamind.app data untouched",
+    "appApkSha256":  "A898CAED532A40B8640A9CD07B76197C7D1D4F3C3F58AEFF98C74E62B3BFCB83",
+    "corePhasesInstrumentationApkSha256":  "D4D9262ED7F9706F0465B84EE7221CE6D0D4D3266AA886A98473C6FDC39AA725",
+    "extraRotationAndExportInstrumentationApkSha256":  "EC5393A4B8FFC366CCC470C0B93E16B8E4076C9D32F321C1364B75CE1F5ECC7A",
+    "phaseResults":  {
+                         "C":  "PASS existing progress learning/history unchanged, all catalog tables full raw comparison equal",
+                         "D":  "PASS pending/double click/rotation plus loading and confirmed orientations; controlled injected VM read/write errors and read-only Retry reconcile writes=1",
+                         "B":  "PASS saved and unsaved after confirmed writes, Back/reopen, real force-stop/relaunch and two distinct kernel boot IDs",
+                         "A":  "PASS actual route/fields/null IPA/offline; present IPA device synthetic renderer only"
+                     },
+    "functionalInstrumentationPhases":  7,
+    "exportIsNotAcceptanceTest":  true,
+    "hostEvidence":  "../integration-8209ef7/local-evidence.json",
+    "productionChanged":  false,
+    "initialProbeFailure":  "SharedPreferences XML added trailing whitespace to multiline catalog baseline; replaced with exact raw UTF8 file equality and reran a..f, not ignored assertion",
+    "files":  [
+                  {
+                      "name":  "boot-before.txt",
+                      "sha256":  "CE787FF0C008F0F5C7192264F4F9ABA8D1600547D754469B49F833DB820FC515"
+                  },
+                  {
+                      "name":  "boot-saved-reboot.txt",
+                      "sha256":  "5B34DF6E58E660EF0EA9AF392B9D44A69582C604ADB3EDDDC418A2247E04ACBC"
+                  },
+                  {
+                      "name":  "boot-unsaved-reboot.txt",
+                      "sha256":  "0B748228D9488645CD4E3153DAE2210C853D4ADB9318CD357A52EAE2BFDB9570"
+                  },
+                  {
+                      "name":  "build-export.log",
+                      "sha256":  "4C7976E13E5F64157B7A1AC0F2BEB2DC61E2903150536A0E8D32F18FBB2E2120"
+                  },
+                  {
+                      "name":  "build-extra.log",
+                      "sha256":  "06A4E3C561F29E4BFA6F673BAF791DB184E5C3D3C27BA44B01A275D4E11F2885"
+                  },
+                  {
+                      "name":  "build-qa.log",
+                      "sha256":  "D30C498E8A982C6A31DA8F38275E28DCE215B57E40401E2F424CB9C30711FE03"
+                  },
+                  {
+                      "name":  "catalog-before.txt",
+                      "sha256":  "1DDA6EFCD05FC1AF5548964CF8521B7C49696FE601E2DF14EE5BF5163B74058C"
+                  },
+                  {
+                      "name":  "ci-reviewed-head.json",
+                      "sha256":  "9AC2E1D0BB49C509966B1000A283A075B03FFAD5A8E747F0154DFB7EF97FD65F"
+                  },
+                  {
+                      "name":  "export.log",
+                      "sha256":  "F732C66254CC0522DDAED45C767AD5472BDA07DB91C24C6745FB0A5E42333F63"
+                  },
+                  {
+                      "name":  "fixture.txt",
+                      "sha256":  "3A9FBAA9A6398D03DFEBDD92B10FF19C3BC70228BCDB13A98B205C3DFE8B87AE"
+                  },
+                  {
+                      "name":  "logcat.log",
+                      "sha256":  "EF16AEE4D28DFB1961A963925014FD2C236289960F4E84E5D948F5C7E78C4221"
+                  },
+                  {
+                      "name":  "persisted-false.txt",
+                      "sha256":  "B1F1131BDF20FC8326A040FF978F21E802F354C2D977FBAD603BD0F09E4AFC0E"
+                  },
+                  {
+                      "name":  "persisted-true.txt",
+                      "sha256":  "9706D6E6A3AA5A8BD9C4D59E849C4D40CBB014F72E32E6CA3AE45FB91940B350"
+                  },
+                  {
+                      "name":  "phase-a.log",
+                      "sha256":  "BAEDBFAB1AE5D9B2447D88EFDDF992C3E77AEA04DD7165740C559BE3643653A4"
+                  },
+                  {
+                      "name":  "phase-b.log",
+                      "sha256":  "BA119C86F85E51F7C6F74129DE08AAA18D7F28BD9EA33152B4EB5BE66CE32D6A"
+                  },
+                  {
+                      "name":  "phase-c.log",
+                      "sha256":  "B9573AA44E5EB03147A0A27BB4E9B923DF332109919AC3145577E9A44564F6BB"
+                  },
+                  {
+                      "name":  "phase-d.log",
+                      "sha256":  "AD78B7A65B14C6AD4CD38A2F551F37D3AC5139263F7D94B0CBACBA8F53F4E025"
+                  },
+                  {
+                      "name":  "phase-e-probe-serialization-failed.log",
+                      "sha256":  "285B02380BBA08C4A5C0919E30711F204401F2042476863DFF6873DD10DA2CC0"
+                  },
+                  {
+                      "name":  "phase-e.log",
+                      "sha256":  "35EAAA5D7AA053387F0C9CCA75F8BD282F01E1A1F2D26A4930D0494F63730A19"
+                  },
+                  {
+                      "name":  "phase-f.log",
+                      "sha256":  "5A8A1B894E3E14CC07E7695C197B6F3E386B0A208CBD752C1A4C44C93B6EA07B"
+                  },
+                  {
+                      "name":  "phase-h.log",
+                      "sha256":  "D5643E75D4FB3DFACDB3BF67082F67FCF2D28C3BE2DD1C2E2CAB283268FA19CF"
+                  },
+                  {
+                      "name":  "qa.init.gradle",
+                      "sha256":  "A21089125B450D0494E6EE62165415F04E9C4BBCFBC9CCE68854355978563BE0"
+                  },
+                  {
+                      "name":  "tested-apks-before-export.json",
+                      "sha256":  "54172B27E56A19A6A8C9BA02BE31A0E264A472768C6078135B2773D523869C2E"
+                  },
+                  {
+                      "name":  "V02-A-B-D-phase1.txt",
+                      "sha256":  "C90606CB0C7A6EA93F0BE4A2F113EFFFF290165F2751429CE71009E5A6875382"
+                  },
+                  {
+                      "name":  "V02-A-detail-offline.png",
+                      "sha256":  "98311CA6477E8BEAACD67E73921F137AA1E5AE84044B7A1D3CF3A1DACAFF1E1B"
+                  },
+                  {
+                      "name":  "V02-A-ipa-present-test-only-render.png",
+                      "sha256":  "5490047F9FEBE53B79D809EAC35A6AFFD14ECE34B2E8BA5CD70384F87753B703"
+                  },
+                  {
+                      "name":  "V02-A-vietnamese-example-scrolled.png",
+                      "sha256":  "BE77AE78F170F9DC0F70EACADB7B4F694B8CA7625560F530E21A8440B9D24460"
+                  },
+                  {
+                      "name":  "V02-B-saved-force-stop.png",
+                      "sha256":  "235B99C70251F34821B50656634D7A872EFD0EA45E13C99B242046339C1FB84D"
+                  },
+                  {
+                      "name":  "V02-B-saved-reboot.png",
+                      "sha256":  "C772105E9145E6F781AEEC14452784A76C71C8519D192D1D7597C86713A0E2FE"
+                  },
+                  {
+                      "name":  "V02-B-saved-reopen.png",
+                      "sha256":  "235B99C70251F34821B50656634D7A872EFD0EA45E13C99B242046339C1FB84D"
+                  },
+                  {
+                      "name":  "V02-B-unsaved-force-stop.png",
+                      "sha256":  "BADEA175A8E127A0DBCCB11C51B36611737ADE68C3524959A58D1F90E1631F49"
+                  },
+                  {
+                      "name":  "V02-B-unsaved-reboot.png",
+                      "sha256":  "11B2ACFE44109859674966DBD69481525DF82E552E185E55EAD58BD981395E9D"
+                  },
+                  {
+                      "name":  "V02-C-catalog.txt",
+                      "sha256":  "ABA1F12EC6921FA3592E3931364B6C00952285F27F9A265E01BD31DEE932587D"
+                  },
+                  {
+                      "name":  "V02-C-existing-saved.png",
+                      "sha256":  "C3EC0E99F9BE8EDAB1D32A54746072552E75212A6181E55CC5FA65E268175CC0"
+                  },
+                  {
+                      "name":  "V02-C-existing-unsaved.png",
+                      "sha256":  "E02C007CF3850DB74C4F55E1810ACDCE99C66F20722F2CB543A0C65E8E71A073"
+                  },
+                  {
+                      "name":  "V02-C-learning-history.txt",
+                      "sha256":  "822F03C2DF3A00A4632C5143E38599E0243AE235B8E1D7719D7C2E5BAA23C40E"
+                  },
+                  {
+                      "name":  "V02-D-confirmed-landscape.png",
+                      "sha256":  "E2D93A01317924FE04AA3A4D3C5CF6EFC221118A7A9AF214D4CBFD2AC776CD1F"
+                  },
+                  {
+                      "name":  "V02-D-controlled-pending.png",
+                      "sha256":  "B06EDF9E4047417E082ACB6A4BEA3B356D4256B5798E016B2FF81BFE8D145403"
+                  },
+                  {
+                      "name":  "V02-D-hooks.txt",
+                      "sha256":  "6436FA47AFC0B5137574AAB19C215466829E3CBA4C274DAF873F70D0E2FACC8B"
+                  },
+                  {
+                      "name":  "V02-D-loading-confirmed.txt",
+                      "sha256":  "A9DD97D6D17D2447C5D840838AA792B257A52163269CC452067DCB0A4ED576F9"
+                  },
+                  {
+                      "name":  "V02-D-loading-rotation-stable.png",
+                      "sha256":  "E2D93A01317924FE04AA3A4D3C5CF6EFC221118A7A9AF214D4CBFD2AC776CD1F"
+                  },
+                  {
+                      "name":  "V02-D-read-error.png",
+                      "sha256":  "2D30A3D941F470308D6DA3C31669EAF04E69567B0C83E0A13AC0F107D18F8B7B"
+                  },
+                  {
+                      "name":  "V02-D-write-error.png",
+                      "sha256":  "5199001811F4F1D345ABFA156DA1E8B8DE56A83AA98C9CAEF6334CB539345FB1"
+                  },
+                  {
+                      "name":  "VocabularyDeviceQa.java",
+                      "sha256":  "089AB4B2171040BFF1DD9D62F4B050CBA3D77487B9E763C2D7AA77730C8393E1"
+                  }
+              ]
+}

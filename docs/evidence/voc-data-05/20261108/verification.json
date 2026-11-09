@@ -1,0 +1,85 @@
+{
+  "baseline": "cd83f1ce874a899029a85879c3c40c97343683d6",
+  "testCounts": {
+    "vocabulary": 129,
+    "contract": 39,
+    "catalog": 31
+  },
+  "recheckedEnrichmentTests": 17,
+  "hashes": {
+    "docs/data/voc-data-04/accepted-v1/canonical-preview.json": "f27e9d2de700fadf13b480df26933c61333ce6261ed872d285e5a111a88110c1",
+    "docs/data/voc-data-05/enrichment-v1.json": "44216f8c9e61199418b2345fe7c04265e514fb821f0c88114e6e1cae4b261c31",
+    "docs/data/voc-data-05/label-sources.json": "202b6f895db8004afd630fb03f502a5fdd9451b62f5c97dffb9e766d1041876a",
+    "docs/data/voc-data-05/review-decisions.json": "c598d929285468e49674145d8fcef5a3df1e525877815096b04b12742f4b602a",
+    "docs/data/voc-data-05/topic-taxonomy-v1.json": "1e1e9703df5d8448cfa8dacf859e1db48d6dc8d716322ae49c7091b68b6e7e41",
+    "tools/vocabulary/validate_enrichment.py": "d5787c5011ed8f444527f9aaa020219d9c6a14d4ae9f9d74707c26da245ff311",
+    "tools/vocabulary/test_enrichment.py": "ad39546b10a07ad8a847eb32f53e9ac5e2b66d256040fec8c13081428a07d3b6"
+  },
+  "structuralSample": {
+    "seed": "20261107",
+    "method": "minimum SHA-256 per pack/POS stratum",
+    "verifiedLabels": 0,
+    "records": [
+      {
+        "packId": "pack_academic",
+        "pos": "noun",
+        "stableId": "a744e451d1bdad3d",
+        "labelReview": "pending"
+      },
+      {
+        "packId": "pack_academic",
+        "pos": "verb",
+        "stableId": "154ad3c75bd7a6f6",
+        "labelReview": "pending"
+      },
+      {
+        "packId": "pack_daily_life",
+        "pos": "adjective",
+        "stableId": "2a1a65c13e33bc68",
+        "labelReview": "pending"
+      },
+      {
+        "packId": "pack_daily_life",
+        "pos": "noun",
+        "stableId": "feb842c0ca22355c",
+        "labelReview": "pending"
+      },
+      {
+        "packId": "pack_daily_life",
+        "pos": "verb",
+        "stableId": "21be5e8881d7cab1",
+        "labelReview": "pending"
+      },
+      {
+        "packId": "pack_toeic_basic",
+        "pos": "adjective",
+        "stableId": "6c1fea0390defc05",
+        "labelReview": "pending"
+      },
+      {
+        "packId": "pack_toeic_basic",
+        "pos": "noun",
+        "stableId": "28df1baa0ff1f8ad",
+        "labelReview": "pending"
+      },
+      {
+        "packId": "pack_toeic_basic",
+        "pos": "verb",
+        "stableId": "743fc4aebc74dc29",
+        "labelReview": "pending"
+      },
+      {
+        "packId": "pack_toeic_office",
+        "pos": "noun",
+        "stableId": "b7834c1148baa64a",
+        "labelReview": "pending"
+      },
+      {
+        "packId": "pack_toeic_office",
+        "pos": "verb",
+        "stableId": "814c072810abf7a2",
+        "labelReview": "pending"
+      }
+    ]
+  }
+}

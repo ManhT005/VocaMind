@@ -367,5 +367,6 @@ Các điểm phải kiểm lại trước khi code: HEAD/schema userdata thực 
 catalog handle, cách dựng companion metadata cho legacy install và quyền profile.
 Plan không giả định các quyết định này đã được reviewer duyệt hoặc code đã chạy.
 
-**Trạng thái tài liệu:** đã triển khai và kiểm chứng local phần catalog; migration
-tích hợp, thiết bị và review Thi còn mở. Chưa commit/push.
+**Trạng thái tài liệu:** Nhánh đã tích hợp migration QUIZ-03 và kịch bản
+kiểm tra reboot. Xem [validation](../data-08-validation.md) cho lệnh chạy,
+bằng chứng và các gate còn mở.

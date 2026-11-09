@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.search.SearchScreenTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-11-06T16:33:05" hostname="DESKTOP-KUH3S13" time="2.343">
+  <properties/>
+  <testcase name="catalogSearchEnglishVietnameseDetailBackRecreateClearAndNoWrites[26]" classname="com.vocamind.app.feature.search.SearchScreenTest" time="0.998"/>
+  <testcase name="opaqueNavigationArgumentsAndReboundHolder[26]" classname="com.vocamind.app.feature.search.SearchScreenTest" time="0.044"/>
+  <testcase name="catalogSearchEnglishVietnameseDetailBackRecreateClearAndNoWrites" classname="com.vocamind.app.feature.search.SearchScreenTest" time="1.255"/>
+  <testcase name="opaqueNavigationArgumentsAndReboundHolder" classname="com.vocamind.app.feature.search.SearchScreenTest" time="0.042"/>
+  <system-out><![CDATA[SEARCH01_HOST_TRACE generation=1 bind_to_post_ms=48.9539
+SEARCH01_HOST_TRACE generation=2 bind_to_post_ms=59.9372
+SEARCH01_HOST_TRACE generation=2 debounce_ms=60.9948
+SEARCH01_HOST_TRACE queue_ms=0.488
+SEARCH01_HOST_TRACE query_hydration_ms=30.989
+SEARCH01_HOST_TRACE generation=2 submit_to_main_ms=37.1894
+SEARCH01_HOST_TRACE generation=2 bind_to_post_ms=14.6737
+SEARCH01_HOST_TRACE generation=3 bind_to_post_ms=3.7968
+SEARCH01_HOST_TRACE generation=3 debounce_ms=3.9098
+SEARCH01_HOST_TRACE queue_ms=0.0381
+SEARCH01_HOST_TRACE query_hydration_ms=0.4454
+SEARCH01_HOST_TRACE generation=3 submit_to_main_ms=0.6572
+SEARCH01_HOST_TRACE generation=3 bind_to_post_ms=11.7092
+SEARCH01_HOST_TRACE generation=3 bind_to_post_ms=33.9501
+SEARCH01_HOST_TRACE generation=3 bind_to_post_ms=31.6638
+SEARCH01_HOST_TRACE generation=4 bind_to_post_ms=5.5274
+SEARCH01_HOST_TRACE generation=4 debounce_ms=5.1777
+SEARCH01_HOST_TRACE queue_ms=0.0669
+SEARCH01_HOST_TRACE query_hydration_ms=0.8156
+SEARCH01_HOST_TRACE generation=4 submit_to_main_ms=1.0803
+SEARCH01_HOST_TRACE generation=4 bind_to_post_ms=15.7375
+SEARCH01_HOST_TRACE generation=6 bind_to_post_ms=5.5454
+SEARCH01_HOST_TRACE generation=1 bind_to_post_ms=85.0848
+SEARCH01_HOST_TRACE generation=2 bind_to_post_ms=18.2144
+SEARCH01_HOST_TRACE generation=2 debounce_ms=18.2546
+SEARCH01_HOST_TRACE queue_ms=0.6991
+SEARCH01_HOST_TRACE query_hydration_ms=39.6861
+SEARCH01_HOST_TRACE generation=2 submit_to_main_ms=42.3251
+SEARCH01_HOST_TRACE generation=2 bind_to_post_ms=34.0956
+SEARCH01_HOST_TRACE generation=3 bind_to_post_ms=8.9344
+SEARCH01_HOST_TRACE generation=3 debounce_ms=7.9107
+SEARCH01_HOST_TRACE queue_ms=0.0518
+SEARCH01_HOST_TRACE query_hydration_ms=0.7161
+SEARCH01_HOST_TRACE generation=3 submit_to_main_ms=0.9907
+SEARCH01_HOST_TRACE generation=3 bind_to_post_ms=21.54
+SEARCH01_HOST_TRACE generation=3 bind_to_post_ms=46.455
+SEARCH01_HOST_TRACE generation=3 bind_to_post_ms=41.7963
+SEARCH01_HOST_TRACE generation=4 bind_to_post_ms=8.7604
+SEARCH01_HOST_TRACE generation=4 debounce_ms=8.0207
+SEARCH01_HOST_TRACE queue_ms=0.0531
+SEARCH01_HOST_TRACE query_hydration_ms=0.7767
+SEARCH01_HOST_TRACE generation=4 submit_to_main_ms=1.0138
+SEARCH01_HOST_TRACE generation=4 bind_to_post_ms=48.3935
+SEARCH01_HOST_TRACE generation=6 bind_to_post_ms=15.5886
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

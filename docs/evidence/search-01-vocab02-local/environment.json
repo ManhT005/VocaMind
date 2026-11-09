@@ -1,0 +1,11 @@
+{
+  "model": "sdk_gphone_x86",
+  "api": "30",
+  "mem": "MemTotal:        2028236 kB\r\nMemFree:          235392 kB\r\nMemAvailable:    1153544 kB\r\nBuffers:           35784 kB\r\nCached:           916352 kB\r\nSwapCached:         3572 kB\r\nActive:           913112 kB\r\nInactive:         607080 kB\r\nActive(anon):     347404 kB\r\nInactive(anon):   234280 kB\r\nActive(file):     565708 kB\r\nInactive(file):   372800 kB\r\nUnevictable:        3076 kB\r\nMlocked:            3076 kB\r\nSwapTotal:       1521172 kB\r\nSwapFree:        1371156 kB\r\nDirty:                 0 kB\r\nWriteback:             0 kB\r\nAnonPages:        568408 kB\r\nMapped:           470068 kB\r\nShmem:             11100 kB\r\nKReclaimable:      44456 kB\r\nSlab:             122664 kB\r\nSReclaimable:      43848 kB\r\nSUnreclaim:        78816 kB\r\nKernelStack:       23088 kB\r\nPageTables:        35748 kB\r\nNFS_Unstable:          0 kB\r\nBounce:                0 kB\r\nWritebackTmp:          0 kB\r\nCommitLimit:     2535288 kB\r\nCommitted_AS:   27830152 kB\r\nVmallocTotal:   34359738367 kB\r\nVmallocUsed:       36384 kB\r\nVmallocChunk:          0 kB\r\nPercpu:             3264 kB\r\nCmaTotal:              0 kB\r\nCmaFree:               0 kB\r\nDirectMap4k:      155472 kB\r\nDirectMap2M:     1941504 kB\r\nDirectMap1G:           0 kB",
+  "settings": {
+    "global.airplane_mode_on": "1",
+    "global.wifi_on": "2",
+    "system.font_scale": "null"
+  },
+  "qaInstalled": ""
+}

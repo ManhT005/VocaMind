@@ -1,32 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="@dimen/shell_screen_padding">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/destination_title"
-            style="@style/TextAppearance.VocaMind.Title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/progress"
-            android:textAlignment="center" />
-
-        <com.google.android.material.textview.MaterialTextView
-            style="@style/TextAppearance.VocaMind.Body"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/shell_item_spacing"
-            android:text="@string/placeholder_description"
-            android:textAlignment="center" />
-
-    </LinearLayout>
-
-</ScrollView>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="16dp">
+ <TextView android:id="@+id/destination_title" style="@style/TextAppearance.VocaMind.Title" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/progress" />
+ <Button android:id="@+id/progress_refresh" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="48dp" android:text="@string/progress_refresh" />
+ <LinearLayout android:id="@+id/progress_loading" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+  <ProgressBar android:layout_width="48dp" android:layout_height="48dp" />
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/progress_loading" android:accessibilityLiveRegion="polite" />
+ </LinearLayout>
+ <LinearLayout android:id="@+id/progress_error" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+  <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/progress_error" android:accessibilityLiveRegion="polite" />
+  <Button android:id="@+id/progress_retry" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="48dp" android:text="@string/progress_retry" />
+ </LinearLayout>
+ <androidx.recyclerview.widget.RecyclerView android:id="@+id/progress_list" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:visibility="gone" />
+</LinearLayout>

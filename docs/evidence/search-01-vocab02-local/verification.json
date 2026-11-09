@@ -1,0 +1,545 @@
+{
+  "dateUtc": "2026-11-08T13:27:29.793848+00:00",
+  "branch": "feature/search-01-search-ui",
+  "head": "371d9eca5e084cc7e8ca57721a4efe78e64ccf3c",
+  "develop": "78b9add1f5b628408013de034fb7b7651f382856",
+  "integrationTree": "463e424998e23b0f89f6da21b1d15b77e5e33306",
+  "commitCreated": false,
+  "pushed": false,
+  "sourceManifestSha256": "7e99e91e468f090a0cad9642f9ca8ddf356aa9e79430433e292d48dfd373c926",
+  "androidTests": {
+    "tests": 517,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "suiteCount": 51,
+  "suites": [
+    {
+      "name": "com.vocamind.app.data.catalog.CatalogAssetTest",
+      "tests": "32",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.data.catalog.ContentCreditsTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.data.catalog.FtsSearchBenchmarkTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.data.catalog.FtsSearchTest",
+      "tests": "18",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.data.catalog.QuizPolicyCompositionTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.data.catalog.ReleaseCatalogTest",
+      "tests": "10",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.data.DaoFoundationTest",
+      "tests": "32",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.data.DataBoundaryTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+      "tests": "64",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.data.user.AtomicReviewTest",
+      "tests": "42",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.data.user.ProgressAggregationTest",
+      "tests": "34",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.data.user.ProgressMapperTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.data.user.UserDatabaseTest",
+      "tests": "22",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.domain.catalog.SearchVocabularyUseCaseTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+      "tests": "8",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest",
+      "tests": "8",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+      "tests": "10",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.domain.learning.LeitnerSchedulerTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.domain.learning.PlanTodayTest",
+      "tests": "9",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.domain.learning.RecordReviewUseCaseTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.domain.learning.SessionQueueTest",
+      "tests": "7",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.domain.progress.ProgressDomainTest",
+      "tests": "11",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.domain.quiz.AndroidNfcConformanceTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.domain.quiz.GenerateQuizTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.domain.quiz.NfcConformanceTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.domain.quiz.QuizDistractorPolicyTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.domain.quiz.QuizDomainTest",
+      "tests": "18",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.domain.quiz.QuizGenerationTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.fake.FakeRepositoriesTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.attribution.AttributionRenderingTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.attribution.AttributionScreenTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.attribution.AttributionViewModelTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.attribution.ExternalLinksTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.attribution.GetContentSourcesTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.flashcard.FlashcardLayoutTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.flashcard.FlashcardViewModelTest",
+      "tests": "16",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.flashcard.LearningFlowIntegrationTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.packs.PackActivationRenderingTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.packs.PackActivationTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.packs.PacksViewModelTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.packs.PackVocabularyIntegrationTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.packs.VocabularyListTest",
+      "tests": "8",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.progress.ProgressViewStateTest",
+      "tests": "7",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.quiz.QuizScreenTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.quiz.QuizViewModelTest",
+      "tests": "14",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.search.SearchReadRecoveryTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.search.SearchScreenTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.search.SearchViewModelTest",
+      "tests": "20",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.today.TodayRenderingTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.vocamind.app.feature.vocabulary.VocabularyDetailTest",
+      "tests": "10",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    }
+  ],
+  "lint": {
+    "debug": {
+      "errors": 0,
+      "warnings": 13
+    },
+    "catalogQa": {
+      "errors": 0,
+      "warnings": 13
+    }
+  },
+  "pythonTests": {
+    "vocabulary": 129,
+    "catalog": 31,
+    "contract": 39
+  },
+  "pythonTotal": 199,
+  "instrumentation": {
+    "tests": 4,
+    "failures": 0
+  },
+  "qaCatalog": {
+    "words": 150,
+    "package": "com.vocamind.app.qa",
+    "apkCatalogSha256": "41bcfacfcebdc42c8059c95f396c738fdabab62c4cbd8a255499e9c446502709",
+    "releaseAuthorized": false
+  },
+  "artifacts": {
+    "app": {
+      "path": "app/build/outputs/apk/catalogQa/app-catalogQa.apk",
+      "sha256": "805cf000c7df757dd3dbb397ccfb47ee800fc276cae20f57ee361fafd0fec673",
+      "install": "Performing Streamed Install\r\nSuccess\r\n"
+    },
+    "tests": {
+      "path": "app/build/outputs/apk/androidTest/catalogQa/app-catalogQa-androidTest.apk",
+      "sha256": "00959f4c5221ed2e081d4d65664c24b278a06c31f832cb2d1706033919a0a4c5",
+      "install": "Performing Streamed Install\r\nSuccess\r\n"
+    }
+  },
+  "existingPackagesDataUnchanged": true,
+  "userWrapperPreserved": true,
+  "actualGradle": "8.9 cache executable, bypasses user-modified 8.14.6 wrapper file",
+  "jdk": "Temurin17.0.20.1",
+  "benchmarkFixtureSha256": "5fac69d4a5776130346be14747d81af3354a9220c2f9675ed95740c5058f54a7",
+  "benchmark": {
+    "raw": "data05-fts-benchmark-api30.json",
+    "samples": 500,
+    "warmupsPerWorkload": 20,
+    "referenceHardwareVerified": false,
+    "observedAllBelow50Ms": false,
+    "broadCase": {
+      "query": "benchword",
+      "matches": 5000,
+      "samplesNs": [
+        52857000,
+        48783100,
+        43906800,
+        43404200,
+        45612600,
+        42432700,
+        46999800,
+        42779700,
+        45015500,
+        47569500,
+        43012200,
+        45490400,
+        47555600,
+        42346600,
+        42602100,
+        45693900,
+        43096100,
+        47395100,
+        43446500,
+        48033100,
+        48747800,
+        43228900,
+        49495700,
+        48877600,
+        48934800,
+        56327700,
+        53483100,
+        58206200,
+        63573800,
+        59020600,
+        57663100,
+        53809700,
+        71785200,
+        76565500,
+        60413500,
+        86559400,
+        77017700,
+        76124100,
+        99154000,
+        85629200,
+        55374200,
+        54629300,
+        55246300,
+        49809800,
+        49137600,
+        51095900,
+        47495300,
+        55201100,
+        48808500,
+        52275900,
+        52159000,
+        46910800,
+        47587900,
+        47302500,
+        55418100,
+        58849600,
+        46979600,
+        50375400,
+        52010200,
+        52020700,
+        46884400,
+        60017800,
+        46053000,
+        47821900,
+        45659400,
+        49512000,
+        57620200,
+        49936900,
+        52002200,
+        49872200,
+        52121000,
+        49591400,
+        47136400,
+        47011200,
+        51302000,
+        44826100,
+        42902300,
+        43833400,
+        42941700,
+        48026000,
+        42223200,
+        44262500,
+        44860600,
+        42516600,
+        42221500,
+        43399400,
+        41174500,
+        39980700,
+        42584300,
+        40243900,
+        42501400,
+        43720100,
+        39304100,
+        42792100,
+        44483100,
+        39698500,
+        39709800,
+        41859900,
+        39860500,
+        42478900
+      ],
+      "meanMs": 50.262849,
+      "p50Ms": 47.5556,
+      "p95Ms": 76.1241,
+      "maxMs": 99.154,
+      "observedAllBelow50Ms": false,
+      "observedMeanBelow15Ms": false
+    },
+    "scope": "DAO MATCH query plus entity materialization; excludes asset opening, expression preparation, executor queue, domain mapping and UI"
+  },
+  "AC05": "HOLD",
+  "NFR_VM_03": "HOLD",
+  "notRun": [
+    "Helio G85/3GB/Android10 benchmark",
+    "GitHub CI for uncommitted integration"
+  ]
+}

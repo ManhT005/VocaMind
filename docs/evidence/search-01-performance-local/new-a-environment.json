@@ -1,0 +1,16 @@
+{
+  "serial": "emulator-5554",
+  "head": "e12f0ee2064b672921a976b3f80ad64227e1cd24",
+  "apk": "app\\build\\outputs\\apk\\catalogQa\\app-catalogQa.apk",
+  "apkSha256": "b85a4ab73ac5da166bcae8cee3e18274a65a11f9bf8b4362e18de2ca59590a76",
+  "classes": "com.vocamind.app.data.catalog.FtsSearchBenchmarkInstrumentedTest",
+  "latencyAssertionsEnabled": false,
+  "referenceHardwareVerified": false,
+  "fixtureSha256": "5fac69d4a5776130346be14747d81af3354a9220c2f9675ed95740c5058f54a7",
+  "install": "Performing Streamed Install\r\nSuccess\r\n",
+  "ro.product.model": "sdk_gphone_x86",
+  "ro.hardware": "ranchu",
+  "ro.build.version.sdk": "30",
+  "ro.build.fingerprint": "google/sdk_gphone_x86/generic_x86_arm:11/RSR1.201013.001/6903271:user/release-keys",
+  "meminfo": "MemTotal:        2028236 kB\r\nMemFree:          214724 kB\r\nMemAvailable:    1159300 kB\r\nBuffers:           37632 kB\r\nCached:           942632 kB\r\nSwapCached:         6008 kB\r\nActive:           908360 kB\r\nInactive:         621276 kB\r\nActive(anon):     350236 kB\r\nInactive(anon):   214332 kB\r\nActive(file):     558124 kB\r\nInactive(file):   406944 kB\r\nUnevictable:        3068 kB\r\nMlocked:            3068 kB\r\nSwapTotal:       1521172 kB\r\nSwapFree:        1335060 kB\r\nDirty:              7888 kB\r\nWriteback:             0 kB\r\nAnonPages:        547012 kB\r\nMapped:           538616 kB\r\nShmem:             12804 kB\r\nKReclaimable:      44320 kB\r\nSlab:             124532 kB\r\nSReclaimable:      44320 kB\r\nSUnreclaim:        80212 kB\r\nKernelStack:       24768 kB\r\nPageTables:        36804 kB\r\nNFS_Unstable:          0 kB\r\nBounce:                0 kB\r\nWritebackTmp:          0 kB\r\nCommitLimit:     2535288 kB\r\nCommitted_AS:   28574844 kB\r\nVmallocTotal:   34359738367 kB\r\nVmallocUsed:       38032 kB\r\nVmallocChunk:          0 kB\r\nPercpu:             3264 kB\r\nCmaTotal:              0 kB\r\nCmaFree:               0 kB\r\nDirectMap4k:      134992 kB\r\nDirectMap2M:     1961984 kB\r\nDirectMap1G:           0 kB\r\n"
+}

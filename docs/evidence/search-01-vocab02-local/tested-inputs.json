@@ -1,0 +1,1644 @@
+{
+  "head": "371d9eca5e084cc7e8ca57721a4efe78e64ccf3c",
+  "develop": "78b9add1f5b628408013de034fb7b7651f382856",
+  "integrationTree": "463e424998e23b0f89f6da21b1d15b77e5e33306",
+  "status": "Uncommitted local merge; tree uses pinned wrapper, actual command uses Gradle8.9 directly",
+  "files": [
+    {
+      "path": ".github/workflows/android-ci.yml",
+      "gitBlob": "0caad574da7199ad0dada45125e143dd5d0589e2"
+    },
+    {
+      "path": "app/build.gradle",
+      "gitBlob": "62cf5d55d60762f0239a8cab79f96fbe7734c29f"
+    },
+    {
+      "path": "app/schemas/com.vocamind.app.data.catalog.CatalogDatabase/1.json",
+      "gitBlob": "1d5a49fc5d2e481f0c30d224bff5cf6840376140"
+    },
+    {
+      "path": "app/schemas/com.vocamind.app.data.catalog.CatalogDatabase/2.json",
+      "gitBlob": "dc6b173bc3865b66a5b7e0d403fa750550654b5f"
+    },
+    {
+      "path": "app/schemas/com.vocamind.app.data.user.UserDatabase/1.json",
+      "gitBlob": "befbde6bc06d96de91a7e0493fe45bf3df711f87"
+    },
+    {
+      "path": "app/schemas/com.vocamind.app.data.user.UserDatabase/2.json",
+      "gitBlob": "29922642b8a868baf2210690d5912a684407a787"
+    },
+    {
+      "path": "app/src/androidTest/java/com/vocamind/app/.gitkeep",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "app/src/androidTest/java/com/vocamind/app/data/catalog/CatalogAssetInstrumentedTest.java",
+      "gitBlob": "5066a993bdd06769533843ad9e3904cc5050df92"
+    },
+    {
+      "path": "app/src/androidTest/java/com/vocamind/app/data/catalog/FtsSearchBenchmarkInstrumentedTest.java",
+      "gitBlob": "17e89e7ddd99dfad2439bc771137ce1aaa2fdf7e"
+    },
+    {
+      "path": "app/src/androidTest/java/com/vocamind/app/data/catalog/FtsSearchInstrumentedTest.java",
+      "gitBlob": "8baffe219ff3a00546d708e1aefe9fb0810df133"
+    },
+    {
+      "path": "app/src/androidTest/java/com/vocamind/app/data/catalog/ReleaseCatalogInstrumentedTest.java",
+      "gitBlob": "2868bd847935c6eaeda974e639fbd71575962c2b"
+    },
+    {
+      "path": "app/src/androidTest/java/com/vocamind/app/data/user/AtomicReviewInstrumentedTest.java",
+      "gitBlob": "b782edcc7cb0595270643e046609dd677e9c1aa1"
+    },
+    {
+      "path": "app/src/androidTest/java/com/vocamind/app/data/user/ProgressAggregationInstrumentedTest.java",
+      "gitBlob": "ebe25ddb77a84dc8d2f0cbc67c3666489a25ea3c"
+    },
+    {
+      "path": "app/src/androidTest/java/com/vocamind/app/data/user/QuizCompletionInstrumentedTest.java",
+      "gitBlob": "26110454ce6e0a69f05d1260f7cecac1a6261fe1"
+    },
+    {
+      "path": "app/src/androidTest/java/com/vocamind/app/feature/attribution/AttributionRenderingInstrumentedTest.java",
+      "gitBlob": "cd56032e08630cc985455eb6a635806a37b3716f"
+    },
+    {
+      "path": "app/src/androidTest/java/com/vocamind/app/feature/attribution/AttributionScreenInstrumentedTest.java",
+      "gitBlob": "e49b6f4b68ca58a90a0e848377abc2d10f77c06d"
+    },
+    {
+      "path": "app/src/androidTest/java/com/vocamind/app/feature/packs/PackActivationInstrumentedTest.java",
+      "gitBlob": "adab1f9b4970dfc78206968ca57ea97e582e2457"
+    },
+    {
+      "path": "app/src/androidTest/java/com/vocamind/app/feature/quiz/QuizProductionFlowInstrumentedTest.java",
+      "gitBlob": "61a4ef9bbf14d88bf0473b0cb40b291f1769d287"
+    },
+    {
+      "path": "app/src/androidTest/java/com/vocamind/app/feature/quiz/QuizScreenInstrumentedTest.java",
+      "gitBlob": "009a22045531efcbe2c373e7e40810d1793a4334"
+    },
+    {
+      "path": "app/src/androidTest/java/com/vocamind/app/feature/search/SearchCatalogQaInstrumentedTest.java",
+      "gitBlob": "396e14ae84d5cfa1480f61a36a57506ee5026650"
+    },
+    {
+      "path": "app/src/androidTest/java/com/vocamind/app/feature/search/SearchLargeCatalogInstrumentedTest.java",
+      "gitBlob": "c118b6e1a21e24872cf5d884087cdaf9647e543d"
+    },
+    {
+      "path": "app/src/androidTest/java/com/vocamind/app/feature/search/SearchReadRecoveryInstrumentedTest.java",
+      "gitBlob": "6f3ae30c7602bda32b8a2fee46da833bf9c5e036"
+    },
+    {
+      "path": "app/src/androidTest/java/com/vocamind/app/feature/search/SearchScreenInstrumentedTest.java",
+      "gitBlob": "2919edfe9d9e5586cc0650f9f3b3596390c40fc7"
+    },
+    {
+      "path": "app/src/androidTestCatalogQa/java/com/vocamind/app/data/catalog/PackagedQaCatalogInstrumentedTest.java",
+      "gitBlob": "626a926fb7286d58fef88118685bfc45236b7e70"
+    },
+    {
+      "path": "app/src/attributionTest/java/com/vocamind/app/feature/attribution/AttributionRenderingContract.java",
+      "gitBlob": "8fdf889ab61798398245b599988e071bccb256ad"
+    },
+    {
+      "path": "app/src/attributionTest/java/com/vocamind/app/feature/attribution/AttributionScreenContract.java",
+      "gitBlob": "b6cf57f305f35fcee5df76473cc836e1a9c6a1c3"
+    },
+    {
+      "path": "app/src/attributionTest/java/com/vocamind/app/feature/attribution/FakeCatalogRepository.java",
+      "gitBlob": "e2148ad14e4dbd7f69964f42c3ea19c8bd3ccee9"
+    },
+    {
+      "path": "app/src/catalogTest/assets/benchmark/catalog-5000.db",
+      "gitBlob": "ccc3aa6d6b1ceeeb9fe7b662f4a7bc89c3dee370"
+    },
+    {
+      "path": "app/src/catalogTest/assets/benchmark/catalog-5000.metadata.json",
+      "gitBlob": "3e8fa2d1eec8e5ec3aa29233e8723c3f9e6b0082"
+    },
+    {
+      "path": "app/src/catalogTest/java/com/vocamind/app/data/catalog/CatalogAssetContract.java",
+      "gitBlob": "be27967d2798de2c6aef62d5d0c697f10eac28b6"
+    },
+    {
+      "path": "app/src/catalogTest/java/com/vocamind/app/data/catalog/FtsSearchBenchmarkContract.java",
+      "gitBlob": "671879e8d6f3eeac59dc83fb8aab5ecfc8d558e5"
+    },
+    {
+      "path": "app/src/catalogTest/java/com/vocamind/app/data/catalog/FtsSearchContract.java",
+      "gitBlob": "23e36f1212bc3318d3df6f8c9f6b8b544d84dd1c"
+    },
+    {
+      "path": "app/src/catalogTest/java/com/vocamind/app/data/catalog/ReleaseCatalogContract.java",
+      "gitBlob": "f0894431183d027cd9b9636d1534c0f8e44ffe1a"
+    },
+    {
+      "path": "app/src/catalogTest/java/com/vocamind/app/data/user/AtomicReviewContract.java",
+      "gitBlob": "733d2a1ef7a3a9da30100303d0b853edde29a1b5"
+    },
+    {
+      "path": "app/src/catalogTest/java/com/vocamind/app/data/user/ProgressAggregationContract.java",
+      "gitBlob": "54426a25f7e63727bbde277506acf5c73f291b47"
+    },
+    {
+      "path": "app/src/main/AndroidManifest.xml",
+      "gitBlob": "300b08122b67a852a5ea38cb3a5242805c9f0ff9"
+    },
+    {
+      "path": "app/src/main/assets/database/catalog.db",
+      "gitBlob": "755d70231a05b097572a70768c240e7c61bdcdf9"
+    },
+    {
+      "path": "app/src/main/assets/database/catalog.metadata.json",
+      "gitBlob": "2e51210d71ac5690e1f8079c4cf757666d9c08bf"
+    },
+    {
+      "path": "app/src/main/assets/database/content-credits.json",
+      "gitBlob": "35e9e8afd328c3f00548d5de86e58325fea889ba"
+    },
+    {
+      "path": "app/src/main/assets/database/quiz-policy.json",
+      "gitBlob": "3988bfff2d713b359f4027ef743da4638eec2d73"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/MainActivity.java",
+      "gitBlob": "8dbd0fefd7fe205e8d56cd4e32055913145757b2"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/core/.gitkeep",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/core/AttributionViewModelFactory.java",
+      "gitBlob": "fbdef718ef41855d883d26af9d1bc07b5c043cf2"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/core/CatalogProvider.java",
+      "gitBlob": "87ab5bc70f75e6e470a57e39a8b90a18d0e45a37"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/core/FlashcardViewModelFactory.java",
+      "gitBlob": "6dca64022c981c9c9e9eb2aa2898196e6d75ef38"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/core/PacksViewModelFactory.java",
+      "gitBlob": "61c0f649b1112a631da7a0edbd7fc38455924a71"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/core/ProgressProvider.java",
+      "gitBlob": "8faeeba726dd478f8b4233627f0e9e63937f94e7"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/core/QuizViewModelFactory.java",
+      "gitBlob": "67d0a8c3321994f6abd6a6fa3c96d197a3db89ca"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/core/RepositoryProvider.java",
+      "gitBlob": "479bebce0c1292c7d44afa41e95fd48ddfcae70a"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/core/ReviewProvider.java",
+      "gitBlob": "ffad182df0c1184beaa24579151ad08d6325a7e4"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/core/SearchComposition.java",
+      "gitBlob": "bf74dd8cdf9a5418874c5b663ca1193f44992e56"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/core/SearchProvider.java",
+      "gitBlob": "ae3ad860f60c5b8bbea51a20bab50190bf0da97a"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/core/SearchViewModelFactory.java",
+      "gitBlob": "7ee95396307e7be00ca3a3d45cecf2db0ed6426f"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/core/TodayPlanViewModelFactory.java",
+      "gitBlob": "4c5cb011c14fbcf8d80647c23ff3965d7c77018d"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/.gitkeep",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/catalog/CatalogDao.java",
+      "gitBlob": "604eeaaed33c3ce817b2b592807a2954e6c6b597"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/catalog/CatalogDatabase.java",
+      "gitBlob": "8434ace676c1da0f59b11ef0849395fe37b7ecdf"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/catalog/CatalogMapper.java",
+      "gitBlob": "c8548657c155937a9abfd35c5265ff3899201385"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/catalog/ContentCredits.java",
+      "gitBlob": "1ae25479c7e9599fd8086f6f41f0638c6bf083c9"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/catalog/FtsMatchExpression.java",
+      "gitBlob": "e1c24bc1590d7655459e47b1c6a235d3ce876ef4"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/catalog/PackMembership.java",
+      "gitBlob": "9a879bb9219176deba6e58877577e401e23b4d2e"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/catalog/QuizPolicyAsset.java",
+      "gitBlob": "71ef6505eaf0f26f5e36b24cf848c14c6f53ad08"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/catalog/RoomCatalogRepository.java",
+      "gitBlob": "37a829babcd72c3ee6630bf37b9a1b6991ad346b"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/catalog/RoomVocabularySearchRepository.java",
+      "gitBlob": "ce2fc2c8d74c9673d2265547bd4b8bf8106715f8"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/catalog/entity/ContentSource.java",
+      "gitBlob": "3c379d9187a0f432fed40912dbb9f03784993e00"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/catalog/entity/LearningPack.java",
+      "gitBlob": "6b94c33c0c69888f85b3308ba1638c45992b054d"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/catalog/entity/PackWord.java",
+      "gitBlob": "453d69ea8268899b516357780a6f12a77990f40c"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/catalog/entity/VocabularyEntry.java",
+      "gitBlob": "52181d41d7484c6a2b8c4f00288c76e3c0207db5"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/catalog/entity/VocabularyFts.java",
+      "gitBlob": "634c73ede6461f7f3f22eb4d53b35e7d02aa193c"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/local/DaoInputs.java",
+      "gitBlob": "0d9decd9d610828cdde715188523ec6c72941792"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/repository/ActiveCatalogScope.java",
+      "gitBlob": "d0694b733511e2fe0c3d32aa988e47d860468074"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/repository/RepositoryGuard.java",
+      "gitBlob": "293f1542af2509e50a951ef2feaf3b6be0884bf5"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/repository/RoomPackRepository.java",
+      "gitBlob": "4cfd47a198bc7c5cf153893cbd395a1d5400dc1e"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/repository/RoomQuizRepository.java",
+      "gitBlob": "69e7b6884f0ab29600357744bb0356fd0b21cf2a"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/repository/RoomReviewRepository.java",
+      "gitBlob": "43d8415c5183f63b69f1af42154cdb3549c26910"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/repository/RoomStudyRepository.java",
+      "gitBlob": "06dc1715971f31f57d40d7649cbdb49e63245d01"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/repository/RoomVocabularyRepository.java",
+      "gitBlob": "9c195f6d1ce5fa298ae549ea22ef8802a0ae96a1"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/repository/UserDataMapper.java",
+      "gitBlob": "9a6824bea8855d1a6d496eb2062a02aeee440c6e"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/user/BoxProgressCount.java",
+      "gitBlob": "b4329ec7f7a0b2d7975bab2b686e5e147161db2c"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/user/ProgressMapper.java",
+      "gitBlob": "961678f72c15e7724c8781f564e54e31ab11546f"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/user/ProgressRows.java",
+      "gitBlob": "68522be4b427e4d4358f3d953dd02868f8a2b442"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/user/ReviewStateChangedException.java",
+      "gitBlob": "adb2a44566b7e0e3088d6c86e9b725aab1fe34c7"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/user/RoomProgressRepository.java",
+      "gitBlob": "238dfa160b774589cf5446b75db5fb73a63227f6"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/user/UserDao.java",
+      "gitBlob": "25ed81b3b53a300c6a2812639aea058addb6f459"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/user/UserDatabase.java",
+      "gitBlob": "6428bbaa458a94f5c674caa139276389426bcfb4"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/user/UserPlanningSnapshot.java",
+      "gitBlob": "9e2acb9a2d6a36a64f4988bcf4993f734f7c8ba5"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/user/entity/QuizAttempt.java",
+      "gitBlob": "43bcf6e0e24c779a5167f2fb17af74299ee97ca0"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/user/entity/ReviewEvent.java",
+      "gitBlob": "0ed87b67972be2c354d8c3564a24910fe33e795c"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/user/entity/UserPack.java",
+      "gitBlob": "4e9b838696f06006df734146b5fe2ee99785bfd9"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/user/entity/UserPreference.java",
+      "gitBlob": "b1978eff59bd8148bcadb87fee7b9a5b8e4067f1"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/data/user/entity/UserWordProgress.java",
+      "gitBlob": "44ff60770bd2cd273abdc0b4c5a1858bd369b01c"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/.gitkeep",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/catalog/CatalogPack.java",
+      "gitBlob": "b8bb658e3c5336cabd2444691f0e68e9fb6dad87"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/catalog/CatalogReadException.java",
+      "gitBlob": "f2c89279a17803e990a5182ea6cd183d5e0a710f"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/catalog/CatalogRepository.java",
+      "gitBlob": "aa7f5a3a6c18fc276edb1a259efe9f9070e19200"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/catalog/CatalogSource.java",
+      "gitBlob": "25736aa3ddb98e6f5d9ce513b16839f49d7c4929"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/catalog/CatalogVocabulary.java",
+      "gitBlob": "5fd3dd77425d44ce121c1a37a11ca9d9cad70dd1"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/catalog/GetContentSources.java",
+      "gitBlob": "5213b387d6b07e615409c4694e00f5267b48b372"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/catalog/SearchVocabularyUseCase.java",
+      "gitBlob": "d49350686c527a08d4903c8577d20dce478c02ab"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/catalog/VocabularySearchQuery.java",
+      "gitBlob": "ebd2f29f641183c96b44d2fe8eb322fa6db7a3d1"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/catalog/VocabularySearchRepository.java",
+      "gitBlob": "57203803f3ccf4b7fc90023b21c71d0672a1d2cc"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/catalog/VocabularySearchResult.java",
+      "gitBlob": "f4253e8e4645e63a7f1d3bd63c0bbe459d7e6dab"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/common/RepoError.java",
+      "gitBlob": "b78fbcc9dcbf93f3c28205b70bd7fd1f598de541"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/common/RepoResult.java",
+      "gitBlob": "92454d739afe3883bb64833c411e907a1093cc57"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/learning/DailyQuota.java",
+      "gitBlob": "6760b593450c4b7dcc9883ebd47aa51619d9e633"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/learning/LeitnerScheduler.java",
+      "gitBlob": "5da2eb4b8dbb1355e4e196032f91bcf302d4460f"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/learning/LeitnerState.java",
+      "gitBlob": "fe3f2ff994510d828b94069dc7275f21d6360379"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/learning/PlanToday.java",
+      "gitBlob": "dc100f07cf280cd779a4e8918045ed9d48b3768f"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/learning/Rating.java",
+      "gitBlob": "ed7d7caabee578b28393a9907d6c6c61d4ab79a4"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/learning/RecordReviewUseCase.java",
+      "gitBlob": "5d9b4cc97182df4bf807dc0c70a1c4e46e0b8c62"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/learning/ReviewProgress.java",
+      "gitBlob": "52e1fc34102a37943c37d5011d5b633d2bc3b00d"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/learning/ReviewRepository.java",
+      "gitBlob": "22a3f5abc100fadc658f8e0dcdd069d4b0894c40"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/learning/ReviewWriteException.java",
+      "gitBlob": "c4628c714685cfdaca42095a3dc0fb7b133ad96f"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/learning/ScheduleResult.java",
+      "gitBlob": "e3795c27195c4b614a03449674591c6f48a49dac"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/learning/SessionQueue.java",
+      "gitBlob": "fe1a46a88d831bca629a524f0f8ef48a1381d2f1"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/learning/StudyItem.java",
+      "gitBlob": "09f034971ab328dc1b68b4a95f070de80570af7f"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/learning/StudyRepository.java",
+      "gitBlob": "0dc51e95cf62d0587f6bfecb0bba1879796f028a"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/learning/TodayPlan.java",
+      "gitBlob": "2b38fdfb8f8cbc79da0583b94a9b1694139c2870"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/learning/WordProgress.java",
+      "gitBlob": "b22c801988a77ec6cf96a9a8bc0ca3b0f20a9ea1"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/pack/GetPackWords.java",
+      "gitBlob": "d08a57e6a9a5b13d81a523465167523d73d3d91a"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/pack/GetPacks.java",
+      "gitBlob": "8326a0949c92a5a60eef4f252c69746c5444f036"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/pack/PackRepository.java",
+      "gitBlob": "b63cb164d99b81c0ea4e09c3729de1087d5b2f14"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/pack/PackState.java",
+      "gitBlob": "838fb7487a350c44748fcc340c029b6e77c2b584"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/pack/SetPackActive.java",
+      "gitBlob": "f0cc9321e7446075c00fd143dceda4ca98fea60c"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/progress/GetProgressUseCase.java",
+      "gitBlob": "0273b7ef9924837a73a68381d047312f1fa18517"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/progress/ProgressReadResult.java",
+      "gitBlob": "515a721d7e98698af965993d62d5fe534093dbc7"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/progress/ProgressRepository.java",
+      "gitBlob": "c1bdd2925bf6a0da869840f7515c031356da93d4"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/progress/ProgressSnapshot.java",
+      "gitBlob": "0b4be5f447d9198af04735bdda6efc32a4160999"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/progress/ProgressSummary.java",
+      "gitBlob": "191cde548b15d75899953122925182dd3f54abe2"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/progress/QuizHistoryItem.java",
+      "gitBlob": "91a7cea859f5ff124e04ac3397a76a1be3456375"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/quiz/Checks.java",
+      "gitBlob": "dfc4efbbd1fffbe40fd4c2dcc698bf9a8e0b0044"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/quiz/DefaultQuizGenerator.java",
+      "gitBlob": "ec59f965b6e932f0821ea2daeadae8003f7acf67"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/quiz/GenerateQuiz.java",
+      "gitBlob": "5c1be271a00de7d56d4a00932f4a1fc95b0323e2"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/quiz/MeaningNormalizer.java",
+      "gitBlob": "5fcd32808a6dfb26361cef89e5c44373ca1b06e6"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/quiz/QuizDistractorPolicy.java",
+      "gitBlob": "a3942344dd407e6460799a5c7b7391629b15d365"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/quiz/QuizGenerationOutcome.java",
+      "gitBlob": "fa6c7f7294a97c770cd3b722450670e2b0153ba7"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/quiz/QuizGenerator.java",
+      "gitBlob": "23a52d0c60240c313d0c9b9ee8ec3ff5e2389bdf"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/quiz/QuizOption.java",
+      "gitBlob": "9a085d6988ac481714863b17a73ceaa7fa49c2c2"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/quiz/QuizPool.java",
+      "gitBlob": "fcf1edb481954e8c0e6197cf89ee61d80a6f65c3"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/quiz/QuizQuestion.java",
+      "gitBlob": "a4de3549ea77ba110ac3004f03ac9ccbc5f42918"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/quiz/QuizRepository.java",
+      "gitBlob": "e83fd24a3c9b6307c2b11acb6e4ea692c08c7286"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/quiz/QuizResult.java",
+      "gitBlob": "65dcf8ba3b4ae248a046371bd5d5e7b7d82f19b9"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/quiz/QuizSession.java",
+      "gitBlob": "9c5a08800248c56bf4e0ad0be2a242cffeee31ad"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/quiz/QuizSnapshot.java",
+      "gitBlob": "74b538fc7cd27942b9256f5c78ff912bcc65204d"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/quiz/QuizVocabulary.java",
+      "gitBlob": "4408ac59454582442c4d18d64fc7bcd361da3c5e"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/quiz/UnicodeCaseFold.java",
+      "gitBlob": "eaaf76b0b90244e27f8f8e525b10e75252a1531e"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/quiz/UnicodeMeaningNormalizer.java",
+      "gitBlob": "34558f0546bb19720c4acf7b0df5cca8b81b475a"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/quiz/UnicodeNfc.java",
+      "gitBlob": "f23f385aeaadb326f1ff59a4ee94eeb9f012c5a0"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/quiz/UnicodeNfcData.java",
+      "gitBlob": "1e5de92b03e3d51e28332e9fd1941b1a163fd98c"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/vocabulary/GetVocabularyDetail.java",
+      "gitBlob": "76d17408ad04fe51b825e620f16f630f81164a7e"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/vocabulary/ToggleSaved.java",
+      "gitBlob": "3e91596969d49af923fd2c5ddceafbb1ee800afa"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/vocabulary/VocabularyDetail.java",
+      "gitBlob": "bc5b56e176da0baf815abd0f6b20a2432db4681d"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/domain/vocabulary/VocabularyRepository.java",
+      "gitBlob": "932e6e7679521a563c4fc8a34bb305b3e7c134c5"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/attribution/AttributionFragment.java",
+      "gitBlob": "f880cb591000918be927a6aae33dd00911008b9f"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/attribution/AttributionViewModel.java",
+      "gitBlob": "f6327d7bdd4b0b32065e2a56acd50b6eba830c66"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/attribution/ExternalLinks.java",
+      "gitBlob": "e9e2fc93ae8bb91894aa5f09fdf19d65133b7312"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/flashcard/FlashcardFragment.java",
+      "gitBlob": "aabbd86619618942516b96de9a275b47bd313f97"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/flashcard/FlashcardViewModel.java",
+      "gitBlob": "5dfe90307950bff9e8901a800aba19f81d4705a3"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/home/HomeFragment.java",
+      "gitBlob": "bbd03530a9b347692f7347808a6cf9f8b3921c70"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/packs/AsyncListViewModel.java",
+      "gitBlob": "28e29fb64da1a7a12eb44bb0de5a9e3b71661f72"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/packs/PackDetailFragment.java",
+      "gitBlob": "7c2c3226bd226469b4d2800b9fdb1f752cb379b0"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/packs/PackWordAdapter.java",
+      "gitBlob": "a736a4146f7f1cf4fa05488758e7e85b470f6519"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/packs/PackWordsViewModel.java",
+      "gitBlob": "4e8922cd64475895f0d77233a4539674141fc16c"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/packs/PacksFragment.java",
+      "gitBlob": "12804faa82b4ea25ef73696213c629df8d44a33b"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/packs/PacksViewModel.java",
+      "gitBlob": "146d764bba55d965dacd46879f4fc5a7ee3341a6"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/progress/ProgressFragment.java",
+      "gitBlob": "2e02b7edc401fb555c10b74c1e17250dd4dfdbd6"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/progress/ProgressViewState.java",
+      "gitBlob": "ee995f1085f8222f093db343c7bb47db619526ee"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/quiz/QuizFragment.java",
+      "gitBlob": "391e36196ea697f09cf9b300715ede0cdf44a4ab"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/quiz/QuizSnapshotMapper.java",
+      "gitBlob": "4b4e35f38eb656ddaf97882452321fea9ae7c986"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/quiz/QuizViewModel.java",
+      "gitBlob": "73c8e030309dea36603e295774423eff3a41d9dd"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/search/SearchAdapter.java",
+      "gitBlob": "5e1721e0a7d537c30013e90d1668f3fb758d2196"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/search/SearchViewModel.java",
+      "gitBlob": "36ae3d2bda78698ff0312287ad6339249ce235cf"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/today/TodayFragment.java",
+      "gitBlob": "9ce64eb4a71ce81f4bd70079851b87e6edb9b6cb"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/today/TodayPlanViewModel.java",
+      "gitBlob": "75223aa2f3a8f50e22f773b18df89bedb6a36d96"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/vocabulary/VocabularyDetailFragment.java",
+      "gitBlob": "2c7d54ca270640d73dae9c116ccebbbcec35fc21"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/vocabulary/VocabularyDetailViewModel.java",
+      "gitBlob": "593dd26dd318438a8563262cb54f99058a74e31e"
+    },
+    {
+      "path": "app/src/main/java/com/vocamind/app/feature/vocabulary/VocabularyFragment.java",
+      "gitBlob": "29bc9a921a9df99378f81953fa9c68ed7377c3c5"
+    },
+    {
+      "path": "app/src/main/res/drawable/detail_pos_background.xml",
+      "gitBlob": "9caa0e443d8db459a8da12191930c9e687dfa703"
+    },
+    {
+      "path": "app/src/main/res/drawable/ic_detail_back.xml",
+      "gitBlob": "2a052b9d67af99bf502b2e78ae68eb42e6f5d74d"
+    },
+    {
+      "path": "app/src/main/res/drawable/ic_detail_bookmark.xml",
+      "gitBlob": "511b60149a4a9ad87d4f0b7d0816b77738565f15"
+    },
+    {
+      "path": "app/src/main/res/layout/activity_main.xml",
+      "gitBlob": "7da4f4026cfc8ed2c64a62cb6904d3c41b51f36f"
+    },
+    {
+      "path": "app/src/main/res/layout/fragment_attribution.xml",
+      "gitBlob": "3471c14fc02ff8596b83a22b0372441929ba2cbf"
+    },
+    {
+      "path": "app/src/main/res/layout/fragment_flashcard.xml",
+      "gitBlob": "dcbf4f66a5546fb6097086d192494eeadb755ada"
+    },
+    {
+      "path": "app/src/main/res/layout/fragment_home.xml",
+      "gitBlob": "a3ffae3ef458587170d7a9f0d2a2458e5ad431e1"
+    },
+    {
+      "path": "app/src/main/res/layout/fragment_pack_detail.xml",
+      "gitBlob": "a85477e33290859b1cc5268122b4e006ceb8af0a"
+    },
+    {
+      "path": "app/src/main/res/layout/fragment_packs.xml",
+      "gitBlob": "5c78cf77cee88e65a3b9bfe6182473b526717628"
+    },
+    {
+      "path": "app/src/main/res/layout/fragment_progress.xml",
+      "gitBlob": "77d51b837b492442b5c717a3830a8b19213b4083"
+    },
+    {
+      "path": "app/src/main/res/layout/fragment_quiz.xml",
+      "gitBlob": "d941c6faf634dc896e7b13ea13c13d0aa6dcfb2c"
+    },
+    {
+      "path": "app/src/main/res/layout/fragment_today.xml",
+      "gitBlob": "d1b4fc676b480360985d2cef235f63774d1206ae"
+    },
+    {
+      "path": "app/src/main/res/layout/fragment_vocabulary.xml",
+      "gitBlob": "a5554d3cc8222af4669ece194eeb5ad3a86f15c4"
+    },
+    {
+      "path": "app/src/main/res/layout/fragment_vocabulary_detail.xml",
+      "gitBlob": "1629cabb0dd6a209790245dfb12c17a3fdb1b797"
+    },
+    {
+      "path": "app/src/main/res/layout/item_attribution_source.xml",
+      "gitBlob": "4570063654ce3b26f56ad4ea9e3fd4b2f5f3a88c"
+    },
+    {
+      "path": "app/src/main/res/layout/item_pack.xml",
+      "gitBlob": "9a1f9913c1ff2dd743840c62bab3448deb5763c1"
+    },
+    {
+      "path": "app/src/main/res/layout/item_pack_word.xml",
+      "gitBlob": "a45ee7c724bfa598e75d782904941cbd377c4a0f"
+    },
+    {
+      "path": "app/src/main/res/layout/item_search_word.xml",
+      "gitBlob": "fe35692f6485499bb726a169b1e72bccc872f80b"
+    },
+    {
+      "path": "app/src/main/res/navigation/nav_graph.xml",
+      "gitBlob": "6c29c126f0e5aba5d809a2b0f2866ac7dc048fdf"
+    },
+    {
+      "path": "app/src/main/res/values-night/bools.xml",
+      "gitBlob": "3f2351121ca6cc72c69dd105972888585a4dbd3a"
+    },
+    {
+      "path": "app/src/main/res/values-night/colors.xml",
+      "gitBlob": "0a451011938560dbcc5b18e1ba6d86099b44351c"
+    },
+    {
+      "path": "app/src/main/res/values-sw600dp/dimens.xml",
+      "gitBlob": "522d59ec6aa18512b819a2b2413f6f834d3cc74e"
+    },
+    {
+      "path": "app/src/main/res/values/bools.xml",
+      "gitBlob": "439eb6c85172da5c91d19bd5b2f73b1e73fc078d"
+    },
+    {
+      "path": "app/src/main/res/values/colors.xml",
+      "gitBlob": "f7acfb0fa4b6b995f6de77dd7d3afe7e4cb51f77"
+    },
+    {
+      "path": "app/src/main/res/values/dimens.xml",
+      "gitBlob": "cf70183399b030d5794b7e40395ed86df183513c"
+    },
+    {
+      "path": "app/src/main/res/values/strings.xml",
+      "gitBlob": "60ecc0f248a4497436cb9107291685e8a7ac16dd"
+    },
+    {
+      "path": "app/src/main/res/values/styles.xml",
+      "gitBlob": "87d16330bff66455db96bd8aab26426ded746d35"
+    },
+    {
+      "path": "app/src/quizTest/java/com/vocamind/app/feature/quiz/QuizScreenContract.java",
+      "gitBlob": "0789abea70a92f215a52b606d0f745bc7cb34236"
+    },
+    {
+      "path": "app/src/searchTest/java/com/vocamind/app/feature/search/SearchReadRecoveryContract.java",
+      "gitBlob": "e9639619bf116da172b5af434543d69255ee55ee"
+    },
+    {
+      "path": "app/src/searchTest/java/com/vocamind/app/feature/search/SearchScreenContract.java",
+      "gitBlob": "b7b378c366fa813f7f135f466aed2e50f7ff83c9"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/.gitkeep",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/data/DaoFoundationTest.java",
+      "gitBlob": "07be574a870032437c74c9c39a7edd253dc396e9"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/data/DataBoundaryTest.java",
+      "gitBlob": "ec5fada1084df3509c8615a02ad8616a79611ccb"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/data/catalog/CatalogAssetTest.java",
+      "gitBlob": "32d971ef126d0ad5c23c931f8a557ad9cb143cfd"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/data/catalog/ContentCreditsTest.java",
+      "gitBlob": "d811cdc079d53d88583e0e887bf0f655bc442ad2"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/data/catalog/FtsSearchBenchmarkTest.java",
+      "gitBlob": "57c9b576c7bc908b442b04f0cecdd6296365f170"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/data/catalog/FtsSearchTest.java",
+      "gitBlob": "9ffc91db18af01ccf61fc72ea2535c8da2f21006"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/data/catalog/QuizPolicyCompositionTest.java",
+      "gitBlob": "a7cc58ec35d42af5533d78911df362bf138f3974"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/data/catalog/ReleaseCatalogTest.java",
+      "gitBlob": "79b91ba810786ac7ee030c440b7b6de669cf2b9f"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/data/repository/RepositoryIntegrationTest.java",
+      "gitBlob": "ecaddd76e18826f484fe7b340560816bdf916d52"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/data/user/AtomicReviewTest.java",
+      "gitBlob": "71743787f1b2bba5e83d29de892fad5ad0e85a64"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/data/user/ProgressAggregationTest.java",
+      "gitBlob": "c8770960e1c02653ad71d046131d83e893130bef"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/data/user/ProgressMapperTest.java",
+      "gitBlob": "4209efbcafc11b5cf5f0ba14391cb28b2c7c5659"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/data/user/UserDatabaseTest.java",
+      "gitBlob": "a504a3ba1cbbfb54e70d03b2361037b06880de9d"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/domain/catalog/SearchVocabularyUseCaseTest.java",
+      "gitBlob": "89a8856331cf657374a6ac5ebeaff27d97571dbd"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/domain/learning/LeitnerSchedulerBoundaryTest.java",
+      "gitBlob": "a13da96437ac58baf7346f296fb64834f957c472"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/domain/learning/LeitnerSchedulerCalendarTimeTest.java",
+      "gitBlob": "c9404577a1cf47156ae9a1be406c72aa8ab4a62f"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/domain/learning/LeitnerSchedulerSrsTest.java",
+      "gitBlob": "c796e7d4468a297b24143cb86b659870ca42db63"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/domain/learning/LeitnerSchedulerTest.java",
+      "gitBlob": "3635113f94d2a4d6e0e5fb3d0da300478ee4a5f4"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/domain/learning/PlanTodayTest.java",
+      "gitBlob": "679e38c70f193cf6544f0cf372c44b070ee91d3f"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/domain/learning/RecordReviewUseCaseTest.java",
+      "gitBlob": "ffc535164b4b8ce382535090f3d3e22f5cf36504"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/domain/learning/SessionQueueTest.java",
+      "gitBlob": "8dccf984d33b52c70bc7f91f39ec34916e42ff0e"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/domain/progress/ProgressDomainTest.java",
+      "gitBlob": "3116c8bd7d811311e3cb8c5a21a36cf2765fecf0"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/domain/quiz/AcceptedQuizPolicyTest.java",
+      "gitBlob": "1dd9e77516aa53e714016ff299364a9c49f3f475"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/domain/quiz/AndroidNfcConformanceTest.java",
+      "gitBlob": "0b6f8d9119ef2b4120404d17b3772618d5756e81"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/domain/quiz/GenerateQuizTest.java",
+      "gitBlob": "4629aca066de6048552c24114e820e66bc8fd0d2"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/domain/quiz/NfcConformanceTest.java",
+      "gitBlob": "7b9699ec4fb74160627c748ed8f4d0c5ab59c4c2"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/domain/quiz/QuizDistractorPolicyTest.java",
+      "gitBlob": "e0b8fecb6c661a99fa6aec82d686fbf8314c1b2a"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/domain/quiz/QuizDomainTest.java",
+      "gitBlob": "a3b1ed92c997d94fa17d0ab445782e5155e01bd8"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/domain/quiz/QuizGenerationTest.java",
+      "gitBlob": "2bc538292530c4773645f54b2ac5e480fb5d90dd"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/fake/FakePackRepository.java",
+      "gitBlob": "d5dd019a3916dc4c57b5733200bc1f1c0e9408ac"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/fake/FakeQuizRepository.java",
+      "gitBlob": "a9a325514e66a18e1e00a83d311e401b5eb22c9f"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/fake/FakeRepositoriesTest.java",
+      "gitBlob": "bfee5160e1dba4cdd4550ff29868ede051bafb42"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/fake/FakeReviewRepository.java",
+      "gitBlob": "88ebd921175fce86fa9ef2d76ee5d301cc6aab94"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/fake/FakeStudyRepository.java",
+      "gitBlob": "da6831caee865f2d3d425ef3f7e664206cc16db0"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/attribution/AttributionRenderingTest.java",
+      "gitBlob": "2fad26e361c55467768f8954e78c6b9598929b80"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/attribution/AttributionScreenTest.java",
+      "gitBlob": "bf4b960bfefcabb8923cfba417d25b9ce7ae6b82"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/attribution/AttributionViewModelTest.java",
+      "gitBlob": "d9569bd15bdd2e98dc79a67cccfe4eda8b9d93d5"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/attribution/ExternalLinksTest.java",
+      "gitBlob": "a77c4b7acdb5d80f2ccea241b4aef296d924d1ee"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/attribution/GetContentSourcesTest.java",
+      "gitBlob": "3818b9ba97671c126ce2963d0b1dc6659daab414"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/flashcard/FlashcardLayoutTest.java",
+      "gitBlob": "9b9d31e3cc1b9f1eecad643b435d0e1c7069006b"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/flashcard/FlashcardViewModelTest.java",
+      "gitBlob": "ac878c85b72d373763aed6af9309a83fb1512df4"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/flashcard/LearningFlowIntegrationTest.java",
+      "gitBlob": "11f322bfea3a4384b382fd275d42278f7a48962a"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/packs/PackActivationRenderingTest.java",
+      "gitBlob": "a28ba1b52d5adf2a69b583f0162b0e7817059510"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/packs/PackActivationTest.java",
+      "gitBlob": "25170f78854611d3b9e1bb7ba2562c53d6e684f7"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/packs/PackVocabularyIntegrationTest.java",
+      "gitBlob": "3c5653760f569bf7b5ceb81ed79920ec98674f97"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/packs/PacksViewModelTest.java",
+      "gitBlob": "eb3b0528d23106871466f248734e3c5fc07e2624"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/packs/VocabularyListTest.java",
+      "gitBlob": "e1e8d02e96c24d978579a6995ec0a0df36a359e6"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/progress/ProgressViewStateTest.java",
+      "gitBlob": "cbd1ce3a94f94742bc2ff172eabd726363193992"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/quiz/QuizScreenTest.java",
+      "gitBlob": "30c2d1ddcb853c38d238c8f47efe3e50a4e595ad"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/quiz/QuizViewModelTest.java",
+      "gitBlob": "28920d792d133c72179b61375990816ce1dc0f68"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/search/SearchReadRecoveryTest.java",
+      "gitBlob": "4cd8fda99fd84e048a0d86ac250ee39d49691484"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/search/SearchScreenTest.java",
+      "gitBlob": "b7fa702cc2bdc681c61c768ba9e93a6d09d4c51a"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/search/SearchViewModelTest.java",
+      "gitBlob": "8296aba62358cc4d7bad127c78b5a5e40a83d794"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/today/TodayRenderingTest.java",
+      "gitBlob": "6b145913925b8a573c70c30f9d79d9b152d64d4e"
+    },
+    {
+      "path": "app/src/test/java/com/vocamind/app/feature/vocabulary/VocabularyDetailTest.java",
+      "gitBlob": "314f8c2c56cd38f19605a67ce23f2c8331536855"
+    },
+    {
+      "path": "app/src/test/resources/quiz/accepted-policy.json",
+      "gitBlob": "385c6c2e1f340088eceaff882d44be39b3cf897e"
+    },
+    {
+      "path": "build.gradle",
+      "gitBlob": "5b7ccba7c566afb5057eaea1b10b99b083851fe4"
+    },
+    {
+      "path": "docs/data/content-credits-contract.md",
+      "gitBlob": "1f7ee5bb94b26b4854245f30f872de266fbf01dd"
+    },
+    {
+      "path": "docs/data/evidence/voc-data-01-research-20261025/capture.json",
+      "gitBlob": "8ec04ea1dd40470d6896434291ee84f0fbbd9b66"
+    },
+    {
+      "path": "docs/data/evidence/voc-data-01-research-20261025/kaikki-viwiktionary/rawdata.html",
+      "gitBlob": "008c93c02edd9f9ec0d51c2af974fa4134d1da9e"
+    },
+    {
+      "path": "docs/data/evidence/voc-data-01-research-20261025/kaikki-viwiktionary/source.html",
+      "gitBlob": "4c1fbf124d019351724d714624a07e29856f5469"
+    },
+    {
+      "path": "docs/data/evidence/voc-data-01-research-20261025/kaikki-viwiktionary/wikimedia-terms.html",
+      "gitBlob": "ef7bc88fa78ea581cbae2b346b692c13e4f0e3e2"
+    },
+    {
+      "path": "docs/data/evidence/voc-data-01-research-20261025/ngsl/attribution.md",
+      "gitBlob": "9b4d4c0c131c91e51d6685b1c0e75b9d608042b1"
+    },
+    {
+      "path": "docs/data/evidence/voc-data-01-research-20261025/ngsl/license.html",
+      "gitBlob": "ff5a12126116de67230ba3c85e6e7990f54a9c78"
+    },
+    {
+      "path": "docs/data/evidence/voc-data-01-research-20261025/ngsl/source.html",
+      "gitBlob": "dac2e7c0bdf9523f584947c32632de908f5a3096"
+    },
+    {
+      "path": "docs/data/evidence/voc-data-01-research-20261025/ngsl/words.csv",
+      "gitBlob": "ecf29fb3cc46d7572062bf7b8f3671b5703f2585"
+    },
+    {
+      "path": "docs/data/evidence/voc-data-01-research-20261025/tatoeba-text/downloads.html",
+      "gitBlob": "1d74b4e6b2640f96e86be6ab33e361796e1a96b7"
+    },
+    {
+      "path": "docs/data/evidence/voc-data-01-research-20261025/tatoeba-text/license.html",
+      "gitBlob": "8caa0e60600c9800d5320f9b19ca4a931cf935ba"
+    },
+    {
+      "path": "docs/data/evidence/voc-data-01-research-20261025/tatoeba-text/terms.html",
+      "gitBlob": "576c15bdd7791c592d90801bf8a1338a697d727a"
+    },
+    {
+      "path": "docs/data/evidence/voc-data-01-research-20261025/tsl/attribution.md",
+      "gitBlob": "cd0a67412eec65e665808ce598d4465d5c520d73"
+    },
+    {
+      "path": "docs/data/evidence/voc-data-01-research-20261025/tsl/license.html",
+      "gitBlob": "ff5a12126116de67230ba3c85e6e7990f54a9c78"
+    },
+    {
+      "path": "docs/data/evidence/voc-data-01-research-20261025/tsl/source.html",
+      "gitBlob": "393a65689c4300c8ed0af256f98b27e0a59566ca"
+    },
+    {
+      "path": "docs/data/evidence/voc-data-01-research-20261025/tsl/words.csv",
+      "gitBlob": "c51e8110f0cfeba45b165f76cd5ac4703090f342"
+    },
+    {
+      "path": "docs/data/snapshot.json",
+      "gitBlob": "a4c5629c2240ac19976fcb5f2856d234b061d648"
+    },
+    {
+      "path": "docs/data/source-approval-template.md",
+      "gitBlob": "0b0cec62fd92456397ef198abff5028fee1a3696"
+    },
+    {
+      "path": "docs/data/source-registry.json",
+      "gitBlob": "7ed22ef37d133b11be7fe7427616159b7469f98f"
+    },
+    {
+      "path": "docs/data/voc-data-04/README.md",
+      "gitBlob": "f203f0f367d9ebae337afac63ecb6b084165b032"
+    },
+    {
+      "path": "docs/data/voc-data-04/accepted-delivery.md",
+      "gitBlob": "f7845774a5febb2c4c77459c3989b55a306e1947"
+    },
+    {
+      "path": "docs/data/voc-data-04/accepted-v1/acceptance.json",
+      "gitBlob": "c183ca709de9152d6b4f0a465a87d949d665f8dd"
+    },
+    {
+      "path": "docs/data/voc-data-04/accepted-v1/attribution.txt",
+      "gitBlob": "04326d072e7161873492b7a022661af847eb4045"
+    },
+    {
+      "path": "docs/data/voc-data-04/accepted-v1/canonical-preview.json",
+      "gitBlob": "d0765aa52c0e19b8b2f9e49caaf405d24d7a9cc7"
+    },
+    {
+      "path": "docs/data/voc-data-04/accepted-v1/identity-registry.json",
+      "gitBlob": "638b48f3ee403815dc60b965bfa578c89b36a863"
+    },
+    {
+      "path": "docs/data/voc-data-04/accepted-v1/ingestion-config.json",
+      "gitBlob": "5f5770b159320e6e7e0062debdb0694f6867c0c7"
+    },
+    {
+      "path": "docs/data/voc-data-04/accepted-v1/inventory.json",
+      "gitBlob": "5ccda38815e92e2c745f35491f048a9672b7f9f7"
+    },
+    {
+      "path": "docs/data/voc-data-04/accepted-v1/quiz-policy.json",
+      "gitBlob": "881ef80461d88b277113b969aa6ff53b19e3a48d"
+    },
+    {
+      "path": "docs/data/voc-data-04/accepted-v1/reviews.json",
+      "gitBlob": "26b3b7366f12afcc9cea07585f246ae63848be0f"
+    },
+    {
+      "path": "docs/data/voc-data-04/accepted-v1/source-registry.json",
+      "gitBlob": "eb57dfbb07fad53a8b581e43112f55e085f34a4b"
+    },
+    {
+      "path": "docs/data/voc-data-04/accepted-v1/staging.jsonl",
+      "gitBlob": "6233348448385410e512f39eb8c537d40c758523"
+    },
+    {
+      "path": "docs/data/voc-data-04/corpus-v1/candidate-catalog.json",
+      "gitBlob": "5aa64eba18113c1b3432ffcfc64f6cb98ab7c157"
+    },
+    {
+      "path": "docs/data/voc-data-04/corpus-v1/candidate-manifest.json",
+      "gitBlob": "d1f8e6ddf098ba244696bd7f78f03ec088d7edea"
+    },
+    {
+      "path": "docs/data/voc-data-04/corpus-v1/candidate-qc-report.json",
+      "gitBlob": "6aba48b0527044a9184c7bdc8335df5f4328f527"
+    },
+    {
+      "path": "docs/data/voc-data-04/corpus-v1/identity-registry-proposal.json",
+      "gitBlob": "638b48f3ee403815dc60b965bfa578c89b36a863"
+    },
+    {
+      "path": "docs/data/voc-data-04/corpus-v1/ingestion-proposal.json",
+      "gitBlob": "5707718fe54b91a683da177c2758c8c8e6204407"
+    },
+    {
+      "path": "docs/data/voc-data-04/corpus-v1/proposals.json",
+      "gitBlob": "6efaefa007dabcd6578f43dcf65df57ad3b4a9f7"
+    },
+    {
+      "path": "docs/data/voc-data-04/corpus-v1/review-worksheet.md",
+      "gitBlob": "056c17105ca1939e24d7de844497d39cfc26ba3a"
+    },
+    {
+      "path": "docs/data/voc-data-04/corpus-v1/reviews-pending.json",
+      "gitBlob": "0b2a70ca51c4d01e43cd00d3eb03db46709d7b8b"
+    },
+    {
+      "path": "docs/data/voc-data-04/corpus-v1/staging.jsonl",
+      "gitBlob": "0f767c8b60dba1d3dd4949f0ea4cdb0629b3e2a4"
+    },
+    {
+      "path": "docs/data/voc-data-04/editorial-v1.tsv",
+      "gitBlob": "e08263a8aa858f4435fafa75d704257b5103e21d"
+    },
+    {
+      "path": "docs/data/voc-data-04/owner-acceptance.json",
+      "gitBlob": "b0bdae449cf7c4bb2477718d9657adece32e9e3c"
+    },
+    {
+      "path": "docs/data/voc-data-05/ENRICHMENT_SPEC.md",
+      "gitBlob": "07925ea2908dcb5ffe8bcdf16e6b21f44389ee8e"
+    },
+    {
+      "path": "docs/data/voc-data-05/enrichment-v1.json",
+      "gitBlob": "e939ae4384960701b4a11b9f7e10c706125c3803"
+    },
+    {
+      "path": "docs/data/voc-data-05/label-sources.json",
+      "gitBlob": "c0cfa0e39e5277fc70cc96e1921e53fd2cfc595b"
+    },
+    {
+      "path": "docs/data/voc-data-05/review-decisions.json",
+      "gitBlob": "09a1df2bce703c4c97a6bed8f26d9a0c57b05ace"
+    },
+    {
+      "path": "docs/data/voc-data-05/topic-taxonomy-v1.json",
+      "gitBlob": "caf1dbaf6e9bc8bf0781e6e52a959f0450e7121c"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/.gitignore",
+      "gitBlob": "43ae0e2a6c6d8fca34872506ca0f2e64194fec7c"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/CONTRACT.md",
+      "gitBlob": "08b3443d43ff43dc16b7d17ed9eb295e8bfeca76"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/README.md",
+      "gitBlob": "87279970d0e7ba8fced815788542263df9036ef6"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/REVIEW.md",
+      "gitBlob": "ff54cc7166501fd7c2094991565761afbfddbfd5"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/VALIDATION.md",
+      "gitBlob": "80d1341aabf86021665d5bf901806cb3a01ff44b"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/catalog.schema.json",
+      "gitBlob": "7b7736a91a8724dc43821121817af97b9eea71ac"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/fixtures/invalid/blank-meaning.json",
+      "gitBlob": "ff4632cf86d10fcf7688ad896b68de012435162b"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/fixtures/invalid/duplicate-id.json",
+      "gitBlob": "5712c517fd75e8ebd926cc3676e69851dbc8f347"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/fixtures/invalid/duplicate-membership.json",
+      "gitBlob": "0d3723b61ec3dd1af0f9b1136a1fa869f742191f"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/fixtures/invalid/duplicate-order.json",
+      "gitBlob": "a55dcc23c292e01fc74fd4103dc489745c56af92"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/fixtures/invalid/empty-example.json",
+      "gitBlob": "f527dda7a6d50403de71d3517b6ec953d721b96c"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/fixtures/invalid/expected-errors.json",
+      "gitBlob": "41a4e0211f91ed17218806b8f9529f900d48be6a"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/fixtures/invalid/incomplete-provenance.json",
+      "gitBlob": "6ce5ae03a2a173d4c31d27785ce984b8e3a1231a"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/fixtures/invalid/missing-meaning.json",
+      "gitBlob": "0e78ff5a5b39cd4c0130c1a2c163403570b97483"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/fixtures/invalid/unknown-pack.json",
+      "gitBlob": "08ad473ebdf5104990e4992a25d9b5101851c020"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/fixtures/invalid/unknown-source.json",
+      "gitBlob": "2e82e15934b5aa85fdde02c6543d14df293e0d91"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/fixtures/invalid/unrecognized-field.json",
+      "gitBlob": "73c39ed21e33692695f2cbc6aad44e7c6b894697"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/fixtures/invalid/wrong-id.json",
+      "gitBlob": "55a2f2341b0258cf0fe44a2b3ca9f599d388eb99"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/fixtures/invalid/wrong-normalized-lemma.json",
+      "gitBlob": "e95ce0e153b34bec7d8fb9be9661b8e7ca038140"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/fixtures/meaning-key-vectors.json",
+      "gitBlob": "55a501842406ab72f9904703cc41c46b20a8229a"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/fixtures/source_snapshot.txt",
+      "gitBlob": "0441fae3a4d8b11efc6876e588a07c8b718e5090"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/fixtures/stable-id-vectors.json",
+      "gitBlob": "4edc090aa54ce1c7009c21f2465133f76556751d"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/fixtures/valid/catalog.json",
+      "gitBlob": "df50292df2464aa3cd93f7c2340eae88e682e082"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/requirements-validation.txt",
+      "gitBlob": "3ee1ea1a4270a73d0a83859fefca415177450121"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/test_contract.py",
+      "gitBlob": "80b2d14ea2d0fffbb932ba6176c3cc80a8d8e262"
+    },
+    {
+      "path": "docs/data/vocabulary-contract-v1/validate_contract.py",
+      "gitBlob": "b98800f380d13862ebb2dfbfdf6859b6beb61b47"
+    },
+    {
+      "path": "gradle.properties",
+      "gitBlob": "2e11322913e56c04783e2f5dbe7927b9e0539007"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "gitBlob": "2c3521197d7c4586c843d1d3e9090525f1898cde"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "gitBlob": "77f5d0ba6cca270e1cd7b83b283e62570ca751d0"
+    },
+    {
+      "path": "settings.gradle",
+      "gitBlob": "949a7869b553e35cfdf14f569259e3ee6d4e6a2f"
+    },
+    {
+      "path": "tools/catalog/.gitignore",
+      "gitBlob": "c18dd8d83ceed1806b50b0aaa46beb7e335fff13"
+    },
+    {
+      "path": "tools/catalog/README.md",
+      "gitBlob": "42efc778ef639664f7526d3b925258705339c89e"
+    },
+    {
+      "path": "tools/catalog/audit_provenance.py",
+      "gitBlob": "5b1979ce58a6bb795aa276bd204f362a587651b4"
+    },
+    {
+      "path": "tools/catalog/build_fixture.py",
+      "gitBlob": "697c702f09ebf3b51b0a6232b5d8244f66cd36d6"
+    },
+    {
+      "path": "tools/catalog/build_quiz03_device_fixture.py",
+      "gitBlob": "ee7f68db7d321ddd9003f63e3de000857e2bf8fc"
+    },
+    {
+      "path": "tools/catalog/build_quiz_policy.py",
+      "gitBlob": "4bf6c6ec0a36b6c90caafaf91d82299f78b4449e"
+    },
+    {
+      "path": "tools/catalog/build_release.py",
+      "gitBlob": "30b1a5c187e936d4d8aacedf5c8daf67c7e6afb0"
+    },
+    {
+      "path": "tools/catalog/build_search_benchmark_fixture.py",
+      "gitBlob": "fe3015edf14c6b99fc7f0b5f045ad8ba9f27725c"
+    },
+    {
+      "path": "tools/catalog/catalog_snapshot.py",
+      "gitBlob": "0ca8799ae4896c2bc4401ad690ad3e99ebc4a6d1"
+    },
+    {
+      "path": "tools/catalog/check_credits.py",
+      "gitBlob": "06081a3e31471d2aa00ede8b1247624d59614901"
+    },
+    {
+      "path": "tools/catalog/check_quiz03_offline.py",
+      "gitBlob": "33f3056a2338ba8495416163d8fd0489f814b992"
+    },
+    {
+      "path": "tools/catalog/content_rights.py",
+      "gitBlob": "bc6522f0c0e5300f5bcc11d02beaebd95ee9d8aa"
+    },
+    {
+      "path": "tools/catalog/package_qa.py",
+      "gitBlob": "9ad02a2f48249ed6037626888bc601bc4cfa1a41"
+    },
+    {
+      "path": "tools/catalog/prepare_release_tests.py",
+      "gitBlob": "133c3cdb3a9fd4aef2219fe6b000a5d514c783f9"
+    },
+    {
+      "path": "tools/catalog/test_build_fixture.py",
+      "gitBlob": "36f89b01efbe404adea869c8ddb627d8d1df50c1"
+    },
+    {
+      "path": "tools/catalog/test_build_release.py",
+      "gitBlob": "f6aa047b5422cb541635d069d2a1415864e44a32"
+    },
+    {
+      "path": "tools/catalog/test_check_credits.py",
+      "gitBlob": "8704f71479a55fd7e49eb8b1abbd47d2a6cba16f"
+    },
+    {
+      "path": "tools/catalog/test_package_qa.py",
+      "gitBlob": "8fff87bd2d61621ca3257ee918c90c5e9cbff529"
+    },
+    {
+      "path": "tools/catalog/test_quiz03_offline.py",
+      "gitBlob": "155d33b7c40f8fd5c4ef6570c6dcdcfe6a860564"
+    },
+    {
+      "path": "tools/catalog/test_quiz_policy.py",
+      "gitBlob": "4e778383e001c4103123494746c43be2fbb6d60c"
+    },
+    {
+      "path": "tools/catalog/test_release_gates.py",
+      "gitBlob": "5621ea7eb232267aecfb20a5ba447a0fce8f7cc8"
+    },
+    {
+      "path": "tools/catalog/validate_quiz03_device.sh",
+      "gitBlob": "94b2a228c76e35642acf214bdabad2a6b259d40c"
+    },
+    {
+      "path": "tools/unicode/CaseFolding-16.0.0.txt",
+      "gitBlob": "1b7a9c156c7cf4256bbe685dc45f78ac68d51e2d"
+    },
+    {
+      "path": "tools/unicode/DerivedNormalizationProps-16.0.0.txt",
+      "gitBlob": "ce636abb537ac4769cc73642fa5c96c77af87b0f"
+    },
+    {
+      "path": "tools/unicode/LICENSE.txt",
+      "gitBlob": "56da58912807030b451a4700687d5bd02c72d6ed"
+    },
+    {
+      "path": "tools/unicode/NormalizationTest-16.0.0.txt",
+      "gitBlob": "3aae8f72e873dfc3c1e876775859e6090b3c39f9"
+    },
+    {
+      "path": "tools/unicode/PlatformNfcProbe.java",
+      "gitBlob": "8c29394aef0db70dea1190fd91fafcc939ec93f3"
+    },
+    {
+      "path": "tools/unicode/README.md",
+      "gitBlob": "5c1a97bcc390c6a60f0d6e366b7cd1ab7f069fe8"
+    },
+    {
+      "path": "tools/unicode/SHA256SUMS",
+      "gitBlob": "c26982b760a54b79e5309c3581e1b2e5efcedc2d"
+    },
+    {
+      "path": "tools/unicode/UnicodeData-16.0.0.txt",
+      "gitBlob": "64258a37395359c2f8875fdf3432817c1c459c31"
+    },
+    {
+      "path": "tools/unicode/generate.py",
+      "gitBlob": "07f94658068a9e1207606a7724188964922d48fd"
+    },
+    {
+      "path": "tools/vocabulary/.gitignore",
+      "gitBlob": "c18dd8d83ceed1806b50b0aaa46beb7e335fff13"
+    },
+    {
+      "path": "tools/vocabulary/INGESTION.md",
+      "gitBlob": "71cc2c2c6aedbaeda29fc72d93d7d5079af9a671"
+    },
+    {
+      "path": "tools/vocabulary/QUALITY.md",
+      "gitBlob": "c9cd3db186db5bf3913bf97a2f8a92680c1c399f"
+    },
+    {
+      "path": "tools/vocabulary/README.md",
+      "gitBlob": "e39f20313a2616cb192fabc8f686c84ae1411200"
+    },
+    {
+      "path": "tools/vocabulary/accept_editorial.py",
+      "gitBlob": "50bddbf8d3130bf773660d702b2a9e068b0284ad"
+    },
+    {
+      "path": "tools/vocabulary/capture_sources.py",
+      "gitBlob": "12e2444bacf1e9a99cc7e16fba232cb270c9cc35"
+    },
+    {
+      "path": "tools/vocabulary/commons_audio_metadata.py",
+      "gitBlob": "976599bb1352c3badf13f6779da87718eeb860ba"
+    },
+    {
+      "path": "tools/vocabulary/fixtures/ingestion/README.md",
+      "gitBlob": "c73573eec1d1ba06108226d7b70ae43c7caf2177"
+    },
+    {
+      "path": "tools/vocabulary/fixtures/ingestion/config.json",
+      "gitBlob": "421fba3ae8e1b3afe300673d3a9bf6e81ef438b2"
+    },
+    {
+      "path": "tools/vocabulary/fixtures/ingestion/examples.txt",
+      "gitBlob": "1f640e5ccace71ad47b6f53cc0f67b8db2c6c9a1"
+    },
+    {
+      "path": "tools/vocabulary/fixtures/ingestion/identities.json",
+      "gitBlob": "ebd2cf4c8e93bce892500885fa6ac927be49d803"
+    },
+    {
+      "path": "tools/vocabulary/fixtures/ingestion/records.jsonl",
+      "gitBlob": "1d6938c9aa97555511568eb407cccdc3dd2b577f"
+    },
+    {
+      "path": "tools/vocabulary/fixtures/ingestion/verified/config.json",
+      "gitBlob": "67d0857791f0802a85b32b423ce3d9c230ba85c6"
+    },
+    {
+      "path": "tools/vocabulary/fixtures/ingestion/verified/examples.txt",
+      "gitBlob": "a5fdc05175b65785e8733f04e125677172caf3a0"
+    },
+    {
+      "path": "tools/vocabulary/fixtures/ingestion/verified/records.jsonl",
+      "gitBlob": "20d2109e004291ce7852e1c3820418ee06402172"
+    },
+    {
+      "path": "tools/vocabulary/fixtures/quality/pending-reviews.json",
+      "gitBlob": "8506d45430227fb0836dddd2639a58291afb88d1"
+    },
+    {
+      "path": "tools/vocabulary/fixtures/quality/reviews.json",
+      "gitBlob": "4d17bdc758865cad6c9f12fe928bd075b1ec3074"
+    },
+    {
+      "path": "tools/vocabulary/gate_sources.py",
+      "gitBlob": "bba4723108fafbcd9dcb0121181c79682c8fca64"
+    },
+    {
+      "path": "tools/vocabulary/ingest.py",
+      "gitBlob": "7c76236bdaad6a42df8953ee6de51c6dc00885ad"
+    },
+    {
+      "path": "tools/vocabulary/ingestion_refs.py",
+      "gitBlob": "f163b7bb1526c6d37364a9c466a33cf17e7637dd"
+    },
+    {
+      "path": "tools/vocabulary/prepare_1000_candidates.py",
+      "gitBlob": "84fd44947e50af97a30b799c565ec509b2d4a694"
+    },
+    {
+      "path": "tools/vocabulary/prepare_corpus.py",
+      "gitBlob": "f302f7cabc25ebcc65de2528ac5153ff0e99e91f"
+    },
+    {
+      "path": "tools/vocabulary/quality.py",
+      "gitBlob": "4c97a575ace7dd84ccff3e41882f81ef328d2cab"
+    },
+    {
+      "path": "tools/vocabulary/source_gate.py",
+      "gitBlob": "d9b0319e184b6af41170529d52a31d8fb9c84ed6"
+    },
+    {
+      "path": "tools/vocabulary/test_accept_editorial.py",
+      "gitBlob": "6eae6571473f076514b22aec1a2994cd5100fc72"
+    },
+    {
+      "path": "tools/vocabulary/test_enrichment.py",
+      "gitBlob": "15ed182599fba50fa023a0785d881d58e5b30b64"
+    },
+    {
+      "path": "tools/vocabulary/test_gate_optimization.py",
+      "gitBlob": "9541631f2fa7c5ef1d4317e4ca6b721139a99be8"
+    },
+    {
+      "path": "tools/vocabulary/test_handoff_tools.py",
+      "gitBlob": "3dc2d5519580fdbe41b8ee12f54213bf04f4604f"
+    },
+    {
+      "path": "tools/vocabulary/test_ingest.py",
+      "gitBlob": "6d21088b72e0559da471a809ed2b24b020f02e41"
+    },
+    {
+      "path": "tools/vocabulary/test_prepare_1000_candidates.py",
+      "gitBlob": "02931f1154e407154ae40285d00ca69582b95b30"
+    },
+    {
+      "path": "tools/vocabulary/test_prepare_corpus.py",
+      "gitBlob": "e3f12dd10e425567b22a120b5612ae4781c8d4a1"
+    },
+    {
+      "path": "tools/vocabulary/test_quality.py",
+      "gitBlob": "ea3245e8c00c4b6baeffee8d946c80c0dcdc4f69"
+    },
+    {
+      "path": "tools/vocabulary/test_research_inventory.py",
+      "gitBlob": "db98e7d15e70df88797c872b59163f1e8476c8c1"
+    },
+    {
+      "path": "tools/vocabulary/test_source_gate.py",
+      "gitBlob": "93867927ab5dbfc8a4ea9b511dcd5837c9af86a6"
+    },
+    {
+      "path": "tools/vocabulary/validate_enrichment.py",
+      "gitBlob": "b3731a1e880e831032bf7bd5d15f81c9ab80a5dd"
+    },
+    {
+      "path": "tools/vocabulary/verify_ingestion.py",
+      "gitBlob": "a94efecc612112932311379677ed6a378e048a32"
+    }
+  ]
+}

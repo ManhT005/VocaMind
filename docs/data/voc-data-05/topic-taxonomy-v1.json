@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "taxonomyVersion": "topic-taxonomy-v1",
+  "topics": [
+    {
+      "id": "daily-life",
+      "label": "Sinh hoạt thường ngày",
+      "scope": "Hoạt động và nếp sinh hoạt chung",
+      "include": "Thói quen và việc cá nhân hằng ngày",
+      "exclude": "Nghĩa chỉ việc trong gia đình, ăn uống hoặc công việc có topic cụ thể hơn",
+      "reviewOwner": "Thành"
+    },
+    {
+      "id": "family-home",
+      "label": "Gia đình và nhà ở",
+      "scope": "Quan hệ gia đình và sinh hoạt tại nhà",
+      "include": "Quan hệ thân thuộc, phòng và đồ dùng gia đình",
+      "exclude": "Nơi lưu trú trong chuyến đi thuộc travel-transport",
+      "reviewOwner": "Thành"
+    },
+    {
+      "id": "food-drink",
+      "label": "Ăn uống",
+      "scope": "Đồ ăn, thức uống và việc chuẩn bị bữa ăn",
+      "include": "Thực phẩm, chế biến và tiêu dùng món ăn",
+      "exclude": "Thanh toán hoặc mua hàng thuộc shopping-services nếu đó là nghĩa chính",
+      "reviewOwner": "Thành"
+    },
+    {
+      "id": "travel-transport",
+      "label": "Du lịch và di chuyển",
+      "scope": "Di chuyển, phương tiện và lưu trú khi đi xa",
+      "include": "Phương tiện, đặt chỗ và hành trình",
+      "exclude": "Đi lại theo nghĩa chuyển động chung thiếu ngữ cảnh vận tải",
+      "reviewOwner": "Thành"
+    },
+    {
+      "id": "shopping-services",
+      "label": "Mua sắm và dịch vụ",
+      "scope": "Mua hàng hoặc sử dụng dịch vụ với tư cách người tiêu dùng",
+      "include": "Khách lẻ, mua hàng, thanh toán, đổi trả",
+      "exclude": "Quan hệ khách hàng chuyên nghiệp hoặc giao dịch doanh nghiệp",
+      "reviewOwner": "Thành"
+    },
+    {
+      "id": "work-office",
+      "label": "Công việc và công sở",
+      "scope": "Nhiệm vụ, tổ chức và trao đổi trong công việc",
+      "include": "Lịch họp, đồng nghiệp và nghiệp vụ văn phòng",
+      "exclude": "Giao dịch thương mại khi đó là nghĩa chính",
+      "reviewOwner": "Thành"
+    },
+    {
+      "id": "business-commerce",
+      "label": "Kinh doanh và thương mại",
+      "scope": "Hoạt động thương mại và quan hệ doanh nghiệp",
+      "include": "Hợp đồng, giao dịch doanh nghiệp và khách hàng chuyên nghiệp",
+      "exclude": "Khách mua lẻ hoặc từ xuất hiện trong một pack công sở",
+      "reviewOwner": "Thành"
+    },
+    {
+      "id": "academic-research",
+      "label": "Học thuật và nghiên cứu",
+      "scope": "Phương pháp, lập luận và kết quả nghiên cứu",
+      "include": "Nghiên cứu có phương pháp và kết quả trong một lập luận học thuật",
+      "exclude": "Học bài hoặc quan hệ nhân quả chung thiếu ngữ cảnh học thuật",
+      "reviewOwner": "Thành"
+    },
+    {
+      "id": "education",
+      "label": "Giáo dục",
+      "scope": "Dạy, học và đánh giá trong giáo dục",
+      "include": "Học bài, lớp học và kiểm tra năng lực",
+      "exclude": "Study với nghĩa một công trình nghiên cứu",
+      "reviewOwner": "Thành"
+    },
+    {
+      "id": "technology",
+      "label": "Công nghệ",
+      "scope": "Thiết bị, phần mềm và quy trình kỹ thuật số",
+      "include": "Phần mềm, mạng và thiết bị điện tử",
+      "exclude": "Công việc văn phòng chỉ tình cờ sử dụng máy tính",
+      "reviewOwner": "Thành"
+    }
+  ]
+}

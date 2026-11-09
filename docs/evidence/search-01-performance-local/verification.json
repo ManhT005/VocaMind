@@ -1,0 +1,33 @@
+{
+  "baseHead": "e12f0ee2064b672921a976b3f80ad64227e1cd24",
+  "sourceManifestSha256": "7020a8434559aa97667eedddf58feb61350a6500656572be68fbaddb10bb5fde",
+  "sourceCommitted": false,
+  "artifacts": {
+    "app/build/outputs/apk/catalogQa/app-catalogQa.apk": "b85a4ab73ac5da166bcae8cee3e18274a65a11f9bf8b4362e18de2ca59590a76",
+    "app/build/outputs/apk/androidTest/catalogQa/app-catalogQa-androidTest.apk": "a507991d11a0c3678a2513e0d9372340ef3ea1c176f8050bacd7aa9fa5dcaf7d"
+  },
+  "fixtureSha256": "5fac69d4a5776130346be14747d81af3354a9220c2f9675ed95740c5058f54a7",
+  "host": {
+    "tests": 519,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "suites": 51
+  },
+  "instrumentationFinalQa": "4/4 PASS: QA catalog full detail/save, real Room recovery, 5000-row UI, cost diagnostic",
+  "benchmarkRuns": "4/4 collectors PASS; 2000 samples, 200 optimized broad samples; NOT SRS performance PASS",
+  "lintCatalogQa": {
+    "errors": 0,
+    "warnings": 13
+  },
+  "AC-05": "HOLD",
+  "NFR-VM-03": "HOLD",
+  "referenceDevice": "NOT RUN: only API30 x86/ranchu emulator (~2GB), not Helio G85/3GB/Android10",
+  "limitations": [
+    "3/200 optimized broad samples >=50ms; mean37.7943ms exceeds15ms target",
+    "A/B emulator run, no randomized thermal/power controlled physical-device experiment",
+    "Host benchmark is excluded from acceptance evidence",
+    "No new GitHub CI run; no commit/push/PR/merge in this iteration"
+  ],
+  "userWrapperSha256": "d2f49c3066b70477ab982a78495f20c04f46d0054e0653428d484f68664de8b5"
+}
