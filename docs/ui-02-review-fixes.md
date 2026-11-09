@@ -37,7 +37,7 @@ Downloaded original metadata, raw logs and ZIPs are retained locally in `build/u
 
 ## Regression and local evidence
 
-- `python -X utf8 -m unittest discover -s tools/validation -p 'test_ui02*.py' -v`:25 host-only fake-ADB tests PASS. Includes real runner-main control flow with Wi-Fi2, setup timeout, active-network rejection, settings0/1/2/3/null, evidence-write failure, primary+restore failure, contradictory flags and incomplete/offline artifact transfers. These are not Android integration passes.
+- `python -X utf8 -m unittest discover -s tools/validation -p 'test_ui02*.py' -v`:33 host-only fake-ADB tests PASS. Includes real runner-main control flow with Wi-Fi2, setup timeout, active-network rejection, settings0/1/2/3/null, evidence-write failure, primary+restore failure, contradictory flags and incomplete/offline artifact transfers. These are not Android integration passes.
 - Focused Java host tests: SearchViewModelTest + SearchVocabularyUseCaseTest =28 PASS,0 failures/errors/skips, JDK17 with TEMP `C:\tvm`. XML/logs under `build/ui02-review/focused-host-*`.
 - Discovery app/test APK build and lint PASS. QA app/test APK build and lint PASS; logs and exit files under `build/ui02-review/`.
 - Local Android API30: ten cases separately, two complete selected suites (10 pass/1 opt-in skip each), expected-failure probe accepted with full artifacts. Network restore is verified against the captured original state. Evidence is `build/ui02-review/local-api30/`; this is the exact dirty source manifest in that folder, not a claim of API26/35 execution.
@@ -52,6 +52,16 @@ Downloaded original metadata, raw logs and ZIPs are retained locally in `build/u
 - Discovery API35: SUCCESS. Downloaded artifact13658822294 confirms all ten independent methods, both suites10 pass/1 skip, expected-failure probe with full verified artifacts, and network restoration accepted with original/observed flags0/1/1. This is Android evidence, not inferred from a green build.
 - Discovery API26: FAILURE before instrumentation. New checked execution exposes `svc wifi disable` exit137 with empty stdout; cleanup also records `svc wifi enable` exit137. Final raw/effective state matches the original0/1/1, but failed cleanup commands still reject the run. No failure is silently ignored. Raw logs and artifact13659555575 are in `build/ui02-review/ci-fixed/`.
 - The cause of exit137 is not established by those artifacts. The next revision adds best-effort logcat/kernel/memory/process diagnostics **after restoration attempts**, preserves the primary exception and command return codes, and tests that ordering. It does not replace or ignore the failing command to manufacture offline evidence.
+
+## API26 root cause established at 5c52014
+
+[Run 42586597874](https://github.com/ManhT005/VocaMind/actions/runs/42586597874), exact head `5c5201490e1b730416d0d4b24a495c49d30c1350`, artifact13659662015:
+
+- `network-failure-logcat.txt` contains `SecurityException: WifiService: Neither user 2000 nor current process has android.permission.CHANGE_WIFI_STATE` from `WifiCommand.run`, for both disable and enable. This explains the observed service-command failure; it is not attributed to R2 or to app search code.
+- `network-failure-identity.txt` confirms UID2000(shell). The image properties confirm API26/AOSP userdebug, `ro.kernel.qemu=1`, `ro.debuggable=1`. Memory diagnostics and failed kernel-dump permissions are retained rather than discarded.
+- The workflow now opts into `--ci-emulator-api` with its matrix value. `ui02_ci_device.py` checks emulator/debuggable/exact SDK before any root request. Only API26 requests `adb root`, uses a bounded ADB transport wait, and requires verified UID0. API35 keeps its original UID. Wrong SDK, non-debuggable/physical devices, failed root, root output without UID0, and wait timeout are rejected and tested.
+- Normal runner invocations never request root. This is setup for a disposable CI image; no application permission/manifest or production source is changed. Network snapshot/setup/restore still occurs through the checked context after bootstrap, and the actual `Active default network: none` gate remains mandatory.
+- Host regression now totals33 PASS (25 network/runner/artifact cases plus8 CI-bootstrap cases). A real API30 Wi-Fi2 restoration probe also passed: the inner driver restored flag2 with effective Wi-Fi enabled, then its outer fixture restored the original flag0/disabled state. Raw evidence: `build/ui02-review/live-wifi2-inner-v2/` and `live-wifi2-outer-v2/verification.json`. An earlier priming attempt encountered the normal enabling transition, was rejected, and its outer cleanup restored the original state; it is not counted as a pass.
 
 ## New-head CI verification
 

@@ -7,6 +7,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from ui02_network import OfflineNetwork
 from ui02_artifacts import collect_artifacts
+from ui02_ci_device import bootstrap_ci_emulator
 
 PACKAGE = 'com.vocamind.app.ui02validation'
 PREFIX = 'com.vocamind.app.feature.discovery.'
@@ -30,7 +31,9 @@ def run(cmd, **kwargs):
 def main():
     p=argparse.ArgumentParser(); p.add_argument('--adb', default='adb'); p.add_argument('--serial', required=True)
     p.add_argument('--output', required=True); p.add_argument('--only', help='Fully qualified class#method; omit for acceptance sequence')
-    p.add_argument('--skip-install',action='store_true'); p.add_argument('--qa',action='store_true'); args=p.parse_args()
+    p.add_argument('--skip-install',action='store_true'); p.add_argument('--qa',action='store_true')
+    p.add_argument('--ci-emulator-api', choices=('26','35'), help='Explicit disposable debug-emulator CI bootstrap; API26 needs root for Wi-Fi control')
+    args=p.parse_args()
     global PACKAGE
     if args.qa:
         PACKAGE += '.qa'
@@ -41,6 +44,8 @@ def main():
     out.mkdir(parents=True,exist_ok=True)
     adb=[args.adb,'-s',args.serial]
     def shell(*cmd): return run(adb+['shell',*cmd],timeout=10)
+    if args.ci_emulator_api:
+        bootstrap_ci_emulator(adb, args.ci_emulator_api, out, run)
     revision=run(['git','rev-parse','HEAD']).stdout.strip()
     files=run(['git','ls-files','--cached','--others','--exclude-standard']).stdout.splitlines()
     source_files=[f for f in files if f.startswith(('app/src/','app/build.gradle','tools/validation/','.github/'))]

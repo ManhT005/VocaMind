@@ -58,7 +58,7 @@ jobs:
           ram-size: 2048M
           disable-animations: true
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim
-          script: python tools/validation/run_ui02_device.py --serial emulator-5554 --output build/ui02-ci
+          script: python tools/validation/run_ui02_device.py --serial emulator-5554 --ci-emulator-api ${{ matrix.api }} --output build/ui02-ci
       - name: Retain synthetic failure evidence and device reports
         if: always()
         uses: actions/upload-artifact@v4
