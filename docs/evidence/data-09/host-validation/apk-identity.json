@@ -1,0 +1,12 @@
+{
+  "app": {
+    "sha256": "b033c4ac67cccda3a0b58c0721528b5aa23db1c245f84bc1236b94901df5de98",
+    "package": "com.vocamind.app.data09validation",
+    "debuggable": "false"
+  },
+  "test": {
+    "sha256": "4275b86779932808b8527e8196e5371fd7eb29a79c826dde9ba55c3c68130253",
+    "package": "com.vocamind.app.data09validation.test",
+    "debuggable": "false"
+  }
+}

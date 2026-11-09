@@ -1,0 +1,224 @@
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsDebug UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:generateDebugResources
+> Task :app:mergeDebugResources
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:packageDebugResources
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths
+> Task :app:parseDebugLocalResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:dataBindingGenBaseClassesDebug
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :app:processDebugManifestForPackage
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :app:mergeDebugShaders UP-TO-DATE
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets UP-TO-DATE
+> Task :app:prepareRobolectricSdks UP-TO-DATE
+> Task :app:prepareReleaseCatalogTests UP-TO-DATE
+> Task :app:processDebugUnitTestJavaRes UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:compressDebugAssets UP-TO-DATE
+> Task :app:desugarDebugFileDependencies UP-TO-DATE
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :app:mergeExtDexDebug UP-TO-DATE
+> Task :app:mergeLibDexDebug UP-TO-DATE
+> Task :app:mergeDebugJniLibFolders UP-TO-DATE
+> Task :app:mergeDebugNativeLibs NO-SOURCE
+> Task :app:stripDebugDebugSymbols NO-SOURCE
+> Task :app:validateSigningDebug UP-TO-DATE
+> Task :app:writeDebugAppMetadata UP-TO-DATE
+> Task :app:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :app:preDebugAndroidTestBuild SKIPPED
+> Task :app:dataBindingMergeDependencyArtifactsDebugAndroidTest UP-TO-DATE
+> Task :app:generateDebugAndroidTestResValues UP-TO-DATE
+> Task :app:generateDebugAndroidTestResources UP-TO-DATE
+> Task :app:javaPreCompileDebugAndroidTest UP-TO-DATE
+> Task :app:checkDebugAndroidTestAarMetadata UP-TO-DATE
+> Task :app:mapDebugAndroidTestSourceSetPaths UP-TO-DATE
+> Task :app:processDebugAndroidTestManifest
+> Task :app:mergeDebugAndroidTestShaders UP-TO-DATE
+> Task :app:compileDebugAndroidTestShaders NO-SOURCE
+> Task :app:generateDebugAndroidTestAssets UP-TO-DATE
+> Task :app:mergeDebugAndroidTestAssets UP-TO-DATE
+> Task :app:compressDebugAndroidTestAssets UP-TO-DATE
+> Task :app:desugarDebugAndroidTestFileDependencies UP-TO-DATE
+> Task :app:processDebugAndroidTestJavaRes NO-SOURCE
+> Task :app:mergeDebugAndroidTestJavaResource
+> Task :app:checkDebugAndroidTestDuplicateClasses
+> Task :app:mergeExtDexDebugAndroidTest
+> Task :app:mergeLibDexDebugAndroidTest UP-TO-DATE
+> Task :app:mergeDebugAndroidTestJniLibFolders UP-TO-DATE
+> Task :app:mergeDebugAndroidTestNativeLibs NO-SOURCE
+> Task :app:stripDebugAndroidTestDebugSymbols NO-SOURCE
+> Task :app:validateSigningDebugAndroidTest UP-TO-DATE
+> Task :app:writeDebugAndroidTestSigningConfigVersions UP-TO-DATE
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :app:processDebugResources
+> Task :app:compileDebugJavaWithJavac
+> Task :app:bundleDebugClassesToRuntimeJar
+> Task :app:bundleDebugClassesToCompileJar
+> Task :app:packageDebugUnitTestForUnitTest
+
+> Task :app:compileDebugUnitTestJavaWithJavac
+Note: /workspace/work/VocaMind/app/src/quizTest/java/com/vocamind/app/feature/quiz/QuizScreenContract.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:generateDebugUnitTestConfig
+> Task :app:processDebugJavaRes UP-TO-DATE
+> Task :app:testDebugUnitTest
+> Task :app:dexBuilderDebug
+> Task :app:mergeDebugGlobalSynthetics UP-TO-DATE
+> Task :app:mergeDebugJavaResource UP-TO-DATE
+> Task :app:mergeDebugAndroidTestResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesDebugAndroidTest UP-TO-DATE
+> Task :app:mergeProjectDexDebug
+> Task :app:processDebugAndroidTestResources
+
+> Task :app:compileDebugAndroidTestJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:dexBuilderDebugAndroidTest
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect
+> Task :app:assembleDebug
+> Task :app:mergeDebugAndroidTestGlobalSynthetics UP-TO-DATE
+> Task :app:generateDebugAndroidTestLintModel
+> Task :app:generateDebugLintReportModel
+> Task :app:mergeProjectDexDebugAndroidTest
+> Task :app:generateDebugUnitTestLintModel
+> Task :app:packageDebugAndroidTest
+> Task :app:createDebugAndroidTestApkListingFileRedirect
+> Task :app:assembleDebugAndroidTest
+> Task :app:lintAnalyzeDebugAndroidTest
+> Task :app:lintAnalyzeDebug
+> Task :app:lintAnalyzeDebugUnitTest
+
+> Task :app:lintReportDebug
+Wrote HTML report to file:///workspace/work/VocaMind/app/build/reports/lint-results-debug.html
+
+> Task :app:lintDebug
+
+BUILD SUCCESSFUL in 1m 5s
+81 actionable tasks: 40 executed, 41 up-to-date
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preData09Build UP-TO-DATE
+> Task :app:generateData09ResValues
+> Task :app:dataBindingMergeDependencyArtifactsData09
+> Task :app:generateData09Resources
+> Task :app:javaPreCompileData09
+> Task :app:checkData09AarMetadata
+> Task :app:mapData09SourceSetPaths
+> Task :app:createData09CompatibleScreenManifests
+> Task :app:extractDeepLinksData09
+> Task :app:processData09MainManifest
+> Task :app:processData09Manifest
+> Task :app:processData09ManifestForPackage
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :app:prepareReleaseCatalogTests UP-TO-DATE
+> Task :app:mergeData09JniLibFolders
+> Task :app:mergeData09Resources
+> Task :app:mergeData09NativeLibs NO-SOURCE
+> Task :app:packageData09Resources
+> Task :app:stripData09DebugSymbols NO-SOURCE
+> Task :app:extractData09NativeSymbolTables NO-SOURCE
+> Task :app:mergeData09NativeDebugMetadata NO-SOURCE
+> Task :app:parseData09LocalResources
+> Task :app:mergeData09ArtProfile
+> Task :app:dataBindingGenBaseClassesData09
+> Task :app:desugarData09FileDependencies
+> Task :app:checkData09DuplicateClasses
+> Task :app:mergeData09StartupProfile
+> Task :app:processData09Resources
+> Task :app:mergeExtDexData09
+
+> Task :app:compileData09JavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:generateData09LintVitalReportModel
+> Task :app:dexBuilderData09
+> Task :app:mergeData09GlobalSynthetics
+> Task :app:lintVitalAnalyzeData09
+> Task :app:lintVitalReportData09 SKIPPED
+> Task :app:lintVitalData09 SKIPPED
+> Task :app:mergeData09Shaders
+> Task :app:compileData09Shaders NO-SOURCE
+> Task :app:generateData09Assets UP-TO-DATE
+> Task :app:mergeData09Assets
+> Task :app:compressData09Assets
+> Task :app:mergeDexData09
+> Task :app:extractData09VersionControlInfo
+> Task :app:processData09JavaRes
+> Task :app:mergeData09JavaResource
+> Task :app:compileData09ArtProfile
+> Task :app:collectData09Dependencies
+> Task :app:sdkData09DependencyData
+> Task :app:validateSigningData09
+> Task :app:writeData09AppMetadata
+> Task :app:writeData09SigningConfigVersions
+> Task :app:optimizeData09Resources
+> Task :app:bundleData09ClassesToCompileJar
+> Task :app:preData09AndroidTestBuild SKIPPED
+> Task :app:dataBindingMergeDependencyArtifactsData09AndroidTest
+> Task :app:generateData09AndroidTestResValues
+> Task :app:generateData09AndroidTestResources
+> Task :app:mergeData09AndroidTestResources
+> Task :app:dataBindingGenBaseClassesData09AndroidTest
+> Task :app:javaPreCompileData09AndroidTest
+> Task :app:checkData09AndroidTestAarMetadata
+> Task :app:mapData09AndroidTestSourceSetPaths
+> Task :app:processData09AndroidTestManifest
+> Task :app:processData09AndroidTestResources
+
+> Task :app:compileData09AndroidTestJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:mergeData09AndroidTestShaders
+> Task :app:compileData09AndroidTestShaders NO-SOURCE
+> Task :app:generateData09AndroidTestAssets UP-TO-DATE
+> Task :app:mergeData09AndroidTestAssets
+> Task :app:packageData09
+> Task :app:createData09ApkListingFileRedirect
+> Task :app:assembleData09
+> Task :app:desugarData09AndroidTestFileDependencies
+> Task :app:compressData09AndroidTestAssets
+> Task :app:dexBuilderData09AndroidTest
+> Task :app:processData09AndroidTestJavaRes NO-SOURCE
+> Task :app:mergeData09AndroidTestGlobalSynthetics
+> Task :app:checkData09AndroidTestDuplicateClasses
+> Task :app:mergeData09AndroidTestJavaResource
+> Task :app:mergeData09AndroidTestJniLibFolders
+> Task :app:mergeData09AndroidTestNativeLibs NO-SOURCE
+> Task :app:stripData09AndroidTestDebugSymbols NO-SOURCE
+> Task :app:validateSigningData09AndroidTest
+> Task :app:writeData09AndroidTestSigningConfigVersions
+> Task :app:generateData09AndroidTestLintModel
+> Task :app:generateData09LintReportModel
+> Task :app:preData09UnitTestBuild UP-TO-DATE
+> Task :app:generateData09UnitTestLintModel
+> Task :app:mergeExtDexData09AndroidTest
+> Task :app:mergeDexData09AndroidTest
+> Task :app:packageData09AndroidTest
+> Task :app:createData09AndroidTestApkListingFileRedirect
+> Task :app:assembleData09AndroidTest
+> Task :app:lintAnalyzeData09AndroidTest
+> Task :app:lintAnalyzeData09
+> Task :app:lintAnalyzeData09UnitTest
+
+> Task :app:lintReportData09
+Wrote HTML report to file:///workspace/work/VocaMind/app/build/reports/lint-results-data09.html
+
+> Task :app:lintData09
+
+BUILD SUCCESSFUL in 43s
+80 actionable tasks: 78 executed, 2 up-to-date

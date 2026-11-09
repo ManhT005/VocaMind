@@ -1,0 +1,13 @@
+{
+  "baseCommit": "d36c58a",
+  "pythonTests": 33,
+  "javaReports": {
+    "tests": 501,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "javaTasks": "UP-TO-DATE; Android production code unchanged",
+  "buildAndLint": "PASS",
+  "deviceAcceptance": "PENDING"
+}

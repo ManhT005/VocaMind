@@ -1,5 +1,7 @@
 package com.vocamind.app.data.catalog;
 import java.io.*;
+import android.os.Bundle;
+import org.json.JSONObject;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.platform.app.InstrumentationRegistry;
 import org.junit.runner.RunWith;
@@ -10,6 +12,13 @@ public class FtsSearchBenchmarkInstrumentedTest extends FtsSearchBenchmarkContra
     }
     @Override protected boolean enforceLatency() {
         return Boolean.parseBoolean(InstrumentationRegistry.getArguments().getString("data05EnforceLatency", "false"));
+    }
+    @Override protected void reportReady(JSONObject report) {
+        if (Boolean.parseBoolean(InstrumentationRegistry.getArguments().getString("data09Report", "false"))) {
+            Bundle values = new Bundle();
+            values.putString("data09Report", report.toString());
+            InstrumentationRegistry.getInstrumentation().sendStatus(2, values);
+        }
     }
     @Override protected String runnerKind() { return "device-instrumentation-unqualified-until-inventory-verified"; }
 }

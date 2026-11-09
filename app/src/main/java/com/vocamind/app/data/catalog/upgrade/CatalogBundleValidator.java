@@ -11,7 +11,10 @@ import java.util.*;
 final class CatalogBundleValidator {
     private CatalogBundleValidator() { }
     private static boolean allowsInternalBundle(String applicationId) {
-        return applicationId.endsWith(".qa") || (com.vocamind.app.BuildConfig.DEBUG
+        return applicationId.endsWith(".qa")
+                || ("data09".equals(com.vocamind.app.BuildConfig.BUILD_TYPE)
+                    && applicationId.equals("com.vocamind.app.data09validation"))
+                || (com.vocamind.app.BuildConfig.DEBUG
                 && (applicationId.equals("com.vocamind.app.quiz03validation")
                 || applicationId.equals("com.vocamind.app.progress02validation")));
     }

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "gates": {
+    "startup": {
+      "gate": "PENDING",
+      "reportSha256": null,
+      "reason": "No device/artifact measurement"
+    },
+    "fts": {
+      "gate": "PENDING",
+      "reportSha256": "2527a1aa3afda2b509d2efb20258da1d098da4c75564a1c1500638ed0dca84ab",
+      "reason": "Host Robolectric/native SQLite is not a reference device"
+    },
+    "apk-size": {
+      "gate": "PENDING",
+      "reportSha256": "b8c9ba116c97e6cdb1444fa4d1cf058a101aa7e42625cb6f17c540179276939a",
+      "reason": "Requires measurement of the final release artifact; fixture/internal QA is diagnostic."
+    }
+  },
+  "releaseAuthorized": false,
+  "allPassed": false
+}

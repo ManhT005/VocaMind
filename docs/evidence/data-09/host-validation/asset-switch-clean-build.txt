@@ -1,0 +1,171 @@
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preData09Build UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsData09 UP-TO-DATE
+> Task :app:generateData09ResValues UP-TO-DATE
+> Task :app:generateData09Resources UP-TO-DATE
+> Task :app:mergeData09Resources UP-TO-DATE
+> Task :app:packageData09Resources UP-TO-DATE
+> Task :app:parseData09LocalResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesData09 UP-TO-DATE
+> Task :app:javaPreCompileData09 UP-TO-DATE
+> Task :app:checkData09AarMetadata UP-TO-DATE
+> Task :app:mapData09SourceSetPaths UP-TO-DATE
+> Task :app:createData09CompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksData09 UP-TO-DATE
+> Task :app:processData09MainManifest UP-TO-DATE
+> Task :app:processData09Manifest UP-TO-DATE
+> Task :app:processData09ManifestForPackage UP-TO-DATE
+> Task :app:processData09Resources UP-TO-DATE
+> Task :app:compileData09JavaWithJavac UP-TO-DATE
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :app:prepareReleaseCatalogTests UP-TO-DATE
+> Task :app:generateData09LintVitalReportModel
+> Task :app:mergeData09JniLibFolders UP-TO-DATE
+> Task :app:mergeData09NativeLibs NO-SOURCE
+> Task :app:stripData09DebugSymbols NO-SOURCE
+> Task :app:extractData09NativeSymbolTables NO-SOURCE
+> Task :app:mergeData09NativeDebugMetadata NO-SOURCE
+> Task :app:mergeData09ArtProfile UP-TO-DATE
+> Task :app:desugarData09FileDependencies UP-TO-DATE
+> Task :app:dexBuilderData09 UP-TO-DATE
+> Task :app:mergeData09GlobalSynthetics UP-TO-DATE
+> Task :app:checkData09DuplicateClasses UP-TO-DATE
+> Task :app:mergeData09StartupProfile UP-TO-DATE
+> Task :app:mergeExtDexData09 UP-TO-DATE
+> Task :app:mergeDexData09 UP-TO-DATE
+> Task :app:compileData09ArtProfile UP-TO-DATE
+> Task :app:mergeData09Shaders UP-TO-DATE
+> Task :app:compileData09Shaders NO-SOURCE
+> Task :app:generateData09Assets UP-TO-DATE
+> Task :app:mergeData09Assets UP-TO-DATE
+> Task :app:compressData09Assets UP-TO-DATE
+> Task :app:extractData09VersionControlInfo UP-TO-DATE
+> Task :app:processData09JavaRes UP-TO-DATE
+> Task :app:mergeData09JavaResource UP-TO-DATE
+> Task :app:optimizeData09Resources UP-TO-DATE
+> Task :app:collectData09Dependencies UP-TO-DATE
+> Task :app:sdkData09DependencyData UP-TO-DATE
+> Task :app:validateSigningData09 UP-TO-DATE
+> Task :app:writeData09AppMetadata UP-TO-DATE
+> Task :app:writeData09SigningConfigVersions UP-TO-DATE
+> Task :app:packageData09 UP-TO-DATE
+> Task :app:createData09ApkListingFileRedirect UP-TO-DATE
+> Task :app:lintVitalAnalyzeData09
+> Task :app:lintVitalReportData09
+> Task :app:lintVitalData09
+> Task :app:assembleData09
+
+BUILD SUCCESSFUL in 2s
+47 actionable tasks: 4 executed, 43 up-to-date
+{"schemaVersion": 1, "metric": "apk-size", "variant": "data09", "assetProfile": "fixture", "dataset": {"uniqueWords": 4, "packs": 4, "catalogSha256": "7f90d0b11b14ce73932231dc7c4506bdf30af3788b66d0fde536d08fa7f753e9"}, "apkSha256": "a605a59d7c78de1a7ebbc9610f44d64882d8b98e43dd807dfba040ce94ce5f56", "apkBytes": 6086913, "apkMB": 6.086913, "apkMiB": 5.804932594299316, "limitBytes": 25000000, "nativeAbis": [], "databaseAssets": [{"path": "assets/database/catalog.db", "compressedBytes": 3236, "uncompressedBytes": 81920, "sha256": "7f90d0b11b14ce73932231dc7c4506bdf30af3788b66d0fde536d08fa7f753e9"}, {"path": "assets/database/catalog.metadata.json", "compressedBytes": 319, "uncompressedBytes": 539, "sha256": "c991e38554460911be182ec35433d436b762923f13af6a18ddaf33a6d1b5fc94"}, {"path": "assets/database/content-credits.json", "compressedBytes": 129, "uncompressedBytes": 186, "sha256": "2307c1117e3eb68d512773ac9b36b8b1079c41681b02694654fa677171ea6d61"}, {"path": "assets/database/quiz-policy.json", "compressedBytes": 180, "uncompressedBytes": 236, "sha256": "dbe6886ec5a7eecbb7a062e372ac3d7d5677add30e91d65f44b4707aee9eb7a5"}], "compressedDatabaseShare": 0.0006348045388524528, "assetVerification": {"profile": "debug-fixture", "apkSha256": "a605a59d7c78de1a7ebbc9610f44d64882d8b98e43dd807dfba040ce94ce5f56", "assetHashes": {"catalog.db": "7f90d0b11b14ce73932231dc7c4506bdf30af3788b66d0fde536d08fa7f753e9", "catalog.metadata.json": "c991e38554460911be182ec35433d436b762923f13af6a18ddaf33a6d1b5fc94", "content-credits.json": "2307c1117e3eb68d512773ac9b36b8b1079c41681b02694654fa677171ea6d61", "quiz-policy.json": "dbe6886ec5a7eecbb7a062e372ac3d7d5677add30e91d65f44b4707aee9eb7a5"}}, "observedGate": "PASS", "srsGate": "PENDING", "reason": "Requires measurement of the final release artifact; fixture/internal QA is diagnostic.", "releaseAuthorized": false}
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preData09Build UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsData09 UP-TO-DATE
+> Task :app:generateData09ResValues UP-TO-DATE
+> Task :app:generateData09Resources UP-TO-DATE
+> Task :app:mergeData09Resources UP-TO-DATE
+> Task :app:packageData09Resources UP-TO-DATE
+> Task :app:parseData09LocalResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesData09 UP-TO-DATE
+> Task :app:javaPreCompileData09 UP-TO-DATE
+> Task :app:checkData09AarMetadata UP-TO-DATE
+> Task :app:mapData09SourceSetPaths UP-TO-DATE
+> Task :app:createData09CompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksData09 UP-TO-DATE
+> Task :app:processData09MainManifest UP-TO-DATE
+> Task :app:processData09Manifest UP-TO-DATE
+> Task :app:processData09ManifestForPackage UP-TO-DATE
+> Task :app:processData09Resources UP-TO-DATE
+> Task :app:compileData09JavaWithJavac UP-TO-DATE
+> Task :app:extractProguardFiles UP-TO-DATE
+
+> Task :app:prepareCatalogQa
+QC pass: 150 input, 0 errors
+/workspace/work/VocaMind/app/build/generated/voc06-qa
+
+> Task :app:prepareReleaseCatalogTests UP-TO-DATE
+> Task :app:generateData09LintVitalReportModel
+> Task :app:mergeData09JniLibFolders UP-TO-DATE
+> Task :app:mergeData09NativeLibs NO-SOURCE
+> Task :app:stripData09DebugSymbols NO-SOURCE
+> Task :app:extractData09NativeSymbolTables NO-SOURCE
+> Task :app:mergeData09NativeDebugMetadata NO-SOURCE
+> Task :app:mergeData09ArtProfile UP-TO-DATE
+> Task :app:desugarData09FileDependencies UP-TO-DATE
+> Task :app:dexBuilderData09 UP-TO-DATE
+> Task :app:mergeData09GlobalSynthetics UP-TO-DATE
+> Task :app:checkData09DuplicateClasses UP-TO-DATE
+> Task :app:mergeData09StartupProfile UP-TO-DATE
+> Task :app:mergeExtDexData09 UP-TO-DATE
+> Task :app:mergeDexData09 UP-TO-DATE
+> Task :app:compileData09ArtProfile UP-TO-DATE
+> Task :app:mergeData09Shaders UP-TO-DATE
+> Task :app:compileData09Shaders NO-SOURCE
+> Task :app:generateData09Assets UP-TO-DATE
+> Task :app:mergeData09Assets
+> Task :app:compressData09Assets
+> Task :app:extractData09VersionControlInfo UP-TO-DATE
+> Task :app:processData09JavaRes UP-TO-DATE
+> Task :app:mergeData09JavaResource UP-TO-DATE
+> Task :app:optimizeData09Resources UP-TO-DATE
+> Task :app:collectData09Dependencies UP-TO-DATE
+> Task :app:sdkData09DependencyData UP-TO-DATE
+> Task :app:validateSigningData09 UP-TO-DATE
+> Task :app:writeData09AppMetadata UP-TO-DATE
+> Task :app:writeData09SigningConfigVersions UP-TO-DATE
+> Task :app:packageData09
+> Task :app:createData09ApkListingFileRedirect UP-TO-DATE
+> Task :app:bundleData09ClassesToCompileJar UP-TO-DATE
+> Task :app:preData09AndroidTestBuild SKIPPED
+> Task :app:lintVitalAnalyzeData09
+> Task :app:dataBindingMergeDependencyArtifactsData09AndroidTest UP-TO-DATE
+> Task :app:lintVitalReportData09 SKIPPED
+> Task :app:lintVitalData09 SKIPPED
+> Task :app:assembleData09
+> Task :app:generateData09AndroidTestResValues UP-TO-DATE
+> Task :app:generateData09AndroidTestResources UP-TO-DATE
+> Task :app:mergeData09AndroidTestResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesData09AndroidTest UP-TO-DATE
+> Task :app:javaPreCompileData09AndroidTest UP-TO-DATE
+> Task :app:checkData09AndroidTestAarMetadata UP-TO-DATE
+> Task :app:mapData09AndroidTestSourceSetPaths UP-TO-DATE
+> Task :app:processData09AndroidTestManifest UP-TO-DATE
+> Task :app:processData09AndroidTestResources UP-TO-DATE
+> Task :app:compileData09AndroidTestJavaWithJavac UP-TO-DATE
+> Task :app:mergeData09AndroidTestShaders UP-TO-DATE
+> Task :app:compileData09AndroidTestShaders NO-SOURCE
+> Task :app:generateData09AndroidTestAssets UP-TO-DATE
+> Task :app:mergeData09AndroidTestAssets UP-TO-DATE
+> Task :app:compressData09AndroidTestAssets UP-TO-DATE
+> Task :app:desugarData09AndroidTestFileDependencies UP-TO-DATE
+> Task :app:dexBuilderData09AndroidTest UP-TO-DATE
+> Task :app:mergeData09AndroidTestGlobalSynthetics UP-TO-DATE
+> Task :app:processData09AndroidTestJavaRes NO-SOURCE
+> Task :app:mergeData09AndroidTestJavaResource UP-TO-DATE
+> Task :app:checkData09AndroidTestDuplicateClasses UP-TO-DATE
+> Task :app:mergeExtDexData09AndroidTest UP-TO-DATE
+> Task :app:mergeDexData09AndroidTest UP-TO-DATE
+> Task :app:mergeData09AndroidTestJniLibFolders UP-TO-DATE
+> Task :app:mergeData09AndroidTestNativeLibs NO-SOURCE
+> Task :app:stripData09AndroidTestDebugSymbols NO-SOURCE
+> Task :app:validateSigningData09AndroidTest UP-TO-DATE
+> Task :app:writeData09AndroidTestSigningConfigVersions UP-TO-DATE
+> Task :app:packageData09AndroidTest UP-TO-DATE
+> Task :app:createData09AndroidTestApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleData09AndroidTest UP-TO-DATE
+> Task :app:generateData09AndroidTestLintModel
+> Task :app:generateData09LintReportModel
+> Task :app:preData09UnitTestBuild UP-TO-DATE
+> Task :app:generateData09UnitTestLintModel
+> Task :app:lintAnalyzeData09AndroidTest
+> Task :app:lintAnalyzeData09
+> Task :app:lintAnalyzeData09UnitTest
+
+> Task :app:lintReportData09
+Wrote HTML report to file:///workspace/work/VocaMind/app/build/reports/lint-results-data09.html
+
+> Task :app:lintData09
+
+BUILD SUCCESSFUL in 10s
+81 actionable tasks: 14 executed, 67 up-to-date
+{"schemaVersion": 1, "metric": "apk-size", "variant": "data09", "assetProfile": "internal-qa", "dataset": {"uniqueWords": 150, "packs": 4, "catalogSha256": "56bfbbbc8f39c957aaf73b6b8c43706fe7c6d2cdd40420912369cb9331e853ed"}, "apkSha256": "b033c4ac67cccda3a0b58c0721528b5aa23db1c245f84bc1236b94901df5de98", "apkBytes": 6126378, "apkMB": 6.126378, "apkMiB": 5.842569351196289, "limitBytes": 25000000, "nativeAbis": [], "databaseAssets": [{"path": "assets/database/catalog.db", "compressedBytes": 39933, "uncompressedBytes": 155648, "sha256": "56bfbbbc8f39c957aaf73b6b8c43706fe7c6d2cdd40420912369cb9331e853ed"}, {"path": "assets/database/catalog.metadata.json", "compressedBytes": 1336, "uncompressedBytes": 2744, "sha256": "6f85da9aa82ef4440fae64674296faabd308e350000948b8350ef8e8dbc0b003"}, {"path": "assets/database/content-credits.json", "compressedBytes": 494, "uncompressedBytes": 717, "sha256": "4dfc32924b655fe8e276cfb9bdf6d408213f78e15ac3202cf354ed84067bfd5c"}, {"path": "assets/database/manifest.json", "compressedBytes": 366, "uncompressedBytes": 581, "sha256": "87fe31729f2ff2bfe31849290d97e617fedd69c789e5b50d3e77a80586acce18"}, {"path": "assets/database/quiz-policy.json", "compressedBytes": 262, "uncompressedBytes": 430, "sha256": "88168d65b114a02a5934eb429c75820482ad77e1ebab7f500c30fc6c09d8c617"}, {"path": "assets/database/release-gate-report.json", "compressedBytes": 646, "uncompressedBytes": 1368, "sha256": "9a4e79a711751fb335e76eb5c7f805398c66a9684f675c1a27e36ce8667327d9"}], "compressedDatabaseShare": 0.007024868527537804, "assetVerification": {"profile": "internal-qa", "apkSha256": "b033c4ac67cccda3a0b58c0721528b5aa23db1c245f84bc1236b94901df5de98", "apkBytes": 6126378, "assetHashes": {"catalog.db": "56bfbbbc8f39c957aaf73b6b8c43706fe7c6d2cdd40420912369cb9331e853ed", "catalog.metadata.json": "6f85da9aa82ef4440fae64674296faabd308e350000948b8350ef8e8dbc0b003", "content-credits.json": "4dfc32924b655fe8e276cfb9bdf6d408213f78e15ac3202cf354ed84067bfd5c", "manifest.json": "87fe31729f2ff2bfe31849290d97e617fedd69c789e5b50d3e77a80586acce18", "quiz-policy.json": "88168d65b114a02a5934eb429c75820482ad77e1ebab7f500c30fc6c09d8c617", "release-gate-report.json": "9a4e79a711751fb335e76eb5c7f805398c66a9684f675c1a27e36ce8667327d9"}, "sqlQa": {"uniqueVocabularyCount": 150, "membershipCount": 150, "packCounts": {"pack_toeic_basic": 40, "pack_toeic_office": 40, "pack_daily_life": 40, "pack_academic": 30}, "distinctMeaningsPerPack": {"pack_toeic_basic": 40, "pack_toeic_office": 40, "pack_daily_life": 40, "pack_academic": 30}, "examplePairCount": 150, "nullableIpaCount": 150, "ftsMappedRows": 150, "ftsSearchChecks": 300, "integrityCheck": "ok", "foreignKeyViolations": 0, "logicalDumpSha256": "85644c12afac36f80cb233a353280c40edc53241eb36ebce493e42462e1f6a6a"}, "datasetSha256": "12aac7bfbe037c9136c3973cc724eee68205b88673ad25f40f7881de50d5398e", "releaseAuthorized": false}, "observedGate": "PASS", "srsGate": "PENDING", "reason": "Requires measurement of the final release artifact; fixture/internal QA is diagnostic.", "releaseAuthorized": false}

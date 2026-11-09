@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "gates": {
+    "startup": {
+      "gate": "PENDING",
+      "reportSha256": null,
+      "reason": "No device/artifact measurement"
+    },
+    "fts": {
+      "gate": "PENDING",
+      "reportSha256": "2527a1aa3afda2b509d2efb20258da1d098da4c75564a1c1500638ed0dca84ab",
+      "reason": "Host Robolectric/native SQLite is not a reference device"
+    },
+    "apk-size": {
+      "gate": "PENDING",
+      "reportSha256": "ba047720f4e3beae40486b1bc9fb2e639614f5713603005131c5596845ef58dd",
+      "reason": "APK database asset set mismatch or duplicate ZIP entries"
+    }
+  },
+  "releaseAuthorized": false,
+  "allPassed": false
+}

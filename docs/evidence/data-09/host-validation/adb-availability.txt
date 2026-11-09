@@ -1,0 +1,1 @@
+11-08 18:36:18.429  7575  7575 F adb     : adb_utils.cpp:315 Cannot mkdir '/home/agent/.android': Read-only file system

@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "metric": "apk-size",
+  "observedGate": "PENDING",
+  "srsGate": "PENDING",
+  "error": "APK database asset set mismatch or duplicate ZIP entries",
+  "releaseAuthorized": false
+}
