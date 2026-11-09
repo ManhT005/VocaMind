@@ -1,0 +1,50 @@
+{
+  "scope": "Separate unmodified QUIZ-03 snapshot; not integrated into DATA-08",
+  "sourceBranch": "origin/feature/quiz-03-ui-session",
+  "commit": "f34b4ea72d81062d231ae75433c9ad4fefa1963a",
+  "command": "bash gradlew :app:testDebugUnitTest --tests '*UserDatabaseTest.productionMigrationPreservesLegacyHistoryAndProgress*' --max-workers=2 --console=plain",
+  "result": {
+    "tests": 2,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "suites": [
+    {
+      "class": "com.vocamind.app.data.user.UserDatabaseTest",
+      "timestamp": "2026-11-07T15:27:59",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "productionMigrationPreservesLegacyHistoryAndProgress[26]",
+          "classname": "com.vocamind.app.data.user.UserDatabaseTest",
+          "time": "3.989"
+        },
+        {
+          "name": "productionMigrationPreservesLegacyHistoryAndProgress",
+          "classname": "com.vocamind.app.data.user.UserDatabaseTest",
+          "time": "4.573"
+        }
+      ]
+    }
+  ],
+  "sourceSha256": {
+    "app/src/main/java/com/vocamind/app/data/user/UserDatabase.java": "71dbfef09b1b22c19501ff7331c5349642a6f145bd8a72e41450851257da8d63",
+    "app/src/test/java/com/vocamind/app/data/user/UserDatabaseTest.java": "2ce7e98984628dd8a6b1a206803ced72e2ca41670c9be6d7cc88cba76b951bfb",
+    "app/schemas/com.vocamind.app.data.user.UserDatabase/1.json": "9befb93f43b3f64624608a209af914043aef0d2307ce7b6579bee4b111742545",
+    "app/schemas/com.vocamind.app.data.user.UserDatabase/2.json": "8fbe616ea81546bc356118004a9a4cc6e11df044524064ce079740910db57a9a"
+  },
+  "proves": [
+    "Existing actual MIGRATION_1_2 opens legacy QuizAttempt shape with Room v2",
+    "Preserves progress and legacy quiz history",
+    "Legacy completionKey remains NULL; unique completion writes are idempotent"
+  ],
+  "doesNotProve": [
+    "Combined catalog upgrade + schema 1-to-2 migration on DATA-08 branch",
+    "Snapshot preservation for all five tables during migration",
+    "MigrationTestHelper/device reboot acceptance"
+  ]
+}

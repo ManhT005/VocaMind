@@ -22,7 +22,7 @@ jobs:
   quiz-device:
     name: Quiz device (API 28, offline)
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 40
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -46,7 +46,7 @@ jobs:
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
-      - name: Run offline Quiz instrumentation on a disposable emulator
+      - name: Run offline Quiz and DATA-08 reboot on a disposable emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 28
@@ -56,7 +56,7 @@ jobs:
           heap-size: 512M
           disable-animations: true
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
-          script: bash tools/catalog/validate_quiz03_device.sh
+          script: bash tools/catalog/validate_quiz03_device.sh && bash tools/catalog/validate_data08_reboot.sh
       - name: Upload Quiz device verification summaries
         if: always()
         uses: actions/upload-artifact@v4
@@ -70,6 +70,15 @@ jobs:
             app/build/quiz03-device-evidence/apk-sha256.txt
             app/build/quiz03-device-assets/database/quiz03-fixture-metadata.json
           if-no-files-found: warn
+          retention-days: 14
+
+      - name: Upload DATA-08 reboot verification summaries
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: data08-reboot-${{ github.sha }}
+          path: app/build/data08-reboot-evidence/
+          if-no-files-found: ignore
           retention-days: 14
 
   build-test:

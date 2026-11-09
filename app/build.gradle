@@ -30,7 +30,7 @@ def prepareRobolectricSdks = tasks.register('prepareRobolectricSdks', Sync) {
 def releaseTestAssets = layout.buildDirectory.dir('generated/catalog-release-test-assets')
 def prepareReleaseCatalogTests = tasks.register('prepareReleaseCatalogTests', Exec) {
     workingDir rootProject.projectDir
-    commandLine providers.gradleProperty('catalogPython').getOrElse('python'),
+    commandLine providers.gradleProperty('catalogPython').orElse(providers.gradleProperty('quiz03PythonExecutable')).getOrElse('python'),
             rootProject.file('tools/catalog/prepare_release_tests.py').absolutePath,
             '--output-dir', releaseTestAssets.get().asFile.absolutePath
 
@@ -46,6 +46,13 @@ def prepareReleaseCatalogTests = tasks.register('prepareReleaseCatalogTests', Ex
 
 // Opt-in QA application ID keeps the internal corpus and its installed DB separate.
 def catalogQaEnabled = providers.gradleProperty('catalogQa').map { it == 'true' }.getOrElse(false)
+def quiz03DeviceIsolation = providers.gradleProperty('quiz03DeviceIsolation').orNull == 'true'
+def progress02DeviceIsolation = providers.gradleProperty('progress02DeviceIsolation').orNull == 'true'
+def data08DeviceGeneration = providers.gradleProperty('data08DeviceGeneration').orNull
+if (data08DeviceGeneration != null && (!(data08DeviceGeneration in ['A', 'B'])
+        || catalogQaEnabled || quiz03DeviceIsolation || progress02DeviceIsolation)) {
+    throw new GradleException('DATA-08 device validation requires generation A or B in an isolated debug build')
+}
 def catalogQaDirectory = layout.buildDirectory.dir('generated/voc06-qa')
 def prepareCatalogQa = tasks.register('prepareCatalogQa', Exec) {
     workingDir rootProject.projectDir
@@ -90,6 +97,7 @@ android {
         }
         test.java.srcDir "src/catalogTest/java"
         test.resources.srcDir "src/catalogTest/assets"
+        test.resources.srcDir "schemas"
         test.resources.srcDir releaseTestAssets
         debug.assets.srcDir rootProject.file('docs/data/vocabulary-contract-v1/fixtures/valid')
         androidTest.java.srcDir "src/catalogTest/java"
@@ -107,29 +115,44 @@ android {
     // Opt-in device validation uses separate app storage; never replace a real user's install.
     buildTypes {
         debug {
-            if (providers.gradleProperty('quiz03DeviceIsolation').orNull == 'true'
-                    || providers.gradleProperty('progress02DeviceIsolation').orNull == 'true') {
-                applicationIdSuffix providers.gradleProperty('progress02DeviceIsolation').orNull == 'true'
-                        ? '.progress02validation' : '.quiz03validation'
+            if (data08DeviceGeneration != null) {
+                applicationIdSuffix '.data08validation'
+            } else if (quiz03DeviceIsolation || progress02DeviceIsolation) {
+                applicationIdSuffix progress02DeviceIsolation ? '.progress02validation' : '.quiz03validation'
             }
         }
     }
-    if (providers.gradleProperty('quiz03DeviceIsolation').orNull == 'true'
-                    || providers.gradleProperty('progress02DeviceIsolation').orNull == 'true') {
-        sourceSets.debug.assets.srcDir layout.buildDirectory.dir('quiz03-device-assets')
+    if (quiz03DeviceIsolation || progress02DeviceIsolation) {
+        def quizAssets = layout.buildDirectory.dir('quiz03-device-assets')
+        def quizBuilder = rootProject.file('tools/catalog/build_quiz03_device_fixture.py')
+        sourceSets.debug.assets.srcDir quizAssets
         def prepareQuiz03DeviceAssets = tasks.register('prepareQuiz03DeviceAssets', Exec) {
-            workingDir rootProject.projectDir
+            dependsOn prepareReleaseCatalogTests
             commandLine providers.gradleProperty('quiz03PythonExecutable').getOrElse('python'),
-                    'tools/catalog/build_quiz03_device_fixture.py'
-            inputs.files rootProject.file('tools/catalog/build_quiz03_device_fixture.py'),
-                    rootProject.file('tools/catalog/build_quiz_policy.py'),
-                    rootProject.file('docs/data/voc-data-04/accepted-v1/canonical-preview.json'),
-                    rootProject.file('docs/data/voc-data-04/accepted-v1/quiz-policy.json'),
-                    file('schemas/com.vocamind.app.data.catalog.CatalogDatabase/2.json')
-            outputs.dir layout.buildDirectory.dir('quiz03-device-assets')
+                    quizBuilder.absolutePath, releaseTestAssets.get().dir('release-candidate').asFile,
+                    quizAssets.get().dir('database').asFile
+            inputs.file quizBuilder
+            inputs.dir releaseTestAssets
+            outputs.dir quizAssets
         }
         tasks.matching { it.name == 'mergeDebugAssets' }.configureEach {
             dependsOn prepareQuiz03DeviceAssets
+        }
+    }
+    if (data08DeviceGeneration == 'B') {
+        def deviceAssets = layout.buildDirectory.dir('data08-device-assets')
+        def fixture = file('src/main/assets/database')
+        def generator = rootProject.file('tools/catalog/build_data08_device_fixture.py')
+        sourceSets.debug.assets.srcDir deviceAssets
+        def prepareData08DeviceAssets = tasks.register('prepareData08DeviceAssets', Exec) {
+            commandLine providers.gradleProperty('catalogPython').getOrElse('python'),
+                    generator.absolutePath, fixture, deviceAssets.get().dir('database').asFile
+            inputs.file generator
+            inputs.dir fixture
+            outputs.dir deviceAssets
+        }
+        tasks.matching { it.name == 'mergeDebugAssets' }.configureEach {
+            dependsOn prepareData08DeviceAssets
         }
     }
 
