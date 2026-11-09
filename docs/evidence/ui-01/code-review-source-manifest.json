@@ -1,0 +1,44 @@
+{
+  "createdUtc": "2026-11-09T11:02:16.405086+00:00",
+  "baseCommit": "c5d0ad650fc7204805d4254b3657e7cb3aa57218",
+  "branch": "feature/ui-01-polish-resilience",
+  "state": "uncommitted working tree",
+  "conclusion": "Done implementation/technical scope; QA acceptance pending per owner",
+  "sourceBundleSha256": "a81d81697cdeedce49872ca3952c1bd40a33e83fa372bfa542127f9843b6ba7a",
+  "filesSha256": {
+    "app/build.gradle": "0414d117efd2024e1e80187a3e03c22ec222d6411767fe5751fc34b1ee2ccbb9",
+    "app/src/androidTest/java/com/vocamind/app/feature/ui/Ui01SmokeInstrumentedTest.java": "ef32ee1bc0732ff2d52015606084bfa75df65a239b5b2178840cdfbb0d07f8dd",
+    "app/src/main/AndroidManifest.xml": "a202e17ed9aa5c8b7944d07db19ed949aba387a5d14ed3282b2195d96bf967c2",
+    "app/src/main/java/com/vocamind/app/MainActivity.java": "8cd1e2f4e613cf02bc61b5d9d21ba474da97e8db5e53fd8debf98b428c70a0d1",
+    "app/src/main/java/com/vocamind/app/feature/flashcard/FlashcardFragment.java": "4e063836b56e3e523b440dd6fb3f9150cadaccccd41cdffd9adc9305fa4435bb",
+    "app/src/main/java/com/vocamind/app/feature/packs/PackDetailFragment.java": "96cc2473bb759350d8a426d8d4a69803e85174d29d5aa62547411c03015415b4",
+    "app/src/main/java/com/vocamind/app/feature/quiz/QuizFragment.java": "168351532525d339a97a797b29ebaf2e663ae6bbc80ad1229c6254a5e27bf6ca",
+    "app/src/main/res/layout/fragment_flashcard.xml": "d12368bbe07af12c5669aa2baca385483e29aba69929e0360e12c50ada137a82",
+    "app/src/main/res/layout/fragment_pack_detail.xml": "8c05527f07127958099965fc6e9e7a3ae7bae686643dcf9113ca7f732aab2f5a",
+    "app/src/main/res/values/strings.xml": "2b2c1f58bc29dfbaf332be424a520ae69277ed1d284706ea0686c97616fd244e",
+    "app/src/test/java/com/vocamind/app/MainActivityInsetsTest.java": "4997de527903187b6f823e99f0318ce9269a7bef7b681b124adf69363e5a0993",
+    "app/src/test/java/com/vocamind/app/feature/flashcard/FlashcardFragmentTest.java": "7b792bb4912a0cc10ab871f8a281eb145411a69f168d10b2a65d1ce96bfd863e",
+    "app/src/test/java/com/vocamind/app/feature/packs/PackActivationRenderingTest.java": "3002bafd122a2815572e81cf454d9f74fe453f7a9a5655502bcd7d78213d6c92",
+    "app/src/test/java/com/vocamind/app/feature/quiz/QuizScreenTest.java": "5fa44e323600a6b779e0246f2becf077e23df799547157142a84d2be1795f3cd",
+    "app/src/test/java/com/vocamind/app/feature/ui/ResilienceLayoutTest.java": "e44fc10672297dea360aab5e827268de7123f82d48fd6332076c662b9823b524",
+    "tools/validation/ui01_device.py": "4776c004b5880164181471ad6590520720198eec6aa5e8be06947f4b84b4564f"
+  },
+  "priorValidatedSnapshot": {
+    "manifest": "source-manifest.json",
+    "sourceBundleSha256": "8670d2ba418a15bacff6877df4cf3040c4dc9f9dfebb6bf33bc96facb7ca5e70",
+    "scope": "74 tests and prior device smoke/reboot; APK hashes remain bound to that snapshot"
+  },
+  "checks": {
+    "hostLog": "code-review-final-checks.txt",
+    "unitTotals": {
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "beforeFixLog": "code-review-header-before.txt",
+    "lintReport": "code-review-lint.txt",
+    "assembledNormalDebugApkSha256": "b3ca7ae8a6187e34eea036c12abc85a331b1f08ce87d656eb21b19e4fc067b04"
+  },
+  "deviceMatrixOnLatestSnapshot": "Deferred per owner; no new device/E2E run during code review"
+}

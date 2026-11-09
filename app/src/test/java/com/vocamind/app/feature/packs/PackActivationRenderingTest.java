@@ -140,4 +140,58 @@ public class PackActivationRenderingTest {
         assertEquals(View.GONE, view.findViewById(R.id.retry).getVisibility());
         activity.finish();
     }
+
+    @org.robolectric.annotation.GraphicsMode(org.robolectric.annotation.GraphicsMode.Mode.NATIVE)
+    @Test public void longHeaderStillDragsAfterScrolledWordsBecomeAnError() {
+        repo.states.add(new PackState(new CatalogPack("A", "A", "d", "c", 1, "1", 1), false, null, 0));
+        var word = new com.vocamind.app.domain.catalog.CatalogVocabulary(
+                "aaaaaaaaaaaaaaaa", "word", "word", "noun", "meaning", "example", "example", null, "s", "1");
+        wordsResult = RepoResult.success(List.of(new com.vocamind.app.domain.learning.StudyItem(word, null)));
+        PackDetailFragment fragment = new PackDetailFragment();
+        Bundle args = new Bundle();
+        args.putString(PacksFragment.ARG_PACK_ID, "A");
+        args.putString(PacksFragment.ARG_PACK_TITLE, "Long pack title with several words ".repeat(12));
+        fragment.setArguments(args);
+        AppCompatActivity activity = show(fragment);
+        settle();
+        View root = fragment.requireView();
+        root.measure(View.MeasureSpec.makeMeasureSpec(320, View.MeasureSpec.EXACTLY),
+                View.MeasureSpec.makeMeasureSpec(480, View.MeasureSpec.EXACTLY));
+        root.layout(0, 0, 320, 480);
+        View list = root.findViewById(R.id.words);
+        assertTrue(androidx.core.view.ViewCompat.startNestedScroll(list,
+                androidx.core.view.ViewCompat.SCROLL_AXIS_VERTICAL, androidx.core.view.ViewCompat.TYPE_TOUCH));
+        androidx.core.view.ViewCompat.dispatchNestedPreScroll(list, 0, 10000, new int[2], null,
+                androidx.core.view.ViewCompat.TYPE_TOUCH);
+        androidx.core.view.ViewCompat.stopNestedScroll(list, androidx.core.view.ViewCompat.TYPE_TOUCH);
+        wordsResult = RepoResult.failure(RepoError.READ_FAILED);
+        new ViewModelProvider(fragment).get(PackWordsViewModel.class).refresh();
+        settle();
+        for (int i = 0; i < 100 && list.getVisibility() != View.VISIBLE; i++) {
+            org.robolectric.Shadows.shadowOf(android.os.Looper.getMainLooper()).idle();
+            Thread.yield();
+        }
+        root.measure(View.MeasureSpec.makeMeasureSpec(320, View.MeasureSpec.EXACTLY),
+                View.MeasureSpec.makeMeasureSpec(480, View.MeasureSpec.EXACTLY));
+        root.layout(0, 0, 320, 480);
+        assertEquals(View.VISIBLE, list.getVisibility());
+        assertEquals(0, ((androidx.recyclerview.widget.RecyclerView) list).getAdapter().getItemCount());
+        assertEquals(View.VISIBLE, root.findViewById(R.id.retry).getVisibility());
+        View header = ((android.view.ViewGroup) root).getChildAt(0);
+        assertTrue("error feedback must expand back into view", header.getTop() >= root.getPaddingTop());
+        int before = header.getTop();
+        long time = android.os.SystemClock.uptimeMillis();
+        int[] actions = {android.view.MotionEvent.ACTION_DOWN, android.view.MotionEvent.ACTION_MOVE,
+                android.view.MotionEvent.ACTION_MOVE, android.view.MotionEvent.ACTION_UP};
+        int[] ys = {320, 180, 80, 80};
+        for (int i = 0; i < actions.length; i++) {
+            android.view.MotionEvent event = android.view.MotionEvent.obtain(time, time + i * 20,
+                    actions[i], 160, ys[i], 0);
+            try { root.dispatchTouchEvent(event); }
+            finally { event.recycle(); }
+        }
+        assertTrue("error header must still drag so Retry can be reached", header.getTop() < before);
+        assertEquals(0, writes);
+        activity.finish();
+    }
 }

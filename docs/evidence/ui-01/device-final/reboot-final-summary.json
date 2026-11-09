@@ -1,0 +1,26 @@
+{
+  "started": "2026-11-09T10:33:34.139969+00:00",
+  "serial": "emulator-5560",
+  "status": "PASS",
+  "restore_network": {
+    "airplane_mode_on": "0",
+    "wifi_on": "1"
+  },
+  "apk_sha256": {
+    "app-debug.apk": "4aa04c06382457d0483ffe8b35da3da820e7a5217572165b526ce19e194d4564",
+    "app-debug-androidTest.apk": "25f6e5a116c5ff87bd33b24a2b0daa48a0abdace08d48fab87205f616e4f9a09"
+  },
+  "observed_network_before": {
+    "airplane_mode_on": "1",
+    "wifi_on": "1"
+  },
+  "boot_before": "08f1375d-d1f6-4bd2-bded-75810697e2fe",
+  "boot_after": "687fc73e-83ff-4073-aebc-9a70e706883a",
+  "network_after_boot": {
+    "airplane_mode_on": "1",
+    "wifi_on": "3"
+  },
+  "offline_before_reassert": false,
+  "restore_errors": [],
+  "finished": "2026-11-09T10:34:31.966509+00:00"
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.packs.PackActivationRenderingTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-09T09:43:23" hostname="DESKTOP-SB4BN4D" time="10.213">
+  <properties/>
+  <testcase name="detailDisablesWhilePendingThenShowsPersistedActiveAndPaused[26]" classname="com.vocamind.app.feature.packs.PackActivationRenderingTest" time="6.636"/>
+  <testcase name="todayShowsCtaOnlyAfterSuccessfulReadAndNeverWrites[26]" classname="com.vocamind.app.feature.packs.PackActivationRenderingTest" time="0.647"/>
+  <testcase name="unknownPackShowsNotFoundWithoutRetry[26]" classname="com.vocamind.app.feature.packs.PackActivationRenderingTest" time="0.41"/>
+  <testcase name="detailDisablesWhilePendingThenShowsPersistedActiveAndPaused" classname="com.vocamind.app.feature.packs.PackActivationRenderingTest" time="1.468"/>
+  <testcase name="todayShowsCtaOnlyAfterSuccessfulReadAndNeverWrites" classname="com.vocamind.app.feature.packs.PackActivationRenderingTest" time="0.361"/>
+  <testcase name="unknownPackShowsNotFoundWithoutRetry" classname="com.vocamind.app.feature.packs.PackActivationRenderingTest" time="0.674"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

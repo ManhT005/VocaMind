@@ -57,7 +57,7 @@ public class QuizFragment extends Fragment {
         switch (s.phase) {
             case LOADING: status.setText(R.string.quiz_generating); break;
             case EMPTY: status.setText(R.string.quiz_empty); break;
-            case ERROR: status.setText(getString(R.string.quiz_error,s.error)); break;
+            case ERROR: status.setText(R.string.quiz_error); break;
             default:
                 if (terminal) {
                     QuizResult r=s.session.getResult().get();
@@ -65,7 +65,7 @@ public class QuizFragment extends Fragment {
                             : s.phase == QuizViewModel.Phase.SAVING ? R.string.quiz_saving : R.string.quiz_save_error);
                     status.setText(getString(R.string.quiz_result_status,
                             getString(R.string.quiz_result,r.getQuestionCount(),r.getCorrectCount(),r.getWrongCount(),r.getScorePercent()),
-                            persistence,s.error));
+                            persistence));
                 } else status.setText(getString(R.string.quiz_progress,s.session.getPosition()+1,s.session.getQuestions().size()));
         }
         if (!question) return;

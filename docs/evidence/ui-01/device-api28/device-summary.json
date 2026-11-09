@@ -1,0 +1,18 @@
+{
+  "started": "2026-11-09T10:00:43.051071+00:00",
+  "serial": "emulator-5560",
+  "original_network": {
+    "airplane_mode_on": "0",
+    "wifi_on": "1"
+  },
+  "smoke": "NOT_RUN_OR_FAILED",
+  "force_stop_reopen": "NOT_RUN_OR_FAILED",
+  "reboot": "PENDING: reference-device QA acceptance",
+  "device": "28\nPhysical size: 720x1280\nPhysical density: 320\n",
+  "apk_sha256": {
+    "app-debug.apk": "c7d5ba3b3722883443d1f7b6684b95cac53dd2de04e38982edb7a1b6efee857b",
+    "app-debug-androidTest.apk": "ec6392fbad4c96ab369c500b0cb617f62d0f6f0af00562e01bb6110fccef449c"
+  },
+  "network_restore_errors": [],
+  "finished": "2026-11-09T10:01:31.012932+00:00"
+}

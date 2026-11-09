@@ -1,0 +1,12 @@
+﻿[
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "25508B4D2EC56A2CF5E832BA39272A3E655AEE288BB8D1AD0233E3CA9FAE6808",
+        "Path":  "D:\\hoc\\android\\demo\\Vocamind\\app\\build\\outputs\\apk\\debug\\app-debug.apk"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "D238CAF42007F29756A6DA486D00E52170B68F0EE725EA016E620CFD65C56CAF",
+        "Path":  "D:\\hoc\\android\\demo\\Vocamind\\app\\build\\outputs\\apk\\androidTest\\debug\\app-debug-androidTest.apk"
+    }
+]

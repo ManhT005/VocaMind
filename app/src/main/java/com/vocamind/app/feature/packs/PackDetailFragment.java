@@ -61,6 +61,7 @@ public final class PackDetailFragment extends Fragment {
         binding.back.setOnClickListener(v -> NavHostFragment.findNavController(this).popBackStack());
         binding.retry.setOnClickListener(v -> model.retry());
         model.state().observe(getViewLifecycleOwner(), state -> {
+            if (state.status != AsyncListViewModel.Status.CONTENT) binding.packHeader.setExpanded(true, false);
             binding.loading.setVisibility(state.status == AsyncListViewModel.Status.LOADING ? View.VISIBLE : View.GONE);
             boolean error = state.status == AsyncListViewModel.Status.ERROR;
             boolean empty = state.status == AsyncListViewModel.Status.EMPTY;
@@ -70,8 +71,20 @@ public final class PackDetailFragment extends Fragment {
             binding.message.setText(missing ? R.string.pack_detail_not_found
                     : error ? R.string.pack_detail_error : R.string.pack_detail_empty);
             binding.retry.setVisibility((error && !missing) || empty ? View.VISIBLE : View.GONE);
-            if (state.status != AsyncListViewModel.Status.LOADING) adapter.submitList(state.items);
-            binding.words.setVisibility(state.status == AsyncListViewModel.Status.CONTENT ? View.VISIBLE : View.INVISIBLE);
+            binding.words.setVisibility(View.INVISIBLE);
+            if (state.status != AsyncListViewModel.Status.LOADING) {
+                adapter.submitList(state.items, () -> {
+                    if (getView() != view || model.state().getValue() != state) return;
+                    // Keep the empty viewport scrollable too: Material needs its nested
+                    // scrolling child visible to let a long error/retry header be dragged.
+                    binding.words.setVisibility(View.VISIBLE);
+                });
+            }
+        });
+        getViewLifecycleOwner().getLifecycle().addObserver(new androidx.lifecycle.DefaultLifecycleObserver() {
+            @Override public void onDestroy(@NonNull androidx.lifecycle.LifecycleOwner owner) {
+                binding.words.setAdapter(null);
+            }
         });
     }
 

@@ -28,10 +28,17 @@ public class FlashcardFragment extends Fragment {
         binding.back.setOnClickListener(v -> NavHostFragment.findNavController(this).popBackStack());
         binding.retry.setOnClickListener(v -> model.retry());
         binding.card.setOnClickListener(v -> model.flip());
-        // The ScrollView consumes taps before they reach the outer card. Its content
-        // forwards clicks; a scroll gesture still cancels the child click normally.
+        // Content forwards taps; the screen ScrollView cancels clicks when dragging.
         binding.cardContent.setOnClickListener(v -> binding.card.performClick());
-        model.state().observe(getViewLifecycleOwner(), state -> render(binding, model, state));
+        long[] renderedOccurrence = {-1};
+        model.state().observe(getViewLifecycleOwner(), state -> {
+            render(binding, model, state);
+            if (state.status == FlashcardViewModel.Status.READY
+                    && renderedOccurrence[0] != state.presentationId) {
+                binding.getRoot().scrollTo(0, 0);
+                renderedOccurrence[0] = state.presentationId;
+            }
+        });
     }
 
     private void render(FragmentFlashcardBinding b, FlashcardViewModel model, FlashcardViewModel.State state) {
@@ -58,8 +65,7 @@ public class FlashcardFragment extends Fragment {
         b.cardExampleEn.setText(word.exampleEn);
         b.cardExampleVi.setText(word.exampleVi);
         boolean hasIpa = word.ipa != null && !word.ipa.trim().isEmpty();
-        b.cardIpa.setVisibility(hasIpa ? View.VISIBLE : View.GONE);
-        b.cardIpa.setText(word.ipa);
+        b.cardIpa.setText(hasIpa ? word.ipa : getString(R.string.word_ipa_missing));
         b.card.setContentDescription(state.flipped ? null : getString(R.string.flashcard_flip_action));
         // Capture the occurrence rendered by this view, never look up the current ID at click time.
         b.rateForgot.setOnClickListener(v -> model.rate(state.presentationId, Rating.FORGOT));

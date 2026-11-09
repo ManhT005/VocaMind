@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-11-09T09:44:18" hostname="DESKTOP-SB4BN4D" time="2.496">
+  <properties/>
+  <testcase name="longExamplesRemainScrollableAtLargeFontOnSmallScreen[26]" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.236"/>
+  <testcase name="captureDetailLayoutsWithFixedActionAndWriteErrorFeedback[26]" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.786"/>
+  <testcase name="longExamplesRemainScrollableAtLargeFontOnSmallScreen" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.265"/>
+  <testcase name="captureDetailLayoutsWithFixedActionAndWriteErrorFeedback" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.66"/>
+  <testcase name="renderAllFieldsNullBlankIpaAndReplacePreviousWordWithoutInventingContent[26]" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.207"/>
+  <testcase name="pendingBlocksDoubleTapAndResumeRetryReconcilesAmbiguousCommitWithoutReplay[26]" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.045"/>
+  <testcase name="refreshGenerationAndClearedOwnerRejectLateReadsAndWrites[26]" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.036"/>
+  <testcase name="renderAllFieldsNullBlankIpaAndReplacePreviousWordWithoutInventingContent" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.145"/>
+  <testcase name="pendingBlocksDoubleTapAndResumeRetryReconcilesAmbiguousCommitWithoutReplay" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.046"/>
+  <testcase name="refreshGenerationAndClearedOwnerRejectLateReadsAndWrites" classname="com.vocamind.app.feature.vocabulary.VocabularyDetailTest" time="0.055"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
