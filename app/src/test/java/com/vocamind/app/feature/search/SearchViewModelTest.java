@@ -51,6 +51,25 @@ public class SearchViewModelTest {
     void drain() { while (!main.isEmpty()) main.remove().run(); }
     SearchViewModel.State state() { return model.state().getValue(); }
     void request(String raw) { model.input(raw); clock.advance(600); }
+    @Test public void nullResetRestoreAndRetryCannotReplayAbandonedQuery() {
+        model.input(null); clock.advance(600);
+        assertEquals(SearchViewModel.Status.NO_INPUT, state().status);
+        assertTrue(inputs.isEmpty());
+        request("book");
+        requests.get(0).complete(VocabularySearchResult.failure("book", VocabularySearchResult.Error.READ_FAILED));
+        drain(); model.retry(); model.retry(); clock.advance(600);
+        assertEquals(List.of("book", "book"), inputs);
+        model.reset(); model.retry();
+        requests.get(1).completeExceptionally(new RuntimeException()); drain();
+        assertEquals(SearchViewModel.Status.NO_INPUT, state().status);
+        assertEquals("", saved.get("search.input"));
+        SearchViewModel restored = new SearchViewModel(saved, raw -> {
+            fail("Reset query must not be searched after restore"); return null;
+        }, clock, main::add);
+        clock.advance(600);
+        assertEquals(SearchViewModel.Status.NO_INPUT, restored.state().getValue().status);
+        assertEquals(2, inputs.size());
+    }
     @Test public void debounce600AndImmediateInvalidation() {
         model.input("bank"); clock.advance(599); assertTrue(inputs.isEmpty());
         model.input("book"); clock.advance(599); assertTrue(inputs.isEmpty()); clock.advance(1);

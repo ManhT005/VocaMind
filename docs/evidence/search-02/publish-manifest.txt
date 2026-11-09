@@ -1,0 +1,21 @@
+
+
+Algorithm : SHA256
+Hash      : 5DB666AAB8243F54671753636779832E9CC77A10C8F069624C28ABE8824AFC0C
+Path      : C:\Users\LMT\Documents\University\Nam4\N4_HK1\PTUDTBDT\BLT\VocaMind\app\src\test\java\com\vocamind\app\feat
+            ure\search\SearchViewModelTest.java
+
+Algorithm : SHA256
+Hash      : 99AB646DE5A16E55535CFE6786DF899AEA44C272D0F43CA3F09342506CAB19CA
+Path      : C:\Users\LMT\Documents\University\Nam4\N4_HK1\PTUDTBDT\BLT\VocaMind\app\src\androidTest\java\com\vocamind\a
+            pp\feature\search\SearchCatalogQaInstrumentedTest.java
+
+Algorithm : SHA256
+Hash      : F669CB5E96981A3DEBA4C9EFF85A26BA4719EBD047193EF056255794B3097AE0
+Path      : C:\Users\LMT\Documents\University\Nam4\N4_HK1\PTUDTBDT\BLT\VocaMind\app\build\outputs\apk\catalogQa\app-cat
+            alogQa.apk
+
+Algorithm : SHA256
+Hash      : AA4C932EECE04ADABE39AB3459E1E49BFC6EAC9E1CE481D2DDEE9B24405E5C2E
+Path      : C:\Users\LMT\Documents\University\Nam4\N4_HK1\PTUDTBDT\BLT\VocaMind\app\build\outputs\apk\androidTest\catal
+            ogQa\app-catalogQa-androidTest.apk

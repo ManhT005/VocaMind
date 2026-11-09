@@ -1,0 +1,9 @@
+.\gradlew.bat : Exception in thread "main" java.lang.RuntimeException: Could not create parent directory for lock file
+C:\.gradle\wrapper\dists\gradle-8.9-bin\90cnw93cvbtalezasaz0blq0a\gradle-8.9-bin.zip.lck
+At line:2 char:58
++ ... emurin-17'; .\gradlew.bat testDebugUnitTest assembleDebug assembleDeb ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Exception in th...8.9-bin.zip.lck:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+	at org.gradle.wrapper.GradleWrapperMain.main(SourceFile:65)

@@ -1,0 +1,107 @@
+Starting a Gradle Daemon, 1 busy and 1 incompatible and 2 stopped Daemons could not be reused, use --status for details
+.\gradlew.bat : Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of
+version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were
+released at different times.
+At line:2 char:104
++ ... T\.gradle'; .\gradlew.bat -PcatalogQa=true assembleCatalogQa assemble ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: SDK pr...ifferent times.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preCatalogQaBuild UP-TO-DATE
+> Task :app:mergeCatalogQaNativeDebugMetadata NO-SOURCE
+> Task :app:dataBindingMergeDependencyArtifactsCatalogQa
+> Task :app:generateCatalogQaResValues
+> Task :app:generateCatalogQaResources
+> Task :app:packageCatalogQaResources
+> Task :app:generateCatalogQaBuildConfig
+> Task :app:parseCatalogQaLocalResources
+> Task :app:javaPreCompileCatalogQa
+> Task :app:mapCatalogQaSourceSetPaths
+> Task :app:createCatalogQaCompatibleScreenManifests
+> Task :app:checkCatalogQaAarMetadata
+> Task :app:extractDeepLinksCatalogQa
+> Task :app:processCatalogQaMainManifest
+> Task :app:processCatalogQaManifest
+> Task :app:mergeCatalogQaShaders
+> Task :app:compileCatalogQaShaders NO-SOURCE
+> Task :app:generateCatalogQaAssets UP-TO-DATE
+> Task :app:mergeCatalogQaResources
+
+> Task :app:prepareCatalogQa
+QC pass: 150 input, 0 errors
+C:\Users\LMT\Documents\University\Nam4\N4_HK1\PTUDTBDT\BLT\VocaMind\app\build\generated\voc06-qa
+
+> Task :app:dataBindingGenBaseClassesCatalogQa
+> Task :app:mergeCatalogQaAssets
+> Task :app:desugarCatalogQaFileDependencies
+> Task :app:compressCatalogQaAssets
+> Task :app:mergeCatalogQaJniLibFolders
+> Task :app:mergeCatalogQaNativeLibs NO-SOURCE
+> Task :app:stripCatalogQaDebugSymbols NO-SOURCE
+> Task :app:checkCatalogQaDuplicateClasses
+> Task :app:validateSigningCatalogQa
+> Task :app:writeCatalogQaAppMetadata
+> Task :app:writeCatalogQaSigningConfigVersions
+> Task :app:mergeLibDexCatalogQa
+> Task :app:processCatalogQaManifestForPackage
+> Task :app:preCatalogQaAndroidTestBuild SKIPPED
+> Task :app:dataBindingMergeDependencyArtifactsCatalogQaAndroidTest
+> Task :app:generateCatalogQaAndroidTestResValues
+> Task :app:generateCatalogQaAndroidTestResources
+> Task :app:processCatalogQaAndroidTestManifest
+> Task :app:mergeCatalogQaAndroidTestResources
+> Task :app:generateCatalogQaAndroidTestBuildConfig
+> Task :app:dataBindingGenBaseClassesCatalogQaAndroidTest
+> Task :app:javaPreCompileCatalogQaAndroidTest
+> Task :app:checkCatalogQaAndroidTestAarMetadata
+> Task :app:mapCatalogQaAndroidTestSourceSetPaths
+> Task :app:mergeCatalogQaAndroidTestShaders
+> Task :app:compileCatalogQaAndroidTestShaders NO-SOURCE
+> Task :app:prepareReleaseCatalogTests UP-TO-DATE
+> Task :app:generateCatalogQaAndroidTestAssets UP-TO-DATE
+> Task :app:mergeCatalogQaAndroidTestAssets
+> Task :app:desugarCatalogQaAndroidTestFileDependencies
+> Task :app:processCatalogQaAndroidTestJavaRes NO-SOURCE
+> Task :app:compressCatalogQaAndroidTestAssets
+> Task :app:processCatalogQaAndroidTestResources
+> Task :app:mergeCatalogQaAndroidTestJniLibFolders
+> Task :app:checkCatalogQaAndroidTestDuplicateClasses
+> Task :app:mergeCatalogQaAndroidTestNativeLibs NO-SOURCE
+> Task :app:stripCatalogQaAndroidTestDebugSymbols NO-SOURCE
+> Task :app:validateSigningCatalogQaAndroidTest
+> Task :app:mergeLibDexCatalogQaAndroidTest
+> Task :app:writeCatalogQaAndroidTestSigningConfigVersions
+> Task :app:mergeCatalogQaAndroidTestJavaResource
+> Task :app:processCatalogQaResources
+> Task :app:mergeExtDexCatalogQaAndroidTest
+> Task :app:mergeExtDexCatalogQa
+
+> Task :app:compileCatalogQaJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:dexBuilderCatalogQa
+> Task :app:mergeCatalogQaGlobalSynthetics
+> Task :app:processCatalogQaJavaRes
+> Task :app:mergeProjectDexCatalogQa
+> Task :app:bundleCatalogQaClassesToCompileJar
+
+> Task :app:compileCatalogQaAndroidTestJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:mergeCatalogQaJavaResource
+> Task :app:dexBuilderCatalogQaAndroidTest
+> Task :app:mergeCatalogQaAndroidTestGlobalSynthetics
+> Task :app:mergeProjectDexCatalogQaAndroidTest
+> Task :app:packageCatalogQaAndroidTest
+> Task :app:createCatalogQaAndroidTestApkListingFileRedirect
+> Task :app:assembleCatalogQaAndroidTest
+> Task :app:packageCatalogQa
+> Task :app:createCatalogQaApkListingFileRedirect
+> Task :app:assembleCatalogQa
+
+BUILD SUCCESSFUL in 2m 2s
+67 actionable tasks: 66 executed, 1 up-to-date
