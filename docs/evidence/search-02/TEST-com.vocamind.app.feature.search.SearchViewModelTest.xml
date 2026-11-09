@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.search.SearchViewModelTest" tests="22" skipped="0" failures="0" errors="0" timestamp="2026-11-09T02:33:34" hostname="DESKTOP-KUH3S13" time="0.705">
+  <properties/>
+  <testcase name="clearRejectsQueuedCompletionAndError[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.055"/>
+  <testcase name="outOfOrderContentAndOldErrorCannotStopNewLoading[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.032"/>
+  <testcase name="invalidInputDoesNotSubmitOrBecomeNoMatch[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.033"/>
+  <testcase name="debounce600AndImmediateInvalidation[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.033"/>
+  <testcase name="aToBToAUsesGenerationNotQueryEquality[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.031"/>
+  <testcase name="disposedOwnerIgnoresLateCompletionAndCancelsDebounce[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.029"/>
+  <testcase name="immediateExceptionalAndRejectedFuturesUseMainDelivery[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.037"/>
+  <testcase name="nullResetRestoreAndRetryCannotReplayAbandonedQuery[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.045"/>
+  <testcase name="savedRawQueryRestoresAndNavigationUsesOpaqueId[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.034"/>
+  <testcase name="errorsAreDistinctFromNoMatchRetryUsesCurrentInput[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.024"/>
+  <testcase name="clearWhitespaceTokenlessInvalidateRunningAndPending[26]" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.021"/>
+  <testcase name="clearRejectsQueuedCompletionAndError" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.025"/>
+  <testcase name="outOfOrderContentAndOldErrorCannotStopNewLoading" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.027"/>
+  <testcase name="invalidInputDoesNotSubmitOrBecomeNoMatch" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.027"/>
+  <testcase name="debounce600AndImmediateInvalidation" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.027"/>
+  <testcase name="aToBToAUsesGenerationNotQueryEquality" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.029"/>
+  <testcase name="disposedOwnerIgnoresLateCompletionAndCancelsDebounce" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.026"/>
+  <testcase name="immediateExceptionalAndRejectedFuturesUseMainDelivery" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.033"/>
+  <testcase name="nullResetRestoreAndRetryCannotReplayAbandonedQuery" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.032"/>
+  <testcase name="savedRawQueryRestoresAndNavigationUsesOpaqueId" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.038"/>
+  <testcase name="errorsAreDistinctFromNoMatchRetryUsesCurrentInput" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.028"/>
+  <testcase name="clearWhitespaceTokenlessInvalidateRunningAndPending" classname="com.vocamind.app.feature.search.SearchViewModelTest" time="0.028"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

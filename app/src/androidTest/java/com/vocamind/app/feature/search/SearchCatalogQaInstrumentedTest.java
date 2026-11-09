@@ -25,6 +25,52 @@ import org.junit.runner.RunWith;
 /** Uses installed app assets (including the current 150-word catalogQa bundle), no hardcoded pack. */
 @RunWith(AndroidJUnit4.class)
 public final class SearchCatalogQaInstrumentedTest {
+    @Test public void searchStateControlsRemainAccessibleWithKeyboard() throws Exception {
+        try (var s = ActivityScenario.launch(MainActivity.class)) {
+            s.onActivity(a -> a.findViewById(R.id.open_vocabulary).performClick());
+            await(s, a -> a.findViewById(R.id.search) != null);
+            s.onActivity(a -> {
+                SearchView search = a.findViewById(R.id.search);
+                search.setIconified(false);
+                search.requestFocus();
+                android.widget.EditText editor = search.findViewById(androidx.appcompat.R.id.search_src_text);
+                editor.requestFocus();
+                ((android.view.inputmethod.InputMethodManager)a.getSystemService(android.content.Context.INPUT_METHOD_SERVICE))
+                        .showSoftInput(editor, android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT);
+                assertEquals(View.ACCESSIBILITY_LIVE_REGION_POLITE,
+                        a.findViewById(R.id.search_message).getAccessibilityLiveRegion());
+                for (int id : new int[]{R.id.reset, R.id.retry}) {
+                    TextView button = a.findViewById(id);
+                    assertFalse(button.getText().toString().isBlank());
+                    assertTrue(button.getMinimumHeight() >= 48 * a.getResources().getDisplayMetrics().density);
+                }
+                search.setQuery("notpresentsearchintegration", false);
+            });
+            await(s, a -> ((TextView)a.findViewById(R.id.search_message)).getText().toString()
+                    .equals(a.getString(R.string.search_no_match)));
+            await(s, a -> {
+                var insets = androidx.core.view.ViewCompat.getRootWindowInsets(a.findViewById(R.id.search));
+                return insets != null && insets.isVisible(androidx.core.view.WindowInsetsCompat.Type.ime());
+            });
+            s.onActivity(a -> {
+                android.graphics.Rect visible = new android.graphics.Rect();
+                View reset = a.findViewById(R.id.reset);
+                assertTrue(reset.isEnabled());
+                assertTrue(reset.getGlobalVisibleRect(visible));
+                assertEquals(reset.getHeight(), visible.height());
+                assertEquals(View.GONE, a.findViewById(R.id.retry).getVisibility());
+                assertEquals(View.GONE, a.findViewById(R.id.loading).getVisibility());
+                assertEquals(View.GONE, a.findViewById(R.id.results).getVisibility());
+                ((SearchView)a.findViewById(R.id.search)).setQuery("x".repeat(257), false);
+                assertEquals(View.GONE, a.findViewById(R.id.retry).getVisibility());
+                a.findViewById(R.id.reset).performClick();
+                assertEquals("", ((SearchView)a.findViewById(R.id.search)).getQuery().toString());
+                assertEquals(a.getString(R.string.search_no_input),
+                        ((TextView)a.findViewById(R.id.search_message)).getText().toString());
+            });
+            screenshot("04-search-state-controls");
+        }
+    }
     private void await(ActivityScenario<MainActivity> s, Predicate<MainActivity> condition) {
         long end = SystemClock.elapsedRealtime() + 20000;
         boolean[] ready = {false};

@@ -1,0 +1,7 @@
+
+com.vocamind.app.feature.search.SearchCatalogQaInstrumentedTest:..
+com.vocamind.app.feature.search.SearchReadRecoveryInstrumentedTest:.
+
+Time: 16.037
+
+OK (3 tests)

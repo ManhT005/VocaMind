@@ -1,0 +1,36 @@
+
+com.vocamind.app.feature.search.SearchCatalogQaInstrumentedTest:.
+com.vocamind.app.feature.search.SearchReadRecoveryInstrumentedTest:.
+com.vocamind.app.feature.search.SearchScreenInstrumentedTest:
+Error in catalogSearchEnglishVietnameseDetailBackRecreateClearAndNoWrites(com.vocamind.app.feature.search.SearchScreenInstrumentedTest):
+java.lang.AssertionError: Search/navigation did not settle
+	at org.junit.Assert.fail(Assert.java:89)
+	at com.vocamind.app.feature.search.SearchScreenContract.await(SearchScreenContract.java:34)
+	at com.vocamind.app.feature.search.SearchScreenContract.query(SearchScreenContract.java:38)
+	at com.vocamind.app.feature.search.SearchScreenContract.catalogSearchEnglishVietnameseDetailBackRecreateClearAndNoWrites(SearchScreenContract.java:53)
+.
+Error in catalogDetailSaveRequiresExplicitClickAndPersistsAcrossBack(com.vocamind.app.feature.search.SearchScreenInstrumentedTest):
+java.lang.AssertionError: Search/navigation did not settle
+	at org.junit.Assert.fail(Assert.java:89)
+	at com.vocamind.app.feature.search.SearchScreenContract.await(SearchScreenContract.java:34)
+	at com.vocamind.app.feature.search.SearchScreenContract.query(SearchScreenContract.java:38)
+	at com.vocamind.app.feature.search.SearchScreenContract.catalogDetailSaveRequiresExplicitClickAndPersistsAcrossBack(SearchScreenContract.java:95)
+
+
+Time: 58.602
+There were 2 failures:
+1) catalogSearchEnglishVietnameseDetailBackRecreateClearAndNoWrites(com.vocamind.app.feature.search.SearchScreenInstrumentedTest)
+java.lang.AssertionError: Search/navigation did not settle
+	at org.junit.Assert.fail(Assert.java:89)
+	at com.vocamind.app.feature.search.SearchScreenContract.await(SearchScreenContract.java:34)
+	at com.vocamind.app.feature.search.SearchScreenContract.query(SearchScreenContract.java:38)
+	at com.vocamind.app.feature.search.SearchScreenContract.catalogSearchEnglishVietnameseDetailBackRecreateClearAndNoWrites(SearchScreenContract.java:53)
+2) catalogDetailSaveRequiresExplicitClickAndPersistsAcrossBack(com.vocamind.app.feature.search.SearchScreenInstrumentedTest)
+java.lang.AssertionError: Search/navigation did not settle
+	at org.junit.Assert.fail(Assert.java:89)
+	at com.vocamind.app.feature.search.SearchScreenContract.await(SearchScreenContract.java:34)
+	at com.vocamind.app.feature.search.SearchScreenContract.query(SearchScreenContract.java:38)
+	at com.vocamind.app.feature.search.SearchScreenContract.catalogDetailSaveRequiresExplicitClickAndPersistsAcrossBack(SearchScreenContract.java:95)
+
+FAILURES!!!
+Tests run: 5,  Failures: 2
