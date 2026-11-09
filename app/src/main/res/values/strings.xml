@@ -67,14 +67,14 @@
     <string name="search_invalid">Từ khóa quá dài hoặc quá nhiều từ. Hãy sửa hoặc xóa tìm kiếm.</string>
     <string name="search_error">Không đọc được dữ liệu. Hãy thử lại hoặc quay về.</string>
     <string name="quiz_back">Quay lại</string>
-    <string name="quiz_result_status">%1$s\n%2$s\n%3$s</string>
+    <string name="quiz_result_status">%1$s\n%2$s</string>
     <string name="quiz_context_format">%1$s\n%2$s</string>
     <string name="quiz_next">Câu tiếp theo</string>
     <string name="quiz_restart">Bắt đầu bài mới</string>
     <string name="quiz_retry">Thử lại</string>
     <string name="quiz_generating">Đang tạo bài quiz…</string>
     <string name="quiz_empty">Chưa đủ từ và nghĩa phù hợp để tạo quiz. Hãy chọn và kích hoạt gói từ vựng trong mục Gói.</string>
-    <string name="quiz_error">Không thể tạo hoặc khôi phục bài quiz (%1$s).</string>
+    <string name="quiz_error">Không thể tạo hoặc khôi phục bài quiz. Hãy thử lại.</string>
     <string name="quiz_progress">Câu %1$d / %2$d</string>
     <string name="quiz_correct">✓ Chính xác! Đáp án: %1$s</string>
     <string name="quiz_wrong">✗ Chưa đúng. Đáp án đúng: %1$s</string>

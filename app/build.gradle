@@ -153,7 +153,6 @@ android {
     if (quiz03DeviceIsolation || progress02DeviceIsolation) {
         def quizAssets = layout.buildDirectory.dir('quiz03-device-assets')
         def quizBuilder = rootProject.file('tools/catalog/build_quiz03_device_fixture.py')
-        sourceSets.debug.assets.srcDir quizAssets
         def prepareQuiz03DeviceAssets = tasks.register('prepareQuiz03DeviceAssets', Exec) {
             dependsOn prepareReleaseCatalogTests
             commandLine providers.gradleProperty('quiz03PythonExecutable').getOrElse('python'),
@@ -163,7 +162,9 @@ android {
             inputs.dir releaseTestAssets
             outputs.dir quizAssets
         }
-        tasks.matching { it.name == 'mergeDebugAssets' }.configureEach {
+        sourceSets.debug.assets.srcDir project.files(quizAssets).builtBy(prepareQuiz03DeviceAssets)
+        tasks.matching { it.name == 'mergeDebugAssets'
+                || it.name.toLowerCase(Locale.ROOT).contains('lint') }.configureEach {
             dependsOn prepareQuiz03DeviceAssets
         }
     }

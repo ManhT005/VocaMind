@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.progress.ProgressScreenTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-09T09:43:33" hostname="DESKTOP-SB4BN4D" time="14.341">
+  <properties/>
+  <testcase name="emptyAndErrorsRetryRenderWithoutInventedZeros[26]" classname="com.vocamind.app.feature.progress.ProgressScreenTest" time="11.002"/>
+  <testcase name="historyOnlyAndDestroyedViewDuringReadAreSafe[26]" classname="com.vocamind.app.feature.progress.ProgressScreenTest" time="0.37"/>
+  <testcase name="twelveWordsAllBoxesAndUncappedHistoryMatchFixtureAndRefresh[26]" classname="com.vocamind.app.feature.progress.ProgressScreenTest" time="0.598"/>
+  <testcase name="emptyAndErrorsRetryRenderWithoutInventedZeros" classname="com.vocamind.app.feature.progress.ProgressScreenTest" time="0.896"/>
+  <testcase name="historyOnlyAndDestroyedViewDuringReadAreSafe" classname="com.vocamind.app.feature.progress.ProgressScreenTest" time="0.311"/>
+  <testcase name="twelveWordsAllBoxesAndUncappedHistoryMatchFixtureAndRefresh" classname="com.vocamind.app.feature.progress.ProgressScreenTest" time="1.154"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

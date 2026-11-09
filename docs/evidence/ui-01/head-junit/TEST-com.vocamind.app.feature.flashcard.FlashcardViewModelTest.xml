@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" tests="22" skipped="0" failures="0" errors="0" timestamp="2026-11-09T09:43:21" hostname="DESKTOP-SB4BN4D" time="1.467">
+  <properties/>
+  <testcase name="forgotRelearnsOnceAfterTwoOtherCardsThenFinishes" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.213"/>
+  <testcase name="ratingBeforeFlipWritesNothing" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.144"/>
+  <testcase name="invalidInputDoesNotStartOrExtendDebounce" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.089"/>
+  <testcase name="relearnHasNewOccurrenceAndAcceptsSameWordAgain" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.063"/>
+  <testcase name="fourthForgotMarksLeechAndHintExposesIt" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.054"/>
+  <testcase name="failedWriteKeepsCardAndFaceAndWritesNothing" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.054"/>
+  <testcase name="loadFailureShowsErrorAndRetryRecovers" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.048"/>
+  <testcase name="repeatedForgotDoesNotLoopTheSession" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.053"/>
+  <testcase name="slowCommitStaysLockedEvenAfterDebounceExpires" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.068"/>
+  <testcase name="noActivePackAndNothingToStudyAreDistinct" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.038"/>
+  <testcase name="forgotAndHardEachCommitOneReview" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.043"/>
+  <testcase name="rememberedCommitsBoxOneAndAdvancesAfterTheWrite" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.049"/>
+  <testcase name="stateSurvivesRecreationBecauseViewModelIsRetained" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.056"/>
+  <testcase name="lastRatingFinishesSessionAndKeepsResult" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.049"/>
+  <testcase name="staleOccurrenceCannotRateNextCardOrReloadedSession" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.063"/>
+  <testcase name="fastCommitTripleTapAndExactBoundaryUseFirstAcceptedTimestamp" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.054"/>
+  <testcase name="frontShowsOnlyTheWordAndRatingIsDisabled" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.059"/>
+  <testcase name="failedAttemptKeepsOccurrenceAndDebouncesExplicitRetry" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.05"/>
+  <testcase name="retryWhileSavingIsIgnoredSoLateCommitCannotAdvanceARebuiltQueue" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.068"/>
+  <testcase name="tapsWhileSavingDoNotWriteTwice" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.054"/>
+  <testcase name="failedSaveDoesNotQueueRelearn" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.052"/>
+  <testcase name="conflictIsReportedAsFailureNotCommitted" classname="com.vocamind.app.feature.flashcard.FlashcardViewModelTest" time="0.039"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

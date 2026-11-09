@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.ui.ResilienceLayoutTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-09T09:43:52" hostname="DESKTOP-SB4BN4D" time="25.971">
+  <properties/>
+  <testcase name="quizOptionsWrapLongMeaningsWithoutEllipsisOnSmallScreen[26]" classname="com.vocamind.app.feature.ui.ResilienceLayoutTest" time="11.138"/>
+  <testcase name="longPackHeaderDoesNotCollapseTheWordList[26]" classname="com.vocamind.app.feature.ui.ResilienceLayoutTest" time="0.414"/>
+  <testcase name="flashcardAndRatingsRemainReachableInShortLandscapeWithLargeFont[26]" classname="com.vocamind.app.feature.ui.ResilienceLayoutTest" time="0.317"/>
+  <testcase name="quizOptionsWrapLongMeaningsWithoutEllipsisOnSmallScreen" classname="com.vocamind.app.feature.ui.ResilienceLayoutTest" time="13.305"/>
+  <testcase name="longPackHeaderDoesNotCollapseTheWordList" classname="com.vocamind.app.feature.ui.ResilienceLayoutTest" time="0.401"/>
+  <testcase name="flashcardAndRatingsRemainReachableInShortLandscapeWithLargeFont" classname="com.vocamind.app.feature.ui.ResilienceLayoutTest" time="0.349"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

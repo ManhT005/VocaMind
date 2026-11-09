@@ -1,0 +1,100 @@
+1
+NetworkFactories for: PhoneSwitcherNetworkRequstListener TelephonyNetworkFactory[0] WIFI WIFI_UT
+
+Active default network: none
+
+Current Networks:
+
+Network Requests:
+  uid/pid:1000/2102 NetworkRequest [ LISTEN id=3, [] ]
+  uid/pid:1000/2102 NetworkRequest [ LISTEN id=4, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 1000] ]
+  uid/pid:1000/2102 NetworkRequest [ LISTEN id=5, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 1000] ]
+  uid/pid:10018/2233 NetworkRequest [ LISTEN id=8, [ Transports: WIFI Capabilities: NOT_VPN Unwanted: ] ]
+  uid/pid:1000/2102 NetworkRequest [ TRACK_DEFAULT id=6, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 1000] ]
+  uid/pid:10018/2233 NetworkRequest [ LISTEN id=10, [] ]
+  uid/pid:1000/2102 NetworkRequest [ REQUEST id=1, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted: ] ]
+  uid/pid:1000/2102 NetworkRequest [ LISTEN id=7, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&VALIDATED Unwanted:  Uid: 1000] ]
+  uid/pid:10018/2233 NetworkRequest [ TRACK_DEFAULT id=9, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10018] ]
+  uid/pid:1000/2102 NetworkRequest [ BACKGROUND_REQUEST id=2, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted: ] ]
+  
+mLegacyTypeTracker:
+  Supported types: 0 1 2 3 4 5 10 11 12 13 14 15 17
+  Current state:
+
+
+Tethering:
+  Configuration:
+    tetherableUsbRegexs: []
+    tetherableWifiRegexs: []
+    tetherableBluetoothRegexs: []
+    isDunRequired: false
+    chooseUpstreamAutomatically: false
+    preferredUpstreamIfaceTypes: [ETHERNET, WIFI, BLUETOOTH, MOBILE]
+    dhcpRanges: [192.168.42.2, 192.168.42.254, 192.168.43.2, 192.168.43.254, 192.168.44.2, 192.168.44.254, 192.168.45.2, 192.168.45.254, 192.168.46.2, 192.168.46.254, 192.168.47.2, 192.168.47.254, 192.168.48.2, 192.168.48.254, 192.168.49.2, 192.168.49.254]
+    defaultIPv4DNS: [8.8.4.4, 8.8.8.8]
+    provisioningApp: []
+    provisioningAppNoUi: 
+  Tether state:
+    Upstream wanted: false
+    Current upstream interface(s): null
+  Hardware offload:
+    Offload HALs not started
+    Current upstream: null
+    Exempt prefixes: []
+    NAT timeout update callbacks received during the last offload session: 0
+    NAT timeout update netlink errors during the last offload session: 0
+  Log:
+    2026-11-09T09:59:37.552 - MARK constructed
+    2026-11-09T09:59:37.564 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T09:59:37.564 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T09:59:48.543 - wlan0 is not a tetherable iface, ignoring
+    2026-11-09T09:59:48.569 - wlan0 is not a tetherable iface, ignoring
+    2026-11-09T09:59:49.483 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-09T16:59:59.211 - OBSERVED configuration changed
+    2026-11-09T16:59:59.236 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T16:59:59.236 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:00:06.023 - OBSERVED carrier config change
+    2026-11-09T17:00:06.030 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:00:06.030 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:00:25.732 - OBSERVED carrier config change
+    2026-11-09T17:00:25.737 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:00:25.738 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:00:30.301 - OBSERVED carrier config change
+    2026-11-09T17:00:30.307 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:00:30.307 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:00:43.972 - InitialState got CMD_UPSTREAM_CHANGED
+
+Packet keepalives:
+
+Bad Wi-Fi avoidance: unrestricted
+
+MultipathPolicyTracker:
+
+mValidationLogs (most recent first):
+100 - "AndroidWifi"
+  2026-11-09T09:59:49.387 - PROBE_DNS www.google.com 74ms OK 142.251.152.119
+  2026-11-09T09:59:49.392 - PROBE_DNS connectivitycheck.gstatic.com 38ms OK 142.250.199.227
+  2026-11-09T09:59:49.594 - PROBE_HTTP http://connectivitycheck.gstatic.com/generate_204 time=192ms ret=204 request={User-Agent=[Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36]} headers={null=[HTTP/1.1 204 No Content], Content-Length=[0], Cross-Origin-Resource-Policy=[cross-origin], Date=[Mon, 09 Nov 2026 09:59:52 GMT], X-Android-Received-Millis=[1794218389593], X-Android-Response-Source=[NETWORK 204], X-Android-Selected-Protocol=[http/1.1], X-Android-Sent-Millis=[1794218389476]}
+  2026-11-09T09:59:49.690 - PROBE_HTTPS https://www.google.com/generate_204 time=294ms ret=204 request={User-Agent=[Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36]} headers={null=[HTTP/1.1 204 No Content], Alt-Svc=[h3=":443"; ma=2592000,h3-29=":443"; ma=2592000], Content-Length=[0], Cross-Origin-Resource-Policy=[cross-origin], Date=[Mon, 09 Nov 2026 09:59:52 GMT], X-Android-Received-Millis=[1794218389689], X-Android-Response-Source=[NETWORK 204], X-Android-Selected-Protocol=[http/1.1], X-Android-Sent-Millis=[1794218389637]}
+
+mNetworkRequestInfoLogs (most recent first):
+  2026-11-09T09:59:42.267 - REGISTER uid/pid:10018/2233 NetworkRequest [ LISTEN id=10, [] ]
+  2026-11-09T09:59:41.674 - REGISTER uid/pid:10018/2233 NetworkRequest [ TRACK_DEFAULT id=9, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10018] ]
+  2026-11-09T09:59:41.666 - REGISTER uid/pid:10018/2233 NetworkRequest [ LISTEN id=8, [ Transports: WIFI Capabilities: NOT_VPN Unwanted: ] ]
+  2026-11-09T09:59:39.248 - REGISTER uid/pid:1000/2102 NetworkRequest [ LISTEN id=7, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&VALIDATED Unwanted:  Uid: 1000] ]
+  2026-11-09T09:59:38.962 - REGISTER uid/pid:1000/2102 NetworkRequest [ TRACK_DEFAULT id=6, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 1000] ]
+  2026-11-09T09:59:38.807 - REGISTER uid/pid:1000/2102 NetworkRequest [ LISTEN id=5, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 1000] ]
+  2026-11-09T09:59:38.800 - REGISTER uid/pid:1000/2102 NetworkRequest [ BACKGROUND_REQUEST id=2, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted: ] ]
+  2026-11-09T09:59:38.787 - REGISTER uid/pid:1000/2102 NetworkRequest [ LISTEN id=4, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 1000] ]
+  2026-11-09T09:59:37.823 - REGISTER uid/pid:1000/2102 NetworkRequest [ LISTEN id=3, [] ]
+  2026-11-09T09:59:37.532 - REGISTER uid/pid:1000/2102 NetworkRequest [ REQUEST id=1, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted: ] ]
+
+mNetworkInfoBlockingLogs (most recent first):
+
+NetTransition WakeLock activity (most recent first):
+  total acquisitions: 1
+  total releases: 0
+  cumulative duration: 0s
+  longest duration: 0s
+  currently holding WakeLock for: 0s
+  2026-11-09T17:00:43.971 - ACQUIRE for NetworkAgentInfo [WIFI () - 100]

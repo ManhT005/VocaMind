@@ -7,6 +7,8 @@ project entry point; generated build outputs stay in ignored build directories.
 
 | Document | Purpose |
 | --- | --- |
+| [UI-01 plan](plans/ui-01-polish-resilience.md) | User-provided P0 UI polish/resilience scope and acceptance matrix |
+| [UI-01 validation](ui-01-validation.md) | Layout/lifecycle fixes, host regression, offline device evidence and remaining acceptance gates |
 | [DATA-08 plan](plans/data-08-catalog-upgrade-rollback.md) | Milestone-based catalog upgrade, bundle rollback, userdata preservation and migration test plan |
 | [DATA-08 validation](data-08-validation.md) | Startup generation publication/recovery, shared tests, migration component evidence and device gates |
 | [SEARCH-01 performance validation](search-01-performance-validation.md) | Full-result cursor hydration optimization, emulator A/B raw samples, regression and reference-device HOLD |
