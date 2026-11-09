@@ -37,12 +37,21 @@ Downloaded original metadata, raw logs and ZIPs are retained locally in `build/u
 
 ## Regression and local evidence
 
-- `python -X utf8 -m unittest discover -s tools/validation -p 'test_ui02*.py' -v`:24 host-only fake-ADB tests PASS. Includes real runner-main control flow with Wi-Fi2, setup timeout, active-network rejection, settings0/1/2/3/null, evidence-write failure, primary+restore failure, contradictory flags and incomplete/offline artifact transfers. These are not Android integration passes.
+- `python -X utf8 -m unittest discover -s tools/validation -p 'test_ui02*.py' -v`:25 host-only fake-ADB tests PASS. Includes real runner-main control flow with Wi-Fi2, setup timeout, active-network rejection, settings0/1/2/3/null, evidence-write failure, primary+restore failure, contradictory flags and incomplete/offline artifact transfers. These are not Android integration passes.
 - Focused Java host tests: SearchViewModelTest + SearchVocabularyUseCaseTest =28 PASS,0 failures/errors/skips, JDK17 with TEMP `C:\tvm`. XML/logs under `build/ui02-review/focused-host-*`.
 - Discovery app/test APK build and lint PASS. QA app/test APK build and lint PASS; logs and exit files under `build/ui02-review/`.
 - Local Android API30: ten cases separately, two complete selected suites (10 pass/1 opt-in skip each), expected-failure probe accepted with full artifacts. Network restore is verified against the captured original state. Evidence is `build/ui02-review/local-api30/`; this is the exact dirty source manifest in that folder, not a claim of API26/35 execution.
 - QA profile repeat evidence is `build/ui02-review/qa-independent/`, `qa-repeat-1/`, `qa-repeat-2/`. Internal QA artifacts remain local and are not added to public CI upload paths.
-- CI runs the24 runner tests in a separately labelled **host only** step before each Discovery APK build. Existing Build & Test/Quiz checks are preserved.
+- CI runs the runner regression tests in a separately labelled **host only** step before each Discovery APK build. Existing Build & Test/Quiz checks are preserved.
+
+## Observed rerun at a6b907f
+
+[Run 42584868935](https://github.com/ManhT005/VocaMind/actions/runs/42584868935), exact head `a6b907f24e6a39852e90e17d4e836d3da565f371`:
+
+- Build & Test and Quiz: SUCCESS.
+- Discovery API35: SUCCESS. Downloaded artifact13658822294 confirms all ten independent methods, both suites10 pass/1 skip, expected-failure probe with full verified artifacts, and network restoration accepted with original/observed flags0/1/1. This is Android evidence, not inferred from a green build.
+- Discovery API26: FAILURE before instrumentation. New checked execution exposes `svc wifi disable` exit137 with empty stdout; cleanup also records `svc wifi enable` exit137. Final raw/effective state matches the original0/1/1, but failed cleanup commands still reject the run. No failure is silently ignored. Raw logs and artifact13659555575 are in `build/ui02-review/ci-fixed/`.
+- The cause of exit137 is not established by those artifacts. The next revision adds best-effort logcat/kernel/memory/process diagnostics **after restoration attempts**, preserves the primary exception and command return codes, and tests that ordering. It does not replace or ignore the failing command to manufacture offline evidence.
 
 ## New-head CI verification
 

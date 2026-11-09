@@ -65,6 +65,8 @@ class FakeAdb:
             return self.result(self.connectivity if self.connectivity is not None else 'Active default network: none\n')
         if args[:2] == ('pm', 'clear'): return self.result('Success')
         if args == ('getprop',): return self.result('[ro.build.version.sdk]: [mock]')
+        if args in [('logcat','-b','all','-d','-v','threadtime'),('dumpsys','meminfo'),('dumpsys','activity','processes'),('dmesg',),('id',)]:
+            return self.result('mock-only network failure diagnostics')
         if args[:2] == ('am', 'instrument'):
             self.instrumentations += 1
             return self.result('INSTRUMENTATION_STATUS: class=MockOnly\nINSTRUMENTATION_STATUS: test=mock\nINSTRUMENTATION_STATUS_CODE: 0\nINSTRUMENTATION_CODE: -1\n')
@@ -139,6 +141,17 @@ class NetworkTests(unittest.TestCase):
         with self.assertRaises(subprocess.TimeoutExpired):
             with self.session(adb).isolated(): self.fail('must not enter')
         adb.assert_restored(self)
+
+    def test_failure_diagnostics_run_after_restoration_and_keep_primary_error(self):
+        adb=FakeAdb()
+        with self.assertRaisesRegex(ValueError,'original failure'):
+            with self.session(adb).isolated(): raise ValueError('original failure')
+        adb.assert_restored(self)
+        report=json.loads((self.out/'network-failure-diagnostics.json').read_text())
+        self.assertIn('original failure',report['failure'])
+        self.assertTrue(all(c['returnCode']==0 for c in report['commands']))
+        self.assertLess(adb.commands.index(('settings','put','global','wifi_on','2')),
+                        adb.commands.index(('logcat','-b','all','-d','-v','threadtime')))
 
     def test_offline_evidence_write_failure_still_restores(self):
         adb=FakeAdb(); write=Path.write_text

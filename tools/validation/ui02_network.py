@@ -134,6 +134,29 @@ class OfflineNetwork:
         if errors:
             raise RuntimeError('Network restore failed: ' + '; '.join(errors))
 
+    def failure_diagnostics(self, failure):
+        # Run after restoration attempts: diagnostics must not delay restoring a changed radio.
+        report = {'failure': repr(failure), 'commands': []}
+        commands = [('logcat', ('logcat', '-b', 'all', '-d', '-v', 'threadtime')),
+                    ('memory', ('dumpsys', 'meminfo')),
+                    ('processes', ('dumpsys', 'activity', 'processes')),
+                    ('kernel', ('dmesg',)), ('identity', ('id',))]
+        for name, command in commands:
+            record = {'command': list(command)}
+            try:
+                result = self.shell(*command)
+                record['returnCode'] = result.returncode
+                filename = 'network-failure-' + name + '.txt'
+                (self.output/filename).write_text(result.stdout, encoding='utf-8')
+                record['file'] = filename
+            except Exception as error:
+                record['error'] = repr(error)
+            report['commands'].append(record)
+        try:
+            (self.output/'network-failure-diagnostics.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
+        except Exception as error:
+            failure.add_note('Cannot save network failure diagnostics: ' + repr(error))
+
     @contextmanager
     def isolated(self):
         # Snapshot may fail, but it is read-only. No mutation occurs without a restorable original state.
@@ -154,5 +177,8 @@ class OfflineNetwork:
                 self.restore(original)
             except Exception as cleanup_error:
                 if primary is None:
+                    self.failure_diagnostics(cleanup_error)
                     raise
                 primary.add_note('Network cleanup also failed: ' + repr(cleanup_error))
+            if primary is not None:
+                self.failure_diagnostics(primary)
