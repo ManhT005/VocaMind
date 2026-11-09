@@ -1,5 +1,7 @@
 # VocaMind documentation
 
+- [QA-02 plan](plans/qa-02-e2e-acceptance.md): complete offline P0 acceptance, AC matrix, team responsibilities, evidence and completion criteria.
+
 Project documentation lives in `docs/`. The repository root README is the
 project entry point; generated build outputs stay in ignored build directories.
 
