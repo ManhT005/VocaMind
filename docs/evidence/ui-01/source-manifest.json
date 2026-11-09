@@ -1,0 +1,52 @@
+{
+  "createdUtc": "2026-11-09T10:39:06.298976+00:00",
+  "baseCommit": "c5d0ad650fc7204805d4254b3657e7cb3aa57218",
+  "branch": "feature/ui-01-polish-resilience",
+  "state": "uncommitted working tree",
+  "scope": "modified/new app and UI-01 validation code; unchanged code comes from baseCommit",
+  "sourceBundleSha256": "8670d2ba418a15bacff6877df4cf3040c4dc9f9dfebb6bf33bc96facb7ca5e70",
+  "filesSha256": {
+    "app/build.gradle": "0414d117efd2024e1e80187a3e03c22ec222d6411767fe5751fc34b1ee2ccbb9",
+    "app/src/androidTest/java/com/vocamind/app/feature/ui/Ui01SmokeInstrumentedTest.java": "ef32ee1bc0732ff2d52015606084bfa75df65a239b5b2178840cdfbb0d07f8dd",
+    "app/src/main/AndroidManifest.xml": "a202e17ed9aa5c8b7944d07db19ed949aba387a5d14ed3282b2195d96bf967c2",
+    "app/src/main/java/com/vocamind/app/MainActivity.java": "8cd1e2f4e613cf02bc61b5d9d21ba474da97e8db5e53fd8debf98b428c70a0d1",
+    "app/src/main/java/com/vocamind/app/feature/flashcard/FlashcardFragment.java": "4e063836b56e3e523b440dd6fb3f9150cadaccccd41cdffd9adc9305fa4435bb",
+    "app/src/main/java/com/vocamind/app/feature/packs/PackDetailFragment.java": "4ad601c2d8f44be6c51810ac5e1234b910afc918868396b6ea580272f8d06ccb",
+    "app/src/main/java/com/vocamind/app/feature/quiz/QuizFragment.java": "168351532525d339a97a797b29ebaf2e663ae6bbc80ad1229c6254a5e27bf6ca",
+    "app/src/main/res/layout/fragment_flashcard.xml": "d12368bbe07af12c5669aa2baca385483e29aba69929e0360e12c50ada137a82",
+    "app/src/main/res/layout/fragment_pack_detail.xml": "8e8a6d540af572324c8415daf0ac5dbde6a3964e8cf48c4fd68b634042be1017",
+    "app/src/main/res/values/strings.xml": "2b2c1f58bc29dfbaf332be424a520ae69277ed1d284706ea0686c97616fd244e",
+    "app/src/test/java/com/vocamind/app/MainActivityInsetsTest.java": "4997de527903187b6f823e99f0318ce9269a7bef7b681b124adf69363e5a0993",
+    "app/src/test/java/com/vocamind/app/feature/flashcard/FlashcardFragmentTest.java": "7b792bb4912a0cc10ab871f8a281eb145411a69f168d10b2a65d1ce96bfd863e",
+    "app/src/test/java/com/vocamind/app/feature/quiz/QuizScreenTest.java": "5fa44e323600a6b779e0246f2becf077e23df799547157142a84d2be1795f3cd",
+    "app/src/test/java/com/vocamind/app/feature/ui/ResilienceLayoutTest.java": "e44fc10672297dea360aab5e827268de7123f82d48fd6332076c662b9823b524",
+    "tools/validation/ui01_device.py": "4776c004b5880164181471ad6590520720198eec6aa5e8be06947f4b84b4564f"
+  },
+  "checks": {
+    "finalHostLog": "final-head-checks.txt",
+    "unitTotals": {
+      "tests": 74,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "qaBuildLog": "qa-profile-final-checks.txt",
+    "smoke": "device-final/smoke.txt",
+    "reopen": "device-final/reopen.txt",
+    "reboot": "device-final/reboot-final-probe.txt",
+    "fullSuiteStatus": "FAIL; see full-unit-summary.json and validation for 52 Windows catalog/bootstrap failures"
+  },
+  "qaProfile": {
+    "property": "quiz03DeviceIsolation=true",
+    "applicationId": "com.vocamind.app.quiz03validation",
+    "localPreservedDirectory": ".tools/ui01-final-apks",
+    "apkSha256": {
+      "app-debug.apk": "4aa04c06382457d0483ffe8b35da3da820e7a5217572165b526ce19e194d4564",
+      "app-debug-androidTest.apk": "25f6e5a116c5ff87bd33b24a2b0daa48a0abdace08d48fab87205f616e4f9a09"
+    }
+  },
+  "finalNormalDebugApkSha256": {
+    "app/build/outputs/apk/debug/app-debug.apk": "25508b4d2ec56a2cf5e832ba39272a3e655aee288bb8d1ad0233e3ca9fae6808",
+    "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": "b571010eb0fb2e6ae78ce4c6a90b9ed48e0e957cdc04ce731af3be81b0065136"
+  }
+}

@@ -1,0 +1,432 @@
+1
+NetworkFactories for: PhoneSwitcherNetworkRequstListener TelephonyNetworkFactory[0] WIFI WIFI_UT
+
+Active default network: none
+
+Current Networks:
+
+Network Requests:
+  uid/pid:1000/2102 NetworkRequest [ LISTEN id=3, [] ]
+  uid/pid:1000/2102 NetworkRequest [ LISTEN id=4, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 1000] ]
+  uid/pid:1000/2102 NetworkRequest [ LISTEN id=5, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 1000] ]
+  uid/pid:10018/2233 NetworkRequest [ LISTEN id=8, [ Transports: WIFI Capabilities: NOT_VPN Unwanted: ] ]
+  uid/pid:1000/2102 NetworkRequest [ TRACK_DEFAULT id=6, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 1000] ]
+  uid/pid:10018/2233 NetworkRequest [ LISTEN id=10, [] ]
+  uid/pid:1000/2102 NetworkRequest [ REQUEST id=1, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted: ] ]
+  uid/pid:1000/2102 NetworkRequest [ LISTEN id=7, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&VALIDATED Unwanted:  Uid: 1000] ]
+  uid/pid:10018/2233 NetworkRequest [ TRACK_DEFAULT id=9, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10018] ]
+  uid/pid:1000/2102 NetworkRequest [ BACKGROUND_REQUEST id=2, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted: ] ]
+  
+mLegacyTypeTracker:
+  Supported types: 0 1 2 3 4 5 10 11 12 13 14 15 17
+  Current state:
+
+
+Tethering:
+  Configuration:
+    tetherableUsbRegexs: []
+    tetherableWifiRegexs: []
+    tetherableBluetoothRegexs: []
+    isDunRequired: false
+    chooseUpstreamAutomatically: false
+    preferredUpstreamIfaceTypes: [ETHERNET, WIFI, BLUETOOTH, MOBILE]
+    dhcpRanges: [192.168.42.2, 192.168.42.254, 192.168.43.2, 192.168.43.254, 192.168.44.2, 192.168.44.254, 192.168.45.2, 192.168.45.254, 192.168.46.2, 192.168.46.254, 192.168.47.2, 192.168.47.254, 192.168.48.2, 192.168.48.254, 192.168.49.2, 192.168.49.254]
+    defaultIPv4DNS: [8.8.4.4, 8.8.8.8]
+    provisioningApp: []
+    provisioningAppNoUi: 
+  Tether state:
+    Upstream wanted: false
+    Current upstream interface(s): null
+  Hardware offload:
+    Offload HALs not started
+    Current upstream: null
+    Exempt prefixes: []
+    NAT timeout update callbacks received during the last offload session: 0
+    NAT timeout update netlink errors during the last offload session: 0
+  Log:
+    2026-11-09T09:59:37.552 - MARK constructed
+    2026-11-09T09:59:37.564 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T09:59:37.564 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T09:59:48.543 - wlan0 is not a tetherable iface, ignoring
+    2026-11-09T09:59:48.569 - wlan0 is not a tetherable iface, ignoring
+    2026-11-09T09:59:49.483 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-09T16:59:59.211 - OBSERVED configuration changed
+    2026-11-09T16:59:59.236 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T16:59:59.236 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:00:06.023 - OBSERVED carrier config change
+    2026-11-09T17:00:06.030 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:00:06.030 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:00:25.732 - OBSERVED carrier config change
+    2026-11-09T17:00:25.737 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:00:25.738 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:00:30.301 - OBSERVED carrier config change
+    2026-11-09T17:00:30.307 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:00:30.307 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:00:43.972 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-09T17:00:46.590 - OBSERVED carrier config change
+    2026-11-09T17:00:46.594 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:00:46.595 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:00:50.997 - OBSERVED carrier config change
+    2026-11-09T17:00:51.002 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:00:51.002 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:00:59.148 - OBSERVED carrier config change
+    2026-11-09T17:00:59.153 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:00:59.154 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:01:00.619 - OBSERVED carrier config change
+    2026-11-09T17:01:00.624 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:01:00.624 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:01:34.748 - wlan0 is not a tetherable iface, ignoring
+    2026-11-09T17:01:34.754 - wlan0 is not a tetherable iface, ignoring
+    2026-11-09T17:01:35.035 - InitialState got CMD_UPSTREAM_CHANGED
+    2026-11-09T17:01:42.137 - OBSERVED carrier config change
+    2026-11-09T17:01:42.142 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:01:42.142 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:01:45.705 - OBSERVED carrier config change
+    2026-11-09T17:01:45.707 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:01:45.707 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:01:56.356 - OBSERVED carrier config change
+    2026-11-09T17:01:56.358 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:01:56.359 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:02:00.622 - OBSERVED carrier config change
+    2026-11-09T17:02:00.627 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:02:00.628 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:02:16.066 - OBSERVED carrier config change
+    2026-11-09T17:02:16.078 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:02:16.078 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:02:20.815 - OBSERVED carrier config change
+    2026-11-09T17:02:20.817 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:02:20.817 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:02:32.248 - OBSERVED carrier config change
+    2026-11-09T17:02:32.251 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:02:32.252 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:02:36.639 - OBSERVED carrier config change
+    2026-11-09T17:02:36.643 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:02:36.643 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:02:51.570 - OBSERVED carrier config change
+    2026-11-09T17:02:51.574 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:02:51.574 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:02:51.588 - OBSERVED carrier config change
+    2026-11-09T17:02:51.589 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:02:51.589 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:03:02.349 - OBSERVED carrier config change
+    2026-11-09T17:03:02.351 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:03:02.351 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:03:07.081 - OBSERVED carrier config change
+    2026-11-09T17:03:07.095 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:03:07.095 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:03:16.929 - OBSERVED carrier config change
+    2026-11-09T17:03:16.934 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:03:16.934 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:03:21.358 - OBSERVED carrier config change
+    2026-11-09T17:03:21.364 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:03:21.364 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:03:21.625 - OBSERVED carrier config change
+    2026-11-09T17:03:21.634 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:03:21.634 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:03:26.668 - OBSERVED carrier config change
+    2026-11-09T17:03:26.670 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:03:26.670 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:03:26.675 - OBSERVED carrier config change
+    2026-11-09T17:03:26.678 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:03:26.678 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:03:31.687 - OBSERVED carrier config change
+    2026-11-09T17:03:31.690 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:03:31.690 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:03:31.700 - OBSERVED carrier config change
+    2026-11-09T17:03:31.703 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:03:31.704 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:03:36.781 - OBSERVED carrier config change
+    2026-11-09T17:03:36.786 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:03:36.786 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:03:36.807 - OBSERVED carrier config change
+    2026-11-09T17:03:36.815 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:03:36.815 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:03:41.388 - OBSERVED carrier config change
+    2026-11-09T17:03:41.426 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:03:41.426 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:03:41.717 - OBSERVED carrier config change
+    2026-11-09T17:03:41.723 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:03:41.723 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:03:46.446 - OBSERVED carrier config change
+    2026-11-09T17:03:46.450 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:03:46.452 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:03:46.756 - OBSERVED carrier config change
+    2026-11-09T17:03:46.759 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:03:46.759 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:03:51.439 - OBSERVED carrier config change
+    2026-11-09T17:03:51.451 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:03:51.452 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:03:51.763 - OBSERVED carrier config change
+    2026-11-09T17:03:51.766 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:03:51.767 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:03:56.660 - OBSERVED carrier config change
+    2026-11-09T17:03:56.676 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:03:56.677 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:03:57.086 - OBSERVED carrier config change
+    2026-11-09T17:03:57.093 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:03:57.094 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:02.330 - OBSERVED carrier config change
+    2026-11-09T17:04:02.362 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:02.362 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:07.668 - OBSERVED carrier config change
+    2026-11-09T17:04:07.685 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:07.686 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:07.743 - OBSERVED carrier config change
+    2026-11-09T17:04:07.764 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:07.764 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:13.329 - OBSERVED carrier config change
+    2026-11-09T17:04:13.333 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:13.347 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:16.574 - OBSERVED carrier config change
+    2026-11-09T17:04:16.583 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:16.584 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:16.914 - OBSERVED carrier config change
+    2026-11-09T17:04:16.916 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:16.917 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:21.831 - OBSERVED carrier config change
+    2026-11-09T17:04:21.842 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:21.843 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:21.863 - OBSERVED carrier config change
+    2026-11-09T17:04:21.864 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:21.865 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:26.803 - OBSERVED carrier config change
+    2026-11-09T17:04:26.808 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:26.808 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:26.814 - OBSERVED carrier config change
+    2026-11-09T17:04:26.830 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:26.830 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:31.486 - OBSERVED carrier config change
+    2026-11-09T17:04:31.492 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:31.492 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:31.774 - OBSERVED carrier config change
+    2026-11-09T17:04:31.775 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:31.775 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:36.523 - OBSERVED carrier config change
+    2026-11-09T17:04:36.528 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:36.529 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:36.791 - OBSERVED carrier config change
+    2026-11-09T17:04:36.797 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:36.797 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:41.513 - OBSERVED carrier config change
+    2026-11-09T17:04:41.521 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:41.521 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:41.773 - OBSERVED carrier config change
+    2026-11-09T17:04:41.779 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:41.779 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:46.588 - OBSERVED carrier config change
+    2026-11-09T17:04:46.599 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:46.599 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:46.938 - OBSERVED carrier config change
+    2026-11-09T17:04:46.939 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:46.939 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:51.838 - OBSERVED carrier config change
+    2026-11-09T17:04:51.842 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:51.842 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:51.863 - OBSERVED carrier config change
+    2026-11-09T17:04:51.871 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:51.871 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:56.557 - OBSERVED carrier config change
+    2026-11-09T17:04:56.562 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:56.563 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:04:56.826 - OBSERVED carrier config change
+    2026-11-09T17:04:56.830 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:04:56.830 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:01.552 - OBSERVED carrier config change
+    2026-11-09T17:05:01.558 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:01.559 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:01.818 - OBSERVED carrier config change
+    2026-11-09T17:05:01.825 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:01.825 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:06.543 - OBSERVED carrier config change
+    2026-11-09T17:05:06.547 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:06.547 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:06.813 - OBSERVED carrier config change
+    2026-11-09T17:05:06.816 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:06.816 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:11.936 - OBSERVED carrier config change
+    2026-11-09T17:05:11.942 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:11.942 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:11.954 - OBSERVED carrier config change
+    2026-11-09T17:05:11.959 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:11.959 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:17.008 - OBSERVED carrier config change
+    2026-11-09T17:05:17.015 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:17.015 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:17.043 - OBSERVED carrier config change
+    2026-11-09T17:05:17.051 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:17.053 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:22.141 - OBSERVED carrier config change
+    2026-11-09T17:05:22.143 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:22.143 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:22.201 - OBSERVED carrier config change
+    2026-11-09T17:05:22.203 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:22.204 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:26.638 - OBSERVED carrier config change
+    2026-11-09T17:05:26.648 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:26.648 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:27.149 - OBSERVED carrier config change
+    2026-11-09T17:05:27.151 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:27.151 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:31.656 - OBSERVED carrier config change
+    2026-11-09T17:05:31.665 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:31.665 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:32.248 - OBSERVED carrier config change
+    2026-11-09T17:05:32.263 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:32.263 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:46.160 - OBSERVED carrier config change
+    2026-11-09T17:05:46.178 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:46.178 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:47.839 - OBSERVED carrier config change
+    2026-11-09T17:05:47.843 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:47.844 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:48.272 - OBSERVED carrier config change
+    2026-11-09T17:05:48.283 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:48.283 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:52.295 - OBSERVED carrier config change
+    2026-11-09T17:05:52.297 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:52.297 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:52.574 - OBSERVED carrier config change
+    2026-11-09T17:05:52.578 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:52.578 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:57.596 - OBSERVED carrier config change
+    2026-11-09T17:05:57.599 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:57.599 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:05:57.625 - OBSERVED carrier config change
+    2026-11-09T17:05:57.628 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:05:57.628 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:06:02.301 - OBSERVED carrier config change
+    2026-11-09T17:06:02.306 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:06:02.306 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:06:02.572 - OBSERVED carrier config change
+    2026-11-09T17:06:02.576 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:06:02.576 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:06:07.303 - OBSERVED carrier config change
+    2026-11-09T17:06:07.335 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:06:07.335 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:06:07.650 - OBSERVED carrier config change
+    2026-11-09T17:06:07.653 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:06:07.653 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:06:12.310 - OBSERVED carrier config change
+    2026-11-09T17:06:12.314 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:06:12.314 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:06:12.572 - OBSERVED carrier config change
+    2026-11-09T17:06:12.577 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:06:12.577 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:06:17.838 - OBSERVED carrier config change
+    2026-11-09T17:06:17.845 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:06:17.845 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:06:17.898 - OBSERVED carrier config change
+    2026-11-09T17:06:17.901 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:06:17.902 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:06:22.855 - OBSERVED carrier config change
+    2026-11-09T17:06:22.872 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:06:22.873 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:06:22.932 - OBSERVED carrier config change
+    2026-11-09T17:06:22.936 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:06:22.936 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:06:33.277 - OBSERVED carrier config change
+    2026-11-09T17:06:33.834 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:06:33.834 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:06:45.359 - OBSERVED carrier config change
+    2026-11-09T17:06:45.954 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:06:45.954 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:06:46.103 - OBSERVED carrier config change
+    2026-11-09T17:06:46.270 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:06:46.275 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:06:56.936 - OBSERVED carrier config change
+    2026-11-09T17:06:56.942 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:06:56.943 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:06:59.360 - OBSERVED carrier config change
+    2026-11-09T17:06:59.362 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:06:59.363 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:07:14.400 - OBSERVED carrier config change
+    2026-11-09T17:07:14.407 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:07:14.407 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:07:14.602 - OBSERVED carrier config change
+    2026-11-09T17:07:14.607 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:07:14.607 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:07:28.285 - OBSERVED carrier config change
+    2026-11-09T17:07:28.288 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:07:28.288 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:07:28.334 - OBSERVED carrier config change
+    2026-11-09T17:07:28.342 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:07:28.343 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:07:33.673 - OBSERVED carrier config change
+    2026-11-09T17:07:33.678 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:07:33.678 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:07:33.723 - OBSERVED carrier config change
+    2026-11-09T17:07:33.732 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:07:33.733 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:07:38.924 - OBSERVED carrier config change
+    2026-11-09T17:07:38.934 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:07:38.934 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:07:41.809 - OBSERVED carrier config change
+    2026-11-09T17:07:41.814 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:07:41.814 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:07:42.071 - OBSERVED carrier config change
+    2026-11-09T17:07:42.074 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:07:42.074 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:07:47.904 - OBSERVED carrier config change
+    2026-11-09T17:07:47.913 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:07:47.914 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:07:50.863 - OBSERVED carrier config change
+    2026-11-09T17:07:50.897 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:07:50.898 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:07:54.830 - OBSERVED carrier config change
+    2026-11-09T17:07:54.837 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:07:54.837 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:07:54.856 - OBSERVED carrier config change
+    2026-11-09T17:07:54.859 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:07:54.859 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:08:02.056 - OBSERVED carrier config change
+    2026-11-09T17:08:02.065 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:08:02.065 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:08:04.185 - OBSERVED carrier config change
+    2026-11-09T17:08:04.190 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:08:04.193 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:08:04.821 - OBSERVED carrier config change
+    2026-11-09T17:08:04.833 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:08:04.833 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+    2026-11-09T17:08:08.493 - InitialState got CMD_UPSTREAM_CHANGED
+
+Packet keepalives:
+
+Bad Wi-Fi avoidance: unrestricted
+
+MultipathPolicyTracker:
+
+mValidationLogs (most recent first):
+101 - "AndroidWifi"
+  2026-11-09T17:01:35.005 - PROBE_DNS www.google.com 71ms OK 142.251.152.119
+  2026-11-09T17:01:35.009 - PROBE_DNS connectivitycheck.gstatic.com 71ms OK 142.250.198.195
+  2026-11-09T17:01:35.113 - PROBE_HTTP http://connectivitycheck.gstatic.com/generate_204 time=104ms ret=204 request={User-Agent=[Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36]} headers={null=[HTTP/1.1 204 No Content], Content-Length=[0], Cross-Origin-Resource-Policy=[cross-origin], Date=[Mon, 09 Nov 2026 10:01:36 GMT], X-Android-Received-Millis=[1794218495113], X-Android-Response-Source=[NETWORK 204], X-Android-Selected-Protocol=[http/1.1], X-Android-Sent-Millis=[1794218495067]}
+  2026-11-09T17:01:35.164 - PROBE_HTTPS https://www.google.com/generate_204 time=156ms ret=204 request={User-Agent=[Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36]} headers={null=[HTTP/1.1 204 No Content], Alt-Svc=[h3=":443"; ma=2592000,h3-29=":443"; ma=2592000], Content-Length=[0], Cross-Origin-Resource-Policy=[cross-origin], Date=[Mon, 09 Nov 2026 10:01:36 GMT], X-Android-Received-Millis=[1794218495164], X-Android-Response-Source=[NETWORK 204], X-Android-Selected-Protocol=[http/1.1], X-Android-Sent-Millis=[1794218495127]}
+100 - "AndroidWifi"
+  2026-11-09T09:59:49.387 - PROBE_DNS www.google.com 74ms OK 142.251.152.119
+  2026-11-09T09:59:49.392 - PROBE_DNS connectivitycheck.gstatic.com 38ms OK 142.250.199.227
+  2026-11-09T09:59:49.594 - PROBE_HTTP http://connectivitycheck.gstatic.com/generate_204 time=192ms ret=204 request={User-Agent=[Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36]} headers={null=[HTTP/1.1 204 No Content], Content-Length=[0], Cross-Origin-Resource-Policy=[cross-origin], Date=[Mon, 09 Nov 2026 09:59:52 GMT], X-Android-Received-Millis=[1794218389593], X-Android-Response-Source=[NETWORK 204], X-Android-Selected-Protocol=[http/1.1], X-Android-Sent-Millis=[1794218389476]}
+  2026-11-09T09:59:49.690 - PROBE_HTTPS https://www.google.com/generate_204 time=294ms ret=204 request={User-Agent=[Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36]} headers={null=[HTTP/1.1 204 No Content], Alt-Svc=[h3=":443"; ma=2592000,h3-29=":443"; ma=2592000], Content-Length=[0], Cross-Origin-Resource-Policy=[cross-origin], Date=[Mon, 09 Nov 2026 09:59:52 GMT], X-Android-Received-Millis=[1794218389689], X-Android-Response-Source=[NETWORK 204], X-Android-Selected-Protocol=[http/1.1], X-Android-Sent-Millis=[1794218389637]}
+
+mNetworkRequestInfoLogs (most recent first):
+  2026-11-09T09:59:42.267 - REGISTER uid/pid:10018/2233 NetworkRequest [ LISTEN id=10, [] ]
+  2026-11-09T09:59:41.674 - REGISTER uid/pid:10018/2233 NetworkRequest [ TRACK_DEFAULT id=9, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10018] ]
+  2026-11-09T09:59:41.666 - REGISTER uid/pid:10018/2233 NetworkRequest [ LISTEN id=8, [ Transports: WIFI Capabilities: NOT_VPN Unwanted: ] ]
+  2026-11-09T09:59:39.248 - REGISTER uid/pid:1000/2102 NetworkRequest [ LISTEN id=7, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&VALIDATED Unwanted:  Uid: 1000] ]
+  2026-11-09T09:59:38.962 - REGISTER uid/pid:1000/2102 NetworkRequest [ TRACK_DEFAULT id=6, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 1000] ]
+  2026-11-09T09:59:38.807 - REGISTER uid/pid:1000/2102 NetworkRequest [ LISTEN id=5, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 1000] ]
+  2026-11-09T09:59:38.800 - REGISTER uid/pid:1000/2102 NetworkRequest [ BACKGROUND_REQUEST id=2, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted: ] ]
+  2026-11-09T09:59:38.787 - REGISTER uid/pid:1000/2102 NetworkRequest [ LISTEN id=4, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 1000] ]
+  2026-11-09T09:59:37.823 - REGISTER uid/pid:1000/2102 NetworkRequest [ LISTEN id=3, [] ]
+  2026-11-09T09:59:37.532 - REGISTER uid/pid:1000/2102 NetworkRequest [ REQUEST id=1, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted: ] ]
+
+mNetworkInfoBlockingLogs (most recent first):
+
+NetTransition WakeLock activity (most recent first):
+  total acquisitions: 2
+  total releases: 1
+  cumulative duration: 52s
+  longest duration: 52s
+  currently holding WakeLock for: 0s
+  2026-11-09T17:08:08.490 - ACQUIRE for NetworkAgentInfo [WIFI () - 101]
+  2026-11-09T17:01:36.018 - RELEASE (EVENT_CLEAR_NET_TRANSITION_WAKELOCK)
+  2026-11-09T17:00:43.971 - ACQUIRE for NetworkAgentInfo [WIFI () - 100]

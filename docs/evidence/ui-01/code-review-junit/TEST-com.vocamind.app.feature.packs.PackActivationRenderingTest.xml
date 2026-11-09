@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.packs.PackActivationRenderingTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-11-09T10:57:22" hostname="DESKTOP-SB4BN4D" time="53.567">
+  <properties/>
+  <testcase name="detailDisablesWhilePendingThenShowsPersistedActiveAndPaused[26]" classname="com.vocamind.app.feature.packs.PackActivationRenderingTest" time="9.44"/>
+  <testcase name="todayShowsCtaOnlyAfterSuccessfulReadAndNeverWrites[26]" classname="com.vocamind.app.feature.packs.PackActivationRenderingTest" time="0.543"/>
+  <testcase name="unknownPackShowsNotFoundWithoutRetry[26]" classname="com.vocamind.app.feature.packs.PackActivationRenderingTest" time="0.512"/>
+  <testcase name="detailDisablesWhilePendingThenShowsPersistedActiveAndPaused" classname="com.vocamind.app.feature.packs.PackActivationRenderingTest" time="16.107"/>
+  <testcase name="todayShowsCtaOnlyAfterSuccessfulReadAndNeverWrites" classname="com.vocamind.app.feature.packs.PackActivationRenderingTest" time="0.853"/>
+  <testcase name="unknownPackShowsNotFoundWithoutRetry" classname="com.vocamind.app.feature.packs.PackActivationRenderingTest" time="0.374"/>
+  <testcase name="longHeaderStillDragsAfterScrolledWordsBecomeAnError[26]" classname="com.vocamind.app.feature.packs.PackActivationRenderingTest" time="13.193"/>
+  <testcase name="longHeaderStillDragsAfterScrolledWordsBecomeAnError" classname="com.vocamind.app.feature.packs.PackActivationRenderingTest" time="12.432"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,11 @@
+--------- beginning of system
+--------- beginning of main
+--------- beginning of crash
+11-09 17:08:21.067  6426  6478 I TestRunner: run started: 1 tests
+11-09 17:08:21.074  6426  6478 I TestRunner: started: aTenCardsAndQuizKeepCommittedDataThroughRecreationOffline(com.vocamind.app.feature.ui.Ui01SmokeInstrumentedTest)
+11-09 17:09:46.831  6426  6478 I TestRunner: finished: aTenCardsAndQuizKeepCommittedDataThroughRecreationOffline(com.vocamind.app.feature.ui.Ui01SmokeInstrumentedTest)
+11-09 17:09:46.857  6426  6478 I TestRunner: run finished: 1 tests, 0 failed, 0 ignored
+11-09 17:09:55.490  7566  7619 I TestRunner: run started: 1 tests
+11-09 17:09:55.495  7566  7619 I TestRunner: started: bCommittedDataSurvivesReopenProbe(com.vocamind.app.feature.ui.Ui01SmokeInstrumentedTest)
+11-09 17:10:02.398  7566  7619 I TestRunner: finished: bCommittedDataSurvivesReopenProbe(com.vocamind.app.feature.ui.Ui01SmokeInstrumentedTest)
+11-09 17:10:02.785  7566  7619 I TestRunner: run finished: 1 tests, 0 failed, 0 ignored

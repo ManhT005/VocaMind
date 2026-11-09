@@ -1,0 +1,9 @@
+LDPlayer index 0: recovery verified after stopping validation JVM/AVD.
+cmd connectivity airplane-mode disable: exit 0
+svc wifi enable: exit 0
+airplane_mode_on=0
+wifi_on=1
+Active default network: 100
+WiFi state: CONNECTED/CONNECTED
+Raw dump with private SSID/network addresses retained locally in .tools/ui01-ldplayer-recovery-private.txt (gitignored).
+Raw dump SHA256: ec82f227ffb5d937c307cd3f9a6af4cfe8c2cfa4e00ae2cb5a97aee9b1570a06

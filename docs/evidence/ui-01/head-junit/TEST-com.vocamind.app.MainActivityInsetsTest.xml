@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.MainActivityInsetsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-11-09T09:42:56" hostname="DESKTOP-SB4BN4D" time="20.735">
+  <properties/>
+  <testcase name="keyboardUsesLargerInsetAndClosingItRestoresSystemBars" classname="com.vocamind.app.MainActivityInsetsTest" time="20.735"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

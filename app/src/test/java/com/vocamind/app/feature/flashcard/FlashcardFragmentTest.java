@@ -132,6 +132,14 @@ public class FlashcardFragmentTest {
         assertEquals(2, writes);
     }
 
+    @Test public void missingIpaHasTheSameReadableFallbackAsVocabularyDetail() {
+        FragmentFlashcardBinding b = binding();
+        b.card.performClick();
+        assertEquals(View.VISIBLE, b.cardIpa.getVisibility());
+        assertEquals(controller.get().getString(R.string.word_ipa_missing), b.cardIpa.getText().toString());
+        assertEquals(0, writes);
+    }
+
     @Test public void configurationChangeWhileSavingKeepsLockAndOccurrence() {
         FragmentFlashcardBinding b = binding();
         b.card.performClick();

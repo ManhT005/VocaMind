@@ -1,0 +1,76 @@
+NetworkFactories for: PhoneSwitcherNetworkRequstListener WIFI TelephonyNetworkFactory[0] WIFI_UT
+
+Active default network: none
+
+Current Networks:
+
+Network Requests:
+  uid/pid:1000/1950 NetworkRequest [ TRACK_DEFAULT id=6, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 1000] ]
+  uid/pid:1000/1950 NetworkRequest [ LISTEN id=3, [] ]
+  uid/pid:1000/1950 NetworkRequest [ LISTEN id=4, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 1000] ]
+  uid/pid:1000/1950 NetworkRequest [ LISTEN id=7, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&VALIDATED Unwanted:  Uid: 1000] ]
+  uid/pid:1000/1950 NetworkRequest [ REQUEST id=1, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted: ] ]
+  uid/pid:1000/1950 NetworkRequest [ LISTEN id=5, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 1000] ]
+  uid/pid:10018/2109 NetworkRequest [ LISTEN id=8, [ Transports: WIFI Capabilities: NOT_VPN Unwanted: ] ]
+  uid/pid:10018/2109 NetworkRequest [ LISTEN id=10, [] ]
+  uid/pid:10018/2109 NetworkRequest [ TRACK_DEFAULT id=9, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10018] ]
+  uid/pid:1000/1950 NetworkRequest [ BACKGROUND_REQUEST id=2, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted: ] ]
+  
+mLegacyTypeTracker:
+  Supported types: 0 1 2 3 4 5 10 11 12 13 14 15 17
+  Current state:
+
+
+Tethering:
+  Configuration:
+    tetherableUsbRegexs: []
+    tetherableWifiRegexs: []
+    tetherableBluetoothRegexs: []
+    isDunRequired: false
+    chooseUpstreamAutomatically: false
+    preferredUpstreamIfaceTypes: [ETHERNET, WIFI, BLUETOOTH, MOBILE]
+    dhcpRanges: [192.168.42.2, 192.168.42.254, 192.168.43.2, 192.168.43.254, 192.168.44.2, 192.168.44.254, 192.168.45.2, 192.168.45.254, 192.168.46.2, 192.168.46.254, 192.168.47.2, 192.168.47.254, 192.168.48.2, 192.168.48.254, 192.168.49.2, 192.168.49.254]
+    defaultIPv4DNS: [8.8.4.4, 8.8.8.8]
+    provisioningApp: []
+    provisioningAppNoUi: 
+  Tether state:
+    Upstream wanted: false
+    Current upstream interface(s): null
+  Hardware offload:
+    Offload HALs not started
+    Current upstream: null
+    Exempt prefixes: []
+    NAT timeout update callbacks received during the last offload session: 0
+    NAT timeout update netlink errors during the last offload session: 0
+  Log:
+    2026-11-09T17:31:02.720 - MARK constructed
+    2026-11-09T17:31:02.724 - [config] DUN check returned: DUN_UNSPECIFIED
+    2026-11-09T17:31:02.726 - [config] TetheringConfiguration{tetherableUsbRegexs:[] tetherableWifiRegexs:[] tetherableBluetoothRegexs:[] isDunRequired:false chooseUpstreamAutomatically:false preferredUpstreamIfaceTypes:[ETHERNET,WIFI,BLUETOOTH,MOBILE] provisioningApp:[] provisioningAppNoUi:}
+
+Packet keepalives:
+
+Bad Wi-Fi avoidance: unrestricted
+
+MultipathPolicyTracker:
+
+mValidationLogs (most recent first):
+
+mNetworkRequestInfoLogs (most recent first):
+  2026-11-09T17:31:07.379 - REGISTER uid/pid:10018/2109 NetworkRequest [ LISTEN id=10, [] ]
+  2026-11-09T17:31:05.611 - REGISTER uid/pid:10018/2109 NetworkRequest [ TRACK_DEFAULT id=9, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 10018] ]
+  2026-11-09T17:31:05.603 - REGISTER uid/pid:10018/2109 NetworkRequest [ LISTEN id=8, [ Transports: WIFI Capabilities: NOT_VPN Unwanted: ] ]
+  2026-11-09T17:31:03.992 - REGISTER uid/pid:1000/1950 NetworkRequest [ LISTEN id=7, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&VALIDATED Unwanted:  Uid: 1000] ]
+  2026-11-09T17:31:03.468 - REGISTER uid/pid:1000/1950 NetworkRequest [ TRACK_DEFAULT id=6, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Unwanted:  Uid: 1000] ]
+  2026-11-09T17:31:03.277 - REGISTER uid/pid:1000/1950 NetworkRequest [ LISTEN id=5, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 1000] ]
+  2026-11-09T17:31:03.263 - REGISTER uid/pid:1000/1950 NetworkRequest [ BACKGROUND_REQUEST id=2, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted: ] ]
+  2026-11-09T17:31:03.232 - REGISTER uid/pid:1000/1950 NetworkRequest [ LISTEN id=4, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted:  Uid: 1000] ]
+  2026-11-09T17:31:02.857 - REGISTER uid/pid:1000/1950 NetworkRequest [ LISTEN id=3, [] ]
+  2026-11-09T17:31:02.714 - REGISTER uid/pid:1000/1950 NetworkRequest [ REQUEST id=1, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Unwanted: ] ]
+
+mNetworkInfoBlockingLogs (most recent first):
+
+NetTransition WakeLock activity (most recent first):
+  total acquisitions: 0
+  total releases: 0
+  cumulative duration: 0s
+  longest duration: 0s

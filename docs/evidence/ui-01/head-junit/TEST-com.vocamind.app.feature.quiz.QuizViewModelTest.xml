@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.quiz.QuizViewModelTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2026-11-09T09:43:51" hostname="DESKTOP-SB4BN4D" time="0.792">
+  <properties/>
+  <testcase name="restoredSessionRejectsAt599msAndAcceptsAt600ms" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.084"/>
+  <testcase name="locksAnswersAndDebouncesAcrossQuestions" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.043"/>
+  <testcase name="closingScreenDuringSaveDoesNotAbandonCompletedPayload" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.043"/>
+  <testcase name="malformedClockMarkerProducesRestoreError" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.054"/>
+  <testcase name="snapshotKeepsOrderFeedbackAndCompletedKey" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.114"/>
+  <testcase name="abandonDoesNotSaveAndCompletedCannotAbandon" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.089"/>
+  <testcase name="invalidSnapshotShowsErrorWithoutGeneratingOrSaving" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.072"/>
+  <testcase name="restoredClockResetDoesNotLockAnswersAndStartsANewBoundary" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.048"/>
+  <testcase name="legacySnapshotWithoutClockMarkerStillRestores" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.037"/>
+  <testcase name="resetMarkerStaysDiscardedAfterClockCatchesUpAndAnotherRestore" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.049"/>
+  <testcase name="repositoryErrorAndInvalidInputAreNotEmpty" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.049"/>
+  <testcase name="clearingDuringGenerationDropsLateCallback" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.033"/>
+  <testcase name="emptyPoolIsNotAnErrorAndRetryReadsAgain" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.037"/>
+  <testcase name="completesOnLastAnswerAndRetriesSamePayload" classname="com.vocamind.app.feature.quiz.QuizViewModelTest" time="0.039"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

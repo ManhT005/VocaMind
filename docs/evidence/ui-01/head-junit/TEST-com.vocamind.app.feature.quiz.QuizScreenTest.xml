@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.feature.quiz.QuizScreenTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-11-09T09:43:48" hostname="DESKTOP-SB4BN4D" time="3.427">
+  <properties/>
+  <testcase name="readFailureShowsAnActionableMessageWithoutInternalCodes" classname="com.vocamind.app.feature.quiz.QuizScreenTest" time="0.751"/>
+  <testcase name="toolbarAndSystemBackShareCancelAndConfirmExit" classname="com.vocamind.app.feature.quiz.QuizScreenTest" time="1.259"/>
+  <testcase name="fullFlowKeepsFeedbackThroughRecreationAndSavesOnce" classname="com.vocamind.app.feature.quiz.QuizScreenTest" time="1.416"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Invalid ID 0x00000000.
+Invalid ID 0x00000000.
+Invalid ID 0x00000000.
+Invalid ID 0x00000000.
+]]></system-err>
+</testsuite>

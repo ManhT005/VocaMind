@@ -21,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (view, windowInsets) -> {
             Insets insets = windowInsets.getInsets(
-                    WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
+                    WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout()
+                            | WindowInsetsCompat.Type.ime());
             view.setPadding(insets.left, insets.top, insets.right, insets.bottom);
             return windowInsets;
         });
