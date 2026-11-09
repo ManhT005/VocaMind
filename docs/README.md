@@ -1,5 +1,7 @@
 # VocaMind documentation
 
+- [UI-01 plan](plans/ui-01-polish-resilience.md): P0 UI polish, lifecycle resilience, accessibility, seven-hour plan and acceptance matrix.
+
 Project documentation lives in `docs/`. The repository root README is the
 project entry point; generated build outputs stay in ignored build directories.
 
