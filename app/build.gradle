@@ -46,6 +46,8 @@ def prepareReleaseCatalogTests = tasks.register('prepareReleaseCatalogTests', Ex
 
 // Opt-in QA application ID keeps the internal corpus and its installed DB separate.
 def catalogQaEnabled = providers.gradleProperty('catalogQa').map { it == 'true' }.getOrElse(false)
+def discoveryUiEnabled = providers.gradleProperty('discoveryUi').orNull == 'true'
+if (discoveryUiEnabled && catalogQaEnabled) throw new GradleException('Choose discoveryUi or catalogQa')
 def data09ProfileEnabled = providers.gradleProperty('data09Profile').orNull == 'true'
 def data09QaEnabled = providers.gradleProperty('data09Qa').orNull == 'true'
 if (data09QaEnabled && !data09ProfileEnabled) throw new GradleException('data09Qa requires data09Profile')
@@ -94,11 +96,34 @@ android {
         buildTypes {
             catalogQa {
                 initWith debug
-                applicationIdSuffix '.qa'
+                applicationIdSuffix providers.gradleProperty('discoveryQa').orNull == 'true' ? '.ui02validation.qa' : '.qa'
                 resValue 'string', 'app_name', 'VocaMind QA'
             }
         }
         testBuildType 'catalogQa'
+    }
+
+    if (discoveryUiEnabled) {
+        buildTypes {
+            discovery {
+                initWith debug
+                applicationIdSuffix '.ui02validation'
+                matchingFallbacks = ['debug']
+            }
+        }
+        testBuildType 'discovery'
+        def fixture = layout.buildDirectory.dir('ui02-fixture')
+        def prepareDiscoveryFixture = tasks.register('prepareDiscoveryFixture', Exec) {
+            commandLine providers.gradleProperty('catalogPython').getOrElse('python'),
+                    rootProject.file('tools/validation/prepare_ui02_fixture.py'),
+                    rootProject.file('app/src/main/assets/database'), fixture.get().asFile
+            inputs.dir rootProject.file('app/src/main/assets/database')
+            inputs.file rootProject.file('tools/validation/prepare_ui02_fixture.py')
+            outputs.dir fixture
+        }
+        sourceSets.discovery.assets.srcDir project.files(fixture).builtBy(prepareDiscoveryFixture)
+        tasks.matching { it.name == 'mergeDiscoveryAssets'
+                || it.name.toLowerCase(Locale.ROOT).contains('lint') }.configureEach { dependsOn prepareDiscoveryFixture }
     }
 
     // Opt-in DATA-09 install: release settings, test signing, separate app storage.
@@ -250,4 +275,5 @@ dependencies {
     testImplementation 'androidx.test:core:1.7.0'
     androidTestImplementation 'androidx.test:runner:1.7.0'
     androidTestImplementation 'androidx.test.ext:junit:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
 }
