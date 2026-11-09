@@ -1,0 +1,87 @@
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsDebug UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesDebug UP-TO-DATE
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :app:compileDebugJavaWithJavac UP-TO-DATE
+> Task :app:bundleDebugClassesToRuntimeJar UP-TO-DATE
+> Task :app:bundleDebugClassesToCompileJar UP-TO-DATE
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :app:compileDebugUnitTestJavaWithJavac
+> Task :app:mergeDebugShaders UP-TO-DATE
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets UP-TO-DATE
+> Task :app:packageDebugUnitTestForUnitTest UP-TO-DATE
+> Task :app:generateDebugUnitTestConfig UP-TO-DATE
+> Task :app:prepareRobolectricSdks UP-TO-DATE
+> Task :app:processDebugJavaRes UP-TO-DATE
+> Task :app:processDebugUnitTestJavaRes UP-TO-DATE
+> Task :app:testDebugUnitTest
+
+ProgressAggregationTest > atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings FAILED
+    android.database.sqlite.SQLiteCantOpenDatabaseException: unable to open database file (code 14 SQLITE_CANTOPEN)
+        at android.database.sqlite.SQLiteConnection.nativeBinding(Native Method)
+        at android.database.sqlite.SQLiteConnection.nativeExecuteForString(SQLiteConnection.java)
+        at android.database.sqlite.SQLiteConnection.executeForString(SQLiteConnection.java:831)
+        at android.database.sqlite.SQLiteConnection.setJournalMode(SQLiteConnection.java:433)
+        at android.database.sqlite.SQLiteConnection.setJournalFromConfiguration(SQLiteConnection.java:352)
+        at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:281)
+        at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:218)
+        at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:535)
+        at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:222)
+        at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:214)
+        at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:1163)
+        at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:1143)
+        at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:1007)
+        at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:996)
+        at android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked(SQLiteOpenHelper.java:373)
+        at android.database.sqlite.SQLiteOpenHelper.getWritableDatabase(SQLiteOpenHelper.java:316)
+        at androidx.sqlite.db.framework.FrameworkSQLiteOpenHelper$OpenHelper.getWritableOrReadableDatabase(FrameworkSQLiteOpenHelper.android.kt:224)
+        at androidx.sqlite.db.framework.FrameworkSQLiteOpenHelper$OpenHelper.innerGetDatabase(FrameworkSQLiteOpenHelper.android.kt:180)
+        at androidx.sqlite.db.framework.FrameworkSQLiteOpenHelper$OpenHelper.getSupportDatabase(FrameworkSQLiteOpenHelper.android.kt:141)
+        at androidx.sqlite.db.framework.FrameworkSQLiteOpenHelper.getWritableDatabase(FrameworkSQLiteOpenHelper.android.kt:96)
+        at com.vocamind.app.data.user.UserDatabase.open(UserDatabase.java:31)
+        at com.vocamind.app.data.user.ProgressAggregationContract.lambda$open$0(ProgressAggregationContract.java:30)
+        at java.base@17.0.20.1/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+        at java.base@17.0.20.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+        at java.base@17.0.20.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+        at java.base@17.0.20.1/java.lang.Thread.run(Thread.java:840)
+.\gradlew.bat :
+At line:2 char:296
++ ... T\.gradle'; .\gradlew.bat testDebugUnitTest assembleDebug assembleDeb ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+406 tests completed, 1 failed
+
+
+> Task :app:testDebugUnitTest FAILED
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:testDebugUnitTest'.
+> There were failing tests. See the report at: file:///C:/Users/LMT/Documents/University/Nam4/N4_HK1/PTUDTBDT/BLT/VocaM
+ind/app/build/reports/tests/testDebugUnitTest/index.html
+
+* Try:
+> Run with --scan to get full insights.
+
+BUILD FAILED in 53s
+30 actionable tasks: 2 executed, 28 up-to-date

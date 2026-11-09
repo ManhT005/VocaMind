@@ -1,0 +1,381 @@
+{
+  "codeSha": "67c06d4aca3b237d7eb8565dfbb410b5acafd674",
+  "developBase": "8209ef75bc882ca10367abd40900e44e537571cb",
+  "environment": {
+    "host": "Windows-11-10.0.26300-SP0",
+    "cpu": "Intel Core i5-11400H",
+    "jdk": "Temurin 17.0.20.1+1",
+    "python": "3.13.14",
+    "gradle": "8.9",
+    "agp": "8.7.3",
+    "compileSdk": 35,
+    "buildTools": "34.0.0",
+    "TEMP": "C:/tvm",
+    "GRADLE_USER_HOME": "C:/Users/LMT/.gradle"
+  },
+  "androidCommand": "gradlew.bat testDebugUnitTest assembleDebug assembleDebugAndroidTest lintDebug --offline",
+  "androidExitCode": 0,
+  "androidTests": {
+    "tests": 406,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "suites": [
+    {
+      "name": "com.vocamind.app.data.catalog.CatalogAssetTest",
+      "tests": "32",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:19"
+    },
+    {
+      "name": "com.vocamind.app.data.catalog.ContentCreditsTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:21"
+    },
+    {
+      "name": "com.vocamind.app.data.catalog.FtsSearchBenchmarkTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:21"
+    },
+    {
+      "name": "com.vocamind.app.data.catalog.FtsSearchTest",
+      "tests": "18",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:27"
+    },
+    {
+      "name": "com.vocamind.app.data.catalog.QuizPolicyCompositionTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:29"
+    },
+    {
+      "name": "com.vocamind.app.data.DaoFoundationTest",
+      "tests": "32",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:06"
+    },
+    {
+      "name": "com.vocamind.app.data.DataBoundaryTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:18"
+    },
+    {
+      "name": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+      "tests": "46",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:29"
+    },
+    {
+      "name": "com.vocamind.app.data.user.AtomicReviewTest",
+      "tests": "42",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:34"
+    },
+    {
+      "name": "com.vocamind.app.data.user.ProgressAggregationTest",
+      "tests": "34",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:38"
+    },
+    {
+      "name": "com.vocamind.app.data.user.ProgressMapperTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:42"
+    },
+    {
+      "name": "com.vocamind.app.data.user.UserDatabaseTest",
+      "tests": "16",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:42"
+    },
+    {
+      "name": "com.vocamind.app.domain.catalog.SearchVocabularyUseCaseTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:45"
+    },
+    {
+      "name": "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+      "tests": "8",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:45"
+    },
+    {
+      "name": "com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest",
+      "tests": "8",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:45"
+    },
+    {
+      "name": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+      "tests": "10",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:45"
+    },
+    {
+      "name": "com.vocamind.app.domain.learning.LeitnerSchedulerTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:45"
+    },
+    {
+      "name": "com.vocamind.app.domain.learning.RecordReviewUseCaseTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:45"
+    },
+    {
+      "name": "com.vocamind.app.domain.progress.ProgressDomainTest",
+      "tests": "11",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:45"
+    },
+    {
+      "name": "com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:45"
+    },
+    {
+      "name": "com.vocamind.app.domain.quiz.AndroidNfcConformanceTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:47"
+    },
+    {
+      "name": "com.vocamind.app.domain.quiz.GenerateQuizTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:48"
+    },
+    {
+      "name": "com.vocamind.app.domain.quiz.NfcConformanceTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:48"
+    },
+    {
+      "name": "com.vocamind.app.domain.quiz.QuizDistractorPolicyTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:49"
+    },
+    {
+      "name": "com.vocamind.app.domain.quiz.QuizDomainTest",
+      "tests": "18",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:49"
+    },
+    {
+      "name": "com.vocamind.app.domain.quiz.QuizGenerationTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:49"
+    },
+    {
+      "name": "com.vocamind.app.fake.FakeRepositoriesTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:49"
+    },
+    {
+      "name": "com.vocamind.app.feature.attribution.AttributionRenderingTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:49"
+    },
+    {
+      "name": "com.vocamind.app.feature.attribution.AttributionScreenTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:56"
+    },
+    {
+      "name": "com.vocamind.app.feature.attribution.AttributionViewModelTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:57"
+    },
+    {
+      "name": "com.vocamind.app.feature.attribution.ExternalLinksTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:57"
+    },
+    {
+      "name": "com.vocamind.app.feature.attribution.GetContentSourcesTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:57"
+    },
+    {
+      "name": "com.vocamind.app.feature.packs.PackActivationRenderingTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:57"
+    },
+    {
+      "name": "com.vocamind.app.feature.packs.PackActivationTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:58"
+    },
+    {
+      "name": "com.vocamind.app.feature.packs.PacksViewModelTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:33:03"
+    },
+    {
+      "name": "com.vocamind.app.feature.packs.PackVocabularyIntegrationTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:32:58"
+    },
+    {
+      "name": "com.vocamind.app.feature.packs.VocabularyListTest",
+      "tests": "8",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:33:03"
+    },
+    {
+      "name": "com.vocamind.app.feature.progress.ProgressViewStateTest",
+      "tests": "7",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:33:05"
+    },
+    {
+      "name": "com.vocamind.app.feature.search.SearchScreenTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:33:05"
+    },
+    {
+      "name": "com.vocamind.app.feature.search.SearchViewModelTest",
+      "tests": "22",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-06T16:33:07"
+    }
+  ],
+  "searchTests": 26,
+  "lint": {
+    "errors": 0,
+    "warnings": 7
+  },
+  "apk": {
+    "app": {
+      "path": "app/build/outputs/apk/debug/app-debug.apk",
+      "sha256": "5932c2a58c8ee5a8a944bd09fc93ea0edf47d5639229cf22a972db9f03396cb3",
+      "benchmarkAssets": []
+    },
+    "tests": {
+      "path": "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+      "sha256": "1cf6ce4cde700777cdd88e52d7747af7864b90fb1b1cea1d7bde9e8fa9cfc7aa",
+      "benchmarkAssets": [
+        "assets/benchmark/catalog-5000.db",
+        "assets/benchmark/catalog-5000.metadata.json"
+      ]
+    }
+  },
+  "pythonSteps": 22,
+  "pythonUnittestTests": 159,
+  "testedInputsSha256": "45679912ceca61e031c254bce1702a864a6c5eb6039044e81de7c616d60d0006",
+  "fixtureHashes": {
+    "app/src/main/assets/database/catalog.db": "7f90d0b11b14ce73932231dc7c4506bdf30af3788b66d0fde536d08fa7f753e9",
+    "app/src/catalogTest/assets/benchmark/catalog-5000.db": "5fac69d4a5776130346be14747d81af3354a9220c2f9675ed95740c5058f54a7"
+  },
+  "connectedInstrumentation": "NOT RUN - no device attached",
+  "airplaneModeFirstLaunch": "NOT RUN",
+  "physicalUiKeyboardAndLongList": "NOT RUN",
+  "referenceHardwareVerified": false,
+  "AC05": "HOLD",
+  "NFR_VM_03": "HOLD",
+  "fullVocab02Detail": "PENDING - receiver preview only",
+  "githubCI": "PENDING on pushed head"
+}

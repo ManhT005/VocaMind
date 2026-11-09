@@ -21,7 +21,12 @@ public final class VocabularyDetailFragment extends Fragment {
         return args;
     }
     public static boolean validArguments(Bundle args) {
-        return args != null && present(args.getString(ARG_PACK_ID)) && present(args.getString(ARG_VOCABULARY_ID));
+        return args != null && present(args.getString(ARG_VOCABULARY_ID))
+                && args.getString(ARG_VOCABULARY_ID).matches("[0-9a-f]{16}")
+                && (args.getString(ARG_PACK_ID) == null || present(args.getString(ARG_PACK_ID)));
+    }
+    public static Bundle searchArguments(String stableId) {
+        Bundle args = new Bundle(); args.putString(ARG_VOCABULARY_ID, stableId); return args;
     }
     private static boolean present(String id) { return id != null && !id.trim().isEmpty(); }
     @Override public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

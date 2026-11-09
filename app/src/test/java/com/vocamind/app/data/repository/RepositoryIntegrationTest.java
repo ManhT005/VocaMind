@@ -538,6 +538,36 @@ public class RepositoryIntegrationTest {
     private RoomVocabularyRepository detailRepository() {
         return new RoomVocabularyRepository(new com.vocamind.app.data.catalog.RoomCatalogRepository(catalog.catalogDao()), user);
     }
+    @Test public void searchCatalogDetailWithoutPackIsReadOnlyAndSaveUsesVocab02Policy() {
+        var sql = catalog.getOpenHelper().getWritableDatabase();
+        String orphan = "ffffffffffffffff";
+        sql.execSQL("INSERT INTO VocabularyEntry (id,lemma,normalizedLemma,pos,meaningVi,exampleEn,exampleVi,ipa,sourceId,contentVersion) "
+                + "VALUES (?,?,?,?,?,?,?,NULL,'src','1')", new Object[]{orphan,"outside packs","outside packs","noun","nghĩa","example","ví dụ"});
+        var repository = new RoomVocabularyRepository(new com.vocamind.app.data.catalog.RoomCatalogRepository(catalog.catalogDao()), user, () -> DAY);
+        var get = new com.vocamind.app.domain.vocabulary.GetVocabularyDetail(repository);
+        var save = new com.vocamind.app.domain.vocabulary.ToggleSaved(repository);
+        String catalogBefore = snapshot(sql), userBefore = snapshot(user.getOpenHelper().getWritableDatabase());
+        assertEquals(orphan, get.executeCatalog(orphan).get().word.stableId);
+        assertFalse(get.executeCatalog(orphan).get().saved);
+        assertTrue(get.executeCatalog(PAUSED).isSuccess()); // Neither paused nor inactive packs restrict catalog search.
+        assertEquals(RepoError.INVALID_ARGUMENT, get.execute(null, orphan).getError()); // Old pack route remains strict.
+        assertEquals(RepoError.NOT_FOUND, get.execute("A", orphan).getError());
+        assertEquals(RepoError.NOT_FOUND, get.executeCatalog("eeeeeeeeeeeeeeee").getError());
+        assertEquals(RepoError.INVALID_ARGUMENT, get.executeCatalog(" ").getError());
+        assertEquals(userBefore, snapshot(user.getOpenHelper().getWritableDatabase()));
+        assertTrue(save.executeCatalog(orphan, true).get());
+        var progress = user.userDao().progress(orphan);
+        assertTrue(progress.isSaved); assertEquals(DAY, progress.dueAt); assertEquals(0, progress.reviewCount);
+        assertNull(progress.learnedAt); assertNull(progress.lastReviewedAt);
+        assertTrue(user.userDao().packs().isEmpty());
+        assertTrue(get.executeCatalog(orphan).get().saved);
+        assertFalse(save.executeCatalog(orphan, false).get());
+        assertFalse(get.executeCatalog(orphan).get().saved);
+        assertEquals(RepoError.NOT_FOUND, save.execute("A", orphan, true).getError());
+        assertEquals(catalogBefore, snapshot(sql));
+        catalog.close();
+        assertEquals(RepoError.READ_FAILED, get.executeCatalog(orphan).getError());
+    }
 
     @Test public void vocab02SaveUnsaveReopenOnlyChangesFlagAndCatalogIsReadOnly() {
         var repository = detailRepository();

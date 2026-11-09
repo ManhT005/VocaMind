@@ -71,6 +71,13 @@ public final class ContentCredits {
         return (String) value;
     }
 
+    /** Exact generation binding; legacy enrich() remains permissive for old callers. */
+    public void verifySources(List<CatalogSource> sources) {
+        java.util.Set<Key> expected = new java.util.HashSet<>();
+        for (CatalogSource source : sources) expected.add(new Key(source.id, source.snapshotDate));
+        if (!expected.equals(credits.keySet())) throw new IllegalArgumentException("Credits/catalog snapshot mismatch");
+    }
+
     public CatalogSource enrich(CatalogSource source) {
         Credit credit = credits.get(new Key(source.id, source.snapshotDate));
         if (credit == null) return source;

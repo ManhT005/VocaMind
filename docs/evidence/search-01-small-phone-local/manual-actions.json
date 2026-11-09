@@ -1,0 +1,189 @@
+[
+  {
+    "args": [
+      "shell",
+      "am",
+      "force-stop",
+      "com.vocamind.app.search01qa"
+    ],
+    "stdout": ""
+  },
+  {
+    "args": [
+      "shell",
+      "am",
+      "start",
+      "-n",
+      "com.vocamind.app.search01qa/com.vocamind.app.MainActivity"
+    ],
+    "stdout": "Starting: Intent { cmp=com.vocamind.app.search01qa/com.vocamind.app.MainActivity }"
+  },
+  {
+    "args": [
+      "shell",
+      "uiautomator",
+      "dump",
+      "/sdcard/search01-qa-window.xml"
+    ],
+    "stdout": "UI hierchary dumped to: /sdcard/search01-qa-window.xml"
+  },
+  {
+    "args": [
+      "shell",
+      "input",
+      "tap",
+      "360",
+      "553"
+    ],
+    "stdout": ""
+  },
+  {
+    "args": [
+      "shell",
+      "uiautomator",
+      "dump",
+      "/sdcard/search01-qa-window.xml"
+    ],
+    "stdout": "UI hierchary dumped to: /sdcard/search01-qa-window.xml"
+  },
+  {
+    "args": [
+      "shell",
+      "input",
+      "tap",
+      "400",
+      "219"
+    ],
+    "stdout": ""
+  },
+  {
+    "args": [
+      "shell",
+      "input",
+      "text",
+      "bank"
+    ],
+    "stdout": ""
+  },
+  {
+    "args": [
+      "shell",
+      "uiautomator",
+      "dump",
+      "/sdcard/search01-qa-window.xml"
+    ],
+    "stdout": "UI hierchary dumped to: /sdcard/search01-qa-window.xml"
+  },
+  {
+    "args": [
+      "shell",
+      "input",
+      "tap",
+      "360",
+      "452"
+    ],
+    "stdout": ""
+  },
+  {
+    "args": [
+      "shell",
+      "uiautomator",
+      "dump",
+      "/sdcard/search01-qa-window.xml"
+    ],
+    "stdout": "UI hierchary dumped to: /sdcard/search01-qa-window.xml"
+  },
+  {
+    "args": [
+      "shell",
+      "input",
+      "tap",
+      "147",
+      "331"
+    ],
+    "stdout": ""
+  },
+  {
+    "args": [
+      "shell",
+      "uiautomator",
+      "dump",
+      "/sdcard/search01-qa-window.xml"
+    ],
+    "stdout": "UI hierchary dumped to: /sdcard/search01-qa-window.xml"
+  },
+  {
+    "args": [
+      "shell",
+      "settings",
+      "put",
+      "system",
+      "accelerometer_rotation",
+      "0"
+    ],
+    "stdout": ""
+  },
+  {
+    "args": [
+      "shell",
+      "settings",
+      "put",
+      "system",
+      "user_rotation",
+      "1"
+    ],
+    "stdout": ""
+  },
+  {
+    "args": [
+      "shell",
+      "uiautomator",
+      "dump",
+      "/sdcard/search01-qa-window.xml"
+    ],
+    "stdout": "UI hierchary dumped to: /sdcard/search01-qa-window.xml"
+  },
+  {
+    "args": [
+      "shell",
+      "settings",
+      "put",
+      "system",
+      "user_rotation",
+      "0"
+    ],
+    "stdout": ""
+  },
+  {
+    "args": [
+      "shell",
+      "uiautomator",
+      "dump",
+      "/sdcard/search01-qa-window.xml"
+    ],
+    "stdout": "UI hierchary dumped to: /sdcard/search01-qa-window.xml"
+  },
+  {
+    "args": [
+      "shell",
+      "input",
+      "tap",
+      "171",
+      "316"
+    ],
+    "stdout": ""
+  },
+  {
+    "args": [
+      "shell",
+      "uiautomator",
+      "dump",
+      "/sdcard/search01-qa-window.xml"
+    ],
+    "stdout": "UI hierchary dumped to: /sdcard/search01-qa-window.xml"
+  },
+  {
+    "result": "PASS",
+    "scope": "Real ADB taps/text, keyboard, result detail stableId, Back, physical rotation, clear"
+  }
+]

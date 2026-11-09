@@ -1,0 +1,114 @@
+NetworkProviders for: WifiNetworkFactory TelephonyNetworkFactory[0] PhoneSwitcherNetworkRequstListener UntrustedWifiNetworkFactory
+
+Active default network: none
+
+Current Networks:
+
+Restrict background: false
+
+Status for known UIDs:
+  UID=10108 rules=1 (ALLOW_METERED)
+
+Network Requests:
+  uid/pid:1000/526 NetworkRequest [ REQUEST id=1, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+  uid/pid:1000/526 NetworkRequest [ BACKGROUND_REQUEST id=2, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+  uid/pid:1000/526 NetworkRequest [ LISTEN id=4, [ Capabilities: FOREGROUND AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+  uid/pid:1000/526 NetworkRequest [ LISTEN id=5, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN&FOREGROUND Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+  uid/pid:1000/526 NetworkRequest [ LISTEN id=6, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+  uid/pid:1000/526 NetworkRequest [ LISTEN id=7, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+  uid/pid:1000/526 NetworkRequest [ LISTEN id=8, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&VALIDATED Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+  uid/pid:1000/526 NetworkRequest [ TRACK_DEFAULT id=9, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+  uid/pid:1073/797 NetworkRequest [ TRACK_DEFAULT id=10, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 1073 AdministratorUids: [] RequestorUid: 1073 RequestorPackageName: com.google.android.networkstack] ]
+  uid/pid:1073/797 NetworkRequest [ LISTEN id=11, [ Transports: WIFI Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Uid: 1073 AdministratorUids: [] RequestorUid: 1073 RequestorPackageName: com.google.android.networkstack] ]
+  uid/pid:1073/797 NetworkRequest [ REQUEST id=12, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN AdministratorUids: [] RequestorUid: 1073 RequestorPackageName: com.google.android.networkstack] ]
+  uid/pid:1001/869 NetworkRequest [ LISTEN id=13, [ Transports: WIFI Capabilities: INTERNET&TRUSTED&NOT_VPN Uid: 1001 AdministratorUids: [] RequestorUid: 1001 RequestorPackageName: com.android.phone] ]
+  uid/pid:10144/670 NetworkRequest [ LISTEN id=14, [ Transports: WIFI Capabilities: NOT_VPN AdministratorUids: [] RequestorUid: 10144 RequestorPackageName: com.android.systemui] ]
+  uid/pid:10144/670 NetworkRequest [ TRACK_DEFAULT id=15, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10144 AdministratorUids: [] RequestorUid: 10144 RequestorPackageName: com.android.systemui] ]
+  uid/pid:10144/670 NetworkRequest [ TRACK_DEFAULT id=16, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10144 AdministratorUids: [] RequestorUid: 10144 RequestorPackageName: com.android.systemui] ]
+  uid/pid:10144/670 NetworkRequest [ LISTEN id=18, [ AdministratorUids: [] RequestorUid: 10144 RequestorPackageName: com.android.systemui] ]
+  uid/pid:10109/1225 NetworkRequest [ TRACK_DEFAULT id=19, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10109 AdministratorUids: [] RequestorUid: 10109 RequestorPackageName: com.google.android.googlequicksearchbox] ]
+  uid/pid:10109/1225 NetworkRequest [ LISTEN id=20, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10109 AdministratorUids: [] RequestorUid: 10109 RequestorPackageName: com.google.android.googlequicksearchbox] ]
+  uid/pid:10108/1064 NetworkRequest [ LISTEN id=22, [ Capabilities: NOT_RESTRICTED Uid: 10108 AdministratorUids: [] RequestorUid: 10108 RequestorPackageName: com.google.android.gms] ]
+  uid/pid:10100/2129 NetworkRequest [ LISTEN id=26, [ Transports: WIFI Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Uid: 10100 AdministratorUids: [] RequestorUid: 10100 RequestorPackageName: com.google.android.setupwizard] ]
+  uid/pid:10101/2687 NetworkRequest [ TRACK_DEFAULT id=29, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10101 AdministratorUids: [] RequestorUid: 10101 RequestorPackageName: com.google.android.ims] ]
+  uid/pid:10102/4982 NetworkRequest [ TRACK_DEFAULT id=52, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10102 AdministratorUids: [] RequestorUid: 10102 RequestorPackageName: com.android.vending] ]
+  uid/pid:10102/4982 NetworkRequest [ TRACK_DEFAULT id=53, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10102 AdministratorUids: [] RequestorUid: 10102 RequestorPackageName: com.android.vending] ]
+  uid/pid:10102/4982 NetworkRequest [ LISTEN id=54, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10102 AdministratorUids: [] RequestorUid: 10102 RequestorPackageName: com.android.vending] ]
+  uid/pid:10102/4845 NetworkRequest [ TRACK_DEFAULT id=55, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10102 AdministratorUids: [] RequestorUid: 10102 RequestorPackageName: com.android.vending] ]
+  uid/pid:10102/4845 NetworkRequest [ LISTEN id=56, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10102 AdministratorUids: [] RequestorUid: 10102 RequestorPackageName: com.android.vending] ]
+  uid/pid:10116/5566 NetworkRequest [ TRACK_DEFAULT id=57, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10116 AdministratorUids: [] RequestorUid: 10116 RequestorPackageName: com.android.chrome] ]
+  uid/pid:10116/5566 NetworkRequest [ LISTEN id=58, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&FOREGROUND Uid: 10116 AdministratorUids: [] RequestorUid: 10116 RequestorPackageName: com.android.chrome] ]
+  uid/pid:10116/5566 NetworkRequest [ TRACK_DEFAULT id=59, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10116 AdministratorUids: [] RequestorUid: 10116 RequestorPackageName: com.android.chrome] ]
+  uid/pid:10116/5566 NetworkRequest [ LISTEN id=60, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&FOREGROUND Uid: 10116 AdministratorUids: [] RequestorUid: 10116 RequestorPackageName: com.android.chrome] ]
+  uid/pid:10111/5840 NetworkRequest [ TRACK_DEFAULT id=61, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10111 AdministratorUids: [] RequestorUid: 10111 RequestorPackageName: com.google.android.apps.youtube.music] ]
+  uid/pid:10111/5840 NetworkRequest [ LISTEN id=62, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&FOREGROUND Uid: 10111 AdministratorUids: [] RequestorUid: 10111 RequestorPackageName: com.google.android.apps.youtube.music] ]
+  uid/pid:10111/5840 NetworkRequest [ TRACK_DEFAULT id=63, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10111 AdministratorUids: [] RequestorUid: 10111 RequestorPackageName: com.google.android.apps.youtube.music] ]
+  uid/pid:10111/5840 NetworkRequest [ TRACK_DEFAULT id=64, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10111 AdministratorUids: [] RequestorUid: 10111 RequestorPackageName: com.google.android.apps.youtube.music] ]
+
+mLegacyTypeTracker:
+  Supported types: 0 1 2 3 4 5 10 11 12 13 14 15 17
+  Current state:
+
+
+Supported Socket keepalives: [1, 3, 0, 0, 0, 0, 0, 0]
+Reserved Privileged keepalives: 2
+Allowed Unprivileged keepalives per uid: 2
+Socket keepalives:
+
+Bad Wi-Fi avoidance: unrestricted
+
+MultipathPolicyTracker:
+
+mNetworkRequestInfoLogs (most recent first):
+  2026-11-08T20:11:26.462 - RELEASE uid/pid:10111/5840 NetworkRequest [ TRACK_DEFAULT id=65, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10111 AdministratorUids: [] RequestorUid: 10111 RequestorPackageName: com.google.android.apps.youtube.music] ]
+  2026-11-08T20:11:24.623 - REGISTER uid/pid:10111/5840 NetworkRequest [ TRACK_DEFAULT id=65, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10111 AdministratorUids: [] RequestorUid: 10111 RequestorPackageName: com.google.android.apps.youtube.music] ]
+  2026-11-08T20:10:42.955 - REGISTER uid/pid:10111/5840 NetworkRequest [ TRACK_DEFAULT id=64, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10111 AdministratorUids: [] RequestorUid: 10111 RequestorPackageName: com.google.android.apps.youtube.music] ]
+  2026-11-08T20:10:42.794 - REGISTER uid/pid:10111/5840 NetworkRequest [ TRACK_DEFAULT id=63, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10111 AdministratorUids: [] RequestorUid: 10111 RequestorPackageName: com.google.android.apps.youtube.music] ]
+  2026-11-08T20:10:42.767 - REGISTER uid/pid:10111/5840 NetworkRequest [ LISTEN id=62, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&FOREGROUND Uid: 10111 AdministratorUids: [] RequestorUid: 10111 RequestorPackageName: com.google.android.apps.youtube.music] ]
+  2026-11-08T20:10:42.760 - REGISTER uid/pid:10111/5840 NetworkRequest [ TRACK_DEFAULT id=61, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10111 AdministratorUids: [] RequestorUid: 10111 RequestorPackageName: com.google.android.apps.youtube.music] ]
+  2026-11-08T20:07:46.412 - RELEASE uid/pid:10118/2627 NetworkRequest [ TRACK_DEFAULT id=38, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10118 AdministratorUids: [] RequestorUid: 10118 RequestorPackageName: com.google.android.apps.messaging] ]
+  2026-11-08T20:07:46.412 - RELEASE uid/pid:10118/2627 NetworkRequest [ LISTEN id=39, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10118 AdministratorUids: [] RequestorUid: 10118 RequestorPackageName: com.google.android.apps.messaging] ]
+  2026-11-08T20:07:09.215 - REGISTER uid/pid:10116/5566 NetworkRequest [ LISTEN id=60, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&FOREGROUND Uid: 10116 AdministratorUids: [] RequestorUid: 10116 RequestorPackageName: com.android.chrome] ]
+  2026-11-08T20:07:09.212 - REGISTER uid/pid:10116/5566 NetworkRequest [ TRACK_DEFAULT id=59, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10116 AdministratorUids: [] RequestorUid: 10116 RequestorPackageName: com.android.chrome] ]
+  2026-11-08T20:06:44.189 - REGISTER uid/pid:10116/5566 NetworkRequest [ LISTEN id=58, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&FOREGROUND Uid: 10116 AdministratorUids: [] RequestorUid: 10116 RequestorPackageName: com.android.chrome] ]
+  2026-11-08T20:06:44.184 - REGISTER uid/pid:10116/5566 NetworkRequest [ TRACK_DEFAULT id=57, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10116 AdministratorUids: [] RequestorUid: 10116 RequestorPackageName: com.android.chrome] ]
+  2026-11-08T20:02:48.138 - RELEASE uid/pid:10115/4218 NetworkRequest [ TRACK_DEFAULT id=49, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10115 AdministratorUids: [] RequestorUid: 10115 RequestorPackageName: com.google.android.apps.tachyon] ]
+  2026-11-08T20:02:48.137 - RELEASE uid/pid:10115/4218 NetworkRequest [ LISTEN id=50, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10115 AdministratorUids: [] RequestorUid: 10115 RequestorPackageName: com.google.android.apps.tachyon] ]
+  2026-11-08T20:01:39.024 - REGISTER uid/pid:10102/4845 NetworkRequest [ LISTEN id=56, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10102 AdministratorUids: [] RequestorUid: 10102 RequestorPackageName: com.android.vending] ]
+  2026-11-08T20:01:39.020 - REGISTER uid/pid:10102/4845 NetworkRequest [ TRACK_DEFAULT id=55, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10102 AdministratorUids: [] RequestorUid: 10102 RequestorPackageName: com.android.vending] ]
+  2026-11-08T20:01:38.096 - REGISTER uid/pid:10102/4982 NetworkRequest [ LISTEN id=54, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10102 AdministratorUids: [] RequestorUid: 10102 RequestorPackageName: com.android.vending] ]
+  2026-11-08T20:01:38.094 - REGISTER uid/pid:10102/4982 NetworkRequest [ TRACK_DEFAULT id=53, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10102 AdministratorUids: [] RequestorUid: 10102 RequestorPackageName: com.android.vending] ]
+  2026-11-08T20:01:38.065 - REGISTER uid/pid:10102/4982 NetworkRequest [ TRACK_DEFAULT id=52, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10102 AdministratorUids: [] RequestorUid: 10102 RequestorPackageName: com.android.vending] ]
+  2026-11-08T20:01:18.732 - RELEASE uid/pid:10102/3440 NetworkRequest [ TRACK_DEFAULT id=42, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10102 AdministratorUids: [] RequestorUid: 10102 RequestorPackageName: com.android.vending] ]
+
+mNetworkInfoBlockingLogs (most recent first):
+
+NetTransition WakeLock activity (most recent first):
+  total acquisitions: 1
+  total releases: 0
+  cumulative duration: 0s
+  longest duration: 0s
+  currently holding WakeLock for: 52s
+  2026-11-08T20:15:29.478 - ACQUIRE for [100 WIFI]
+
+  bandwidth update requests (by uid):
+
+NetworkStackClient logs:
+  2026-11-08T20:00:13.591 - Network stack init
+  2026-11-08T20:00:15.552 - Network stack service start requested
+  2026-11-08T20:00:17.872 - Network stack service connected
+  2026-11-08T20:00:17.873 - Network stack service registered
+  2026-11-08T20:00:13.588 - Network stack init
+  2026-11-08T20:00:15.543 - Starting networking module android.net.INetworkStackConnector
+  2026-11-08T20:00:15.545 - Starting networking module in network_stack process
+  2026-11-08T20:00:15.552 - Networking module service start requested
+  2026-11-08T20:00:15.554 - Starting networking module android.net.ITetheringConnector
+  2026-11-08T20:00:15.570 - Starting networking module in network_stack process
+  2026-11-08T20:00:15.570 - Networking module service start requested
+  2026-11-08T20:00:17.872 - Networking module service connected
+  2026-11-08T20:00:17.874 - Networking module service connected
+
+  pendingNetStackRequests length: 0
+
+Permission Monitor:
+  Interface filtering rules:

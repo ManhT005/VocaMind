@@ -1,0 +1,160 @@
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preCatalogQaBuild UP-TO-DATE
+> Task :app:mergeCatalogQaNativeDebugMetadata NO-SOURCE
+> Task :app:dataBindingMergeDependencyArtifactsCatalogQa UP-TO-DATE
+> Task :app:generateCatalogQaResValues UP-TO-DATE
+> Task :app:generateCatalogQaResources UP-TO-DATE
+> Task :app:mergeCatalogQaResources UP-TO-DATE
+> Task :app:packageCatalogQaResources UP-TO-DATE
+> Task :app:parseCatalogQaLocalResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesCatalogQa UP-TO-DATE
+> Task :app:generateCatalogQaBuildConfig UP-TO-DATE
+> Task :app:javaPreCompileCatalogQa UP-TO-DATE
+> Task :app:checkCatalogQaAarMetadata UP-TO-DATE
+> Task :app:mapCatalogQaSourceSetPaths UP-TO-DATE
+> Task :app:createCatalogQaCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksCatalogQa UP-TO-DATE
+> Task :app:processCatalogQaMainManifest UP-TO-DATE
+> Task :app:processCatalogQaManifest UP-TO-DATE
+> Task :app:processCatalogQaManifestForPackage UP-TO-DATE
+> Task :app:processCatalogQaResources UP-TO-DATE
+
+> Task :app:compileCatalogQaJavaWithJavac
+gradle.bat : Note: C:\Users\LMT\Documents\University\Nam4\N4_HK1\PTUDTBDT\BLT\VocaMind\app\src\main\java\com\vocamind\a
+pp\core\QuizViewModelFactory.java uses or overrides a deprecated API.
+At line:2 char:273
++ ... P='C:\tvm'; & 'C:\Users\LMT\.gradle\wrapper\dists\gradle-8.9-bin\90cn ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Note: C:\Users\...deprecated API.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:mergeCatalogQaShaders UP-TO-DATE
+> Task :app:compileCatalogQaShaders NO-SOURCE
+> Task :app:generateCatalogQaAssets UP-TO-DATE
+
+> Task :app:prepareCatalogQa
+QC pass: 150 input, 0 errors
+C:\Users\LMT\Documents\University\Nam4\N4_HK1\PTUDTBDT\BLT\VocaMind\app\build\generated\voc06-qa
+
+> Task :app:mergeCatalogQaAssets UP-TO-DATE
+> Task :app:compressCatalogQaAssets UP-TO-DATE
+> Task :app:desugarCatalogQaFileDependencies UP-TO-DATE
+> Task :app:dexBuilderCatalogQa
+> Task :app:mergeCatalogQaGlobalSynthetics UP-TO-DATE
+> Task :app:processCatalogQaJavaRes UP-TO-DATE
+> Task :app:mergeCatalogQaJavaResource UP-TO-DATE
+> Task :app:checkCatalogQaDuplicateClasses UP-TO-DATE
+> Task :app:mergeExtDexCatalogQa UP-TO-DATE
+> Task :app:mergeLibDexCatalogQa UP-TO-DATE
+> Task :app:mergeCatalogQaJniLibFolders UP-TO-DATE
+> Task :app:mergeCatalogQaNativeLibs NO-SOURCE
+> Task :app:stripCatalogQaDebugSymbols NO-SOURCE
+> Task :app:validateSigningCatalogQa UP-TO-DATE
+> Task :app:writeCatalogQaAppMetadata UP-TO-DATE
+> Task :app:writeCatalogQaSigningConfigVersions UP-TO-DATE
+> Task :app:preCatalogQaAndroidTestBuild SKIPPED
+> Task :app:dataBindingMergeDependencyArtifactsCatalogQaAndroidTest UP-TO-DATE
+> Task :app:generateCatalogQaAndroidTestResValues UP-TO-DATE
+> Task :app:generateCatalogQaAndroidTestResources UP-TO-DATE
+> Task :app:mergeCatalogQaAndroidTestResources UP-TO-DATE
+> Task :app:mergeProjectDexCatalogQa
+> Task :app:dataBindingGenBaseClassesCatalogQaAndroidTest UP-TO-DATE
+> Task :app:processCatalogQaAndroidTestManifest UP-TO-DATE
+> Task :app:generateCatalogQaAndroidTestBuildConfig UP-TO-DATE
+> Task :app:javaPreCompileCatalogQaAndroidTest UP-TO-DATE
+> Task :app:checkCatalogQaAndroidTestAarMetadata UP-TO-DATE
+> Task :app:mapCatalogQaAndroidTestSourceSetPaths UP-TO-DATE
+> Task :app:processCatalogQaAndroidTestResources UP-TO-DATE
+> Task :app:mergeCatalogQaAndroidTestShaders UP-TO-DATE
+> Task :app:compileCatalogQaAndroidTestShaders NO-SOURCE
+> Task :app:prepareReleaseCatalogTests UP-TO-DATE
+> Task :app:generateCatalogQaAndroidTestAssets UP-TO-DATE
+> Task :app:mergeCatalogQaAndroidTestAssets UP-TO-DATE
+> Task :app:compressCatalogQaAndroidTestAssets UP-TO-DATE
+> Task :app:desugarCatalogQaAndroidTestFileDependencies UP-TO-DATE
+> Task :app:processCatalogQaAndroidTestJavaRes NO-SOURCE
+> Task :app:mergeCatalogQaAndroidTestJavaResource UP-TO-DATE
+> Task :app:checkCatalogQaAndroidTestDuplicateClasses UP-TO-DATE
+> Task :app:mergeExtDexCatalogQaAndroidTest UP-TO-DATE
+> Task :app:mergeLibDexCatalogQaAndroidTest UP-TO-DATE
+> Task :app:mergeCatalogQaAndroidTestJniLibFolders UP-TO-DATE
+> Task :app:mergeCatalogQaAndroidTestNativeLibs NO-SOURCE
+> Task :app:stripCatalogQaAndroidTestDebugSymbols NO-SOURCE
+> Task :app:validateSigningCatalogQaAndroidTest UP-TO-DATE
+> Task :app:writeCatalogQaAndroidTestSigningConfigVersions UP-TO-DATE
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :app:bundleCatalogQaClassesToCompileJar
+> Task :app:generateCatalogQaLintReportModel
+
+> Task :app:compileCatalogQaAndroidTestJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:dexBuilderCatalogQaAndroidTest UP-TO-DATE
+> Task :app:mergeCatalogQaAndroidTestGlobalSynthetics UP-TO-DATE
+> Task :app:mergeProjectDexCatalogQaAndroidTest UP-TO-DATE
+> Task :app:packageCatalogQaAndroidTest UP-TO-DATE
+> Task :app:createCatalogQaAndroidTestApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleCatalogQaAndroidTest UP-TO-DATE
+> Task :app:generateCatalogQaAndroidTestLintModel
+> Task :app:preCatalogQaUnitTestBuild UP-TO-DATE
+> Task :app:generateCatalogQaUnitTestLintModel
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsDebug UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesDebug UP-TO-DATE
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+
+> Task :app:compileDebugJavaWithJavac
+Note: C:\Users\LMT\Documents\University\Nam4\N4_HK1\PTUDTBDT\BLT\VocaMind\app\src\main\java\com\vocamind\app\core\QuizV
+iewModelFactory.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :app:mergeDebugShaders UP-TO-DATE
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets UP-TO-DATE
+> Task :app:packageCatalogQa
+> Task :app:createCatalogQaApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleCatalogQa
+> Task :app:packageDebugUnitTestForUnitTest UP-TO-DATE
+> Task :app:generateDebugUnitTestConfig UP-TO-DATE
+> Task :app:prepareRobolectricSdks UP-TO-DATE
+> Task :app:processDebugJavaRes UP-TO-DATE
+> Task :app:processDebugUnitTestJavaRes UP-TO-DATE
+> Task :app:bundleDebugClassesToCompileJar
+> Task :app:bundleDebugClassesToRuntimeJar
+
+> Task :app:compileDebugUnitTestJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:lintAnalyzeCatalogQaAndroidTest
+> Task :app:lintAnalyzeCatalogQa
+> Task :app:lintAnalyzeCatalogQaUnitTest
+> Task :app:testDebugUnitTest
+
+> Task :app:lintReportCatalogQa
+Wrote HTML report to file:///C:/Users/LMT/Documents/University/Nam4/N4_HK1/PTUDTBDT/BLT/VocaMind/app/build/reports/lint-results-catalogQa.html
+
+> Task :app:lintCatalogQa
+
+BUILD SUCCESSFUL in 1m 45s
+106 actionable tasks: 20 executed, 86 up-to-date

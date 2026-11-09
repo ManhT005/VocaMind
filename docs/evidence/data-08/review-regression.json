@@ -1,0 +1,28 @@
+{
+  "finding": "Retry remained blocked by a corrupt retained candidate directory after fallback",
+  "regressionCase": "CatalogUpgradeTest.pendingCorruptCandidateFallsBackToVerifiedOld",
+  "beforeFix": {
+    "command": "bash gradlew :app:testDebugUnitTest --tests '*CatalogUpgradeTest.pendingCorruptCandidateFallsBackToVerifiedOld*' --max-workers=2 --console=plain",
+    "tests": 2,
+    "failures": 2,
+    "sdks": [
+      26,
+      35
+    ],
+    "error": "Catalog bundle checksum mismatch"
+  },
+  "fix": "Quarantine only the invalid inactive generation after validating fresh staging; publish clean generation atomically",
+  "targetedAfterFix": {
+    "command": "bash gradlew :app:testDebugUnitTest --tests '*CatalogUpgradeTest*' --max-workers=2 --console=plain",
+    "tests": 38,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "performanceChanges": [
+    "Reuse loaded vocabulary/pack rows and verified DB checksum",
+    "Two userdata reference queries; Set membership instead of per-ID catalog queries",
+    "Column-qualified FTS scalar LIMIT 1 probes for lemma, normalizedLemma, meaningVi"
+  ],
+  "deviceStartupBenchmark": "not-run; no latency or percentage improvement claimed"
+}

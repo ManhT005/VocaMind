@@ -1,0 +1,2 @@
+List of devices attached
+emulator-5554          device product:sdk_gphone_x86 model:sdk_gphone_x86 device:generic_x86_arm transport_id:5

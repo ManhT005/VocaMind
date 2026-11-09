@@ -1,0 +1,23 @@
+gradle.bat :
+At line:8 char:209
++ ... thon-deps"; & 'C:\Users\LMT\.gradle\wrapper\dists\gradle-8.9-bin\90cn ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Initialization script
+'C:\Users\LMT\Documents\University\Nam4\N4_HK1\PTUDTBDT\BLT\VocaMind\build\search-regression.init.gradle' line: 2
+
+* What went wrong:
+Could not find method project() for arguments [:app] on build 'VocaMind' of type org.gradle.invocation.DefaultGradle.
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 4s

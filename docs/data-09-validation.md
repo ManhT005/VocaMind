@@ -221,3 +221,18 @@ số đo thiết bị tham chiếu mới; các gate acceptance vẫn PENDING.
 Evidence: [evidence/data-09/review](evidence/data-09/review), gồm log regression
 trước sửa, kết quả kiểm tra và SHA-256 source sau sửa. Evidence host-validation
 ban đầu được giữ nguyên để phân biệt hai lần xác minh.
+
+## Kiểm tra bản build release
+
+CI chạy `assembleRelease` và phân tích trực tiếp
+`app/build/outputs/apk/release/app-release-unsigned.apk`. Báo cáo
+`data09-release-fixture-size.json` ghi SHA-256, số byte, dung lượng từng asset,
+kiểm tra checksum catalog và xác nhận fixture benchmark 5.000 từ chỉ nằm
+trong test APK. Đây là build type release với catalog mẫu đi kèm repo, chưa ký.
+`observedGate` áp dụng giới hạn 25.000.000 byte cho artifact đã đo.
+NFR-VM-05 vẫn chờ APK đã ký với corpus được duyệt để đo lại.
+
+Benchmark nghiệm thu cần thiết bị Helio G85 / RAM 3 GB / Android 10
+(API 29) hoặc cấu hình thay thế được reviewer xác nhận. Trên thiết bị đó,
+chạy cả startup và FTS theo lệnh trên, lưu inventory và raw samples.
+Emulator và Robolectric chỉ phục vụ kiểm tra kỹ thuật.

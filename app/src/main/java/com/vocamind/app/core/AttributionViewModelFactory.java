@@ -25,12 +25,23 @@ public final class AttributionViewModelFactory implements ViewModelProvider.Fact
         }
         ExecutorService worker = Executors.newSingleThreadExecutor();
         Handler main = new Handler(Looper.getMainLooper());
-        // Room.build configures the database; asset copying/opening happens on first query.
-        CatalogProvider provider = new CatalogProvider(application);
-        GetContentSources query = new GetContentSources(provider.repository());
-        return modelClass.cast(new AttributionViewModel(query, worker, main::post, () -> {
-            try { provider.close(); }
+        Lazy lazy = new Lazy(application);
+        return modelClass.cast(new AttributionViewModel(
+                () -> new GetContentSources(lazy.get().repository()).execute(), worker, main::post, () -> {
+            try { lazy.close(); }
             finally { worker.shutdown(); }
         }));
+    }
+
+    /** Accessed only by the serial worker, including close after an in-flight query. */
+    private static final class Lazy {
+        private final Context context;
+        private CatalogProvider provider;
+        Lazy(Context context) { this.context = context; }
+        CatalogProvider get() {
+            if (provider == null) provider = new CatalogProvider(context);
+            return provider;
+        }
+        void close() { if (provider != null) provider.close(); }
     }
 }

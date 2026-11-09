@@ -1,0 +1,13 @@
+test_canonical_round_trip_and_deterministic_checked_in_asset (test_build_fixture.CatalogBuildTests.test_canonical_round_trip_and_deterministic_checked_in_asset) ... ok
+test_invalid_canonical_never_replaces_asset (test_build_fixture.CatalogBuildTests.test_invalid_canonical_never_replaces_asset) ... ok
+test_synthetic_fixture_is_blocked_from_release (test_build_fixture.CatalogBuildTests.test_synthetic_fixture_is_blocked_from_release) ... ok
+test_bad_pair_duplicate_and_fields_are_rejected (test_check_credits.CreditCheckTest.test_bad_pair_duplicate_and_fields_are_rejected) ... ok
+test_release_missing_is_blocked_but_never_approves_license (test_check_credits.CreditCheckTest.test_release_missing_is_blocked_but_never_approves_license) ... ok
+test_accepted_and_fixture_companions_match_checked_in_files (test_quiz_policy.QuizPolicyExportTests.test_accepted_and_fixture_companions_match_checked_in_files) ... ok
+test_projection_binds_all_quiz_fields_but_not_input_order (test_quiz_policy.QuizPolicyExportTests.test_projection_binds_all_quiz_fields_but_not_input_order) ... ok
+test_real_content_cannot_lose_policy_or_use_a_different_dataset (test_quiz_policy.QuizPolicyExportTests.test_real_content_cannot_lose_policy_or_use_a_different_dataset) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.112s
+
+OK

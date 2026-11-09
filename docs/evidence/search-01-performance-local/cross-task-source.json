@@ -1,0 +1,10 @@
+{
+  "baseHead": "e12f0ee2064b672921a976b3f80ad64227e1cd24",
+  "productionSource": "unchanged since performance source manifest",
+  "changedTest": "app\\src\\androidTest\\java\\com\\vocamind\\app\\feature\\packs\\PackActivationInstrumentedTest.java",
+  "testSha256": "d0d6c0f2347207ddd1a08d598c2e8200b5d587952e9fc8d1f3af55c4c23dbf38",
+  "fixture4Run": "47 run:46 pass/1 fail (fresh-state precondition)",
+  "isolatedOldAssertion": "FAIL: obsolete preview route_message expectation",
+  "isolatedUpdatedAssertion": "1/1 PASS: full detail + stableId/packId + Back/rotation/pause",
+  "hostFullSuite": "519/51 PASS previously; not rerun after AndroidTest-only change"
+}

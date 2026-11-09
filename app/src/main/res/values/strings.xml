@@ -57,6 +57,15 @@
     <string name="word_level">Cấp ôn %1$d</string>
     <string name="word_route_invalid">Thiếu hoặc sai mã từ/gói. Hãy quay lại danh sách.</string>
     <string name="word_route_loading">Đang kiểm tra mã từ…</string>
+    <string name="search_hint">Tìm từ tiếng Anh hoặc nghĩa tiếng Việt</string>
+    <string name="search_reset">Xóa tìm kiếm</string>
+    <string name="search_retry">Thử lại</string>
+    <string name="search_no_input">Nhập từ tiếng Anh hoặc nghĩa tiếng Việt để tìm.</string>
+    <string name="search_loading">Đang tìm…</string>
+    <string name="search_no_match">Không tìm thấy từ phù hợp.</string>
+    <string name="search_content">Kết quả tìm kiếm</string>
+    <string name="search_invalid">Từ khóa quá dài hoặc quá nhiều từ. Hãy sửa hoặc xóa tìm kiếm.</string>
+    <string name="search_error">Không đọc được dữ liệu. Hãy thử lại hoặc quay về.</string>
     <string name="quiz_back">Quay lại</string>
     <string name="quiz_result_status">%1$s\n%2$s\n%3$s</string>
     <string name="quiz_context_format">%1$s\n%2$s</string>

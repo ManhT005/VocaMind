@@ -1,0 +1,15 @@
+// Local test configuration only. Production sources and the installed user package stay unchanged.
+gradle.beforeProject { p ->
+    if (p.path == ':app') {
+        def qaId = p.providers.gradleProperty('search01QaApplicationId').getOrElse('com.vocamind.app.search01qa')
+        def qaDir = qaId.endsWith('.offline') ? 'build/search01-small-phone-offline-apk' : 'build/search01-small-phone-apk'
+        p.layout.buildDirectory.set(p.rootProject.layout.projectDirectory.dir(qaDir))
+        p.pluginManager.withPlugin('com.android.application') {
+            p.androidComponents.finalizeDsl { android ->
+                android.defaultConfig.applicationId = qaId
+                android.defaultConfig.testApplicationId = qaId + '.test'
+                android.sourceSets.androidTest.java.srcDir(p.rootProject.file('docs/evidence/search-01-small-phone-local/harness'))
+            }
+        }
+    }
+}

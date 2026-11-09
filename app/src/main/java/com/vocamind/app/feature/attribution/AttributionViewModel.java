@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.Objects;
 import java.util.List;
 import java.util.concurrent.Executor;
+import java.util.function.Supplier;
 
 public final class AttributionViewModel extends ViewModel {
     public enum Status { LOADING, CONTENT, EMPTY, ERROR }
@@ -27,7 +28,7 @@ public final class AttributionViewModel extends ViewModel {
     }
 
     private final MutableLiveData<State> state = new MutableLiveData<>();
-    private final GetContentSources getSources;
+    private final Supplier<List<CatalogSource>> getSources;
     private final Executor worker;
     private final Executor main;
     private final Runnable close;
@@ -35,6 +36,11 @@ public final class AttributionViewModel extends ViewModel {
     private boolean cleared;
 
     public AttributionViewModel(GetContentSources getSources, Executor worker,
+                                Executor main, Runnable close) {
+        this(getSources::execute, worker, main, close);
+    }
+
+    public AttributionViewModel(Supplier<List<CatalogSource>> getSources, Executor worker,
                                 Executor main, Runnable close) {
         this.getSources = getSources;
         this.worker = worker;
@@ -53,7 +59,7 @@ public final class AttributionViewModel extends ViewModel {
         worker.execute(() -> {
             State result;
             try {
-                List<CatalogSource> sources = getSources.execute();
+                List<CatalogSource> sources = getSources.get();
                 result = new State(sources.isEmpty() ? Status.EMPTY : Status.CONTENT, sources);
             } catch (RuntimeException failure) {
                 result = new State(Status.ERROR, Collections.emptyList());

@@ -1,0 +1,17 @@
+[
+  "C:\\Users\\LMT\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+  "-s",
+  "emulator-5554",
+  "shell",
+  "am",
+  "instrument",
+  "-w",
+  "-r",
+  "-e",
+  "class",
+  "com.vocamind.app.feature.packs.PackActivationInstrumentedTest,com.vocamind.app.feature.quiz.QuizScreenInstrumentedTest,com.vocamind.app.data.user.AtomicReviewInstrumentedTest,com.vocamind.app.data.user.ProgressAggregationInstrumentedTest,com.vocamind.app.data.user.QuizCompletionInstrumentedTest",
+  "-e",
+  "data05EnforceLatency",
+  "false",
+  "com.vocamind.app.qa.test/androidx.test.runner.AndroidJUnitRunner"
+]

@@ -1,0 +1,38 @@
+{
+  "profile": "internal-qa",
+  "apkSha256": "805cf000c7df757dd3dbb397ccfb47ee800fc276cae20f57ee361fafd0fec673",
+  "apkBytes": 7698490,
+  "assetHashes": {
+    "catalog.db": "41bcfacfcebdc42c8059c95f396c738fdabab62c4cbd8a255499e9c446502709",
+    "catalog.metadata.json": "c39eb9901c518a5ff4f141046141cb8579c24c41855feda825238afc78000e92",
+    "content-credits.json": "4dfc32924b655fe8e276cfb9bdf6d408213f78e15ac3202cf354ed84067bfd5c",
+    "manifest.json": "fd2b5b89f726281899d7377a469a0ffc28541cf924a141b2cecbc1342a905f11",
+    "quiz-policy.json": "88168d65b114a02a5934eb429c75820482ad77e1ebab7f500c30fc6c09d8c617",
+    "release-gate-report.json": "9a4e79a711751fb335e76eb5c7f805398c66a9684f675c1a27e36ce8667327d9"
+  },
+  "sqlQa": {
+    "uniqueVocabularyCount": 150,
+    "membershipCount": 150,
+    "packCounts": {
+      "pack_toeic_basic": 40,
+      "pack_toeic_office": 40,
+      "pack_daily_life": 40,
+      "pack_academic": 30
+    },
+    "distinctMeaningsPerPack": {
+      "pack_toeic_basic": 40,
+      "pack_toeic_office": 40,
+      "pack_daily_life": 40,
+      "pack_academic": 30
+    },
+    "examplePairCount": 150,
+    "nullableIpaCount": 150,
+    "ftsMappedRows": 150,
+    "ftsSearchChecks": 300,
+    "integrityCheck": "ok",
+    "foreignKeyViolations": 0,
+    "logicalDumpSha256": "85644c12afac36f80cb233a353280c40edc53241eb36ebce493e42462e1f6a6a"
+  },
+  "datasetSha256": "12aac7bfbe037c9136c3973cc724eee68205b88673ad25f40f7881de50d5398e",
+  "releaseAuthorized": false
+}
