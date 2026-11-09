@@ -101,3 +101,5 @@ validation records separate from the current setup and foundation guides.
 
 - [VOCAB-02 integration and probe binding recheck](vocab-02-recheck-993e70a.md)
 - [UI-02 local implementation, coverage mapping and validation](ui-02-local-validation.md)
+
+- [UI-02 review corrections: network restoration, offline gate and CI evidence](ui-02-review-fixes.md)

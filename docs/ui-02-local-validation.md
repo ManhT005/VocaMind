@@ -4,6 +4,8 @@ Status: local implementation and device evidence prepared; open acceptance gates
 
 Publication follow-up: the user subsequently authorized commit and push of the feature branch. No PR or merge is authorized. The validation snapshot below describes the pre-commit baseline plus recorded dirty source digest; it is not relabelled as a device execution of the published commit. Only this handoff note changed after that snapshot. Manual QA has not been performed independently; visual inspection was limited to captured screenshots. Assignment and SRS remain unchanged.
 
+Review follow-up: [R1/R2 corrections and actual CI failures at ed81bf4](ui-02-review-fixes.md). The validation results below are the historical initial snapshot, not evidence for later source changes.
+
 ## Baseline and dependency audit
 
 - Clean working tree initially on develop. `git fetch origin develop` succeeded; local HEAD and origin/develop both `c3454afeedecbe53fa7aaed664707e5108d7a9ca`. Created `feature/ui-02-discovery-instrumented-tests` from that fetched ref; no existing local/remote branch with this name.
@@ -67,7 +69,7 @@ QA (internal local evidence only):
 
 All evidence remains local under ignored `build/ui02/`; see validation results below. Keep source manifests with each run; earlier failed attempts are debugging evidence, not evidence for later APKs.
 
-## Validation results ? 2026-11-09
+## Historical initial validation results ? 2026-11-09
 
 Authoritative device evidence: [final-acceptance summary](../build/ui02/final-acceptance/summary.json). All 13 groups accepted by the runner; this means expected outcomes, **not** that the deliberately failing probe is an ordinary test pass.
 
@@ -85,18 +87,18 @@ Authoritative device evidence: [final-acceptance summary](../build/ui02/final-ac
 | App + test APK build: debug / discovery / catalogQa | All succeeded, native exit 0; builds are separate from the device executions above | `final-debug-build-lint.log`, `final-discovery-build-lint.log`, `qa-final-build-lint.log` under `build/ui02/`; matching `*-build-exit.txt` |
 | Lint debug / discovery / catalogQa | Each: 0 errors/fatal, 13 warnings; native exit 0 | `app/build/reports/lint-results-debug.*`, `lint-results-discovery.*`, `lint-results-catalogQa.*` |
 | Fixture reproducibility | Two independently generated output trees have identical byte hashes | [hash comparison](../build/ui02/fixture-reproducibility.json) |
-| CI | New API 26/35 synthetic execution prepared; **not triggered** because no push/PR authorized; original job blocks compared unchanged | `.github/workflows/android-ci.yml`; YAML parser not installed locally, no CI execution claimed |
+| CI | Initial local snapshot: not triggered yet. Published ed81bf4 later had Linux Build & Test/Quiz SUCCESS and Discovery26/35 FAILURE; see review follow-up for causes and new-head verification | `.github/workflows/android-ci.yml`; YAML parser not installed locally, no CI execution claimed |
 
 ### Exact tested source, fixture and environment
 
 - At local validation: branch `feature/ui-02-discovery-instrumented-tests`, no task commit yet. Recorded HEAD was `c3454afeedecbe53fa7aaed664707e5108d7a9ca`.
-- Device/QA tested source digest: `9447e477170dd5f843345a8aa43e04ff1921aaba5877014d53e75c5e699455bb`. This is a SHA-256 of the sorted source-file SHA manifest, **not a Git commit SHA**. All final device/QA runs have the same digest, and every recorded source hash was compared with current bytes. Full final host run saved the same source manifest before executing. Documentation is finalized after tests and does not affect runtime source digest.
+- Device/QA tested source digest: `9447e477170dd5f843345a8aa43e04ff1921aaba5877014d53e75c5e699455bb`. This is a SHA-256 of the sorted source-file SHA manifest, **not a Git commit SHA**. All device/QA runs in that initial snapshot have the same digest, and every recorded source hash was compared with the working-tree bytes at that initial snapshot. Full final host run saved the same source manifest before executing. Documentation is finalized after tests and does not affect runtime source digest.
 - [Validation manifest](../build/ui02/validation-manifest.json) records commands, native result codes, toolchain, APK SHA-256, input document checksums and report paths. `final-acceptance/environment.json`, `source-hashes.json` and `working-tree.patch` bind device evidence to exact app/test APKs and dirty tracked diff. `tested-source.zip` preserves all changed/untracked source and handoff files byte-for-byte; its inventory/hash is in the validation manifest. Earlier debug attempts are not substituted for these final runs.
 - Synthetic `ui02-v1`, contentVersion 1.0.0, catalog SHA-256 `a833a04f1ee3b8a6e907d4b05cfbc42d936f47dfe71b1e06c97adacb063f8305`. Full expected entries/pack memberships: [fixture inventory](../build/ui02/fixture-v1.json). Main asset is unchanged at SHA-256 `7f90d0b11b14ce73932231dc7c4506bdf30af3788b66d0fde536d08fa7f753e9`.
 - QA snapshot `editorial-qa-v2`, contentVersion 1.0.1, catalog SHA-256 `41bcfacfcebdc42c8059c95f396c738fdabab62c4cbd8a255499e9c446502709`. [QA expected IDs](../build/ui02/qa-expected.json): pack `pack_toeic_basic`, first word customer `ee46fdf826f53ce2`; EN customer ? that ID; VI kh?ch h?ng ? ordered client `a0adea31b35a7f42`, customer `ee46fdf826f53ce2`. Q verifies the ordered result IDs and opens the first exact ID. Internal QA content stays local.
 - Windows host; Gradle 8.9 / AGP 8.7.3; Gradle JVM Temurin 17.0.20.1; Python 3.13.14. The runner's `java -version` field resolves PATH Java 21, while Gradle uses explicit JAVA_HOME 17; see [toolchain](../build/ui02/toolchain.json). No Gradle run on JBR 25 was accepted (initial attempt failed with class-file version 69).
 - Device: `emulator-5554`, AVD Small_Phone, Android 11/API 30, x86, fingerprint `google/sdk_gphone_x86/generic_x86_arm:11/RSR1.201013.001/6903271:user/release-keys`; emulator 37.2.12.0. Final boot used `-no-snapshot -gpu swiftshader_indirect -no-audio -no-boot-anim`; [renderer log](../build/ui02/software-emulator.log). Driver records properties/animation settings, airplane/Wi-Fi/mobile-data state and restores original network settings. Final host/device clocks matched Nov 9, UTC+7. The old loaded snapshot's Nov 2 clock belongs only to earlier debug logs.
-- API 26 and API 35 **device execution not run**: no corresponding local image/AVD; no physical device connected. API 30 is supplementary local QA, not a claim to have completed the planned 26/35 matrix. Newer preview images are outside this selected QA matrix.
+- At that initial local snapshot API26/API35 **device execution was not run**: no corresponding local image/AVD; no physical device connected. API 30 is supplementary local QA, not a claim to have completed the planned 26/35 matrix. Newer preview images are outside this selected QA matrix.
 
 ### Commands and open gates
 

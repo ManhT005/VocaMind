@@ -35,6 +35,7 @@ public abstract class DiscoveryHarness {
     protected CatalogDatabase oracle;
     protected UserDatabase user;
     protected String oracleName;
+    private String connectivityBeforeLaunch = "";
     @Rule public final TestRule evidence = (base, description) -> new Statement() {
         @Override public void evaluate() throws Throwable {
             try { base.evaluate(); }
@@ -51,8 +52,7 @@ public abstract class DiscoveryHarness {
     @Before public void isolatedInput() throws Exception {
         assertTrue("Refuse to reset personal/other QA installs", context.getPackageName().equals("com.vocamind.app.ui02validation")
                 || context.getPackageName().equals("com.vocamind.app.ui02validation.qa"));
-        assertEquals("Driver must verify offline before launch", 1,
-                Settings.Global.getInt(context.getContentResolver(), Settings.Global.AIRPLANE_MODE_ON, 0));
+        assertOffline();
         user = UserDatabase.open(context); // instrumentation thread, never main
         user.getOpenHelper().getWritableDatabase().execSQL("DELETE FROM ReviewEvent");
         user.getOpenHelper().getWritableDatabase().execSQL("DELETE FROM UserWordProgress");
@@ -79,7 +79,24 @@ public abstract class DiscoveryHarness {
         var out = new ByteArrayOutputStream(); byte[] block = new byte[8192]; int n;
         while ((n=input.read(block)) != -1) out.write(block,0,n); return out.toByteArray();
     }
-    protected void launch() { scenario = ActivityScenario.launch(MainActivity.class); }
+    private void assertOffline() {
+        assertEquals("Airplane mode before launch", 1,
+                Settings.Global.getInt(context.getContentResolver(), Settings.Global.AIRPLANE_MODE_ON, -1));
+        assertEquals("Wi-Fi flag before launch", 0,
+                Settings.Global.getInt(context.getContentResolver(), "wifi_on", -1));
+        assertEquals("Mobile data policy before launch", 0,
+                Settings.Global.getInt(context.getContentResolver(), "mobile_data", -1));
+        var descriptor = InstrumentationRegistry.getInstrumentation().getUiAutomation().executeShellCommand("dumpsys connectivity");
+        try (var input = new ParcelFileDescriptor.AutoCloseInputStream(descriptor)) {
+            connectivityBeforeLaunch = new String(bytes(input), StandardCharsets.UTF_8);
+        } catch (IOException error) { throw new AssertionError("Cannot collect offline connectivity evidence", error); }
+        var defaults = java.util.regex.Pattern.compile("(?m)^\\s*Active default network:\\s*(\\S+)\\s*$")
+                .matcher(connectivityBeforeLaunch);
+        assertTrue("Missing active default network evidence", defaults.find());
+        assertEquals("Active default network before launch", "none", defaults.group(1));
+        assertFalse("Ambiguous active default network evidence", defaults.find());
+    }
+    protected void launch() { assertOffline(); scenario = ActivityScenario.launch(MainActivity.class); }
     protected void reopen() { scenario.close(); launch(); }
     protected void await(String label, Predicate<MainActivity> condition) throws Exception {
         long deadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(15);
@@ -140,25 +157,42 @@ public abstract class DiscoveryHarness {
         if (clickRow) item.perform(click());
     }
     private void capture(Description d, Throwable failure) {
+        File dir = new File(context.getFilesDir(), "ui02-failures/" + d.getMethodName());
+        java.util.List<String> errors = new java.util.ArrayList<>();
         try {
-            File dir = new File(context.getFilesDir(), "ui02-failures/" + d.getMethodName());
             if (!dir.mkdirs() && !dir.isDirectory()) throw new IOException("Artifact directory");
+        } catch (Exception error) { artifactError(failure, errors, "directory", error); return; }
+        try {
             Bitmap screenshot = InstrumentationRegistry.getInstrumentation().getUiAutomation().takeScreenshot();
-            if (screenshot != null) try (var out = new FileOutputStream(new File(dir,"screenshot.png"))) {
-                screenshot.compress(Bitmap.CompressFormat.PNG, 100, out); screenshot.recycle();
+            if (screenshot == null) throw new IOException("Screenshot unavailable");
+            try (var out = new FileOutputStream(new File(dir,"screenshot.png"))) {
+                if (!screenshot.compress(Bitmap.CompressFormat.PNG, 100, out)) throw new IOException("PNG compression failed");
+            } finally { screenshot.recycle(); }
+        } catch (Exception error) { artifactError(failure, errors, "screenshot", error); }
+        try (var out = new FileOutputStream(new File(dir,"logcat.txt"))) {
+            var descriptor = InstrumentationRegistry.getInstrumentation().getUiAutomation().executeShellCommand("logcat -d -v threadtime");
+            // The AutoCloseInputStream owns the descriptor. Do not also close it as a second resource.
+            try (var input = new ParcelFileDescriptor.AutoCloseInputStream(descriptor)) {
+                byte[] buffer = new byte[8192]; int n; while ((n=input.read(buffer)) != -1) out.write(buffer,0,n);
             }
-            try (ParcelFileDescriptor fd = InstrumentationRegistry.getInstrumentation().getUiAutomation().executeShellCommand("logcat -d -v threadtime");
-                 var in = new ParcelFileDescriptor.AutoCloseInputStream(fd);
-                 var out = new FileOutputStream(new File(dir,"logcat.txt"))) {
-                byte[] buffer = new byte[8192]; int n; while ((n=in.read(buffer)) != -1) out.write(buffer,0,n);
+        } catch (Exception error) { artifactError(failure, errors, "logcat", error); }
+        // Preserve metadata even when another collection stage fails, so CI has a concrete cause.
+        try {
+            try (var out = new FileOutputStream(new File(dir,"connectivity-before-launch.txt"))) {
+                out.write(connectivityBeforeLaunch.getBytes(StandardCharsets.UTF_8));
             }
             StringWriter trace = new StringWriter(); failure.printStackTrace(new PrintWriter(trace));
             org.json.JSONObject meta = new org.json.JSONObject().put("test",d.getClassName()+"#"+d.getMethodName())
                     .put("api",android.os.Build.VERSION.SDK_INT).put("fingerprint",android.os.Build.FINGERPRINT)
                     .put("package",context.getPackageName()).put("utcMillis",System.currentTimeMillis())
                     .put("testedRevision",InstrumentationRegistry.getArguments().getString("testedRevision","UNSPECIFIED"))
+                    .put("phase", "before Activity teardown").put("artifactErrors", new org.json.JSONArray(errors))
                     .put("failure",trace.toString());
             try (var out = new FileOutputStream(new File(dir,"metadata.json"))) { out.write(meta.toString(2).getBytes(StandardCharsets.UTF_8)); }
-        } catch (Exception artifactFailure) { failure.addSuppressed(artifactFailure); }
+        } catch (Exception error) { artifactError(failure, errors, "metadata", error); }
+    }
+    private static void artifactError(Throwable failure, java.util.List<String> errors, String stage, Exception error) {
+        errors.add(stage + ": " + error); failure.addSuppressed(error);
+        android.util.Log.e("UI02Evidence", "Failure collecting " + stage, error);
     }
 }
