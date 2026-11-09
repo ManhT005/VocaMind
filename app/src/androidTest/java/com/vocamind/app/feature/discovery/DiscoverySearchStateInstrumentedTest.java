@@ -116,6 +116,12 @@ public class DiscoverySearchStateInstrumentedTest extends DiscoveryHarness {
     }
     @Test public void backWhileRunningAndRecreateKeepsCurrentQueryAndDropsAbandonedRead() throws Exception {
         openControlled(); query("bank"); Request old=request(1,"bank");
+        // Use the editor's real Submit control to invoke the existing clearFocus callback.
+        // A focused SearchAutoComplete can consume Back on API26 even after the IME is hidden.
+        onView(androidx.test.espresso.matcher.ViewMatchers.withId(androidx.appcompat.R.id.search_src_text))
+                .perform(androidx.test.espresso.action.ViewActions.pressImeActionButton(),
+                        androidx.test.espresso.action.ViewActions.closeSoftKeyboard());
+        loading(); assertEquals(1,requests.size()); assertFalse(old.result.isDone());
         androidx.test.espresso.Espresso.pressBack();
         await("home after back",a -> visible(a,R.id.open_vocabulary));
         failRead(old); settledMain(); tap(R.id.open_vocabulary); message(R.string.search_no_input);

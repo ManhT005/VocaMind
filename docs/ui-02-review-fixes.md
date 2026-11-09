@@ -63,6 +63,15 @@ Downloaded original metadata, raw logs and ZIPs are retained locally in `build/u
 - Normal runner invocations never request root. This is setup for a disposable CI image; no application permission/manifest or production source is changed. Network snapshot/setup/restore still occurs through the checked context after bootstrap, and the actual `Active default network: none` gate remains mandatory.
 - Host regression now totals33 PASS (25 network/runner/artifact cases plus8 CI-bootstrap cases). A real API30 Wi-Fi2 restoration probe also passed: the inner driver restored flag2 with effective Wi-Fi enabled, then its outer fixture restored the original flag0/disabled state. Raw evidence: `build/ui02-review/live-wifi2-inner-v2/` and `live-wifi2-outer-v2/verification.json`. An earlier priming attempt encountered the normal enabling transition, was rejected, and its outer cleanup restored the original state; it is not counted as a pass.
 
+## API26 navigation fixture correction at 2e206e7
+
+[Run 42588361670](https://github.com/ManhT005/VocaMind/actions/runs/42588361670), exact head `2e206e7931e79959c7a1fb3e199b23e660575e19`, artifact13660905170:
+
+- Bootstrap accepted UID2000?0; offline setup and final restoration accepted with no command errors. The Wi-Fi permission failure is resolved in this run.
+- Nine independent cases passed; `backWhileRunningAndRecreateKeepsCurrentQueryAndDropsAbandonedRead` failed at the unchanged15s `home after back` assertion. The screenshot shows the bank query still loading in SearchView, with no IME visible. Both suites/probe were not reached in that API26 run. Build & Test, Quiz and API35 were SUCCESS.
+- The test now sends the visible editor's IME Submit action first, invoking the existing production `onQueryTextSubmit` listener's `clearFocus`. It then asserts loading remains visible, request count remains1 and the held future remains incomplete, before issuing Back and retaining the Home assertion. It does not add an unconditional second Back, increase a timeout, call NavController/ViewModel, or alter the app's query/debounce semantics.
+- Updated Discovery app/test APK build and lint passed; the affected method passed independently on API30 (`build/ui02-review/local-back-focus/`). The corrected method must still pass within the full API26/API35 sequences on the next commit.
+
 ## New-head CI verification
 
 The corrected feature commit must run the full declared API26/API35 acceptance sequence. No new-head success is assumed from local API30, mock tests, or the reviewed head's Linux host success. Raw new-run metadata/jobs/artifacts are collected into `build/ui02-review/ci-fixed/` and the follow-up handoff records the exact tested commit, run ID, counts, pre-launch dumps and verified restore/probe evidence. Until those executions are observed, this CI gate remains open.
