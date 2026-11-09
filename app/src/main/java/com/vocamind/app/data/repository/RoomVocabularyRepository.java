@@ -21,17 +21,26 @@ public final class RoomVocabularyRepository implements VocabularyRepository {
         this.clock = clock;
     }
     private RepoResult<CatalogVocabulary> word(String pack, String id) {
-        if (pack == null || pack.trim().isEmpty() || id == null || id.trim().isEmpty())
+        return word(pack, id, false);
+    }
+    private RepoResult<CatalogVocabulary> word(String pack, String id, boolean catalogScope) {
+        if ((!catalogScope && (pack == null || pack.trim().isEmpty())) || id == null || id.trim().isEmpty()
+                || (catalogScope && !id.matches("[0-9a-f]{16}")))
             return RepoResult.failure(RepoError.INVALID_ARGUMENT);
         return RepositoryGuard.read(() -> {
             var found = catalog.getVocabulary(id);
-            if (found.isEmpty() || catalog.getWords(pack).stream().noneMatch(w -> w.stableId.equals(id)))
+            if (found.isEmpty() || (!catalogScope && catalog.getWords(pack).stream().noneMatch(w -> w.stableId.equals(id))))
                 return RepoResult.failure(RepoError.NOT_FOUND);
             return RepoResult.success(found.get());
         });
     }
     @Override public RepoResult<VocabularyDetail> getDetail(String pack, String id) {
-        var result = word(pack, id);
+        return detail(word(pack, id), id);
+    }
+    @Override public RepoResult<VocabularyDetail> getCatalogDetail(String id) {
+        return detail(word(null, id, true), id);
+    }
+    private RepoResult<VocabularyDetail> detail(RepoResult<CatalogVocabulary> result, String id) {
         if (!result.isSuccess()) return RepoResult.failure(result.getError());
         return RepositoryGuard.read(() -> {
             var progress = user.userDao().progress(id);
@@ -39,7 +48,12 @@ public final class RoomVocabularyRepository implements VocabularyRepository {
         });
     }
     @Override public RepoResult<Boolean> setSaved(String pack, String id, boolean saved) {
-        var result = word(pack, id);
+        return save(word(pack, id), id, saved);
+    }
+    @Override public RepoResult<Boolean> setCatalogSaved(String id, boolean saved) {
+        return save(word(null, id, true), id, saved);
+    }
+    private RepoResult<Boolean> save(RepoResult<CatalogVocabulary> result, String id, boolean saved) {
         if (!result.isSuccess()) return RepoResult.failure(result.getError());
         return RepositoryGuard.write(() -> user.runInTransaction(() -> {
             int affected = user.userDao().setSaved(id, saved);

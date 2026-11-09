@@ -1,0 +1,17 @@
+{
+  "serial": "emulator-5554",
+  "head": "e12f0ee2064b672921a976b3f80ad64227e1cd24",
+  "apk": "app\\build\\outputs\\apk\\catalogQa\\app-catalogQa.apk",
+  "apkSha256": "b85a4ab73ac5da166bcae8cee3e18274a65a11f9bf8b4362e18de2ca59590a76",
+  "classes": "com.vocamind.app.feature.search.SearchCatalogQaInstrumentedTest,com.vocamind.app.feature.search.SearchReadRecoveryInstrumentedTest,com.vocamind.app.feature.search.SearchLargeCatalogInstrumentedTest,com.vocamind.app.data.catalog.FtsSearchCostInstrumentedTest",
+  "latencyAssertionsEnabled": false,
+  "referenceHardwareVerified": false,
+  "fixtureSha256": "5fac69d4a5776130346be14747d81af3354a9220c2f9675ed95740c5058f54a7",
+  "install": "Performing Streamed Install\r\nSuccess\r\n",
+  "instrumentationApkSha256": "a507991d11a0c3678a2513e0d9372340ef3ea1c176f8050bacd7aa9fa5dcaf7d",
+  "ro.product.model": "sdk_gphone_x86",
+  "ro.hardware": "ranchu",
+  "ro.build.version.sdk": "30",
+  "ro.build.fingerprint": "google/sdk_gphone_x86/generic_x86_arm:11/RSR1.201013.001/6903271:user/release-keys",
+  "meminfo": "MemTotal:        2028236 kB\r\nMemFree:          222208 kB\r\nMemAvailable:    1162512 kB\r\nBuffers:           39392 kB\r\nCached:           937336 kB\r\nSwapCached:         6008 kB\r\nActive:           900200 kB\r\nInactive:         621088 kB\r\nActive(anon):     345768 kB\r\nInactive(anon):   214596 kB\r\nActive(file):     554432 kB\r\nInactive(file):   406492 kB\r\nUnevictable:        3068 kB\r\nMlocked:            3068 kB\r\nSwapTotal:       1521172 kB\r\nSwapFree:        1335316 kB\r\nDirty:              7996 kB\r\nWriteback:             0 kB\r\nAnonPages:        542420 kB\r\nMapped:           540360 kB\r\nShmem:             13288 kB\r\nKReclaimable:      44192 kB\r\nSlab:             124360 kB\r\nSReclaimable:      44192 kB\r\nSUnreclaim:        80168 kB\r\nKernelStack:       24864 kB\r\nPageTables:        36692 kB\r\nNFS_Unstable:          0 kB\r\nBounce:                0 kB\r\nWritebackTmp:          0 kB\r\nCommitLimit:     2535288 kB\r\nCommitted_AS:   28574016 kB\r\nVmallocTotal:   34359738367 kB\r\nVmallocUsed:       38176 kB\r\nVmallocChunk:          0 kB\r\nPercpu:             3264 kB\r\nCmaTotal:              0 kB\r\nCmaFree:               0 kB\r\nDirectMap4k:      137040 kB\r\nDirectMap2M:     1959936 kB\r\nDirectMap1G:           0 kB\r\n"
+}

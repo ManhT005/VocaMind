@@ -1,0 +1,29 @@
+Collecting jsonschema==4.26.0 (from -r docs/data/vocabulary-contract-v1/requirements-validation.txt (line 1))
+  Using cached jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+Collecting attrs>=22.2.0 (from jsonschema==4.26.0->-r docs/data/vocabulary-contract-v1/requirements-validation.txt (line 1))
+  Using cached attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema==4.26.0->-r docs/data/vocabulary-contract-v1/requirements-validation.txt (line 1))
+  Using cached jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting referencing>=0.28.4 (from jsonschema==4.26.0->-r docs/data/vocabulary-contract-v1/requirements-validation.txt (line 1))
+  Using cached referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting rpds-py>=0.25.0 (from jsonschema==4.26.0->-r docs/data/vocabulary-contract-v1/requirements-validation.txt (line 1))
+  Using cached rpds_py-2026.9.1-cp313-cp313-win_amd64.whl.metadata (4.2 kB)
+Using cached jsonschema-4.26.0-py3-none-any.whl (90 kB)
+Using cached attrs-26.1.0-py3-none-any.whl (67 kB)
+Using cached jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+Using cached referencing-0.37.0-py3-none-any.whl (26 kB)
+Using cached rpds_py-2026.9.1-cp313-cp313-win_amd64.whl (222 kB)
+Installing collected packages: rpds-py, attrs, referencing, jsonschema-specifications, jsonschema
+
+Successfully installed attrs-26.1.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 referencing-0.37.0 rpds-py-2026.9.1
+python :
+At line:2 char:1
++ python -m pip install --target build/search01-python-deps -r docs/dat ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+[notice] A new release of pip is available: 26.2.1 -> 26.3
+[notice] To update, run:
+C:\Users\LMT\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m pip
+install --upgrade pip

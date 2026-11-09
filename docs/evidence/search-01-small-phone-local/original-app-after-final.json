@@ -1,0 +1,13 @@
+{
+  "apkPath": "package:/data/app/~~9F2GijAP_C6sLijiv06z6Q==/com.vocamind.app-NyKnzcGqBgWXkiYFBej2BQ==/base.apk",
+  "databaseListingExit": 0,
+  "databaseListingStderr": "",
+  "databaseHashes": {
+    "databases/catalog.db": "614789d794d57b7632992b46bfdc2678bdc649cc01e9055b62a7abfd4cec1243",
+    "databases/catalog.db-wal": "20891ccbc8d9c986664e914e0a7cb8ed9c1c351df2f9c5b8d9302890e32dd144",
+    "databases/catalog.db-shm": "4b5711e2f28e9b6338ea5be657de2d24d7cc3c6125d4272ce0ecba3601dafbaa",
+    "databases/userdata.db": "9010186c5c083155a45673017d1e31c2a178e63cc15a57bbffde4d1956a23dad",
+    "databases/userdata.db-wal": "d98fd0a9f0ee561e07503ce38baf85a3b26485963540ad37714c63a1c9f01684",
+    "databases/userdata.db-shm": "49b0d75dd47a346059474046f9f8cfd0e4d6ae780edd45061589e0d1826d0e07"
+  }
+}

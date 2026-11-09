@@ -1,0 +1,46 @@
+{
+  "old-a": {
+    "samples": 100,
+    "meanMs": 45.302039,
+    "p95Ms": 50.991,
+    "maxMs": 109.465,
+    "atOrAbove50Ms": 7
+  },
+  "new-a": {
+    "samples": 100,
+    "meanMs": 39.734422,
+    "p95Ms": 47.1977,
+    "maxMs": 52.977,
+    "atOrAbove50Ms": 3
+  },
+  "old-b": {
+    "samples": 100,
+    "meanMs": 42.904695,
+    "p95Ms": 47.7021,
+    "maxMs": 53.5282,
+    "atOrAbove50Ms": 1
+  },
+  "new-b": {
+    "samples": 100,
+    "meanMs": 35.854233,
+    "p95Ms": 39.6871,
+    "maxMs": 43.1448,
+    "atOrAbove50Ms": 0
+  },
+  "combined-old": {
+    "samples": 200,
+    "meanMs": 44.103367,
+    "p95Ms": 49.5516,
+    "maxMs": 109.465,
+    "atOrAbove50Ms": 8
+  },
+  "combined-new": {
+    "samples": 200,
+    "meanMs": 37.7943275,
+    "p95Ms": 45.5952,
+    "maxMs": 52.977,
+    "atOrAbove50Ms": 3
+  },
+  "observedMeanReductionPercent": 14.30511983359456,
+  "qualification": "Emulator telemetry only; no SRS acceptance; max of all new samples retained including >=50ms"
+}

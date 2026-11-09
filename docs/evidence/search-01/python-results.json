@@ -1,0 +1,289 @@
+[
+  {
+    "step": "source-gate",
+    "command": [
+      "python",
+      "tools/vocabulary/gate_sources.py",
+      "--snapshot",
+      "docs/data/snapshot.json",
+      "--json"
+    ],
+    "expected": 0,
+    "exitCode": 0
+  },
+  {
+    "step": "vocabulary-tests",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/vocabulary",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "expected": 0,
+    "exitCode": 0
+  },
+  {
+    "step": "catalog-tests",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/catalog",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "expected": 0,
+    "exitCode": 0
+  },
+  {
+    "step": "contract-tests",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "docs/data/vocabulary-contract-v1",
+      "-p",
+      "test_contract.py",
+      "-v"
+    ],
+    "expected": 0,
+    "exitCode": 0
+  },
+  {
+    "step": "credits",
+    "command": [
+      "python",
+      "tools/catalog/check_credits.py"
+    ],
+    "expected": 0,
+    "exitCode": 0
+  },
+  {
+    "step": "contract",
+    "command": [
+      "python",
+      "docs/data/vocabulary-contract-v1/validate_contract.py",
+      "docs/data/vocabulary-contract-v1/fixtures/valid/catalog.json"
+    ],
+    "expected": 0,
+    "exitCode": 0
+  },
+  {
+    "step": "ingestion",
+    "command": [
+      "python",
+      "tools/vocabulary/verify_ingestion.py",
+      "--fixture",
+      "--config",
+      "tools/vocabulary/fixtures/ingestion/verified/config.json",
+      "--output",
+      "build/vocabulary-ingestion/search01-ci-20261106233110/proof"
+    ],
+    "expected": 0,
+    "exitCode": 0
+  },
+  {
+    "step": "ingestion-contract",
+    "command": [
+      "python",
+      "docs/data/vocabulary-contract-v1/validate_contract.py",
+      "build/vocabulary-ingestion/search01-ci-20261106233110/proof/a/canonical-catalog.json"
+    ],
+    "expected": 0,
+    "exitCode": 0
+  },
+  {
+    "step": "fixture-release-rejected",
+    "command": [
+      "python",
+      "docs/data/vocabulary-contract-v1/validate_contract.py",
+      "build/vocabulary-ingestion/search01-ci-20261106233110/proof/a/canonical-catalog.json",
+      "--release"
+    ],
+    "expected": 1,
+    "exitCode": 1
+  },
+  {
+    "step": "quality-a",
+    "command": [
+      "python",
+      "tools/vocabulary/quality.py",
+      "--fixture",
+      "--input",
+      "build/vocabulary-ingestion/search01-ci-20261106233110/proof/a",
+      "--config",
+      "tools/vocabulary/fixtures/ingestion/verified/config.json",
+      "--reviews",
+      "tools/vocabulary/fixtures/quality/reviews.json",
+      "--output",
+      "build/vocabulary-quality/search01-ci-20261106233110/quality-a"
+    ],
+    "expected": 0,
+    "exitCode": 0
+  },
+  {
+    "step": "quality-b",
+    "command": [
+      "python",
+      "tools/vocabulary/quality.py",
+      "--fixture",
+      "--input",
+      "build/vocabulary-ingestion/search01-ci-20261106233110/proof/a",
+      "--config",
+      "tools/vocabulary/fixtures/ingestion/verified/config.json",
+      "--reviews",
+      "tools/vocabulary/fixtures/quality/reviews.json",
+      "--output",
+      "build/vocabulary-quality/search01-ci-20261106233110/quality-b"
+    ],
+    "expected": 0,
+    "exitCode": 0
+  },
+  {
+    "step": "quality-rejected",
+    "command": [
+      "python",
+      "tools/vocabulary/quality.py",
+      "--fixture",
+      "--input",
+      "build/vocabulary-ingestion/search01-ci-20261106233110/proof/a",
+      "--config",
+      "tools/vocabulary/fixtures/ingestion/verified/config.json",
+      "--reviews",
+      "tools/vocabulary/fixtures/quality/pending-reviews.json",
+      "--output",
+      "build/vocabulary-quality/search01-ci-20261106233110/quality-rejected"
+    ],
+    "expected": 1,
+    "exitCode": 1
+  },
+  {
+    "step": "quality-contract",
+    "command": [
+      "python",
+      "docs/data/vocabulary-contract-v1/validate_contract.py",
+      "build/vocabulary-quality/search01-ci-20261106233110/quality-a/canonical-catalog.json"
+    ],
+    "expected": 0,
+    "exitCode": 0
+  },
+  {
+    "step": "corpus-a",
+    "command": [
+      "python",
+      "tools/vocabulary/prepare_corpus.py",
+      "--require-approved",
+      "--output",
+      "build/vocabulary-corpus/search01-ci-20261106233110/corpus-a"
+    ],
+    "expected": 1,
+    "exitCode": 1
+  },
+  {
+    "step": "corpus-b",
+    "command": [
+      "python",
+      "tools/vocabulary/prepare_corpus.py",
+      "--require-approved",
+      "--output",
+      "build/vocabulary-corpus/search01-ci-20261106233110/corpus-b"
+    ],
+    "expected": 1,
+    "exitCode": 1
+  },
+  {
+    "step": "editorial-rejected",
+    "command": [
+      "python",
+      "tools/vocabulary/ingest.py",
+      "--config",
+      "docs/data/voc-data-04/corpus-v1/ingestion-proposal.json",
+      "--output",
+      "build/vocabulary-ingestion/search01-ci-20261106233110/rejected"
+    ],
+    "expected": 1,
+    "exitCode": 1
+  },
+  {
+    "step": "accepted-editorial",
+    "command": [
+      "python",
+      "tools/vocabulary/accept_editorial.py",
+      "--output",
+      "build/vocabulary-corpus/search01-ci-20261106233110/accepted"
+    ],
+    "expected": 0,
+    "exitCode": 0
+  },
+  {
+    "step": "accepted-ingestion",
+    "command": [
+      "python",
+      "tools/vocabulary/ingest.py",
+      "--config",
+      "docs/data/voc-data-04/accepted-v1/ingestion-config.json",
+      "--output",
+      "build/vocabulary-ingestion/search01-ci-20261106233110/accepted-ingestion"
+    ],
+    "expected": 0,
+    "exitCode": 0
+  },
+  {
+    "step": "accepted-quality",
+    "command": [
+      "python",
+      "tools/vocabulary/quality.py",
+      "--input",
+      "build/vocabulary-ingestion/search01-ci-20261106233110/accepted-ingestion",
+      "--config",
+      "docs/data/voc-data-04/accepted-v1/ingestion-config.json",
+      "--reviews",
+      "docs/data/voc-data-04/accepted-v1/reviews.json",
+      "--output",
+      "build/vocabulary-quality/search01-ci-20261106233110/accepted-quality"
+    ],
+    "expected": 0,
+    "exitCode": 0
+  },
+  {
+    "step": "accepted-contract",
+    "command": [
+      "python",
+      "docs/data/vocabulary-contract-v1/validate_contract.py",
+      "build/vocabulary-quality/search01-ci-20261106233110/accepted-quality/canonical-catalog.json",
+      "--release"
+    ],
+    "expected": 0,
+    "exitCode": 0
+  },
+  {
+    "step": "accepted-verify",
+    "command": [
+      "python",
+      "tools/vocabulary/accept_editorial.py",
+      "--verify",
+      "build/vocabulary-quality/search01-ci-20261106233110/accepted-quality"
+    ],
+    "expected": 0,
+    "exitCode": 0
+  },
+  {
+    "step": "unicode",
+    "command": [
+      "python",
+      "tools/unicode/generate.py"
+    ],
+    "expected": 0,
+    "exitCode": 0
+  }
+]

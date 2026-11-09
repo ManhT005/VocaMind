@@ -97,6 +97,8 @@ android {
         androidTest.assets.srcDir releaseTestAssets
         test.java.srcDir "src/attributionTest/java"
         androidTest.java.srcDir "src/attributionTest/java"
+        test.java.srcDir "src/searchTest/java"
+        androidTest.java.srcDir "src/searchTest/java"
         test.java.srcDir "src/quizTest/java"
         androidTest.java.srcDir "src/quizTest/java"
         androidTest.assets.srcDir "schemas"
@@ -154,6 +156,7 @@ android {
 
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
 
     compileOptions {

@@ -7,4 +7,7 @@ public final class ToggleSaved {
     public RepoResult<Boolean> execute(String packId, String stableId, boolean target) {
         return repository.setSaved(packId, stableId, target);
     }
+    public RepoResult<Boolean> executeCatalog(String stableId, boolean target) {
+        return repository.setCatalogSaved(stableId, target);
+    }
 }

@@ -1,0 +1,99 @@
+{
+  "purpose": "research-status-not-release-approval",
+  "sourceCount": 7,
+  "eligibleSourceCount": 0,
+  "declaredRawRows": 4059,
+  "sources": [
+    {
+      "id": "ngsl",
+      "decision": "hold",
+      "pipelineEligible": false,
+      "snapshotId": "ngsl-1.2-retrieved-20261025",
+      "snapshotContentSha256": "a87be34f368cbadfc5e0e3f25578314ddfb6900fb74b9e9d852abd69229d2499",
+      "approvalDigestVersion": 2,
+      "declaredRawRows": 2809,
+      "blockers": [
+        "PO/Content Lead snapshot sign-off pending",
+        "Technical review by Truong pending"
+      ]
+    },
+    {
+      "id": "tsl",
+      "decision": "hold",
+      "pipelineEligible": false,
+      "snapshotId": "tsl-1.2-retrieved-20261025",
+      "snapshotContentSha256": "d9d934a34150a648c7b82400a0f9be1ca43eb35bb8db523de018dc9b097209d0",
+      "approvalDigestVersion": 2,
+      "declaredRawRows": 1250,
+      "blockers": [
+        "PO/Content Lead snapshot sign-off pending",
+        "Technical review by Truong pending"
+      ]
+    },
+    {
+      "id": "kaikki-viwiktionary",
+      "decision": "hold",
+      "pipelineEligible": false,
+      "snapshotId": null,
+      "snapshotContentSha256": null,
+      "approvalDigestVersion": 2,
+      "declaredRawRows": 0,
+      "blockers": [
+        "Exact viwiktionary snapshot license route and exceptions unresolved",
+        "Raw data snapshot not acquired; no ingestion permitted",
+        "PO/Content Lead sign-off and record attribution pending"
+      ]
+    },
+    {
+      "id": "tatoeba-text",
+      "decision": "hold",
+      "pipelineEligible": false,
+      "snapshotId": null,
+      "snapshotContentSha256": null,
+      "approvalDigestVersion": 2,
+      "declaredRawRows": 0,
+      "blockers": [
+        "Text export snapshot and per-sentence authors/licenses/links not acquired",
+        "PO/Content Lead snapshot sign-off pending"
+      ]
+    },
+    {
+      "id": "fvdp",
+      "decision": "exclude",
+      "pipelineEligible": false,
+      "snapshotId": null,
+      "snapshotContentSha256": null,
+      "approvalDigestVersion": 2,
+      "declaredRawRows": 0,
+      "blockers": [
+        "Excluded from MVP by backlog"
+      ]
+    },
+    {
+      "id": "tatoeba-audio",
+      "decision": "exclude",
+      "pipelineEligible": false,
+      "snapshotId": null,
+      "snapshotContentSha256": null,
+      "approvalDigestVersion": 2,
+      "declaredRawRows": 0,
+      "blockers": [
+        "Excluded from MVP by backlog",
+        "Audio licenses vary by contributor"
+      ]
+    },
+    {
+      "id": "commons-audio",
+      "decision": "hold",
+      "pipelineEligible": false,
+      "snapshotId": null,
+      "snapshotContentSha256": null,
+      "approvalDigestVersion": 2,
+      "declaredRawRows": 0,
+      "blockers": [
+        "Research only; no media ingestion route",
+        "Per-file license, creator, attribution and content review absent"
+      ]
+    }
+  ]
+}

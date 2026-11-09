@@ -1,0 +1,24 @@
+--------- beginning of main
+11-07 00:22:25.855  7120  7120 D SearchTiming: generation=1 bind_to_post_ms=45.456671
+11-07 00:22:28.711  7120  7120 D SearchTiming: generation=2 bind_to_post_ms=22.765835
+11-07 00:22:28.735  7120  7120 D SearchTiming: generation=3 bind_to_post_ms=13.935345
+11-07 00:22:28.782  7120  7120 D SearchTiming: generation=4 bind_to_post_ms=30.007069
+11-07 00:22:28.799  7120  7120 D SearchTiming: generation=5 bind_to_post_ms=9.683083
+11-07 00:22:29.392  7120  7120 D SearchTiming: generation=5 debounce_ms=602.27696
+11-07 00:22:29.393  7120  7247 D SearchTiming: queue_ms=0.321545
+11-07 00:22:29.412  7120  7247 D SearchTiming: query_hydration_ms=19.128544
+11-07 00:22:29.412  7120  7120 D SearchTiming: generation=5 submit_to_main_ms=20.150044
+11-07 00:22:29.454  7120  7120 D SearchTiming: generation=5 bind_to_post_ms=41.264273
+11-07 00:22:35.580  7120  7120 D SearchTiming: generation=5 bind_to_post_ms=23.382361
+11-07 00:22:38.722  7120  7120 D SearchTiming: generation=5 bind_to_post_ms=51.584254
+11-07 00:22:41.818  7120  7120 D SearchTiming: generation=5 bind_to_post_ms=45.542368
+11-07 00:22:44.910  7120  7120 D SearchTiming: generation=7 bind_to_post_ms=23.189166
+11-07 00:23:59.651  7120  7120 D SearchTiming: generation=8 bind_to_post_ms=30.074114
+11-07 00:23:59.665  7120  7120 D SearchTiming: generation=9 bind_to_post_ms=10.052576
+11-07 00:23:59.703  7120  7120 D SearchTiming: generation=10 bind_to_post_ms=30.198755
+11-07 00:23:59.735  7120  7120 D SearchTiming: generation=11 bind_to_post_ms=20.977526
+11-07 00:24:00.315  7120  7120 D SearchTiming: generation=11 debounce_ms=600.201442
+11-07 00:24:00.315  7120  7247 D SearchTiming: queue_ms=0.236015
+11-07 00:24:00.318  7120  7247 D SearchTiming: query_hydration_ms=2.586658
+11-07 00:24:00.318  7120  7120 D SearchTiming: generation=11 submit_to_main_ms=3.310717
+11-07 00:24:00.352  7120  7120 D SearchTiming: generation=11 bind_to_post_ms=33.769456

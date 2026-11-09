@@ -1,0 +1,8 @@
+{
+  "global.airplane_mode_on": "1",
+  "global.wifi_on": "2",
+  "system.font_scale": "null",
+  "system.accelerometer_rotation": "1",
+  "system.user_rotation": "0",
+  "secure.show_ime_with_hard_keyboard": "1"
+}

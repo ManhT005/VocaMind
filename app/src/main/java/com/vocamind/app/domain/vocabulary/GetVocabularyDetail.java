@@ -6,4 +6,7 @@ public final class GetVocabularyDetail {
     public RepoResult<VocabularyDetail> execute(String packId, String stableId) {
         return repository.getDetail(packId, stableId);
     }
+    public RepoResult<VocabularyDetail> executeCatalog(String stableId) {
+        return repository.getCatalogDetail(stableId);
+    }
 }

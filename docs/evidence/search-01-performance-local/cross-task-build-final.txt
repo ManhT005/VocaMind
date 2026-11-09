@@ -1,0 +1,89 @@
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preCatalogQaBuild UP-TO-DATE
+> Task :app:mergeCatalogQaNativeDebugMetadata NO-SOURCE
+> Task :app:dataBindingMergeDependencyArtifactsCatalogQa UP-TO-DATE
+> Task :app:generateCatalogQaResValues UP-TO-DATE
+> Task :app:generateCatalogQaResources UP-TO-DATE
+> Task :app:mergeCatalogQaResources UP-TO-DATE
+> Task :app:packageCatalogQaResources UP-TO-DATE
+> Task :app:parseCatalogQaLocalResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesCatalogQa UP-TO-DATE
+> Task :app:generateCatalogQaBuildConfig
+> Task :app:javaPreCompileCatalogQa UP-TO-DATE
+> Task :app:checkCatalogQaAarMetadata UP-TO-DATE
+> Task :app:mapCatalogQaSourceSetPaths UP-TO-DATE
+> Task :app:createCatalogQaCompatibleScreenManifests
+> Task :app:extractDeepLinksCatalogQa UP-TO-DATE
+> Task :app:processCatalogQaMainManifest
+> Task :app:processCatalogQaManifest
+> Task :app:mergeCatalogQaShaders UP-TO-DATE
+> Task :app:processCatalogQaManifestForPackage
+> Task :app:compileCatalogQaShaders NO-SOURCE
+> Task :app:generateCatalogQaAssets UP-TO-DATE
+> Task :app:processCatalogQaResources
+
+> Task :app:prepareCatalogQa
+QC pass: 150 input, 0 errors
+C:\Users\LMT\Documents\University\Nam4\N4_HK1\PTUDTBDT\BLT\VocaMind\app\build\generated\voc06-qa
+
+> Task :app:compileCatalogQaJavaWithJavac
+> Task :app:mergeCatalogQaAssets
+> Task :app:desugarCatalogQaFileDependencies UP-TO-DATE
+> Task :app:compressCatalogQaAssets
+> Task :app:dexBuilderCatalogQa
+> Task :app:mergeCatalogQaGlobalSynthetics UP-TO-DATE
+> Task :app:processCatalogQaJavaRes UP-TO-DATE
+> Task :app:mergeCatalogQaJavaResource UP-TO-DATE
+> Task :app:checkCatalogQaDuplicateClasses UP-TO-DATE
+> Task :app:mergeExtDexCatalogQa UP-TO-DATE
+> Task :app:mergeLibDexCatalogQa UP-TO-DATE
+> Task :app:mergeCatalogQaJniLibFolders UP-TO-DATE
+> Task :app:mergeCatalogQaNativeLibs NO-SOURCE
+> Task :app:stripCatalogQaDebugSymbols NO-SOURCE
+> Task :app:validateSigningCatalogQa UP-TO-DATE
+> Task :app:writeCatalogQaAppMetadata UP-TO-DATE
+> Task :app:writeCatalogQaSigningConfigVersions UP-TO-DATE
+> Task :app:preCatalogQaAndroidTestBuild SKIPPED
+> Task :app:mergeProjectDexCatalogQa
+> Task :app:dataBindingMergeDependencyArtifactsCatalogQaAndroidTest UP-TO-DATE
+> Task :app:generateCatalogQaAndroidTestResValues UP-TO-DATE
+> Task :app:generateCatalogQaAndroidTestResources UP-TO-DATE
+> Task :app:mergeCatalogQaAndroidTestResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesCatalogQaAndroidTest UP-TO-DATE
+> Task :app:processCatalogQaAndroidTestManifest
+> Task :app:generateCatalogQaAndroidTestBuildConfig
+> Task :app:javaPreCompileCatalogQaAndroidTest UP-TO-DATE
+> Task :app:checkCatalogQaAndroidTestAarMetadata UP-TO-DATE
+> Task :app:mapCatalogQaAndroidTestSourceSetPaths UP-TO-DATE
+> Task :app:bundleCatalogQaClassesToCompileJar
+> Task :app:mergeCatalogQaAndroidTestShaders UP-TO-DATE
+> Task :app:compileCatalogQaAndroidTestShaders NO-SOURCE
+> Task :app:prepareReleaseCatalogTests UP-TO-DATE
+> Task :app:generateCatalogQaAndroidTestAssets UP-TO-DATE
+> Task :app:mergeCatalogQaAndroidTestAssets UP-TO-DATE
+> Task :app:compressCatalogQaAndroidTestAssets UP-TO-DATE
+> Task :app:desugarCatalogQaAndroidTestFileDependencies UP-TO-DATE
+> Task :app:processCatalogQaAndroidTestJavaRes NO-SOURCE
+> Task :app:mergeCatalogQaAndroidTestJavaResource UP-TO-DATE
+> Task :app:checkCatalogQaAndroidTestDuplicateClasses UP-TO-DATE
+> Task :app:mergeExtDexCatalogQaAndroidTest UP-TO-DATE
+> Task :app:mergeLibDexCatalogQaAndroidTest UP-TO-DATE
+> Task :app:mergeCatalogQaAndroidTestJniLibFolders UP-TO-DATE
+> Task :app:mergeCatalogQaAndroidTestNativeLibs NO-SOURCE
+> Task :app:stripCatalogQaAndroidTestDebugSymbols NO-SOURCE
+> Task :app:validateSigningCatalogQaAndroidTest UP-TO-DATE
+> Task :app:writeCatalogQaAndroidTestSigningConfigVersions UP-TO-DATE
+> Task :app:processCatalogQaAndroidTestResources
+> Task :app:packageCatalogQa
+> Task :app:createCatalogQaApkListingFileRedirect
+> Task :app:assembleCatalogQa
+> Task :app:compileCatalogQaAndroidTestJavaWithJavac
+> Task :app:dexBuilderCatalogQaAndroidTest
+> Task :app:mergeCatalogQaAndroidTestGlobalSynthetics UP-TO-DATE
+> Task :app:mergeProjectDexCatalogQaAndroidTest
+> Task :app:packageCatalogQaAndroidTest
+> Task :app:createCatalogQaAndroidTestApkListingFileRedirect
+> Task :app:assembleCatalogQaAndroidTest
+
+BUILD SUCCESSFUL in 9s
+67 actionable tasks: 23 executed, 44 up-to-date

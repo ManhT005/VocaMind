@@ -1,0 +1,12 @@
+{
+  "app": {
+    "path": "app/build/outputs/apk/catalogQa/app-catalogQa.apk",
+    "sha256": "805cf000c7df757dd3dbb397ccfb47ee800fc276cae20f57ee361fafd0fec673",
+    "install": "Performing Streamed Install\r\nSuccess\r\n"
+  },
+  "tests": {
+    "path": "app/build/outputs/apk/androidTest/catalogQa/app-catalogQa-androidTest.apk",
+    "sha256": "00959f4c5221ed2e081d4d65664c24b278a06c31f832cb2d1706033919a0a4c5",
+    "install": "Performing Streamed Install\r\nSuccess\r\n"
+  }
+}
