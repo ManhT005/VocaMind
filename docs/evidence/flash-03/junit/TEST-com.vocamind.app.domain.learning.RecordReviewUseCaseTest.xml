@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vocamind.app.domain.learning.RecordReviewUseCaseTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-08T18:00:38" hostname="864f75645320" time="0.002">
+  <properties/>
+  <testcase name="firstReviewUsesSingleTimestampAndCommitsOnce" classname="com.vocamind.app.domain.learning.RecordReviewUseCaseTest" time="0.001"/>
+  <testcase name="invalidCommandDoesNotTouchRepository" classname="com.vocamind.app.domain.learning.RecordReviewUseCaseTest" time="0.0"/>
+  <testcase name="countOverflowDoesNotWrite" classname="com.vocamind.app.domain.learning.RecordReviewUseCaseTest" time="0.001"/>
+  <testcase name="failedCommitDoesNotReturnSuccessOrMutateSnapshot" classname="com.vocamind.app.domain.learning.RecordReviewUseCaseTest" time="0.0"/>
+  <testcase name="allRatingsKeepSavedAndOriginalLearnedTimestamp" classname="com.vocamind.app.domain.learning.RecordReviewUseCaseTest" time="0.0"/>
+  <testcase name="savedButUnreviewedWordGetsFirstLearnedTimestamp" classname="com.vocamind.app.domain.learning.RecordReviewUseCaseTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

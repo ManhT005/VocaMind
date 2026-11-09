@@ -28,13 +28,13 @@ public class FlashcardFragment extends Fragment {
         binding.back.setOnClickListener(v -> NavHostFragment.findNavController(this).popBackStack());
         binding.retry.setOnClickListener(v -> model.retry());
         binding.card.setOnClickListener(v -> model.flip());
-        binding.rateForgot.setOnClickListener(v -> model.rate(Rating.FORGOT));
-        binding.rateHard.setOnClickListener(v -> model.rate(Rating.HARD));
-        binding.rateRemembered.setOnClickListener(v -> model.rate(Rating.REMEMBERED));
-        model.state().observe(getViewLifecycleOwner(), state -> render(binding, state));
+        // The ScrollView consumes taps before they reach the outer card. Its content
+        // forwards clicks; a scroll gesture still cancels the child click normally.
+        binding.cardContent.setOnClickListener(v -> binding.card.performClick());
+        model.state().observe(getViewLifecycleOwner(), state -> render(binding, model, state));
     }
 
-    private void render(FragmentFlashcardBinding b, FlashcardViewModel.State state) {
+    private void render(FragmentFlashcardBinding b, FlashcardViewModel model, FlashcardViewModel.State state) {
         boolean ready = state.status == FlashcardViewModel.Status.READY;
         b.loading.setVisibility(state.status == FlashcardViewModel.Status.LOADING ? View.VISIBLE : View.GONE);
         b.card.setVisibility(ready ? View.VISIBLE : View.GONE);
@@ -61,6 +61,10 @@ public class FlashcardFragment extends Fragment {
         b.cardIpa.setVisibility(hasIpa ? View.VISIBLE : View.GONE);
         b.cardIpa.setText(word.ipa);
         b.card.setContentDescription(state.flipped ? null : getString(R.string.flashcard_flip_action));
+        // Capture the occurrence rendered by this view, never look up the current ID at click time.
+        b.rateForgot.setOnClickListener(v -> model.rate(state.presentationId, Rating.FORGOT));
+        b.rateHard.setOnClickListener(v -> model.rate(state.presentationId, Rating.HARD));
+        b.rateRemembered.setOnClickListener(v -> model.rate(state.presentationId, Rating.REMEMBERED));
         b.rateForgot.setEnabled(state.ratingEnabled());
         b.rateHard.setEnabled(state.ratingEnabled());
         b.rateRemembered.setEnabled(state.ratingEnabled());

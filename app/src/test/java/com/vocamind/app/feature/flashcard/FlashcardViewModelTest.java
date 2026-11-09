@@ -31,6 +31,7 @@ import org.robolectric.annotation.Config;
 @RunWith(RobolectricTestRunner.class) @Config(sdk = 35)
 public class FlashcardViewModelTest {
     private static final Clock CLOCK = Clock.fixed(Instant.parse("2026-11-05T10:00:00Z"), ZoneOffset.UTC);
+    private long now;
     private final Queue<Runnable> worker = new ArrayDeque<>();
     private final Queue<Runnable> main = new ArrayDeque<>();
     private final FakePackRepository packs = new FakePackRepository();
@@ -58,9 +59,15 @@ public class FlashcardViewModelTest {
     private FlashcardViewModel model() {
         PlanToday planner = new PlanToday(packs, study, CLOCK, ZoneOffset.UTC);
         FlashcardViewModel model = new FlashcardViewModel(planner::execute, worker::add, main::add, () -> { },
-                (item, rating) -> useCase.execute(item.getVocabulary().stableId, rating));
+                (item, rating) -> useCase.execute(item.getVocabulary().stableId, rating), () -> now);
         settle();
         return model;
+    }
+
+    /** Ordinary user decisions; precise timing scenarios call model.rate directly. */
+    private void rate(FlashcardViewModel model, Rating rating) {
+        now += 600;
+        model.rate(state(model).presentationId, rating);
     }
 
     private static FlashcardViewModel.State state(FlashcardViewModel model) { return model.state().getValue(); }
@@ -85,7 +92,7 @@ public class FlashcardViewModelTest {
     @Test public void ratingBeforeFlipWritesNothing() {
         twoNewWords();
         FlashcardViewModel model = model();
-        model.rate(Rating.REMEMBERED);
+        rate(model, Rating.REMEMBERED);
         assertTrue(worker.isEmpty());
         assertTrue(reviews.calls.isEmpty());
         assertEquals(1, state(model).position);
@@ -95,7 +102,7 @@ public class FlashcardViewModelTest {
         twoNewWords();
         FlashcardViewModel model = model();
         model.flip();
-        model.rate(Rating.REMEMBERED);
+        rate(model, Rating.REMEMBERED);
         // Write in flight: still on card A, ratings locked.
         assertTrue(state(model).saving);
         assertFalse(state(model).ratingEnabled());
@@ -117,12 +124,12 @@ public class FlashcardViewModelTest {
         twoNewWords();
         FlashcardViewModel model = model();
         model.flip();
-        model.rate(Rating.FORGOT);
+        rate(model, Rating.FORGOT);
         settle();
         assertEquals(0, reviews.calls.get(0).box);
         assertEquals(1, reviews.calls.get(0).consecutiveMistakes);
         model.flip();
-        model.rate(Rating.HARD);
+        rate(model, Rating.HARD);
         settle();
         assertEquals(2, reviews.calls.size());
         assertEquals(0, reviews.calls.get(1).box);
@@ -133,9 +140,9 @@ public class FlashcardViewModelTest {
         twoNewWords();
         FlashcardViewModel model = model();
         model.flip();
-        model.rate(Rating.FORGOT);
-        model.rate(Rating.FORGOT);
-        model.rate(Rating.REMEMBERED);
+        rate(model, Rating.FORGOT);
+        rate(model, Rating.FORGOT);
+        rate(model, Rating.REMEMBERED);
         assertEquals(1, worker.size());
         settle();
         assertEquals(1, reviews.calls.size());
@@ -146,7 +153,7 @@ public class FlashcardViewModelTest {
         twoNewWords();
         FlashcardViewModel model = model();
         model.flip();
-        model.rate(Rating.REMEMBERED);
+        rate(model, Rating.REMEMBERED);
         model.retry(); // must not start a reload while the write is in flight
         assertEquals(1, worker.size());
         settle();
@@ -160,7 +167,7 @@ public class FlashcardViewModelTest {
         FlashcardViewModel model = model();
         model.flip();
         reviews.failure = RepoError.WRITE_FAILED;
-        model.rate(Rating.REMEMBERED);
+        rate(model, Rating.REMEMBERED);
         settle();
         FlashcardViewModel.State s = state(model);
         assertTrue(s.saveFailed);
@@ -172,7 +179,7 @@ public class FlashcardViewModelTest {
 
         // The learner decides again; nothing was retried automatically.
         reviews.failure = null;
-        model.rate(Rating.REMEMBERED);
+        rate(model, Rating.REMEMBERED);
         settle();
         assertEquals(1, reviews.calls.size());
         assertFalse(state(model).saveFailed);
@@ -184,7 +191,7 @@ public class FlashcardViewModelTest {
         FlashcardViewModel model = model();
         model.flip();
         reviews.failure = RepoError.CONFLICT;
-        model.rate(Rating.HARD);
+        rate(model, Rating.HARD);
         settle();
         assertTrue(state(model).saveFailed);
         assertEquals(1, state(model).position);
@@ -197,14 +204,14 @@ public class FlashcardViewModelTest {
         study.fresh.add(word("cccccccccccccccc"));
         FlashcardViewModel model = model();
         model.flip();
-        model.rate(Rating.FORGOT); // A forgotten: queue becomes B, C, A
+        rate(model, Rating.FORGOT); // A forgotten: queue becomes B, C, A
         settle();
         assertEquals(4, state(model).total);
         String[] expected = {B, "cccccccccccccccc", A};
         for (String id : expected) {
             assertEquals(id, state(model).card.getVocabulary().stableId);
             model.flip();
-            model.rate(Rating.REMEMBERED);
+            rate(model, Rating.REMEMBERED);
             settle();
         }
         assertEquals(FlashcardViewModel.Status.FINISHED, state(model).status);
@@ -220,7 +227,7 @@ public class FlashcardViewModelTest {
         while (state(model).status == FlashcardViewModel.Status.READY) {
             assertTrue("loop guard", ++shown < 10);
             model.flip();
-            model.rate(Rating.FORGOT);
+            rate(model, Rating.FORGOT);
             settle();
         }
         assertEquals(2, shown);
@@ -232,7 +239,7 @@ public class FlashcardViewModelTest {
         FlashcardViewModel model = model();
         model.flip();
         reviews.failure = RepoError.WRITE_FAILED;
-        model.rate(Rating.FORGOT);
+        rate(model, Rating.FORGOT);
         settle();
         assertEquals(2, state(model).total);
         assertEquals(A, state(model).card.getVocabulary().stableId);
@@ -246,7 +253,7 @@ public class FlashcardViewModelTest {
         for (int session = 0; session < 2; session++) {
             for (int card = 0; card < 2; card++) {
                 model.flip();
-                model.rate(Rating.FORGOT);
+                rate(model, Rating.FORGOT);
                 settle();
             }
             assertEquals(FlashcardViewModel.Status.FINISHED, state(model).status);
@@ -263,7 +270,7 @@ public class FlashcardViewModelTest {
         study.fresh.add(word(A));
         FlashcardViewModel model = model();
         model.flip();
-        model.rate(Rating.REMEMBERED);
+        rate(model, Rating.REMEMBERED);
         settle();
         assertEquals(FlashcardViewModel.Status.FINISHED, state(model).status);
         assertNull(state(model).card);
@@ -302,4 +309,140 @@ public class FlashcardViewModelTest {
         assertEquals(A, after.card.getVocabulary().stableId);
         assertEquals(Optional.empty(), Optional.ofNullable(after.lastResult));
     }
+    @Test public void fastCommitTripleTapAndExactBoundaryUseFirstAcceptedTimestamp() {
+        twoNewWords();
+        FlashcardViewModel model = model();
+        model.flip();
+        long first = state(model).presentationId;
+        // The very first tap at monotonic time zero must be accepted.
+        model.rate(first, Rating.REMEMBERED);
+        assertTrue(state(model).saving);
+        assertFalse(state(model).ratingEnabled());
+        settle(); // commit completes before the second tap
+        long second = state(model).presentationId;
+        assertTrue(second > first);
+        model.flip();
+        now = 150;
+        model.rate(second, Rating.FORGOT);
+        now = 300;
+        model.rate(second, Rating.HARD);
+        now = 599;
+        model.rate(second, Rating.REMEMBERED);
+        assertTrue(worker.isEmpty());
+        assertEquals(1, reviews.calls.size());
+        assertEquals(B, state(model).card.getVocabulary().stableId);
+        now = 600;
+        model.rate(second, Rating.HARD);
+        settle();
+        assertEquals(2, reviews.calls.size());
+        assertEquals(FlashcardViewModel.Status.FINISHED, state(model).status);
+    }
+
+    @Test public void slowCommitStaysLockedEvenAfterDebounceExpires() {
+        twoNewWords();
+        FlashcardViewModel model = model();
+        model.flip();
+        long first = state(model).presentationId;
+        model.rate(first, Rating.HARD);
+        now = 1000;
+        model.rate(first, Rating.REMEMBERED);
+        assertEquals(1, worker.size());
+        assertTrue(state(model).saving);
+        settle();
+        assertEquals(1, reviews.calls.size());
+        assertEquals(0, reviews.calls.get(0).box); // HARD, not REMEMBERED
+    }
+
+    @Test public void staleOccurrenceCannotRateNextCardOrReloadedSession() {
+        twoNewWords();
+        FlashcardViewModel model = model();
+        model.flip();
+        long first = state(model).presentationId;
+        model.rate(first, Rating.REMEMBERED);
+        settle();
+        model.flip();
+        now = 600;
+        model.rate(first, Rating.FORGOT);
+        assertTrue(worker.isEmpty());
+        long second = state(model).presentationId;
+        model.retry();
+        settle();
+        model.flip();
+        assertTrue(state(model).presentationId > second);
+        model.rate(second, Rating.HARD);
+        assertTrue(worker.isEmpty());
+        model.rate(state(model).presentationId, Rating.HARD);
+        settle();
+        assertEquals(2, reviews.calls.size());
+    }
+
+    @Test public void invalidInputDoesNotStartOrExtendDebounce() {
+        twoNewWords();
+        FlashcardViewModel model = model();
+        long first = state(model).presentationId;
+        model.rate(first, Rating.HARD); // front
+        model.flip();
+        model.rate(first, null);
+        model.rate(first + 1, Rating.FORGOT);
+        model.rate(first, Rating.REMEMBERED); // same timestamp, still accepted
+        settle();
+        model.flip();
+        now = 599;
+        model.rate(first, Rating.HARD); // stale input cannot extend the window
+        now = 600;
+        model.rate(state(model).presentationId, Rating.HARD);
+        settle();
+        assertEquals(2, reviews.calls.size());
+    }
+
+    @Test public void failedAttemptKeepsOccurrenceAndDebouncesExplicitRetry() {
+        twoNewWords();
+        FlashcardViewModel model = model();
+        model.flip();
+        long first = state(model).presentationId;
+        reviews.failure = RepoError.WRITE_FAILED;
+        model.rate(first, Rating.FORGOT);
+        settle();
+        assertEquals(first, state(model).presentationId);
+        assertTrue(state(model).saveFailed);
+        assertTrue(state(model).flipped);
+        assertEquals(2, state(model).total); // no relearn on failure
+        reviews.failure = null;
+        now = 150;
+        model.rate(first, Rating.FORGOT);
+        now = 599;
+        model.rate(first, Rating.REMEMBERED);
+        assertTrue(worker.isEmpty());
+        assertTrue(reviews.calls.isEmpty());
+        now = 600;
+        model.rate(first, Rating.REMEMBERED);
+        settle();
+        assertEquals(1, reviews.calls.size());
+        assertEquals(B, state(model).card.getVocabulary().stableId);
+    }
+
+    @Test public void relearnHasNewOccurrenceAndAcceptsSameWordAgain() {
+        activePack();
+        study.fresh.add(word(A));
+        FlashcardViewModel model = model();
+        model.flip();
+        long first = state(model).presentationId;
+        model.rate(first, Rating.FORGOT);
+        settle();
+        model.flip();
+        long relearn = state(model).presentationId;
+        assertTrue(relearn > first);
+        assertEquals(A, state(model).card.getVocabulary().stableId);
+        now = 600;
+        model.rate(first, Rating.FORGOT);
+        assertTrue(worker.isEmpty());
+        model.rate(relearn, Rating.FORGOT);
+        settle();
+        assertEquals(2, reviews.calls.size());
+        assertEquals(FlashcardViewModel.Status.FINISHED, state(model).status);
+        now = 1200;
+        model.rate(relearn, Rating.REMEMBERED);
+        assertTrue(worker.isEmpty());
+    }
+
 }

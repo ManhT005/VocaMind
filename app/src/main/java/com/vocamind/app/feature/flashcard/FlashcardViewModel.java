@@ -1,5 +1,6 @@
 package com.vocamind.app.feature.flashcard;
 
+import androidx.annotation.MainThread;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -12,6 +13,7 @@ import com.vocamind.app.domain.learning.TodayPlan;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Executor;
+import java.util.function.LongSupplier;
 import java.util.function.Supplier;
 
 /**
@@ -22,7 +24,9 @@ import java.util.function.Supplier;
  * face so the learner decides again (never retried automatically).
  * The ViewModel survives rotation, so card, face and position are kept.
  */
+@MainThread
 public final class FlashcardViewModel extends ViewModel {
+    private static final long RATING_DEBOUNCE_MS = 600;
     public enum Status { LOADING, READY, FINISHED, NO_ACTIVE_PACK, NOTHING_TO_STUDY, ERROR }
 
     /** Commits one review and returns its schedule; runs on the worker and throws on failure. */
@@ -35,6 +39,8 @@ public final class FlashcardViewModel extends ViewModel {
         /** 1-based position of the current card; 0 when there is no card. */
         public final int position;
         public final int total;
+        /** Identifies this occurrence, including relearn copies; 0 when no card is shown. */
+        public final long presentationId;
         /** A review is being committed; ratings are locked. */
         public final boolean saving;
         /** The last rating could not be saved; the same card is shown again. */
@@ -43,19 +49,20 @@ public final class FlashcardViewModel extends ViewModel {
         public final ScheduleResult lastResult;
 
         State(Status status, StudyItem card, boolean flipped, int position, int total,
-              boolean saving, boolean saveFailed, ScheduleResult lastResult) {
+              boolean saving, boolean saveFailed, ScheduleResult lastResult, long presentationId) {
             this.status = status;
             this.card = card;
             this.flipped = flipped;
             this.position = position;
             this.total = total;
+            this.presentationId = presentationId;
             this.saving = saving;
             this.saveFailed = saveFailed;
             this.lastResult = lastResult;
         }
 
         State(Status status, StudyItem card, boolean flipped, int position, int total) {
-            this(status, card, flipped, position, total, false, false, null);
+            this(status, card, flipped, position, total, false, false, null, 0);
         }
 
         /** Rating buttons are usable only while a card is shown with its answer and nothing is saving. */
@@ -68,6 +75,10 @@ public final class FlashcardViewModel extends ViewModel {
     private final Executor main;
     private final Runnable close;
     private final ReviewWriter writer;
+    private final LongSupplier monotonic;
+    private long presentationId;
+    private boolean hasLastRating;
+    private long lastRatingAt;
     private ScheduleResult lastResult;
     private boolean saving;
     private boolean saveFailed;
@@ -77,12 +88,13 @@ public final class FlashcardViewModel extends ViewModel {
     private boolean cleared;
 
     public FlashcardViewModel(Supplier<RepoResult<TodayPlan>> loader, Executor worker, Executor main,
-                              Runnable close, ReviewWriter writer) {
+                              Runnable close, ReviewWriter writer, LongSupplier monotonic) {
         this.loader = loader;
         this.worker = worker;
         this.main = main;
         this.close = close;
         this.writer = writer;
+        this.monotonic = monotonic;
         retry();
     }
 
@@ -121,6 +133,7 @@ public final class FlashcardViewModel extends ViewModel {
                 if (cleared) return;
                 if (terminal != null) { state.setValue(terminal); return; }
                 queue = new SessionQueue(loaded);
+                presentationId++; // Never reuse an ID when retry rebuilds a session.
                 flipped = false;
                 saving = false;
                 saveFailed = false;
@@ -138,11 +151,17 @@ public final class FlashcardViewModel extends ViewModel {
     }
 
     /**
-     * Ignored before the card is flipped and while another rating is being saved, so one card
-     * receives at most one rating. Main thread only.
+     * Accepts only the rendered occurrence. A successful commit advances its ID exactly once.
+     * The 600ms window spans cards and failed attempts; ignored input never extends it.
+     * A failed transaction retains the ID so the learner can explicitly try again.
      */
-    public void rate(Rating rating) {
-        if (rating == null || !isShowingCard() || !flipped || saving) return;
+    public void rate(long expectedPresentationId, Rating rating) {
+        if (rating == null || !isShowingCard() || !flipped || saving
+                || expectedPresentationId != presentationId) return;
+        long now = monotonic.getAsLong();
+        if (hasLastRating && now - lastRatingAt < RATING_DEBOUNCE_MS) return;
+        hasLastRating = true;
+        lastRatingAt = now;
         StudyItem item = queue.current();
         saving = true;
         saveFailed = false;
@@ -163,6 +182,7 @@ public final class FlashcardViewModel extends ViewModel {
                 } else {
                     lastResult = committed;
                     queue.advance(rating); // FORGOT may queue the card again (relearn once)
+                    presentationId++;
                     flipped = false;
                 }
                 publish();
@@ -177,10 +197,10 @@ public final class FlashcardViewModel extends ViewModel {
 
     private void publish() {
         if (queue.isFinished()) {
-            state.setValue(new State(Status.FINISHED, null, false, 0, queue.size(), false, false, lastResult));
+            state.setValue(new State(Status.FINISHED, null, false, 0, queue.size(), false, false, lastResult, 0));
         } else {
             state.setValue(new State(Status.READY, queue.current(), flipped, queue.position(), queue.size(),
-                    saving, saveFailed, lastResult));
+                    saving, saveFailed, lastResult, presentationId));
         }
     }
 

@@ -1,0 +1,9 @@
+{
+  "app/build.gradle": "0075a25b1a4de37a2563141bf6bd7c6c87c5ccf308a805647f7b881185ee070b",
+  "app/src/main/java/com/vocamind/app/feature/flashcard/FlashcardViewModel.java": "b5bf6682787f6fa333ba89deb1ef7cf3f548f340816e8263addc225ec9e31e58",
+  "app/src/main/java/com/vocamind/app/feature/flashcard/FlashcardFragment.java": "284eed41e3f6d33dbd1f2be919d615fb4e8378dc3e38ad00ca01d4ac2e62a7bb",
+  "app/src/main/java/com/vocamind/app/core/FlashcardViewModelFactory.java": "c88b4b5d51d4c8c2ae1422be7ef122c076f5c76ff397259856dd05ef7eda5bf3",
+  "app/src/test/java/com/vocamind/app/feature/flashcard/FlashcardViewModelTest.java": "68fb8c2973dfc558547b04eaed37925c38f3abc24f603f0e2b871152abf0b009",
+  "app/src/test/java/com/vocamind/app/feature/flashcard/LearningFlowIntegrationTest.java": "f22d2ba750f9c59a60b400379acd1a05928a36a43dc8a589753208244238a6c0",
+  "app/src/androidTest/java/com/vocamind/app/feature/flashcard/FlashcardDuplicateReviewInstrumentedTest.java": "66482ebe71e6879c39aa3231962f0e2d6bf627ceb55226aabd7d2cd6b7898276"
+}

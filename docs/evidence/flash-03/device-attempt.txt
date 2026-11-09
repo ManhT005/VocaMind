@@ -1,0 +1,33 @@
+Boot completed
+
+Traceback (most recent call last):
+  File "/workspace/work/run-flash03-device.py", line 20, in <module>
+    result=d.shell('pm install -r -t '+remote,transport_timeout_s=120, read_timeout_s=180, timeout_s=180)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/work/adb-venv/lib/python3.12/site-packages/adb_shell/adb_device.py", line 842, in shell
+    return self._service(b'shell', command.encode('utf8'), transport_timeout_s, read_timeout_s, timeout_s, decode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/work/adb-venv/lib/python3.12/site-packages/adb_shell/adb_device.py", line 710, in _service
+    return b''.join(self._streaming_command(service, command, transport_timeout_s, read_timeout_s, timeout_s)).decode('utf8', _DECODE_ERRORS)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/work/adb-venv/lib/python3.12/site-packages/adb_shell/adb_device.py", line 1290, in _streaming_command
+    for data in self._read_until_close(adb_info):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/work/adb-venv/lib/python3.12/site-packages/adb_shell/adb_device.py", line 1243, in _read_until_close
+    cmd, data = self._read_until([constants.CLSE, constants.WRTE], adb_info)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/work/adb-venv/lib/python3.12/site-packages/adb_shell/adb_device.py", line 1213, in _read_until
+    cmd, _, _, data = self._io_manager.read(expected_cmds, adb_info, allow_zeros=True)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/work/adb-venv/lib/python3.12/site-packages/adb_shell/adb_device.py", line 339, in read
+    cmd, arg0, arg1, data = self._read_packet_from_device(adb_info)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/work/adb-venv/lib/python3.12/site-packages/adb_shell/adb_device.py", line 486, in _read_packet_from_device
+    msg = self._read_bytes_from_device(constants.MESSAGE_SIZE, adb_info)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/work/adb-venv/lib/python3.12/site-packages/adb_shell/adb_device.py", line 442, in _read_bytes_from_device
+    temp = self._transport.bulk_read(length, adb_info.transport_timeout_s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/work/adb-venv/lib/python3.12/site-packages/adb_shell/transport/tcp_transport.py", line 120, in bulk_read
+    raise TcpTimeoutException(msg)
+adb_shell.exceptions.TcpTimeoutException: Reading from 127.0.0.1:5555 timed out (120 seconds)
