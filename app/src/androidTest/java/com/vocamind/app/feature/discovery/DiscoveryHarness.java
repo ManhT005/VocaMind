@@ -143,17 +143,33 @@ public abstract class DiscoveryHarness {
     }
     protected void row(int listId, int position, String meaning, boolean clickRow) throws Exception {
         // Scroll the real RecyclerView, then act on the attached visible item's text.
-        scenario.onActivity(a -> ((RecyclerView)a.findViewById(listId)).scrollToPosition(position));
+        scenario.onActivity(a -> {
+            RecyclerView list = a.findViewById(listId);
+            if (listId == R.id.words) {
+                // On the compact API35 CI display the expanded pack header leaves the
+                // final row shorter than Espresso's 90% click constraint. Collapse the
+                // real scrolling app bar before positioning the row, as a user scroll
+                // through the list does.
+                com.google.android.material.appbar.AppBarLayout header = a.findViewById(R.id.pack_header);
+                if (header != null) header.setExpanded(false, false);
+            }
+            // scrollToPosition only guarantees some pixels are visible. After returning
+            // from detail, API35 can keep the target meaning clipped at the viewport edge.
+            ((androidx.recyclerview.widget.LinearLayoutManager)list.getLayoutManager())
+                    .scrollToPositionWithOffset(position, 0);
+        });
         await("attached row " + position, a -> {
             RecyclerView list = a.findViewById(listId);
             if (list.isComputingLayout() || list.hasPendingAdapterUpdates() || list.isAnimating()) return false;
             var holder = list.findViewHolderForAdapterPosition(position);
             if (holder == null || !holder.itemView.isShown()) return false;
             TextView label = holder.itemView.findViewById(R.id.word_meaning);
-            return label != null && label.getText().toString().equals(meaning);
+            return label != null && label.getText().toString().equals(meaning)
+                    && isDisplayingAtLeast(90).matches(label);
         });
         var item = onView(allOf(withId(R.id.word_meaning), withText(meaning), isDescendantOfA(withId(listId))));
-        item.check(androidx.test.espresso.assertion.ViewAssertions.matches(isDisplayed()));
+        // Match Espresso click's visibility constraint, including after returning from detail.
+        item.check(androidx.test.espresso.assertion.ViewAssertions.matches(isDisplayingAtLeast(90)));
         if (clickRow) item.perform(click());
     }
     private void capture(Description d, Throwable failure) {

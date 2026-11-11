@@ -1,0 +1,11 @@
+{
+  "run": "ldplayer-components-20261110",
+  "device": "LDPlayer G82U8 Android9; owner-approved substitute",
+  "scope": "Synthetic four-word flash03validation profile; component and database contracts",
+  "uiTests": 8,
+  "catalogUpgradeTests": 20,
+  "skipped": 0,
+  "result": "PASS",
+  "rawLocalDirectory": "build/qa02/ldplayer-components-recovery",
+  "limitations": "Existing installed fixture APK; does not certify the later CatalogDao comparator change or all QA02 acceptance cases"
+}

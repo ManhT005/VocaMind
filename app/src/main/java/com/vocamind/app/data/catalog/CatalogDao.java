@@ -74,7 +74,7 @@ public interface CatalogDao {
     }
     /** Production FTS4 path; the expression is generated from literal tokens, not raw UI syntax. */
     @Query("SELECT v.* FROM VocabularyEntry v JOIN VocabularyFts f ON f.rowid = v.rowid "
-            + "WHERE VocabularyFts MATCH :expression ORDER BY v.normalizedLemma COLLATE NOCASE, v.id")
+            + "WHERE VocabularyFts MATCH :expression")
     Cursor readSearchCursor(String expression);
 
     // Generated scalar queries use Room's connection/close barrier. The legacy
@@ -84,9 +84,10 @@ public interface CatalogDao {
     int checkSearchConnection();
 
     /**
-     * Keep the complete DATA-05 projection/order. Reading the cursor directly avoids
-     * the compatibility statement adapter's extra per-column isNull/getText calls
-     * for large result sets. The cursor belongs to this call, never to UI consumers.
+     * Reading the cursor directly avoids SQLite's temporary B-tree plus the
+     * compatibility statement adapter's extra per-column isNull/getText calls.
+     * The in-memory sort preserves the published normalized-lemma/id contract.
+     * The cursor belongs to this call, never to UI consumers.
      */
     default List<VocabularyEntry> searchVocabulary(String expression) {
         checkSearchConnection();
@@ -111,8 +112,23 @@ public interface CatalogDao {
                 row.sourceId = cursor.getString(source); row.contentVersion = cursor.getString(version);
                 rows.add(row);
             }
+            rows.sort(Comparator
+                    .comparing((VocabularyEntry row) -> row.normalizedLemma, CatalogDao::compareSqliteNoCase)
+                    .thenComparing(row -> row.id));
             return rows;
         }
+    }
+    /** SQLite NOCASE folds ASCII only; keep non-ASCII spelling order unchanged. */
+    static int compareSqliteNoCase(String left, String right) {
+        int i = 0, j = 0;
+        while (i < left.length() && j < right.length()) {
+            int a = left.codePointAt(i), b = right.codePointAt(j);
+            i += Character.charCount(a); j += Character.charCount(b);
+            if (a >= 'A' && a <= 'Z') a += 'a' - 'A';
+            if (b >= 'A' && b <= 'Z') b += 'a' - 'A';
+            if (a != b) return Integer.compare(a, b);
+        }
+        return Integer.compare(left.length(), right.length());
     }
     // Compatibility probe for DATA-01 fixtures.
     @Query("SELECT v.* FROM VocabularyEntry v JOIN VocabularyFts f ON f.rowid = v.rowid WHERE VocabularyFts MATCH :expression ORDER BY v.id")

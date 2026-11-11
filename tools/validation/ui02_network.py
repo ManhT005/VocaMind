@@ -34,6 +34,26 @@ class OfflineNetwork:
         self.deadline, self.clock, self.pause = deadline, clock, pause
 
     def checked(self, *command):
+        # A settings write alone does not notify ConnectivityService/telephony.
+        # Apply the controller action on setup and restoration, then preserve
+        # the exact original setting (including absent keys).
+        airplane = None
+        if command[:4] == ('settings', 'put', 'global', 'airplane_mode_on'):
+            airplane = command[4] == '1'
+        elif command == ('settings', 'delete', 'global', 'airplane_mode_on'):
+            airplane = False
+        if airplane is not None:
+            controller = self.shell('cmd', 'connectivity', 'airplane-mode', 'enable' if airplane else 'disable')
+            unsupported = ('no shell command implementation' in controller.stdout.lower()
+                           or 'unknown command' in controller.stdout.lower())
+            if unsupported:
+                # AOSP added this command after API26/27. Preserve legacy radio
+                # setup there; require_offline still rejects any active network.
+                sdk = self.shell('getprop', 'ro.build.version.sdk')
+                if sdk.returncode or sdk.stdout.strip() not in ('26', '27'):
+                    raise RuntimeError('Airplane controller unavailable on this device: ' + controller.stdout)
+            elif controller.returncode:
+                raise RuntimeError('Airplane controller failed: ' + controller.stdout)
         result = self.shell(*command)
         if result.returncode:
             raise RuntimeError('ADB shell failed (%s): %s: %s' % (result.returncode, ' '.join(command), result.stdout))
@@ -167,6 +187,11 @@ class OfflineNetwork:
             self.checked('settings', 'put', 'global', 'airplane_mode_on', '1')
             self.checked('svc', 'wifi', 'disable')
             self.checked('svc', 'data', 'disable')
+            # API35 occasionally acknowledges `svc data disable` while the global
+            # policy flag still reads 1 until after our bounded setup deadline.
+            # Persist the same disabled policy explicitly; restore() already puts
+            # the exact original value back after every outcome.
+            self.setting('mobile_data', '0')
             self.require_offline(self.output)
             yield self
         except BaseException as error:

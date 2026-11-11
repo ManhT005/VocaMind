@@ -1,0 +1,1342 @@
+{
+  "runId": 42610694082,
+  "url": "https://github.com/ManhT005/VocaMind/actions/runs/42610694082",
+  "prHead": "440f77643063310abe88067ba9d49198571efe67",
+  "testedMergeCheckout": "2b7d40fe932cd16ad3c89ffd10ce0aec232c415f",
+  "baselineTrackedInputsCompared": 303,
+  "baselineHashMismatches": [],
+  "currentProductionChanges": "None in app/src/main; new opt-in QA profile and test/host harness only",
+  "limitations": "Baseline evidence supports unchanged production contracts; it does not execute new QA02 tests or fix the API35 failing job.",
+  "conclusion": "FAILURE: API35 Discovery first case; other three jobs success",
+  "api35Failure": {
+    "test": "offlinePackOrderVisibleItemsDetailsBothIpaAndNoWrites",
+    "reason": "Espresso click requires 90% visible target; row helper only guaranteed partial visibility",
+    "fix": "scrollToPositionWithOffset(position,0), await >=90% label visibility",
+    "retest": "API28 actual main-journey row actions pass; API35 rerun still required"
+  },
+  "artifacts": [
+    {
+      "id": 13670497051,
+      "sha256": "18fa71c841c92e0aa0ba4bbbe4e0bda5b9c67ca82dfc695b426935d26ddf3848",
+      "privatePath": "build\\qa02\\ci-13670497051.zip",
+      "url": "https://github.com/ManhT005/VocaMind/actions/runs/42610694082/artifacts/13670497051"
+    },
+    {
+      "id": 13670027634,
+      "sha256": "15cc048b6575d973aa09696cd387d70a7587e92cb8364e4e86c5ed6f412e554a",
+      "privatePath": "build\\qa02\\ci-13670027634.zip",
+      "url": "https://github.com/ManhT005/VocaMind/actions/runs/42610694082/artifacts/13670027634"
+    },
+    {
+      "id": 13669708713,
+      "sha256": "57e880e7fa5e17d9ad3cc2501344a796191c79927964c38f8172937024db3dc3",
+      "privatePath": "build\\qa02\\ci-13669708713.zip",
+      "url": "https://github.com/ManhT005/VocaMind/actions/runs/42610694082/artifacts/13669708713"
+    },
+    {
+      "id": 13670022972,
+      "sha256": "f5344c76c7c88c9ec80210bb77545fd2d5aa3251406af7aba22c368f68aa673f",
+      "privatePath": "build\\qa02\\ci-13670022972.zip",
+      "url": "https://github.com/ManhT005/VocaMind/actions/runs/42610694082/artifacts/13670022972"
+    }
+  ],
+  "unit": {
+    "tests": 596,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "classes": [
+      {
+        "name": "com.vocamind.app.MainActivityInsetsTest",
+        "tests": "1",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "keyboardUsesLargerInsetAndClosingItRestoresSystemBars"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.data.DaoFoundationTest",
+        "tests": "32",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "historyUsesTimestampThenIdAndPreservesRepeatedEvents[26]",
+          "largeIdBatchesMergeBeforeLimitAndStayUnique[26]",
+          "savedFlagDoesNotInventProgressOrResetLearning[26]",
+          "closedDatabaseErrorsAreNotSilentlyReturnedAsEmpty[26]",
+          "dueFiltersActiveAndOrphanBeforeGlobalLimit[26]",
+          "pausedOrNoActivePacksHaveNoCandidatesAndNeverActivateAutomatically[26]",
+          "catalogOrderEmptyNullableAndAttribution[26]",
+          "planningSnapshotAndFileReopenPreserveState[26]",
+          "firstReviewRollsBackEventWhenNewProgressInsertFails[26]",
+          "reviewTransactionRollsBackOnRealSqlFailureAfterInsert[26]",
+          "newIsAbsenceOfAnyProgressAndLimitComesAfterDedup[26]",
+          "catalogMergesBatchesBeforeOrderingAndDeduplicatingCandidates[26]",
+          "quotaCountsUniqueFirstLearnedTimesNotReviewEvents[26]",
+          "membershipDuplicatesAreIntentionalButVocabularyPoolIsUnique[26]",
+          "progressBoxAndDueTieOrderingAreStable[26]",
+          "invalidAndEmptyInputsCannotBecomeFullTableQueries[26]",
+          "historyUsesTimestampThenIdAndPreservesRepeatedEvents",
+          "largeIdBatchesMergeBeforeLimitAndStayUnique",
+          "savedFlagDoesNotInventProgressOrResetLearning",
+          "closedDatabaseErrorsAreNotSilentlyReturnedAsEmpty",
+          "dueFiltersActiveAndOrphanBeforeGlobalLimit",
+          "pausedOrNoActivePacksHaveNoCandidatesAndNeverActivateAutomatically",
+          "catalogOrderEmptyNullableAndAttribution",
+          "planningSnapshotAndFileReopenPreserveState",
+          "firstReviewRollsBackEventWhenNewProgressInsertFails",
+          "reviewTransactionRollsBackOnRealSqlFailureAfterInsert",
+          "newIsAbsenceOfAnyProgressAndLimitComesAfterDedup",
+          "catalogMergesBatchesBeforeOrderingAndDeduplicatingCandidates",
+          "quotaCountsUniqueFirstLearnedTimesNotReviewEvents",
+          "membershipDuplicatesAreIntentionalButVocabularyPoolIsUnique",
+          "progressBoxAndDueTieOrderingAreStable",
+          "invalidAndEmptyInputsCannotBecomeFullTableQueries"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.data.DataBoundaryTest",
+        "tests": "1",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "presentationAndDomainDoNotReferenceDataOrRoom"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.data.catalog.CatalogAssetTest",
+        "tests": "32",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "unmatchedCreditsPreserveBothRepositoryQueries[26]",
+          "databaseRejectsDuplicateOrdering[26]",
+          "ftsEnglishAndVietnameseReturnTextStableId[26]",
+          "reopeningExistingCopyWorks[26]",
+          "opensAssetAndReadsFourPacks[26]",
+          "creditReadFailureIsAnErrorAndCanBeRetried[26]",
+          "wordsRespectMembershipOrderAndStableIds[26]",
+          "examplesAndNullableIpaSurviveMapping[26]",
+          "domainListsAreImmutable[26]",
+          "everyFtsRowMapsToCorrectEntry[26]",
+          "sourceAttributionIsAvailableOffline[26]",
+          "missingIdsReturnEmpty[26]",
+          "creditsEnrichExistingCopyAndBothRepositoryQueriesWithoutChangingDatabase[26]",
+          "databaseIsConsistent[26]",
+          "invalidIdentityHashFailsWithoutDeletingCopy[26]",
+          "canonicalFixtureSurvivesRoomAndRepository[26]",
+          "unmatchedCreditsPreserveBothRepositoryQueries",
+          "databaseRejectsDuplicateOrdering",
+          "ftsEnglishAndVietnameseReturnTextStableId",
+          "reopeningExistingCopyWorks",
+          "opensAssetAndReadsFourPacks",
+          "creditReadFailureIsAnErrorAndCanBeRetried",
+          "wordsRespectMembershipOrderAndStableIds",
+          "examplesAndNullableIpaSurviveMapping",
+          "domainListsAreImmutable",
+          "everyFtsRowMapsToCorrectEntry",
+          "sourceAttributionIsAvailableOffline",
+          "missingIdsReturnEmpty",
+          "creditsEnrichExistingCopyAndBothRepositoryQueriesWithoutChangingDatabase",
+          "databaseIsConsistent",
+          "invalidIdentityHashFailsWithoutDeletingCopy",
+          "canonicalFixtureSurvivesRoomAndRepository"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.data.catalog.ContentCreditsTest",
+        "tests": "6",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "onlyExactPairMatchesAndMissingIsTransparent[26]",
+          "differentSourcesRetainTheirOwnAuthorsAndNotices[26]",
+          "rejectsDuplicateVersionAndMalformedFields[26]",
+          "onlyExactPairMatchesAndMissingIsTransparent",
+          "differentSourcesRetainTheirOwnAuthorsAndNotices",
+          "rejectsDuplicateVersionAndMalformedFields"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.data.catalog.FtsSearchBenchmarkTest",
+        "tests": "2",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "profileFiveThousandWordPrepackAndWriteRawSamples[26]",
+          "profileFiveThousandWordPrepackAndWriteRawSamples"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.data.catalog.FtsSearchTest",
+        "tests": "20",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "prefixesCaseAndVietnameseNfdAreNormalized[26]",
+          "allThreeIndexedColumnsAreActuallySearched[26]",
+          "reopeningPreservesSearchAndProviderDisposalRejectsNewWork[26]",
+          "englishAndVietnameseResolveTheSameTextStableId[26]",
+          "blankNoMatchAndOperatorSyntaxAreSafe[26]",
+          "emptyInputDoesNotOpenClosedDatabaseButReadFailuresRemainErrors[26]",
+          "rowidsMayChangeWhileApplicationIdsStayStable[26]",
+          "searchIdsComposeWithFoundationBatchAndMembershipQueries[26]",
+          "differentSensesRemainDistinctAndAreNotDuplicatedByPackMembership[26]",
+          "cursorHydrationPreservesEveryFieldAndOrdering[26]",
+          "prefixesCaseAndVietnameseNfdAreNormalized",
+          "allThreeIndexedColumnsAreActuallySearched",
+          "reopeningPreservesSearchAndProviderDisposalRejectsNewWork",
+          "englishAndVietnameseResolveTheSameTextStableId",
+          "blankNoMatchAndOperatorSyntaxAreSafe",
+          "emptyInputDoesNotOpenClosedDatabaseButReadFailuresRemainErrors",
+          "rowidsMayChangeWhileApplicationIdsStayStable",
+          "searchIdsComposeWithFoundationBatchAndMembershipQueries",
+          "differentSensesRemainDistinctAndAreNotDuplicatedByPackMembership",
+          "cursorHydrationPreservesEveryFieldAndOrdering"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.data.catalog.QuizPolicyCompositionTest",
+        "tests": "6",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "defaultUseCaseLoadsPolicyBoundToBundledCatalogAndVocabularyRepository[26]",
+          "firstSaveThroughProductionCompositionPersistsAcrossReopen[26]",
+          "absentCompanionAssetIsRejectedInsteadOfUnrestrictedFallback[26]",
+          "defaultUseCaseLoadsPolicyBoundToBundledCatalogAndVocabularyRepository",
+          "firstSaveThroughProductionCompositionPersistsAcrossReopen",
+          "absentCompanionAssetIsRejectedInsteadOfUnrestrictedFallback"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.data.catalog.ReleaseCatalogTest",
+        "tests": "10",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "offlineSourceCreditsKeepProjectAcceptanceAndMissingAuthorsExplicit[26]",
+          "candidatePolicyBindsToRoomProjectionAndExcludesAllThreePairsBothWays[26]",
+          "opensProductionCandidateAndPreservesAllAcceptedFieldsAndPackOrder[26]",
+          "sqliteIntegrityCountsAndBundleChecksumsMatch[26]",
+          "everyEnglishAndVietnamesePhraseFindsItsTextStableId[26]",
+          "offlineSourceCreditsKeepProjectAcceptanceAndMissingAuthorsExplicit",
+          "candidatePolicyBindsToRoomProjectionAndExcludesAllThreePairsBothWays",
+          "opensProductionCandidateAndPreservesAllAcceptedFieldsAndPackOrder",
+          "sqliteIntegrityCountsAndBundleChecksumsMatch",
+          "everyEnglishAndVietnamesePhraseFindsItsTextStableId"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.data.catalog.upgrade.CatalogUpgradeTest",
+        "tests": "40",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "simulatedDeathAtEveryBoundaryRecoversPersistedSelection[26]",
+          "rollbackRejectsNewReferencesWithoutErasingThem[26]",
+          "corruptUserdataIsNeverRecreatedOrDeleted[26]",
+          "partialCopyIoFailureNeverPublishesHalfGeneration[26]",
+          "missingFtsPostingIsRejectedBeforePublication[26]",
+          "pendingCorruptCandidateFallsBackToVerifiedOld[26]",
+          "firstInstallOpensRealBundleWithoutCreatingUserdata[26]",
+          "upgradeAndRollbackKeepAllFiveUserTablesAndBundleBytes[26]",
+          "legacySchemaMismatchFailsWithoutReset[26]",
+          "repeatedPrepareIsIdempotent[26]",
+          "interruptedPublicationRecoversPendingGenerationOnNewCoordinator[26]",
+          "referencedVocabularyRemovalIsRejected[26]",
+          "realCandidateIsLimitedToQaAndNeverPromotesApproval[26]",
+          "failureAtEveryBoundaryPreservesOldAndUserdata[26]",
+          "matchingLegacyIsImportedButMismatchedLegacyIsNotOverwritten[26]",
+          "exportedUserdataV1SurvivesCatalogUpgradeMigrationAndRollback[26]",
+          "savedOnlyAndHistoryOnlyReferencesAlsoBlockRemoval[26]",
+          "concurrentStartupSelectsOneGeneration[26]",
+          "pausedPackRemovalAlsoBlocksUpgrade[26]",
+          "invalidMetadataCreditsPolicyAndSchemaAreRejected[26]",
+          "simulatedDeathAtEveryBoundaryRecoversPersistedSelection",
+          "rollbackRejectsNewReferencesWithoutErasingThem",
+          "corruptUserdataIsNeverRecreatedOrDeleted",
+          "partialCopyIoFailureNeverPublishesHalfGeneration",
+          "missingFtsPostingIsRejectedBeforePublication",
+          "pendingCorruptCandidateFallsBackToVerifiedOld",
+          "firstInstallOpensRealBundleWithoutCreatingUserdata",
+          "upgradeAndRollbackKeepAllFiveUserTablesAndBundleBytes",
+          "legacySchemaMismatchFailsWithoutReset",
+          "repeatedPrepareIsIdempotent",
+          "interruptedPublicationRecoversPendingGenerationOnNewCoordinator",
+          "referencedVocabularyRemovalIsRejected",
+          "realCandidateIsLimitedToQaAndNeverPromotesApproval",
+          "failureAtEveryBoundaryPreservesOldAndUserdata",
+          "matchingLegacyIsImportedButMismatchedLegacyIsNotOverwritten",
+          "exportedUserdataV1SurvivesCatalogUpgradeMigrationAndRollback",
+          "savedOnlyAndHistoryOnlyReferencesAlsoBlockRemoval",
+          "concurrentStartupSelectsOneGeneration",
+          "pausedPackRemovalAlsoBlocksUpgrade",
+          "invalidMetadataCreditsPolicyAndSchemaAreRejected"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.data.repository.RepositoryIntegrationTest",
+        "tests": "64",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "pack02ValidationNoOpAndFailedWriteNeverCreateOrphan[26]",
+          "generatedQuizUsesFreshActiveSnapshotAndNeverWrites[26]",
+          "reviewedWordLeavesNewListAndBecomesDueByDate[26]",
+          "leechFlagPersistsOnlyAtFourthConsecutiveForgot[26]",
+          "packWordsKeepOrderNoAndMergeProgressByStableId[26]",
+          "pack02PauseSharedAndExclusiveDueAndNewWordsThenReopenPreservesUserdata[26]",
+          "unknownPackIsNotFoundAndNothingIsCreated[26]",
+          "vocab02SaveConcurrentWithReviewRetainsBothAndHistory[26]",
+          "newWordsFollowActivePackOrderWithoutDuplicates[26]",
+          "reviewRejectsUnknownWordStaleBoxAndBadArguments[26]",
+          "vocab02SaveUnsaveReopenOnlyChangesFlagAndCatalogIsReadOnly[26]",
+          "vocab02InvalidFirstSaveNeverCreatesOrphansOrChangesDatabases[26]",
+          "productionNormalizerVectorsOnAndroid[26]",
+          "quizVocabularyWithNonHexStableIdIsInvalidData[26]",
+          "interruptedForgotStreakRestartsTowardLeech[26]",
+          "acceptedPolicyTravelsThroughRoomSnapshotAndGenerationWithoutWrites[26]",
+          "pausedPackProgressIsKeptButNotStudied[26]",
+          "absentOrMalformedPolicyIsRepositoryErrorEvenWhenNoPacksAreActive[26]",
+          "vocab02FirstSaveReopenUnsaveAndBaselinePoolsAndCounts[26]",
+          "forgotKeepsLeechAndHardOrRememberedClearsItInStorage[26]",
+          "vocab02FirstSaveConcurrentWithFirstReviewAcrossConnections[26]",
+          "reviewKeepsLearnedAtAndSavedFlagAndCounts[26]",
+          "vocab02FirstSaveBetweenReviewSnapshotAndCommitRejectsStaleReview[26]",
+          "corruptStoredProgressIsInvalidDataNotEmpty[26]",
+          "vocabularyBrowsingIsReadOnlyAcrossInactivePausedAndFileReopen[26]",
+          "packStatesMergeCatalogWithUserByPackId[26]",
+          "vocab02WriteFailureReadFailureAndIdempotentReconciliation[26]",
+          "failedReviewWriteRollsBackEventAndProgress[26]",
+          "vocab02FirstSaveRollbackAndIgnoredInsertCannotReportSuccess[26]",
+          "searchCatalogDetailWithoutPackIsReadOnlyAndSaveUsesVocab02Policy[26]",
+          "quizVocabularyIsActivePacksOnlyAndAttemptsPersist[26]",
+          "learnedCountIsDistinctWordsWithLearnedAt[26]",
+          "pack02ValidationNoOpAndFailedWriteNeverCreateOrphan",
+          "generatedQuizUsesFreshActiveSnapshotAndNeverWrites",
+          "reviewedWordLeavesNewListAndBecomesDueByDate",
+          "leechFlagPersistsOnlyAtFourthConsecutiveForgot",
+          "packWordsKeepOrderNoAndMergeProgressByStableId",
+          "pack02PauseSharedAndExclusiveDueAndNewWordsThenReopenPreservesUserdata",
+          "unknownPackIsNotFoundAndNothingIsCreated",
+          "vocab02SaveConcurrentWithReviewRetainsBothAndHistory",
+          "newWordsFollowActivePackOrderWithoutDuplicates",
+          "reviewRejectsUnknownWordStaleBoxAndBadArguments",
+          "vocab02SaveUnsaveReopenOnlyChangesFlagAndCatalogIsReadOnly",
+          "vocab02InvalidFirstSaveNeverCreatesOrphansOrChangesDatabases",
+          "productionNormalizerVectorsOnAndroid",
+          "quizVocabularyWithNonHexStableIdIsInvalidData",
+          "interruptedForgotStreakRestartsTowardLeech",
+          "acceptedPolicyTravelsThroughRoomSnapshotAndGenerationWithoutWrites",
+          "pausedPackProgressIsKeptButNotStudied",
+          "absentOrMalformedPolicyIsRepositoryErrorEvenWhenNoPacksAreActive",
+          "vocab02FirstSaveReopenUnsaveAndBaselinePoolsAndCounts",
+          "forgotKeepsLeechAndHardOrRememberedClearsItInStorage",
+          "vocab02FirstSaveConcurrentWithFirstReviewAcrossConnections",
+          "reviewKeepsLearnedAtAndSavedFlagAndCounts",
+          "vocab02FirstSaveBetweenReviewSnapshotAndCommitRejectsStaleReview",
+          "corruptStoredProgressIsInvalidDataNotEmpty",
+          "vocabularyBrowsingIsReadOnlyAcrossInactivePausedAndFileReopen",
+          "packStatesMergeCatalogWithUserByPackId",
+          "vocab02WriteFailureReadFailureAndIdempotentReconciliation",
+          "failedReviewWriteRollsBackEventAndProgress",
+          "vocab02FirstSaveRollbackAndIgnoredInsertCannotReportSuccess",
+          "searchCatalogDetailWithoutPackIsReadOnlyAndSaveUsesVocab02Policy",
+          "quizVocabularyIsActivePacksOnlyAndAttemptsPersist",
+          "learnedCountIsDistinctWordsWithLearnedAt"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.data.user.AtomicReviewTest",
+        "tests": "42",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "mismatchedIdsAndTamperedHistoryCannotWrite[26]",
+          "legacyAndUseCaseCannotBothInsertFirstReview[26]",
+          "staleEmptySnapshotCannotOverwriteFirstReview[26]",
+          "closedDatabaseReadReportsReadFailure[26]",
+          "existingProgressUpdateFailureRollsBackInsertedEvent[26]",
+          "malformedProgressIsTypedInvalidDataWithNoWrite[26]",
+          "eventInsertFailureLeavesExistingProgressUnchanged[26]",
+          "legacyEventFailureRollsBack[26]",
+          "legacyAndUseCaseCannotCommitSameSnapshotTwice[26]",
+          "bothApisUseOneWriterAndLegacyHardReplayIsRejected[26]",
+          "legacyNewProgressFailureRollsBackEvent[26]",
+          "persistedDueTimeSurvivesZoneChangeAndReopen[26]",
+          "existingWordAllRatingsPersistSchedulerOutcome[26]",
+          "twoDatabaseInstancesCannotCommitSameSnapshotTwice[26]",
+          "legacyProgressUpdateFailureRollsBackEvent[26]",
+          "unknownCatalogWordCannotCreateOrphanThroughEitherApi[26]",
+          "explicitRetryAfterFaultAndReopenPersistsExactlyOneReview[26]",
+          "savedFlagChangedAfterReadCausesConflictNotOverwrite[26]",
+          "newProgressInsertFailureRollsBackInsertedEvent[26]",
+          "firstReviewWritesOneMatchingEventAndProgress[26]",
+          "catalogReadFailureIsTypedReadFailedWithoutWriting[26]",
+          "mismatchedIdsAndTamperedHistoryCannotWrite",
+          "legacyAndUseCaseCannotBothInsertFirstReview",
+          "staleEmptySnapshotCannotOverwriteFirstReview",
+          "closedDatabaseReadReportsReadFailure",
+          "existingProgressUpdateFailureRollsBackInsertedEvent",
+          "malformedProgressIsTypedInvalidDataWithNoWrite",
+          "eventInsertFailureLeavesExistingProgressUnchanged",
+          "legacyEventFailureRollsBack",
+          "legacyAndUseCaseCannotCommitSameSnapshotTwice",
+          "bothApisUseOneWriterAndLegacyHardReplayIsRejected",
+          "legacyNewProgressFailureRollsBackEvent",
+          "persistedDueTimeSurvivesZoneChangeAndReopen",
+          "existingWordAllRatingsPersistSchedulerOutcome",
+          "twoDatabaseInstancesCannotCommitSameSnapshotTwice",
+          "legacyProgressUpdateFailureRollsBackEvent",
+          "unknownCatalogWordCannotCreateOrphanThroughEitherApi",
+          "explicitRetryAfterFaultAndReopenPersistsExactlyOneReview",
+          "savedFlagChangedAfterReadCausesConflictNotOverwrite",
+          "newProgressInsertFailureRollsBackInsertedEvent",
+          "firstReviewWritesOneMatchingEventAndProgress",
+          "catalogReadFailureIsTypedReadFailedWithoutWriting"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.data.user.ProgressAggregationTest",
+        "tests": "34",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "emptyDatabaseReturnsSixZerosAndEmptyHistory[26]",
+          "invalidStoredScoreIsNotSilentlyRecomputed[26]",
+          "sameVocabularyUpsertMovesBoxWithoutIncreasingDistinctTotal[26]",
+          "invalidPersistedBoxReturnsInvalidDataWithoutRepair[26]",
+          "failedEventInsertDoesNotChangeSummaryOrHistory[26]",
+          "fixtureAcrossAllSixBoxesMatchesSqlAndDomainGroups[26]",
+          "closedDatabaseIsReadFailureNotEmptySuccess[26]",
+          "allQuizHistoryIsOrderedByTimeThenIdWithoutImplicitLimit[26]",
+          "quizOnlyAndProgressOnlyAreNotEntirelyEmpty[26]",
+          "failedFirstProgressInsertRollsBackEventAndKeepsSummary[26]",
+          "atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings[26]",
+          "missingBoxesAreZeroAndNoActiveSavedOrLearnedAtFilterIsApplied[26]",
+          "returnedHistoryAndBoxCountsAreImmutableSnapshots[26]",
+          "reopeningRetainsCountsAndHistory[26]",
+          "atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks[26]",
+          "failedProgressUpdateDoesNotMoveBoxOrChangeHistory[26]",
+          "concurrentWriterCannotMixCountsAndHistoryFromDifferentStates[26]",
+          "emptyDatabaseReturnsSixZerosAndEmptyHistory",
+          "invalidStoredScoreIsNotSilentlyRecomputed",
+          "sameVocabularyUpsertMovesBoxWithoutIncreasingDistinctTotal",
+          "invalidPersistedBoxReturnsInvalidDataWithoutRepair",
+          "failedEventInsertDoesNotChangeSummaryOrHistory",
+          "fixtureAcrossAllSixBoxesMatchesSqlAndDomainGroups",
+          "closedDatabaseIsReadFailureNotEmptySuccess",
+          "allQuizHistoryIsOrderedByTimeThenIdWithoutImplicitLimit",
+          "quizOnlyAndProgressOnlyAreNotEntirelyEmpty",
+          "failedFirstProgressInsertRollsBackEventAndKeepsSummary",
+          "atomicReviewAndQuizWriterCannotTearAggregationSnapshotAcrossThreeInterleavings",
+          "missingBoxesAreZeroAndNoActiveSavedOrLearnedAtFilterIsApplied",
+          "returnedHistoryAndBoxCountsAreImmutableSnapshots",
+          "reopeningRetainsCountsAndHistory",
+          "atomicReviewRefreshCountsCanonicalIdOnceAcrossSeveralPacks",
+          "failedProgressUpdateDoesNotMoveBoxOrChangeHistory",
+          "concurrentWriterCannotMixCountsAndHistoryFromDifferentStates"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.data.user.ProgressMapperTest",
+        "tests": "3",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "aggregationUsesLongRatherThanTruncatingToInt",
+          "duplicateOrInvalidGroupsAreNotSilentlyOverwritten",
+          "inconsistentDistinctAndGroupedTotalsAreRejected"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.data.user.UserDatabaseTest",
+        "tests": "22",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "testOnlySchemaEvolutionPreservesAllFiveTables[26]",
+          "concurrentCompletionWritersReturnOneAttempt[26]",
+          "completionKeyIsIdempotentAndConflictingPayloadFails[26]",
+          "allFiveTablesSurviveFileReopen[26]",
+          "productionMigrationPreservesLegacyHistoryAndProgress[26]",
+          "failureAfterReviewInsertRollsBackBothWrites[26]",
+          "invalidIdentityHashDoesNotEraseProgress[26]",
+          "concurrentOpenKeepsOnePreference[26]",
+          "defaultsAndInitializationPreserveEdits[26]",
+          "invalidValuesAreRejectedBeforeWriting[26]",
+          "missingMigrationRefusesOpenWithoutErasingData[26]",
+          "testOnlySchemaEvolutionPreservesAllFiveTables",
+          "concurrentCompletionWritersReturnOneAttempt",
+          "completionKeyIsIdempotentAndConflictingPayloadFails",
+          "allFiveTablesSurviveFileReopen",
+          "productionMigrationPreservesLegacyHistoryAndProgress",
+          "failureAfterReviewInsertRollsBackBothWrites",
+          "invalidIdentityHashDoesNotEraseProgress",
+          "concurrentOpenKeepsOnePreference",
+          "defaultsAndInitializationPreserveEdits",
+          "invalidValuesAreRejectedBeforeWriting",
+          "missingMigrationRefusesOpenWithoutErasingData"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.domain.catalog.SearchVocabularyUseCaseTest",
+        "tests": "6",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "invalidInputAndRejectedExecutorAreExplicitErrors",
+          "normalizationPreservesVietnameseAndTreatsOperatorsAsWords",
+          "emptyAndPunctuationDoNotScheduleOrRead",
+          "databaseRunsOnWorkerAndCallingThreadDoesNotBlock",
+          "repositoryFailuresAreNotEmptySuccess",
+          "resultSnapshotsAreImmutableAndRejectDuplicateStableIds"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.domain.learning.LeitnerSchedulerBoundaryTest",
+        "tests": "8",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "wordBecomesDueAtStoredReviewTime",
+          "dueAtPreservesLocalTimeForEveryBox",
+          "mistakeCounterDoesNotOverflow",
+          "fallBackKeepsCalendarDays",
+          "lastMillisecondOfDayAndMidnightBelongToDifferentDays",
+          "sameInstantUsesTheZoneCalendarDay",
+          "springForwardKeepsCalendarDays",
+          "intervalTableMatchesPlanAndRejectsInvalidBox"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.domain.learning.LeitnerSchedulerCalendarTimeTest",
+        "tests": "8",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "rememberedAt1430KeepsHourMinuteSecondsAndMillis",
+          "berlinSpringForwardIs23HoursButSameLocalTime",
+          "hardAt2355KeepsLocalTimeOnNextDay",
+          "boxFiveRememberedKeepsTimeAfter30CalendarDays",
+          "forgotAt0005KeepsLocalTimeOnNextDay",
+          "nonexistentSpringTimeMovesForwardByTheGap",
+          "berlinFallBackIs25HoursButSameLocalTime",
+          "overlappingFallTimeRetainsPreviousValidOffset"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.domain.learning.LeitnerSchedulerSrsTest",
+        "tests": "10",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "tcSched10_resultIsDeterministicForSameInput",
+          "tcSched06_forgotFromAnyBoxResetsToBox0DueTomorrow",
+          "tcSched09_hardOrRememberedResetsMistakesAndClearsLeech",
+          "tcSched05_hardAtBox0StaysAtBox0DueTomorrow",
+          "tcSched04_hardKeepsBoxAndUsesSameBoxInterval",
+          "tcSched02_rememberedStepsThroughEveryBoxWithItsInterval",
+          "tcSched08_fourthForgotInARowBecomesLeech",
+          "tcSched07_threeForgotInARowIsNotLeech",
+          "tcSched03_rememberedAtBox5StaysAtBox5",
+          "tcSched01_newWordRememberedGoesToBox1DueTomorrow"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.domain.learning.LeitnerSchedulerTest",
+        "tests": "6",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "rememberedMovesUpOneBox",
+          "forgotResetsToBoxZeroDueTomorrow",
+          "rejectsInvalidInput",
+          "toStateCarriesResultForward",
+          "hardKeepsBox",
+          "newWordStartsInBoxZero"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.domain.learning.PlanTodayTest",
+        "tests": "9",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "dueComesBeforeNewAndKeepsDueOrder",
+          "duplicateStableIdAcrossTiersAndPacksAppearsOnce",
+          "quotaAlreadyUsedStillShowsDueWords",
+          "notYetDueWordsAreExcluded",
+          "repositoryFailureIsPropagated",
+          "noActivePackAsksUserToChoose",
+          "packFailureIsPropagated",
+          "nothingLeftIsDoneState",
+          "newWordsAreLimitedByRemainingDailyQuota"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.domain.learning.RecordReviewUseCaseTest",
+        "tests": "6",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "firstReviewUsesSingleTimestampAndCommitsOnce",
+          "invalidCommandDoesNotTouchRepository",
+          "countOverflowDoesNotWrite",
+          "failedCommitDoesNotReturnSuccessOrMutateSnapshot",
+          "allRatingsKeepSavedAndOriginalLearnedTimestamp",
+          "savedButUnreviewedWordGetsFirstLearnedTimestamp"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.domain.learning.SessionQueueTest",
+        "tests": "7",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "forgotWithFewerThanTwoCardsLeftGoesToTheEnd",
+          "secondForgotOfTheSameWordDoesNotRequeueSoSessionEnds",
+          "forgotOnTheOnlyCardShowsItAgainImmediately",
+          "advancingAFinishedSessionFails",
+          "forgotReturnsAfterTwoOtherCards",
+          "rememberedAndHardNeverRequeue",
+          "onlyOneRelearnCopyPerWordEvenWithRepeatedForgot"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.domain.progress.ProgressDomainTest",
+        "tests": "11",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "emptySummaryAndSnapshotAreValidSuccessfulData",
+          "allSixBoxesContributeToTheCorrectGroups",
+          "snapshotCopiesInputAndReturnsReadOnlyHistory",
+          "resultEnforcesExclusiveSuccessAndFailurePayloads",
+          "snapshotRejectsMissingPayloadsAndDuplicateIdsEvenAtDifferentTimes",
+          "scoresMatchQuizResultRoundingAcrossEverySupportedCount",
+          "historyValidatesPersistedIdentityTimeCountsAndScore",
+          "summaryDefensivelyCopiesBothInputAndOutput",
+          "longCountsDoNotNarrowOrOverflow",
+          "snapshotOrdersByTimeThenIdWithoutOverflowOrTruncation",
+          "summaryRejectsNullWrongSizeNegativeAndMismatchedCounts"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.domain.quiz.AcceptedQuizPolicyTest",
+        "tests": "6",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "invalidCompanionCannotBecomeUnrestricted[26]",
+          "fullCorpusIncludesSeed60AndNeverEmitsForbiddenPairs[26]",
+          "minimalPoolsFailAndSufficientPoolsEnforceBothDirections[26]",
+          "invalidCompanionCannotBecomeUnrestricted",
+          "fullCorpusIncludesSeed60AndNeverEmitsForbiddenPairs",
+          "minimalPoolsFailAndSufficientPoolsEnforceBothDirections"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.domain.quiz.AndroidNfcConformanceTest",
+        "tests": "4",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "productionAdapterHandlesPostJdkUnicodeCompositions[26]",
+          "allOfficialNfcVectorsAndUnlistedScalars[26]",
+          "productionAdapterHandlesPostJdkUnicodeCompositions",
+          "allOfficialNfcVectorsAndUnlistedScalars"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.domain.quiz.GenerateQuizTest",
+        "tests": "2",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "preservesRepositoryErrorsAndInvalidSnapshot",
+          "defaultGeneratorUsesPolicyFromEveryFreshSnapshot"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.domain.quiz.NfcConformanceTest",
+        "tests": "2",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "productionAdapterHandlesPostJdkUnicodeCompositions",
+          "allOfficialNfcVectorsAndUnlistedScalars"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.domain.quiz.QuizDistractorPolicyTest",
+        "tests": "3",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "policyCopiesInputAndAppliesBothDirections",
+          "mixedBucketKeepsOnlySafeRepresentativesAndPoolRejectsForbiddenOptions",
+          "snapshotCopiesVocabularyAndRequiresExplicitPolicy"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.domain.quiz.QuizDomainTest",
+        "tests": "18",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "seededFakePreservesIdTargetWithRepeatedMeanings",
+          "questionValidatesAllOptionKeysAndNormalizer",
+          "sessionGuardsAndSnapshots",
+          "meaningBoundaryAndTargetUsesIds",
+          "poolQuestionUsesSameNormalizationAndScoresCorrectly",
+          "seededFakeRepeatsQuestionOrderForSameSeed",
+          "targetCounts",
+          "inputGuards",
+          "generatorContractWithSeededFake",
+          "seededFakeHandlesFiveIdsWithRepeatedMeaning",
+          "answersLockAndRejectStaleClicks",
+          "questionGuardsAndSnapshot",
+          "dedupConflictsAndSnapshots",
+          "rejectsCorrectOptionWithWrongTargetMeaning",
+          "seededFakeRejectsNullInputs",
+          "abandonmentAndCompletionAreTerminal",
+          "seededFakeReturnsEmptyForInsufficientPools",
+          "scoring"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.domain.quiz.QuizGenerationTest",
+        "tests": "5",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "seededPropertiesMembershipAndImmutability",
+          "dedupConflictAndAmbiguousSensePolicy",
+          "normalizerVectorsAndLocale",
+          "countAndInsufficiencyMatrix",
+          "generatedTableMatchesEveryOfficialDefaultMapping"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.fake.FakeRepositoriesTest",
+        "tests": "4",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "mapperRoundTripsAndFlagsInvalidRows",
+          "resultNeverMixesValueAndError",
+          "fakeStudyHonoursLimitAndFailure",
+          "fakeReviewRecordsCallsAndCanFail"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.attribution.AttributionRenderingTest",
+        "tests": "2",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "rendersLoadingEmptyErrorRetryAndMultipleLongSources[26]",
+          "rendersLoadingEmptyErrorRetryAndMultipleLongSources"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.attribution.AttributionViewModelTest",
+        "tests": "2",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "clearingClosesAfterReadAndIgnoresLateDelivery",
+          "loadsOffCallerAndDistinguishesEmptyFailureAndSuccessfulRetry"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.attribution.AttributionScreenTest",
+        "tests": "2",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "attributionAvailableBeforeLearningSurvivesRecreationAndBack[26]",
+          "attributionAvailableBeforeLearningSurvivesRecreationAndBack"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.attribution.ExternalLinksTest",
+        "tests": "6",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "normalizesSchemeForBrowserFilterWithoutChangingCaseSensitiveComponents[26]",
+          "onlyValidWebAddressesAreAccepted[26]",
+          "handsBrowserIntentToOsAndReportsMissingHandlerOrSecurityFailure[26]",
+          "normalizesSchemeForBrowserFilterWithoutChangingCaseSensitiveComponents",
+          "onlyValidWebAddressesAreAccepted",
+          "handsBrowserIntentToOsAndReportsMissingHandlerOrSecurityFailure"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.attribution.GetContentSourcesTest",
+        "tests": "2",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "returnsEveryFieldFromRepositoryAndPreservesEmpty",
+          "readFailureIsNotConvertedToEmpty"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.flashcard.FlashcardFragmentTest",
+        "tests": "4",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "configurationChangeWhileSavingKeepsLockAndOccurrence",
+          "realTapInsideScrollViewFlipsCardAndEnablesRatings",
+          "missingIpaHasTheSameReadableFallbackAsVocabularyDetail",
+          "oldRenderedListenerCannotRateNextCardAfterDebounce"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.flashcard.FlashcardLayoutTest",
+        "tests": "2",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "answerSideStartsHidden",
+          "ratingButtonsStartDisabledAndAreAtLeast48dp"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.flashcard.FlashcardViewModelTest",
+        "tests": "22",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "forgotRelearnsOnceAfterTwoOtherCardsThenFinishes",
+          "ratingBeforeFlipWritesNothing",
+          "invalidInputDoesNotStartOrExtendDebounce",
+          "relearnHasNewOccurrenceAndAcceptsSameWordAgain",
+          "fourthForgotMarksLeechAndHintExposesIt",
+          "failedWriteKeepsCardAndFaceAndWritesNothing",
+          "loadFailureShowsErrorAndRetryRecovers",
+          "repeatedForgotDoesNotLoopTheSession",
+          "slowCommitStaysLockedEvenAfterDebounceExpires",
+          "noActivePackAndNothingToStudyAreDistinct",
+          "forgotAndHardEachCommitOneReview",
+          "rememberedCommitsBoxOneAndAdvancesAfterTheWrite",
+          "stateSurvivesRecreationBecauseViewModelIsRetained",
+          "lastRatingFinishesSessionAndKeepsResult",
+          "staleOccurrenceCannotRateNextCardOrReloadedSession",
+          "fastCommitTripleTapAndExactBoundaryUseFirstAcceptedTimestamp",
+          "frontShowsOnlyTheWordAndRatingIsDisabled",
+          "failedAttemptKeepsOccurrenceAndDebouncesExplicitRetry",
+          "retryWhileSavingIsIgnoredSoLateCommitCannotAdvanceARebuiltQueue",
+          "tapsWhileSavingDoNotWriteTwice",
+          "failedSaveDoesNotQueueRelearn",
+          "conflictIsReportedAsFailureNotCommitted"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.flashcard.LearningFlowIntegrationTest",
+        "tests": "7",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "dueWordsComeBeforeNewWordsOnTheNextDay",
+          "ratingBeforeFlipWritesNothing",
+          "pausedPackWordsAreNeverPlanned",
+          "repeatedForgotAcrossDaysTurnsLeechAndRememberedClearsIt",
+          "fastCommittedTripleTapDoesNotUpdateNextWordsProgress",
+          "doubleTapWritesExactlyOneEventAndNextCardWorks",
+          "fullSessionDueOrderRatingsRelearnOnceAndFinish"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.packs.PackActivationRenderingTest",
+        "tests": "8",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "detailDisablesWhilePendingThenShowsPersistedActiveAndPaused[26]",
+          "todayShowsCtaOnlyAfterSuccessfulReadAndNeverWrites[26]",
+          "unknownPackShowsNotFoundWithoutRetry[26]",
+          "detailDisablesWhilePendingThenShowsPersistedActiveAndPaused",
+          "todayShowsCtaOnlyAfterSuccessfulReadAndNeverWrites",
+          "unknownPackShowsNotFoundWithoutRetry",
+          "longHeaderStillDragsAfterScrolledWordsBecomeAnError[26]",
+          "longHeaderStillDragsAfterScrolledWordsBecomeAnError"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.packs.PackActivationTest",
+        "tests": "6",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "invalidAndUnknownIdsDoNotReadClockOrWrite",
+          "doubleTapRefreshAndOldReadCannotReplaceConfirmedWrite",
+          "savedWriteFollowedByReadFailureIsReconciledWithoutReplay",
+          "explicitActionKeepsZeroFirstTimestampAndLearnedCount",
+          "readFailureAndWriteFailureStayErrorAndRetryReconciles",
+          "initialLoadAndNewOwnerNeverActivateAndClearingWaitsForWrite"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.packs.PackVocabularyIntegrationTest",
+        "tests": "2",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "explicitActivationWordRouteBackListAndTodaySharePersistedState[26]",
+          "explicitActivationWordRouteBackListAndTodaySharePersistedState"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.packs.PacksViewModelTest",
+        "tests": "5",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "wordsLoadByPackIdInCatalogOrderAndUnknownPackIsError",
+          "overlappingRetriesAreIgnoredAndThrownErrorsBecomeError",
+          "clearingClosesAfterReadAndIgnoresLateDelivery",
+          "packListLoadsOffMainThenShowsContentEmptyAndError",
+          "thrownErrorStillLeavesLoadingAndBecomesError"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.packs.VocabularyListTest",
+        "tests": "8",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "recycledHolderReplacesIpaStatusAndClickTargetAfterRefresh[26]",
+          "realGraphDispatchReceiveBackAndRecreation[26]",
+          "refreshDiscardsLateReadAndLoadsDurableStateAgain[26]",
+          "routePreservesOpaqueTextAndRejectsMissingArguments[26]",
+          "recycledHolderReplacesIpaStatusAndClickTargetAfterRefresh",
+          "realGraphDispatchReceiveBackAndRecreation",
+          "refreshDiscardsLateReadAndLoadsDurableStateAgain",
+          "routePreservesOpaqueTextAndRejectsMissingArguments"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.progress.ProgressRenderingTest",
+        "tests": "4",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "hidesOldHistoryUntilMatchingSummaryAndNewHistoryAreCommitted",
+          "commitAfterDestroyViewCannotBindOldView",
+          "lateCommitCannotRevealDataOverNewError",
+          "supersededCommitCannotRevealDataWhileNewDiffIsPending"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.progress.ProgressScreenTest",
+        "tests": "6",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "emptyAndErrorsRetryRenderWithoutInventedZeros[26]",
+          "historyOnlyAndDestroyedViewDuringReadAreSafe[26]",
+          "twelveWordsAllBoxesAndUncappedHistoryMatchFixtureAndRefresh[26]",
+          "emptyAndErrorsRetryRenderWithoutInventedZeros",
+          "historyOnlyAndDestroyedViewDuringReadAreSafe",
+          "twelveWordsAllBoxesAndUncappedHistoryMatchFixtureAndRefresh"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.progress.ProgressViewModelTest",
+        "tests": "4",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "retryPreservesInvalidAndReadErrorsAndRefreshHidesOldSnapshot",
+          "unexpectedFailureIsErrorAndClearDiscardsCompletionAndRefresh",
+          "deviceZoneChangesCalendarDayWithoutChangingTimestamp",
+          "coalescesRefreshAndNeverPublishesSupersededResult"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.progress.ProgressViewStateTest",
+        "tests": "7",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "progressAloneIsContentWithAnEmptyHistorySection",
+          "invalidStoredDataIsErrorRatherThanEmptyOrRepairedHistory",
+          "historyAloneIsContentWithAnEmptyProgressSection",
+          "fakeUseCaseDelegatesEachReadIncludingRetryAndDoesNotConvertErrorsToEmpty",
+          "labelsExplainEveryBoxGroupMasteredAndRecovery",
+          "bothSectionsWithDataRemainContent",
+          "loadingHasNoInventedZeroSnapshotOrError"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.quiz.QuizScreenTest",
+        "tests": "3",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "readFailureShowsAnActionableMessageWithoutInternalCodes",
+          "toolbarAndSystemBackShareCancelAndConfirmExit",
+          "fullFlowKeepsFeedbackThroughRecreationAndSavesOnce"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.quiz.QuizViewModelTest",
+        "tests": "14",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "restoredSessionRejectsAt599msAndAcceptsAt600ms",
+          "locksAnswersAndDebouncesAcrossQuestions",
+          "closingScreenDuringSaveDoesNotAbandonCompletedPayload",
+          "malformedClockMarkerProducesRestoreError",
+          "snapshotKeepsOrderFeedbackAndCompletedKey",
+          "abandonDoesNotSaveAndCompletedCannotAbandon",
+          "invalidSnapshotShowsErrorWithoutGeneratingOrSaving",
+          "restoredClockResetDoesNotLockAnswersAndStartsANewBoundary",
+          "legacySnapshotWithoutClockMarkerStillRestores",
+          "resetMarkerStaysDiscardedAfterClockCatchesUpAndAnotherRestore",
+          "repositoryErrorAndInvalidInputAreNotEmpty",
+          "clearingDuringGenerationDropsLateCallback",
+          "emptyPoolIsNotAnErrorAndRetryReadsAgain",
+          "completesOnLastAnswerAndRetriesSamePayload"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.search.SearchReadRecoveryTest",
+        "tests": "2",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "realRoomReadFailureShowsErrorAndRetryRecoversCurrentQuery[26]",
+          "realRoomReadFailureShowsErrorAndRetryRecoversCurrentQuery"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.search.SearchScreenTest",
+        "tests": "6",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "catalogSearchEnglishVietnameseDetailBackRecreateClearAndNoWrites[26]",
+          "opaqueNavigationArgumentsAndReboundHolder[26]",
+          "catalogDetailSaveRequiresExplicitClickAndPersistsAcrossBack[26]",
+          "catalogSearchEnglishVietnameseDetailBackRecreateClearAndNoWrites",
+          "opaqueNavigationArgumentsAndReboundHolder",
+          "catalogDetailSaveRequiresExplicitClickAndPersistsAcrossBack"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.search.SearchViewModelTest",
+        "tests": "22",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "clearRejectsQueuedCompletionAndError[26]",
+          "outOfOrderContentAndOldErrorCannotStopNewLoading[26]",
+          "invalidInputDoesNotSubmitOrBecomeNoMatch[26]",
+          "debounce600AndImmediateInvalidation[26]",
+          "aToBToAUsesGenerationNotQueryEquality[26]",
+          "disposedOwnerIgnoresLateCompletionAndCancelsDebounce[26]",
+          "immediateExceptionalAndRejectedFuturesUseMainDelivery[26]",
+          "nullResetRestoreAndRetryCannotReplayAbandonedQuery[26]",
+          "savedRawQueryRestoresAndNavigationUsesOpaqueId[26]",
+          "errorsAreDistinctFromNoMatchRetryUsesCurrentInput[26]",
+          "clearWhitespaceTokenlessInvalidateRunningAndPending[26]",
+          "clearRejectsQueuedCompletionAndError",
+          "outOfOrderContentAndOldErrorCannotStopNewLoading",
+          "invalidInputDoesNotSubmitOrBecomeNoMatch",
+          "debounce600AndImmediateInvalidation",
+          "aToBToAUsesGenerationNotQueryEquality",
+          "disposedOwnerIgnoresLateCompletionAndCancelsDebounce",
+          "immediateExceptionalAndRejectedFuturesUseMainDelivery",
+          "nullResetRestoreAndRetryCannotReplayAbandonedQuery",
+          "savedRawQueryRestoresAndNavigationUsesOpaqueId",
+          "errorsAreDistinctFromNoMatchRetryUsesCurrentInput",
+          "clearWhitespaceTokenlessInvalidateRunningAndPending"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.today.TodayRenderingTest",
+        "tests": "4",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "dueAndNewCountsAndStartAreShownWhenSomethingIsLeft",
+          "noActivePackShowsChoosePackCtaOnly",
+          "planFailureShowsRetryAndNoStart",
+          "doneStateOffersQuizAndExploreInsteadOfStart"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.ui.ResilienceLayoutTest",
+        "tests": "6",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "quizOptionsWrapLongMeaningsWithoutEllipsisOnSmallScreen[26]",
+          "longPackHeaderDoesNotCollapseTheWordList[26]",
+          "flashcardAndRatingsRemainReachableInShortLandscapeWithLargeFont[26]",
+          "quizOptionsWrapLongMeaningsWithoutEllipsisOnSmallScreen",
+          "longPackHeaderDoesNotCollapseTheWordList",
+          "flashcardAndRatingsRemainReachableInShortLandscapeWithLargeFont"
+        ]
+      },
+      {
+        "name": "com.vocamind.app.feature.vocabulary.VocabularyDetailTest",
+        "tests": "10",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "caseNames": [
+          "longExamplesRemainScrollableAtLargeFontOnSmallScreen[26]",
+          "captureDetailLayoutsWithFixedActionAndWriteErrorFeedback[26]",
+          "longExamplesRemainScrollableAtLargeFontOnSmallScreen",
+          "captureDetailLayoutsWithFixedActionAndWriteErrorFeedback",
+          "renderAllFieldsNullBlankIpaAndReplacePreviousWordWithoutInventingContent[26]",
+          "pendingBlocksDoubleTapAndResumeRetryReconcilesAmbiguousCommitWithoutReplay[26]",
+          "refreshGenerationAndClearedOwnerRejectLateReadsAndWrites[26]",
+          "renderAllFieldsNullBlankIpaAndReplacePreviousWordWithoutInventingContent",
+          "pendingBlocksDoubleTapAndResumeRetryReconcilesAmbiguousCommitWithoutReplay",
+          "refreshGenerationAndClearedOwnerRejectLateReadsAndWrites"
+        ]
+      }
+    ]
+  },
+  "lint": {
+    "Error": 0,
+    "Fatal": 0,
+    "Warning": 14
+  },
+  "api26Discovery": {
+    "testedRevision": "2b7d40fe932cd16ad3c89ffd10ce0aec232c415f+sources-sha256:9c9ddf78bde861338856c92ee8bc4fd02983c16ac0eefcfb5e8c833e66e5d5b6",
+    "runs": [
+      {
+        "run": "independent-offlinePackOrderVisibleItemsDetailsBothIpaAndNoWrites",
+        "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#offlinePackOrderVisibleItemsDetailsBothIpaAndNoWrites",
+        "tests": 1,
+        "pass": 1,
+        "fail": 0,
+        "skipped": 0,
+        "expectedFailureProbe": false,
+        "artifactsVerified": false,
+        "accepted": true,
+        "seconds": 4.583667097999978
+      },
+      {
+        "run": "independent-activateCloseLaunchPauseCloseLaunchPreservesLearningAndSaved",
+        "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#activateCloseLaunchPauseCloseLaunchPreservesLearningAndSaved",
+        "tests": 1,
+        "pass": 1,
+        "fail": 0,
+        "skipped": 0,
+        "expectedFailureProbe": false,
+        "artifactsVerified": false,
+        "accepted": true,
+        "seconds": 4.338198936999987
+      },
+      {
+        "run": "independent-allInactiveTodayCtaOpensDiscoveryWithoutActivation",
+        "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#allInactiveTodayCtaOpensDiscoveryWithoutActivation",
+        "tests": 1,
+        "pass": 1,
+        "fail": 0,
+        "skipped": 0,
+        "expectedFailureProbe": false,
+        "artifactsVerified": false,
+        "accepted": true,
+        "seconds": 1.637597148999987
+      },
+      {
+        "run": "independent-saveBackReopenCloseLaunchUnsavePreservesCatalogAndLearning",
+        "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#saveBackReopenCloseLaunchUnsavePreservesCatalogAndLearning",
+        "tests": 1,
+        "pass": 1,
+        "fail": 0,
+        "skipped": 0,
+        "expectedFailureProbe": false,
+        "artifactsVerified": false,
+        "accepted": true,
+        "seconds": 5.037693989000019
+      },
+      {
+        "run": "independent-offlineEnglishVietnameseRealFtsVisibleResultDetailResetNoMatch",
+        "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#offlineEnglishVietnameseRealFtsVisibleResultDetailResetNoMatch",
+        "tests": 1,
+        "pass": 1,
+        "fail": 0,
+        "skipped": 0,
+        "expectedFailureProbe": false,
+        "artifactsVerified": false,
+        "accepted": true,
+        "seconds": 6.662280796999994
+      },
+      {
+        "run": "independent-loadingContentNoMatchAndAtoBtoARejectsOldSuccessAndError",
+        "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#loadingContentNoMatchAndAtoBtoARejectsOldSuccessAndError",
+        "tests": 1,
+        "pass": 1,
+        "fail": 0,
+        "skipped": 0,
+        "expectedFailureProbe": false,
+        "artifactsVerified": false,
+        "accepted": true,
+        "seconds": 5.297257674999997
+      },
+      {
+        "run": "independent-retryCurrentQueryErrorEditInvalidAndResetAreDistinct",
+        "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#retryCurrentQueryErrorEditInvalidAndResetAreDistinct",
+        "tests": 1,
+        "pass": 1,
+        "fail": 0,
+        "skipped": 0,
+        "expectedFailureProbe": false,
+        "artifactsVerified": false,
+        "accepted": true,
+        "seconds": 5.116662080000026
+      },
+      {
+        "run": "independent-resetRunningRejectsLateCompletionAndLateError",
+        "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#resetRunningRejectsLateCompletionAndLateError",
+        "tests": 1,
+        "pass": 1,
+        "fail": 0,
+        "skipped": 0,
+        "expectedFailureProbe": false,
+        "artifactsVerified": false,
+        "accepted": true,
+        "seconds": 3.060169222000013
+      },
+      {
+        "run": "independent-whitespaceAndResetPendingNeverSubmitFts",
+        "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#whitespaceAndResetPendingNeverSubmitFts",
+        "tests": 1,
+        "pass": 1,
+        "fail": 0,
+        "skipped": 0,
+        "expectedFailureProbe": false,
+        "artifactsVerified": false,
+        "accepted": true,
+        "seconds": 2.236384055000002
+      },
+      {
+        "run": "independent-backWhileRunningAndRecreateKeepsCurrentQueryAndDropsAbandonedRead",
+        "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#backWhileRunningAndRecreateKeepsCurrentQueryAndDropsAbandonedRead",
+        "tests": 1,
+        "pass": 1,
+        "fail": 0,
+        "skipped": 0,
+        "expectedFailureProbe": false,
+        "artifactsVerified": false,
+        "accepted": true,
+        "seconds": 3.2932900280000013
+      },
+      {
+        "run": "suite-1",
+        "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest,com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest",
+        "tests": 11,
+        "pass": 10,
+        "fail": 0,
+        "skipped": 1,
+        "expectedFailureProbe": false,
+        "artifactsVerified": false,
+        "accepted": true,
+        "seconds": 33.58557905500001
+      },
+      {
+        "run": "suite-2",
+        "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest,com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest",
+        "tests": 11,
+        "pass": 10,
+        "fail": 0,
+        "skipped": 1,
+        "expectedFailureProbe": false,
+        "artifactsVerified": false,
+        "accepted": true,
+        "seconds": 33.50730571499997
+      },
+      {
+        "run": "artifact-probe",
+        "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#failureArtifactProbe",
+        "tests": 1,
+        "pass": 0,
+        "fail": 1,
+        "skipped": 0,
+        "expectedFailureProbe": true,
+        "artifactsVerified": true,
+        "accepted": true,
+        "seconds": 1.6649914490000128
+      }
+    ]
+  },
+  "data08": {
+    "tested-checkout.txt": "2b7d40fe932cd16ad3c89ffd10ce0aec232c415f\n",
+    "apk-sha256.txt": "c5319da18f07dad3e9a98363d6aa927d7d4512f04b76cee7720571bf190ede21  A.apk\n59f6e4f841a40812ee04cf82852a76729a09bb228f1850b4484ce4d20311bddc  B.apk\n337b4d2c0e855257fb4a602394430a2420e197062e6d538fb44102cf07f863a0  test.apk\n",
+    "boot-ids.txt": "69f744eb-324a-4791-bd64-fa6f7dda5e29 -> 15e72f4d-2dbe-47b5-aae1-3af1b4f78468\n15e72f4d-2dbe-47b5-aae1-3af1b4f78468 -> e70b4c16-53f8-4dd7-ab05-3e2b94f8e3d8\n",
+    "phases.txt": "seed DATA08_PASS seed 9f6d41900412a44f6acc2d64ee85431ca76d0cf708ad331ffdbedab4c7a94cb1 18b8a216b67e9a89f2fb8497a8bfed02f10ce5cce0c845472363ee008839de29\nupgrade DATA08_PASS upgrade 55d3d30e02d1b448a1d4d54b4284f04cc430e2f0edaa2b31ececcde62bddd67f 72b3194a4e41e52129c8bd7ce4ea0fd5a719d7e08f683b39d5d2b8c3c0f4018c\nforce-stop DATA08_PASS verify-upgrade 55d3d30e02d1b448a1d4d54b4284f04cc430e2f0edaa2b31ececcde62bddd67f 72b3194a4e41e52129c8bd7ce4ea0fd5a719d7e08f683b39d5d2b8c3c0f4018c\nreboot DATA08_PASS verify-upgrade 55d3d30e02d1b448a1d4d54b4284f04cc430e2f0edaa2b31ececcde62bddd67f 72b3194a4e41e52129c8bd7ce4ea0fd5a719d7e08f683b39d5d2b8c3c0f4018c\nrollback DATA08_PASS rollback 9f6d41900412a44f6acc2d64ee85431ca76d0cf708ad331ffdbedab4c7a94cb1 72b3194a4e41e52129c8bd7ce4ea0fd5a719d7e08f683b39d5d2b8c3c0f4018c\nrollback-reboot DATA08_PASS verify-rollback 9f6d41900412a44f6acc2d64ee85431ca76d0cf708ad331ffdbedab4c7a94cb1 72b3194a4e41e52129c8bd7ce4ea0fd5a719d7e08f683b39d5d2b8c3c0f4018c\n"
+  },
+  "sourceManifestSha256": "86f2e64262adfe1e15e5a5d1e6d38818f584f0bf25682bf07a111c42d4b1687a"
+}

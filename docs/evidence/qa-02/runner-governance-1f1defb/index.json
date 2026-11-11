@@ -1,0 +1,46 @@
+{
+  "baseHead": "1f1defb6fc5f76ff46a39c786e7b5363e43031d5",
+  "sourceHashes": {
+    "tools/validation/run_qa02_device.py": "c50338df17d58447374c4a26845bb11c3a625d1d07b45270b719dd50c4cfcb50",
+    "tools/validation/test_qa02_runner.py": "52975f312df66669526963c95ff2574ea0168135d2e81a0c26d064014bfab6ee"
+  },
+  "newAppTestRun": false,
+  "nativeSmoke": "NOT RUN; host CLI fake-ADB only",
+  "applicationSourceUnchanged": true,
+  "tests": {
+    "qa02": {
+      "tests": 13,
+      "exitCode": 0,
+      "logSha256": "8cae0307633a2b113db1a8ad031a8ff1c594e6ed597580ccb9a0a661d6fb592a",
+      "localLog": "build\\qa02\\runner-governance-1f1defb\\regression-qa02.log"
+    },
+    "ui02": {
+      "tests": 27,
+      "exitCode": 0,
+      "logSha256": "f2aa52991a474d62da4fe688f904e3204b8860c9e1880abc196d3eeccb205dd5",
+      "localLog": "build\\qa02\\runner-governance-1f1defb\\regression-ui02.log"
+    },
+    "ci-device": {
+      "tests": 8,
+      "exitCode": 0,
+      "logSha256": "c7d727224759cadd2a30a40ef51f529f19ba73e8025d795d49a72bd6fa59d142",
+      "localLog": "build\\qa02\\runner-governance-1f1defb\\regression-ci-device.log"
+    }
+  },
+  "totalTests": 48,
+  "localEvidenceRoot": "C:\\Users\\LMT\\Documents\\University\\Nam4\\N4_HK1\\PTUDTBDT\\BLT\\VocaMind\\build\\qa02\\runner-governance-1f1defb",
+  "rightsAuditExitCode": 0,
+  "releaseGateExitCode": 1,
+  "releaseGateMeaning": "Expected HOLD; no authority/approval created",
+  "snapshotBindingSha256": "dcf4b4a731699a13c2fb5a33c1ad2b66ef2ea372f5fe51430854206e5130e39c",
+  "inputHashes": {
+    "docs\\licensing\\voc-data-06\\release-rights-decision.json": "a730666b7a2771fa17cd8122743c94f77956a11a58fe3eea5deef642b658d596",
+    "docs\\licensing\\voc-data-06\\APPROVAL_CHECKLIST.md": "ef9de00c51f8c0f5f2ac5c53730e0449c9e53528988b4b54b7c8357d9a45f1b8",
+    "docs\\data\\voc-data-04\\owner-acceptance.json": "31268e408c3e5c76a1380a20a9dd8bac99717b705ddea29a21604b16eb9e58fc",
+    "docs\\ui-01-validation.md": "533a5a0d1e18e52ba4dcd90f77175816a61c5b3a3a01bdbfc495eda45cc601bd",
+    "app\\src\\main\\AndroidManifest.xml": "a202e17ed9aa5c8b7944d07db19ed949aba387a5d14ed3282b2195d96bf967c2"
+  },
+  "week2Evidence": "docs/ui-01-validation.md at aba854d8; dependency scope only",
+  "report": "docs/qa-02-runner-and-decisions-20261111.md",
+  "publicationNote": "Prepared and tested before commit; user subsequently authorized commit/push. See Git history for publication SHA. No new app/device run implied."
+}
