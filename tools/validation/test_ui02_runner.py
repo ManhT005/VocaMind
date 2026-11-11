@@ -101,6 +101,7 @@ class NetworkTests(unittest.TestCase):
         adb.assert_restored(self)
         self.assertTrue(json.loads((self.out/'network-restore.json').read_text())['accepted'])
         self.assertIn(('svc','wifi','enable'), adb.commands)
+        self.assertIn(('settings','put','global','mobile_data','0'), adb.commands)
         self.assertEqual('Active default network: none\n',(self.out/'case/connectivity-before-launch.txt').read_text())
 
     def test_all_supported_wifi_values_restore_exact_flags_and_effective_state(self):

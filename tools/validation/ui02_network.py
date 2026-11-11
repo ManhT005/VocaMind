@@ -167,6 +167,11 @@ class OfflineNetwork:
             self.checked('settings', 'put', 'global', 'airplane_mode_on', '1')
             self.checked('svc', 'wifi', 'disable')
             self.checked('svc', 'data', 'disable')
+            # API35 occasionally acknowledges `svc data disable` while the global
+            # policy flag still reads 1 until after our bounded setup deadline.
+            # Persist the same disabled policy explicitly; restore() already puts
+            # the exact original value back after every outcome.
+            self.setting('mobile_data', '0')
             self.require_offline(self.output)
             yield self
         except BaseException as error:
