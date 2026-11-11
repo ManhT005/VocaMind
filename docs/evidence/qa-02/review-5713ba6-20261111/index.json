@@ -1,0 +1,27 @@
+{
+  "testedSource": "5713ba6e880e5b97542cd95b553f26ab8d3b8cda",
+  "documentationCommitIsNotNewTestRun": true,
+  "rawEvidenceLocalOnly": true,
+  "bundle": {
+    "path": "C:\\Users\\LMT\\Documents\\University\\Nam4\\N4_HK1\\PTUDTBDT\\BLT\\VocaMind\\build\\qa02\\review-5713ba6-20261111-evidence.zip",
+    "bytes": 75716464,
+    "sha256": "393acef63c1ad1ac6c543ed65f8cd19ab7ebbafec78c10839a57288f190a914f",
+    "crcVerified": true,
+    "entries": 842,
+    "includedRawFiles": 840,
+    "excludedRawFiles": 283,
+    "trackedUnchanged": true
+  },
+  "reports": [
+    "docs/qa-02-review-5713ba6-20261111.md",
+    "docs/qa-02-review-5713ba6-results.csv",
+    "docs/qa-02-review-5713ba6-findings.md"
+  ],
+  "privacy": "No APK/corpus/media/full-device logs uploaded. Local paths and hashes are references, not public artifact availability.",
+  "currentCI": [
+    42990358456,
+    42990368223
+  ],
+  "previousCIAndFailsPreserved": true,
+  "acceptanceApproved": false
+}

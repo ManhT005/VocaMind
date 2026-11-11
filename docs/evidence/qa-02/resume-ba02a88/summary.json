@@ -1627,5 +1627,767 @@
       }
     ],
     "scope": "Independent controlled UI fixtures at font1.3; actual IME enabled then restored; per-case owned QA package clear, not continuous E2E. Production APK unchanged. No TalkBack or API26/35 certification."
+  },
+  "ci5713ba6": {
+    "head": "5713ba6e880e5b97542cd95b553f26ab8d3b8cda",
+    "prMergeCheckout": "ef927e8a1117189f4d6a4141bfee42e3cf9604fc",
+    "bothWorkflows": "SUCCESS",
+    "runs": {
+      "42990358456": {
+        "jdk": "17.0.21",
+        "artifacts": [
+          {
+            "name": "discovery-api-35-5713ba6e880e5b97542cd95b553f26ab8d3b8cda",
+            "id": 13842155529,
+            "sha256": "819bbaad883baf0f5427a88d09c50cdac4cce0d977a063b3e80f423aac7fdd0d",
+            "digestMatches": true,
+            "testedRevision": "5713ba6e880e5b97542cd95b553f26ab8d3b8cda+sources-sha256:6441606c6470c10ce1d7982442a63ef7629582bc04d643994998ccbb21a7cd15",
+            "runs": [
+              {
+                "run": "independent-offlinePackOrderVisibleItemsDetailsBothIpaAndNoWrites",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#offlinePackOrderVisibleItemsDetailsBothIpaAndNoWrites",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 8.678248219000011
+              },
+              {
+                "run": "independent-activateCloseLaunchPauseCloseLaunchPreservesLearningAndSaved",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#activateCloseLaunchPauseCloseLaunchPreservesLearningAndSaved",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 6.884777242000013
+              },
+              {
+                "run": "independent-allInactiveTodayCtaOpensDiscoveryWithoutActivation",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#allInactiveTodayCtaOpensDiscoveryWithoutActivation",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 3.067644002999998
+              },
+              {
+                "run": "independent-saveBackReopenCloseLaunchUnsavePreservesCatalogAndLearning",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#saveBackReopenCloseLaunchUnsavePreservesCatalogAndLearning",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 6.963194971999997
+              },
+              {
+                "run": "independent-offlineEnglishVietnameseRealFtsVisibleResultDetailResetNoMatch",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#offlineEnglishVietnameseRealFtsVisibleResultDetailResetNoMatch",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 8.584355528999993
+              },
+              {
+                "run": "independent-loadingContentNoMatchAndAtoBtoARejectsOldSuccessAndError",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#loadingContentNoMatchAndAtoBtoARejectsOldSuccessAndError",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 6.653767079999994
+              },
+              {
+                "run": "independent-retryCurrentQueryErrorEditInvalidAndResetAreDistinct",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#retryCurrentQueryErrorEditInvalidAndResetAreDistinct",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 6.908153217000006
+              },
+              {
+                "run": "independent-resetRunningRejectsLateCompletionAndLateError",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#resetRunningRejectsLateCompletionAndLateError",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 4.521938070999994
+              },
+              {
+                "run": "independent-whitespaceAndResetPendingNeverSubmitFts",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#whitespaceAndResetPendingNeverSubmitFts",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 4.039123287999985
+              },
+              {
+                "run": "independent-backWhileRunningAndRecreateKeepsCurrentQueryAndDropsAbandonedRead",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#backWhileRunningAndRecreateKeepsCurrentQueryAndDropsAbandonedRead",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 5.001565739
+              },
+              {
+                "run": "suite-1",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest,com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest",
+                "tests": 11,
+                "pass": 10,
+                "fail": 0,
+                "skipped": 1,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 40.16661982000002
+              },
+              {
+                "run": "suite-2",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest,com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest",
+                "tests": 11,
+                "pass": 10,
+                "fail": 0,
+                "skipped": 1,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 40.32014689599998
+              },
+              {
+                "run": "artifact-probe",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#failureArtifactProbe",
+                "tests": 1,
+                "pass": 0,
+                "fail": 1,
+                "skipped": 0,
+                "expectedFailureProbe": true,
+                "artifactsVerified": true,
+                "accepted": true,
+                "seconds": 3.2742334079999864
+              }
+            ],
+            "networkRestoreAccepted": true
+          },
+          {
+            "name": "discovery-api-26-5713ba6e880e5b97542cd95b553f26ab8d3b8cda",
+            "id": 13841941347,
+            "sha256": "0964b4bc25b51959a208eecdf610d8c24f3e935dd763cc60ed00e30d87d9e8c4",
+            "digestMatches": true,
+            "testedRevision": "5713ba6e880e5b97542cd95b553f26ab8d3b8cda+sources-sha256:6441606c6470c10ce1d7982442a63ef7629582bc04d643994998ccbb21a7cd15",
+            "runs": [
+              {
+                "run": "independent-offlinePackOrderVisibleItemsDetailsBothIpaAndNoWrites",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#offlinePackOrderVisibleItemsDetailsBothIpaAndNoWrites",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 5.157745203000019
+              },
+              {
+                "run": "independent-activateCloseLaunchPauseCloseLaunchPreservesLearningAndSaved",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#activateCloseLaunchPauseCloseLaunchPreservesLearningAndSaved",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 4.5734654860000035
+              },
+              {
+                "run": "independent-allInactiveTodayCtaOpensDiscoveryWithoutActivation",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#allInactiveTodayCtaOpensDiscoveryWithoutActivation",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 1.959759837000007
+              },
+              {
+                "run": "independent-saveBackReopenCloseLaunchUnsavePreservesCatalogAndLearning",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#saveBackReopenCloseLaunchUnsavePreservesCatalogAndLearning",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 5.392559769999991
+              },
+              {
+                "run": "independent-offlineEnglishVietnameseRealFtsVisibleResultDetailResetNoMatch",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#offlineEnglishVietnameseRealFtsVisibleResultDetailResetNoMatch",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 7.012786979999987
+              },
+              {
+                "run": "independent-loadingContentNoMatchAndAtoBtoARejectsOldSuccessAndError",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#loadingContentNoMatchAndAtoBtoARejectsOldSuccessAndError",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 5.529066769999986
+              },
+              {
+                "run": "independent-retryCurrentQueryErrorEditInvalidAndResetAreDistinct",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#retryCurrentQueryErrorEditInvalidAndResetAreDistinct",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 5.273372433999981
+              },
+              {
+                "run": "independent-resetRunningRejectsLateCompletionAndLateError",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#resetRunningRejectsLateCompletionAndLateError",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 3.23151711700001
+              },
+              {
+                "run": "independent-whitespaceAndResetPendingNeverSubmitFts",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#whitespaceAndResetPendingNeverSubmitFts",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 2.464086803000015
+              },
+              {
+                "run": "independent-backWhileRunningAndRecreateKeepsCurrentQueryAndDropsAbandonedRead",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#backWhileRunningAndRecreateKeepsCurrentQueryAndDropsAbandonedRead",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 3.453756537000004
+              },
+              {
+                "run": "suite-1",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest,com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest",
+                "tests": 11,
+                "pass": 10,
+                "fail": 0,
+                "skipped": 1,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 34.410384846
+              },
+              {
+                "run": "suite-2",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest,com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest",
+                "tests": 11,
+                "pass": 10,
+                "fail": 0,
+                "skipped": 1,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 34.513230040999986
+              },
+              {
+                "run": "artifact-probe",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#failureArtifactProbe",
+                "tests": 1,
+                "pass": 0,
+                "fail": 1,
+                "skipped": 0,
+                "expectedFailureProbe": true,
+                "artifactsVerified": true,
+                "accepted": true,
+                "seconds": 1.9621298600000046
+              }
+            ],
+            "networkRestoreAccepted": true
+          },
+          {
+            "name": "android-validation-5713ba6e880e5b97542cd95b553f26ab8d3b8cda",
+            "id": 13841712477,
+            "sha256": "36e4bdb037f4a99d5b1cfb374adbb966250675acc30510ccdd5fa62183137a63",
+            "digestMatches": true,
+            "unitTotals": {
+              "tests": 599,
+              "failures": 0,
+              "errors": 0,
+              "skipped": 0
+            },
+            "fts": [
+              {
+                "suite": "com.vocamind.app.data.catalog.FtsSearchBenchmarkTest",
+                "tests": 2,
+                "failures": 0,
+                "errors": 0,
+                "skipped": 0
+              },
+              {
+                "suite": "com.vocamind.app.data.catalog.FtsSearchTest",
+                "tests": 22,
+                "failures": 0,
+                "errors": 0,
+                "skipped": 0
+              }
+            ]
+          },
+          {
+            "name": "data08-reboot-5713ba6e880e5b97542cd95b553f26ab8d3b8cda",
+            "id": 13841018223,
+            "sha256": "93428bc532d2b83640dbf9c577eb5ad8c71abc9241057b88909e48e5eaecb604",
+            "digestMatches": true
+          },
+          {
+            "name": "quiz-device-5713ba6e880e5b97542cd95b553f26ab8d3b8cda",
+            "id": 13840539442,
+            "sha256": "ef8d44d8bdf1ba337e06469c1a90c0a4cd4c6f4b566a1498605b81a70666180f",
+            "digestMatches": true
+          }
+        ]
+      },
+      "42990368223": {
+        "jdk": "17.0.21",
+        "artifacts": [
+          {
+            "name": "discovery-api-35-ef927e8a1117189f4d6a4141bfee42e3cf9604fc",
+            "id": 13842250431,
+            "sha256": "23ac704c6811e46a3a827f441385d692b51327af5922abf8970310969eca2363",
+            "digestMatches": true,
+            "testedRevision": "ef927e8a1117189f4d6a4141bfee42e3cf9604fc+sources-sha256:6441606c6470c10ce1d7982442a63ef7629582bc04d643994998ccbb21a7cd15",
+            "runs": [
+              {
+                "run": "independent-offlinePackOrderVisibleItemsDetailsBothIpaAndNoWrites",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#offlinePackOrderVisibleItemsDetailsBothIpaAndNoWrites",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 8.397778054000014
+              },
+              {
+                "run": "independent-activateCloseLaunchPauseCloseLaunchPreservesLearningAndSaved",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#activateCloseLaunchPauseCloseLaunchPreservesLearningAndSaved",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 6.7348769819999745
+              },
+              {
+                "run": "independent-allInactiveTodayCtaOpensDiscoveryWithoutActivation",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#allInactiveTodayCtaOpensDiscoveryWithoutActivation",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 3.0995917870000085
+              },
+              {
+                "run": "independent-saveBackReopenCloseLaunchUnsavePreservesCatalogAndLearning",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#saveBackReopenCloseLaunchUnsavePreservesCatalogAndLearning",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 7.019269766999997
+              },
+              {
+                "run": "independent-offlineEnglishVietnameseRealFtsVisibleResultDetailResetNoMatch",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#offlineEnglishVietnameseRealFtsVisibleResultDetailResetNoMatch",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 8.479116946000005
+              },
+              {
+                "run": "independent-loadingContentNoMatchAndAtoBtoARejectsOldSuccessAndError",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#loadingContentNoMatchAndAtoBtoARejectsOldSuccessAndError",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 6.955628226999977
+              },
+              {
+                "run": "independent-retryCurrentQueryErrorEditInvalidAndResetAreDistinct",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#retryCurrentQueryErrorEditInvalidAndResetAreDistinct",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 7.002342917999982
+              },
+              {
+                "run": "independent-resetRunningRejectsLateCompletionAndLateError",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#resetRunningRejectsLateCompletionAndLateError",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 4.807360517999996
+              },
+              {
+                "run": "independent-whitespaceAndResetPendingNeverSubmitFts",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#whitespaceAndResetPendingNeverSubmitFts",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 4.172738033000002
+              },
+              {
+                "run": "independent-backWhileRunningAndRecreateKeepsCurrentQueryAndDropsAbandonedRead",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#backWhileRunningAndRecreateKeepsCurrentQueryAndDropsAbandonedRead",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 5.0629163049999875
+              },
+              {
+                "run": "suite-1",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest,com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest",
+                "tests": 11,
+                "pass": 10,
+                "fail": 0,
+                "skipped": 1,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 41.12730001599999
+              },
+              {
+                "run": "suite-2",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest,com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest",
+                "tests": 11,
+                "pass": 10,
+                "fail": 0,
+                "skipped": 1,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 41.41466727799997
+              },
+              {
+                "run": "artifact-probe",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#failureArtifactProbe",
+                "tests": 1,
+                "pass": 0,
+                "fail": 1,
+                "skipped": 0,
+                "expectedFailureProbe": true,
+                "artifactsVerified": true,
+                "accepted": true,
+                "seconds": 3.3265017960000023
+              }
+            ],
+            "networkRestoreAccepted": true
+          },
+          {
+            "name": "discovery-api-26-ef927e8a1117189f4d6a4141bfee42e3cf9604fc",
+            "id": 13842055666,
+            "sha256": "352a13b090a121f36b89f531559d309501572f677ccd3a6f0b4777ce09d0c2c2",
+            "digestMatches": true,
+            "testedRevision": "ef927e8a1117189f4d6a4141bfee42e3cf9604fc+sources-sha256:6441606c6470c10ce1d7982442a63ef7629582bc04d643994998ccbb21a7cd15",
+            "runs": [
+              {
+                "run": "independent-offlinePackOrderVisibleItemsDetailsBothIpaAndNoWrites",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#offlinePackOrderVisibleItemsDetailsBothIpaAndNoWrites",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 5.599014975000017
+              },
+              {
+                "run": "independent-activateCloseLaunchPauseCloseLaunchPreservesLearningAndSaved",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#activateCloseLaunchPauseCloseLaunchPreservesLearningAndSaved",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 4.934396481000022
+              },
+              {
+                "run": "independent-allInactiveTodayCtaOpensDiscoveryWithoutActivation",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#allInactiveTodayCtaOpensDiscoveryWithoutActivation",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 2.139093652999975
+              },
+              {
+                "run": "independent-saveBackReopenCloseLaunchUnsavePreservesCatalogAndLearning",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#saveBackReopenCloseLaunchUnsavePreservesCatalogAndLearning",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 5.811565942000016
+              },
+              {
+                "run": "independent-offlineEnglishVietnameseRealFtsVisibleResultDetailResetNoMatch",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#offlineEnglishVietnameseRealFtsVisibleResultDetailResetNoMatch",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 7.742063093000013
+              },
+              {
+                "run": "independent-loadingContentNoMatchAndAtoBtoARejectsOldSuccessAndError",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#loadingContentNoMatchAndAtoBtoARejectsOldSuccessAndError",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 5.645409496000013
+              },
+              {
+                "run": "independent-retryCurrentQueryErrorEditInvalidAndResetAreDistinct",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#retryCurrentQueryErrorEditInvalidAndResetAreDistinct",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 5.609255975999986
+              },
+              {
+                "run": "independent-resetRunningRejectsLateCompletionAndLateError",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#resetRunningRejectsLateCompletionAndLateError",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 3.5657309879999843
+              },
+              {
+                "run": "independent-whitespaceAndResetPendingNeverSubmitFts",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#whitespaceAndResetPendingNeverSubmitFts",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 2.6746984870000006
+              },
+              {
+                "run": "independent-backWhileRunningAndRecreateKeepsCurrentQueryAndDropsAbandonedRead",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#backWhileRunningAndRecreateKeepsCurrentQueryAndDropsAbandonedRead",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 3.8180492600000093
+              },
+              {
+                "run": "suite-1",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest,com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest",
+                "tests": 11,
+                "pass": 10,
+                "fail": 0,
+                "skipped": 1,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 35.569846079
+              },
+              {
+                "run": "suite-2",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest,com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest",
+                "tests": 11,
+                "pass": 10,
+                "fail": 0,
+                "skipped": 1,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 35.68990877599998
+              },
+              {
+                "run": "artifact-probe",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#failureArtifactProbe",
+                "tests": 1,
+                "pass": 0,
+                "fail": 1,
+                "skipped": 0,
+                "expectedFailureProbe": true,
+                "artifactsVerified": true,
+                "accepted": true,
+                "seconds": 2.2054441020000013
+              }
+            ],
+            "networkRestoreAccepted": true
+          },
+          {
+            "name": "quiz-device-ef927e8a1117189f4d6a4141bfee42e3cf9604fc",
+            "id": 13841821921,
+            "sha256": "c77aca6727e85c084f33c0651eac311354da037fc821411cb42a0fe8730afd5e",
+            "digestMatches": true
+          },
+          {
+            "name": "data08-reboot-ef927e8a1117189f4d6a4141bfee42e3cf9604fc",
+            "id": 13841298885,
+            "sha256": "89def94a97ed794f33b329c99c861a3dcbcc9fc53115b581372f3ceb71bf2b38",
+            "digestMatches": true
+          },
+          {
+            "name": "android-validation-ef927e8a1117189f4d6a4141bfee42e3cf9604fc",
+            "id": 13840998423,
+            "sha256": "410f78122d52a7d24d8cced490d96b7ecfdd30f9d3e62e79cfaabf9c875b0888",
+            "digestMatches": true,
+            "unitTotals": {
+              "tests": 599,
+              "failures": 0,
+              "errors": 0,
+              "skipped": 0
+            },
+            "fts": [
+              {
+                "suite": "com.vocamind.app.data.catalog.FtsSearchBenchmarkTest",
+                "tests": 2,
+                "failures": 0,
+                "errors": 0,
+                "skipped": 0
+              },
+              {
+                "suite": "com.vocamind.app.data.catalog.FtsSearchTest",
+                "tests": 22,
+                "failures": 0,
+                "errors": 0,
+                "skipped": 0
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "scope": "F05 shared offline helper retested API26/API35; synthetic Discovery only, not full QA150 journey. Historical failed ba02a88 push retained."
   }
 }

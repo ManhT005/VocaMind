@@ -1,8 +1,20 @@
+> Latest review of tested source5713ba6: [device results and limitations](qa-02-review-5713ba6-20261111.md), [requirement results](qa-02-review-5713ba6-results.csv), [findings](qa-02-review-5713ba6-findings.md). API26 full journey/reopen/reboot PASS; Realme API33 animation0x journey/reopen/physical reboot PASS, animation1x mismatch remains unresolved. TalkBack partial only; API35 full journey NOT RUN. Rights, privacy/backup, WEEK-2 binding and reviewer sign-off remain open. Earlier status paragraphs below are historical. This is documentation publication, not a fresh test run.
+
 # QA-02 tiếp tục từ ba02a88
 
 Ngày11/11/2026. Nhánh `feature/qa-02-e2e-acceptance`, head remote/local `ba02a887f7cfd511b52f00a766a440a01776db93` cùng các diff local ghi theo từng run. Không có thay đổi production Java, resources, manifest hoặc build profile trong lượt này. Chưa commit/push phần mới; không tự phê duyệt QA-02.
 
-## CI trên head đã push
+## CI retest sau push5713ba6 — trạng thái mới nhất
+
+Người dùng đã cho phép commit/push; commit5713ba6e880e5b97542cd95b553f26ab8d3b8cda được push đúng nhánh feature/qa-02-e2e-acceptance. Không merge/comment/review hoặc sửa mô tả PR. Các đoạn phía dưới nói chưa push/F05 candidate là timeline trước quyết định này.
+
+Push42990358456 và PR42990368223 đều SUCCESS đủ4 jobs. Push artifact checkout5713ba6; PR artifact checkout mergeef927e8a1117189f4d6a4141bfee42e3cf9604fc. Discovery source digest6441606c6470c10ce1d7982442a63ef7629582bc04d643994998ccbb21a7cd15 giống nhau. Toàn bộ10 artifact ZIP của hai workflow khớp GitHub SHA256 digest.
+
+Mỗi workflow:599 unit tests,0 fail/error/skip; FTS correctness22 và benchmark2; JDK17.0.21 xác minh logs. Mỗi Discovery API26/API35:10 independent PASS; hai suites mỗi suite11 discovered,10 PASS+1 expected guarded probe skip. Probe riêng1 intentional FAIL, artifactsVerified=true; mọi invocation accepted, network restoration accepted=true. Quiz API28 job SUCCESS; counts/checkout/exit evidence lưu raw riêng, không suy diễn final JUnit XML không có trong artifact. Đây là synthetic Discovery và selected Quiz scope, không phải full QA150 acceptance trênAPI26/API35.
+
+F05 chuyển FIXED_RETESTED đúng helper scope, giữ failed runba02a88 trước đó. Summary public thêm ci5713ba6; raw reports/logs/verification tại build/qa02/ci-5713ba6. Cập nhật hồ sơ sau CI đang local, chưa push thêm nhằm không kích hoạt lại CI chỉ vì tài liệu. Không thay source kể từ5713ba6.
+
+## CI trên head đã push — lịch sử ba02a88
 
 | Run | Kết quả đúng phạm vi |
 |---|---|
@@ -60,7 +72,7 @@ Kiểm kê SDK/AVD hiện tại:chỉ `Small_Phone` API30 được cấu hình v
 
 `git diff --check` PASS; production Java/resources/manifest/build profile không đổi. Các thay đổi source là instrumentation/controlled fixtures và shared validation network helper; risk còn lại là tương thích controller/fallback trên API35/API26 chưa retest source mới. Cần commit/push được người dùng cho phép để CI kiểm đúng diff này; rerun workflow source cũ không giải quyết gap. Dừng trước push/cập nhật PR/comment theo giới hạn đã giao.
 
-- [ ] F05:chạy helper mới trên API35 CI sau khi được phép commit/push; owner Thành/Thi. API26 fallback mới cũng cần CI retest. Không tự push trong lượt tiếp tục này.
+- [x] F05:5713ba6 đã retest API35/API26 trên cả push/PR CI; FIXED_RETESTED cho shared helper. Xem mục CI mới nhất; lịch sử fail giữ nguyên.
 - [ ] QA02-A11Y:API30 chưa cài TalkBack. Người dùng sau đó cho biết không có đường dẫn APK và cho phép để phần này lại; giữ NOT RUN, không gỡ gate hoặc tự tải APK không xác minh. Actual touch targets/labels đã có evidence riêng.
 - [ ] F03/NFR15:giữ Android backup theo quyết định người dùng; có Google Backup transport, Backup Manager quan sát disabled. Không trigger backup, không đổi manifest. Chờ PO xác nhận ngoại lệ đúng snapshot; không có privacy PASS.
 - [ ] B03:PO/Content Lead phê duyệt quyền snapshot/kênh; release artifact/content vẫn HOLD. Không tự ký.
