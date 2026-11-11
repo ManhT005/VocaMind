@@ -155,7 +155,11 @@ def main():
         invoke('force-stop-reopen', 'committedSnapshotSurvivesReopen', 'probe', network)
         if args.reboot:
             before = checked('cat', '/proc/sys/kernel/random/boot_id')
-            checked('reboot')
+            write('reboot-request.json', dict(before=before))
+            # adbd may disconnect before acknowledging reboot. A changed boot ID
+            # and completed boot below are the required proof, not shell exit0.
+            reboot = shell('reboot')
+            write('reboot-command.json', dict(code=reboot.returncode, output=reboot.stdout))
             deadline = time.monotonic() + 180
             while time.monotonic() < deadline:
                 try:

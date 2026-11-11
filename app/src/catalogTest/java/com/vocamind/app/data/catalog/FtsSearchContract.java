@@ -29,6 +29,32 @@ public abstract class FtsSearchContract {
     private VocabularySearchResult search(String input) throws Exception {
         return provider.search().execute(input).get(15, TimeUnit.SECONDS);
     }
+    @Test public void javaOrderingMatchesSqliteAsciiNoCaseIncludingUnicodeAndTies() throws Exception {
+        worker.submit(() -> {
+            // Independent SQLite oracle; no writes to the catalog or userdata.
+            String[] values = {"a", "A", "aa", "Z", "z", "é", "É", "e\u0301", "\uE000", "\uD83D\uDE00"};
+            List<String> expected = new ArrayList<>();
+            StringBuilder sql = new StringBuilder();
+            for (int i = 0; i < values.length; i++) {
+                if (i > 0) sql.append(" UNION ALL ");
+                sql.append("SELECT ? AS lemma, '").append(String.format(java.util.Locale.ROOT, "%016x", i)).append("' AS id");
+            }
+            sql.append(" ORDER BY lemma COLLATE NOCASE, id");
+            try (android.database.Cursor cursor = db.query(sql.toString(), values)) {
+                while (cursor.moveToNext()) expected.add(cursor.getString(1));
+            }
+            List<Integer> indices = new ArrayList<>();
+            for (int i = 0; i < values.length; i++) indices.add(i);
+            indices.sort((a, b) -> {
+                int compared = CatalogDao.compareSqliteNoCase(values[a], values[b]);
+                return compared != 0 ? compared : Integer.compare(a, b);
+            });
+            List<String> actual = new ArrayList<>();
+            for (int i : indices) actual.add(String.format(java.util.Locale.ROOT, "%016x", i));
+            assertEquals(expected, actual);
+            return null;
+        }).get(15, TimeUnit.SECONDS);
+    }
     @Test public void cursorHydrationPreservesEveryFieldAndOrdering() throws Exception {
         worker.submit(() -> {
             var dao = db.catalogDao();

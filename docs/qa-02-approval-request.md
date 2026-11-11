@@ -1,3 +1,5 @@
+﻿> Latest evidence: qa-02-blocker-retest-20261111.md. API35 CI verified; mandatory benchmark retest passed on user-approved API30; broad15ms target missed. Backup retained by user decision, pending PO privacy confirmation. Rights and reviewer remain unsigned; QA02 not Done. Older status below is historical.
+
 # QA-02 — Hồ sơ chờ phê duyệt
 
 Trạng thái: **CHƯA KÝ**. Không cấp quyền phát hành khi các mục dưới còn trống.
@@ -20,7 +22,7 @@ Chấp thuận LDPlayer chỉ thay gate thiết bị, không thay các mục quy
 - Matrix và evidence được review: `qa-02-requirement-test-matrix.csv`,
   `qa-02-validation.md`, `qa-02-defects.csv`.
 - Benchmark: **FAIL/chờ sửa và retest**.
-- API35: **đang chuẩn bị môi trường; chưa PASS**.
+- API35: **hai job current-head SUCCESS; tải ZIP reports HTTP401, chưa xác minh counts/assertions để đóng F01**.
 - Quyết định: **chưa đủ điều kiện ký Done**.
 
 Reviewer chỉ ký sau khi các ca P0 còn mở có kết quả và mọi lỗi nghiệm thu được xử lý.

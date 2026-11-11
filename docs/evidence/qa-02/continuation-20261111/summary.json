@@ -1,0 +1,327 @@
+{
+  "source": "04427779a9bf0048082b9a14099f3629127c67f7",
+  "scope": "Supplemental API30 only; no approval",
+  "runs": {
+    "fts-api30": {
+      "sha256": "33c11f6c39536acecb903d6eba63330de9c1b125b8021d297a1e3fdc13220a93",
+      "statusCodes": [
+        "1",
+        "2",
+        "-2"
+      ],
+      "ok": [],
+      "failures": [
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "scope": "technical API30 only"
+    },
+    "fts-correctness-api30": {
+      "sha256": "94acb5b127f8bb4ee562cd700ee7dcc1e57e42ce1fadec28bd9f39adb8d444ce",
+      "statusCodes": [
+        "1",
+        "-2",
+        "1",
+        "-2",
+        "1",
+        "-2",
+        "1",
+        "-2",
+        "1",
+        "-2",
+        "1",
+        "0",
+        "1",
+        "-2",
+        "1",
+        "-2",
+        "1",
+        "-2",
+        "1",
+        "0"
+      ],
+      "ok": [],
+      "failures": [
+        [
+          "10",
+          "8"
+        ]
+      ],
+      "scope": "fixture setup invalid"
+    },
+    "fts-correctness-fixture-api30": {
+      "sha256": "ef68911979863c13c6209f8e7a18c41a0df051e9a94ec453553a4ed4f485a2c4",
+      "statusCodes": [
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      "ok": [
+        "10"
+      ],
+      "failures": [],
+      "scope": "technical API30 only"
+    },
+    "fts-cost-api30": {
+      "sha256": "43debf128000c762fe5847f64800a29ebf093392568e79985edec4651786fd91",
+      "statusCodes": [
+        "1",
+        "0"
+      ],
+      "ok": [
+        "1"
+      ],
+      "failures": [],
+      "scope": "technical API30 only"
+    },
+    "sqlite-contracts-api30": {
+      "sha256": "89eda2eff40b73f0a8146c6599b6b933676544dc5ff936a5bc2400bef79dec6a",
+      "statusCodes": [
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      "ok": [
+        "39"
+      ],
+      "failures": [],
+      "scope": "technical API30 only"
+    },
+    "fts-ordering-retest-api30": {
+      "sha256": "cf9aca39599d96ed95b7960ac831b420899ae5a7cd0ee0cdd4ad1ccdb635c6a6",
+      "statusCodes": [
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      "ok": [
+        "11"
+      ],
+      "failures": [],
+      "scope": "technical API30 only"
+    }
+  },
+  "ci": {
+    "42954377536": {
+      "headSha": "04427779a9bf0048082b9a14099f3629127c67f7",
+      "event": "pull_request",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "Build & Test",
+          "conclusion": "success"
+        },
+        {
+          "name": "Discovery device (API 26, synthetic offline)",
+          "conclusion": "success"
+        },
+        {
+          "name": "Quiz device (API 28, offline)",
+          "conclusion": "success"
+        },
+        {
+          "name": "Discovery device (API 35, synthetic offline)",
+          "conclusion": "success"
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 13826776400,
+          "name": "discovery-api-35-e2c9ccbbed25bdad6f92b641703872fd6e0be664",
+          "digest": "sha256:8918cd8a7dd7dd9c4f1c6bf94b890f71b4e4b9a6cd88664e4e1762e2b814823a"
+        },
+        {
+          "id": 13826652228,
+          "name": "android-validation-e2c9ccbbed25bdad6f92b641703872fd6e0be664",
+          "digest": "sha256:4a9877cdaa1466e26a4b1d9df16b1d7ccec72c4610456b5e3e371eea4c17f00b"
+        },
+        {
+          "id": 13825848723,
+          "name": "discovery-api-26-e2c9ccbbed25bdad6f92b641703872fd6e0be664",
+          "digest": "sha256:f5c62bafeac1c54ccea1f35fd62a23313863994b8b457a55d3595e7ecc125204"
+        },
+        {
+          "id": 13825449093,
+          "name": "quiz-device-e2c9ccbbed25bdad6f92b641703872fd6e0be664",
+          "digest": "sha256:4a96ce0509785ebbea378f7346a317d26aa401ed69c70ff862d961679fca212d"
+        },
+        {
+          "id": 13825359454,
+          "name": "data08-reboot-e2c9ccbbed25bdad6f92b641703872fd6e0be664",
+          "digest": "sha256:186b408074e852aaedf002f6cca01e1cb9539bb821760ce0f75d7ea7c622204f"
+        }
+      ],
+      "reportsVerified": false,
+      "downloadError": "HTTP401"
+    },
+    "42954369143": {
+      "headSha": "04427779a9bf0048082b9a14099f3629127c67f7",
+      "event": "push",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "Quiz device (API 28, offline)",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build & Test",
+          "conclusion": "success"
+        },
+        {
+          "name": "Discovery device (API 26, synthetic offline)",
+          "conclusion": "success"
+        },
+        {
+          "name": "Discovery device (API 35, synthetic offline)",
+          "conclusion": "success"
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 13826955580,
+          "name": "discovery-api-35-04427779a9bf0048082b9a14099f3629127c67f7",
+          "digest": "sha256:5265de7b74c135f74246e335e33901e3f4fd46894414de00223a02d0e6afd186"
+        },
+        {
+          "id": 13826940201,
+          "name": "data08-reboot-04427779a9bf0048082b9a14099f3629127c67f7",
+          "digest": "sha256:0cfa0f91e8a11e3c0d259b8855debd15a32cc398bcd31e2d91cf5107bfe37369"
+        },
+        {
+          "id": 13826741803,
+          "name": "discovery-api-26-04427779a9bf0048082b9a14099f3629127c67f7",
+          "digest": "sha256:3d599b6263daf9b8ef240da929671d65bbe0150daf85b5b554fe47b826daf289"
+        },
+        {
+          "id": 13826616776,
+          "name": "quiz-device-04427779a9bf0048082b9a14099f3629127c67f7",
+          "digest": "sha256:50bc12a459bdb66700a4c66387ca7caab7c1ef84f2136c064b2cd80ff838d1c7"
+        },
+        {
+          "id": 13826233336,
+          "name": "android-validation-04427779a9bf0048082b9a14099f3629127c67f7",
+          "digest": "sha256:0d0aeb839cad6266958f6f98dd7ea3b1e303a56fccbbe30afd5008f158c18258"
+        }
+      ],
+      "reportsVerified": false,
+      "downloadError": "HTTP401"
+    }
+  },
+  "finalQaApks": {
+    "app\\build\\outputs\\apk\\catalogQa\\app-catalogQa.apk": "6fb803746f4f3753ccbada00b3ec526103f1f29d7e6ff1a99c530683af26391a",
+    "app\\build\\outputs\\apk\\androidTest\\catalogQa\\app-catalogQa-androidTest.apk": "0e7e8d0128937c599048b24d624cdf3b2537ad62d71038552e37d1ebc1ff8238"
+  }
+}

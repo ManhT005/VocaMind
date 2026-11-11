@@ -52,6 +52,9 @@ public abstract class Qa02Harness extends DiscoveryHarness {
         if ("journey".equals(phase)) {
             assertEquals("Verify the real default before the declared QA-only setup", 5, originalQuota);
             var preference = user.userDao().preference();
+            assertEquals(10, preference.dailyGoalMinutes);
+            assertFalse(preference.reminderEnabled);
+            assertEquals(20, preference.reminderHour);
             preference.dailyNewWords = 10;
             user.userDao().savePreference(preference);
         }

@@ -131,8 +131,8 @@ public final class Qa02JourneyInstrumentedTest extends Qa02Harness {
             int oldCount = before == null ? 0 : before.reviewCount;
             int oldMistakes = before == null ? 0 : before.consecutiveMistakes;
             debounceWindow(lastTap);
-            lastTap = android.os.SystemClock.elapsedRealtime();
             tapScroll(rating.equals("FORGOT") ? R.id.rate_forgot : rating.equals("HARD") ? R.id.rate_hard : R.id.rate_remembered);
+            lastTap = android.os.SystemClock.elapsedRealtime();
             long occurrence = state.presentationId;
             await("review committed", a -> flash(a) != null && !flash(a).saving
                     && (flash(a).status == FlashcardViewModel.Status.FINISHED || flash(a).presentationId != occurrence));
@@ -183,8 +183,9 @@ public final class Qa02JourneyInstrumentedTest extends Qa02Harness {
             assertNotNull(correctId); assertEquals(correctId, question.getCorrectOptionId());
             int choice = i % 4;
             if (expectedMeaning.equals(question.getOptions().get(choice).getMeaning())) correct++;
-            debounceWindow(lastTap); lastTap = android.os.SystemClock.elapsedRealtime();
+            debounceWindow(lastTap);
             tapScroll(options[choice]);
+            lastTap = android.os.SystemClock.elapsedRealtime();
             if (i < 9) {
                 await("answer lock", a -> quiz().phase == QuizViewModel.Phase.ANSWERED);
                 if (i == 0) {
