@@ -15,6 +15,7 @@ import subprocess
 import sys
 import time
 import zipfile
+from contextlib import contextmanager
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from ui02_network import OfflineNetwork
 
@@ -35,7 +36,123 @@ def accepted(output, returncode, expected=1):
 
 
 class Network(OfflineNetwork):
-    pass  # Shared controller-aware setup/restoration also serves Discovery CI.
+    # Do not preflight the modern command: the shared controller has a guarded
+    # API26/27 fallback and still requires effective offline proof.
+    def blocked(self, error):
+        (self.output/'blocked.json').write_text(json.dumps(dict(status='BLOCKED', reason=str(error),
+            scope='Network precondition/restoration; not a product test PASS'), indent=2), encoding='utf-8')
+        return OfflineBlocked(str(error))
+
+    def checked(self, *command):
+        try:
+            return super().checked(*command)
+        except (RuntimeError, subprocess.TimeoutExpired) as error:
+            raise self.blocked(error) from error
+
+    def snapshot(self):
+        try:
+            return super().snapshot()
+        except (RuntimeError, subprocess.TimeoutExpired) as error:
+            raise self.blocked(error) from error
+
+    def require_offline(self, folder):
+        try:
+            super().require_offline(folder)
+        except RuntimeError as error:
+            raise self.blocked(error) from error
+        else:
+            # The shared bounded poll may recover from an earlier read failure.
+            # offline.json retains those observations; do not leave a stale
+            # terminal BLOCKED marker beside an accepted offline observation.
+            (self.output/'blocked.json').unlink(missing_ok=True)
+
+
+class OfflineBlocked(RuntimeError):
+    """No product test can run without positive offline evidence."""
+
+
+class ManualNetwork(Network):
+    """Read-only network mode; the operator owns setup/restoration outside ADB.
+
+    Original means entry state, AFTER the operator's manual setup. This cannot
+    certify restoration to an unknown state before manual setup.
+    """
+    def checked(self, *command):
+        if not (command[:3] == ('settings', 'get', 'global')
+                or command in (('dumpsys', 'wifi'), ('dumpsys', 'connectivity'), ('dumpsys', 'phone'))):
+            raise RuntimeError('Manual network mode refuses mutation: ' + repr(command))
+        return super().checked(*command)
+
+    @contextmanager
+    def isolated(self):
+        try:
+            original = self.snapshot()
+        except RuntimeError as error:
+            (self.output/'blocked.json').write_text(json.dumps(dict(status='BLOCKED', reason=str(error)), indent=2), encoding='utf-8')
+            raise OfflineBlocked(str(error)) from error
+        (self.output/'network-original.json').write_text(json.dumps(original, indent=2), encoding='utf-8')
+        primary = None
+        try:
+            self.require_offline(self.output)
+            yield self
+        except BaseException as error:
+            primary = error
+            raise
+        finally:
+            try:
+                observed = self.snapshot()
+                unchanged = all(observed[k] == original[k] for k in ('flags', 'wifiEnabled', 'dataEnabled'))
+                report = dict(mode='manual-read-only', accepted=unchanged, mutatedByRunner=False,
+                              original=original, observed=observed,
+                              operatorAction='Restore pre-manual preferences yourself; runner knows entry state only')
+                (self.output/'network-restore.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
+                if not unchanged:
+                    raise RuntimeError('Manual network entry state changed; operator restoration required')
+            except Exception as cleanup:
+                if primary is None:
+                    raise
+                primary.add_note('Manual state verification also failed: ' + repr(cleanup))
+
+
+def classify_device(inventory, transport):
+    """Conservative evidence classification, never an acceptance approval."""
+    qemu = [inventory.get(k, '') for k in ('ro.kernel.qemu', 'ro.boot.qemu')]
+    hardware = inventory.get('ro.hardware', '').lower()
+    emulator = '1' in qemu or hardware in ('ranchu', 'goldfish')
+    usb = transport.startswith('usb:')
+    if emulator:
+        kind = 'EMULATOR'
+    elif usb and '0' in qemu and hardware and hardware not in ('ranchu', 'goldfish'):
+        kind = 'PHYSICAL'
+    else:
+        kind = 'UNKNOWN'
+    return dict(kind=kind, evidence=dict(qemu=qemu, hardware=hardware, transport=transport),
+                qualification='Inventory only; no reference-device or acceptance approval implied')
+
+
+def prepare_fresh_data(shell, write, policy, installed_before):
+    """Only this exact QA sandbox may be reset; never silently fall back."""
+    if policy == 'new-install':
+        if installed_before:
+            raise RuntimeError('Fresh new-install requires QA package absent before installation')
+        write('fresh-data.json', dict(package=PACKAGE, policy=policy, installedBefore=False,
+                                     provenance='Verified absent before this installation; native test must assert defaults'))
+    else:
+        result = shell('pm', 'clear', PACKAGE)
+        write('fresh-data.json', dict(package=PACKAGE, policy=policy, installedBefore=installed_before,
+                                     command=['pm', 'clear', PACKAGE], code=result.returncode, output=result.stdout))
+        if result.returncode or result.stdout.strip() != 'Success':
+            raise RuntimeError('Dedicated QA reset failed; no run-as deletion or original-app fallback')
+
+
+def qa_installed(shell):
+    # pm path can exit1 both for absence and a permission/transport error.
+    # Require a successful current-user package listing instead of guessing.
+    result = shell('pm', 'list', 'packages', '--user', 'current', PACKAGE)
+    lines = result.stdout.strip().splitlines()
+    if result.returncode or any(not re.fullmatch(r'package:[\w.]+', line) for line in lines):
+        raise RuntimeError('Cannot prove QA installation state')
+    return 'package:' + PACKAGE in lines
 
 
 def main():
@@ -44,6 +161,12 @@ def main():
     p.add_argument('--serial', required=True)
     p.add_argument('--aapt', required=True)
     p.add_argument('--output', required=True)
+    p.add_argument('--network-mode', choices=('managed', 'manual'), default='managed',
+                   help='manual never changes radios/settings; operator sets offline before running and restores preferences afterward')
+    p.add_argument('--fresh-data', choices=('reset', 'new-install'), default='reset',
+                   help='new-install requires the exact QA app absent before installation; no destructive fallback')
+    p.add_argument('--preflight-only', action='store_true',
+                   help='Validate APK identity, inventory and offline proof only; no installation/reset/instrumentation/reboot')
     p.add_argument('--reboot', action='store_true', help='Reboot the explicitly selected emulator/device after the journey')
     args = p.parse_args()
     out = Path(args.output).resolve()
@@ -76,8 +199,6 @@ def main():
         names = re.findall(r"^package: name='([^']+)'", badging.stdout, re.M)
         if badging.returncode or names != [package]:
             raise RuntimeError('Refuse to install/reset an unexpected package: ' + str(names))
-    if 'airplane-mode' not in shell('cmd', 'connectivity', 'help').stdout:
-        raise RuntimeError('Airplane controller unsupported; refusing to mutate network')
     source_paths = run(['git', 'ls-files', '--cached', '--others', '--exclude-standard']).stdout.splitlines()
     hashes = {name: sha(name) for name in sorted(source_paths)
               if name.startswith(('app/src/', 'app/build.gradle', 'tools/validation/')) and Path(name).is_file()}
@@ -88,23 +209,19 @@ def main():
     (out / 'tracked.patch').write_text(run(['git', 'diff', '--binary', 'HEAD']).stdout, encoding='utf-8')
     inventory = {key: checked('getprop', key) for key in (
         'ro.product.manufacturer', 'ro.product.model', 'ro.build.version.release',
-        'ro.build.version.sdk', 'ro.build.fingerprint', 'ro.kernel.qemu', 'persist.sys.timezone')}
+        'ro.build.version.sdk', 'ro.build.fingerprint', 'ro.kernel.qemu', 'ro.boot.qemu',
+        'ro.hardware', 'persist.sys.timezone')}
     inventory.update(display=checked('wm', 'size'), density=checked('wm', 'density'),
                      memory=checked('head', '-n', '3', '/proc/meminfo'),
                      deviceClock=checked('date', '-u'), hostUtc=dt.datetime.now(dt.timezone.utc).isoformat())
     with zipfile.ZipFile(apks[0]) as apk:
         catalog_hash = hashlib.sha256(apk.read('assets/database/catalog.db')).hexdigest()
+    transport = run(adb + ['get-devpath'])
+    classification = classify_device(inventory, transport.stdout.strip() if transport.returncode == 0 else '')
     write('environment.json', dict(testedRevision=tested, inventory=inventory,
           apks={str(path): sha(path) for path in apks}, catalogSha256=catalog_hash,
-          deviceClassification='EMULATOR supplemental scope; model property does not prove physical hardware',
+          deviceClassification=classification, networkMode=args.network_mode,
           acceptance='SUPPLEMENTAL ONLY; physical/reference/rights/reviewer gates remain separate'))
-    for apk in apks:
-        result = run(adb + ['install', '-r', '-t', apk], timeout=180)
-        (out / (apk.name + '.install.txt')).write_text(result.stdout, encoding='utf-8')
-        if result.returncode or 'Success' not in result.stdout:
-            raise RuntimeError('Installation failed')
-    if checked('pm', 'clear', PACKAGE) != 'Success':
-        raise RuntimeError('Dedicated QA reset failed')
     results = []
 
     def invoke(label, method, phase, network):
@@ -143,7 +260,23 @@ def main():
         if not result_ok:
             raise RuntimeError('Instrumentation did not pass: ' + label)
 
-    with Network(shell, out).isolated() as network:
+    network_type = ManualNetwork if args.network_mode == 'manual' else Network
+    with network_type(shell, out).isolated() as network:
+        if args.preflight_only:
+            write('preflight.json', dict(status='PASS', scope='APK/inventory/offline only; no app test or data mutation',
+                                        networkMode=args.network_mode, testedRevision=tested))
+            return 0
+        installed_before = qa_installed(shell)
+        write('fresh-data-preinstall.json', dict(package=PACKAGE, policy=args.fresh_data,
+              installedBefore=installed_before, evidence='Successful current-user package listing; exact package match'))
+        if args.fresh_data == 'new-install' and installed_before:
+            raise RuntimeError('Fresh new-install requires QA package absent; nothing installed/reset')
+        for apk in apks:
+            result = run(adb + ['install', '-r', '-t', apk], timeout=180)
+            (out / (apk.name + '.install.txt')).write_text(result.stdout, encoding='utf-8')
+            if result.returncode or 'Success' not in result.stdout:
+                raise RuntimeError('Installation failed')
+        prepare_fresh_data(shell, write, args.fresh_data, installed_before)
         invoke('journey', 'offlineJourney', 'journey', network)
         checked('am', 'force-stop', PACKAGE)
         invoke('force-stop-reopen', 'committedSnapshotSurvivesReopen', 'probe', network)
@@ -165,12 +298,17 @@ def main():
             write('reboot.json', dict(before=before, after=checked('cat', '/proc/sys/kernel/random/boot_id')))
             # Record/reassert after reboot; do not claim uninterrupted isolation across boot.
             write('network-after-boot.json', network.flags())
-            network.checked('settings', 'put', 'global', 'airplane_mode_on', '1')
-            network.checked('svc', 'wifi', 'disable'); network.checked('svc', 'data', 'disable')
+            if args.network_mode == 'managed':
+                network.checked('settings', 'put', 'global', 'airplane_mode_on', '1')
+                network.checked('svc', 'wifi', 'disable'); network.checked('svc', 'data', 'disable')
             invoke('reboot-reopen', 'committedSnapshotSurvivesReopen', 'probe', network)
     write('artifact-hashes.json', {str(f.relative_to(out)): sha(f) for f in sorted(out.rglob('*')) if f.is_file()})
     return 0
 
 
 if __name__ == '__main__':
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except OfflineBlocked as error:
+        print('BLOCKED: offline could not be proven: ' + str(error), file=sys.stderr)
+        sys.exit(2)

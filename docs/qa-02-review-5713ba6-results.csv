@@ -1,28 +1,28 @@
-﻿requirement,test_run_device,status,bounded_result,evidence
-AC01;NFR01,API26journey05;Realmejourney05,PASS,PASS,"Fresh-data first Activity offline;defaults5/10/OFF/20 trước quota10 setup;flags1/0/0,effectiveWiFi disabled,defaultnone. Startup riêng DATA09."
-AC02,Current QA/DATA09 APK audit,PASS,PASS,"150 unique IDs;4 packs40/40/40/30,examples/meanings/schema/integrity;apk-audit.json,asset-auditJSON. Internal QA,không cấp quyền release."
-AC03,Hai journey05,PASS,PASS,"Packs/order,activate/pause/reactivate;3active/1paused và persistence."
-AC04,Hai journey05,PASS,PASS,"EN/VI detail,examples/IPA placeholder;save/unsave/save;catalog logical unchanged."
-AC05,Hai journey05 + RealmeFTS5000 + nativeAPI26oracle1,PASS,PASS mandatory,"EN/VI/no-match/reset UI;ASCII NOCASE/Unicode/tie-break SQL oracle;query/materialization thresholds riêng. Read-error/retry/stale inherited DiscoveryCI,không gọi là production E2E."
-AC06,Hai journey05;controlled targets,PASS,PASS trong ca đã đo,"Flip trước rating,ba ratings;Realme ratings98.67×56dp,Quiz options312×48dp. Không suy diễn thành full TalkBack/ergonomics review;ưu tiên40%đáy vẫn cần review theo thiết kế nguồn."
-AC07,Controlled10 mỗi thiết bị + inherited scheduler10/calendar8,PASS,PASS,Fixture prior3mistakes→UI fourthFORGOT enablesleech;HARD clears;fixture leech4→REMEMBERED clears. Không gọi là4 phiên production mới.
-AC08,Current write-failure/recovery;inherited flashcard rapid-tap/SQLite contracts,PASS,PASS theo scope,Rollback đầy đủ và explicitretry exactly1event mới trênAPI26/Realme. Flashcard rapid600ms kế thừa nativeasync triple-tap đã xác minh/source không đổi;không lấy Quizdoubletap làm test thay thế flashcard.
-AC09;TC-UI10,Controlled10/API26+Realme;inherited shared4/quota8 API30,PASS,PASS,"Due2 trước new1(quota2-used1);paused older due excluded;no-active/paused-only/no-due. Shared-pack dedup là fixture synthetic riêng,không giả có overlap trong journey150."
-AC10,Hai journey05;controlledQuiz,PASS,PASS,"Quiz10 unique/4options,oneattempt,answerlock/doubletap;pool0 mới vàpool3 real-generator/renderer inheritedAPI30/CI. Scores khớp oracle:API26=4correct/40,Realme=2correct/20;không phải pilotrecallAC15."
-AC11,Hai journey05 + emptycontrolled,PASS,PASS,"Counters6boxes/history khớp DB;emptyProgress/history độc lập.11progress rows gồm10 học+1 saved-only,không gọi11 từ đã học."
-AC12 technical,JourneyAttribution;Realmecontrolled;API26browser02,PASS,PASS kỹ thuật,"Offline attribution;Chrome/WebView ERR_INTERNET_DISCONNECTED và Back,userdata unchanged. API26controlled01 chỉchooser;browser02 bổ sung đúng scope. Rights aggregate vẫn BLOCKED."
-AC13 persistence,API26journey/reopen/reboot;Realmejourney/reopen+physicalreboot,PASS,PASS,"ChangedbootID;all userdata/schema/sqlite_sequence và catalog digest equality;không reset/reseed giữa pha. Upgrade/rollback/runtime-safeerror kế thừa native DATA08contracts/source không đổi,không tuyên bố chạy update mới trênRealme."
-AC14 technical,APK permissions/size + journeys,PASS,PASS bounded,Cả2app APK không INTERNET;không backend/account;size<25MB cho artifact nêu. TTS P1 không thêm gate nghe bắt buộc. Release candidate/rights riêng.
-NFR14,API26 và Realmeanimation0 journey+reboot,PASS,PASS có cấu hình,Không app crash/ANR được phát hiện trong scope;sourceassertions và snapshots đạt. Realmeanimation1x FAIL giữ riêng;không khẳng định rootcause đã sửa.
-NFR09/10;QA02-A11Y,RealmeTalkBack active probe,BLOCKED,BLOCKED aggregate,"Service bound/touch1,focus images và user-confirmed spoken pack/word content đạt. Full touch focus order,all actions/error/Quiz announcements chưa kiểm đủ. Không lấy labels/48dp thayPASS."
-NFR15,APK/storage/backup review,BLOCKED,BLOCKED policy confirmation,"NoINTERNET/localRoom;allowBackuptrue,RealmeBackupManagerenabled/Googletransportselected. Không triggerbackup;không tự kết luận vi phạm SRS hoặc luôn local."
-API35 full journey,Không chạy,NOT RUN,NOT RUN,Không có AVD/image;CI syntheticDiscovery không thayQA150 journey.
-B02 target <15ms,Realme benchmark01; historical approved API30,FAIL,Target missed; mandatory <50ms PASS,realme-benchmark-01; REPORT-FINAL.md benchmark table
-Realme animation1x regression,realme-journey-03 / 04,FAIL,"Expected FORGOT, actual HARD; root cause unverified",realme-journey-03; realme-journey-04; review-findings.md R01
-API26 browser offline error,api26-browser-error-02,PASS,Core UI PASS; host exit1 cleanup repaired separately,api26-browser-error-02/verification-addendum.json; api26-browser-cleanup/restoration.json
-B03 rights/snapshot,PO / Content Lead,BLOCKED,Exact tested snapshot and permitted distribution require owner binding,REPORT-FINAL.md; existing rights approval request
-NFR15 backup policy,PO privacy confirmation,BLOCKED,User chose keep backup; no automatic SRS violation conclusion,realme-package-privacy.txt; realme-backup-enabled.txt; REPORT-FINAL.md
-WEEK-2-GATE,Thành / project gate owner,BLOCKED,Existing confirmation claim requires linked exact scope/snapshot binding,REPORT-FINAL.md
-B05 reviewer sign-off,Nhân,BLOCKED,No approval fabricated; review technical and recording limitations,REPORT-FINAL.md; talkback-summary.md
-PR55 infrastructure merge,Reviewer decision,BLOCKED,Not recommended unconditionally: R01/R02/R03 require disposition,review-findings.md
-QA-02 Done / MVP acceptance,Acceptance owners,BLOCKED,Remaining technical coverage and human gates,REPORT-FINAL.md
+"requirement","test_run_device","status","bounded_result","evidence"
+"AC01;NFR01","API26journey05;Realmejourney05","PASS","PASS","Fresh-data first Activity offline;defaults5/10/OFF/20 trước quota10 setup;flags1/0/0,effectiveWiFi disabled,defaultnone. Startup riêng DATA09."
+"AC02","Current QA/DATA09 APK audit","PASS","PASS","150 unique IDs;4 packs40/40/40/30,examples/meanings/schema/integrity;apk-audit.json,asset-auditJSON. Internal QA,không cấp quyền release."
+"AC03","Hai journey05","PASS","PASS","Packs/order,activate/pause/reactivate;3active/1paused và persistence."
+"AC04","Hai journey05","PASS","PASS","EN/VI detail,examples/IPA placeholder;save/unsave/save;catalog logical unchanged."
+"AC05","Hai journey05 + RealmeFTS5000 + nativeAPI26oracle1","PASS","PASS mandatory","EN/VI/no-match/reset UI;ASCII NOCASE/Unicode/tie-break SQL oracle;query/materialization thresholds riêng. Read-error/retry/stale inherited DiscoveryCI,không gọi là production E2E."
+"AC06","Hai journey05;controlled targets","PASS","PASS trong ca đã đo","Flip trước rating,ba ratings;Realme ratings98.67×56dp,Quiz options312×48dp. Không suy diễn thành full TalkBack/ergonomics review;ưu tiên40%đáy vẫn cần review theo thiết kế nguồn."
+"AC07","Controlled10 mỗi thiết bị + inherited scheduler10/calendar8","PASS","PASS","Fixture prior3mistakes→UI fourthFORGOT enablesleech;HARD clears;fixture leech4→REMEMBERED clears. Không gọi là4 phiên production mới."
+"AC08","Current write-failure/recovery;inherited flashcard rapid-tap/SQLite contracts","PASS","PASS theo scope","Rollback đầy đủ và explicitretry exactly1event mới trênAPI26/Realme. Flashcard rapid600ms kế thừa nativeasync triple-tap đã xác minh/source không đổi;không lấy Quizdoubletap làm test thay thế flashcard."
+"AC09;TC-UI10","Controlled10/API26+Realme;inherited shared4/quota8 API30","PASS","PASS","Due2 trước new1(quota2-used1);paused older due excluded;no-active/paused-only/no-due. Shared-pack dedup là fixture synthetic riêng,không giả có overlap trong journey150."
+"AC10","Hai journey05;controlledQuiz","PASS","PASS","Quiz10 unique/4options,oneattempt,answerlock/doubletap;pool0 mới vàpool3 real-generator/renderer inheritedAPI30/CI. Scores khớp oracle:API26=4correct/40,Realme=2correct/20;không phải pilotrecallAC15."
+"AC11","Hai journey05 + emptycontrolled","PASS","PASS","Counters6boxes/history khớp DB;emptyProgress/history độc lập.11progress rows gồm10 học+1 saved-only,không gọi11 từ đã học."
+"AC12 technical","JourneyAttribution;Realmecontrolled;API26browser02","PASS","PASS kỹ thuật","Offline attribution;Chrome/WebView ERR_INTERNET_DISCONNECTED và Back,userdata unchanged. API26controlled01 chỉchooser;browser02 bổ sung đúng scope. Rights aggregate vẫn BLOCKED."
+"AC13 persistence","API26journey/reopen/reboot;Realmejourney/reopen+physicalreboot","PASS","PASS","ChangedbootID;all userdata/schema/sqlite_sequence và catalog digest equality;không reset/reseed giữa pha. Upgrade/rollback/runtime-safeerror kế thừa native DATA08contracts/source không đổi,không tuyên bố chạy update mới trênRealme."
+"AC14 technical","APK permissions/size + journeys","PASS","PASS bounded","Cả2app APK không INTERNET;không backend/account;size<25MB cho artifact nêu. TTS P1 không thêm gate nghe bắt buộc. Release candidate/rights riêng."
+"NFR14","API26 và Realmeanimation0 journey+reboot","PASS","PASS có cấu hình","Không app crash/ANR được phát hiện trong scope;sourceassertions và snapshots đạt. Realmeanimation1x FAIL giữ riêng;không khẳng định rootcause đã sửa."
+"NFR09/10;QA02-A11Y","RealmeTalkBack active probe","BLOCKED","BLOCKED aggregate","Service bound/touch1,focus images và user-confirmed spoken pack/word content đạt. Full touch focus order,all actions/error/Quiz announcements chưa kiểm đủ. Không lấy labels/48dp thayPASS."
+"NFR15","APK/storage/backup review","BLOCKED","BLOCKED policy confirmation","NoINTERNET/localRoom;allowBackuptrue,RealmeBackupManagerenabled/Googletransportselected. Không triggerbackup;không tự kết luận vi phạm SRS hoặc luôn local."
+"API35 full journey","Không chạy","NOT RUN","NOT RUN","Không có AVD/image;CI syntheticDiscovery không thayQA150 journey."
+"B02 target <15ms","Realme benchmark01; historical approved API30","FAIL","Target missed; mandatory <50ms PASS","realme-benchmark-01; REPORT-FINAL.md benchmark table"
+"Realme animation1x regression","realme-journey-03 / 04","FAIL","Expected FORGOT, actual HARD; root cause unverified","realme-journey-03; realme-journey-04; review-findings.md R01"
+"API26 browser offline error","api26-browser-error-02","PASS","Core UI PASS; host exit1 cleanup repaired separately","api26-browser-error-02/verification-addendum.json; api26-browser-cleanup/restoration.json"
+"B03 rights/snapshot","PO / Content Lead","BLOCKED","Exact tested snapshot and permitted distribution require owner binding","REPORT-FINAL.md; existing rights approval request"
+"NFR15 backup policy","PO privacy confirmation","BLOCKED","User chose keep backup; no automatic SRS violation conclusion","realme-package-privacy.txt; realme-backup-enabled.txt; REPORT-FINAL.md"
+"WEEK-2-GATE","Thành / project gate owner","RECORDED","Dependency confirmation located in UI01 validation at aba854d8; does not grant QA02 snapshot/acceptance approval","qa-02-runner-and-decisions-20261111.md"
+"B05 reviewer sign-off","Nhân","BLOCKED","No approval fabricated; review technical and recording limitations","REPORT-FINAL.md; talkback-summary.md"
+"PR55 infrastructure merge","Reviewer decision","BLOCKED","Not recommended unconditionally: R01/R02/R03 require disposition","review-findings.md"
+"QA-02 Done / MVP acceptance","Acceptance owners","BLOCKED","Remaining technical coverage and human gates","REPORT-FINAL.md"

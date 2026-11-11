@@ -1,3 +1,5 @@
+> CURRENT STATUS: [qa-02-runner-and-decisions-20261111.md](qa-02-runner-and-decisions-20261111.md). R02 FIXED_HOST_RETESTED (48 host tests); no new Android run/CI for local diff. B03 rights and F03 backup policy PENDING; B05 unsigned. WEEK-2 dependency confirmation located in UI01 validation at aba854d8; it is not QA02 acceptance. R01/R03, full TalkBack, API35 journey and reference-device search stay at the user-selected stopping state; no PASS inferred. Earlier status below is historical.
+
 # Findings — local review PR55/source5713ba6
 
 ## R01 — P0 acceptance blocker, Realme first-review assertion tái hiện
