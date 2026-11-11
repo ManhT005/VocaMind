@@ -13,7 +13,7 @@ Base: `develop`. This is a progress handoff, not QA-02 acceptance or release app
 
 ## Remaining gates
 
-1. Require green CI on the pushed head, especially both Discovery API35 checks. Baseline run `42610694082` failed the first Discovery case; the local machine has no installed API35 image. Prior installation failed for insufficient disk space.
+1. Require green CI on the pushed head, especially both Discovery API35 checks. Run `42952992416` reached the final pack row but timed out because the expanded app bar left less than 90% of that row visible on the compact API35 display. The helper now collapses the real scrolling app bar before positioning pack rows; a current-head CI retest is still required. The local machine has no installed API35 image.
 2. Rebuild the QA02 APK with the changed DAO and rerun the full offline journey, persistence and outstanding P0 matrix cases on the approved LDPlayer substitute. Existing component results used an older APK.
 3. Resolve benchmark B02: latest recorded broad FTS max 130.341ms and valid startup 2206..7856ms exceed the unchanged gates (every FTS sample <50ms; startup <1500ms). Some startup samples target the launcher and must be rejected.
 4. Complete outstanding P0 cases and obtain Nhan's explicit evidence review/sign-off (B05).

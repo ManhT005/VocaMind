@@ -145,6 +145,14 @@ public abstract class DiscoveryHarness {
         // Scroll the real RecyclerView, then act on the attached visible item's text.
         scenario.onActivity(a -> {
             RecyclerView list = a.findViewById(listId);
+            if (listId == R.id.words) {
+                // On the compact API35 CI display the expanded pack header leaves the
+                // final row shorter than Espresso's 90% click constraint. Collapse the
+                // real scrolling app bar before positioning the row, as a user scroll
+                // through the list does.
+                com.google.android.material.appbar.AppBarLayout header = a.findViewById(R.id.pack_header);
+                if (header != null) header.setExpanded(false, false);
+            }
             // scrollToPosition only guarantees some pixels are visible. After returning
             // from detail, API35 can keep the target meaning clipped at the viewport edge.
             ((androidx.recyclerview.widget.LinearLayoutManager)list.getLayoutManager())
