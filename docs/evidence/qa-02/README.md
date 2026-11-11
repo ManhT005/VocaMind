@@ -1,0 +1,25 @@
+# QA-02 evidence index
+
+These are supplemental emulator/host results, not physical-device acceptance.
+The authoritative status is [validation](../../qa-02-validation.md) and the
+[matrix](../../qa-02-requirement-test-matrix.csv).
+
+- `sdk28-04`: final executed150-word main journey, force-stop and changed-boot-ID reboot.
+- `sdk28-supplement-02`:39 native SQLite contracts and actual152/152ms input burst.
+- `sdk28-components-01`:8 independent component/fault-injection cases.
+- `sdk28-upgrade-01`:20 native DATA08 isolated-database contracts.
+- `ci-baseline`: artifact-checksum verification,303 baseline input comparisons,
+ 596 unit results,API26 support,DATA08 reboot phases and the unresolved API35 failure.
+- `preparation`: original inputs, exact QA APK verification and LDPlayer recovery.
+- `sdk28-03`: exploratory predecessor, superseded by04; not the final matrix artifact.
+
+Each final run has `source-hashes.json`, `summary.json` and `source-freeze.json`.
+All compiled app/test inputs match their recorded run hashes and are frozen in a
+private ZIP under `build/qa02/<run>/`. The supplemental host runner subsequently
+gained opt-in component/upgrade modes; the recorded older hash is retained. Those
+host-only differences do not change APK/test inputs or the main journey runner.
+
+Raw commands, network/logcat, finalized video, test-only logical DB snapshots,
+screenshots and source ZIPs remain local under ignored `build/qa02/`. Public reports
+record hashes/paths. APKs and internal corpus are not uploaded. A reviewer must inspect
+the raw evidence before sign-off. No reviewer approval is inferred from a PASS test.
