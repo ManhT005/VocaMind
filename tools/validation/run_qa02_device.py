@@ -35,13 +35,7 @@ def accepted(output, returncode, expected=1):
 
 
 class Network(OfflineNetwork):
-    def checked(self, *command):
-        # Android's controller must receive the change, not only a settings flag.
-        if command[:4] == ('settings', 'put', 'global', 'airplane_mode_on'):
-            super().checked('cmd', 'connectivity', 'airplane-mode', 'enable' if command[4] == '1' else 'disable')
-        elif command == ('settings', 'delete', 'global', 'airplane_mode_on'):
-            super().checked('cmd', 'connectivity', 'airplane-mode', 'disable')
-        return super().checked(*command)
+    pass  # Shared controller-aware setup/restoration also serves Discovery CI.
 
 
 def main():

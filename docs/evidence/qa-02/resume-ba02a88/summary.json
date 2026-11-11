@@ -1,0 +1,1631 @@
+{
+  "sourceHead": "ba02a887f7cfd511b52f00a766a440a01776db93",
+  "sourceDiffSha256": "eae648ba4cb17a6af4662e5a44d7298454ff0a0a4a1c72310ede049ab6d229ac",
+  "productionDiffEmpty": true,
+  "deviceDecision": "docs/evidence/qa-02/device-decision-20261111.md",
+  "runs": {
+    "api30-controlled-03": {
+      "rawPath": "build\\qa02\\api30-controlled-03",
+      "summary": [
+        {
+          "method": "emptyProgressAndHistory",
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "method": "noActivePackDoesNotActivateAutomatically",
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "method": "pausedOnlyKeepsChoosePackState",
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "method": "activePackNoDueOrNewShowsCompleted",
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "method": "fourthForgotEnablesLeechThenHardClears",
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "method": "rememberedClearsExistingLeech",
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "method": "reviewWriteFailureKeepsCardAndRecoversWithoutDuplicate",
+          "exitCode": 0,
+          "passed": true
+        }
+      ],
+      "head": "ba02a887f7cfd511b52f00a766a440a01776db93",
+      "apks": {
+        "app\\build\\outputs\\apk\\catalogQa\\app-catalogQa.apk": "970216a5fcdd53b9e95dce97205c5e745001f06fd8e91de9d6593f8ea33fbfe0",
+        "app\\build\\outputs\\apk\\androidTest\\catalogQa\\app-catalogQa-androidTest.apk": "9b3a8b8230517aebf92bcbfcbe6ee459538df266337b595e3f85a713c75fbdf1"
+      },
+      "sourceFilesDigest": "79900941d1229834d65d943bb00f286c4d0e672c8c2003f4483b770445b7e3cd",
+      "sourceDiffSha256": "0f7a61d1dcca6956fc8a0e61b0147b13f134aca7edd989da9bdc37c59148080c",
+      "inventorySha256": "10b016acfc8245d284eb2ed4455e7b6d78ba52f48b3f08195012e711e935456b",
+      "rawManifestSha256": "384fcf0965b082b625c3266dbabd5870426df02b02e293900f949cce664db829",
+      "networkRestoreAccepted": true,
+      "instrumentation": {
+        "activePackNoDueOrNewShowsCompleted": {
+          "sha256": "b0b9b7210567f2046898893a3e90de898763a61f67753ce0af95415494487c80",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        },
+        "emptyProgressAndHistory": {
+          "sha256": "9e301a581b87a29d56f0e3603a1205b3397c8e9a9d3086daad16eeccb81cd96c",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        },
+        "fourthForgotEnablesLeechThenHardClears": {
+          "sha256": "40befdc17778bce10cccfc5b058641a043b44d4aa0196e667e99eeb87d065e90",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        },
+        "noActivePackDoesNotActivateAutomatically": {
+          "sha256": "07f909435abf3954edfc52eb7fb62a96459487a35b3a44454eb588cfdf24e40d",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        },
+        "pausedOnlyKeepsChoosePackState": {
+          "sha256": "51c96bb581f2b6a5721b844a0748ac7082a73ed105245dce435173e99420eaa9",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        },
+        "rememberedClearsExistingLeech": {
+          "sha256": "d0c2f827bb8e14a96db677ec412462b8a6d6fe94dcf44d23b1ff6ca23a7c098d",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        },
+        "reviewWriteFailureKeepsCardAndRecoversWithoutDuplicate": {
+          "sha256": "52e37fc2efce445adf2c8ffc470e48c7a95bf6e2a1fbd8e8500e16fdc459fa4f",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        }
+      }
+    },
+    "api30-controlled-04": {
+      "rawPath": "build\\qa02\\api30-controlled-04",
+      "summary": [
+        {
+          "method": "quizDoubleTapLocksOneAnswerWithoutPrematureAttempt",
+          "exitCode": 0,
+          "passed": true
+        }
+      ],
+      "head": "ba02a887f7cfd511b52f00a766a440a01776db93",
+      "apks": {
+        "app\\build\\outputs\\apk\\catalogQa\\app-catalogQa.apk": "970216a5fcdd53b9e95dce97205c5e745001f06fd8e91de9d6593f8ea33fbfe0",
+        "app\\build\\outputs\\apk\\androidTest\\catalogQa\\app-catalogQa-androidTest.apk": "64f52fa73bd68694c0bdf8472cdf7a84ba792b85839f62cbea2fe624ca34351a"
+      },
+      "sourceFilesDigest": "046c3ace57dbd05a8f5b9d80b4367c9aeefd986bca52ce93f3644473713ee0c7",
+      "sourceDiffSha256": "d090294b810832ad60d29cb5891db29d0a9df1b2a92c7375e44e104388fde205",
+      "inventorySha256": "44f6de7612aeb0a401ea84b4b7b8a828cb32313b480b80ac2dee4442f9c0daf7",
+      "rawManifestSha256": "f5acef690cbdee38337778c7c0b19348918adf767761c1d26397c2e0f623a8ca",
+      "networkRestoreAccepted": true,
+      "instrumentation": {
+        "quizDoubleTapLocksOneAnswerWithoutPrematureAttempt": {
+          "sha256": "079bde064294c63a72249c6fa9498b4e54c7d650456f67f7a76c7f4e9f18b81b",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        }
+      }
+    },
+    "api30-quiz-pool3-01": {
+      "rawPath": "build\\qa02\\api30-quiz-pool3-01",
+      "summary": [
+        {
+          "method": "threeDistinctMeaningsShowEmptyWithoutWritingAttempt",
+          "exitCode": 0,
+          "passed": true
+        }
+      ],
+      "head": "ba02a887f7cfd511b52f00a766a440a01776db93",
+      "apks": {
+        "app\\build\\outputs\\apk\\debug\\app-debug.apk": "93f94e4cd007568946886d34ac6c97ff018ed88b20719a2f0c693bf94b4ace46",
+        "app\\build\\outputs\\apk\\androidTest\\debug\\app-debug-androidTest.apk": "f1534305dffccbc5bb1554fc1f49c88b2b64e4d174eebbc85b11abc6773504b7"
+      },
+      "sourceFilesDigest": "fbfea90e46683f8fb3028c2a8f26e396aaa08fd587e13912b91f5e36dfefc55d",
+      "sourceDiffSha256": "816a9e2b1b699b2c6a1284078abb83b009eabc29ba4ea867fb4603fc1259ce9f",
+      "inventorySha256": "8c8ca0d4d3507545b5c13ab77f98f25fb77489f6faf48d949d04cd533de14332",
+      "rawManifestSha256": "16e4888772591ff7cd8023629d37ea0df433ca1c32de7caee8325e3af34174a7",
+      "networkRestoreAccepted": true,
+      "instrumentation": {
+        "threeDistinctMeaningsShowEmptyWithoutWritingAttempt": {
+          "sha256": "d8183ab028a16ae27d1c50e13f98adde9adc30bae2c083736834e8cb594eee7b",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        }
+      }
+    },
+    "api30-planner-ui-01": {
+      "rawPath": "build\\qa02\\api30-planner-ui-01",
+      "summary": [
+        {
+          "method": "plannerDueFirstRemainingQuotaAndPausedExclusionThroughUi",
+          "exitCode": 0,
+          "passed": true
+        }
+      ],
+      "head": "ba02a887f7cfd511b52f00a766a440a01776db93",
+      "apks": {
+        "app\\build\\outputs\\apk\\catalogQa\\app-catalogQa.apk": "970216a5fcdd53b9e95dce97205c5e745001f06fd8e91de9d6593f8ea33fbfe0",
+        "app\\build\\outputs\\apk\\androidTest\\catalogQa\\app-catalogQa-androidTest.apk": "00ef5679be4c10409e0621f40d4bad1e04fe6662da0ea8fc1634c74a789b2ef0"
+      },
+      "sourceFilesDigest": "b0e696680f38d61ebfb95ad93e580214ca9618399ce3440ede547aa291400319",
+      "sourceDiffSha256": "be1d00686d14b3b9232a8885f8a489c138bf9503a0bd34f6c2a568859df1c5d8",
+      "inventorySha256": "041421a82a512d5ecaadc75490c13b24b443d238a360042e91d00f6b09dbea6b",
+      "rawManifestSha256": "75d6671705815a43d3668b1f8881bbab0530ba9049dee9cf2cb716a9f0e17a89",
+      "networkRestoreAccepted": true,
+      "instrumentation": {
+        "plannerDueFirstRemainingQuotaAndPausedExclusionThroughUi": {
+          "sha256": "43e9b4536ad47fccee4b5d99d9c878ed1fe72d4fc2f3a938900690c1c953b731",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        }
+      }
+    },
+    "api30-targets-01": {
+      "rawPath": "build\\qa02\\api30-targets-01",
+      "summary": [
+        {
+          "method": "quizDoubleTapLocksOneAnswerWithoutPrematureAttempt",
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "method": "reviewWriteFailureKeepsCardAndRecoversWithoutDuplicate",
+          "exitCode": 0,
+          "passed": true
+        }
+      ],
+      "head": "ba02a887f7cfd511b52f00a766a440a01776db93",
+      "apks": {
+        "app\\build\\outputs\\apk\\catalogQa\\app-catalogQa.apk": "970216a5fcdd53b9e95dce97205c5e745001f06fd8e91de9d6593f8ea33fbfe0",
+        "app\\build\\outputs\\apk\\androidTest\\catalogQa\\app-catalogQa-androidTest.apk": "aced7fe056890403f4e057b87827fd17b885a60d92ba5df9c9ae801c2224de00"
+      },
+      "sourceFilesDigest": "97302341d7cfc05da6c7c296e6e3578f3be6d650a23e544263ae332ff0885d80",
+      "sourceDiffSha256": "5328c248cbb8d5047644185633f3f0c033311349135f42ea16a46438ddc715cb",
+      "inventorySha256": "169667925e0bd5ea5c08cdd01844782048191acc36fc3e01851f6aed7e96bb3d",
+      "rawManifestSha256": "59a4486c021a3cb7370d0404e5680573e17f5045180c312e4f5f67c84161678a",
+      "networkRestoreAccepted": true,
+      "instrumentation": {
+        "quizDoubleTapLocksOneAnswerWithoutPrematureAttempt": {
+          "sha256": "9fe8f954b786aa965875eb31d2c50dd0bae60ed61d535d35c77be405e9718424",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        },
+        "reviewWriteFailureKeepsCardAndRecoversWithoutDuplicate": {
+          "sha256": "054559c72580565761510e19674c053cbb90b0c1c3fc158e2fc75d680b25180b",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        }
+      }
+    },
+    "api30-attribution-external-01": {
+      "rawPath": "build\\qa02\\api30-attribution-external-01",
+      "summary": [
+        {
+          "method": "attributionExternalLinkReturnsOfflineWithoutUserdataChanges",
+          "exitCode": 0,
+          "passed": false
+        }
+      ],
+      "head": "ba02a887f7cfd511b52f00a766a440a01776db93",
+      "apks": {
+        "app\\build\\outputs\\apk\\catalogQa\\app-catalogQa.apk": "970216a5fcdd53b9e95dce97205c5e745001f06fd8e91de9d6593f8ea33fbfe0",
+        "app\\build\\outputs\\apk\\androidTest\\catalogQa\\app-catalogQa-androidTest.apk": "bcb1b9190e1a1d118c09856d549e8281b0c92a95b43ae927f56627aa9cb5f510"
+      },
+      "sourceFilesDigest": "fbfea90e46683f8fb3028c2a8f26e396aaa08fd587e13912b91f5e36dfefc55d",
+      "sourceDiffSha256": "816a9e2b1b699b2c6a1284078abb83b009eabc29ba4ea867fb4603fc1259ce9f",
+      "inventorySha256": "43ba4b167d331629722323f96862a6666b8c48b085450911c7a2e1ba9d8f6b93",
+      "rawManifestSha256": "57f9ec1827233dbe28c9d6bd7c3a6e2fa53b13faad0c9b1760b48f2f94598b53",
+      "networkRestoreAccepted": true,
+      "instrumentation": {
+        "attributionExternalLinkReturnsOfflineWithoutUserdataChanges": {
+          "sha256": "71901103f63aee1f09c43f3566dbc29ecd9689f5267d2955933c6cc91cbc21e7",
+          "statusCodes": [
+            "1",
+            "-2"
+          ],
+          "okCounts": [],
+          "failureCounts": [
+            [
+              "1",
+              "1"
+            ]
+          ]
+        }
+      },
+      "classification": "TEST ACTION FAILURE: source button offscreen; corrected scroll and separately retested"
+    },
+    "api30-attribution-external-02": {
+      "rawPath": "build\\qa02\\api30-attribution-external-02",
+      "summary": [
+        {
+          "method": "attributionExternalLinkReturnsOfflineWithoutUserdataChanges",
+          "exitCode": 0,
+          "passed": true
+        }
+      ],
+      "head": "ba02a887f7cfd511b52f00a766a440a01776db93",
+      "apks": {
+        "app\\build\\outputs\\apk\\catalogQa\\app-catalogQa.apk": "970216a5fcdd53b9e95dce97205c5e745001f06fd8e91de9d6593f8ea33fbfe0",
+        "app\\build\\outputs\\apk\\androidTest\\catalogQa\\app-catalogQa-androidTest.apk": "22f8dcb794430b564966b0d89be7ecb4a524577b03911b53b2adb9d3af034a57"
+      },
+      "sourceFilesDigest": "8b82a4b81bfeed59464433457eae0034beda5d0e95465dc831276d7eb60e1333",
+      "sourceDiffSha256": "8ec7227d63145adbee25d787361a90042e3f39a16551cb9fe63a2e5990d41a58",
+      "inventorySha256": "c7503ab551967caa0f5d570c1a7cc5cda7471a88fc1c05aabf069cfb6a110041",
+      "rawManifestSha256": "4d67883c754a03bb8132526bb560c4bbca8690091157c87ce96e7c3cdc3e54f2",
+      "networkRestoreAccepted": true,
+      "instrumentation": {
+        "attributionExternalLinkReturnsOfflineWithoutUserdataChanges": {
+          "sha256": "22cb8669f786a5c807cb7720affb3a54504df016d1351b4708e3c1a7dbcd347f",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        }
+      }
+    },
+    "api30-attribution-external-03": {
+      "rawPath": "build\\qa02\\api30-attribution-external-03",
+      "summary": [
+        {
+          "method": "attributionExternalLinkReturnsOfflineWithoutUserdataChanges",
+          "exitCode": 0,
+          "passed": true
+        }
+      ],
+      "head": "ba02a887f7cfd511b52f00a766a440a01776db93",
+      "apks": {
+        "app\\build\\outputs\\apk\\catalogQa\\app-catalogQa.apk": "970216a5fcdd53b9e95dce97205c5e745001f06fd8e91de9d6593f8ea33fbfe0",
+        "app\\build\\outputs\\apk\\androidTest\\catalogQa\\app-catalogQa-androidTest.apk": "7bd14c7e0947c283462581fa3555c051fbcee520e72545f2ef5322f86e08845d"
+      },
+      "sourceFilesDigest": "489874e81da2bf8a522c3dc5a82dddcefe56c2d91f1bc0fcab3030dd7bd8eb2e",
+      "sourceDiffSha256": "b50f243cac8099cb860966a43b6d94dd6d2646acb3738af97b933ead04926dad",
+      "inventorySha256": "2a93579adbc7b1c745621fa9a05fa5a6584679e190b6e807046266c6912d3bb5",
+      "rawManifestSha256": "403dbf96c878fca870c7a36ecc5f42cf821382deb4a82cc6e523968a56c9829f",
+      "networkRestoreAccepted": true,
+      "instrumentation": {
+        "attributionExternalLinkReturnsOfflineWithoutUserdataChanges": {
+          "sha256": "6b602aacbdb5ad3ae702601e17085e577206add06239703cc7fe4c286b21dac6",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        }
+      }
+    },
+    "api30-planner-overlap-01": {
+      "rawPath": "build\\qa02\\api30-planner-overlap-01",
+      "summary": [
+        {
+          "method": "overlappingActivePacksDoNotDuplicateNewCards",
+          "exitCode": 0,
+          "passed": false
+        }
+      ],
+      "head": "ba02a887f7cfd511b52f00a766a440a01776db93",
+      "apks": {
+        "app\\build\\outputs\\apk\\debug\\app-debug.apk": "93f94e4cd007568946886d34ac6c97ff018ed88b20719a2f0c693bf94b4ace46",
+        "app\\build\\outputs\\apk\\androidTest\\debug\\app-debug-androidTest.apk": "f1534305dffccbc5bb1554fc1f49c88b2b64e4d174eebbc85b11abc6773504b7"
+      },
+      "sourceFilesDigest": "5ac3525b6fa1f0bc6a1a5a0e3422a5a450ccb4ab988ea2accdacf17fd0fa5103",
+      "sourceDiffSha256": "b50f243cac8099cb860966a43b6d94dd6d2646acb3738af97b933ead04926dad",
+      "inventorySha256": "facc0f7d45051da414eb721e06be247b1e7177a5e3d580d82015af884d2597c0",
+      "rawManifestSha256": "c4d19fa7c00ecfb61b824623e6ba5a6d7fa7925ea3424988496f3bd481c5ba74",
+      "networkRestoreAccepted": true,
+      "instrumentation": {
+        "overlappingActivePacksDoNotDuplicateNewCards": {
+          "sha256": "56e64fbd3096c2fdaab97a53bd7b08bbab2027e36b4e7ec7a421ac96e310a06f",
+          "statusCodes": [
+            "1",
+            "-2"
+          ],
+          "okCounts": [],
+          "failureCounts": [
+            [
+              "1",
+              "1"
+            ]
+          ]
+        }
+      },
+      "classification": "INVALID SETUP: compile failed, stale APK missing new class; not product failure"
+    },
+    "api30-planner-overlap-02": {
+      "rawPath": "build\\qa02\\api30-planner-overlap-02",
+      "summary": [
+        {
+          "method": "overlappingActivePacksDoNotDuplicateNewCards",
+          "exitCode": 0,
+          "passed": true
+        }
+      ],
+      "head": "ba02a887f7cfd511b52f00a766a440a01776db93",
+      "apks": {
+        "app\\build\\outputs\\apk\\debug\\app-debug.apk": "93f94e4cd007568946886d34ac6c97ff018ed88b20719a2f0c693bf94b4ace46",
+        "app\\build\\outputs\\apk\\androidTest\\debug\\app-debug-androidTest.apk": "713ae59513735a76ab5de6bbc188b0ce89a0c51ad27aecaa7f44c92147b537e3"
+      },
+      "sourceFilesDigest": "237ea42d5d6556bdf9c7334a1dd8f047566c978b86a521a3c9a1ce3d3f91eea1",
+      "sourceDiffSha256": "b50f243cac8099cb860966a43b6d94dd6d2646acb3738af97b933ead04926dad",
+      "inventorySha256": "db19e1164e42f58b151e5ceb6053b3ebfaab945d073211647aad0d57f50bd872",
+      "rawManifestSha256": "7aa8dcb5529d89e34677cea04720da8c5695e68da414d204d1ae67bf268eb15b",
+      "networkRestoreAccepted": true,
+      "instrumentation": {
+        "overlappingActivePacksDoNotDuplicateNewCards": {
+          "sha256": "844eaf45bb4a30cf465287051d61bb26dd8cb2fc6ae8a7d3db70bc2c0e13cafa",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        }
+      },
+      "limitation": "quota2 truncation does not force full overlap traversal; superseded by quota8 run04"
+    },
+    "api30-planner-overlap-03": {
+      "rawPath": "build\\qa02\\api30-planner-overlap-03",
+      "summary": [
+        {
+          "method": "overlappingActivePacksDoNotDuplicateNewCards",
+          "exitCode": 0,
+          "passed": true
+        }
+      ],
+      "head": "ba02a887f7cfd511b52f00a766a440a01776db93",
+      "apks": {
+        "app\\build\\outputs\\apk\\debug\\app-debug.apk": "93f94e4cd007568946886d34ac6c97ff018ed88b20719a2f0c693bf94b4ace46",
+        "app\\build\\outputs\\apk\\androidTest\\debug\\app-debug-androidTest.apk": "1eeb546667736dd14a30b51475883ffd3ef8f2baf0e42ee66fce40844102e97d"
+      },
+      "sourceFilesDigest": "a9ce509f4a244947f1704326998ee29e2f781778edd32bec278097d6b4581f0c",
+      "sourceDiffSha256": "b50f243cac8099cb860966a43b6d94dd6d2646acb3738af97b933ead04926dad",
+      "inventorySha256": "04ba4802b48a27c61331156478ae140750ccefaf6da6bb2a74f4dcef2a612fbb",
+      "rawManifestSha256": "0bfd6a221a05e472123b6ac5ad6f6936007b83ecfddc18f8e9e0869664c7567e",
+      "networkRestoreAccepted": true,
+      "instrumentation": {
+        "overlappingActivePacksDoNotDuplicateNewCards": {
+          "sha256": "bc2ad9ce7adddbd84b1b70249e0232db6c5ae261748463cd368ff9256d460443",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        }
+      },
+      "limitation": "quota2 truncation does not force full overlap traversal; superseded by quota8 run04"
+    },
+    "api30-planner-overlap-04": {
+      "rawPath": "build\\qa02\\api30-planner-overlap-04",
+      "summary": [
+        {
+          "method": "overlappingActivePacksDoNotDuplicateNewCards",
+          "exitCode": 0,
+          "passed": true
+        }
+      ],
+      "head": "ba02a887f7cfd511b52f00a766a440a01776db93",
+      "apks": {
+        "app\\build\\outputs\\apk\\debug\\app-debug.apk": "93f94e4cd007568946886d34ac6c97ff018ed88b20719a2f0c693bf94b4ace46",
+        "app\\build\\outputs\\apk\\androidTest\\debug\\app-debug-androidTest.apk": "f58d19ece4da788b05f83462040b3da2d447b272a110b8cc4f2c15eae511a2a0"
+      },
+      "sourceFilesDigest": "c6076c99ef4d45a8678ed31859fcd9ffda6bb9184fcfaef4b798b7eb7b7dccff",
+      "sourceDiffSha256": "da50bbbccce41af13b3959f76a88150be28085322d6a0eb5c81355e170ea7f82",
+      "inventorySha256": "084b5d86045a9444cae2ee05b345f0481afff0ac35673dc3e9cead231a13c291",
+      "rawManifestSha256": "5840212c5b290f253a50adb1996d19e5824f409527c3f6e576a6ecc5f8756d06",
+      "networkRestoreAccepted": true,
+      "instrumentation": {
+        "overlappingActivePacksDoNotDuplicateNewCards": {
+          "sha256": "a155c6f536c8539669961409d780c17580b81dc71a295ec097a8796a302c1086",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        }
+      }
+    },
+    "api30-ime-01": {
+      "rawPath": "build\\qa02\\api30-ime-01",
+      "summary": [
+        {
+          "method": "searchWithVisibleImeKeepsResultsAndBackState",
+          "exitCode": 0,
+          "passed": true
+        }
+      ],
+      "head": "ba02a887f7cfd511b52f00a766a440a01776db93",
+      "apks": {
+        "app\\build\\outputs\\apk\\catalogQa\\app-catalogQa.apk": "970216a5fcdd53b9e95dce97205c5e745001f06fd8e91de9d6593f8ea33fbfe0",
+        "app\\build\\outputs\\apk\\androidTest\\catalogQa\\app-catalogQa-androidTest.apk": "5ca3b6227ae07c56c84a593b270593a39496a8eaab0ba679bedab4292f4c00d8"
+      },
+      "sourceFilesDigest": "e826d53d2ca51f2d8048fa99e87a3c75479f973a84771f4c93cc3e0fe61c8f23",
+      "sourceDiffSha256": "da50bbbccce41af13b3959f76a88150be28085322d6a0eb5c81355e170ea7f82",
+      "inventorySha256": "fd5cb514edab31c9e927387c721ccc027da29d1531569fa22145739a0f38584e",
+      "rawManifestSha256": "dd7a3da6e999117eb9e40e3e0ec7ec5dd7de891be93933d51af5ceb8d7daf3fa",
+      "networkRestoreAccepted": true,
+      "instrumentation": {
+        "searchWithVisibleImeKeepsResultsAndBackState": {
+          "sha256": "223e7d8f012e21a55f5f7b71838b8bf5f2d2ed361d939b1827335a83b9c04690",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        }
+      }
+    },
+    "api30-long-detail-font130-01": {
+      "rawPath": "build\\qa02\\api30-long-detail-font130-01",
+      "summary": [
+        {
+          "method": "longestPackDetailAtLargeFontKeepsFullTextAndIpaFallback",
+          "exitCode": 0,
+          "passed": true
+        }
+      ],
+      "head": "ba02a887f7cfd511b52f00a766a440a01776db93",
+      "apks": {
+        "app\\build\\outputs\\apk\\catalogQa\\app-catalogQa.apk": "970216a5fcdd53b9e95dce97205c5e745001f06fd8e91de9d6593f8ea33fbfe0",
+        "app\\build\\outputs\\apk\\androidTest\\catalogQa\\app-catalogQa-androidTest.apk": "e0b80ea076b8c568eeec7479b3d010c790a2e73a6aaeb6a712dc94d560e03ca5"
+      },
+      "sourceFilesDigest": "52d57eda06738826768f235f71f03ad4dcb44104b88bc3b4402d8c003af74cd5",
+      "sourceDiffSha256": "8b99b97d4d3a645cf9b1e6d46deed5d7ce0ddb1d2bef07ae1c10c6934c141561",
+      "inventorySha256": "8d7d395cdf05dfe912455ae4313dc4dcf607bfd63c3128ec697e78bf0059568f",
+      "rawManifestSha256": "d94770d2edc835ae00614caabf6726be9da9a048bacc41ba951f377787919d2c",
+      "networkRestoreAccepted": true,
+      "instrumentation": {
+        "longestPackDetailAtLargeFontKeepsFullTextAndIpaFallback": {
+          "sha256": "c3993ad95d5621602f77e0794d312b99175080c8a434598e4633bdfb0aa567f4",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        }
+      }
+    },
+    "api30-discovery-network-01": {
+      "rawPath": "build\\qa02\\api30-discovery-network-01",
+      "summary": {
+        "testedRevision": "ba02a887f7cfd511b52f00a766a440a01776db93+sources-sha256:1cf47dbdd78c411c29b5fb628fbfb994d51c58670244ce8ce58b20062e2d1741",
+        "runs": [
+          {
+            "run": "independent-offlinePackOrderVisibleItemsDetailsBothIpaAndNoWrites",
+            "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#offlinePackOrderVisibleItemsDetailsBothIpaAndNoWrites",
+            "tests": 1,
+            "pass": 1,
+            "fail": 0,
+            "skipped": 0,
+            "expectedFailureProbe": false,
+            "artifactsVerified": false,
+            "accepted": true,
+            "seconds": 7.8839795000003505
+          },
+          {
+            "run": "independent-activateCloseLaunchPauseCloseLaunchPreservesLearningAndSaved",
+            "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#activateCloseLaunchPauseCloseLaunchPreservesLearningAndSaved",
+            "tests": 1,
+            "pass": 1,
+            "fail": 0,
+            "skipped": 0,
+            "expectedFailureProbe": false,
+            "artifactsVerified": false,
+            "accepted": true,
+            "seconds": 7.520044099999723
+          },
+          {
+            "run": "independent-allInactiveTodayCtaOpensDiscoveryWithoutActivation",
+            "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#allInactiveTodayCtaOpensDiscoveryWithoutActivation",
+            "tests": 1,
+            "pass": 1,
+            "fail": 0,
+            "skipped": 0,
+            "expectedFailureProbe": false,
+            "artifactsVerified": false,
+            "accepted": true,
+            "seconds": 4.7194185000007565
+          },
+          {
+            "run": "independent-saveBackReopenCloseLaunchUnsavePreservesCatalogAndLearning",
+            "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#saveBackReopenCloseLaunchUnsavePreservesCatalogAndLearning",
+            "tests": 1,
+            "pass": 1,
+            "fail": 0,
+            "skipped": 0,
+            "expectedFailureProbe": false,
+            "artifactsVerified": false,
+            "accepted": true,
+            "seconds": 8.449544199998854
+          },
+          {
+            "run": "independent-offlineEnglishVietnameseRealFtsVisibleResultDetailResetNoMatch",
+            "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#offlineEnglishVietnameseRealFtsVisibleResultDetailResetNoMatch",
+            "tests": 1,
+            "pass": 1,
+            "fail": 0,
+            "skipped": 0,
+            "expectedFailureProbe": false,
+            "artifactsVerified": false,
+            "accepted": true,
+            "seconds": 9.690997400000924
+          },
+          {
+            "run": "independent-loadingContentNoMatchAndAtoBtoARejectsOldSuccessAndError",
+            "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#loadingContentNoMatchAndAtoBtoARejectsOldSuccessAndError",
+            "tests": 1,
+            "pass": 1,
+            "fail": 0,
+            "skipped": 0,
+            "expectedFailureProbe": false,
+            "artifactsVerified": false,
+            "accepted": true,
+            "seconds": 7.483518600000025
+          },
+          {
+            "run": "independent-retryCurrentQueryErrorEditInvalidAndResetAreDistinct",
+            "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#retryCurrentQueryErrorEditInvalidAndResetAreDistinct",
+            "tests": 1,
+            "pass": 1,
+            "fail": 0,
+            "skipped": 0,
+            "expectedFailureProbe": false,
+            "artifactsVerified": false,
+            "accepted": true,
+            "seconds": 7.032009399999879
+          },
+          {
+            "run": "independent-resetRunningRejectsLateCompletionAndLateError",
+            "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#resetRunningRejectsLateCompletionAndLateError",
+            "tests": 1,
+            "pass": 1,
+            "fail": 0,
+            "skipped": 0,
+            "expectedFailureProbe": false,
+            "artifactsVerified": false,
+            "accepted": true,
+            "seconds": 6.092445199999929
+          },
+          {
+            "run": "independent-whitespaceAndResetPendingNeverSubmitFts",
+            "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#whitespaceAndResetPendingNeverSubmitFts",
+            "tests": 1,
+            "pass": 1,
+            "fail": 0,
+            "skipped": 0,
+            "expectedFailureProbe": false,
+            "artifactsVerified": false,
+            "accepted": true,
+            "seconds": 5.021586699998807
+          },
+          {
+            "run": "independent-backWhileRunningAndRecreateKeepsCurrentQueryAndDropsAbandonedRead",
+            "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#backWhileRunningAndRecreateKeepsCurrentQueryAndDropsAbandonedRead",
+            "tests": 1,
+            "pass": 1,
+            "fail": 0,
+            "skipped": 0,
+            "expectedFailureProbe": false,
+            "artifactsVerified": false,
+            "accepted": true,
+            "seconds": 6.2854888000001665
+          },
+          {
+            "run": "suite-1",
+            "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest,com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest",
+            "tests": 11,
+            "pass": 10,
+            "fail": 0,
+            "skipped": 1,
+            "expectedFailureProbe": false,
+            "artifactsVerified": false,
+            "accepted": true,
+            "seconds": 39.31907059999867
+          },
+          {
+            "run": "suite-2",
+            "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest,com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest",
+            "tests": 11,
+            "pass": 10,
+            "fail": 0,
+            "skipped": 1,
+            "expectedFailureProbe": false,
+            "artifactsVerified": false,
+            "accepted": true,
+            "seconds": 37.01087109999935
+          },
+          {
+            "run": "artifact-probe",
+            "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#failureArtifactProbe",
+            "tests": 1,
+            "pass": 0,
+            "fail": 1,
+            "skipped": 0,
+            "expectedFailureProbe": true,
+            "artifactsVerified": true,
+            "accepted": true,
+            "seconds": 4.726960900001359
+          }
+        ]
+      },
+      "testedRevision": "ba02a887f7cfd511b52f00a766a440a01776db93+sources-sha256:1cf47dbdd78c411c29b5fb628fbfb994d51c58670244ce8ce58b20062e2d1741",
+      "apks": {
+        "app\\build\\outputs\\apk\\discovery\\app-discovery.apk": "21922c2b877bf287d775fb6a12a528d6fa82abdd03d1524793a687039ce50e2b",
+        "app\\build\\outputs\\apk\\androidTest\\discovery\\app-discovery-androidTest.apk": "a12d4e65ad0e5ec1aa8366bc5b288450e87ebc85aa6b086941c2bd04eb936951"
+      },
+      "inventory": null,
+      "networkRestoreAccepted": true,
+      "instrumentation": {
+        "artifact-probe": {
+          "sha256": "b3a08121126b3637b21544ee4c2795b40b4497a75d5adb91e39b623b4c615bf9",
+          "statusCodes": [
+            "1",
+            "-2"
+          ],
+          "okCounts": [],
+          "failureCounts": [
+            [
+              "1",
+              "1"
+            ]
+          ]
+        },
+        "independent-activateCloseLaunchPauseCloseLaunchPreservesLearningAndSaved": {
+          "sha256": "d4a5e7960c0d3720c8837c32659d78204f0f4ad3ecb42c7d61572735b1045559",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        },
+        "independent-allInactiveTodayCtaOpensDiscoveryWithoutActivation": {
+          "sha256": "b8492e11b630635f30c0dfc5aeba64cb405204aa89596ad4192801539d5fd839",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        },
+        "independent-backWhileRunningAndRecreateKeepsCurrentQueryAndDropsAbandonedRead": {
+          "sha256": "905430433c1ec7feb2031b010d5702aa7604c521c8babcb12234f92d347b4786",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        },
+        "independent-loadingContentNoMatchAndAtoBtoARejectsOldSuccessAndError": {
+          "sha256": "49ad14cfc14ad1547b734ae404ee8f6b2e8ba60a6ea275befa10fea546551839",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        },
+        "independent-offlineEnglishVietnameseRealFtsVisibleResultDetailResetNoMatch": {
+          "sha256": "30dd0b02583a657741c33ee7cf77abc910b57845df207964cb11f8e60a2c46a4",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        },
+        "independent-offlinePackOrderVisibleItemsDetailsBothIpaAndNoWrites": {
+          "sha256": "4705aec295b180ae51776b0e415e37db736bd706275052a0b2bc5dacf16e5a63",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        },
+        "independent-resetRunningRejectsLateCompletionAndLateError": {
+          "sha256": "76c60e4236be801cbafc62e7c832fea7abd9caa09b1adf233d1fb0757c29dbd7",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        },
+        "independent-retryCurrentQueryErrorEditInvalidAndResetAreDistinct": {
+          "sha256": "3b8b37cd1f4e63882de7f9736cd436c4d482867184063402ad1f7eae894b104c",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        },
+        "independent-saveBackReopenCloseLaunchUnsavePreservesCatalogAndLearning": {
+          "sha256": "42e477aadb2d0d2230a0a39fa1674b4bb4f45b02726ecf33c14bb5cf6ddb63c3",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        },
+        "independent-whitespaceAndResetPendingNeverSubmitFts": {
+          "sha256": "ca60afaf6e48501a8b02959711034e6af763252f91925124c9b44c5e6cedbabe",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        },
+        "suite-1": {
+          "sha256": "4f2bc6a4429db548b262fcbfbd0fc7c62d4c2627e47353db3697ecfa48becfe7",
+          "statusCodes": [
+            "1",
+            "0",
+            "1",
+            "0",
+            "1",
+            "0",
+            "1",
+            "-4",
+            "1",
+            "0",
+            "1",
+            "0",
+            "1",
+            "0",
+            "1",
+            "0",
+            "1",
+            "0",
+            "1",
+            "0",
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "11"
+          ],
+          "failureCounts": []
+        },
+        "suite-2": {
+          "sha256": "1231d2a70d76898981b67b9c3e0d393c50f6a2d600830a6187ba7de224c54262",
+          "statusCodes": [
+            "1",
+            "0",
+            "1",
+            "0",
+            "1",
+            "0",
+            "1",
+            "-4",
+            "1",
+            "0",
+            "1",
+            "0",
+            "1",
+            "0",
+            "1",
+            "0",
+            "1",
+            "0",
+            "1",
+            "0",
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "11"
+          ],
+          "failureCounts": []
+        }
+      }
+    },
+    "api30-font130-journey-01": {
+      "rawPath": "build\\qa02\\api30-font130-journey-01",
+      "summary": {
+        "testedRevision": "ba02a887f7cfd511b52f00a766a440a01776db93+sources-sha256:a9ce5405ec1735aa2a35faefc0c8cee7e782669353825d4b5f8d27b658b63d9f",
+        "runs": [
+          {
+            "run": "journey",
+            "selector": "com.vocamind.app.feature.qa.Qa02JourneyInstrumentedTest#offlineJourney",
+            "accepted": true,
+            "seconds": 47.531725099999676,
+            "code": 0,
+            "videoCoverage": "Single segment max180s; review duration and encoding before acceptance"
+          },
+          {
+            "run": "force-stop-reopen",
+            "selector": "com.vocamind.app.feature.qa.Qa02JourneyInstrumentedTest#committedSnapshotSurvivesReopen",
+            "accepted": true,
+            "seconds": 4.020610600000509,
+            "code": 0,
+            "videoCoverage": "Single segment max180s; review duration and encoding before acceptance"
+          },
+          {
+            "run": "reboot-reopen",
+            "selector": "com.vocamind.app.feature.qa.Qa02JourneyInstrumentedTest#committedSnapshotSurvivesReopen",
+            "accepted": true,
+            "seconds": 16.07155039999998,
+            "code": 0,
+            "videoCoverage": "Single segment max180s; review duration and encoding before acceptance"
+          }
+        ]
+      },
+      "testedRevision": "ba02a887f7cfd511b52f00a766a440a01776db93+sources-sha256:a9ce5405ec1735aa2a35faefc0c8cee7e782669353825d4b5f8d27b658b63d9f",
+      "apks": {
+        "app\\build\\outputs\\apk\\catalogQa\\app-catalogQa.apk": "970216a5fcdd53b9e95dce97205c5e745001f06fd8e91de9d6593f8ea33fbfe0",
+        "app\\build\\outputs\\apk\\androidTest\\catalogQa\\app-catalogQa-androidTest.apk": "aced7fe056890403f4e057b87827fd17b885a60d92ba5df9c9ae801c2224de00"
+      },
+      "inventory": {
+        "ro.product.manufacturer": "Google",
+        "ro.product.model": "sdk_gphone_x86",
+        "ro.build.version.release": "11",
+        "ro.build.version.sdk": "30",
+        "ro.build.fingerprint": "google/sdk_gphone_x86/generic_x86_arm:11/RSR1.201013.001/6903271:user/release-keys",
+        "ro.kernel.qemu": "1",
+        "persist.sys.timezone": "Asia/Bangkok",
+        "display": "Physical size: 720x1280",
+        "density": "Physical density: 320",
+        "memory": "MemTotal:        2028236 kB\nMemFree:          115068 kB\nMemAvailable:     964004 kB",
+        "deviceClock": "Wed Nov 11 06:45:39 UTC 2026",
+        "hostUtc": "2026-11-11T06:45:40.818359+00:00"
+      },
+      "sourceDiffSha256": "bd48123885986c11905a31a6b82c9901264d3fa364c02c0f8640f43e0894395b",
+      "rawManifestSha256": "a0b2d57a1604e357a72b242357b4ab3369f118f01888f30f240a638b9ce1b8b1",
+      "networkRestoreAccepted": true,
+      "boot": {
+        "before": "a3e5d59c-e97b-4014-840b-8cb03de04fa5",
+        "after": "084bc83b-8e8a-46fc-962f-8fade7ca8d8f"
+      },
+      "instrumentation": {
+        "force-stop-reopen": {
+          "sha256": "069d797882a7189e7fd818041495f10f6a7d9d72e3eb89646516c2dfbda166eb",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        },
+        "journey": {
+          "sha256": "c73218ad3eaaf21e68ba1b72684fc367c71721caddd87398563f1052179b9152",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        },
+        "reboot-reopen": {
+          "sha256": "e53ad84c43139333c2046127b40a58564ab3556841cd9de5529ba2e6d900cbb4",
+          "statusCodes": [
+            "1",
+            "0"
+          ],
+          "okCounts": [
+            "1"
+          ],
+          "failureCounts": []
+        }
+      }
+    }
+  },
+  "ci": {
+    "42961748436": [
+      {
+        "name": "android-validation-77b879642cef0082294288c65868dfb296ef2c93",
+        "digestMatches": true,
+        "unitTotals": {
+          "tests": 598,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "fts": [
+          {
+            "name": "com.vocamind.app.data.catalog.FtsSearchBenchmarkTest",
+            "tests": "2",
+            "failures": "0",
+            "errors": "0",
+            "skipped": "0"
+          },
+          {
+            "name": "com.vocamind.app.data.catalog.FtsSearchTest",
+            "tests": "22",
+            "failures": "0",
+            "errors": "0",
+            "skipped": "0"
+          }
+        ],
+        "summaries": {},
+        "id": 13829961958,
+        "sha256": "da83144d665fdb5569d77ce2d05044a44486b911e5bc74b8d30043550c34a870",
+        "expectedDigest": "sha256:da83144d665fdb5569d77ce2d05044a44486b911e5bc74b8d30043550c34a870"
+      },
+      {
+        "name": "discovery-api-35-77b879642cef0082294288c65868dfb296ef2c93",
+        "digestMatches": true,
+        "summaries": {
+          "build/ui02-ci/summary.json": {
+            "testedRevision": "77b879642cef0082294288c65868dfb296ef2c93+sources-sha256:abfdf458fbc492d7e9ae212940335d5bcb5cfeb7b085e6a9c9996c301976aa8b",
+            "runs": [
+              {
+                "run": "independent-offlinePackOrderVisibleItemsDetailsBothIpaAndNoWrites",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#offlinePackOrderVisibleItemsDetailsBothIpaAndNoWrites",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 5.700501686999985
+              },
+              {
+                "run": "independent-activateCloseLaunchPauseCloseLaunchPreservesLearningAndSaved",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#activateCloseLaunchPauseCloseLaunchPreservesLearningAndSaved",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 5.271866082000031
+              },
+              {
+                "run": "independent-allInactiveTodayCtaOpensDiscoveryWithoutActivation",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#allInactiveTodayCtaOpensDiscoveryWithoutActivation",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 2.290141726999991
+              },
+              {
+                "run": "independent-saveBackReopenCloseLaunchUnsavePreservesCatalogAndLearning",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#saveBackReopenCloseLaunchUnsavePreservesCatalogAndLearning",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 5.471002032000001
+              },
+              {
+                "run": "independent-offlineEnglishVietnameseRealFtsVisibleResultDetailResetNoMatch",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#offlineEnglishVietnameseRealFtsVisibleResultDetailResetNoMatch",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 7.365319533000047
+              },
+              {
+                "run": "independent-loadingContentNoMatchAndAtoBtoARejectsOldSuccessAndError",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#loadingContentNoMatchAndAtoBtoARejectsOldSuccessAndError",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 6.218270937
+              },
+              {
+                "run": "independent-retryCurrentQueryErrorEditInvalidAndResetAreDistinct",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#retryCurrentQueryErrorEditInvalidAndResetAreDistinct",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 6.436069272999987
+              },
+              {
+                "run": "independent-resetRunningRejectsLateCompletionAndLateError",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#resetRunningRejectsLateCompletionAndLateError",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 4.318620813999985
+              },
+              {
+                "run": "independent-whitespaceAndResetPendingNeverSubmitFts",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#whitespaceAndResetPendingNeverSubmitFts",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 3.8926807789999884
+              },
+              {
+                "run": "independent-backWhileRunningAndRecreateKeepsCurrentQueryAndDropsAbandonedRead",
+                "selector": "com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest#backWhileRunningAndRecreateKeepsCurrentQueryAndDropsAbandonedRead",
+                "tests": 1,
+                "pass": 1,
+                "fail": 0,
+                "skipped": 0,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 4.5304872070000215
+              },
+              {
+                "run": "suite-1",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest,com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest",
+                "tests": 11,
+                "pass": 10,
+                "fail": 0,
+                "skipped": 1,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 38.16970827299997
+              },
+              {
+                "run": "suite-2",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest,com.vocamind.app.feature.discovery.DiscoverySearchStateInstrumentedTest",
+                "tests": 11,
+                "pass": 10,
+                "fail": 0,
+                "skipped": 1,
+                "expectedFailureProbe": false,
+                "artifactsVerified": false,
+                "accepted": true,
+                "seconds": 36.81028732100003
+              },
+              {
+                "run": "artifact-probe",
+                "selector": "com.vocamind.app.feature.discovery.DiscoveryJourneyInstrumentedTest#failureArtifactProbe",
+                "tests": 1,
+                "pass": 0,
+                "fail": 1,
+                "skipped": 0,
+                "expectedFailureProbe": true,
+                "artifactsVerified": true,
+                "accepted": true,
+                "seconds": 2.21790103699999
+              }
+            ]
+          }
+        },
+        "id": 13829602595,
+        "sha256": "86f0b3db77a00312361034ffc60e98bde6b115914d596c17f03d80fdab1c9f0b",
+        "expectedDigest": "sha256:86f0b3db77a00312361034ffc60e98bde6b115914d596c17f03d80fdab1c9f0b"
+      }
+    ],
+    "42961741320": [
+      {
+        "name": "android-validation-ba02a887f7cfd511b52f00a766a440a01776db93",
+        "digestMatches": true,
+        "unitTotals": {
+          "tests": 598,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "fts": [
+          {
+            "name": "com.vocamind.app.data.catalog.FtsSearchBenchmarkTest",
+            "tests": "2",
+            "failures": "0",
+            "errors": "0",
+            "skipped": "0"
+          },
+          {
+            "name": "com.vocamind.app.data.catalog.FtsSearchTest",
+            "tests": "22",
+            "failures": "0",
+            "errors": "0",
+            "skipped": "0"
+          }
+        ],
+        "summaries": {},
+        "id": 13830135609,
+        "sha256": "abe4f5b675f6c04032a406555cfc679b782be7be0bb862ba6e8e5b5aafcd1ebd",
+        "expectedDigest": "sha256:abe4f5b675f6c04032a406555cfc679b782be7be0bb862ba6e8e5b5aafcd1ebd"
+      }
+    ]
+  },
+  "audit": {
+    "profile": "internal-qa",
+    "apkSha256": "970216a5fcdd53b9e95dce97205c5e745001f06fd8e91de9d6593f8ea33fbfe0",
+    "apkBytes": 7810526,
+    "assetHashes": {
+      "catalog.db": "41bcfacfcebdc42c8059c95f396c738fdabab62c4cbd8a255499e9c446502709",
+      "catalog.metadata.json": "c39eb9901c518a5ff4f141046141cb8579c24c41855feda825238afc78000e92",
+      "content-credits.json": "4dfc32924b655fe8e276cfb9bdf6d408213f78e15ac3202cf354ed84067bfd5c",
+      "manifest.json": "fd2b5b89f726281899d7377a469a0ffc28541cf924a141b2cecbc1342a905f11",
+      "quiz-policy.json": "88168d65b114a02a5934eb429c75820482ad77e1ebab7f500c30fc6c09d8c617",
+      "release-gate-report.json": "9a4e79a711751fb335e76eb5c7f805398c66a9684f675c1a27e36ce8667327d9"
+    },
+    "sqlQa": {
+      "uniqueVocabularyCount": 150,
+      "membershipCount": 150,
+      "packCounts": {
+        "pack_toeic_basic": 40,
+        "pack_toeic_office": 40,
+        "pack_daily_life": 40,
+        "pack_academic": 30
+      },
+      "distinctMeaningsPerPack": {
+        "pack_toeic_basic": 40,
+        "pack_toeic_office": 40,
+        "pack_daily_life": 40,
+        "pack_academic": 30
+      },
+      "examplePairCount": 150,
+      "nullableIpaCount": 150,
+      "ftsMappedRows": 150,
+      "ftsSearchChecks": 300,
+      "integrityCheck": "ok",
+      "foreignKeyViolations": 0,
+      "logicalDumpSha256": "85644c12afac36f80cb233a353280c40edc53241eb36ebce493e42462e1f6a6a"
+    },
+    "datasetSha256": "12aac7bfbe037c9136c3973cc724eee68205b88673ad25f40f7881de50d5398e",
+    "releaseAuthorized": false
+  },
+  "touchTargets": [
+    {
+      "view": "quiz_option_1",
+      "widthDp": 312,
+      "heightDp": 48,
+      "screenY": 559,
+      "clickable": true,
+      "hasLabel": true
+    },
+    {
+      "view": "quiz_option_2",
+      "widthDp": 312,
+      "heightDp": 48,
+      "screenY": 655,
+      "clickable": true,
+      "hasLabel": true
+    },
+    {
+      "view": "quiz_option_3",
+      "widthDp": 312,
+      "heightDp": 48,
+      "screenY": 751,
+      "clickable": true,
+      "hasLabel": true
+    },
+    {
+      "view": "quiz_option_4",
+      "widthDp": 312,
+      "heightDp": 48,
+      "screenY": 847,
+      "clickable": true,
+      "hasLabel": true
+    },
+    {
+      "view": "rate_forgot",
+      "widthDp": 98.5,
+      "heightDp": 56,
+      "screenY": 1040,
+      "clickable": true,
+      "hasLabel": true
+    },
+    {
+      "view": "rate_hard",
+      "widthDp": 98.5,
+      "heightDp": 56,
+      "screenY": 1040,
+      "clickable": true,
+      "hasLabel": true
+    },
+    {
+      "view": "rate_remembered",
+      "widthDp": 99,
+      "heightDp": 56,
+      "screenY": 1040,
+      "clickable": true,
+      "hasLabel": true
+    }
+  ],
+  "browserVisualInspection": {
+    "rawAutomatedNetworkErrorObserved": false,
+    "visualNetworkErrorObserved": true,
+    "observedText": "No internet",
+    "externalPackage": "com.android.chrome",
+    "screenshotSha256": "5325ca19485891481ac7a1ba47b7d1c4da1c2b32be19c89baee848aeeed26f34",
+    "rawScreenshot": "build\\qa02\\resume-ba02a88\\external-settled.png",
+    "observer": "Codex visual inspection via view_image; not Nhan/PO sign-off"
+  },
+  "finalSourceFreeze": {
+    "sourceZipSha256": "26edcebabca12265bbd5c96dd71e6b8ba0f09ede0b3d99717f9b24ad3b2a7ad2",
+    "sourceFiles": 320,
+    "apks": {
+      "frozen-app-catalogQa.apk": "970216a5fcdd53b9e95dce97205c5e745001f06fd8e91de9d6593f8ea33fbfe0",
+      "frozen-app-catalogQa-androidTest.apk": "e0b80ea076b8c568eeec7479b3d010c790a2e73a6aaeb6a712dc94d560e03ca5"
+    }
+  },
+  "hostTests": {
+    "networkRunner": 27,
+    "ciDevice": 8,
+    "qaRunner": 4,
+    "ExternalLinksJUnit": 6
+  },
+  "historicalQuizCounts": {
+    "42954377536": [
+      "2026-11-11T03:43:59.8465850Z > Task :app:preDebugAndroidTestBuild SKIPPED",
+      "2026-11-11T03:43:59.8493216Z > Task :app:connectedDebugAndroidTest",
+      "2026-11-11T03:43:59.8494954Z Starting 4 tests on emulator-5554 - 9",
+      "2026-11-11T03:43:59.8495350Z emulator-5554 - 9 Tests 3/4 completed. (0 skipped) (0 failed)",
+      "2026-11-11T03:43:59.8495740Z Finished 4 tests on emulator-5554 - 9",
+      "2026-11-11T03:43:59.8608028Z /data/local/tmp/quiz03-01-offline-empty.png: 1 file pulled, 0 skipped. 13.8 MB/s (17508 bytes in 0.001s)",
+      "2026-11-11T03:43:59.9089897Z /data/local/tmp/quiz03-02-feedback.png: 1 file pulled, 0 skipped. 0.6 MB/s (26909 bytes in 0.041s)",
+      "2026-11-11T03:43:59.9160314Z /data/local/tmp/quiz03-03-result.png: 1 file pulled, 0 skipped. 26.7 MB/s (30420 bytes in 0.001s)",
+      "2026-11-11T03:44:01.6830536Z > Task :app:preDebugAndroidTestBuild SKIPPED"
+    ],
+    "42954369143": [
+      "2026-11-11T03:43:39.2613535Z > Task :app:preDebugAndroidTestBuild SKIPPED",
+      "2026-11-11T03:43:39.2635476Z > Task :app:connectedDebugAndroidTest",
+      "2026-11-11T03:43:39.2636445Z Starting 4 tests on emulator-5554 - 9",
+      "2026-11-11T03:43:39.2636756Z emulator-5554 - 9 Tests 3/4 completed. (0 skipped) (0 failed)",
+      "2026-11-11T03:43:39.2637059Z Finished 4 tests on emulator-5554 - 9",
+      "2026-11-11T03:43:39.3146494Z /data/local/tmp/quiz03-01-offline-empty.png: 1 file pulled, 0 skipped. 0.4 MB/s (17667 bytes in 0.042s)",
+      "2026-11-11T03:43:39.3616518Z /data/local/tmp/quiz03-02-feedback.png: 1 file pulled, 0 skipped. 0.6 MB/s (27892 bytes in 0.043s)",
+      "2026-11-11T03:43:39.3669726Z /data/local/tmp/quiz03-03-result.png: 1 file pulled, 0 skipped. 34.0 MB/s (31183 bytes in 0.001s)",
+      "2026-11-11T03:43:40.5997298Z > Task :app:preDebugAndroidTestBuild SKIPPED"
+    ]
+  },
+  "historicalData08PhaseProof": {
+    "42954377536": {
+      "Quiz device (API 28, offline)/8_Run offline Quiz and DATA-08 reboot on a disposable emulator.txt": [
+        "2026-11-11T03:44:07.3739728Z OK (1 test)",
+        "2026-11-11T03:44:08.9810005Z OK (1 test)",
+        "2026-11-11T03:44:10.0150130Z OK (1 test)",
+        "2026-11-11T03:44:34.0167967Z OK (1 test)",
+        "2026-11-11T03:44:34.9651918Z OK (1 test)",
+        "2026-11-11T03:44:57.6265768Z OK (1 test)"
+      ]
+    },
+    "42954369143": {
+      "Quiz device (API 28, offline)/8_Run offline Quiz and DATA-08 reboot on a disposable emulator.txt": [
+        "2026-11-11T03:43:44.5645943Z OK (1 test)",
+        "2026-11-11T03:43:45.7659825Z OK (1 test)",
+        "2026-11-11T03:43:46.5606177Z OK (1 test)",
+        "2026-11-11T03:44:08.2523994Z OK (1 test)",
+        "2026-11-11T03:44:09.0224442Z OK (1 test)",
+        "2026-11-11T03:44:30.8176715Z OK (1 test)"
+      ]
+    }
+  },
+  "talkBack": {
+    "status": "NOT RUN",
+    "userDecision": "No APK path; user allowed leaving this portion pending",
+    "gateRemoved": false
+  },
+  "privacy": "Android backup retained by user choice; PO exception confirmation pending",
+  "status": "IN PROGRESS; not signed off; new helper API35/API26 CI pending",
+  "testedSnapshotBinding": {
+    "snapshotId": "editorial-qa-v2",
+    "datasetSha256": "12aac7bfbe037c9136c3973cc724eee68205b88673ad25f40f7881de50d5398e",
+    "canonicalSha256": "1a4b3da8396834868b82955a1e03384e6263876302a82774e6677f786e27b60d",
+    "snapshotManifestSha256": "b80099721f565e579cea83de92a16a55c076e9f3347e12a280f1a5b7e9104ed8",
+    "sourceSnapshots": [
+      {
+        "id": "vocamind-ai-editorial-v1",
+        "snapshotDate": "2026-11-05",
+        "snapshotSha256": "b588844e1f1228acaeed139efe08a5d9d53dcb5a9da8e4f056a23bea3ed959c9",
+        "licenseCode": "PROJECT-USE-OWNER-ACCEPTED"
+      }
+    ]
+  },
+  "newSourceInputs": {
+    "app/src/androidTest/java/com/vocamind/app/feature/qa/Qa02SharedPackInstrumentedTest.java": "b9bae181d97f349d2ece8914b4551d0ae5f6dddbdfad6539dedcc37de55e69b3"
+  },
+  "finalConsolidatedRegression": {
+    "rawLocal": "build\\qa02\\api30-final-controlled-01",
+    "results": [
+      {
+        "method": "longestPackDetailAtLargeFontKeepsFullTextAndIpaFallback",
+        "exitCode": 0,
+        "passed": true
+      },
+      {
+        "method": "searchWithVisibleImeKeepsResultsAndBackState",
+        "exitCode": 0,
+        "passed": true
+      },
+      {
+        "method": "plannerDueFirstRemainingQuotaAndPausedExclusionThroughUi",
+        "exitCode": 0,
+        "passed": true
+      },
+      {
+        "method": "attributionExternalLinkReturnsOfflineWithoutUserdataChanges",
+        "exitCode": 0,
+        "passed": true
+      },
+      {
+        "method": "quizDoubleTapLocksOneAnswerWithoutPrematureAttempt",
+        "exitCode": 0,
+        "passed": true
+      },
+      {
+        "method": "emptyProgressAndHistory",
+        "exitCode": 0,
+        "passed": true
+      },
+      {
+        "method": "noActivePackDoesNotActivateAutomatically",
+        "exitCode": 0,
+        "passed": true
+      },
+      {
+        "method": "pausedOnlyKeepsChoosePackState",
+        "exitCode": 0,
+        "passed": true
+      },
+      {
+        "method": "activePackNoDueOrNewShowsCompleted",
+        "exitCode": 0,
+        "passed": true
+      },
+      {
+        "method": "fourthForgotEnablesLeechThenHardClears",
+        "exitCode": 0,
+        "passed": true
+      },
+      {
+        "method": "rememberedClearsExistingLeech",
+        "exitCode": 0,
+        "passed": true
+      },
+      {
+        "method": "reviewWriteFailureKeepsCardAndRecoversWithoutDuplicate",
+        "exitCode": 0,
+        "passed": true
+      }
+    ],
+    "counts": {
+      "tests": 12,
+      "passCount": 12,
+      "failures": 0,
+      "skipped": 0
+    },
+    "apks": {
+      "app\\build\\outputs\\apk\\catalogQa\\app-catalogQa.apk": "970216a5fcdd53b9e95dce97205c5e745001f06fd8e91de9d6593f8ea33fbfe0",
+      "app\\build\\outputs\\apk\\androidTest\\catalogQa\\app-catalogQa-androidTest.apk": "e0b80ea076b8c568eeec7479b3d010c790a2e73a6aaeb6a712dc94d560e03ca5"
+    },
+    "manifestSha256": "ee878ab71113e6c6c1613b8832bba82cf60a9f1f2dc1e8afb294a87cc20f2776",
+    "sourcePatchSha256": "f09b858edfa3945381517dc83a246c1a94ef7a4dc926445824c8cc70717224db",
+    "artifactIndexSha256": "1bc38d8fb07ddd61edc4a704f2aeea64d136dd6994ff975cb80c5b1b64aaa0b5",
+    "networkRestoreAccepted": true,
+    "finalReadback": [
+      {
+        "command": [
+          "settings",
+          "get",
+          "system",
+          "font_scale"
+        ],
+        "exitCode": 0,
+        "value": "1.0"
+      },
+      {
+        "command": [
+          "settings",
+          "get",
+          "secure",
+          "show_ime_with_hard_keyboard"
+        ],
+        "exitCode": 0,
+        "value": "1"
+      },
+      {
+        "command": [
+          "settings",
+          "get",
+          "global",
+          "window_animation_scale"
+        ],
+        "exitCode": 0,
+        "value": "1.0"
+      },
+      {
+        "command": [
+          "settings",
+          "get",
+          "global",
+          "transition_animation_scale"
+        ],
+        "exitCode": 0,
+        "value": "1.0"
+      },
+      {
+        "command": [
+          "settings",
+          "get",
+          "global",
+          "animator_duration_scale"
+        ],
+        "exitCode": 0,
+        "value": "null"
+      },
+      {
+        "command": [
+          "settings",
+          "get",
+          "global",
+          "airplane_mode_on"
+        ],
+        "exitCode": 0,
+        "value": "1"
+      },
+      {
+        "command": [
+          "settings",
+          "get",
+          "global",
+          "wifi_on"
+        ],
+        "exitCode": 0,
+        "value": "0"
+      },
+      {
+        "command": [
+          "settings",
+          "get",
+          "global",
+          "mobile_data"
+        ],
+        "exitCode": 0,
+        "value": "0"
+      }
+    ],
+    "scope": "Independent controlled UI fixtures at font1.3; actual IME enabled then restored; per-case owned QA package clear, not continuous E2E. Production APK unchanged. No TalkBack or API26/35 certification."
+  }
+}

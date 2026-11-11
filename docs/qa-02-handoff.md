@@ -1,3 +1,5 @@
+> Latest technical retests: [qa-02-resume-ba02a88.md](qa-02-resume-ba02a88.md). CI ba02a88 PR SUCCESS / push API35 precondition FAIL; local controller fix passed host+API30, API35/API26 CI still pending. Planner/Quiz/IME/font/Attribution coverage updated. TalkBack deferred by user; privacy/rights/sign-off remain open. Earlier sections are historical.
+
 > Latest stop snapshot: [blocker retests](qa-02-blocker-retest-20261111.md). F01 verified/fixed; approved API30 journey/reopen/reboot and mandatory benchmark retest PASS; controlled5/5 PASS. Privacy/rights/sign-off and remaining P0 still open. Earlier entries are historical.
 
 > Current-source continuation (2026-11-11): [verified results and limitations](qa-02-continuation-20261111.md). Both current-head CI workflows succeeded; ZIP reports remain HTTP401, so F01 is not closed. Historical pending/failing CI statements below describe earlier runs. New API30 journey blocked before Activity; B02 remains FAIL; backup policy requires review.

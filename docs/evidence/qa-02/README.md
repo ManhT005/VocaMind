@@ -1,3 +1,5 @@
+> Latest: [resume ba02a88](../../qa-02-resume-ba02a88.md), [public counts/hashes](resume-ba02a88/summary.json). Raw source/APKs/corpus/video/logs stay in ignored build/qa02. No QA02 acceptance or human signature inferred.
+
 > Latest stop snapshot: [blocker retests](../../qa-02-blocker-retest-20261111.md). F01 verified/fixed; approved API30 journey/reopen/reboot and mandatory benchmark retest PASS; controlled5/5 PASS. Privacy/rights/sign-off and remaining P0 still open. Earlier entries are historical.
 
 > Current-source continuation (2026-11-11): [verified results and limitations](../../qa-02-continuation-20261111.md). Both current-head CI workflows succeeded; ZIP reports remain HTTP401, so F01 is not closed. Historical pending/failing CI statements below describe earlier runs. New API30 journey blocked before Activity; B02 remains FAIL; backup policy requires review.

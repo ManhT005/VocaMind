@@ -6,6 +6,8 @@ Trạng thái: **CHƯA KÝ**. Không cấp quyền phát hành khi các mục d�
 
 ## Quyền nội dung
 
+Snapshot binding của technical retest: APK internal QA có snapshotId `editorial-qa-v2`, metadata.datasetSha256 `12aac7bfbe037c9136c3973cc724eee68205b88673ad25f40f7881de50d5398e`, metadata.canonicalSha256 `1a4b3da8396834868b82955a1e03384e6263876302a82774e6677f786e27b60d`, catalog DB SHA256 `41bcfacfcebdc42c8059c95f396c738fdabab62c4cbd8a255499e9c446502709`. Canonical target trong checklist bên dưới vẫn giữ nguyên. PO/Content Lead phải xác nhận mapping/promotion và phạm vi; không có quyền chuyển tiếp mặc nhiên từ internal QA sang release/các kênh phân phối.
+
 - Dataset SHA-256: `c066d4a363d58c4c7226b716f1080b25a9e47b124a4007f4c3d16d67283a7fb8`.
 - Người duyệt / vai trò / căn cứ được ủy quyền: **chờ cung cấp**.
 - Bằng chứng quyền sử dụng từng thành phần và quyết định LIC-01..12: **chờ duyệt**.

@@ -1,4 +1,24 @@
+> Latest technical retests: [qa-02-resume-ba02a88.md](qa-02-resume-ba02a88.md). CI ba02a88 PR SUCCESS / push API35 precondition FAIL; local controller fix passed host+API30, API35/API26 CI still pending. Planner/Quiz/IME/font/Attribution coverage updated. TalkBack deferred by user; privacy/rights/sign-off remain open. Earlier sections are historical.
+
 # QA-02 rà soát khoảng trống theo SRS v1.1
+
+## Trạng thái hiện hành sau retest 11/11/2026
+
+Các bảng bên dưới mục “Rà soát ban đầu” là lịch sử trước retest, không phải danh sách việc còn thiếu hiện tại. Kết quả áp dụng theo source/APK và từng lớp kiểm thử tại [báo cáo mới nhất](qa-02-resume-ba02a88.md).
+
+- [x] F01: đối chiếu hai CI run của0442777, checkout/artifact digest/JDK17/counts và expected probe skips; đóng đúng phạm vi row-visibility harness.
+- [x] Small Phone API30 đã được người dùng chấp thuận thay LDPlayer cho nghiệm thu và benchmark; không suy rộng sang API khác.
+- [x] APK/corpus hiện tại đã audit; defaults5/10/OFF/20 kiểm trước setup quota10; hành trình offline10 thẻ/Quiz10/Progress/Attribution/reopen/reboot có boot-ID đổi và logical snapshots nhất quán.
+- [x] Planner due-first/quota/paused/no-active/no-due/shared-pack dedup; empty Progress; review failure/recovery; leech4/HARD/REMEMBERED; Quiz pool0/3 và double-tap; external-link offline/return có evidence ở các lớp khai báo riêng.
+- [x] IME/Back, detail dài nhất corpus hiện tại, font130% và action targets đã kiểm trên API30; không thay thế TalkBack audit.
+- [x] B02 mandatory startup<1500ms và FTS5000<50ms đạt trên API30 được duyệt. Broad mean26.816ms chưa đạt mục tiêu15ms. Giữ fail LDPlayer, không gọi là tối ưu trước–sau cùng thiết bị.
+- [ ] F05: helper offline mới đã qua host/API30, chưa có current-source API35/API26 CI. PR CI của source cũ không chứng nhận diff mới.
+- [ ] Full QA150-word journey trên API26/API35 chưa chạy; thiết bị sẵn cấu hình chỉ có API30. Evidence Discovery scope hẹp hơn được giữ riêng.
+- [ ] TalkBack/focus order chưa chạy, được người dùng cho phép để lại; vẫn NOT RUN.
+- [ ] NFR15: giữ Android backup theo lựa chọn người dùng, chờ PO chấp nhận ngoại lệ đúng snapshot; không có privacy PASS.
+- [ ] B03: PO/Content Lead đối chiếu identity snapshot và quyền/kênh phát hành. B05/WEEK-2-GATE: Nhân review evidence và sign-off; chưa có xác nhận hợp lệ.
+
+## Rà soát ban đầu — lịch sử trước retest
 
 Ngày rà soát: 11/11/2026. Đây là rà soát yêu cầu và bằng chứng, không phải lượt chạy test mới hoặc chữ ký nghiệm thu. Giữ nguyên các thay đổi local trước lượt rà soát.
 
