@@ -1,0 +1,26 @@
+{
+  "command": "python tools/catalog/package_qa.py --verify-apk app/build/outputs/apk/catalogQa/app-catalogQa.apk",
+  "exitCode": 0,
+  "profile": "internal-qa",
+  "applicationId": "com.vocamind.app.qa02validation.qa",
+  "apkSha256": "3bab0397cc1687fc20a6ff8ca5c8096b4a7c2b1f294e0a0056f71e68072d70d7",
+  "apkBytes": 7734558,
+  "catalogSha256": "41bcfacfcebdc42c8059c95f396c738fdabab62c4cbd8a255499e9c446502709",
+  "datasetSha256": "12aac7bfbe037c9136c3973cc724eee68205b88673ad25f40f7881de50d5398e",
+  "sqlQa": {
+    "uniqueVocabularyCount": 150,
+    "membershipCount": 150,
+    "packCounts": {"pack_toeic_basic": 40, "pack_toeic_office": 40, "pack_daily_life": 40, "pack_academic": 30},
+    "examplePairCount": 150,
+    "nullableIpaCount": 150,
+    "ftsMappedRows": 150,
+    "ftsSearchChecks": 300,
+    "integrityCheck": "ok",
+    "foreignKeyViolations": 0,
+    "logicalDumpSha256": "85644c12afac36f80cb233a353280c40edc53241eb36ebce493e42462e1f6a6a"
+  },
+  "releaseAuthorized": false,
+  "permissions": ["com.vocamind.app.qa02validation.qa.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"],
+  "internetPermission": false,
+  "limitations": "Debug QA APK; size and functional150-word FTS checks do not satisfy release APK or5000-word reference performance acceptance. Initial sandboxed verification could not read generated assets; verification with read access succeeded."
+}

@@ -1,0 +1,11 @@
+{
+  "baseCommit": "440f77643063310abe88067ba9d49198571efe67",
+  "branch": "feature/qa-02-e2e-acceptance",
+  "preparedUtc": "2026-11-09T11:57:25.313471+00:00",
+  "userPlanSha256": "f9deed42318a8b9a9ec986a17a97390a701d6e7b2e3ee0e4978084e556ecdd04",
+  "repositoryPlanSha256": "8b5ca29f10d473136bf903c090a0117c721ef8f7d7381388fc7fc46fa86f7db4",
+  "week2Gate": "Confirmed by owner in earlier conversation",
+  "physicalDevice": "BLOCKED: owner currently has LDPlayer only",
+  "rights": "HOLD per repository; newer sign-off requested",
+  "executionStatus": "NOT RUN: matrix preparation is not test execution"
+}

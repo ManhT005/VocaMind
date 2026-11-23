@@ -21,17 +21,26 @@ import static org.junit.Assert.*;
 public abstract class QuizScreenContract {
     static final AtomicInteger writes=new AtomicInteger();
     public static class FixtureQuizFragment extends QuizFragment {
+        protected QuizGenerationOutcome outcome() { return QuizGenerationOutcome.ready(questions()); }
         @Override protected ViewModelProvider.Factory viewModelFactory() {
             return new AbstractSavedStateViewModelFactory(requireActivity(),null) {
                 @NonNull @Override protected <T extends ViewModel> T create(@NonNull String key,
                         @NonNull Class<T> type, @NonNull SavedStateHandle saved) {
-                    return type.cast(new QuizViewModel(saved,() -> RepoResult.success(QuizGenerationOutcome.ready(questions())),
+                    return type.cast(new QuizViewModel(saved,() -> RepoResult.success(outcome()),
                             (k,r,t) -> { writes.incrementAndGet(); return RepoResult.success(1L); },
                             Runnable::run,Runnable::run,new java.util.function.LongSupplier() {
                                 long now; public long getAsLong() { now+=600; return now; }
                             },() -> 123L,() -> {}));
                 }
             };
+        }
+    }
+    public static class ThreeMeaningQuizFragment extends FixtureQuizFragment {
+        @Override protected QuizGenerationOutcome outcome() {
+            List<QuizVocabulary> words = new ArrayList<>();
+            for (int i=0;i<3;i++) words.add(new QuizVocabulary(String.format(Locale.ROOT,"%016x",i),
+                    "word "+i,"noun","meaning "+i,"context "+i));
+            return new DefaultQuizGenerator().generate(new QuizPool(words,new UnicodeMeaningNormalizer()),new Random(7));
         }
     }
     static List<QuizQuestion> questions() {
@@ -43,6 +52,9 @@ public abstract class QuizScreenContract {
         return questions;
     }
     void open(ActivityScenario<MainActivity> scenario) {
+        open(scenario, false);
+    }
+    void open(ActivityScenario<MainActivity> scenario, boolean threeMeanings) {
         scenario.onActivity(activity -> {
             NavHostFragment host=(NavHostFragment)activity.getSupportFragmentManager().getPrimaryNavigationFragment();
             if (host == null) {
@@ -52,11 +64,26 @@ public abstract class QuizScreenContract {
             assertNotNull(host);
             host.getChildFragmentManager().setFragmentFactory(new FragmentFactory() {
                 @NonNull @Override public Fragment instantiate(@NonNull ClassLoader loader,@NonNull String name) {
-                    return name.equals(QuizFragment.class.getName()) ? new FixtureQuizFragment() : super.instantiate(loader,name);
+                    return name.equals(QuizFragment.class.getName())
+                            ? (threeMeanings ? new ThreeMeaningQuizFragment() : new FixtureQuizFragment()) : super.instantiate(loader,name);
                 }
             });
             activity.findViewById(R.id.open_quiz).performClick();
         });
+    }
+    @Test public void threeDistinctMeaningsShowEmptyWithoutWritingAttempt() {
+        writes.set(0);
+        try (ActivityScenario<MainActivity> scenario=ActivityScenario.launch(MainActivity.class)) {
+            open(scenario, true);
+            scenario.onActivity(a -> {
+                assertEquals(a.getString(R.string.quiz_empty),((TextView)a.findViewById(R.id.quiz_status)).getText().toString());
+                assertFalse(a.findViewById(R.id.quiz_option_1).isShown());
+                assertFalse(a.findViewById(R.id.quiz_next).isShown());
+            });
+            scenario.recreate();
+            scenario.onActivity(a -> assertEquals(a.getString(R.string.quiz_empty),((TextView)a.findViewById(R.id.quiz_status)).getText().toString()));
+            assertEquals(0,writes.get());
+        }
     }
     @Test public void fullFlowKeepsFeedbackThroughRecreationAndSavesOnce() {
         writes.set(0);

@@ -1,0 +1,80 @@
+{
+  "runId": "sdk28-components-01",
+  "environment": {
+    "testedRevision": "440f77643063310abe88067ba9d49198571efe67+sources-sha256:93c83eedeb1ac6284e8411b24998fbc22b50e23f0166d121d42f477bda23caf5",
+    "package": "com.vocamind.app.flash03validation",
+    "apks": {
+      "app\\build\\outputs\\apk\\debug\\app-debug.apk": "0ad59a78051fff3721412e50ae4606d6d59539caf0f0f923d1050b793b257a13",
+      "app\\build\\outputs\\apk\\androidTest\\debug\\app-debug-androidTest.apk": "20c63c167efd1d311413ac60129a80ad517ad342ff29cd73ccbd3ff964bb94bd"
+    },
+    "utc": "2026-11-09T12:49:48.856906+00:00",
+    "inventory": {
+      "ro.build.fingerprint": "Android/sdk_phone_x86_64/generic_x86_64:9/PSR1.180720.012/4923214:userdebug/test-keys",
+      "ro.build.version.sdk": "28",
+      "ro.product.model": "Android SDK built for x86_64"
+    },
+    "scope": "EMULATOR supplemental only; synthetic four-word fixture; no acceptance/performance substitution"
+  },
+  "result": {
+    "testedRevision": "440f77643063310abe88067ba9d49198571efe67+sources-sha256:93c83eedeb1ac6284e8411b24998fbc22b50e23f0166d121d42f477bda23caf5",
+    "runs": [
+      {
+        "run": "attribution-offline-navigation",
+        "expectedTests": 1,
+        "accepted": true
+      },
+      {
+        "run": "attribution-states-long-text",
+        "expectedTests": 1,
+        "accepted": true
+      },
+      {
+        "run": "search-discovery",
+        "expectedTests": 1,
+        "accepted": true
+      },
+      {
+        "run": "search-save",
+        "expectedTests": 1,
+        "accepted": true
+      },
+      {
+        "run": "search-opaque-route",
+        "expectedTests": 1,
+        "accepted": true
+      },
+      {
+        "run": "search-read-recovery",
+        "expectedTests": 1,
+        "accepted": true
+      },
+      {
+        "run": "quiz-component-lifecycle",
+        "expectedTests": 1,
+        "accepted": true
+      },
+      {
+        "run": "quiz-component-abandon",
+        "expectedTests": 1,
+        "accepted": true
+      }
+    ]
+  },
+  "rawEvidence": "build\\qa02\\sdk28-components-01",
+  "rawManifestSha256": "8fa6f30167b67d46ac528f2dc5a5249bcd9abac178ad640f7324a4bb387b0e13",
+  "networkRestore": {
+    "accepted": true,
+    "originalFlags": {
+      "airplane_mode_on": "0",
+      "wifi_on": "1",
+      "mobile_data": "1"
+    },
+    "observedFlags": {
+      "airplane_mode_on": "0",
+      "wifi_on": "1",
+      "mobile_data": "1"
+    },
+    "errors": []
+  },
+  "video": []
+}

@@ -53,8 +53,9 @@ public class FlashcardDuplicateReviewInstrumentedTest {
                 onView(withId(R.id.card)).perform(click());
                 assertTrue(state(scenario).flipped);
                 long firstId = state(scenario).presentationId;
-                // One Espresso action owns the burst. No separate Espresso idle wait can stretch it.
-                onView(withId(R.id.rate_remembered)).perform(tripleTap());
+                // Inject from the instrumentation thread: Espresso's injection path can
+                // drain async UI work between events, stretching a 150ms burst into seconds.
+                tripleTap(scenario);
                 awaitReady(scenario, 2);
                 assertEquals(1, user.userDao().reviews().size());
                 var event = user.userDao().reviews().get(0);
@@ -98,31 +99,36 @@ public class FlashcardDuplicateReviewInstrumentedTest {
         }
     }
 
-    private static ViewAction tripleTap() {
-        return new ViewAction() {
-            @Override public Matcher<View> getConstraints() { return isDisplayed(); }
-            @Override public String getDescription() { return "three rating taps at 150ms intervals"; }
-            @Override public void perform(UiController ui, View view) {
+    private static void tripleTap(ActivityScenario<MainActivity> scenario) {
                 int[] location = new int[2];
-                view.getLocationOnScreen(location);
-                float x = location[0] + view.getWidth() / 2f;
-                float y = location[1] + view.getHeight() / 2f;
+                float[] center = new float[2];
+                scenario.onActivity(activity -> {
+                    View view = activity.findViewById(R.id.rate_remembered);
+                    assertTrue(androidx.test.espresso.matcher.ViewMatchers.isDisplayingAtLeast(90).matches(view));
+                    assertTrue(view.isEnabled());
+                    view.getLocationOnScreen(location);
+                    center[0] = location[0] + view.getWidth() / 2f;
+                    center[1] = location[1] + view.getHeight() / 2f;
+                });
+                var instrumentation = androidx.test.platform.app.InstrumentationRegistry.getInstrumentation();
+                var automation = instrumentation.getUiAutomation();
                 long[] taps = new long[3];
                 for (int i = 0; i < taps.length; i++) {
                     if (i > 0) {
                         long remaining = taps[i - 1] + 150 - SystemClock.uptimeMillis();
-                        if (remaining > 0) ui.loopMainThreadForAtLeast(remaining);
+                        if (remaining > 0) SystemClock.sleep(remaining);
                     }
                     taps[i] = SystemClock.uptimeMillis();
-                    MotionEvent down = MotionEvent.obtain(taps[i], taps[i], MotionEvent.ACTION_DOWN, x, y, 0);
-                    MotionEvent up = MotionEvent.obtain(taps[i], taps[i] + 1, MotionEvent.ACTION_UP, x, y, 0);
+                    MotionEvent down = MotionEvent.obtain(taps[i], taps[i], MotionEvent.ACTION_DOWN, center[0], center[1], 0);
+                    MotionEvent up = MotionEvent.obtain(taps[i], taps[i] + 1, MotionEvent.ACTION_UP, center[0], center[1], 0);
                     down.setSource(InputDevice.SOURCE_TOUCHSCREEN);
                     up.setSource(InputDevice.SOURCE_TOUCHSCREEN);
                     try {
-                        assertTrue(ui.injectMotionEvent(down));
-                        assertTrue(ui.injectMotionEvent(up));
-                    } catch (androidx.test.espresso.InjectEventSecurityException failure) {
-                        throw new AssertionError("Could not inject rating tap", failure);
+                        // Do not wait for LDPlayer to finish dispatching each event: synchronous
+                        // injection adds the device's render/dispatch latency between taps and no
+                        // longer represents a user producing input at 150 ms intervals.
+                        assertTrue(automation.injectInputEvent(down, false));
+                        assertTrue(automation.injectInputEvent(up, false));
                     } finally { down.recycle(); up.recycle(); }
                 }
                 for (int i = 1; i < taps.length; i++) {
@@ -131,9 +137,7 @@ public class FlashcardDuplicateReviewInstrumentedTest {
                     assertTrue("Tap gap must be 150ms (+50ms device scheduling), was " + gap,
                             gap >= 150 && gap <= 200);
                 }
-                ui.loopMainThreadUntilIdle();
-            }
-        };
+                instrumentation.waitForIdleSync();
     }
 
     private static FlashcardViewModel model(ActivityScenario<MainActivity> scenario) {

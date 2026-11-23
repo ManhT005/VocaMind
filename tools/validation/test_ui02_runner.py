@@ -44,6 +44,8 @@ class FakeAdb:
                 return SimpleNamespace(returncode=1, stdout='injected ADB failure')
         if args[:3] == ('settings', 'get', 'global'):
             return self.result(self.raw.get(args[3], '1'))
+        if args[:3] == ('cmd', 'connectivity', 'airplane-mode'):
+            return self.result('')
         if args[:3] == ('settings', 'put', 'global'):
             self.raw[args[3]] = args[4]
             return self.result('')
@@ -93,6 +95,36 @@ class NetworkTests(unittest.TestCase):
     def session(self, adb):
         return OfflineNetwork(adb.shell, self.out, deadline=.4, clock=self.clock.now, pause=self.clock.pause)
 
+    def test_cellular_default_requires_controller_not_just_disabled_flags(self):
+        class CellularAdb(FakeAdb):
+            airplane_controller = False
+            def shell(self, *args):
+                if args[:3] == ('cmd', 'connectivity', 'airplane-mode'):
+                    self.airplane_controller = args[3] == 'enable'
+                if args == ('dumpsys', 'connectivity'):
+                    return self.result('Active default network: ' + ('none' if self.airplane_controller else '100') + '\n')
+                return super().shell(*args)
+        adb = CellularAdb()
+        with self.session(adb).isolated() as network:
+            network.require_offline(self.out/'cellular')
+            self.assertTrue(adb.airplane_controller)
+        self.assertFalse(adb.airplane_controller)
+        adb.assert_restored(self)
+
+    def test_api26_without_controller_still_requires_effective_offline(self):
+        class LegacyAdb(FakeAdb):
+            def shell(self, *args):
+                if args[:3] == ('cmd','connectivity','airplane-mode'):
+                    return self.result('No shell command implementation.\n')
+                if args == ('getprop','ro.build.version.sdk'): return self.result('26\n')
+                return super().shell(*args)
+        adb = LegacyAdb()
+        with self.session(adb).isolated(): pass
+        adb.assert_restored(self)
+        adb = LegacyAdb(); adb.connectivity = 'Active default network: 100\n'
+        with self.assertRaisesRegex(RuntimeError, 'Offline deadline exceeded'):
+            with self.session(adb).isolated(): self.fail('Must not launch with an active cellular network')
+
     def test_success_restores_wifi_two_and_effective_radio(self):
         adb=FakeAdb()
         with self.session(adb).isolated() as network:
@@ -101,6 +133,7 @@ class NetworkTests(unittest.TestCase):
         adb.assert_restored(self)
         self.assertTrue(json.loads((self.out/'network-restore.json').read_text())['accepted'])
         self.assertIn(('svc','wifi','enable'), adb.commands)
+        self.assertIn(('settings','put','global','mobile_data','0'), adb.commands)
         self.assertEqual('Active default network: none\n',(self.out/'case/connectivity-before-launch.txt').read_text())
 
     def test_all_supported_wifi_values_restore_exact_flags_and_effective_state(self):

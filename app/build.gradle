@@ -46,6 +46,7 @@ def prepareReleaseCatalogTests = tasks.register('prepareReleaseCatalogTests', Ex
 
 // Opt-in QA application ID keeps the internal corpus and its installed DB separate.
 def catalogQaEnabled = providers.gradleProperty('catalogQa').map { it == 'true' }.getOrElse(false)
+def qa02Acceptance = providers.gradleProperty('qa02Acceptance').orNull == 'true'
 def discoveryUiEnabled = providers.gradleProperty('discoveryUi').orNull == 'true'
 if (discoveryUiEnabled && catalogQaEnabled) throw new GradleException('Choose discoveryUi or catalogQa')
 def data09ProfileEnabled = providers.gradleProperty('data09Profile').orNull == 'true'
@@ -54,6 +55,12 @@ if (data09QaEnabled && !data09ProfileEnabled) throw new GradleException('data09Q
 def quiz03DeviceIsolation = providers.gradleProperty('quiz03DeviceIsolation').orNull == 'true'
 def progress02DeviceIsolation = providers.gradleProperty('progress02DeviceIsolation').orNull == 'true'
 def data08DeviceGeneration = providers.gradleProperty('data08DeviceGeneration').orNull
+if (qa02Acceptance && (!catalogQaEnabled || discoveryUiEnabled || data09ProfileEnabled
+        || quiz03DeviceIsolation || progress02DeviceIsolation || data08DeviceGeneration != null
+        || providers.gradleProperty('discoveryQa').orNull == 'true'
+        || providers.gradleProperty('flash03DeviceIsolation').orNull == 'true')) {
+    throw new GradleException('QA-02 requires only -PcatalogQa=true -Pqa02Acceptance=true')
+}
 if (data08DeviceGeneration != null && (!(data08DeviceGeneration in ['A', 'B'])
         || catalogQaEnabled || quiz03DeviceIsolation || progress02DeviceIsolation)) {
     throw new GradleException('DATA-08 device validation requires generation A or B in an isolated debug build')
@@ -96,7 +103,8 @@ android {
         buildTypes {
             catalogQa {
                 initWith debug
-                applicationIdSuffix providers.gradleProperty('discoveryQa').orNull == 'true' ? '.ui02validation.qa' : '.qa'
+                applicationIdSuffix qa02Acceptance ? '.qa02validation.qa'
+                        : providers.gradleProperty('discoveryQa').orNull == 'true' ? '.ui02validation.qa' : '.qa'
                 resValue 'string', 'app_name', 'VocaMind QA'
             }
         }

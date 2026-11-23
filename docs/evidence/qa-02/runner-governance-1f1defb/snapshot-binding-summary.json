@@ -1,0 +1,30 @@
+{
+  "acceptedV1": {
+    "datasetSha256": "c066d4a363d58c4c7226b716f1080b25a9e47b124a4007f4c3d16d67283a7fb8",
+    "canonicalFileSha256": "f27e9d2de700fadf13b480df26933c61333ce6261ed872d285e5a111a88110c1"
+  },
+  "qaV2": {
+    "datasetSha256": "12aac7bfbe037c9136c3973cc724eee68205b88673ad25f40f7881de50d5398e",
+    "canonicalFileSha256": "1a4b3da8396834868b82955a1e03384e6263876302a82774e6677f786e27b60d",
+    "snapshotManifestSha256": "b80099721f565e579cea83de92a16a55c076e9f3347e12a280f1a5b7e9104ed8",
+    "source": [
+      {
+        "id": "vocamind-ai-editorial-v1",
+        "title": "VocaMind AI editorial corpus v1",
+        "url": "https://github.com/ManhT005/VocaMind/blob/795c9dc3fd6525321c00eb73d8f565a948175a09/docs/data/voc-data-04/accepted-v1/staging.jsonl",
+        "licenseCode": "PROJECT-USE-OWNER-ACCEPTED",
+        "licenseUrl": "https://github.com/ManhT005/VocaMind/blob/795c9dc3fd6525321c00eb73d8f565a948175a09/docs/data/voc-data-04/owner-acceptance.json",
+        "snapshotDate": "2026-11-05",
+        "snapshotSha256": "b588844e1f1228acaeed139efe08a5d9d53dcb5a9da8e4f056a23bea3ed959c9",
+        "attributionText": "VocaMind AI-generated editorial text. Project use and all 150 worksheet records accepted by thanhcodeai on 2026-11-05. No external dictionary supplied meanings or example pairs. Historical lexical research references remain in corpus-v1; this is not an external license grant.",
+        "approvalStatus": "approved",
+        "approvedBy": "thanhcodeai",
+        "evidenceRef": "docs/data/voc-data-04/accepted-v1/acceptance.json"
+      }
+    ],
+    "packDescriptionReview": "pending"
+  },
+  "sameEntriesExceptContentVersion": true,
+  "entryCount": 150,
+  "baselineSnapshotHashesVerified": true
+}

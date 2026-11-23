@@ -1,0 +1,11 @@
+{
+  "run": "sdk28-supplement-02",
+  "archive": "build\\qa02\\sdk28-supplement-02\\source-matching-inputs.zip",
+  "sha256": "47124da4913ec46c4d1ed0a1d6ecdc92499cebd219ff7e7ff13067fcb89c2add",
+  "matchedFileCount": 307,
+  "appInputMismatches": [],
+  "laterHostToolDifferences": [
+    "tools/validation/run_qa02_supplements.py"
+  ],
+  "explanation": "All compiled app/test source inputs match recorded run hashes and are frozen. The supplementary host runner gained additional opt-in modes after earlier runs; original hash remains in source manifest. Its earlier execution branch is recorded by exact command/raw output; these later modes do not change app/test APKs or the main journey runner."
+}

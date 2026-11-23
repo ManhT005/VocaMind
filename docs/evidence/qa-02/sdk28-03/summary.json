@@ -1,0 +1,434 @@
+{
+  "runId": "sdk28-03",
+  "environment": {
+    "testedRevision": "440f77643063310abe88067ba9d49198571efe67+sources-sha256:d02e082ed280afc3ad9e45098ee3b7f7de0d56e2d3e35eea87966e14d5cc5f3a",
+    "inventory": {
+      "ro.product.manufacturer": "unknown",
+      "ro.product.model": "Android SDK built for x86_64",
+      "ro.build.version.release": "9",
+      "ro.build.version.sdk": "28",
+      "ro.build.fingerprint": "Android/sdk_phone_x86_64/generic_x86_64:9/PSR1.180720.012/4923214:userdebug/test-keys",
+      "ro.kernel.qemu": "1",
+      "persist.sys.timezone": "Asia/Bangkok",
+      "display": "Physical size: 720x1280",
+      "density": "Physical density: 320",
+      "memory": "MemTotal:        1530876 kB\nMemFree:          486380 kB\nMemAvailable:    1077920 kB",
+      "deviceClock": "Mon Nov  9 12:31:24 GMT 2026",
+      "hostUtc": "2026-11-09T12:31:25.137264+00:00"
+    },
+    "apks": {
+      "app\\build\\outputs\\apk\\catalogQa\\app-catalogQa.apk": "3bab0397cc1687fc20a6ff8ca5c8096b4a7c2b1f294e0a0056f71e68072d70d7",
+      "app\\build\\outputs\\apk\\androidTest\\catalogQa\\app-catalogQa-androidTest.apk": "bc3e66232de8dbacf1460a56d93d5c6ad1a3414979253fa920443389ffbe9fb3"
+    },
+    "catalogSha256": "41bcfacfcebdc42c8059c95f396c738fdabab62c4cbd8a255499e9c446502709",
+    "deviceClassification": "EMULATOR supplemental scope; model property does not prove physical hardware",
+    "acceptance": "SUPPLEMENTAL ONLY; physical/reference/rights/reviewer gates remain separate"
+  },
+  "result": {
+    "testedRevision": "440f77643063310abe88067ba9d49198571efe67+sources-sha256:d02e082ed280afc3ad9e45098ee3b7f7de0d56e2d3e35eea87966e14d5cc5f3a",
+    "runs": [
+      {
+        "run": "journey",
+        "selector": "com.vocamind.app.feature.qa.Qa02JourneyInstrumentedTest#offlineJourney",
+        "accepted": true,
+        "seconds": 89.14402200000768,
+        "code": 0,
+        "videoCoverage": "Single segment max180s; review duration and encoding before acceptance"
+      },
+      {
+        "run": "force-stop-reopen",
+        "selector": "com.vocamind.app.feature.qa.Qa02JourneyInstrumentedTest#committedSnapshotSurvivesReopen",
+        "accepted": true,
+        "seconds": 10.864128299988806,
+        "code": 0,
+        "videoCoverage": "Single segment max180s; review duration and encoding before acceptance"
+      },
+      {
+        "run": "reboot-reopen",
+        "selector": "com.vocamind.app.feature.qa.Qa02JourneyInstrumentedTest#committedSnapshotSurvivesReopen",
+        "accepted": true,
+        "seconds": 15.733073499999591,
+        "code": 0,
+        "videoCoverage": "Single segment max180s; review duration and encoding before acceptance"
+      }
+    ]
+  },
+  "rawEvidence": "build\\qa02\\sdk28-03",
+  "rawManifestSha256": "43775d8bab06eeb05f887d71b6fbc648b0946e57f3c9154df7cbd10d86547b55",
+  "networkRestore": {
+    "accepted": true,
+    "originalFlags": {
+      "airplane_mode_on": "0",
+      "wifi_on": "1",
+      "mobile_data": "1"
+    },
+    "observedFlags": {
+      "airplane_mode_on": "0",
+      "wifi_on": "1",
+      "mobile_data": "1"
+    },
+    "errors": []
+  },
+  "video": [
+    {
+      "path": "build\\qa02\\sdk28-03\\force-stop-reopen\\screen.mp4",
+      "sha256": "defd06824e768bf2f1e375da9b9b6faf4404e8149c409736be2d6450b42b312e",
+      "seconds": 9.817
+    },
+    {
+      "path": "build\\qa02\\sdk28-03\\journey\\screen.mp4",
+      "sha256": "78f24f7e9126fe3237d35508a81a946a1d004918ad44ab0a70b3b61fb1643dd6",
+      "seconds": 88.061
+    },
+    {
+      "path": "build\\qa02\\sdk28-03\\reboot-reopen\\screen.mp4",
+      "sha256": "9ae50b9a191e9347cb62c393b43d0a875e981dad58ec1e838577a4487572b533",
+      "seconds": 14.389
+    }
+  ],
+  "reboot": {
+    "before": "a8e5ec4a-1b8a-452c-9f3c-0ea9420a2d3f",
+    "after": "8d40e507-5e54-45fc-9a6d-61777536430f"
+  },
+  "fixture": {
+    "package": "com.vocamind.app.qa02validation.qa",
+    "phase": "journey",
+    "initialPreferenceQuota": 5,
+    "journeyQuota": 10,
+    "prelaunchLearningData": {
+      "UserPreference": [
+        {
+          "id": 1,
+          "dailyNewWords": 10,
+          "dailyGoalMinutes": 10,
+          "reminderEnabled": 0,
+          "reminderHour": 20
+        }
+      ],
+      "UserPack": [],
+      "UserWordProgress": [],
+      "ReviewEvent": [],
+      "QuizAttempt": [],
+      "sqlite_sequence": [],
+      "schemaVersion": 2
+    },
+    "words": 150,
+    "packMembershipCountsSorted": [
+      30,
+      40,
+      40,
+      40
+    ],
+    "zone": "Asia/Bangkok",
+    "locale": "en-US",
+    "setup": "Only quota is configured before the first Activity; no learning rows/packs/attempts seeded"
+  },
+  "checkpoints": [
+    {
+      "label": "01-home",
+      "utcMillis": 1794227496413,
+      "tableCounts": {
+        "UserPreference": 1,
+        "UserPack": 0,
+        "UserWordProgress": 0,
+        "ReviewEvent": 0,
+        "QuizAttempt": 0,
+        "sqlite_sequence": 0
+      },
+      "snapshotSha256": "055bb7a70a140cab7cf883919deb89b8f43d973470fe6604c66645de1377ca98"
+    },
+    {
+      "label": "02-packs",
+      "utcMillis": 1794227516730,
+      "tableCounts": {
+        "UserPreference": 1,
+        "UserPack": 4,
+        "UserWordProgress": 0,
+        "ReviewEvent": 0,
+        "QuizAttempt": 0,
+        "sqlite_sequence": 0
+      },
+      "snapshotSha256": "db0b8dad455852e4ed68c35df3f9b59bbbb1f6b5f63abe077cb9159887a5f9dc"
+    },
+    {
+      "label": "03-search-save",
+      "utcMillis": 1794227529737,
+      "tableCounts": {
+        "UserPreference": 1,
+        "UserPack": 4,
+        "UserWordProgress": 1,
+        "ReviewEvent": 0,
+        "QuizAttempt": 0,
+        "sqlite_sequence": 0
+      },
+      "snapshotSha256": "895bc68d45edb193808fc10c22dc6dc0df13c3a155dde58a836c7ee73bca8ea8"
+    },
+    {
+      "label": "04-today",
+      "utcMillis": 1794227531920,
+      "tableCounts": {
+        "UserPreference": 1,
+        "UserPack": 4,
+        "UserWordProgress": 1,
+        "ReviewEvent": 0,
+        "QuizAttempt": 0,
+        "sqlite_sequence": 0
+      },
+      "snapshotSha256": "895bc68d45edb193808fc10c22dc6dc0df13c3a155dde58a836c7ee73bca8ea8"
+    },
+    {
+      "label": "05-flashcards",
+      "utcMillis": 1794227551491,
+      "tableCounts": {
+        "UserPreference": 1,
+        "UserPack": 4,
+        "UserWordProgress": 11,
+        "ReviewEvent": 14,
+        "QuizAttempt": 0,
+        "sqlite_sequence": 1
+      },
+      "snapshotSha256": "929e5f7a622b0c69f92a6789c9f952a26043ec6bd78c2da04c2ed3d377764dc6"
+    },
+    {
+      "label": "06-quiz",
+      "utcMillis": 1794227569751,
+      "tableCounts": {
+        "UserPreference": 1,
+        "UserPack": 4,
+        "UserWordProgress": 11,
+        "ReviewEvent": 14,
+        "QuizAttempt": 1,
+        "sqlite_sequence": 2
+      },
+      "snapshotSha256": "45d8c2cb1ffc0c624e15f3115a103e3e84dd026318bfee3d727e061f07f50871"
+    },
+    {
+      "label": "07-progress",
+      "utcMillis": 1794227572258,
+      "tableCounts": {
+        "UserPreference": 1,
+        "UserPack": 4,
+        "UserWordProgress": 11,
+        "ReviewEvent": 14,
+        "QuizAttempt": 1,
+        "sqlite_sequence": 2
+      },
+      "snapshotSha256": "45d8c2cb1ffc0c624e15f3115a103e3e84dd026318bfee3d727e061f07f50871"
+    },
+    {
+      "label": "08-attribution",
+      "utcMillis": 1794227573697,
+      "tableCounts": {
+        "UserPreference": 1,
+        "UserPack": 4,
+        "UserWordProgress": 11,
+        "ReviewEvent": 14,
+        "QuizAttempt": 1,
+        "sqlite_sequence": 2
+      },
+      "snapshotSha256": "45d8c2cb1ffc0c624e15f3115a103e3e84dd026318bfee3d727e061f07f50871"
+    },
+    {
+      "label": "09-committed",
+      "utcMillis": 1794227574422,
+      "tableCounts": {
+        "UserPreference": 1,
+        "UserPack": 4,
+        "UserWordProgress": 11,
+        "ReviewEvent": 14,
+        "QuizAttempt": 1,
+        "sqlite_sequence": 2
+      },
+      "snapshotSha256": "45d8c2cb1ffc0c624e15f3115a103e3e84dd026318bfee3d727e061f07f50871"
+    }
+  ],
+  "reviewOracle": {
+    "initialCount": 10,
+    "relearnCount": 4,
+    "events": [
+      {
+        "id": "ee46fdf826f53ce2",
+        "initial": true,
+        "rating": "FORGOT",
+        "box": 0,
+        "nextDueAt": 1794313938260,
+        "reviewedAt": 1794227538260
+      },
+      {
+        "id": "edcc67afb8658f36",
+        "initial": true,
+        "rating": "HARD",
+        "box": 0,
+        "nextDueAt": 1794313939260,
+        "reviewedAt": 1794227539260
+      },
+      {
+        "id": "1f431cc21a98d12f",
+        "initial": true,
+        "rating": "REMEMBERED",
+        "box": 1,
+        "nextDueAt": 1794313940594,
+        "reviewedAt": 1794227540594
+      },
+      {
+        "id": "ee46fdf826f53ce2",
+        "initial": false,
+        "rating": "REMEMBERED",
+        "box": 1,
+        "nextDueAt": 1794313941520,
+        "reviewedAt": 1794227541520
+      },
+      {
+        "id": "a22879209e8e0506",
+        "initial": true,
+        "rating": "FORGOT",
+        "box": 0,
+        "nextDueAt": 1794313942552,
+        "reviewedAt": 1794227542552
+      },
+      {
+        "id": "2219291add402728",
+        "initial": true,
+        "rating": "HARD",
+        "box": 0,
+        "nextDueAt": 1794313943460,
+        "reviewedAt": 1794227543460
+      },
+      {
+        "id": "3dbaed5c338b2b1c",
+        "initial": true,
+        "rating": "REMEMBERED",
+        "box": 1,
+        "nextDueAt": 1794313944426,
+        "reviewedAt": 1794227544426
+      },
+      {
+        "id": "a22879209e8e0506",
+        "initial": false,
+        "rating": "REMEMBERED",
+        "box": 1,
+        "nextDueAt": 1794313945254,
+        "reviewedAt": 1794227545254
+      },
+      {
+        "id": "84d7ff576a0352d7",
+        "initial": true,
+        "rating": "FORGOT",
+        "box": 0,
+        "nextDueAt": 1794313946149,
+        "reviewedAt": 1794227546149
+      },
+      {
+        "id": "be14412e62bb09fa",
+        "initial": true,
+        "rating": "HARD",
+        "box": 0,
+        "nextDueAt": 1794313947085,
+        "reviewedAt": 1794227547085
+      },
+      {
+        "id": "7fe46ad7d9da1204",
+        "initial": true,
+        "rating": "REMEMBERED",
+        "box": 1,
+        "nextDueAt": 1794313948123,
+        "reviewedAt": 1794227548123
+      },
+      {
+        "id": "84d7ff576a0352d7",
+        "initial": false,
+        "rating": "REMEMBERED",
+        "box": 1,
+        "nextDueAt": 1794313949111,
+        "reviewedAt": 1794227549111
+      },
+      {
+        "id": "9e84e8ebe9e2a529",
+        "initial": true,
+        "rating": "FORGOT",
+        "box": 0,
+        "nextDueAt": 1794313949951,
+        "reviewedAt": 1794227549951
+      },
+      {
+        "id": "9e84e8ebe9e2a529",
+        "initial": false,
+        "rating": "REMEMBERED",
+        "box": 1,
+        "nextDueAt": 1794313950822,
+        "reviewedAt": 1794227550822
+      }
+    ]
+  },
+  "quizOracle": {
+    "correct": 1,
+    "score": 10,
+    "questions": [
+      {
+        "id": "1816f4bcf0432990",
+        "correctMeaningSha256": "c093df6d3666d126eddba477f1eb151216311b09e1272f25fb5b4aceed87a8b7",
+        "chosenMeaningSha256": "d6c7f2ba7dcce350287c72cda62fa36d944e0bb093b930f50cf350f98ea82918",
+        "correct": false
+      },
+      {
+        "id": "2219291add402728",
+        "correctMeaningSha256": "50f5ff9cf9e065a637916b3fd974690b52b07ada28717e3cf9dfab6093e22029",
+        "chosenMeaningSha256": "f060047f03401025482e719bf9b7fbe06b39151f5189a91abebf34b98af62e46",
+        "correct": false
+      },
+      {
+        "id": "633188448bb2750d",
+        "correctMeaningSha256": "7e5295943c320a68a8c0673068530ab6713329c7d27005e56e210fe0e5b0bb94",
+        "chosenMeaningSha256": "6a1210d51273363fbc26f68003cb53fdee043ae4674edf66fa8762955035f1eb",
+        "correct": false
+      },
+      {
+        "id": "ecf6c310590530e8",
+        "correctMeaningSha256": "cbf6a1ea7d336c8efeca3d75648bf64c7aafe64e81c827524522681d0dea43c7",
+        "chosenMeaningSha256": "d602c74b86c96b8e2b64b0500d96506e4bad4e9300e5af7137a4f11724565341",
+        "correct": false
+      },
+      {
+        "id": "8c46632cf2e617d2",
+        "correctMeaningSha256": "5dc8bd4d03f90f5849a799d90b00eb4721b2bb4ab793b2b7ccf09e07fe45efc6",
+        "chosenMeaningSha256": "bd3f9592411123d8d8941e1a4b89754493a6b4697abb3f0eba78a00494306d91",
+        "correct": false
+      },
+      {
+        "id": "e812fbe52f19fdad",
+        "correctMeaningSha256": "d5a0d56d64509ba7b1e4fee27176439a5fe0fc38977a7ffe026b73f02fcf6253",
+        "chosenMeaningSha256": "e4accbd876b5847ee8cb5424cb2ba7b43d33044200d163693f5ad002ed66af42",
+        "correct": false
+      },
+      {
+        "id": "becb25b23f9ee952",
+        "correctMeaningSha256": "a98dcd29553976256cb4f3249ad7962acdce2207e0f481bb2da117f0c20c5133",
+        "chosenMeaningSha256": "a98dcd29553976256cb4f3249ad7962acdce2207e0f481bb2da117f0c20c5133",
+        "correct": true
+      },
+      {
+        "id": "08e316e478a1cb48",
+        "correctMeaningSha256": "b8216256c432b8cea6d7583b95b076190d489618fc9c79ffc04dd01e842f3526",
+        "chosenMeaningSha256": "37816a2c39161a2e7efde2da34e8d332a5ca1bd897f494d7e5f7c2cd77fb13a1",
+        "correct": false
+      },
+      {
+        "id": "7e09d3489f1b4832",
+        "correctMeaningSha256": "6f3da0a816c92830a46ff5b81a791cd29ea149784dafe5d2811ea7c49b430b5c",
+        "chosenMeaningSha256": "f65e89bb1bbecf5502223930b0b18930324219d6e9b05db6b8c42022b0d1e087",
+        "correct": false
+      },
+      {
+        "id": "cdb9f58f4061c249",
+        "correctMeaningSha256": "fde153f84d613b014f3427b1ab1da4ff39d82102a5bc0d7167ce520fa97a1375",
+        "chosenMeaningSha256": "5dc8bd4d03f90f5849a799d90b00eb4721b2bb4ab793b2b7ccf09e07fe45efc6",
+        "correct": false
+      }
+    ]
+  },
+  "expectedMeta": {
+    "snapshotSha256": "45d8c2cb1ffc0c624e15f3115a103e3e84dd026318bfee3d727e061f07f50871",
+    "reviewCount": 14,
+    "quizCount": 1
+  }
+}

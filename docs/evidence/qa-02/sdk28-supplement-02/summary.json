@@ -1,0 +1,54 @@
+{
+  "runId": "sdk28-supplement-02",
+  "environment": {
+    "testedRevision": "440f77643063310abe88067ba9d49198571efe67+sources-sha256:9c0cc98a7070e2e1d62d74a9bbb5a2f7db96d8f040f9d2283543bef54cb497fa",
+    "package": "com.vocamind.app.flash03validation",
+    "apks": {
+      "app\\build\\outputs\\apk\\debug\\app-debug.apk": "0ad59a78051fff3721412e50ae4606d6d59539caf0f0f923d1050b793b257a13",
+      "app\\build\\outputs\\apk\\androidTest\\debug\\app-debug-androidTest.apk": "20c63c167efd1d311413ac60129a80ad517ad342ff29cd73ccbd3ff964bb94bd"
+    },
+    "utc": "2026-11-09T12:43:06.319033+00:00",
+    "inventory": {
+      "ro.build.fingerprint": "Android/sdk_phone_x86_64/generic_x86_64:9/PSR1.180720.012/4923214:userdebug/test-keys",
+      "ro.build.version.sdk": "28",
+      "ro.product.model": "Android SDK built for x86_64"
+    },
+    "scope": "EMULATOR supplemental only; synthetic four-word fixture; no acceptance/performance substitution"
+  },
+  "result": {
+    "testedRevision": "440f77643063310abe88067ba9d49198571efe67+sources-sha256:9c0cc98a7070e2e1d62d74a9bbb5a2f7db96d8f040f9d2283543bef54cb497fa",
+    "runs": [
+      {
+        "run": "sqlite-contracts",
+        "expectedTests": 39,
+        "accepted": true
+      },
+      {
+        "run": "flash03-triple-tap",
+        "expectedTests": 1,
+        "accepted": true
+      }
+    ]
+  },
+  "rawEvidence": "build\\qa02\\sdk28-supplement-02",
+  "rawManifestSha256": "421c61bfb23c76276221ff98f1c8f5a00153eb502c703cd6bc209bd65e857fe1",
+  "networkRestore": {
+    "accepted": true,
+    "originalFlags": {
+      "airplane_mode_on": "0",
+      "wifi_on": "1",
+      "mobile_data": "1"
+    },
+    "observedFlags": {
+      "airplane_mode_on": "0",
+      "wifi_on": "1",
+      "mobile_data": "1"
+    },
+    "errors": []
+  },
+  "video": [],
+  "tapGapsMs": [
+    152,
+    152
+  ]
+}

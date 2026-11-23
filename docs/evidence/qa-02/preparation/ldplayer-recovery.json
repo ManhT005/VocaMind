@@ -1,0 +1,13 @@
+{
+  "device": "LDPlayer (emulator)",
+  "observedUtc": "2026-11-09T12:56:52.223888+00:00",
+  "flags": {
+    "airplane_mode_on": "0",
+    "wifi_on": "1",
+    "mobile_data": "0"
+  },
+  "wifiEnabled": true,
+  "restored": true,
+  "recovery": "LDConsole reboot after svc wifi disable lost ADB; reconnect; restore airplane=0,wifi=1,data=0; no app data cleared during recovery",
+  "scope": "Environment setup failed before Activity; NOT RUN, not an application failure"
+}
