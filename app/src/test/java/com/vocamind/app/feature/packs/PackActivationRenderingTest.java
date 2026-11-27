@@ -177,8 +177,8 @@ public class PackActivationRenderingTest {
         assertEquals(View.VISIBLE, list.getVisibility());
         assertEquals(0, ((androidx.recyclerview.widget.RecyclerView) list).getAdapter().getItemCount());
         assertEquals(View.VISIBLE, root.findViewById(R.id.retry).getVisibility());
-        View header = ((android.view.ViewGroup) root).getChildAt(0);
-        assertTrue("error feedback must expand back into view", header.getTop() >= root.getPaddingTop());
+        View header = root.findViewById(R.id.pack_header);
+        assertEquals("error feedback must expand back into view", 0, header.getTop());
         int before = header.getTop();
         long time = android.os.SystemClock.uptimeMillis();
         int[] actions = {android.view.MotionEvent.ACTION_DOWN, android.view.MotionEvent.ACTION_MOVE,

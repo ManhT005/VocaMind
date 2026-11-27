@@ -47,7 +47,7 @@ public final class SearchCatalogQaInstrumentedTest {
                 search.setQuery("notpresentsearchintegration", false);
             });
             await(s, a -> ((TextView)a.findViewById(R.id.search_message)).getText().toString()
-                    .equals(a.getString(R.string.search_no_match)));
+                    .equals(a.getString(R.string.ui_search_empty)));
             await(s, a -> {
                 var insets = androidx.core.view.ViewCompat.getRootWindowInsets(a.findViewById(R.id.search));
                 return insets != null && insets.isVisible(androidx.core.view.WindowInsetsCompat.Type.ime());
@@ -65,7 +65,7 @@ public final class SearchCatalogQaInstrumentedTest {
                 assertEquals(View.GONE, a.findViewById(R.id.retry).getVisibility());
                 a.findViewById(R.id.reset).performClick();
                 assertEquals("", ((SearchView)a.findViewById(R.id.search)).getQuery().toString());
-                assertEquals(a.getString(R.string.search_no_input),
+                assertEquals(a.getString(R.string.ui_search_start),
                         ((TextView)a.findViewById(R.id.search_message)).getText().toString());
             });
             screenshot("04-search-state-controls");
@@ -120,7 +120,7 @@ public final class SearchCatalogQaInstrumentedTest {
                 await(s,a -> hasWord(a,word.stableId));
             }
             s.onActivity(a -> ((SearchView)a.findViewById(R.id.search)).setQuery("notpresentsearchintegration",false));
-            await(s,a -> ((TextView)a.findViewById(R.id.search_message)).getText().toString().equals(a.getString(R.string.search_no_match)));
+            await(s,a -> ((TextView)a.findViewById(R.id.search_message)).getText().toString().equals(a.getString(R.string.ui_search_empty)));
             s.onActivity(a -> {
                 SearchView search=a.findViewById(R.id.search);
                 search.setQuery(word.lemma,false); search.setQuery("notpresentsearchintegration",false); search.setQuery(word.lemma,false);
@@ -128,7 +128,7 @@ public final class SearchCatalogQaInstrumentedTest {
             });
             SystemClock.sleep(900);
             s.onActivity(a -> {
-                assertEquals(a.getString(R.string.search_no_input),((TextView)a.findViewById(R.id.search_message)).getText().toString());
+                assertEquals(a.getString(R.string.ui_search_start),((TextView)a.findViewById(R.id.search_message)).getText().toString());
                 assertEquals(View.GONE,a.findViewById(R.id.results).getVisibility());
             });
             s.onActivity(a -> ((SearchView)a.findViewById(R.id.search)).setQuery(word.lemma,false));
@@ -152,15 +152,15 @@ public final class SearchCatalogQaInstrumentedTest {
                 assertEquals(word.meaningVi,((TextView)a.findViewById(R.id.detail_meaning)).getText().toString());
                 assertEquals(word.exampleEn,((TextView)a.findViewById(R.id.detail_example_en)).getText().toString());
                 assertEquals(word.exampleVi,((TextView)a.findViewById(R.id.detail_example_vi)).getText().toString());
-                initiallySaved[0]=((TextView)a.findViewById(R.id.detail_save)).getText().toString().equals(a.getString(R.string.detail_unsave));
+                initiallySaved[0]=a.findViewById(R.id.detail_save).getContentDescription().toString().equals(a.getString(R.string.detail_unsave));
                 a.findViewById(R.id.detail_save).performClick();
             });
-            await(s,a -> a.findViewById(R.id.detail_save).isEnabled() && ((TextView)a.findViewById(R.id.detail_save)).getText().toString().equals(a.getString(initiallySaved[0]?R.string.detail_save:R.string.detail_unsave)));
+            await(s,a -> a.findViewById(R.id.detail_save).isEnabled() && a.findViewById(R.id.detail_save).getContentDescription().toString().equals(a.getString(initiallySaved[0]?R.string.detail_save:R.string.detail_unsave)));
             screenshot("02-full-detail-save");
             s.recreate();
             await(s,a -> a.findViewById(R.id.detail_save)!=null && a.findViewById(R.id.detail_save).isEnabled());
             s.onActivity(a -> {
-                assertEquals(a.getString(initiallySaved[0]?R.string.detail_save:R.string.detail_unsave),((TextView)a.findViewById(R.id.detail_save)).getText().toString());
+                assertEquals(a.getString(initiallySaved[0]?R.string.detail_save:R.string.detail_unsave),a.findViewById(R.id.detail_save).getContentDescription().toString());
                 a.findViewById(R.id.back).performClick();
             });
             await(s,a -> a.findViewById(R.id.search)!=null);
@@ -171,7 +171,7 @@ public final class SearchCatalogQaInstrumentedTest {
             });
             await(s,a -> a.findViewById(R.id.detail_save)!=null && a.findViewById(R.id.detail_save).isEnabled());
             s.onActivity(a -> a.findViewById(R.id.detail_save).performClick());
-            await(s,a -> a.findViewById(R.id.detail_save).isEnabled() && ((TextView)a.findViewById(R.id.detail_save)).getText().toString().equals(a.getString(initiallySaved[0]?R.string.detail_unsave:R.string.detail_save)));
+            await(s,a -> a.findViewById(R.id.detail_save).isEnabled() && a.findViewById(R.id.detail_save).getContentDescription().toString().equals(a.getString(initiallySaved[0]?R.string.detail_unsave:R.string.detail_save)));
             screenshot("03-restored-saved-flag");
         }
     }

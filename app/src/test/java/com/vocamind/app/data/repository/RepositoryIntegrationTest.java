@@ -619,8 +619,8 @@ public class RepositoryIntegrationTest {
         assertEquals(0, user.userDao().learnedCount(0, 3 * DAY));
         var aggregated = new com.vocamind.app.data.user.RoomProgressRepository(user.userDao()).readProgress();
         assertTrue(aggregated.isSuccess());
-        assertEquals(1, aggregated.getSnapshot().getSummary().getTotalLearned());
-        assertEquals(1, aggregated.getSnapshot().getSummary().getBoxCount(0));
+        assertEquals(0, aggregated.getSnapshot().getSummary().getTotalLearned());
+        assertEquals(0, aggregated.getSnapshot().getSummary().getBoxCount(0));
         assertTrue(user.userDao().reviews().isEmpty());
         assertTrue(user.userDao().packs().isEmpty()); // Save does not activate any pack
         assertTrue(study.dueItems(DAY, 50).get().isEmpty());

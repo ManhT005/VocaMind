@@ -316,7 +316,10 @@ public abstract class CatalogUpgradeContract {
             assertFalse(new JSONObject(selected.text("manifest.json")).getBoolean("releaseAuthorized"));
             var db=selected.openDatabase(qa);try{assertEquals(150,db.catalogDao().allVocabulary().size());}finally{db.close();}
             File blocked=new File(root,"non-qa");
-            var production=new CatalogStartupCoordinator(context,blocked,userdata,legacy,step -> {});
+            var nonDemo = new android.content.ContextWrapper(context) {
+                @Override public String getPackageName() { return "com.vocamind.app.catalogfixtest"; }
+            };
+            var production=new CatalogStartupCoordinator(nonDemo,blocked,userdata,legacy,step -> {});
             assertReason(assertThrows(CatalogUpgradeException.class,()->production.prepare(source(candidate))),"not authorized");
             assertFalse(userdata.exists());return null;
         });

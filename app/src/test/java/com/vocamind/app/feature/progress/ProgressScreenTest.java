@@ -89,7 +89,7 @@ public class ProgressScreenTest {
    int id=0;int[] counts={2,1,3,2,1,3};
    for(int box=0;box<6;box++) for(int n=0;n<counts[box];n++) {
     UserWordProgress row=new UserWordProgress();row.vocabularyId=String.format(Locale.ROOT,"%016x",id++);
-    row.box=box;row.dueAt=0;row.isSaved=true;row.learnedAt=null;db.userDao().saveProgress(row);
+    row.box=box;row.dueAt=0;row.isSaved=true;row.learnedAt=1000L;db.userDao().saveProgress(row);
    }
    for(int i=0;i<12;i++) {
     QuizAttempt q=new QuizAttempt();q.completedAt=1000;q.questionCount=i==0?6:10;

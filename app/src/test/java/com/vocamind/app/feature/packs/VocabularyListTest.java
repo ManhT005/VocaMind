@@ -34,7 +34,7 @@ public class VocabularyListTest {
         assertEquals("/a/", holder.binding.wordIpa.getText().toString());
         assertEquals("Học lại", holder.binding.wordStatus.getText().toString());
         adapter.onBindViewHolder(holder, 1);
-        assertEquals("Chưa có phiên âm", holder.binding.wordIpa.getText().toString());
+        assertEquals(android.view.View.GONE, holder.binding.wordIpa.getVisibility());
         assertEquals("Chưa có lượt ôn", holder.binding.wordStatus.getText().toString());
         holder.itemView.performClick();
         assertEquals(List.of("0000000000000001"), clicked);
@@ -109,10 +109,10 @@ public class VocabularyListTest {
         host = (androidx.navigation.fragment.NavHostFragment) activity.getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
         nav = host.getNavController();
         assertEquals(expected, nav.getCurrentBackStackEntry().getArguments().getString("vocabularyId"));
-        for (int n=0; n<200 && !((android.widget.TextView)activity.findViewById(R.id.detail_save)).getText().toString().equals(activity.getString(R.string.detail_unsave)); n++) {
+        for (int n=0; n<200 && !activity.findViewById(R.id.detail_save).getContentDescription().toString().equals(activity.getString(R.string.detail_unsave)); n++) {
             Thread.sleep(20); Shadows.shadowOf(Looper.getMainLooper()).idle();
         }
-        assertEquals(activity.getString(R.string.detail_unsave), ((android.widget.TextView)activity.findViewById(R.id.detail_save)).getText().toString());
+        assertEquals(activity.getString(R.string.detail_unsave), activity.findViewById(R.id.detail_save).getContentDescription().toString());
         java.util.concurrent.atomic.AtomicReference<Boolean> persistedSaved = new java.util.concurrent.atomic.AtomicReference<>();
         java.util.concurrent.atomic.AtomicReference<Throwable> verificationFailure = new java.util.concurrent.atomic.AtomicReference<>();
         Thread verifySaved = new Thread(() -> {
@@ -136,15 +136,15 @@ public class VocabularyListTest {
         assertEquals(pack.get(), nav.getCurrentBackStackEntry().getArguments().getString("packId"));
         nav.navigate(R.id.vocabularyDetailFragment, VocabularyDetailFragment.arguments(pack.get(), expected));
         host.getChildFragmentManager().executePendingTransactions();
-        for (int n=0; n<200 && !((android.widget.TextView)activity.findViewById(R.id.detail_save)).getText().toString().equals(activity.getString(R.string.detail_unsave)); n++) {
+        for (int n=0; n<200 && !activity.findViewById(R.id.detail_save).getContentDescription().toString().equals(activity.getString(R.string.detail_unsave)); n++) {
             Thread.sleep(20); Shadows.shadowOf(Looper.getMainLooper()).idle();
         }
-        assertEquals(activity.getString(R.string.detail_unsave), ((android.widget.TextView)activity.findViewById(R.id.detail_save)).getText().toString());
+        assertEquals(activity.getString(R.string.detail_unsave), activity.findViewById(R.id.detail_save).getContentDescription().toString());
         activity.findViewById(R.id.detail_save).performClick();
-        for (int n=0; n<200 && !((android.widget.TextView)activity.findViewById(R.id.detail_save)).getText().toString().equals(activity.getString(R.string.detail_save)); n++) {
+        for (int n=0; n<200 && !activity.findViewById(R.id.detail_save).getContentDescription().toString().equals(activity.getString(R.string.detail_save)); n++) {
             Thread.sleep(20); Shadows.shadowOf(Looper.getMainLooper()).idle();
         }
-        assertEquals(activity.getString(R.string.detail_save), ((android.widget.TextView)activity.findViewById(R.id.detail_save)).getText().toString());
+        assertEquals(activity.getString(R.string.detail_save), activity.findViewById(R.id.detail_save).getContentDescription().toString());
         assertTrue(nav.popBackStack()); host.getChildFragmentManager().executePendingTransactions();
         nav.navigate(R.id.vocabularyDetailFragment, VocabularyDetailFragment.arguments(pack.get(), "unknown-id"));
         host.getChildFragmentManager().executePendingTransactions();

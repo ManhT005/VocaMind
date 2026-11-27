@@ -37,11 +37,11 @@ public class VocabularyDetailTest {
             assertEquals(detail.word.exampleEn, text(view, R.id.detail_example_en));
             assertEquals(detail.word.exampleVi, text(view, R.id.detail_example_vi));
             assertEquals(ipa == null || ipa.trim().isEmpty() ? "Chưa có phiên âm" : ipa, text(view, R.id.detail_ipa));
-            assertEquals("Lưu", text(view, R.id.detail_save));
+            assertEquals(context.getString(R.string.detail_save), view.findViewById(R.id.detail_save).getContentDescription());
         }
         VocabularyDetailFragment.render(view, new VocabularyDetailViewModel.State(detail("second", null, true), false, false, null));
         assertEquals("Nghĩa second", text(view, R.id.detail_meaning));
-        assertEquals("Bỏ lưu", text(view, R.id.detail_save));
+        assertEquals(context.getString(R.string.detail_unsave), view.findViewById(R.id.detail_save).getContentDescription());
         VocabularyDetailFragment.render(view, new VocabularyDetailViewModel.State(detail("second", null, true), false, true, null));
         assertFalse(view.findViewById(R.id.detail_save).isEnabled());
         VocabularyDetailFragment.render(view, new VocabularyDetailViewModel.State(null, false, false, RepoError.NOT_FOUND));
@@ -123,7 +123,7 @@ public class VocabularyDetailTest {
         ScrollView scroll = view.findViewById(R.id.detail_scroll);
         assertTrue(scroll.getChildAt(0).getHeight() > scroll.getHeight());
         assertTrue(view.findViewById(R.id.detail_save).getBottom() <= height);
-        assertTrue(scroll.getBottom() <= ((View)view.findViewById(R.id.detail_save).getParent()).getTop());
+        assertTrue(scroll.getTop() >= ((View)view.findViewById(R.id.detail_save).getParent()).getBottom());
         assertTrue(view.findViewById(R.id.back).getMeasuredHeight() >= 48 * context.getResources().getDisplayMetrics().density);
     }
 
@@ -145,7 +145,7 @@ public class VocabularyDetailTest {
                 int height = Math.round(780 * context.getResources().getDisplayMetrics().density);
                 view.measure(View.MeasureSpec.makeMeasureSpec(width, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(height, View.MeasureSpec.EXACTLY));
                 view.layout(0, 0, width, height);
-                assertEquals(failed ? View.VISIBLE : View.GONE, view.findViewById(R.id.route_message).getVisibility());
+                assertEquals(failed ? View.VISIBLE : View.GONE, view.findViewById(R.id.route_status).getVisibility());
                 assertEquals(failed ? View.VISIBLE : View.GONE, view.findViewById(R.id.detail_retry).getVisibility());
                 assertEquals(!failed, view.findViewById(R.id.detail_save).isEnabled());
                 android.graphics.Bitmap bitmap = android.graphics.Bitmap.createBitmap(width, height, android.graphics.Bitmap.Config.ARGB_8888);

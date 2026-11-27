@@ -125,20 +125,20 @@ public class DiscoveryJourneyInstrumentedTest extends DiscoveryHarness {
         // Explicit, known unsaved starting state while retaining existing review history.
         user.userDao().setSaved(word.id,false); String before=catalogSnapshot(); start(); openPack();
         row(R.id.words,0,word.meaningVi,true); detail(word,pack());
-        await("unsaved", a -> text(a,R.id.detail_save,a.getString(R.string.detail_save)));
+        await("unsaved", a -> a.getString(R.string.detail_save).contentEquals(a.findViewById(R.id.detail_save).getContentDescription()));
         tap(R.id.detail_save);
-        await("saved", a -> text(a,R.id.detail_save,a.getString(R.string.detail_unsave)) && a.findViewById(R.id.detail_save).isEnabled());
+        await("saved", a -> a.getString(R.string.detail_unsave).contentEquals(a.findViewById(R.id.detail_save).getContentDescription()) && a.findViewById(R.id.detail_save).isEnabled());
         preserved(user.userDao().progress(word.id),true);
         tap(R.id.back); listCount(R.id.words,words().size()); row(R.id.words,0,word.meaningVi,true); detail(word,pack());
-        scenario.onActivity(a -> assertTrue(text(a,R.id.detail_save,a.getString(R.string.detail_unsave))));
+        scenario.onActivity(a -> assertTrue(a.getString(R.string.detail_unsave).contentEquals(a.findViewById(R.id.detail_save).getContentDescription())));
         reopen(); openPack(); row(R.id.words,0,word.meaningVi,true); detail(word,pack());
-        scenario.onActivity(a -> assertTrue(text(a,R.id.detail_save,a.getString(R.string.detail_unsave))));
+        scenario.onActivity(a -> assertTrue(a.getString(R.string.detail_unsave).contentEquals(a.findViewById(R.id.detail_save).getContentDescription())));
         tap(R.id.detail_save);
-        await("unsaved persisted", a -> text(a,R.id.detail_save,a.getString(R.string.detail_save)) && a.findViewById(R.id.detail_save).isEnabled());
+        await("unsaved persisted", a -> a.getString(R.string.detail_save).contentEquals(a.findViewById(R.id.detail_save).getContentDescription()) && a.findViewById(R.id.detail_save).isEnabled());
         preserved(user.userDao().progress(word.id),false); assertEquals(before,catalogSnapshot());
     }
     @Test public void offlineEnglishVietnameseRealFtsVisibleResultDetailResetNoMatch() throws Exception {
-        String before=catalogSnapshot(); start(); tap(R.id.vocabularyFragment); message(R.string.search_no_input);
+        String before=catalogSnapshot(); start(); tap(R.id.vocabularyFragment); message(R.string.ui_search_start);
         var word=oracle.catalogDao().vocabulary("5aecfbf5b9a23aee");
         for(String q : List.of("BANK","NGÂN HÀNG")) {
             query(q); message(R.string.search_content); listCount(R.id.results,1);
@@ -146,13 +146,13 @@ public class DiscoveryJourneyInstrumentedTest extends DiscoveryHarness {
             tap(R.id.back); message(R.string.search_content);
         }
         scenario.recreate(); message(R.string.search_content);
-        query("zzzznonmatchingui02"); message(R.string.search_no_match); assertHidden(R.id.results); assertHidden(R.id.retry);
-        query("   "); message(R.string.search_no_input); assertHidden(R.id.results); assertHidden(R.id.loading);
+        query("zzzznonmatchingui02"); message(R.string.ui_search_empty); assertHidden(R.id.results); assertHidden(R.id.retry);
+        query("   "); message(R.string.ui_search_start); assertHidden(R.id.results); assertHidden(R.id.loading);
         query("book"); message(R.string.search_content); listCount(R.id.results,2);
         // Same lemma, distinct sense: real click must route the verb stableId.
         var verb=oracle.catalogDao().vocabulary("d17314a48504e2ac");
         row(R.id.results,1,verb.meaningVi,true); detail(verb,null); tap(R.id.back); message(R.string.search_content);
-        tap(R.id.reset); message(R.string.search_no_input); assertHidden(R.id.results); assertHidden(R.id.loading);
+        tap(R.id.reset); message(R.string.ui_search_start); assertHidden(R.id.results); assertHidden(R.id.loading);
         assertTrue(user.userDao().allProgress().isEmpty()); assertTrue(user.userDao().packs().isEmpty());
         assertEquals(before,catalogSnapshot());
     }
@@ -160,7 +160,7 @@ public class DiscoveryJourneyInstrumentedTest extends DiscoveryHarness {
     @Test public void failureArtifactProbe() throws Exception {
         org.junit.Assume.assumeTrue("Only external harness verification enables this probe",
                 "true".equals(androidx.test.platform.app.InstrumentationRegistry.getArguments().getString("ui02FailureProbe")));
-        start(); tap(R.id.vocabularyFragment); message(R.string.search_no_input);
+        start(); tap(R.id.vocabularyFragment); message(R.string.ui_search_start);
         fail("UI02_EXPECTED_ARTIFACT_PROBE");
     }
 }

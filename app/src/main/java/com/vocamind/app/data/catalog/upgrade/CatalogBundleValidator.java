@@ -14,9 +14,9 @@ final class CatalogBundleValidator {
         return applicationId.endsWith(".qa")
                 || ("data09".equals(com.vocamind.app.BuildConfig.BUILD_TYPE)
                     && applicationId.equals("com.vocamind.app.data09validation"))
+                || (com.vocamind.app.BuildConfig.DEMO_CATALOG && applicationId.equals("com.vocamind.app"))
                 || (com.vocamind.app.BuildConfig.DEBUG
-                && (applicationId.equals("com.vocamind.app")
-                || applicationId.equals("com.vocamind.app.quiz03validation")
+                && (applicationId.equals("com.vocamind.app.quiz03validation")
                 || applicationId.equals("com.vocamind.app.progress02validation")));
     }
 

@@ -91,7 +91,8 @@ public abstract class QuizScreenContract {
             open(scenario);
             scenario.onActivity(a -> {
                 assertFalse(a.findViewById(R.id.quiz_next).isEnabled());
-                assertEquals("noun\ncontext 0",((TextView)a.findViewById(R.id.quiz_context)).getText().toString());
+                assertEquals("noun", ((TextView)a.findViewById(R.id.quiz_pos)).getText().toString());
+                assertEquals("context 0",((TextView)a.findViewById(R.id.quiz_context)).getText().toString());
                 a.findViewById(R.id.quiz_option_1).performClick();
                 assertFalse(a.findViewById(R.id.quiz_option_2).isEnabled());
                 String correctLabel = a.getString(R.string.ui_quiz_lettered_option, 'B', "one");
@@ -112,14 +113,14 @@ public abstract class QuizScreenContract {
                 });
             }
             scenario.onActivity(a -> {
-                assertEquals(View.GONE,a.findViewById(R.id.quiz_next).getVisibility());
-                assertTrue(((TextView)a.findViewById(R.id.quiz_status)).getText().toString().contains("75%"));
+                assertEquals(View.GONE,a.findViewById(R.id.quiz_question).getVisibility());
+                assertTrue(((TextView)a.findViewById(R.id.quiz_score)).getText().toString().contains("75%"));
             });
             scenario.recreate(); assertEquals(1,writes.get());
             scenario.onActivity(a -> a.getOnBackPressedDispatcher().onBackPressed());
             scenario.onActivity(a -> assertNotNull(a.findViewById(R.id.open_quiz)));
             open(scenario);
-            scenario.onActivity(a -> assertTrue(((TextView)a.findViewById(R.id.quiz_status)).getText().toString().contains("75%")));
+            scenario.onActivity(a -> assertTrue(((TextView)a.findViewById(R.id.quiz_score)).getText().toString().contains("75%")));
             assertEquals(1,writes.get());
         }
     }

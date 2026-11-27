@@ -108,6 +108,7 @@ android {
     compileSdk 35
 
     defaultConfig {
+        buildConfigField 'boolean', 'DEMO_CATALOG', 'false'
         if (firebaseAuthEnabled) {
             resValue 'string', 'project_id', authProjectId
             resValue 'string', 'google_app_id', authAppId
@@ -206,6 +207,7 @@ android {
     // Opt-in device validation uses separate app storage; never replace a real user's install.
     buildTypes {
         debug {
+            buildConfigField 'boolean', 'DEMO_CATALOG', demoDebug.toString()
             if (data08DeviceGeneration != null) {
                 applicationIdSuffix '.data08validation'
             } else if (quiz03DeviceIsolation || progress02DeviceIsolation) {
