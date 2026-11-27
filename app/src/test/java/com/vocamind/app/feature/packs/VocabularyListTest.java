@@ -45,7 +45,7 @@ public class VocabularyListTest {
             next.submitList(List.of(item("id", " ", new WordProgress("id", box, 0, 1L, 1L, 0, false, 1, false))));
             next.onBindViewHolder(holder, 0);
             assertEquals("Cấp ôn " + box, holder.binding.wordStatus.getText().toString());
-            assertEquals("Chưa có phiên âm", holder.binding.wordIpa.getText().toString());
+            assertEquals(android.view.View.GONE, holder.binding.wordIpa.getVisibility());
         }
         PackWordAdapter refreshed = new PackWordAdapter(clicked::add);
         refreshed.submitList(List.of(b, a));
