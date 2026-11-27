@@ -34,8 +34,8 @@ public class QuizPolicyCompositionTest {
                     assertFalse(detail.execute(pack.id, word.stableId).get().saved);
                     // First-save from empty userdata through real production composition.
                     assertTrue(save.execute(pack.id, word.stableId, true).get());
-                    assertEquals(1, repositories.progress().readProgress().getSnapshot().getSummary().getTotalLearned());
-                    assertEquals(1, repositories.progressUseCase().execute().getSnapshot().getSummary().getBoxCount(0));
+                    assertEquals(0, repositories.progress().readProgress().getSnapshot().getSummary().getTotalLearned());
+                    assertEquals(0, repositories.progressUseCase().execute().getSnapshot().getSummary().getBoxCount(0));
                     assertNull(repositories.study().getProgress(word.stableId).get().get().getLearnedAtEpochMillis());
                     assertEquals(0, repositories.study().getProgress(word.stableId).get().get().getReviewCount());
                     repositories.recordReview(java.time.Clock.fixed(java.time.Instant.ofEpochMilli(1000L), java.time.ZoneOffset.UTC),

@@ -160,7 +160,7 @@ public class Ui01SmokeInstrumentedTest {
                 onView(withId(R.id.detail_save)).perform(click());
                 await(() -> {
                     boolean[] ready = {false};
-                    s.onActivity(a -> ready[0] = ((TextView) a.findViewById(R.id.detail_save)).getText().toString().equals(a.getString(R.string.detail_unsave)));
+                    s.onActivity(a -> ready[0] = a.findViewById(R.id.detail_save).getContentDescription().toString().equals(a.getString(R.string.detail_unsave)));
                     return ready[0];
                 });
                 navigate(s, R.id.progressFragment);

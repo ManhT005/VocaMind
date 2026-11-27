@@ -85,7 +85,9 @@ public class TodayRenderingTest {
         study.fresh.add(word("n1"));
         study.fresh.add(word("n2"));
         View view = show(new TodayFragment());
-        assertEquals("Cần ôn: 1 từ · Từ mới: 2 từ", ((TextView) view.findViewById(R.id.summary)).getText().toString());
+        assertEquals(View.VISIBLE, vis(view, R.id.summary));
+        assertEquals("1", ((TextView) view.findViewById(R.id.due_count)).getText().toString());
+        assertEquals("2", ((TextView) view.findViewById(R.id.new_count)).getText().toString());
         assertEquals(View.VISIBLE, vis(view, R.id.start));
         assertEquals(View.GONE, vis(view, R.id.explore));
         assertEquals(View.GONE, vis(view, R.id.done_quiz));

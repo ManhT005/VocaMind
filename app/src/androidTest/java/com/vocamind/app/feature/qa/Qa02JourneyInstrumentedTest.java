@@ -71,7 +71,7 @@ public final class Qa02JourneyInstrumentedTest extends Qa02Harness {
                     ? context.getString(R.string.word_ipa_missing) : word.ipa)));
             tapScroll(R.id.back);
         }
-        query("qa02zzzznoresult"); message(R.string.search_no_match);
+        query("qa02zzzznoresult"); message(R.string.ui_search_empty);
         tap(R.id.reset);
         var savedWord = oracle.catalogDao().words(packs.get(3).id).get(0);
         query(savedWord.lemma);
@@ -80,10 +80,10 @@ public final class Qa02JourneyInstrumentedTest extends Qa02Harness {
         for (int i = 0; i < matching.size(); i++) if (matching.get(i).id.equals(savedWord.id)) savedIndex = i;
         assertTrue(savedIndex >= 0);
         row(R.id.results, savedIndex, savedWord.meaningVi, true);
-        await("save detail", a -> text(a, R.id.detail_save, a.getString(R.string.detail_save)) && a.findViewById(R.id.detail_save).isEnabled());
+        await("save detail", a -> a.getString(R.string.detail_save).contentEquals(a.findViewById(R.id.detail_save).getContentDescription()) && a.findViewById(R.id.detail_save).isEnabled());
         for (boolean save : new boolean[]{true, false, true}) {
             tapScroll(R.id.detail_save);
-            await("save committed", a -> text(a, R.id.detail_save, a.getString(save ? R.string.detail_unsave : R.string.detail_save)) && a.findViewById(R.id.detail_save).isEnabled());
+            await("save committed", a -> a.getString(save ? R.string.detail_unsave : R.string.detail_save).contentEquals(a.findViewById(R.id.detail_save).getContentDescription()) && a.findViewById(R.id.detail_save).isEnabled());
             assertEquals(save, user.userDao().progress(savedWord.id).isSaved);
         }
         assertEquals(0, user.userDao().reviews().size());

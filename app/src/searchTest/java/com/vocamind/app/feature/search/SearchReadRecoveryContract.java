@@ -74,7 +74,7 @@ public abstract class SearchReadRecoveryContract {
             scenario.onActivity(a -> ((SearchView)a.findViewById(R.id.search)).setQuery(queries[1], false));
             await(scenario, a -> a.findViewById(R.id.retry).getVisibility() == View.VISIBLE);
             scenario.onActivity(a -> {
-                assertEquals(a.getString(R.string.search_error), ((TextView)a.findViewById(R.id.search_message)).getText().toString());
+                assertEquals(a.getString(R.string.ui_search_error), ((TextView)a.findViewById(R.id.search_message)).getText().toString());
                 assertEquals(View.GONE, a.findViewById(R.id.results).getVisibility());
             });
             worker.submit(() -> database.set(CatalogDatabase.open(context, name))).get(15, TimeUnit.SECONDS);

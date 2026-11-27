@@ -49,7 +49,7 @@ public class DiscoverySearchStateInstrumentedTest extends DiscoveryHarness {
                 }
             }
         },true));
-        tap(R.id.vocabularyFragment); message(R.string.search_no_input);
+        tap(R.id.vocabularyFragment); message(R.string.ui_search_start);
     }
     private Request request(int count, String query) throws Exception {
         await("submitted request " + count + ": " + query, a -> requests.size()>=count);
@@ -75,29 +75,29 @@ public class DiscoverySearchStateInstrumentedTest extends DiscoveryHarness {
         query("bank"); Request newest=request(5,"bank"); complete(newest,"5aecfbf5b9a23aee");
         message(R.string.search_content); failRead(abandoned); settledMain(); message(R.string.search_content);
         listCount(R.id.results,1); row(R.id.results,0,"ngân hàng",false); assertHidden(R.id.retry);
-        query("nomatch"); loading(); complete(request(6,"nomatch"),null); message(R.string.search_no_match); assertHidden(R.id.results);
+        query("nomatch"); loading(); complete(request(6,"nomatch"),null); message(R.string.ui_search_empty); assertHidden(R.id.results);
     }
     @Test public void retryCurrentQueryErrorEditInvalidAndResetAreDistinct() throws Exception {
-        openControlled(); query("bank"); failRead(request(1,"bank")); message(R.string.search_error);
+        openControlled(); query("bank"); failRead(request(1,"bank")); message(R.string.ui_search_error);
         assertHidden(R.id.results); tap(R.id.retry); loading(); Request retry=request(2,"bank");
         complete(retry,"5aecfbf5b9a23aee"); message(R.string.search_content);
-        query("book"); failRead(request(3,"book")); message(R.string.search_error);
-        query("bank"); loading(); complete(request(4,"bank"),null); message(R.string.search_no_match);
+        query("book"); failRead(request(3,"book")); message(R.string.ui_search_error);
+        query("bank"); loading(); complete(request(4,"bank"),null); message(R.string.ui_search_empty);
         query("x".repeat(1000)); message(R.string.search_invalid); assertHidden(R.id.retry); assertHidden(R.id.results);
-        tap(R.id.reset); message(R.string.search_no_input); assertEquals(4,requests.size()); assertHidden(R.id.loading);
-        query("bank"); failRead(request(5,"bank")); message(R.string.search_error);
-        tap(R.id.reset); message(R.string.search_no_input); assertHidden(R.id.retry); assertHidden(R.id.results);
+        tap(R.id.reset); message(R.string.ui_search_start); assertEquals(4,requests.size()); assertHidden(R.id.loading);
+        query("bank"); failRead(request(5,"bank")); message(R.string.ui_search_error);
+        tap(R.id.reset); message(R.string.ui_search_start); assertHidden(R.id.retry); assertHidden(R.id.results);
         assertEquals(5,requests.size());
     }
     @Test public void resetRunningRejectsLateCompletionAndLateError() throws Exception {
         openControlled(); query("bank"); Request first=request(1,"bank");
-        tap(R.id.reset); message(R.string.search_no_input);
-        complete(first,"5aecfbf5b9a23aee"); settledMain(); message(R.string.search_no_input); assertHidden(R.id.results);
-        query("book"); Request second=request(2,"book"); tap(R.id.reset); message(R.string.search_no_input);
-        failRead(second); settledMain(); message(R.string.search_no_input); assertHidden(R.id.retry); assertHidden(R.id.loading);
+        tap(R.id.reset); message(R.string.ui_search_start);
+        complete(first,"5aecfbf5b9a23aee"); settledMain(); message(R.string.ui_search_start); assertHidden(R.id.results);
+        query("book"); Request second=request(2,"book"); tap(R.id.reset); message(R.string.ui_search_start);
+        failRead(second); settledMain(); message(R.string.ui_search_start); assertHidden(R.id.retry); assertHidden(R.id.loading);
     }
     @Test public void whitespaceAndResetPendingNeverSubmitFts() throws Exception {
-        openControlled(); query("   "); message(R.string.search_no_input); assertEquals(0,requests.size());
+        openControlled(); query("   "); message(R.string.ui_search_start); assertEquals(0,requests.size());
         // Execute typing + visible Reset in the same main-loop turn, before the real 600ms timer fires.
         onView(androidx.test.espresso.matcher.ViewMatchers.withId(R.id.reset)).perform(new androidx.test.espresso.ViewAction() {
             @Override public org.hamcrest.Matcher<android.view.View> getConstraints() { return androidx.test.espresso.matcher.ViewMatchers.isDisplayed(); }
@@ -109,9 +109,9 @@ public class DiscoverySearchStateInstrumentedTest extends DiscoveryHarness {
                 androidx.test.espresso.action.ViewActions.click().perform(ui,reset);
             }
         });
-        message(R.string.search_no_input);
+        message(R.string.ui_search_start);
         // A subsequent query's submission is an observable deadline beyond cancelled debounce.
-        query("book"); complete(request(1,"book"),null); message(R.string.search_no_match);
+        query("book"); complete(request(1,"book"),null); message(R.string.ui_search_empty);
         assertEquals(1,requests.size());
     }
     @Test public void backWhileRunningAndRecreateKeepsCurrentQueryAndDropsAbandonedRead() throws Exception {
@@ -124,7 +124,7 @@ public class DiscoverySearchStateInstrumentedTest extends DiscoveryHarness {
         loading(); assertEquals(1,requests.size()); assertFalse(old.result.isDone());
         androidx.test.espresso.Espresso.pressBack();
         await("home after back",a -> visible(a,R.id.vocabularyFragment));
-        failRead(old); settledMain(); tap(R.id.vocabularyFragment); message(R.string.search_no_input);
+        failRead(old); settledMain(); tap(R.id.vocabularyFragment); message(R.string.ui_search_start);
         query("book"); Request current=request(2,"book"); scenario.recreate(); loading();
         complete(current,"d17314a48504e2ac"); message(R.string.search_content); listCount(R.id.results,1);
         row(R.id.results,0,"đặt trước",false);

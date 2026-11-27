@@ -83,7 +83,7 @@ public abstract class SearchScreenContract {
             scenario.onActivity(a -> {
                 assertEquals("", ((SearchView)a.findViewById(R.id.search)).getQuery().toString());
                 assertEquals(View.GONE, a.findViewById(R.id.results).getVisibility());
-                assertEquals(a.getString(R.string.search_no_input), ((TextView)a.findViewById(R.id.search_message)).getText().toString());
+                assertEquals(a.getString(R.string.ui_search_start), ((TextView)a.findViewById(R.id.search_message)).getText().toString());
             });
             assertEquals(before, snapshot(context));
             assertEquals(existed, userdata.exists());
@@ -100,11 +100,11 @@ public abstract class SearchScreenContract {
             await(scenario, a -> a.findViewById(R.id.detail_save) != null && a.findViewById(R.id.detail_save).isEnabled());
             boolean[] initiallySaved = {false};
             scenario.onActivity(a -> {
-                initiallySaved[0] = ((TextView)a.findViewById(R.id.detail_save)).getText().toString().equals(a.getString(R.string.detail_unsave));
+                initiallySaved[0] = a.findViewById(R.id.detail_save).getContentDescription().toString().equals(a.getString(R.string.detail_unsave));
                 a.findViewById(R.id.detail_save).performClick();
             });
             await(scenario, a -> a.findViewById(R.id.detail_save).isEnabled()
-                    && ((TextView)a.findViewById(R.id.detail_save)).getText().toString().equals(a.getString(initiallySaved[0] ? R.string.detail_save : R.string.detail_unsave)));
+                    && a.findViewById(R.id.detail_save).getContentDescription().toString().equals(a.getString(initiallySaved[0] ? R.string.detail_save : R.string.detail_unsave)));
             scenario.onActivity(a -> a.findViewById(R.id.back).performClick());
             query(scenario, "bank", 1);
             scenario.onActivity(a -> ((NavHostFragment)a.getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment))
@@ -112,11 +112,11 @@ public abstract class SearchScreenContract {
             await(scenario, a -> a.findViewById(R.id.detail_save) != null && a.findViewById(R.id.detail_save).isEnabled());
             scenario.onActivity(a -> {
                 assertEquals(a.getString(initiallySaved[0] ? R.string.detail_save : R.string.detail_unsave),
-                        ((TextView)a.findViewById(R.id.detail_save)).getText().toString());
+                        a.findViewById(R.id.detail_save).getContentDescription().toString());
                 a.findViewById(R.id.detail_save).performClick(); // Restore the original saved flag.
             });
             await(scenario, a -> a.findViewById(R.id.detail_save).isEnabled()
-                    && ((TextView)a.findViewById(R.id.detail_save)).getText().toString().equals(a.getString(initiallySaved[0] ? R.string.detail_unsave : R.string.detail_save)));
+                    && a.findViewById(R.id.detail_save).getContentDescription().toString().equals(a.getString(initiallySaved[0] ? R.string.detail_unsave : R.string.detail_save)));
         }
     }
     private String snapshot(Context context) throws Exception {

@@ -65,8 +65,9 @@ public class PackVocabularyIntegrationTest {
             assertEquals(id,nav.getCurrentBackStackEntry().getArguments().getString("vocabularyId"));
             nav.popBackStack(); await(() -> button(R.string.pack_pause));
             nav.popBackStack(); await(this::packsReady);
-            TextView title = ((LinearLayout)activity.findViewById(R.id.pack_list)).getChildAt(0).findViewById(R.id.pack_title);
-            assertTrue(title.getText().toString().contains(activity.getString(R.string.pack_active)));
+            TextView badge = ((LinearLayout)activity.findViewById(R.id.pack_list)).getChildAt(0).findViewById(R.id.pack_active_badge);
+            assertEquals(View.VISIBLE, badge.getVisibility());
+            assertEquals(activity.getString(R.string.pack_active), badge.getText().toString());
             nav.popBackStack();
             await(() -> activity.findViewById(R.id.explore)!=null && activity.findViewById(R.id.loading).getVisibility()==View.GONE);
             assertEquals(View.GONE,activity.findViewById(R.id.explore).getVisibility());
