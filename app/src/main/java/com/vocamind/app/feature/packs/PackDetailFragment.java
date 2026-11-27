@@ -33,6 +33,7 @@ public final class PackDetailFragment extends Fragment {
         String title = args.getString(PacksFragment.ARG_PACK_TITLE);
         if (title != null) binding.detailTitle.setText(title);
         ViewCompat.setAccessibilityHeading(binding.detailTitle, true);
+        ViewCompat.setAccessibilityHeading(binding.wordsHeading, true);
         model = new ViewModelProvider(this,
                 new PacksViewModelFactory(requireContext(), packId)).get(PackWordsViewModel.class);
         activationModel = new ViewModelProvider(requireActivity(),
@@ -44,7 +45,12 @@ public final class PackDetailFragment extends Fragment {
             boolean error = state.status == AsyncListViewModel.Status.ERROR;
             binding.activation.setEnabled(error || (ready && pack != null));
             binding.activation.setText(error ? R.string.packs_retry
+                    : !ready ? R.string.pack_activation_pending
                     : pack != null && pack.isActive() ? R.string.pack_pause : R.string.pack_activate);
+            boolean active = ready && pack != null && pack.isActive();
+            binding.activationStatus.setBackgroundResource(active ? R.drawable.ui_success : R.drawable.ui_row);
+            binding.activationStatus.setTextColor(androidx.core.content.ContextCompat.getColor(requireContext(),
+                    active ? R.color.on_success : R.color.shell_text_secondary));
             binding.activationStatus.setText(error ? R.string.pack_activation_error
                     : !ready ? R.string.pack_activation_pending
                     : pack != null && pack.isActive() ? R.string.pack_active : R.string.pack_inactive);
@@ -71,6 +77,9 @@ public final class PackDetailFragment extends Fragment {
             binding.message.setText(missing ? R.string.pack_detail_not_found
                     : error ? R.string.pack_detail_error : R.string.pack_detail_empty);
             binding.retry.setVisibility((error && !missing) || empty ? View.VISIBLE : View.GONE);
+            binding.wordsHeading.setText(state.status == AsyncListViewModel.Status.CONTENT
+                    ? getString(R.string.ui_pack_word_count, state.items.size())
+                    : getString(R.string.ui_words_in_pack));
             binding.words.setVisibility(View.INVISIBLE);
             if (state.status != AsyncListViewModel.Status.LOADING) {
                 adapter.submitList(state.items, () -> {

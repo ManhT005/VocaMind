@@ -55,6 +55,15 @@ if (data09QaEnabled && !data09ProfileEnabled) throw new GradleException('data09Q
 def quiz03DeviceIsolation = providers.gradleProperty('quiz03DeviceIsolation').orNull == 'true'
 def progress02DeviceIsolation = providers.gradleProperty('progress02DeviceIsolation').orNull == 'true'
 def data08DeviceGeneration = providers.gradleProperty('data08DeviceGeneration').orNull
+def flash03DeviceIsolation = providers.gradleProperty('flash03DeviceIsolation').orNull == 'true'
+// Standard Android Studio Run packages the verified 150-word demo catalog.
+def demoDebug = providers.gradleProperty('vocamindDemo').map { it == 'true' }.getOrElse(true)
+        && !catalogQaEnabled && !discoveryUiEnabled && !data09ProfileEnabled && !qa02Acceptance
+        && !quiz03DeviceIsolation && !progress02DeviceIsolation
+        && !flash03DeviceIsolation && data08DeviceGeneration == null
+def bundledCatalogPython = rootProject.file('.tools/python/python.exe')
+def catalogPython = providers.gradleProperty('catalogPython')
+        .getOrElse(bundledCatalogPython.isFile() ? bundledCatalogPython.absolutePath : 'python')
 if (qa02Acceptance && (!catalogQaEnabled || discoveryUiEnabled || data09ProfileEnabled
         || quiz03DeviceIsolation || progress02DeviceIsolation || data08DeviceGeneration != null
         || providers.gradleProperty('discoveryQa').orNull == 'true'
@@ -68,7 +77,7 @@ if (data08DeviceGeneration != null && (!(data08DeviceGeneration in ['A', 'B'])
 def catalogQaDirectory = layout.buildDirectory.dir('generated/voc06-qa')
 def prepareCatalogQa = tasks.register('prepareCatalogQa', Exec) {
     workingDir rootProject.projectDir
-    commandLine providers.gradleProperty('catalogPython').getOrElse('python'),
+    commandLine catalogPython,
             rootProject.file('tools/catalog/package_qa.py').absolutePath, '--prepare'
     // Re-verify the snapshot and bundle even when a generated output already exists.
     outputs.dir catalogQaDirectory
@@ -81,11 +90,29 @@ def prepareCatalogQa = tasks.register('prepareCatalogQa', Exec) {
     outputs.upToDateWhen { false }
 }
 
+// Optional Firebase Android client configuration. Keep credentials out of the repository.
+def authProjectId = providers.gradleProperty('vocamindFirebaseProjectId').orNull
+def authAppId = providers.gradleProperty('vocamindFirebaseAppId').orNull
+def authApiKey = providers.gradleProperty('vocamindFirebaseApiKey').orNull
+def authConfiguration = [authProjectId, authAppId, authApiKey]
+def firebaseAuthEnabled = authConfiguration.every { it != null && !it.trim().isEmpty() }
+if (authConfiguration.any { it != null } && !firebaseAuthEnabled) {
+    throw new GradleException('Set all three VocaMind Firebase Android client properties together.')
+}
+if (firebaseAuthEnabled && !authConfiguration.every { it ==~ /[A-Za-z0-9_:\-]+/ }) {
+    throw new GradleException('Invalid VocaMind Firebase Android client property.')
+}
+
 android {
     namespace 'com.vocamind.app'
     compileSdk 35
 
     defaultConfig {
+        if (firebaseAuthEnabled) {
+            resValue 'string', 'project_id', authProjectId
+            resValue 'string', 'google_app_id', authAppId
+            resValue 'string', 'google_api_key', authApiKey
+        }
         applicationId "com.vocamind.app"
         minSdk 26
         targetSdk 35
@@ -153,6 +180,9 @@ android {
         if (data09ProfileEnabled && data09QaEnabled) {
             data09.assets.srcDir project.files(catalogQaDirectory.map { it.dir('assets') }).builtBy(prepareCatalogQa)
         }
+        if (demoDebug) {
+            debug.assets.srcDir project.files(catalogQaDirectory.map { it.dir('assets') }).builtBy(prepareCatalogQa)
+        }
         if (catalogQaEnabled) {
             catalogQa.assets.srcDir catalogQaDirectory.map { it.dir('assets') }
         }
@@ -218,7 +248,7 @@ android {
         }
     }
 
-    if (providers.gradleProperty('flash03DeviceIsolation').orNull == 'true') {
+    if (flash03DeviceIsolation) {
         buildTypes.debug.applicationIdSuffix '.flash03validation'
     }
 
@@ -271,6 +301,8 @@ dependencies {
     def nav_version = "2.10.2"
     def room_version = "2.8.5"
 
+    implementation platform('com.google.firebase:firebase-bom:35.2.0')
+    implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.android.material:material:1.13.0'
 
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"

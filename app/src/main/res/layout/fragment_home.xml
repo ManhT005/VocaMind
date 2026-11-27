@@ -1,88 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="vertical"
-        android:padding="@dimen/shell_screen_padding">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:paddingStart="@dimen/shell_screen_padding"
+        android:paddingEnd="@dimen/shell_screen_padding" android:paddingBottom="16dp">
 
-        <com.google.android.material.textview.MaterialTextView
-            style="@style/TextAppearance.VocaMind.Body"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textColor="@color/shell_accent"
-            android:textStyle="bold" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical">
+            <TextView android:id="@+id/home_title" android:layout_width="0dp"
+                android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="@dimen/ui_toolbar_height"
+                android:gravity="center_vertical" android:text="@string/app_name"
+                android:textAppearance="@style/TextAppearance.VocaMind.Title" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/open_profile"
+                style="@style/Widget.VocaMind.TextAction" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:minHeight="@dimen/ui_touch_target"
+                android:text="@string/personal_profile" app:icon="@drawable/ic_ui_profile"
+                app:iconSize="@dimen/ui_action_icon_size" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:layout_marginTop="8dp" android:background="@drawable/ui_hero" android:padding="@dimen/ui_hero_padding">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/home_title"
-            style="@style/TextAppearance.VocaMind.Title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/shell_item_spacing"
-            android:text="@string/home" />
-
-        <com.google.android.material.textview.MaterialTextView
-            style="@style/TextAppearance.VocaMind.Body"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/shell_item_spacing"
-            android:text="@string/home_description" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/shell_section_spacing"
-            android:orientation="vertical">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.VocaMind.Title" android:text="@string/ui_home_hero" android:accessibilityHeading="true" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.VocaMind.Body" android:text="@string/ui_home_intro" android:layout_marginTop="8dp" />
+                </LinearLayout>
+                <ImageView android:layout_width="72dp" android:layout_height="72dp"
+                    android:layout_marginStart="8dp" android:src="@drawable/ui_hero_cards"
+                    android:importantForAccessibility="no" />
+            </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/open_packs"
-                style="@style/Widget.VocaMind.NavigationButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/packs" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/open_vocabulary"
-                style="@style/Widget.VocaMind.NavigationButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/vocabulary" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/open_today"
-                style="@style/Widget.VocaMind.NavigationButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/today" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/open_quiz"
-                style="@style/Widget.VocaMind.NavigationButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/quiz" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/open_progress"
-                style="@style/Widget.VocaMind.NavigationButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/progress" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/open_attribution"
-                style="@style/Widget.VocaMind.NavigationButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/attribution" />
+                android:id="@+id/open_today" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" android:text="@string/ui_study_now"
+                app:icon="@drawable/ic_ui_next" app:iconGravity="textEnd" />
         </LinearLayout>
 
-    </LinearLayout>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.VocaMind.Section" android:text="@string/ui_explore" android:layout_marginTop="24dp" android:accessibilityHeading="true" />
+        <LinearLayout android:id="@+id/explore_cards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical">
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/open_packs"
+                style="@style/Widget.VocaMind.DestinationCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/ui_card_padding">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/ui_icon_tile"
+                        android:backgroundTint="@color/detail_tint"
+                        android:importantForAccessibility="no"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/ic_ui_words"
+                        app:tint="@color/on_tint" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/packs"
+                            android:textAppearance="@style/TextAppearance.VocaMind.Section" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="@string/ui_home_packs_caption"
+                            android:textAppearance="@style/TextAppearance.VocaMind.Caption" />
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:importantForAccessibility="no"
+                        app:srcCompat="@drawable/ic_ui_next"
+                        app:tint="@color/shell_text_secondary" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/open_quiz"
+                style="@style/Widget.VocaMind.DestinationCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ui_card_gap"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/ui_card_padding">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/ui_icon_tile"
+                        android:backgroundTint="@color/peach"
+                        android:importantForAccessibility="no"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/ic_ui_quiz"
+                        app:tint="@color/on_peach" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/quiz"
+                            android:textAppearance="@style/TextAppearance.VocaMind.Section" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="@string/ui_home_quiz_caption"
+                            android:textAppearance="@style/TextAppearance.VocaMind.Caption" />
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:importantForAccessibility="no"
+                        app:srcCompat="@drawable/ic_ui_next"
+                        app:tint="@color/shell_text_secondary" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/open_attribution" style="@style/Widget.VocaMind.TextAction"
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="@dimen/ui_touch_target"
+            android:layout_marginTop="8dp" android:gravity="start|center_vertical"
+            android:text="@string/attribution" app:icon="@drawable/ic_ui_next" app:iconGravity="end" />
+    </LinearLayout>
 </ScrollView>

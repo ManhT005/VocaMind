@@ -35,7 +35,7 @@ public class DiscoveryQaInstrumentedTest extends DiscoveryHarness {
         });
         tap(R.id.back); listCount(R.id.words,words.size()); tap(R.id.back);
         androidx.test.espresso.Espresso.pressBack();
-        await("home",a -> visible(a,R.id.open_vocabulary)); tap(R.id.open_vocabulary);
+        await("home",a -> visible(a,R.id.vocabularyFragment)); tap(R.id.vocabularyFragment);
         for(String q : java.util.List.of(word.lemma,word.meaningVi)) {
             var expected=new RoomVocabularySearchRepository(oracle.catalogDao()).search(VocabularySearchQuery.parse(q)).getWords();
             query(q); message(R.string.search_content); listCount(R.id.results,expected.size());

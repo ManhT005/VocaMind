@@ -49,7 +49,7 @@ public class DiscoverySearchStateInstrumentedTest extends DiscoveryHarness {
                 }
             }
         },true));
-        tap(R.id.open_vocabulary); message(R.string.search_no_input);
+        tap(R.id.vocabularyFragment); message(R.string.search_no_input);
     }
     private Request request(int count, String query) throws Exception {
         await("submitted request " + count + ": " + query, a -> requests.size()>=count);
@@ -123,8 +123,8 @@ public class DiscoverySearchStateInstrumentedTest extends DiscoveryHarness {
                         androidx.test.espresso.action.ViewActions.closeSoftKeyboard());
         loading(); assertEquals(1,requests.size()); assertFalse(old.result.isDone());
         androidx.test.espresso.Espresso.pressBack();
-        await("home after back",a -> visible(a,R.id.open_vocabulary));
-        failRead(old); settledMain(); tap(R.id.open_vocabulary); message(R.string.search_no_input);
+        await("home after back",a -> visible(a,R.id.vocabularyFragment));
+        failRead(old); settledMain(); tap(R.id.vocabularyFragment); message(R.string.search_no_input);
         query("book"); Request current=request(2,"book"); scenario.recreate(); loading();
         complete(current,"d17314a48504e2ac"); message(R.string.search_content); listCount(R.id.results,1);
         row(R.id.results,0,"đặt trước",false);

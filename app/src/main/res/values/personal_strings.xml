@@ -1,0 +1,31 @@
+<resources>
+    <string name="personal_profile">Cá nhân</string>
+    <string name="personal_settings">Cài đặt</string>
+    <string name="personal_savedWords">Từ đã lưu</string>
+    <string name="personal_activePacks">Gói đang học</string>
+    <string name="personal_guest">Người học</string>
+    <string name="personal_local_profile">Hồ sơ trên thiết bị này</string>
+    <string name="personal_edit_name">Sửa tên hiển thị</string>
+    <string name="personal_save">Lưu</string>
+    <string name="personal_cancel">Hủy</string>
+    <string name="personal_back">Quay lại</string>
+    <string name="personal_loading">Đang tải…</string>
+    <string name="personal_retry">Thử lại</string>
+    <string name="personal_read_error">Không thể tải dữ liệu.</string>
+    <string name="personal_save_error">Không thể lưu thay đổi.</string>
+    <string name="personal_empty_saved">Chưa có từ đã lưu. Bạn có thể lưu từ trong màn chi tiết từ vựng.</string>
+    <string name="personal_empty_packs">Bạn chưa bật gói học nào.</string>
+    <string name="personal_theme">Giao diện</string>
+    <string name="personal_system">Theo hệ thống</string>
+    <string name="personal_light">Sáng</string>
+    <string name="personal_dark">Tối</string>
+    <string name="personal_language">Ngôn ngữ giao diện</string>
+    <string name="personal_vietnamese">Tiếng Việt</string>
+    <string name="personal_daily_goal">Mục tiêu từ mới</string>
+    <string name="personal_words_day">%1$d từ mới mỗi ngày</string>
+    <string name="personal_goal_help">Từ đến hạn vẫn được đưa vào phiên ôn.</string>
+    <string name="personal_about">Thông tin ứng dụng</string>
+    <string name="personal_version">%1$s · Phiên bản %2$s</string>
+    <string name="personal_word_row">%1$s · %2$s</string>
+    <string name="personal_notifications">Thông báo</string>
+</resources>

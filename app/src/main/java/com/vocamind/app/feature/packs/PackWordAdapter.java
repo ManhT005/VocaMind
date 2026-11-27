@@ -46,7 +46,9 @@ final class PackWordAdapter extends ListAdapter<StudyItem, PackWordAdapter.Holde
         row.wordTitle.setText(c.getString(R.string.pack_word_title, item.getVocabulary().lemma, item.getVocabulary().pos));
         row.wordMeaning.setText(item.getVocabulary().meaningVi);
         String ipa = item.getVocabulary().ipa;
-        row.wordIpa.setText(ipa == null || ipa.trim().isEmpty() ? c.getString(R.string.word_ipa_missing) : ipa);
+        boolean hasIpa = ipa != null && !ipa.trim().isEmpty();
+        row.wordIpa.setText(hasIpa ? ipa : null);
+        row.wordIpa.setVisibility(hasIpa ? android.view.View.VISIBLE : android.view.View.GONE);
         WordProgress p = item.getProgress();
         row.wordStatus.setText(p == null || p.getLearnedAtEpochMillis() == null
                 ? c.getString(R.string.word_unreviewed)

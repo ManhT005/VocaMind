@@ -32,6 +32,8 @@ public final class QuizViewModel extends ViewModel {
     private long completedAt, lastAnswer;
     private boolean hasLastAnswer, cleared;
     private int generation;
+    private boolean resettingLearning;
+    private boolean restartOnOpen;
     public QuizViewModel(SavedStateHandle saved, Supplier<RepoResult<QuizGenerationOutcome>> generate,
             Writer writer, Executor worker, Executor main, LongSupplier monotonic, LongSupplier wall, Runnable close) {
         this.saved=saved; this.generate=generate; this.writer=writer; this.worker=worker; this.main=main;
@@ -68,12 +70,43 @@ public final class QuizViewModel extends ViewModel {
     public LiveData<State> state() { return state; }
     /** An explicit abandoned attempt starts fresh on the next visit. Completed saves keep their key. */
     public void onOpened() {
-        if (session != null && session.getState() == QuizSession.State.ABANDONED) start();
+        if (restartOnOpen || (session != null && session.getState() == QuizSession.State.ABANDONED)) start();
     }
+    /** Queues reset after any in-flight Quiz write and discards the restored result on success. */
+    public void resetLearning(Runnable reset, Consumer<Boolean> finished) {
+        if (resettingLearning) { finished.accept(false); return; }
+        resettingLearning = true;
+        worker.execute(() -> {
+            boolean success;
+            try {
+                reset.run();
+                success = true;
+            } catch (RuntimeException failure) {
+                success = false;
+            }
+            boolean result = success;
+            main.execute(() -> {
+                resettingLearning = false;
+                if (result) {
+                    generation++;
+                    session = null;
+                    key = null;
+                    hasLastAnswer = false;
+                    saved.remove("quiz");
+                    restartOnOpen = true;
+                    publish(Phase.EMPTY, "");
+                }
+                finished.accept(result);
+            });
+        });
+    }
+
     public void start() {
+        if (resettingLearning) return;
         State current = state.getValue();
         if (current != null && (current.phase == Phase.LOADING || current.phase == Phase.SAVING
                 || current.phase == Phase.SAVE_ERROR || isInProgress())) return;
+        restartOnOpen = false;
         int token = ++generation;
         session=null; key=null; hasLastAnswer=false; saved.remove("quiz");
         publish(Phase.LOADING, "");
@@ -94,7 +127,7 @@ public final class QuizViewModel extends ViewModel {
         });
     }
     public void answer(String questionId, String optionId) {
-        if (!isInProgress()) return;
+        if (resettingLearning || !isInProgress()) return;
         long now=monotonic.getAsLong();
         if (hasLastAnswer) {
             // elapsedRealtime is shared across processes, but resets after reboot.
@@ -110,7 +143,7 @@ public final class QuizViewModel extends ViewModel {
         } else { persist(); publishQuestion(); }
     }
     public void next() {
-        if (!isInProgress()) return;
+        if (resettingLearning || !isInProgress()) return;
         session=session.next().getSession(); persist(); publishQuestion();
     }
     public boolean isInProgress() { return session != null && session.getState() == QuizSession.State.IN_PROGRESS; }
@@ -119,7 +152,7 @@ public final class QuizViewModel extends ViewModel {
         generation++;
     }
     public void retrySave() {
-        if (state.getValue().phase == Phase.SAVE_ERROR) save();
+        if (!resettingLearning && state.getValue().phase == Phase.SAVE_ERROR) save();
     }
     private void save() {
         publish(Phase.SAVING, "");

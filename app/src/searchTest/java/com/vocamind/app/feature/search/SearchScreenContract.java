@@ -49,7 +49,7 @@ public abstract class SearchScreenContract {
         File userdata = context.getDatabasePath("userdata.db");
         boolean existed = userdata.exists();
         try (ActivityScenario<MainActivity> scenario = ActivityScenario.launch(MainActivity.class)) {
-            scenario.onActivity(a -> a.findViewById(R.id.open_vocabulary).performClick());
+            scenario.onActivity(a -> a.findViewById(R.id.vocabularyFragment).performClick());
             query(scenario, "BANK", 1);
             String before = snapshot(context);
             query(scenario, Normalizer.normalize("NGÂN HÀNG", Normalizer.Form.NFD), 1);
@@ -91,7 +91,7 @@ public abstract class SearchScreenContract {
     }
     @Test public void catalogDetailSaveRequiresExplicitClickAndPersistsAcrossBack() throws Exception {
         try (ActivityScenario<MainActivity> scenario = ActivityScenario.launch(MainActivity.class)) {
-            scenario.onActivity(a -> a.findViewById(R.id.open_vocabulary).performClick());
+            scenario.onActivity(a -> a.findViewById(R.id.vocabularyFragment).performClick());
             query(scenario, "bank", 1);
             scenario.onActivity(a -> {
                 var nav = ((NavHostFragment)a.getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment)).getNavController();

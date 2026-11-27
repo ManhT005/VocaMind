@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="wrap_content"
-    android:paddingTop="@dimen/shell_item_spacing" android:paddingBottom="@dimen/shell_item_spacing"
-    android:orientation="vertical" android:minHeight="48dp" android:background="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
-    <com.google.android.material.textview.MaterialTextView android:id="@+id/word_title"
-        style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:textStyle="bold" />
-    <com.google.android.material.textview.MaterialTextView android:id="@+id/word_meaning"
-        style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <com.google.android.material.textview.MaterialTextView android:id="@+id/word_ipa"
-        style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <com.google.android.material.textview.MaterialTextView android:id="@+id/word_status"
-        style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    android:layout_marginBottom="@dimen/shell_item_spacing" android:background="@drawable/ui_row"
+    android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground"
+    android:gravity="center_vertical" android:minHeight="64dp" android:orientation="horizontal"
+    android:padding="@dimen/ui_card_padding">
+    <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+        android:layout_height="wrap_content" android:orientation="vertical">
+        <TextView android:id="@+id/word_title" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textAppearance="@style/TextAppearance.VocaMind.Section" />
+        <TextView android:id="@+id/word_meaning" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="3dp"
+            android:textAppearance="@style/TextAppearance.VocaMind.Body" />
+        <TextView android:id="@+id/word_ipa" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="4dp"
+            android:textAppearance="@style/TextAppearance.VocaMind.Caption" android:visibility="gone" />
+        <TextView android:id="@+id/word_status" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="8dp"
+            android:background="@drawable/ui_icon_tile" android:paddingHorizontal="8dp" android:paddingVertical="3dp"
+            android:textColor="@color/on_tint" android:textAppearance="@style/TextAppearance.Material3.LabelMedium" />
+    </LinearLayout>
+    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_marginStart="10dp"
+        app:srcCompat="@drawable/ic_ui_next" app:tint="@color/shell_text_secondary"
+        android:importantForAccessibility="no" />
 </LinearLayout>

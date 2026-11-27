@@ -12,8 +12,15 @@ import java.util.Set;
 public final class ProgressSnapshot {
     private final ProgressSummary summary;
     private final List<QuizHistoryItem> quizHistory;
+    private final LearningActivity activity;
 
     public ProgressSnapshot(ProgressSummary summary, Collection<QuizHistoryItem> quizHistory) {
+        this(summary, quizHistory, LearningActivity.empty());
+    }
+
+    public ProgressSnapshot(ProgressSummary summary, Collection<QuizHistoryItem> quizHistory,
+                            LearningActivity activity) {
+        this.activity = java.util.Objects.requireNonNull(activity);
         if (summary == null || quizHistory == null) {
             throw new IllegalArgumentException("summary and history required");
         }
@@ -33,6 +40,7 @@ public final class ProgressSnapshot {
     public static ProgressSnapshot empty() {
         return new ProgressSnapshot(ProgressSummary.empty(), Collections.emptyList());
     }
+    public LearningActivity getActivity() { return activity; }
     public ProgressSummary getSummary() { return summary; }
     /** All completed attempts, completion time DESC then ID DESC; no implicit limit/pagination. */
     public List<QuizHistoryItem> getQuizHistory() { return quizHistory; }

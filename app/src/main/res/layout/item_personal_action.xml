@@ -1,0 +1,12 @@
+<com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.VocaMind.OutlinedAction"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="start|center_vertical"
+    android:minHeight="@dimen/shell_button_height"
+    android:textAllCaps="false"
+    android:textColor="@color/shell_text_primary"
+    app:backgroundTint="@color/detail_card_surface"
+    app:cornerRadius="@dimen/ui_control_radius"
+    app:strokeColor="@color/detail_outline" />

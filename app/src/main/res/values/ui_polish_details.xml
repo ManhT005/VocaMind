@@ -1,0 +1,8 @@
+<resources>
+    <string name="ui_metric_new">Từ mới · %1$d</string>
+    <string name="ui_metric_reviews">Lượt Flashcard · %1$d</string>
+    <string name="ui_metric_quizzes">Bài Quiz · %1$d</string>
+    <string name="ui_metric_accuracy">Tỷ lệ đúng Quiz · %1$s</string>
+    <string name="ui_settings_learning">Học tập</string>
+    <string name="ui_settings_data">Dữ liệu</string>
+</resources>

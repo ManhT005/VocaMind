@@ -4,6 +4,7 @@ import com.vocamind.app.domain.catalog.CatalogVocabulary;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.OptionalLong;
 
 /** Ordered study queue for today: due words first, then new words. Immutable. */
 public final class TodayPlan {
@@ -20,7 +21,15 @@ public final class TodayPlan {
     private final List<StudyItem> due;
     private final List<CatalogVocabulary> fresh;
 
+    private final OptionalLong nextReviewAt;
+
     TodayPlan(Status status, List<StudyItem> due, List<CatalogVocabulary> fresh) {
+        this(status, due, fresh, OptionalLong.empty());
+    }
+
+    TodayPlan(Status status, List<StudyItem> due, List<CatalogVocabulary> fresh,
+              OptionalLong nextReviewAt) {
+        this.nextReviewAt = nextReviewAt;
         this.status = status;
         this.due = Collections.unmodifiableList(new ArrayList<>(due));
         this.fresh = Collections.unmodifiableList(new ArrayList<>(fresh));
@@ -29,6 +38,7 @@ public final class TodayPlan {
     public Status getStatus() { return status; }
     public List<StudyItem> getDue() { return due; }
     public List<CatalogVocabulary> getNewWords() { return fresh; }
+    public OptionalLong getNextReviewAt() { return nextReviewAt; }
     public int dueCount() { return due.size(); }
     public int newCount() { return fresh.size(); }
 

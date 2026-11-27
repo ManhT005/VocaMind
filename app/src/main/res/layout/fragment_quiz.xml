@@ -1,29 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="vertical" android:padding="24dp">
-        <Button android:id="@+id/quiz_back" android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:minHeight="48dp" android:text="@string/quiz_back" />
-        <TextView android:id="@+id/destination_title" android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="@string/quiz" style="@style/TextAppearance.VocaMind.Title" />
+        android:orientation="vertical" android:paddingHorizontal="@dimen/shell_screen_padding" android:paddingBottom="@dimen/shell_screen_padding">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:minHeight="@dimen/ui_toolbar_height" android:gravity="center_vertical">
+        <androidx.appcompat.widget.AppCompatImageButton style="@style/Widget.VocaMind.BackButton" android:id="@+id/quiz_back"
+            android:layout_width="@dimen/ui_touch_target" android:layout_height="@dimen/ui_touch_target"
+            app:srcCompat="@drawable/ic_ui_close" android:contentDescription="@string/quiz_back"/>
+        <TextView android:id="@+id/destination_title" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+            android:text="@string/quiz" style="@style/TextAppearance.VocaMind.Section" />
+        <TextView android:id="@+id/quiz_progress_label" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Material3.LabelLarge" />
+        </LinearLayout>
         <ProgressBar android:id="@+id/quiz_loading" android:layout_width="48dp" android:layout_height="48dp" />
         <TextView android:id="@+id/quiz_status" android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:accessibilityLiveRegion="polite" android:textSize="18sp" android:paddingTop="16dp" />
+            android:accessibilityLiveRegion="polite" android:textAppearance="@style/TextAppearance.VocaMind.Body" android:paddingTop="16dp" />
         <LinearLayout android:id="@+id/quiz_question" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+            <com.google.android.material.progressindicator.LinearProgressIndicator android:id="@+id/quiz_progress_bar"
+                android:layout_width="match_parent" android:layout_height="wrap_content" android:importantForAccessibility="no"
+                app:trackThickness="8dp" app:trackCornerRadius="4dp" app:trackColor="@color/detail_outline"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"
+                android:layout_marginTop="16dp" android:background="@drawable/ui_hero" android:padding="@dimen/ui_hero_padding">
             <TextView android:id="@+id/quiz_prompt" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:textSize="24sp" android:paddingTop="16dp" />
+                android:textAppearance="@style/TextAppearance.VocaMind.Prompt" />
+            <TextView android:id="@+id/quiz_pos" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:background="@drawable/detail_pos_background" android:padding="8dp"
+                android:textAppearance="@style/TextAppearance.Material3.LabelLarge" android:textColor="@color/on_tint" />
             <TextView android:id="@+id/quiz_context" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:textSize="16sp" android:paddingBottom="16dp" />
-            <Button android:id="@+id/quiz_option_1" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:textAllCaps="false" />
-            <Button android:id="@+id/quiz_option_2" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:textAllCaps="false" />
-            <Button android:id="@+id/quiz_option_3" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:textAllCaps="false" />
-            <Button android:id="@+id/quiz_option_4" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:textAllCaps="false" />
-            <TextView android:id="@+id/quiz_feedback" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:accessibilityLiveRegion="polite" android:textSize="18sp" android:padding="12dp" />
-            <Button android:id="@+id/quiz_next" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:minHeight="48dp" android:text="@string/quiz_next" />
+                android:textAppearance="@style/TextAppearance.VocaMind.Body" android:layout_marginTop="8dp" />
+            </LinearLayout>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp"
+                android:textAppearance="@style/TextAppearance.VocaMind.Section" android:text="@string/ui_quiz_choose"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/quiz_option_1"
+                style="@style/Widget.VocaMind.OutlinedAction" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:minHeight="56dp" android:gravity="start|center_vertical" app:iconGravity="end" app:cornerRadius="@dimen/ui_control_radius" app:strokeColor="@color/control_outline"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/quiz_option_2"
+                style="@style/Widget.VocaMind.OutlinedAction" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:minHeight="56dp" android:gravity="start|center_vertical" app:iconGravity="end" app:cornerRadius="@dimen/ui_control_radius" app:strokeColor="@color/control_outline"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/quiz_option_3"
+                style="@style/Widget.VocaMind.OutlinedAction" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:minHeight="56dp" android:gravity="start|center_vertical" app:iconGravity="end" app:cornerRadius="@dimen/ui_control_radius" app:strokeColor="@color/control_outline"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/quiz_option_4"
+                style="@style/Widget.VocaMind.OutlinedAction" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:minHeight="56dp" android:gravity="start|center_vertical" app:iconGravity="end" app:cornerRadius="@dimen/ui_control_radius" app:strokeColor="@color/control_outline"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/quiz_next" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:minHeight="@dimen/shell_button_height" android:text="@string/quiz_next" />
         </LinearLayout>
-        <Button android:id="@+id/quiz_action" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" />
+        <TextView android:id="@+id/quiz_score" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="12dp" android:layout_marginBottom="12dp" android:background="@drawable/ui_hero" android:padding="24dp"
+            android:gravity="center" android:textAppearance="@style/TextAppearance.VocaMind.Prompt" android:visibility="gone"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/quiz_review"
+            style="@style/Widget.VocaMind.OutlinedAction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/shell_button_height"
+            app:icon="@drawable/ic_ui_quiz" app:iconGravity="textStart"
+            android:text="@string/ui_quiz_review"
+            android:visibility="gone" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/quiz_action" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="@dimen/shell_button_height" />
     </LinearLayout>
 </ScrollView>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="reminder_title">Nhắc học hằng ngày</string>
+    <string name="reminder_hour">Giờ nhắc: %1$s</string>
+    <string name="reminder_pick_hour">Chọn giờ nhắc</string>
+    <string name="reminder_note">Android có thể gửi thông báo sau giờ bạn chọn khi máy đang tiết kiệm pin.</string>
+    <string name="reminder_notification">Đến giờ học từ vựng rồi. Mở Hôm nay để xem kế hoạch.</string>
+    <string name="reminder_blocked">Thông báo đang bị chặn. Bạn có thể bật trong Cài đặt Android.</string>
+    <string name="reminder_open_system">Mở cài đặt thông báo</string>
+    <string name="reminder_permission_reason">Cho phép thông báo để VocaMind nhắc bạn vào giờ học đã chọn.</string>
+    <string name="reminder_continue">Tiếp tục</string>
+    <string name="reset_title">Đặt lại kết quả học</string>
+    <string name="reset_description">Xóa tiến độ từ, lượt ôn, lịch sử Quiz và thành tích. Giữ từ đã lưu, gói đang học và cài đặt.</string>
+    <string name="reset_confirm_description">Xóa tiến độ từ, lượt ôn, lịch sử Quiz và thành tích trên thiết bị này? Từ đã lưu, gói đang học và cài đặt vẫn được giữ. Bạn không thể hoàn tác.</string>
+    <string name="reset_confirm">Xóa kết quả học</string>
+    <string name="reset_done">Đã đặt lại kết quả học.</string>
+</resources>

@@ -5,17 +5,26 @@
         <item name="colorOnPrimary">@color/shell_on_accent</item>
         <item name="colorSecondary">@color/shell_accent</item>
         <item name="colorOnSecondary">@color/shell_on_accent</item>
-        <item name="colorSurface">@color/shell_background</item>
+        <item name="colorSurface">@color/detail_card_surface</item>
+        <item name="colorOutline">@color/control_outline</item>
+        <item name="colorOutlineVariant">@color/detail_outline</item>
+        <item name="colorSecondaryContainer">@color/detail_tint</item>
+        <item name="colorOnSecondaryContainer">@color/on_tint</item>
+        <item name="materialButtonStyle">@style/Widget.VocaMind.Action</item>
+
         <item name="colorOnSurface">@color/shell_text_primary</item>
         <item name="colorOnSurfaceVariant">@color/shell_text_secondary</item>
         <item name="android:windowBackground">@color/shell_background</item>
         <item name="android:colorBackground">@color/shell_background</item>
         <item name="android:textColorPrimary">@color/shell_text_primary</item>
         <item name="android:textColorSecondary">@color/shell_text_secondary</item>
+        <item name="android:statusBarColor">@color/shell_background</item>
+        <item name="android:navigationBarColor">@color/shell_background</item>
         <item name="android:windowLightStatusBar">@bool/shell_light_system_bars</item>
     </style>
 
     <style name="TextAppearance.VocaMind.Title" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/shell_text_primary</item>
     </style>
 
@@ -23,7 +32,7 @@
         <item name="android:textColor">@color/shell_text_secondary</item>
     </style>
 
-    <style name="Widget.VocaMind.NavigationButton" parent="Widget.Material3.Button">
+    <style name="Widget.VocaMind.NavigationButton" parent="Widget.VocaMind.Action">
         <item name="android:minHeight">@dimen/shell_button_height</item>
         <item name="android:paddingTop">@dimen/shell_button_padding</item>
         <item name="android:paddingBottom">@dimen/shell_button_padding</item>
@@ -37,5 +46,36 @@
         <item name="android:textColor">@color/shell_text_primary</item>
         <item name="android:textSize">18sp</item>
         <item name="android:lineSpacingExtra">5dp</item>
+    </style>
+    <style name="Widget.VocaMind.Action" parent="Widget.Material3.Button">
+        <item name="android:minHeight">@dimen/shell_button_height</item>
+        <item name="cornerRadius">@dimen/ui_control_radius</item>
+    </style>
+    <style name="TextAppearance.VocaMind.Section" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/shell_text_primary</item>
+    </style>
+
+    <style name="Widget.VocaMind.OutlinedAction" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:minHeight">@dimen/shell_button_height</item>
+        <item name="cornerRadius">@dimen/ui_control_radius</item>
+        <item name="strokeColor">@color/control_outline</item>
+    </style>
+
+    <style name="Widget.VocaMind.TextAction" parent="Widget.Material3.Button.TextButton">
+        <item name="android:minHeight">@dimen/ui_touch_target</item>
+    </style>
+
+    <style name="Widget.VocaMind.BackButton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:padding">12dp</item>
+        <item name="tint">@color/shell_text_primary</item>
+    </style>
+
+    <style name="TextAppearance.VocaMind.Prompt" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/shell_text_primary</item>
     </style>
 </resources>

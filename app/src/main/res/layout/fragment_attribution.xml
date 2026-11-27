@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="vertical" android:padding="@dimen/shell_screen_padding">
-        <com.google.android.material.button.MaterialButton android:id="@+id/back"
-            style="@style/Widget.VocaMind.NavigationButton" android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:text="@string/attribution_back" />
+        android:orientation="vertical" android:paddingHorizontal="@dimen/shell_screen_padding" android:paddingBottom="@dimen/shell_screen_padding">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical" android:minHeight="@dimen/ui_toolbar_height">
+            <androidx.appcompat.widget.AppCompatImageButton style="@style/Widget.VocaMind.BackButton" android:id="@+id/back"
+            android:layout_width="@dimen/ui_touch_target" android:layout_height="@dimen/ui_touch_target"
+            android:contentDescription="@string/attribution_back" app:srcCompat="@drawable/ic_detail_back"/>
         <com.google.android.material.textview.MaterialTextView android:id="@+id/attribution_title"
-            style="@style/TextAppearance.VocaMind.Title"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
+            style="@style/TextAppearance.VocaMind.Section"
+            android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
             android:text="@string/attribution" />
+        </LinearLayout>
         <com.google.android.material.textview.MaterialTextView style="@style/TextAppearance.VocaMind.Body"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:layout_marginTop="16dp" android:text="@string/attribution_description" />

@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp"
-    android:orientation="vertical" android:padding="12dp" android:clickable="true" android:focusable="true"
-    android:background="?attr/selectableItemBackground">
-    <TextView android:id="@+id/word_title" style="@style/TextAppearance.VocaMind.Body"
-        android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" />
-    <TextView android:id="@+id/word_meaning" style="@style/TextAppearance.VocaMind.Body"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:clickable="true" android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:layout_marginBottom="@dimen/shell_item_spacing" android:minHeight="64dp" android:padding="@dimen/ui_card_padding" android:background="@drawable/ui_row">
+    <TextView android:id="@+id/word_title" style="@style/TextAppearance.VocaMind.Section"
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:drawableEnd="@drawable/ic_ui_next" android:drawablePadding="8dp" />
+    <TextView android:id="@+id/word_pos" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="4dp" android:background="@drawable/detail_pos_background"
+        android:paddingStart="8dp" android:paddingEnd="8dp" android:paddingTop="2dp" android:paddingBottom="2dp"
+        android:textColor="@color/on_tint" android:textAppearance="@style/TextAppearance.Material3.LabelMedium" />
+    <TextView android:id="@+id/word_meaning" style="@style/TextAppearance.VocaMind.Body" android:layout_marginTop="6dp"
         android:layout_width="match_parent" android:layout_height="wrap_content" />
 </LinearLayout>

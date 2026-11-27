@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="wrap_content"
-    android:layout_marginTop="24dp" android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/shell_item_spacing" android:minHeight="64dp" android:padding="@dimen/ui_card_padding" android:background="@drawable/ui_row">
     <com.google.android.material.textview.MaterialTextView android:id="@+id/title"
         style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
         android:layout_height="wrap_content" android:textStyle="bold" />
@@ -24,9 +26,9 @@
         style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
         android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textIsSelectable="true" />
     <com.google.android.material.button.MaterialButton android:id="@+id/open_source"
-        style="@style/Widget.VocaMind.NavigationButton" android:layout_width="match_parent"
+        style="@style/Widget.VocaMind.TextAction" android:minHeight="@dimen/ui_touch_target" app:icon="@drawable/ic_ui_next" app:iconGravity="end" android:layout_width="match_parent"
         android:layout_height="wrap_content" android:text="@string/attribution_open_source" />
     <com.google.android.material.button.MaterialButton android:id="@+id/open_license"
-        style="@style/Widget.VocaMind.NavigationButton" android:layout_width="match_parent"
+        style="@style/Widget.VocaMind.TextAction" android:minHeight="@dimen/ui_touch_target" app:icon="@drawable/ic_ui_next" app:iconGravity="end" android:layout_width="match_parent"
         android:layout_height="wrap_content" android:text="@string/attribution_open_license" />
 </LinearLayout>

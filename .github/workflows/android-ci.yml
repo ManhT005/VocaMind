@@ -278,16 +278,16 @@ jobs:
         run: python -m unittest discover -s tools/validation -p 'test_data09*.py' -v
 
       - name: Run unit tests
-        run: ./gradlew testDebugUnitTest
+        run: ./gradlew -PvocamindDemo=false testDebugUnitTest
 
       - name: Assemble debug APK
-        run: ./gradlew assembleDebug
+        run: ./gradlew -PvocamindDemo=false assembleDebug
 
       - name: Assemble instrumentation test APK
-        run: ./gradlew assembleDebugAndroidTest
+        run: ./gradlew -PvocamindDemo=false assembleDebugAndroidTest
 
       - name: Run Android lint
-        run: ./gradlew lintDebug
+        run: ./gradlew -PvocamindDemo=false lintDebug
 
       - name: Verify APK asset profiles
         run: |

@@ -1,0 +1,16 @@
+<resources>
+    <dimen name="ui_action_icon_size">24dp</dimen>
+    <dimen name="ui_card_gap">12dp</dimen>
+    <style name="Widget.VocaMind.DestinationCard" parent="Widget.Material3.CardView.Outlined">
+        <item name="cardBackgroundColor">@color/detail_card_surface</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">@color/detail_outline</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+    <style name="TextAppearance.VocaMind.Caption" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/shell_text_secondary</item>
+    </style>
+    <string name="ui_home_packs_caption">Chọn chủ đề để học</string>
+    <string name="ui_home_quiz_caption">Thử sức với câu hỏi</string>
+</resources>

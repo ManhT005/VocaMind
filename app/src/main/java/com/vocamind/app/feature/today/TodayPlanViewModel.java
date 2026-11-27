@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import com.vocamind.app.domain.common.RepoResult;
 import com.vocamind.app.domain.learning.TodayPlan;
+import java.util.OptionalLong;
 import java.util.concurrent.Executor;
 import java.util.function.Supplier;
 
@@ -17,7 +18,14 @@ public final class TodayPlanViewModel extends ViewModel {
         public final int dueCount;
         public final int newCount;
 
+        public final OptionalLong nextReviewAt;
+
         State(Status status, int dueCount, int newCount) {
+            this(status, dueCount, newCount, OptionalLong.empty());
+        }
+
+        State(Status status, int dueCount, int newCount, OptionalLong nextReviewAt) {
+            this.nextReviewAt = nextReviewAt;
             this.status = status;
             this.dueCount = dueCount;
             this.newCount = newCount;
@@ -62,7 +70,7 @@ public final class TodayPlanViewModel extends ViewModel {
                     TodayPlan p = plan.get();
                     Status status = p.getStatus() == TodayPlan.Status.NO_ACTIVE_PACK ? Status.NO_ACTIVE_PACK
                             : p.getStatus() == TodayPlan.Status.DONE ? Status.DONE : Status.READY;
-                    result = new State(status, p.dueCount(), p.newCount());
+                    result = new State(status, p.dueCount(), p.newCount(), p.getNextReviewAt());
                 }
             } catch (Throwable failure) {
                 result = new State(Status.ERROR, 0, 0);

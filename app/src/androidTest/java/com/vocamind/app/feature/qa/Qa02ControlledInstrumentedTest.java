@@ -42,7 +42,7 @@ public final class Qa02ControlledInstrumentedTest extends Qa02Harness {
         org.junit.Assume.assumeTrue("IME insets assertion requires API30+",android.os.Build.VERSION.SDK_INT>=30);
         String before=canonical(userdata());
         var expected=oracle.catalogDao().searchVocabulary("\"customer\"*"); assertFalse(expected.isEmpty());
-        launch(); await("Home",a -> visible(a,R.id.open_vocabulary)); tapScroll(R.id.open_vocabulary);
+        launch(); await("Home",a -> visible(a,R.id.vocabularyFragment)); tap(R.id.vocabularyFragment);
         await("search input",a -> visible(a,R.id.search));
         onView(isAssignableFrom(android.widget.EditText.class)).perform(androidx.test.espresso.action.ViewActions.click(),
                 androidx.test.espresso.action.ViewActions.typeText("customer"));
@@ -197,8 +197,8 @@ public final class Qa02ControlledInstrumentedTest extends Qa02Harness {
         checkpoint("quiz-double-tap", new JSONObject().put("gapMs", times[1]-times[0]).put("answers", 1).put("attempts", 0));
     }
     @Test public void emptyProgressAndHistory() throws Exception {
-        launch(); await("Home", a -> visible(a, R.id.open_progress));
-        tapScroll(R.id.open_progress);
+        launch(); await("Home", a -> visible(a, R.id.progressFragment));
+        tap(R.id.progressFragment);
         await("Progress", a -> visible(a, R.id.progress_list));
         visibleListChild(R.id.progress_list, R.id.progress_counts);
         onView(withId(R.id.progress_counts)).check(matches(withText(context.getString(R.string.progress_counts, 0, 0, 0, 0))));
