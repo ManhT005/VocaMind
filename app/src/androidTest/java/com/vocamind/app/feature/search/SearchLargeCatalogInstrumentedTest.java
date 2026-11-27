@@ -66,7 +66,7 @@ public final class SearchLargeCatalogInstrumentedTest {
                         f.getViewModelStore().put("androidx.lifecycle.ViewModelProvider.DefaultKey:"+SearchViewModel.class.getCanonicalName(),model);
                     }
                 },true);
-                a.findViewById(R.id.open_vocabulary).performClick();
+                a.findViewById(R.id.vocabularyFragment).performClick();
             });
             await(scenario,a -> a.findViewById(R.id.search)!=null);
             scenario.onActivity(a -> ((SearchView)a.findViewById(R.id.search)).setQuery("benchword",false));

@@ -1,7 +1,10 @@
 package com.vocamind.app.feature.today;
 
 import android.os.Bundle;
+import android.text.format.DateUtils;
 import android.view.View;
+import android.widget.LinearLayout;
+import java.text.NumberFormat;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -29,6 +32,21 @@ public class TodayFragment extends Fragment {
 
     @Override public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         binding = FragmentTodayBinding.bind(view);
+        boolean stacked = getResources().getConfiguration().screenWidthDp < 360
+                || getResources().getConfiguration().fontScale >= 1.3f;
+        binding.statsRow.setOrientation(stacked ? LinearLayout.VERTICAL : LinearLayout.HORIZONTAL);
+        for (int i = 0; i < binding.statsRow.getChildCount(); i++) {
+            var params = new LinearLayout.LayoutParams(
+                    stacked ? LinearLayout.LayoutParams.MATCH_PARENT : 0,
+                    stacked ? LinearLayout.LayoutParams.WRAP_CONTENT : LinearLayout.LayoutParams.MATCH_PARENT,
+                    stacked ? 0 : 1);
+            if (i > 0) {
+                int gap = getResources().getDimensionPixelSize(R.dimen.ui_card_gap);
+                if (stacked) params.topMargin = gap;
+                else params.setMarginStart(gap);
+            }
+            binding.statsRow.getChildAt(i).setLayoutParams(params);
+        }
         model = new ViewModelProvider(requireActivity(), new PacksViewModelFactory(requireContext(), null))
                 .get(PacksViewModel.class);
         plan = new ViewModelProvider(requireActivity(), new TodayPlanViewModelFactory(requireContext()))
@@ -79,13 +97,26 @@ public class TodayFragment extends Fragment {
         binding.doneQuiz.setVisibility(done ? View.VISIBLE : View.GONE);
         binding.doneExplore.setVisibility(done ? View.VISIBLE : View.GONE);
         binding.message.setVisibility(ready ? View.GONE : View.VISIBLE);
-        if (ready) binding.summary.setText(getString(R.string.today_summary, planState.dueCount, planState.newCount));
+        if (ready) {
+            NumberFormat numbers = NumberFormat.getIntegerInstance();
+            String due = numbers.format(planState.dueCount);
+            binding.dueCount.setText(due);
+            binding.start.setText(planState.dueCount > 0 && planState.newCount == 0
+                    ? getString(R.string.ui_today_review_due, due) : getString(R.string.today_start));
+            binding.newCount.setText(numbers.format(planState.newCount));
+        }
+        binding.message.setBackgroundResource(done ? R.drawable.ui_success : R.drawable.ui_row);
         binding.message.setText(loading ? R.string.pack_activation_pending
                 : error || planError ? R.string.packs_error
                 : noActive ? R.string.today_choose_pack
                 : planLoading ? R.string.today_preparing
                 : done ? R.string.today_done
                 : R.string.today);
+        if (done && planState.nextReviewAt.isPresent()) {
+            String next = DateUtils.formatDateTime(requireContext(), planState.nextReviewAt.getAsLong(),
+                    DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_TIME | DateUtils.FORMAT_SHOW_YEAR);
+            binding.message.setText(getString(R.string.ui_today_next_review, getString(R.string.today_done), next));
+        }
     }
 
     @Override public void onResume() {

@@ -31,12 +31,13 @@ public class VocabularyFragment extends Fragment {
         b.results.setLayoutManager(new LinearLayoutManager(requireContext()));
         b.results.setAdapter(adapter);
         b.search.setIconifiedByDefault(false);
-        b.search.setQueryHint(getString(R.string.search_hint));
+        b.search.setQueryHint(getString(R.string.ui_search_hint));
         b.search.setQuery(model.state().getValue().input, false);
         b.search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override public boolean onQueryTextSubmit(String query) { b.search.clearFocus(); return true; }
             @Override public boolean onQueryTextChange(String text) { model.input(text); return true; }
         });
+        b.reset.setContentDescription(getString(R.string.ui_search_clear));
         b.reset.setOnClickListener(v -> { model.reset(); b.search.setQuery("", false); });
         b.retry.setOnClickListener(v -> model.retry());
         model.state().observe(getViewLifecycleOwner(), s -> {
@@ -47,12 +48,14 @@ public class VocabularyFragment extends Fragment {
             b.retry.setVisibility(s.status == SearchViewModel.Status.ERROR
                     && s.error != com.vocamind.app.domain.catalog.VocabularySearchResult.Error.INVALID_QUERY
                     ? View.VISIBLE : View.GONE);
-            int message = s.status == SearchViewModel.Status.NO_INPUT ? R.string.search_no_input
+            int message = s.status == SearchViewModel.Status.NO_INPUT ? R.string.ui_search_start
                     : s.status == SearchViewModel.Status.LOADING ? R.string.search_loading
-                    : s.status == SearchViewModel.Status.NO_MATCH ? R.string.search_no_match
+                    : s.status == SearchViewModel.Status.NO_MATCH ? R.string.ui_search_empty
                     : s.status == SearchViewModel.Status.ERROR ? (s.error == com.vocamind.app.domain.catalog.VocabularySearchResult.Error.INVALID_QUERY
-                    ? R.string.search_invalid : R.string.search_error) : R.string.search_content;
+                    ? R.string.search_invalid : R.string.ui_search_error) : R.string.search_content;
             b.searchMessage.setText(message);
+            b.searchIllustration.setVisibility(s.status == SearchViewModel.Status.NO_INPUT
+                    || s.status == SearchViewModel.Status.NO_MATCH ? View.VISIBLE : View.GONE);
             List<SearchAdapter.Row> rows = new ArrayList<>();
             for (var word : s.words) rows.add(new SearchAdapter.Row(word, s.generation));
             adapter.submitList(rows, () -> b.results.post(() -> {

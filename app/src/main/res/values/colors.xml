@@ -1,11 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="shell_background">#F6FAF8</color>
-    <color name="shell_text_primary">#12382E</color>
-    <color name="shell_text_secondary">#52665F</color>
-    <color name="shell_accent">#007A55</color>
-    <color name="shell_on_accent">#FFFFFF</color>
+    <color name="shell_background">#F7F7FC</color>
     <color name="detail_card_surface">#FFFFFF</color>
-    <color name="detail_tint">#E5F3EC</color>
-    <color name="detail_outline">#DDE8E2</color>
+    <color name="shell_text_primary">#211B35</color>
+    <color name="shell_text_secondary">#594F6E</color>
+    <color name="detail_outline">#DCD5EB</color>
+    <color name="control_outline">#827494</color>
+    <color name="shell_accent">#5637B7</color>
+    <color name="shell_on_accent">#FFFFFF</color>
+    <color name="detail_tint">#EEE8FF</color>
+    <color name="on_tint">#402487</color>
+    <color name="peach">#FFE4CB</color>
+    <color name="on_peach">#703B11</color>
+    <color name="success">#DDF5EA</color>
+    <color name="on_success">#155F48</color>
+    <color name="error_surface">#FFE7E8</color>
+    <color name="on_error_surface">#8C2838</color>
 </resources>

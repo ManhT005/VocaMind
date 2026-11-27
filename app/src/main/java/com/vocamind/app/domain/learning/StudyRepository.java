@@ -4,6 +4,7 @@ import com.vocamind.app.domain.catalog.CatalogVocabulary;
 import com.vocamind.app.domain.common.RepoResult;
 import java.util.List;
 import java.util.Optional;
+import java.util.OptionalLong;
 
 /**
  * Study queue over words of ACTIVE packs only. Blocking: call from a worker executor.
@@ -18,6 +19,11 @@ public interface StudyRepository {
 
     /** Daily new-word target and words first learned in [dayStart, nextDayStart). */
     RepoResult<DailyQuota> dailyQuota(long dayStartEpochMillis, long nextDayStartEpochMillis);
+
+    /** Earliest scheduled review after now among active packs, when known. */
+    default RepoResult<OptionalLong> nextReviewAfter(long now) {
+        return RepoResult.success(OptionalLong.empty());
+    }
 
     RepoResult<Optional<WordProgress>> getProgress(String vocabularyId);
 }

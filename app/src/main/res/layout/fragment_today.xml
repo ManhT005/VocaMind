@@ -7,9 +7,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:gravity="top"
         android:orientation="vertical"
-        android:padding="@dimen/shell_screen_padding">
+        android:paddingHorizontal="@dimen/shell_screen_padding" android:paddingBottom="@dimen/shell_screen_padding">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/destination_title"
@@ -17,7 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/today"
-            android:textAlignment="center" />
+            android:minHeight="@dimen/ui_toolbar_height"
+            android:gravity="center_vertical" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/message"
@@ -25,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/shell_item_spacing"
+            android:padding="16dp"
             android:text="@string/placeholder_description"
             android:textAlignment="center" />
 
@@ -32,23 +34,41 @@
         <com.google.android.material.button.MaterialButton android:id="@+id/retry"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:text="@string/packs_retry" android:visibility="gone" />
-        <com.google.android.material.textview.MaterialTextView android:id="@+id/summary"
-            style="@style/TextAppearance.VocaMind.Body"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/shell_item_spacing" android:textAlignment="center"
-            android:accessibilityLiveRegion="polite" android:visibility="gone" />
+        <LinearLayout android:id="@+id/summary" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/ui_hero"
+            android:padding="@dimen/ui_hero_padding" android:visibility="gone" android:accessibilityLiveRegion="polite">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.VocaMind.Section" android:text="@string/ui_today_plan"/>
+            <LinearLayout android:id="@+id/stats_row" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="12dp" android:baselineAligned="false" android:orientation="horizontal">
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/shell_item_spacing" android:orientation="vertical" android:background="@drawable/ui_row" android:padding="12dp">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.VocaMind.Body" android:drawableStart="@drawable/ic_ui_calendar" android:drawablePadding="8dp" android:text="@string/ui_due" />
+                    <TextView android:id="@+id/due_count" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.VocaMind.Title" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:background="@drawable/ui_row" android:padding="12dp">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.VocaMind.Body" android:drawableStart="@drawable/ic_ui_spark" android:drawablePadding="8dp" android:text="@string/ui_new" />
+                    <TextView android:id="@+id/new_count" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.VocaMind.Title" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
         <com.google.android.material.button.MaterialButton android:id="@+id/start"
-            android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp"
-            android:text="@string/today_start" android:visibility="gone" />
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="@dimen/shell_button_height"
+            android:layout_marginTop="12dp" android:text="@string/today_start" android:visibility="gone" />
         <com.google.android.material.button.MaterialButton android:id="@+id/explore"
-            android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="@dimen/shell_button_height"
             android:text="@string/today_explore" android:visibility="gone" />
         <com.google.android.material.button.MaterialButton android:id="@+id/done_quiz"
-            android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="@dimen/shell_button_height"
             android:text="@string/today_done_quiz" android:visibility="gone" />
         <com.google.android.material.button.MaterialButton android:id="@+id/done_explore"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp"
+            style="@style/Widget.VocaMind.OutlinedAction"
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="@dimen/shell_button_height"
             android:text="@string/today_explore" android:visibility="gone" />
     </LinearLayout>
 

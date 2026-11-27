@@ -138,7 +138,7 @@ public class DiscoveryJourneyInstrumentedTest extends DiscoveryHarness {
         preserved(user.userDao().progress(word.id),false); assertEquals(before,catalogSnapshot());
     }
     @Test public void offlineEnglishVietnameseRealFtsVisibleResultDetailResetNoMatch() throws Exception {
-        String before=catalogSnapshot(); start(); tap(R.id.open_vocabulary); message(R.string.search_no_input);
+        String before=catalogSnapshot(); start(); tap(R.id.vocabularyFragment); message(R.string.search_no_input);
         var word=oracle.catalogDao().vocabulary("5aecfbf5b9a23aee");
         for(String q : List.of("BANK","NGÂN HÀNG")) {
             query(q); message(R.string.search_content); listCount(R.id.results,1);
@@ -160,7 +160,7 @@ public class DiscoveryJourneyInstrumentedTest extends DiscoveryHarness {
     @Test public void failureArtifactProbe() throws Exception {
         org.junit.Assume.assumeTrue("Only external harness verification enables this probe",
                 "true".equals(androidx.test.platform.app.InstrumentationRegistry.getArguments().getString("ui02FailureProbe")));
-        start(); tap(R.id.open_vocabulary); message(R.string.search_no_input);
+        start(); tap(R.id.vocabularyFragment); message(R.string.search_no_input);
         fail("UI02_EXPECTED_ARTIFACT_PROBE");
     }
 }

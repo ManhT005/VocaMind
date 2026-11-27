@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:orientation="vertical" android:padding="@dimen/shell_screen_padding">
+    android:orientation="vertical" android:paddingHorizontal="@dimen/shell_screen_padding" android:paddingBottom="@dimen/shell_screen_padding">
     <TextView android:id="@+id/destination_title" style="@style/TextAppearance.VocaMind.Title"
-        android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/vocabulary" />
-    <androidx.appcompat.widget.SearchView android:id="@+id/search"
-        android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" />
-    <LinearLayout style="?android:attr/buttonBarStyle" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-        <Button android:id="@+id/reset" style="?android:attr/buttonBarButtonStyle" android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:minHeight="48dp" android:text="@string/search_reset" />
-        <Button android:id="@+id/retry" style="?android:attr/buttonBarButtonStyle" android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:minHeight="48dp" android:text="@string/search_retry" android:visibility="gone" />
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="@dimen/ui_toolbar_height" android:gravity="center_vertical" android:text="@string/vocabulary" />
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/ui_search"
+        android:minHeight="@dimen/shell_button_height" />
+    <LinearLayout style="?android:attr/buttonBarStyle" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginTop="4dp" android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton android:id="@+id/reset" style="@style/Widget.VocaMind.TextAction" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:minHeight="@dimen/ui_touch_target" android:text="@string/search_reset" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/retry" style="@style/Widget.VocaMind.TextAction" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:minHeight="@dimen/ui_touch_target" android:text="@string/search_retry" android:visibility="gone" />
     </LinearLayout>
+    <ImageView android:id="@+id/search_illustration" android:layout_width="56dp" android:layout_height="56dp"
+        android:layout_gravity="center_horizontal" android:layout_marginTop="12dp"
+        android:background="@drawable/ui_icon_tile" android:padding="14dp" android:src="@drawable/ic_ui_search"
+        android:importantForAccessibility="no" />
     <TextView android:id="@+id/search_message" style="@style/TextAppearance.VocaMind.Body"
-        android:layout_width="match_parent" android:layout_height="wrap_content" android:accessibilityLiveRegion="polite" />
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:layout_marginBottom="@dimen/shell_item_spacing" android:accessibilityLiveRegion="polite" />
     <ProgressBar android:id="@+id/loading" android:layout_width="48dp" android:layout_height="48dp" android:visibility="gone" />
     <androidx.recyclerview.widget.RecyclerView android:id="@+id/results"
         android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"

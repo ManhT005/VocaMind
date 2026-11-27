@@ -51,4 +51,19 @@
     <fragment android:id="@+id/flashcardFragment"
         android:name="com.vocamind.app.feature.flashcard.FlashcardFragment"
         android:label="@string/flashcard_title" />
+    <fragment android:id="@+id/profileFragment"
+        android:name="com.vocamind.app.feature.personal.PersonalFragment"
+        android:label="@string/personal_profile" />
+    <fragment android:id="@+id/settingsFragment"
+        android:name="com.vocamind.app.feature.personal.PersonalFragment"
+        android:label="@string/personal_settings" />
+    <fragment android:id="@+id/savedWordsFragment"
+        android:name="com.vocamind.app.feature.personal.PersonalFragment"
+        android:label="@string/personal_savedWords" />
+    <fragment android:id="@+id/activePacksFragment"
+        android:name="com.vocamind.app.feature.personal.PersonalFragment"
+        android:label="@string/personal_activePacks" />
+    <fragment android:id="@+id/accountFragment"
+        android:name="com.vocamind.app.feature.account.AccountFragment"
+        android:label="@string/account_title" />
 </navigation>

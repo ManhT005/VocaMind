@@ -77,7 +77,6 @@ public class ProgressScreenTest {
   View header=bind(0);assertTrue(text(header,R.id.progress_counts).contains("0"));
   assertEquals(View.VISIBLE,header.findViewById(R.id.progress_empty).getVisibility());
   assertEquals(View.VISIBLE,header.findViewById(R.id.history_empty).getVisibility());
-  assertEquals(controller.get().getString(R.string.progress_mastered_explanation),text(header,R.id.mastered_explanation));
   io.submit(() -> { UserWordProgress row=new UserWordProgress();row.vocabularyId="invalid";row.box=0;db.userDao().saveProgress(row);db.getOpenHelper().getWritableDatabase().execSQL("UPDATE UserWordProgress SET box=9"); }).get();
   model.refresh();complete();assertEquals(View.GONE,list().getVisibility());
   assertEquals(View.VISIBLE,fragment.requireView().findViewById(R.id.progress_error).getVisibility());

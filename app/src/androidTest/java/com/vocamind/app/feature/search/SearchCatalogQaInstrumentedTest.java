@@ -27,7 +27,7 @@ import org.junit.runner.RunWith;
 public final class SearchCatalogQaInstrumentedTest {
     @Test public void searchStateControlsRemainAccessibleWithKeyboard() throws Exception {
         try (var s = ActivityScenario.launch(MainActivity.class)) {
-            s.onActivity(a -> a.findViewById(R.id.open_vocabulary).performClick());
+            s.onActivity(a -> a.findViewById(R.id.vocabularyFragment).performClick());
             await(s, a -> a.findViewById(R.id.search) != null);
             s.onActivity(a -> {
                 SearchView search = a.findViewById(R.id.search);
@@ -111,7 +111,7 @@ public final class SearchCatalogQaInstrumentedTest {
         } finally { worker.shutdown(); }
         System.out.println("SEARCH_VOCAB02_QA stableId="+word.stableId+" lemma="+word.lemma);
         try(var s=ActivityScenario.launch(MainActivity.class)) {
-            s.onActivity(a -> a.findViewById(R.id.open_vocabulary).performClick());
+            s.onActivity(a -> a.findViewById(R.id.vocabularyFragment).performClick());
             await(s,a -> a.findViewById(R.id.search)!=null);
             for (String query : java.util.List.of(word.lemma,word.lemma.toUpperCase(java.util.Locale.ROOT),
                     word.meaningVi,word.meaningVi.toUpperCase(java.util.Locale.ROOT),

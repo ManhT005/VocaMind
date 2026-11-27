@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.OptionalLong;
 import java.util.Set;
 
 /**
@@ -64,6 +65,11 @@ public final class PlanToday {
             }
         }
         TodayPlan.Status status = due.isEmpty() && fresh.isEmpty() ? TodayPlan.Status.DONE : TodayPlan.Status.READY;
-        return RepoResult.success(new TodayPlan(status, due, fresh));
+        OptionalLong nextReviewAt = OptionalLong.empty();
+        if (status == TodayPlan.Status.DONE) {
+            RepoResult<OptionalLong> nextReview = study.nextReviewAfter(now);
+            if (nextReview.isSuccess()) nextReviewAt = nextReview.get();
+        }
+        return RepoResult.success(new TodayPlan(status, due, fresh, nextReviewAt));
     }
 }

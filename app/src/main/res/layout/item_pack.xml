@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/pack_root" android:layout_width="match_parent" android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/shell_section_spacing" android:background="?attr/selectableItemBackground"
-    android:clickable="true" android:focusable="true" android:minHeight="@dimen/shell_button_height"
-    android:orientation="vertical">
-    <com.google.android.material.textview.MaterialTextView android:id="@+id/pack_title"
-        style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:textStyle="bold" />
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true" android:focusable="true"
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/shell_item_spacing" android:minHeight="64dp" android:padding="@dimen/ui_card_padding" android:background="@drawable/ui_row">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical">
+        <ImageView android:layout_width="40dp" android:layout_height="40dp" android:padding="8dp"
+            android:importantForAccessibility="no" android:src="@drawable/ic_ui_words" android:background="@drawable/ui_peach"/>
+        <com.google.android.material.textview.MaterialTextView android:id="@+id/pack_title"
+            android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+            android:layout_marginStart="12dp" android:textAppearance="@style/TextAppearance.VocaMind.Section"/>
+        <ImageView android:layout_width="24dp" android:layout_height="24dp"
+            android:importantForAccessibility="no" android:src="@drawable/ic_ui_next"/>
+    </LinearLayout>
+    <TextView android:id="@+id/pack_active_badge" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="8dp" android:paddingStart="12dp" android:paddingEnd="12dp"
+        android:paddingTop="4dp" android:paddingBottom="4dp" android:background="@drawable/ui_success"
+        android:textColor="@color/on_success" android:text="@string/pack_active" android:visibility="gone"/>
     <com.google.android.material.textview.MaterialTextView android:id="@+id/pack_description"
         style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:layout_marginTop="@dimen/shell_item_spacing" />
+        android:layout_height="wrap_content" android:layout_marginTop="@dimen/shell_item_spacing"  android:maxLines="2" android:ellipsize="end"/>
     <com.google.android.material.textview.MaterialTextView android:id="@+id/pack_progress_text"
         style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
         android:layout_height="wrap_content" android:layout_marginTop="@dimen/shell_item_spacing" />

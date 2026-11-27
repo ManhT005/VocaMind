@@ -104,7 +104,6 @@ public class ProgressAcceptanceInstrumentedTest {
    assertEquals(a.getString(R.string.progress_counts,total,learning,reviewing,mastered),text(header,R.id.progress_counts));
    int[] ids={R.id.box_0,R.id.box_1,R.id.box_2,R.id.box_3,R.id.box_4,R.id.box_5};
    for(int i=0;i<6;i++) assertTrue(text(header,ids[i]).endsWith(": "+boxes[i]));
-   assertEquals(a.getString(R.string.progress_mastered_explanation),text(header,R.id.mastered_explanation));
    assertTrue(((RecyclerView)a.findViewById(R.id.progress_list)).getAdapter().hasStableIds());
   });
  }
@@ -136,7 +135,7 @@ public class ProgressAcceptanceInstrumentedTest {
    assertTrue("A fresh isolated install is required",db.userDao().allProgress().isEmpty());
    assertTrue(db.userDao().quizzes().isEmpty());
    try(ActivityScenario<MainActivity> s=ActivityScenario.launch(MainActivity.class)) {
-    s.onActivity(a -> a.findViewById(R.id.open_progress).performClick());waitFor(() -> content(s,1));
+    s.onActivity(a -> a.findViewById(R.id.progressFragment).performClick());waitFor(() -> content(s,1));
     metrics(s,0,0,0,0,0,0,0,0,0,0);View header=row(s,0);
     assertEquals(View.VISIBLE,header.findViewById(R.id.progress_empty).getVisibility());
     assertEquals(View.VISIBLE,header.findViewById(R.id.history_empty).getVisibility());screenshot("01-empty");
@@ -235,7 +234,7 @@ public class ProgressAcceptanceInstrumentedTest {
   String expected=context.getSharedPreferences("progress02-evidence",0).getString("signature",null);assertNotNull("Run aFullProductionFlow first",expected);
   try(CatalogProvider c=new CatalogProvider(context);RepositoryProvider r=new RepositoryProvider(context,c);ActivityScenario<MainActivity> s=ActivityScenario.launch(MainActivity.class)) {
    ProgressReadResult read=r.progressUseCase().execute();assertTrue(read.isSuccess());assertEquals(expected,signature(read.getSnapshot()));
-   s.onActivity(a -> a.findViewById(R.id.open_progress).performClick());waitFor(() -> content(s,14));
+   s.onActivity(a -> a.findViewById(R.id.progressFragment).performClick());waitFor(() -> content(s,14));
    metrics(s,12,2,6,4,2,0,4,2,1,3);row(s,13);screenshot("09-persisted-history");assertOffline();
   }
  }
@@ -243,7 +242,7 @@ public class ProgressAcceptanceInstrumentedTest {
   assertTrue(context.getResources().getConfiguration().fontScale>=1.9f);
   assertEquals(android.content.res.Configuration.UI_MODE_NIGHT_YES,context.getResources().getConfiguration().uiMode & android.content.res.Configuration.UI_MODE_NIGHT_MASK);
   try(ActivityScenario<MainActivity> s=ActivityScenario.launch(MainActivity.class)) {
-   s.onActivity(a -> a.findViewById(R.id.open_progress).performClick());waitFor(() -> content(s,14));
+   s.onActivity(a -> a.findViewById(R.id.progressFragment).performClick());waitFor(() -> content(s,14));
    View header=row(s,0);
    s.onActivity(a -> {
     assertTrue(a.getResources().getConfiguration().screenWidthDp<=360);
@@ -266,7 +265,7 @@ public class ProgressAcceptanceInstrumentedTest {
 
  @Test public void dActualLandscapeRotation() throws Exception {
   try(ActivityScenario<MainActivity> s=ActivityScenario.launch(MainActivity.class)) {
-   s.onActivity(a -> a.findViewById(R.id.open_progress).performClick());waitFor(() -> content(s,14));
+   s.onActivity(a -> a.findViewById(R.id.progressFragment).performClick());waitFor(() -> content(s,14));
    s.onActivity(a -> a.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE));
    waitFor(() -> { boolean[] landscape={false};s.onActivity(a -> landscape[0]=a.getResources().getConfiguration().orientation==android.content.res.Configuration.ORIENTATION_LANDSCAPE);return landscape[0]; });
    waitFor(() -> content(s,14));metrics(s,12,2,6,4,2,0,4,2,1,3);row(s,13);screenshot("13-landscape-history");

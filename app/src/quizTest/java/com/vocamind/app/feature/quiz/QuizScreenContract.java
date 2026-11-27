@@ -94,7 +94,9 @@ public abstract class QuizScreenContract {
                 assertEquals("noun\ncontext 0",((TextView)a.findViewById(R.id.quiz_context)).getText().toString());
                 a.findViewById(R.id.quiz_option_1).performClick();
                 assertFalse(a.findViewById(R.id.quiz_option_2).isEnabled());
-                assertTrue(((TextView)a.findViewById(R.id.quiz_feedback)).getText().toString().contains("one"));
+                String correctLabel = a.getString(R.string.ui_quiz_lettered_option, 'B', "one");
+                assertEquals(a.getString(R.string.ui_answer_correct, correctLabel),
+                        ((TextView) a.findViewById(R.id.quiz_option_2)).getText().toString());
             });
             scenario.recreate();
             scenario.onActivity(a -> {

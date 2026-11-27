@@ -1,0 +1,6 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/homeFragment" android:icon="@drawable/ic_ui_home" android:title="@string/home"/>
+    <item android:id="@id/todayFragment" android:icon="@drawable/ic_ui_learn" android:title="@string/ui_tab_study"/>
+    <item android:id="@id/vocabularyFragment" android:icon="@drawable/ic_ui_words" android:title="@string/vocabulary"/>
+    <item android:id="@id/progressFragment" android:icon="@drawable/ic_ui_progress" android:title="@string/progress"/>
+</menu>

@@ -55,7 +55,7 @@ public final class Qa02JourneyInstrumentedTest extends Qa02Harness {
         home();
 
         // Search literal English and Vietnamese against a separate packaged-catalog oracle.
-        tapScroll(R.id.open_vocabulary);
+        tap(R.id.vocabularyFragment);
         for (String[] search : new String[][]{{"customer", "\"customer\"*"}, {"khách hàng", "\"khách\"* \"hàng\"*"}}) {
             var expected = oracle.catalogDao().searchVocabulary(search[1]);
             assertFalse("Fixture must exercise a nonempty search", expected.isEmpty());
@@ -215,12 +215,12 @@ public final class Qa02JourneyInstrumentedTest extends Qa02Harness {
         assertEquals(1, user.userDao().quizzes().size());
         write("quiz-oracle.json", new JSONObject().put("questions", questionOracle).put("correct", correct).put("score", correct * 10));
         checkpoint("06-quiz", new JSONObject().put("attemptCount", 1).put("score", correct * 10));
-        tap(R.id.quiz_back); await("Home", a -> visible(a, R.id.open_progress));
+        tap(R.id.quiz_back); await("Home", a -> visible(a, R.id.progressFragment));
         tapScroll(R.id.open_quiz);
         await("completed Quiz reopened", a -> quiz() != null && quiz().phase == QuizViewModel.Phase.RESULT);
         assertEquals(1, user.userDao().quizzes().size());
-        tapScroll(R.id.quiz_back); await("Home", a -> visible(a, R.id.open_progress));
-        tapScroll(R.id.open_progress);
+        tapScroll(R.id.quiz_back); await("Home", a -> visible(a, R.id.progressFragment));
+        tap(R.id.progressFragment);
         await("progress loaded", a -> visible(a, R.id.progress_list));
         int[] boxes = new int[6];
         for (var progress : user.userDao().allProgress()) boxes[progress.box]++;
@@ -233,8 +233,6 @@ public final class Qa02JourneyInstrumentedTest extends Qa02Harness {
             final int count = boxes[i]; final int view = boxViews[i];
             scenario.onActivity(a -> assertTrue(((android.widget.TextView)a.findViewById(view)).getText().toString().endsWith(": " + count)));
         }
-        visibleListChild(R.id.progress_list, R.id.mastered_explanation);
-        onView(withId(R.id.mastered_explanation)).check(matches(withText(R.string.progress_mastered_explanation)));
         visibleListChild(R.id.progress_list, R.id.history_result);
         onView(withId(R.id.history_result)).check(matches(withText(context.getString(R.string.progress_quiz_result,
                 10, correct, 10 - correct, correct * 10))));

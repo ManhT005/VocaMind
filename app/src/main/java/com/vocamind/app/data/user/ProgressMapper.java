@@ -3,6 +3,8 @@ package com.vocamind.app.data.user;
 import com.vocamind.app.domain.progress.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalDate;
+import java.time.ZoneId;
 
 /** Validate stored data; do not silently repair scores or ignore unsupported boxes. */
 final class ProgressMapper {
@@ -25,6 +27,9 @@ final class ProgressMapper {
             history.add(new QuizHistoryItem(attempt.id, attempt.completedAt,
                     attempt.questionCount, attempt.correctCount, attempt.scorePercent));
         }
-        return new ProgressSnapshot(summary, history);
+        ZoneId zone = ZoneId.systemDefault();
+        LearningActivity activity = new LearningActivity(LocalDate.now(zone), zone, rows.dailyGoal,
+                rows.learnedTimestamps, rows.reviewTimestamps, history);
+        return new ProgressSnapshot(summary, history, activity);
     }
 }

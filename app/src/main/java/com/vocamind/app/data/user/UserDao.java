@@ -18,6 +18,9 @@ import com.vocamind.app.data.local.DaoInputs;
 public abstract class UserDao {
     @Query("SELECT * FROM UserPreference WHERE id=1")
     public abstract UserPreference preference();
+    @Query("UPDATE UserPreference SET dailyNewWords=:target WHERE id=1")
+    public abstract int updateDailyNewWords(int target);
+
     @Update protected abstract void updatePreference(UserPreference row);
     public void savePreference(UserPreference row) {
         require(row != null, "preference row");
@@ -54,6 +57,9 @@ public abstract class UserDao {
     @Query("SELECT * FROM UserWordProgress WHERE vocabularyId=:id")
     @Nullable protected abstract UserWordProgress readProgress(String id);
     @Nullable public UserWordProgress progress(String id) { id(id); return readProgress(id); }
+    @Query("SELECT vocabularyId FROM UserWordProgress WHERE isSaved=1 ORDER BY vocabularyId")
+    public abstract List<String> savedVocabularyIds();
+
     @Query("SELECT * FROM UserWordProgress ORDER BY vocabularyId")
     public abstract List<UserWordProgress> allProgress();
     @Query("SELECT * FROM UserWordProgress WHERE vocabularyId IN (:ids) ORDER BY vocabularyId")
@@ -195,10 +201,29 @@ public abstract class UserDao {
     public abstract List<BoxProgressCount> progressCountsByBox();
     @Query("SELECT * FROM QuizAttempt ORDER BY completedAt DESC, id DESC")
     public abstract List<QuizAttempt> completedQuizHistory();
+    @Query("SELECT learnedAt FROM UserWordProgress WHERE learnedAt IS NOT NULL")
+    protected abstract List<Long> learnedTimestamps();
+
+    @Query("SELECT reviewedAt FROM ReviewEvent")
+    protected abstract List<Long> reviewTimestamps();
+
+    // A bookmark without any study activity is not a learned word.
+    private static final String STUDIED_WORD = "isSaved=0 OR learnedAt IS NOT NULL OR "
+            + "lastReviewedAt IS NOT NULL OR reviewCount>0 OR box>0";
+
+    @Query("SELECT COUNT(*) FROM UserWordProgress WHERE " + STUDIED_WORD)
+    protected abstract long studiedWordCount();
+
+    @Query("SELECT box, COUNT(*) AS wordCount FROM UserWordProgress WHERE "
+            + STUDIED_WORD + " GROUP BY box ORDER BY box")
+    protected abstract List<BoxProgressCount> studiedBoxCounts();
+
     /** No implicit history LIMIT/date window; counts/history must share one DB snapshot. */
     @Transaction
     public ProgressRows progressSnapshot() {
-        return new ProgressRows(distinctProgressCount(), progressCountsByBox(), completedQuizHistory());
+        UserPreference settings = preference();
+        return new ProgressRows(studiedWordCount(), studiedBoxCounts(), completedQuizHistory(),
+                learnedTimestamps(), reviewTimestamps(), settings == null ? 0 : settings.dailyNewWords);
     }
     /** Compare and write under the same database transaction; protects first-insert races too. */
     @Transaction
@@ -213,6 +238,28 @@ public abstract class UserDao {
         if (!sameProgress(expected, current)) throw new ReviewStateChangedException();
         recordReview(event, updated);
     }
+    @Query("DELETE FROM ReviewEvent")
+    protected abstract void deleteReviewHistory();
+
+    @Query("DELETE FROM QuizAttempt")
+    protected abstract void deleteQuizHistory();
+
+    @Query("DELETE FROM UserWordProgress WHERE isSaved=0")
+    protected abstract void deleteUnsavedProgress();
+
+    @Query("UPDATE UserWordProgress SET box=0, dueAt=:now, learnedAt=NULL, lastReviewedAt=NULL, "
+            + "consecutiveMistakes=0, isLeech=0, reviewCount=0 WHERE isSaved=1")
+    protected abstract void resetSavedProgress(long now);
+
+    @Transaction
+    public void resetLearningResults(long now) {
+        require(now >= 0, "reset time");
+        deleteReviewHistory();
+        deleteQuizHistory();
+        deleteUnsavedProgress();
+        resetSavedProgress(now);
+    }
+
     private static boolean sameProgress(UserWordProgress a, UserWordProgress b) {
         if (a == null || b == null) return a == b;
         return java.util.Objects.equals(a.vocabularyId, b.vocabularyId)

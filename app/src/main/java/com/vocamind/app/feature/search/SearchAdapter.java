@@ -17,7 +17,8 @@ public final class SearchAdapter extends ListAdapter<SearchAdapter.Row, SearchAd
     public static final DiffUtil.ItemCallback<Row> DIFF = new DiffUtil.ItemCallback<>() {
         @Override public boolean areItemsTheSame(@NonNull Row a, @NonNull Row b) { return a.word.stableId.equals(b.word.stableId); }
         @Override public boolean areContentsTheSame(@NonNull Row a, @NonNull Row b) {
-            return a.generation == b.generation && a.word.lemma.equals(b.word.lemma) && a.word.meaningVi.equals(b.word.meaningVi);
+            return a.generation == b.generation && a.word.lemma.equals(b.word.lemma) && a.word.meaningVi.equals(b.word.meaningVi)
+                    && java.util.Objects.equals(a.word.pos, b.word.pos);
         }
     };
     private final BiConsumer<Long, String> click;
@@ -28,6 +29,9 @@ public final class SearchAdapter extends ListAdapter<SearchAdapter.Row, SearchAd
     @Override public void onBindViewHolder(@NonNull Holder holder, int position) {
         Row row = getItem(position);
         holder.binding.wordTitle.setText(row.word.lemma);
+        holder.binding.wordPos.setText(row.word.pos);
+        holder.binding.wordPos.setVisibility(android.text.TextUtils.isEmpty(row.word.pos)
+                ? android.view.View.GONE : android.view.View.VISIBLE);
         holder.binding.wordMeaning.setText(row.word.meaningVi);
         holder.itemView.setOnClickListener(v -> click.accept(row.generation, row.word.stableId));
     }

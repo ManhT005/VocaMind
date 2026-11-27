@@ -11,6 +11,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.vocamind.app.R;
+import com.vocamind.app.MainActivity;
 import com.vocamind.app.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
@@ -24,12 +25,11 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         FragmentHomeBinding binding = FragmentHomeBinding.bind(view);
+        binding.openProfile.setOnClickListener(v -> navigateFromHome(R.id.profileFragment));
         binding.openAttribution.setOnClickListener(v -> navigateFromHome(R.id.attributionFragment));
         binding.openPacks.setOnClickListener(v -> navigateFromHome(R.id.packsFragment));
-        binding.openVocabulary.setOnClickListener(v -> navigateFromHome(R.id.vocabularyFragment));
-        binding.openToday.setOnClickListener(v -> navigateFromHome(R.id.todayFragment));
+        binding.openToday.setOnClickListener(v -> ((MainActivity) requireActivity()).selectStudyTab());
         binding.openQuiz.setOnClickListener(v -> navigateFromHome(R.id.quizFragment));
-        binding.openProgress.setOnClickListener(v -> navigateFromHome(R.id.progressFragment));
     }
 
     private void navigateFromHome(@IdRes int destinationId) {

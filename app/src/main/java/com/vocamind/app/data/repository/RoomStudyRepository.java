@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.OptionalLong;
 
 @WorkerThread
 public final class RoomStudyRepository implements StudyRepository {
@@ -76,6 +77,11 @@ public final class RoomStudyRepository implements StudyRepository {
             if (preference == null) return RepoResult.failure(RepoError.NOT_FOUND);
             return RepoResult.success(new DailyQuota(preference.dailyNewWords, user.learnedCount(dayStart, nextDayStart)));
         });
+    }
+
+    @Override public RepoResult<OptionalLong> nextReviewAfter(long now) {
+        return RepositoryGuard.read(() -> RepoResult.success(user.progressByIds(scope.eligibleIds())
+                .stream().mapToLong(row -> row.dueAt).filter(dueAt -> dueAt > now).min()));
     }
 
     @Override public RepoResult<Optional<WordProgress>> getProgress(String vocabularyId) {

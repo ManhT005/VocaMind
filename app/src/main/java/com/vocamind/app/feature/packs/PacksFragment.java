@@ -33,20 +33,21 @@ public class PacksFragment extends Fragment {
         ViewCompat.setAccessibilityHeading(binding.destinationTitle, true);
         model = new ViewModelProvider(requireActivity(),
                 new PacksViewModelFactory(requireContext(), null)).get(PacksViewModel.class);
+        binding.back.setOnClickListener(v -> NavHostFragment.findNavController(this).popBackStack());
         binding.retry.setOnClickListener(v -> model.retry());
         model.state().observe(getViewLifecycleOwner(), state -> {
             binding.loading.setVisibility(state.status == AsyncListViewModel.Status.LOADING ? View.VISIBLE : View.GONE);
             boolean error = state.status == AsyncListViewModel.Status.ERROR;
             boolean empty = state.status == AsyncListViewModel.Status.EMPTY;
+            binding.packsIllustration.setVisibility(empty ? View.VISIBLE : View.GONE);
             binding.message.setVisibility(error || empty ? View.VISIBLE : View.GONE);
             binding.message.setText(error ? R.string.packs_error : R.string.packs_empty);
-            binding.retry.setVisibility(error || empty ? View.VISIBLE : View.GONE);
+            binding.retry.setVisibility(error ? View.VISIBLE : View.GONE);
             binding.packList.removeAllViews();
             for (PackState pack : state.items) {
                 ItemPackBinding row = ItemPackBinding.inflate(getLayoutInflater(), binding.packList, false);
-                row.packTitle.setText(pack.isActive()
-                        ? getString(R.string.pack_title_active, pack.getPack().title, getString(R.string.pack_active))
-                        : pack.getPack().title);
+                row.packTitle.setText(pack.getPack().title);
+                row.packActiveBadge.setVisibility(pack.isActive() ? View.VISIBLE : View.GONE);
                 ViewCompat.setAccessibilityHeading(row.packTitle, true);
                 row.packDescription.setText(pack.getPack().description);
                 row.packProgressText.setText(getString(R.string.pack_progress,

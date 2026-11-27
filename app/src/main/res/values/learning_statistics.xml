@@ -1,0 +1,16 @@
+<resources>
+    <string name="learning_statistics">Thống kê học tập</string>
+    <string name="learning_today">Hôm nay</string>
+    <string name="learning_week">Tuần này</string>
+    <string name="learning_all">Tất cả</string>
+    <string name="learning_totals">Từ mới: %1$d\nLượt Flashcard: %2$d\nBài Quiz: %3$d\nTỷ lệ đúng Quiz: %4$s</string>
+    <string name="learning_no_quiz">Chưa có dữ liệu</string>
+    <string name="learning_achievements">Thành tích</string>
+    <string name="learning_streak">Chuỗi học: %1$d ngày liên tiếp</string>
+    <string name="learning_goal">Mục tiêu hôm nay: %1$d/%2$d từ mới</string>
+    <string name="learning_goal_met">Đã đạt mục tiêu hôm nay: %1$d/%2$d từ mới</string>
+    <string name="learning_review_history">Lịch sử Flashcard</string>
+    <string name="learning_open_reviews">Xem tất cả lượt Flashcard theo ngày</string>
+    <string name="learning_review_day">%1$s · %2$d lượt</string>
+    <string name="learning_no_reviews">Chưa có lượt Flashcard đã lưu.</string>
+</resources>

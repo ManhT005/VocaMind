@@ -1,6 +1,9 @@
 package com.vocamind.app.feature.flashcard;
 
 import android.os.Bundle;
+import android.animation.ValueAnimator;
+import android.widget.LinearLayout;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import android.text.format.DateUtils;
 import android.view.View;
 import androidx.annotation.NonNull;
@@ -25,19 +28,45 @@ public class FlashcardFragment extends Fragment {
         FlashcardViewModel model = new ViewModelProvider(this,
                 new FlashcardViewModelFactory(requireContext())).get(FlashcardViewModel.class);
         ViewCompat.setAccessibilityHeading(binding.title, true);
+        if (getResources().getConfiguration().screenWidthDp < 340
+                || getResources().getConfiguration().fontScale >= 1.3f) {
+            binding.ratingBar.setOrientation(LinearLayout.VERTICAL);
+            for (int i = 0; i < binding.ratingBar.getChildCount(); i++) {
+                View button = binding.ratingBar.getChildAt(i);
+                button.setLayoutParams(new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            }
+        }
+        ViewCompat.replaceAccessibilityAction(binding.card,
+                AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_CLICK,
+                getString(R.string.flashcard_flip_action), (card, args) -> card.performClick());
         binding.back.setOnClickListener(v -> NavHostFragment.findNavController(this).popBackStack());
+        binding.returnToday.setOnClickListener(v -> NavHostFragment.findNavController(this).popBackStack());
         binding.retry.setOnClickListener(v -> model.retry());
         binding.card.setOnClickListener(v -> model.flip());
         // Content forwards taps; the screen ScrollView cancels clicks when dragging.
         binding.cardContent.setOnClickListener(v -> binding.card.performClick());
         long[] renderedOccurrence = {-1};
+        boolean[] renderedBack = {false};
         model.state().observe(getViewLifecycleOwner(), state -> {
             render(binding, model, state);
-            if (state.status == FlashcardViewModel.Status.READY
-                    && renderedOccurrence[0] != state.presentationId) {
-                binding.getRoot().scrollTo(0, 0);
-                renderedOccurrence[0] = state.presentationId;
+            if (state.status != FlashcardViewModel.Status.READY) return;
+            boolean newCard = renderedOccurrence[0] != state.presentationId;
+            if (newCard || renderedBack[0] != state.flipped) {
+                binding.cardContent.animate().cancel();
+                if (ValueAnimator.areAnimatorsEnabled()) {
+                    binding.cardContent.setAlpha(0f);
+                    binding.cardContent.animate().alpha(1f).setDuration(150).start();
+                } else {
+                    binding.cardContent.setAlpha(1f);
+                }
             }
+            if (newCard) {
+                binding.getRoot().scrollTo(0, 0);
+                if (renderedOccurrence[0] != -1) binding.card.requestFocus();
+            }
+            renderedOccurrence[0] = state.presentationId;
+            renderedBack[0] = state.flipped;
         });
     }
 
@@ -45,10 +74,23 @@ public class FlashcardFragment extends Fragment {
         boolean ready = state.status == FlashcardViewModel.Status.READY;
         b.loading.setVisibility(state.status == FlashcardViewModel.Status.LOADING ? View.VISIBLE : View.GONE);
         b.card.setVisibility(ready ? View.VISIBLE : View.GONE);
-        b.ratingBar.setVisibility(ready ? View.VISIBLE : View.GONE);
+        b.ratingBar.setVisibility(ready && state.flipped ? View.VISIBLE : View.GONE);
+        b.ratingTitle.setVisibility(b.ratingBar.getVisibility());
+        b.sessionProgress.setVisibility(ready ? View.VISIBLE : View.GONE);
+        if (ready) {
+            b.sessionProgress.setMax(state.total);
+            b.sessionProgress.setProgress(state.position);
+        }
+        b.returnToday.setVisibility(state.status == FlashcardViewModel.Status.FINISHED
+                || state.status == FlashcardViewModel.Status.NO_ACTIVE_PACK
+                || state.status == FlashcardViewModel.Status.NOTHING_TO_STUDY ? View.VISIBLE : View.GONE);
+        b.statePanel.setBackgroundResource(state.status == FlashcardViewModel.Status.FINISHED
+                ? R.drawable.ui_success : R.drawable.ui_row);
         b.progressLabel.setText(ready ? getString(R.string.flashcard_progress, state.position, state.total) : "");
 
         int message = messageFor(state.status);
+        b.completionIllustration.setVisibility(state.status == FlashcardViewModel.Status.FINISHED
+                ? View.VISIBLE : View.GONE);
         b.statePanel.setVisibility(message == 0 ? View.GONE : View.VISIBLE);
         if (message != 0) b.message.setText(message);
         b.retry.setVisibility(state.status == FlashcardViewModel.Status.ERROR ? View.VISIBLE : View.GONE);
@@ -66,7 +108,7 @@ public class FlashcardFragment extends Fragment {
         b.cardExampleVi.setText(word.exampleVi);
         boolean hasIpa = word.ipa != null && !word.ipa.trim().isEmpty();
         b.cardIpa.setText(hasIpa ? word.ipa : getString(R.string.word_ipa_missing));
-        b.card.setContentDescription(state.flipped ? null : getString(R.string.flashcard_flip_action));
+        b.card.setContentDescription(state.flipped ? null : getString(R.string.ui_flashcard_front, word.lemma, word.pos));
         // Capture the occurrence rendered by this view, never look up the current ID at click time.
         b.rateForgot.setOnClickListener(v -> model.rate(state.presentationId, Rating.FORGOT));
         b.rateHard.setOnClickListener(v -> model.rate(state.presentationId, Rating.HARD));

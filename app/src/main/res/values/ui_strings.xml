@@ -1,0 +1,32 @@
+<resources>
+    <string name="ui_tab_study">Học</string>
+    <string name="ui_home_hero">Học từ vựng hôm nay</string>
+    <string name="ui_home_intro">Học từ mới và ôn từ đã gặp.</string>
+    <string name="ui_study_now">Vào học ngay</string>
+    <string name="ui_explore">Khám phá</string>
+    <string name="ui_today_plan">Kế hoạch hôm nay</string>
+    <string name="ui_due">Từ đến hạn</string>
+    <string name="ui_new">Từ mới</string>
+    <string name="ui_rating">Bạn nhớ từ này thế nào?</string>
+    <string name="ui_return_today">Về hôm nay</string>
+    <string name="ui_quiz_choose">Chọn nghĩa đúng</string>
+    <string name="ui_answer_correct">%1$s · Đúng</string>
+    <string name="ui_answer_selected">%1$s · Bạn đã chọn</string>
+    <string name="ui_quiz_score">%1$d%%</string>
+    <string name="ui_retry_save">Thử lưu lại</string>
+    <string name="ui_words_in_pack">Từ trong gói</string>
+    <string name="ui_search_hint">Nhập từ tiếng Anh</string>
+    <string name="ui_search_clear">Xóa nội dung tìm kiếm</string>
+    <string name="ui_search_start">Nhập một từ để xem nghĩa và ví dụ</string>
+    <string name="ui_search_empty">Chưa tìm thấy từ phù hợp. Hãy kiểm tra chính tả.</string>
+    <string name="ui_search_error">Không thể tìm từ lúc này</string>
+    <string name="ui_learned">Từ đã học</string>
+    <string name="ui_flashcard_front">%1$s, %2$s</string>
+    <string name="ui_quiz_review">Xem lại câu sai</string>
+    <string name="ui_quiz_review_row">Câu %1$d · %2$s (%3$s)\nBạn đã chọn: %4$s\nNghĩa đúng: %5$s</string>
+    <string name="ui_quiz_review_example">Ví dụ: %1$s</string>
+    <string name="ui_quiz_review_close">Đóng</string>
+    <string name="ui_today_review_due">Ôn %1$s từ đến hạn</string>
+    <string name="ui_today_next_review">%1$s\nLượt ôn tiếp theo: %2$s.</string>
+    <string name="ui_quiz_lettered_option">%1$c · %2$s</string>
+</resources>

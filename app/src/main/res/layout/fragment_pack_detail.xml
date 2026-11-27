@@ -1,34 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:padding="@dimen/shell_screen_padding">
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/pack_header"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:background="@color/shell_background" app:elevation="0dp">
+    android:orientation="vertical">
+
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="vertical" app:layout_scrollFlags="scroll">
-    <com.google.android.material.button.MaterialButton android:id="@+id/back"
-        style="@style/Widget.VocaMind.NavigationButton" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:text="@string/attribution_back" />
-    <com.google.android.material.textview.MaterialTextView android:id="@+id/detail_title"
-        style="@style/TextAppearance.VocaMind.Title" android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:text="@string/pack_detail_title" />
-    <TextView android:id="@+id/activation_status" android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:accessibilityLiveRegion="polite" />
-    <com.google.android.material.button.MaterialButton android:id="@+id/activation"
-        android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" />
-    <ProgressBar android:id="@+id/loading" android:layout_width="48dp" android:layout_height="48dp"
-        android:layout_gravity="center_horizontal" android:contentDescription="@string/pack_detail_loading" />
-    <com.google.android.material.textview.MaterialTextView android:id="@+id/message"
-        style="@style/TextAppearance.VocaMind.Body" android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:accessibilityLiveRegion="polite" android:visibility="gone" />
-    <com.google.android.material.button.MaterialButton android:id="@+id/retry"
-        style="@style/Widget.VocaMind.NavigationButton" android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:text="@string/packs_retry" android:visibility="gone" />
+        android:minHeight="@dimen/ui_toolbar_height" android:gravity="center_vertical" android:orientation="horizontal"
+        android:paddingStart="@dimen/shell_screen_padding" android:paddingEnd="@dimen/shell_screen_padding">
+        <androidx.appcompat.widget.AppCompatImageButton style="@style/Widget.VocaMind.BackButton" android:id="@+id/back"
+            android:layout_width="@dimen/ui_touch_target" android:layout_height="@dimen/ui_touch_target"
+            android:contentDescription="@string/attribution_back"
+            app:srcCompat="@drawable/ic_detail_back" />
+        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+            android:text="@string/packs"
+            android:textAppearance="@style/TextAppearance.VocaMind.Section" />
     </LinearLayout>
-    </com.google.android.material.appbar.AppBarLayout>
-    <androidx.recyclerview.widget.RecyclerView android:id="@+id/words" android:layout_width="match_parent"
-        android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <com.google.android.material.appbar.AppBarLayout android:id="@+id/pack_header"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@color/shell_background" app:elevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:paddingStart="@dimen/shell_screen_padding"
+                android:paddingEnd="@dimen/shell_screen_padding" app:layout_scrollFlags="scroll">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:layout_marginTop="8dp"
+                    android:background="@drawable/ui_hero" android:padding="@dimen/ui_hero_padding">
+                    <ImageView android:layout_width="44dp" android:layout_height="44dp"
+                        android:background="@drawable/ui_row" android:padding="10dp"
+                        app:srcCompat="@drawable/ic_ui_words" app:tint="@color/on_tint"
+                        android:importantForAccessibility="no" />
+                    <TextView android:id="@+id/detail_title"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp" android:text="@string/pack_detail_title"
+                        android:textAppearance="@style/TextAppearance.VocaMind.Title" />
+                    <TextView android:id="@+id/activation_status" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_marginTop="8dp"
+                        android:background="@drawable/ui_row" android:paddingHorizontal="10dp"
+                        android:paddingVertical="4dp" android:accessibilityLiveRegion="polite"
+                        android:textAppearance="@style/TextAppearance.VocaMind.Caption" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/activation"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp" android:minHeight="@dimen/ui_touch_target" />
+                </LinearLayout>
+
+                <ProgressBar android:id="@+id/loading" android:layout_width="40dp"
+                    android:layout_height="40dp" android:layout_marginTop="12dp"
+                    android:layout_gravity="center_horizontal" android:contentDescription="@string/pack_detail_loading" />
+                <TextView android:id="@+id/message" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_marginTop="12dp"
+                    android:accessibilityLiveRegion="polite" android:visibility="gone"
+                    android:textAppearance="@style/TextAppearance.VocaMind.Body" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/retry"
+                    style="@style/Widget.VocaMind.OutlinedAction"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="@string/packs_retry" android:visibility="gone" />
+
+                <TextView android:id="@+id/words_heading" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_marginTop="20dp" android:layout_marginBottom="10dp"
+                    android:textAppearance="@style/TextAppearance.VocaMind.Section"
+                    android:text="@string/ui_words_in_pack" />
+            </LinearLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/words"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:clipToPadding="false" android:paddingStart="@dimen/shell_screen_padding"
+            android:paddingEnd="@dimen/shell_screen_padding" android:paddingBottom="16dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>
